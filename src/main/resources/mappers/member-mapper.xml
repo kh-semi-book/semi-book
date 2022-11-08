@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="memberMapper">
+
+		<resultMap type="Member" id="member_rm">
+  		
+  		<!-- DB에서 PK에 해당되는 필드, 컬럼명을 작성하는 태그 -->
+  		<id property="memberNo" column="MEMBER_NO" />
+  		
+  		<!-- 나머지 일반 컬럼 -->
+  		<result property="memberEmail" column="MEMBER_EMAIL" />
+  	</resultMap>
+  	
+  	<select id="view" parameterType="string" resultMap="member_rm">
+  		SELECT MEMBER_NO, MEMBER_EMAIL
+  		FROM "MEMBER"
+  		WHERE MEMBER_NO='1'
+  	</select>
+
+
+
+</mapper>

@@ -10,7 +10,7 @@
 <body>
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 	
-	
+	${loginMember.memberEmail}
 	
 	
 	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>

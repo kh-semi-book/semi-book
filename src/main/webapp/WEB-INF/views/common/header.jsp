@@ -8,7 +8,7 @@
              <!-- 우측 상단 로그인 예약조회 회원가입 -->
             <!-- 헤더 오른쪽 상단 메뉴 -->
             <div id="header-top-menu">
-                <a href="#">로그인</a>
+                <a href="/member/view">로그인</a>
                 |
                 <a href="/">예약조회</a>
                 |
