@@ -1,0 +1,108 @@
+*{
+    box-sizing: border-box;
+}
+
+main> *{
+    margin: auto;
+}
+
+#book{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#book-head{
+    font-size: 11px;
+    width: 1000px;
+    text-align: left;
+    color: rgb(141, 141, 141);
+}
+
+#book-title{
+    font-size: 27px;
+    margin-top: 50px;
+    width: 1000px;
+    text-align: left;
+}
+
+#book-menu> ul{
+    list-style: none;
+    padding-left: 0;
+    width: 1000px;
+
+}
+#book-menu> ul> *{
+    float: left;
+    width: 200px;
+    border-bottom: 1px solid black;
+}
+
+.book-step>p.step {
+    color: #ccc;
+    font-size: 14px;
+}
+
+#book-content{
+    display: flex;
+}
+#book-content>div:first-child{flex-basis: 70%;}
+#book-content>div:last-child{flex-basis: 30%;}
+
+table * {
+    font-size: 13px;
+}
+
+.table-title{
+    margin-top: 60px;
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 0;
+    border-bottom: 2px solid black;
+}
+
+
+.book-table th, td{
+    border-bottom: 1px solid #ccc;
+    height: 50px;
+}
+
+.book-table th{
+    border-right:  1px solid #ccc;    
+    width: 100px;
+    text-align: left;
+    font-weight: normal;
+}
+
+.book-table td{
+    padding-left: 20px;
+}
+
+textarea {
+    padding: 5px 10px;
+    width: 400px;
+    height: 80px;
+}
+
+p[name="card-info"]{
+    font-size: 10px;
+    margin: 1px;
+}
+
+.agree-content{
+    height: 200px;
+    overflow: scroll;
+    padding: 20px;
+    margin-top: 7px;
+    border: 1px solid #ccc;
+    font-size: 10px;
+}
+
+
+
+
+
+
+
