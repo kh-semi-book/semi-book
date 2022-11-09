@@ -1,0 +1,143 @@
+
+/*=========[ 기본 뼈대 ]========= */
+.reservation-lookUp-page{
+    margin: 0 auto 0 auto;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+}
+.rsc-top-image{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.rsc-head-area,.rsc-foot-area{
+    height: 150px;
+    background-color: #FFFFFF
+}
+.rsc-body-area{
+    width: 1000px;
+    height: 1650px;  /* 수정 1200>1500*/
+    background-color:#FFFFFF ;
+    border: 1px solid #c9c9c9;
+    margin: 40px auto 60px auto;
+    padding: 40px 60px 60px 60px;
+}
+.rsc-main-side{
+    width: 80%;
+    width: 1000px;
+    min-width: 1000px;
+}
+/*=========[ 상단 영역 ]========= */
+.rsc-head-area{
+    display: flex;
+    flex-direction: column;
+}
+.rsc-body-TopArea{
+    width: 1000px;
+    height: 1200px;
+    background-color:#FFFFFF ;
+    margin: 0 auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/*----[ 페이지 제목 ]----*/
+.kjh-page-title >h1{
+    margin: 15px 0 0 0;
+    font-size: 33px;
+    color: #000000;
+    font-weight: 300;
+}
+
+/* 회원가입 프로세스 */
+#kjh-signUp-process{
+    display: flex;
+    flex-direction: row;
+    
+
+}
+#kjh-signUp-process div{
+    text-align: left;
+    width: 33%;
+    height: 60px;
+    padding: 0 0 20px 20px;
+    color: #aaa;
+    border-bottom: 1px solid black;
+
+}
+#kjh-signUp-process div:first-child{
+    border-bottom: 3px solid #000000; 
+    color : black;
+}
+
+.kjh-h2{
+    margin-bottom: 15px;
+}
+
+.kjh-p{
+    font-size: 13px;
+    color:#666;
+    margin-bottom: 20px;
+}
+textarea{
+    width: 100%;
+}
+
+.kjh-all-check{
+    text-align: right;
+
+    margin: 0;
+}
+
+.kjh-check-border{
+    text-align: right;
+
+}
+
+.kjh-confirm{
+    
+   width: 210px;
+   height: 60px;
+   border: 1px solid black;
+   background-color: #000000;
+   margin: 30px auto;
+}
+
+.kjh-confirm a {
+    display: block;
+    
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    line-height: 60px;
+    text-align: center;
+}
+
+
+.kjh-box{
+    overflow: hidden;
+
+}
+
+.kjh-content-border{
+    height: 180px;
+    margin: 0px auto;
+    padding: 15px 15px 15px 15px;
+    border: 1px solid #dbdbdb;
+    height: 180px;
+    background: #fff;
+}
+
+.kjh-content{
+    height: 150px;
+    overflow-y: scroll;
+    border-style: none;
+    padding-right: 10px;
+
+}
+
+dd{
+   margin: 0;
+}
