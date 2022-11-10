@@ -1,0 +1,309 @@
+/* ----------------------------------------------- */
+#reservation4_body_area{
+    width: 1000px;
+    margin:auto;
+}
+
+#top-menu{
+            color:rgb(133, 131, 131);
+            font-size:14px;
+            padding:20px 0;
+        }
+    
+        #top-menu>a{
+            text-decoration: none;
+            color:rgb(133, 131, 131);
+            padding:0 10px;
+        }
+
+        #info-title{
+            height: 10%;
+            font-family:'나눔명조';
+            font-size: 30px;
+            margin:20px 0;
+        }
+
+        /* 메인 영역 - step */
+#reservation4_step_area {
+    width: 1000px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom:1px solid black ;
+
+    margin-bottom: 60px;
+}
+.reservation4_step{
+    box-sizing: border-box;
+    width: 200px;
+    padding: 0 0 0 20px;
+    /* padding bottom 0으로 수정  */
+}
+.reservation4_step> p:first-child{
+    font-size: 12px;
+    color: #bbb;
+}
+.reservation4_step> p:last-child{
+    font-size: 15px;
+    color: #777;
+    font-weight: bold;
+}
+
+
+
+
+#reservation3_content_area{
+
+    width: 1000px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+#reservation3_content_area *{
+    /* border: 1px solid black; */
+    /* margin:0;padding:0; */
+    box-sizing: border-box;
+}
+
+#reservation3_option_title_area{
+    margin-bottom: 15px;
+}
+
+
+
+.reservation3_option_content_area{
+    border-top:2px solid black;
+}
+
+#reservation3_option_title_area>span:first-child{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#reservation3_option_title_area>span:last-child{
+    display: inline-block;
+    padding-left: 5px;
+    font-size: 13px;
+    color:#777;
+}
+
+.reservation3_option_name{
+    display: flex;
+    flex-direction: row;
+    border-bottom:1px solid #bbb;
+    height:60px;
+}
+
+.reservation3_option_name>div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reservation3_option_content_area{
+    display: flex;
+    flex-direction: column;
+
+
+
+    /* border-bottom: 1px solid #bbb; */
+    
+}
+
+.reservation3_option_content_area>div{
+    display: flex;
+    /* flex-direction: row; */
+}
+
+.reservation3_option_date_content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 80px;
+}
+.option-date{
+    width:140px;
+    display: flex;
+    align-items: center;
+}
+
+.option-content{
+    width:350px;
+    padding:15px 10px;
+    
+}
+
+.option-amount,.option-count{
+    width:105px;
+    height: 100%;
+    border-left: 1px solid #bbb;
+}
+
+.option-amount{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    padding:5px;
+}
+
+.option-count{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reservation3_option_content>.option-date{
+    border-right: 1px solid #bbb;
+}
+
+.reservation3_option_date_content{
+    border-bottom: 1px solid #bbb;
+}
+
+/* --------------------------------------------- */
+
+
+#reservation3_side_area{
+    width: 250px;
+    display: inline-block;
+    /* position:absolute;
+    top:50%;
+    left:50%; */
+    /* 
+        javascript 사용
+        absolute, fixed 번갈아서
+    */
+}
+
+#reservation3_side_area *{
+    /* border:1px solid black; */
+}
+
+.side-table{
+    border-top:1px solid black;
+   
+}
+
+.side-date-title,.side-rooms-pack-title,.side-option-title{
+    /* border-top:2px solid black; */
+    border-top:1px solid black;
+    border-bottom:1px solid #bbb;
+    font-weight: bold;
+    background-color: rgb(245, 245, 245);
+    padding:10px 15px;
+}
+
+#side-date-content{
+    width: 100%;
+    font-size: 14px;
+    padding-bottom: 10px;
+    /* border-bottom: 1px solid black; */
+}
+
+#side-date-content tr>td:first-child{
+   padding: 10px 5px;
+}
+
+#side-date-content tr>td:last-child{
+   padding: 10px;
+   text-align: right;
+}
+
+
+
+
+.side-room-name,.side-option-name{
+    font-size: 15px;
+    padding:10px 15px;
+}
+
+.side-option-name{
+    font-weight: bold;
+}
+
+.side-room-select{
+    font-size:13px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.side-room-select tr>td:first-child{
+    padding: 0 10px;
+    color:rgb(136, 136, 136);
+}
+.side-room-select tr>td:last-child{
+   text-align: right;
+}
+
+.side-room-select tr>td:last-child>span:first-child{
+    color:rgb(136, 136, 136);
+}
+
+.side-room-cost-total,.side-option-cost{
+
+    border-top:1px solid #bbb;
+    /* border-bottom: 1px solid black; */
+    font-size:14px;
+    text-align: right;
+    padding:15px 0;
+}
+
+#total-money{
+    width: 100%;
+    text-align: center;
+    border-top:1px solid black;
+    border-bottom:1px solid black;
+    padding:20px 5px ;
+}
+
+#total-money td:first-child{
+    font-weight: bold;
+}
+#total-money td:last-child{
+    color:#777;
+}
+
+#option-btn-area{
+    padding-top:10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#option-btn-area>a{
+    display: inline-block;
+    width: 47%;
+    height:40px;
+    border:1px solid #777;
+    text-decoration: none;
+    color:#777;
+    text-align: center;
+
+    padding:10px;
+    font-size:14px;
+    
+}
+
+#reservation3-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin:auto;
+    margin-top:70px;
+    width:200px;
+    height: 50px;
+   
+    background-color: #777;
+    color:white;
+    border:none;
+}
+
+
+/* ----------------------------------------------- */
