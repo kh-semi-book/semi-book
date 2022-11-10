@@ -1,0 +1,505 @@
+/* ***************** 여기부터 헤더 ***************** */
+body{
+  box-sizing: border-box;
+  margin: 0;
+}
+
+#header>div{
+width:1000px;
+height:110px;
+margin:auto; 
+
+/* justify-content: center; */
+/* align-items: center; */
+}
+
+#header>div>a{
+display: flex;
+justify-content: center;
+}
+
+/* 헤더 오른쪽 상단 메뉴 */
+#header-top-menu{
+display: inline;
+position:relative;
+
+right:-90%;
+top:-90%;
+
+}
+
+#header-top-menu a{
+text-decoration: none;
+color:black;
+font-weight: 1px;
+font-size: 12px;
+
+margin:15px;
+}
+
+#media-menu{
+
+position:relative;
+display: inline;
+right:-70%;
+top: -45%;
+
+}
+
+#media-menu>a{
+text-decoration: none;
+color:gray;
+font-size: 14px;
+
+
+border:1px solid gray;
+padding : 3px 5px;
+}
+
+
+/********************* #nav-area **********************/
+#nav-area{
+
+height:60px;
+
+border-bottom: 1px solid black;
+border-top: 1px solid black;
+background-color: rgba(255, 255, 255, 0.665);
+
+/* 화면 밖으로 요소가 벗어났을 때 지정된 위치에 고정 */
+position: sticky;
+top:0px;
+z-index:100; 
+}
+
+
+/* ul 스타일 지정 */
+/* 줄어들었을 때 좀 잘리게 하는거 어떻게하려나 */
+#nav-area>ul{
+
+/* 비율상 이부분 수정 */
+/* width: 1200px; */ 
+/* margin-left: 80px; */
+justify-content: center;
+
+margin:0;
+
+padding:0;
+list-style: none;
+
+display: flex;
+height: 100%;
+
+}
+
+/* 네비게이터 메뉴 */
+#nav-area li{
+flex-basis: 140px;
+width: 140px;
+
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+}
+
+/* 메뉴 내부 a 태그 */
+#nav-area>ul>li>a{
+cursor: pointer;
+
+
+text-decoration: none;
+font-size: 15px;
+color:black;
+
+/* display: block; */
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+/* position: relative; */
+/* 내부에 작성된 글자를 요소로 취급해서 정가운데 배치 */
+
+/* border-radius: 5px; */
+transition-duration: 0.1s;
+}
+
+
+#nav-area>ul>li>#book-btn{
+text-decoration: none;
+color:white;
+
+border:1px solid black;
+height: 100px;
+width: 100px;
+
+background-color: rgb(92, 91, 91);
+
+position:absolute;
+
+z-index: 20;
+
+display: flex;
+flex-direction: column;
+
+justify-content: center;
+align-items: center;
+top:0;
+}
+
+#book-btn>i{
+display: block;
+font-size: 40px;
+margin-bottom: 5px;
+}
+
+#header-top-btn{
+position: fixed;
+bottom: 0;
+left:70%;
+
+height:50px;
+width: 50px;
+background-color: rgb(81, 81, 81);
+
+
+}
+
+#header-top-btn>a{
+text-decoration: none;
+color:white;
+
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+#header-top-btn>a>i{
+
+font-size: 30px;
+}
+
+/* ***************** 여기까지 헤더 ***************** */
+
+
+
+/* ***************** 여기부터 footer ***************** */
+
+footer{
+    margin-top:100px;
+
+    display:flex;
+
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+
+}
+
+#footer-first{
+    background-color: rgb(61, 61, 61);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+#footer-first>p{
+    
+    color:rgb(144, 143, 143);
+
+}
+
+#inner-footer-contact{
+   
+    width: 1400px;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    font-size: 15px;
+   
+}
+
+
+
+#inner-footer-contact>table{
+    color:white;
+    margin:20px 0;
+    width:800px
+}
+
+#inner-footer-contact>table:first-child{
+    padding-right: 50px;
+}
+
+.float-right{
+    float:right;
+    padding-right: 40px;
+}
+
+
+.book-btn2{
+
+    text-decoration: none;
+    color:white;
+
+    border:1px solid black;
+    height: 70px;
+    width: 150px;
+
+    background-color: rgb(92, 91, 91);
+
+    position:relative;
+
+    /* left:1200px;
+    top: 120px; */
+
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    top:30px;
+}
+
+
+
+/* ******************* 가운데 메뉴 ******************** */
+
+
+#footer-middle-back{
+    background-color: rgb(131, 128, 128);
+    height:200px;
+
+    display: flex;
+    justify-content: center;
+}
+
+#footer-middle{
+
+    width: 1100px;
+    
+    display:flex;
+    justify-content: center;
+    margin:auto;
+    /* position:relative;
+    padding-left: 1px; */
+}
+
+
+
+
+#footer-middle ul{
+
+    flex-basis: 100px;
+    flex-shrink: 0;
+    
+    /* margin-top: 30px; */
+    padding:0 10px;
+
+  
+}
+
+#footer-middle>ul>p{
+    border-bottom: 1px solid white;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+#footer-middle li{
+    line-height:25px;
+    
+}
+
+#footer-middle *{
+    color:white;
+    text-decoration: none;
+    list-style: none;
+    font-size: 12px;
+}
+
+
+/************ footer 하얀부분 ***************/
+
+#footer-last{
+
+    display:flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#footer-last>img{
+    width: 180px;
+    margin:20px 50px;
+}
+
+#footer-last *{
+    color:gray;
+    letter-spacing: 1px;
+}
+
+#footer-last a{
+    text-decoration: none;
+    margin:px 20px;
+}
+
+#footer-last>p{
+    font-size: 15px;
+    line-height:20px;
+
+    margin:0;
+}
+
+#footer-last>span{
+    margin-top:10px;
+    /* 아래에 간격 추가해야됨 */
+    margin-bottom: 80px;
+}
+
+#small-text{
+    letter-spacing:0px;
+    font-size: 11px;
+}
+#small-font{
+    letter-spacing:0px;
+    font-size: 5px;
+}
+
+#inner-footer-contact p{
+    font-size: 18px;
+    margin-bottom: 10px;
+    color:rgb(136, 134, 134);
+}
+
+/* ***************** 여기까지 footer ***************** */
+
+/* ----------------------- */
+
+#main-example{
+    width: 1300px;
+    margin:auto;
+}
+
+#main-example span{
+    display: flex;
+    justify-content: center;
+    font-size: 27px;
+    margin-bottom: 40px;
+    margin-top: 70px;
+}
+
+#main-slide-photo{
+    background-color: black;
+    height: 550px;
+}
+
+
+.main-content{
+    width: 1000px;
+    margin:auto;
+    
+}
+.main-content>*{
+    display: block;
+}
+
+.main-content>div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.main-content a{
+    width:300px;
+    height:180px;
+    border: 1px solid black;
+}
+
+.main-content>span{
+    display: flex;
+    justify-content: center;
+    font-size: 27px;
+    margin-bottom: 40px;
+}
+
+#main-movie-lib{
+    width: 1000px;
+    margin:auto;
+    margin-top: 70px;
+}
+#main-movie-lib>span{
+    display: flex;
+    justify-content: center;
+    font-size: 27px;
+    margin-bottom: 40px;
+} 
+
+#main-photo-zone{
+    background-color: black;
+    margin:auto;
+    width: 1000px;
+    height: 550px;
+}
+
+/* ***************** 미디어 라이브러리 ***************** */
+
+body{
+    margin:0;
+}
+
+#header-top-media-main{
+    width: 1000px;
+    margin:auto;
+}
+
+ #top-photo{
+    background-color: antiquewhite;
+    height: 150px;
+}
+
+#top-menu{
+    color:rgb(133, 131, 131);
+    font-size:14px;
+    padding:20px 0;
+}
+
+#top-menu>a{
+    text-decoration: none;
+    color:rgb(133, 131, 131);
+    padding:0 10px;
+}
+
+
+#info-title{
+    height: 10%;
+    font-family:'나눔명조';
+    font-size: 30px;
+    margin:20px 0;
+}
+
+
+
+#media-youtube{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+   
+}
+
+.media-youtube-link{
+    margin: 10px 0;
+    height: 223px;
+    width: 320px;
+    background-color: black;
+}
