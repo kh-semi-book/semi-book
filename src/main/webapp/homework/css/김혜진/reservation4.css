@@ -1,0 +1,357 @@
+#reservation4_page{
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+#reservation4_head_area, #reservation4_foot_area{
+    height: 150px;
+    background-color: #FFFFFF
+}
+
+#reservation4_body_area{
+    width: 1000px;
+    height: auto;
+    background-color:#FFFFFF ;
+    margin: 0 auto 0 auto;
+}
+
+/* 이미지 */
+#reservation4_image{
+    width: 100%;
+    height: 185px;
+    background-attachment: fixed;
+    background-image: url(/image/visual_deluxe.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 65px;
+    background-size: 1800px 400px;
+    margin: 0 auto;
+}
+
+/* 상단영역 */
+#reservation4_head_area{
+    display: flex;
+    flex-direction: column;
+}
+#reservation4_title{
+    width: 1000px;
+    height: 150px;
+    background-color:#FFFFFF ;
+    margin: 0 auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#reservation4_title>div:first-child{
+    font-size: 13px;
+    color: rgb(87, 87, 87);
+    padding: 13px 0;
+    margin-left: 0;
+    width: 1000px;
+}
+#reservation4_title>div:last-child{
+    font-size: 33px;
+    padding-top: 18px;
+    height: 83px;
+    margin-left: 0;
+    width: 1000px;
+    letter-spacing: -1px;
+}
+
+/* 메인 영역 - step */
+#reservation4_step_area {
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom:1px solid black ;
+}
+.reservation4_step{
+    box-sizing: border-box;
+    width: 200px;
+    padding: 0 0 10px 20px;
+    
+}
+.reservation4_step> p:first-child{
+    font-size: 12px;
+    color: #bbb;
+}
+.reservation4_step> p:last-child{
+    font-size: 15px;
+    color: #777;
+    font-weight: bold;
+}
+
+
+/* 메인 영역 분할 */
+#reservation4_content_area >div:first-child {
+    height: 60px;
+}
+#reservation4_book_area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#reservation4_input_area{
+    width: 700px;
+}
+#reservation4_side_area{
+    width: 260px;
+}
+
+/* 메인 영역 - 정보입력 */
+.table-title{
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.reservation-table, .agree-content{
+    border-collapse: collapse;
+    border-top: 2px solid black;
+}
+#booker-info, #card-info, #cancel-policy{
+    margin-bottom: 50px;
+}
+.reservation-table {
+    width: 700px;
+}
+.reservation-table th{
+    border-bottom: 1px solid #bbb;
+    border-right: 1px solid #bbb;
+    font-size: 15px;
+    padding-left: 10px;
+    width: 150px;
+    text-align: left;
+    letter-spacing: -2px;
+    font-weight: 400;
+}
+
+.reservation-table td{
+    border-bottom: 1px solid #bbb;
+    padding: 20px 0 18px 35px;
+}
+.reservation-table input {
+    height: 40px;
+    padding: 0 20px;
+    border: 1px solid #cdcdcd;
+}
+.reservation-table input[type='checkbox']{
+    height: auto;
+}
+.reservation-table  select{
+    height: 40px;
+    padding: 0 5px;
+    border: 1px solid #cdcdcd;
+}
+.book-input > select {
+    width: 80px;
+}
+#card-info select[name=cardtype] {
+    width: 100px;
+}
+#card-info select[name=cardmonth], select[name=cardyear] {
+    width: 80px;
+}
+#book-input-email1{
+    width: 130px;
+    margin-right: 5px;
+}
+#book-input-email2{
+    width: 110px;
+}
+#book-input-email3{
+    width: 120px;
+}
+.bookerphone, .cardnumber {
+    width: 60px;
+}
+p[name='email-info'], p[name='card-info']{
+    font-size: 12px;
+    color: #666;
+} 
+
+textarea{
+    padding: 0 20px;
+    border: 1px solid #cdcdcd;
+}
+#cancel-policy>p , #agree-info>p {
+    padding-bottom: 15px;
+    border-bottom: 2px solid black;
+}
+
+.agree-content{
+    width: 700px;
+    height: 200px;
+    padding: 30px 0 18px 35px;
+    border: 1px solid #cdcdcd;
+    overflow: auto;
+    font-size: 12px;
+}
+#agree-check{
+    padding: 20px 0 0;
+    text-align: center;
+    margin-bottom: 70px;
+}
+#agree-check > label {
+    font-weight: 400;
+    font-size: 14px;
+}
+#applyBtn{
+    text-align: center;
+}
+#reservationApply{
+    border: 0;
+    background: #333333;
+    color: white;
+    display: inline-block;
+    margin-left: 4px;
+    width: 210px;
+    height: 58px;
+    text-align: center;
+    font-size: 17px;
+    line-height: 55px;
+}
+
+
+/* 메인 영역 - 사이드바 */
+.side-table{
+    width: 260px;
+}
+.side-margin{
+    height: 38px;
+}
+.side-table-head {
+    border-top: 2px solid black;
+    padding: 10px 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+#schedule{
+    width: 250px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+}
+
+#schedule th {
+    font-size: 13px;
+    font-weight: 400;
+    padding: 10px 0;
+    width: 40px;
+    text-align: left;
+}
+#schedule td{
+    text-align: right;
+    font-size: 13px;
+    width: 70px;
+}
+#schedule > tr:last-child > td:last-child{
+    width: 80px;
+    padding-right: 0;
+}
+#schedule input{
+    border: none;
+    font-size: 13px;
+    color: #666;
+    padding-left: 5px;
+    width: 100px;
+    text-align: right;
+}
+#schedule input.schedule-num{
+    width: 20px;
+    text-align: left;
+}
+#schedule-info{
+    vertical-align: top;
+}
+#roomAndPackage{
+    padding: 15px 13px 15px 13px;
+    border-bottom: 1px solid black;
+}
+#selectRoomName{
+    padding-bottom: 10px;
+}
+.select_roomName{
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+#dateAndPrice{
+    color: #555;
+    font-size: 12px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.vat1{
+    color: black;
+}
+#totalPrice_roomPackage{
+    padding: 15px 0 0 15px;
+    text-align: right;
+    font-size: 13px;
+}
+#option{
+    padding: 15px 13px 15px 13px;
+    border-bottom: 1px solid black;
+}
+#optionName{
+    padding-bottom: 10px;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#optionCount{
+    color: #555;
+    font-size: 12px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#totalPrice_option{
+    padding: 15px 0 0 15px;
+    text-align: right;
+    font-size: 13px;
+}
+#totalPrice_All{
+    padding: 20px 15px;
+    border-bottom: 1px solid #333;
+    background: #fff;
+    margin-bottom: 10px;
+}
+#toalPrice_All >span{
+    float: left;
+    font-weight: bold;
+    color: #333;
+}
+#totalPrice_All >strong{
+    float: right;
+    font-weight: 500;
+    color: #555;
+    font-size: 15px;
+}
+#side-table-btn-area >a{
+    display: inline-block;
+    border: 1px solid #a4a4a4;
+    background: #fff;
+    line-height: 56px;
+    color: #474747;
+    width: 125px;
+    text-align: center;
+    height: 44px;
+    line-height: 44px;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: normal;
+}

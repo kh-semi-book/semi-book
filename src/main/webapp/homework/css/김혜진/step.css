@@ -1,0 +1,23 @@
+/* 메인 영역 - step */
+#reservation4_step_area {
+    width: 1000px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom:1px solid black ;
+}
+.reservation4_step{
+    box-sizing: border-box;
+    width: 200px;
+    padding: 0 0 20px 20px;
+}
+.reservation4_step> p:first-child{
+    font-size: 12px;
+    color: #bbb;
+}
+.reservation4_step> p:last-child{
+    font-size: 15px;
+    color: #777;
+    font-weight: bold;
+}

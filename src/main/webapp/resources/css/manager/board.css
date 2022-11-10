@@ -1,0 +1,113 @@
+/*=========[ 기본 뼈대 ]========= */
+.board-lookUp-page{
+    margin: 0 auto 0 auto;
+    width: 100%;
+    height: 100%;
+    background-color: #F7F7F7;
+}
+
+.board-head-area, .board-foot-area{
+    height: 150px;
+    background-color: #FFFFFF
+}
+.board-body-area{
+    width: 1500px;
+    height: 700px;
+    background-color:#FFFFFF ;
+    margin: 0 auto 0 auto;
+}
+
+
+/*=========[ 상단 영역 ]========= */
+.board_head_area{
+    display: flex;
+    flex-direction: column;
+}
+#board_title{
+    width: 1500px;
+    height: 150px;
+    background-color:#FFFFFF ;
+    margin: 0 auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#board_title>div:first-child{
+    font-size: 13px;
+    color: rgb(87, 87, 87);
+    padding: 13px 0;
+    margin-left: 0;
+    width: 1500px;
+}
+#board_title>div:last-child{
+    font-size: 33px;
+    padding-top: 18px;
+    height: 83px;
+    margin-left: 0;
+    width: 1500px;
+    letter-spacing: -1px;
+}
+
+/* =======[게시판 영역]======= */
+.board-body-area{
+    padding: 20px;
+}
+#board-post{
+    padding: 10px;
+    text-align: right;
+}
+#board-post > .post{
+    display: inline-block;
+    width: 130px;
+    height: 30px;
+    line-height: 30px;
+    border: 2px solid #ddd;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+#board_table {
+    border-top: 2px solid black;
+    width: 100%;
+    border-collapse: collapse;
+}
+#board_table th{
+    background-color: #f9f9f9;
+    border-bottom: 1px solid black;
+}
+#board_table th, td{
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+.detail {
+    padding: 5px;
+    margin-left: 20px;
+    color: rgb(37, 37, 37);
+}
+
+
+/* 페이지 넘기기 */
+.paging{
+    overflow: hidden;
+    text-align: center;
+    padding-top: 30px;
+}
+.paging> span> a{
+    display: inline-block;
+    min-width: 38px;
+    height: 38px;
+    margin-left: -1px;
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    margin: 0;
+}
+.paging>span>a.on{
+    border: 1px solid #292526;
+    background: #292526;
+    color: #fff;
+}
