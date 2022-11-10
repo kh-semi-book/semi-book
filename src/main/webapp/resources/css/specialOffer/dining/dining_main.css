@@ -1,0 +1,149 @@
+
+#dining_page{
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #F7F7F7;
+}
+#dining_head_area, #dining_foot_area{
+    height: 150px;
+    background-color: #FFFFFF
+}
+#dining_body_area{
+    width: 1000px;
+    height: auto;
+    background-color:#FFFFFF ;
+    margin: 0 auto 0 auto;
+}
+
+/* 이미지 */
+#dining_image{
+    width: 100%;
+    height: 185px;
+    background-attachment: fixed;
+    background-image: url(/image/visual_promotion.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 65px;
+    background-size: 1800px 400px;
+    margin: 0 auto;
+}
+
+/* 상단영역 */
+#dining_head_area{
+    display: flex;
+    flex-direction: column;
+}
+#dining_title{
+    width: 1000px;
+    height: 150px;
+    background-color:#FFFFFF ;
+    margin: 0 auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#dining_title>div:first-child{
+    font-size: 13px;
+    color: rgb(87, 87, 87);
+    padding: 13px 0;
+    margin-left: 0;
+    width: 1000px;
+}
+#dining_title>div:last-child{
+    font-size: 33px;
+    padding-top: 18px;
+    height: 83px;
+    margin-left: 0;
+    width: 1000px;
+    letter-spacing: -1px;
+}
+
+
+/* 메인영역 */
+#dining_body_menu{
+    width: 1000px;
+    overflow: hidden;
+    border-bottom: 2px solid #e7e7e7;
+    margin-bottom: 80px;
+}
+
+#dining_list{
+    list-style: none;
+    padding-left: 0;
+}
+#dining_list>li{
+    width: 485px;
+    float: left;
+    margin: 0 30px 0 0;
+    padding: 0;
+}
+#dining_list>li:nth-child(2n){
+    margin-right: 0;
+}
+#dining_list a{
+    text-decoration: none;
+    color: black;
+}
+#dining_list img{
+    margin-bottom: 25px;
+}
+#dining_list #strong{
+    font-size: 22px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+#dining_list #notice1{
+    font-size: 16px;
+    padding-left: 20px;
+    margin-bottom: 30px;
+    color: #666;
+    letter-spacing: -2px;
+}
+#dining_list #notice2{
+    display: flex;
+    flex-direction: row;
+}
+#dining_list #notice2 #date{
+    flex-basis: 65%;
+    background-color: #eee;
+    padding-left: 20px;
+    height: 44px;
+    font-size: 12px;
+    color: #777;
+    display: flex;
+    align-items: center;
+
+}
+
+/* 페이지 넘기기 */
+.paging{
+    overflow: hidden;
+    text-align: center;
+    padding-top: 30px;
+}
+.paging> span> a{
+    display: inline-block;
+    min-width: 38px;
+    height: 38px;
+    margin-left: -1px;
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    margin: 0;
+}
+.paging>span>a.on{
+    border: 1px solid #292526;
+    background: #292526;
+    color: #fff;
+}
+
+
+
+
+
+
+
