@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>[회원 가입] Page</title>
+
+        <link rel="stylesheet" href="css/signup.css">
+
+        <script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
+
+
+        <style>
+            body{margin: auto;}
+        </style>
+    </head>
+
+    <body>
+        <div class="reservation-lookUp-page">
+          <div class="rsc-head-area">
+            <!-- 헤더 시작-->
+    <div id="header">
+        <div id="header-top">
+            <a href="#"><img src="/img/logo.png"></a>
+
+             <!-- 우측 상단 로그인 예약조회 회원가입 -->
+            <!-- 헤더 오른쪽 상단 메뉴 -->
+            <div id="header-top-menu">
+                <a href="#">로그인</a>
+                |
+                <a href="/">예약조회</a>
+                |
+                <a href="/">회원가입</a>
+            </div>
+
+
+            <!-- media(내부 유튜브 링크)/instagram -->
+
+            <div id="media-menu">
+                <a href="#">
+                    MEDIA
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+                <a href="#">
+                    INSTAGRAM
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="nav-area">
+        <ul>
+            <li><a href="#">HIDDEN CLIFF</a></li>
+            <li><a href="#">SPECIAL OFFER</a></li>
+            <li><a href="#">ROOMS</a></li>
+            <li><a href="#">DINING</a></li>
+            <li><a href="#">THE INFINITY POOL</a></li>
+            <li><a href="#">MEETING</a></li>
+            <li><a href="#">FACILITIES</a></li>
+            <li><a href="#">SPA</a></li>
+            <li>
+                <a href="#" id="book-btn"><i class="fa-regular fa-calendar-days"></i>
+                    예약하기</a> 
+                    <!— 새창으로 —>
+            </li>
+            
+        </ul>
+        
+    </div>
+    <!-- 헤더 끝-->
+          </div>
+
+          <div class="rsc-body-area">
+            <div class="reservation-content-main">
+              
+              <h1 class="kjh-h1">회원 가입</h1>
+                  <div class="kjh-main-border">
+                      <div class="kjh-main-container">
+                          <div class="kjh-stepbox-border">
+                            <div class="kjh-stepbox">
+                              <ul>
+                                <li>
+                                  <span>STEP 01</span>
+                                  <span>약관동의</span>
+                                </li>
+                                <li class="kjh-step2">
+                                  <span>STEP 02</span>
+                                  <span>정보입력</span>
+                                </li>
+                                <li>
+                                  <span>STEP 03</span>
+                                  <span>가입완료</span>
+                                </li>
+                              </ul>
+
+                            </div> <!-- kjh-stepbox -->
+                          </div>
+                          <br><br><br>
+                          <div class="kjh-step-blank">
+
+                          </div>
+
+                        <h2 class="kjh-h2">정보입력</h2>
+                        <h4 class="kjh-h4">원활한 홈페이지 이용을 위하여 회원 정보를 정확하게 입력해주시기 바랍니다.</h4>
+                        
+                        <h4>기본항목
+                          <span class="kjh-txt"><strong class="star">*</strong>표시는 필수항목입니다.</span>
+                        </h4>
+
+                          <div class="form1">
+                            <table class="kjh-form1-table">
+                              <tr>
+                                <label for="m_name">
+                                  <th>성명<span class="star">*</span>
+                                </label>
+                                </th>
+                                
+                                <td class="kjh_input"colspan="3">
+                                  <input type="text" size="20" name="m_name" id="m_name" >
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <label for="m_id">
+                                  <th>아이디<span class="star">*</span>
+                                </label>
+                                </th>
+                                
+                                <td class="kjh_input"colspan="3">
+                                  <input type="text" size="20" name="m_id" id="m_id" >
+                                  <input type="button" class="btn" value="중복확인">
+
+                                </td>
+                              </tr>
+                              
+                              <tr>
+                                <th>비밀번호<span class="star">*</span></th>
+                                <td class="kjh_input">
+                                  <input type="password" size="20" name="m_pw1" id="m_pw1" >
+                                </td>
+                                <th>비밀번호 확인<span class="star">*</span></th>
+                                <td class="kjh_input">
+                                  <input type="password" size="20" name="m_pw2" id="m_pw2" >
+                                </td>
+                              </tr>
+                              <tr>
+                                <th>휴대폰<span class="star">*</span></th>
+                                <td class="kjh_input" colspan="3">
+                                  <input type="text" size="1" name="m_phone" id="m_phone"> -
+                                  <input type="text" size="1" name="m_phone" id="m_phone"> -
+                                  <input type="text" size="1" name="m_phone" id="m_phone">
+                                </td>
+                          
+                              </tr>
+                              <tr>
+                                <th>이메일<span class="star">*</span></th>
+                                <td class="kjh_input" colspan="3">
+                                  <input type="text" size="20" name="m_email" id="m_email">@
+                                  <input type="text" size="13"name="" id="">
+                                  <select class="kjh-address" name="" id="">
+                                    <option value="naver.com">naver.com</option>
+                                    <option value="gmail.com">gmail.com</option>
+                                    <option value="nate.com">nate.com</option>
+                                    <option value="hotmail.com">hotmail.com</option>
+                                    <option value="dreamwiz.com">dreamwiz.com</option>
+                                    <option value="freechal.com">freechal.com</option>
+                                    <option value="1">직접 입력</option>
+                                  </select>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th>성별<span class="star">*</span></th>
+                                <td class="kjh_input"colspan="3">
+                                  <select class="kjh_select"name="m_gender" id="m_gender">
+                                    <option value="">성별</option>
+                                    <option value="F">여</option>
+                                    <option value="M">남</option>
+                                  </select>
+                                </td>
+                               
+                              </tr>
+                              <tr>
+                                <th>생년월일<span class="star">*</span></th>
+                                <td colspan="3">
+                                  <select class="kjh_select" name="m_birth1"id="m_birth1"class="date">
+                                    <option value=""></option>
+                                    <option value="1934">1934</option>
+                                  </select>년
+                                  <select class="kjh_select"name="m_birth2" id="m_birth2"class="date">
+                                    <option value=""></option>
+                                    <option value="1934">1934</option>
+                                  </select>월
+                                  <select class="kjh_select" name="m_birth3" id="m_birth3"class="date">
+                                    <option value=""></option>
+                                    <option value="1934">1934</option>
+                                  </select>일
+                                </td>
+                               
+                              </tr>
+                              <tr>
+                                <th>이메일<br> 수신 동의<span class="star">*</span></th>
+                                <td>
+                                  <input type="radio" name="m_email_yn" id="m_email_yn1"
+                                  value="Y">
+                                  <label for="m_email_yn1">수신</label>
+
+                                  <input type="radio" name="m_email_yn" id="m_email_yn2"
+                                  value="N">
+                                  <label for="m_email_yn2">수신거부</label>
+
+                                </td>
+                                <th>SMS<br> 수신 동의<span class="star">*</span></th>
+                                <td>
+                                  <input type="radio" name="m_sms_yn" id="m_sms_yn1"
+                                  value="Y">
+                                  <label for="m_sms_yn1">수신</label>
+
+                                  <input type="radio" name="m_sms_yn" id="m_sms_yn2"
+                                  value="N">
+                                  <label for="m_sms_yn2">수신거부</label>
+                                </td>
+                              </tr>
+                            </table>
+                          </div> 
+
+                         
+                          <h4>추가정보
+                            <span>(선택항목)</span>
+                          </h4>
+                          <div class="form2">
+                            <table class="kjh-form2-table">
+                              <tr>
+                                <th>결혼유무</th>
+                                <td colspan="3">
+                                  <input type="radio" name="marriage_yn" id="marriage_yn1"
+                                  value="N">
+                                  <label for="marriage_yn1">미혼</label>
+
+                                  <input type="radio" name="marriage_yn" id="marriage_yn2"
+                                  value="Y">
+                                  <label for="marriage_yn1">기혼</label>
+                                  <span class="kjh-married">
+                                    (결혼기념일 : 
+                                    <input type="text" size="4" maxlength="4" >년
+                                  
+                                    <input type="text" size="4" maxlength="4" >월
+                                  
+                                    <input type="text" size="4" maxlength="4" >일
+                                  </span>
+                              </tr>                              
+                              <tr>
+                                <th>유선전화</th>
+                                <td class="kjh_input" colspan="3">
+                                  <input type="text" size="1" name="m_col" id="m_col"> -
+                                  <input type="text" size="1" name="m_col" id="m_col"> -
+                                  <input type="text" size="1" name="m_col" id="m_col"> 
+                                
+                                </td>
+                              </tr>                              
+                              <tr>
+                                <th>주소</th>
+                                <td class="kjh_input" colspan="3">
+                                  <input type="text" class="kjh_address"size="5px" readonly>
+                                  <input type="button" class="btn2"  value="우편번호검색"><br>
+                                  <input type="text" class="kjh_address" size="50px"readonly> <br>
+                                  <input type="text"  class="kjh_address"size="50px">
+
+                                </td>
+
+                              </tr>                              
+                            </table>
+                          </div>
+
+                        
+                      </div> <!-- main-container -->
+            
+                  </div>
+            </div>
+          </div>
+          <div class="rsc-foot-area">
+            푸터
+
+            
+            
+                <script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
+            
+             
+                <footer>
+                   
+                    <div id="footer-first">
+                       
+                        
+                        <div id="inner-footer-contact">
+                           
+                        <table>
+                            <tr>
+                                <td colspan="4"> <p><strong>Contact US </strong></p></td>
+                            </tr>
+                            <tr>
+                                <td>대표전화</td>
+                                <td class="float-right padding-r">064-752-7777</td>
+                                <td>파노라마(레스토랑)</td>
+                                <td class="float-right">064-795-4163</td>
+                               
+                            </tr>
+                            <tr>
+                                <td>객실 예약</td>
+                                <td class="float-right padding-r">02-2277-9999</td>
+                                <td>인피니티 풀 데스크</td>
+                                <td class="float-right">064-795-4151</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td id="small-font" class="float-right padding-r">(주중 09:00~18:00)</td>
+                        
+                            </tr>
+                            <tr>
+                                <td>E - mail</td>
+                                <td class="float-right padding-r">info@hiddencliff.kr</td>
+                            </tr>
+            
+                        </table>
+                        
+                        <a href="#" class="book-btn2">예약하기</a>
+                    </div>
+                    </div>
+            
+                    <div id="footer-middle-back">
+                        <div id="footer-middle">
+                        <ul>
+                            <p class="footer-menu-title">HIDDEN CLIFF</p>
+                            <li><a href="">호텔소개</a></li>
+                            <li><a href="">오시는길</a></li>
+                            <li><a href="">공지사항</a></li>
+                        </ul>
+                        <ul>
+                            <p class="footer-menu-title">SPECIAL OFFER</p>
+                            <li><a href="#">객실 프로모션</a></li>
+                            <li><a href="#">다이닝</a></li>
+                            <li><a href="#">이벤트</a></li>
+                        </ul>
+                        <ul>
+                            <p>ROOMS</p>
+                            <li><a href="#">객실 리스트</a></li>
+                        </ul>
+                        <ul>
+                            <p>DINING</p>
+                            <li><a href="">파노라마</a></li>
+                            <li><a href="">비욘드</a></li>
+                            <li><a href="">치치</a></li>
+                        </ul>
+                        <ul>
+                            <p id="small-text">THE INFINITY POOL</p>
+                            <li> <a href="#">인피니티 풀</a></li>
+                        </ul>
+                        <ul>
+                            <p>MEETING</p>
+                            <li><a href="">심포니</a></li>
+                            <li><a href="">하모니</a></li>
+                            <li><a href="">오퍼스</a></li>
+                        </ul>
+                        <ul>
+                            <p>FACILITIES</p>
+                            <li><a href="#">키즈 플레이 룸</a></li>
+                            <li><a href="#">피트니트 센터</a></li>
+                            <li><a href="#">히든 트레일</a></li>
+                        </ul>
+                        <ul>
+                            <p>SPA</p>
+                            <li><a href="#">보떼에르 스파 바이 록시땅</a></li>
+                        </ul>
+            
+                    
+                    </div>
+            
+                    
+            
+                    
+            
+                    </div>
+                   
+                    <div id="footer-last">
+                        <img src="../img/logo2.png">
+                        
+                        <p>제주특별자치도 서귀포시 예래해안로 542 (중문) 예래클리프개발(주)</p> 
+                        <p>(구: 제주특별자치도 서귀포시 상예동 625) 대표이사 : 이병혁</p>
+            
+                        <!— 사이트상에서는 이부분이 좀 더 강조되어 보임 —>
+                        <p><strong>사업자등록번호</strong>616-81-98536<strong>통신판매신고번호</strong> (제2016-제주예래-15호)</p>
+            
+                        <p>Copyright © yerae Cliff Development CO., LTD. All Rights Reserved.</p>
+                        
+            
+                        <span>
+                            <a href="#">개인정보 처리 방침</a>
+                            |
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            |
+                            <a href="#"><i class="fa-sharp fa-solid fa-n"></i></a>
+                            |
+                            <a href="#"><i class="fa-solid fa-hotel"></i></a>
+                        </span>
+                    </div>
+            
+                </footer>
+            </body>
+            </html>          </div>
+        </div>  
+    </body>
+
+</html>
