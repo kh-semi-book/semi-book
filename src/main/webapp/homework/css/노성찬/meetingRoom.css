@@ -1,0 +1,165 @@
+
+/*=========[ 기본 뼈대 ]========= */
+.reservation-lookUp-page{
+    margin: 0 auto 0 auto;
+    width: 100%;
+    height: 100%;
+    background-color: #f7f7f7;
+}
+.rsc-top-image{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.rsc-head-area,.rsc-foot-area{
+    height: 150px;
+    background-color: #FFFFFF
+}
+.rsc-body-area{
+    width: 1000px;
+    height: auto;
+    background-color:#FFFFFF ;
+    padding-bottom: 80px;
+    margin: 80px auto 80px auto;
+}
+.rsc-main-side{
+    width: 80%;
+    width: 1000px;
+    min-width: 1000px;
+}
+/*=========[ 상단 영역 ]========= */
+.rsc-head-area{
+    display: flex;
+    flex-direction: column;
+}
+.rsc-body-TopArea{
+    width: 1000px;
+    height: 1200px;
+    background-color:#FFFFFF ;
+    margin: 0 auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+/*----[ 페이지 제목 ]----*/
+.rsc-page-title >h1{
+    margin: 15px 0 0 0;
+    font-size: 33px;
+    color: #000000;
+}
+
+/* 미팅룸 예약관리 페이지 */
+*{
+    /* border:1px solid black; */
+    box-sizing: border-box;
+}
+
+#manage-book-title{
+    font-size: 18px;
+    margin-bottom:20px;
+    padding-top: 50px;
+    color: #333333;
+}
+
+#manage-book-area{
+    width: 900px;
+    margin:auto;
+}
+
+#manage-book-table>div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.manage-book-no{
+    width: 50px;
+    font-size: 14px;
+}
+.manage-book-date{
+    width: 100px;
+    font-size: 14px;
+}
+.manage-book-name{
+    width: 250px;
+    font-size: 14px;
+}
+.manage-book-type{
+    width:80px;
+    font-size: 14px;
+}
+
+.manage-book-status-change{
+    width:50px;
+    font-size: 14px;
+}
+.manage-book-status{
+    width:120px;
+    font-size: 14px;
+}
+.manage-booker-name{
+    width:100px;
+    font-size: 14px;
+}
+
+#manage-book-table-title{
+    border-top:2px solid black;
+    border-bottom:1px solid #bbb;
+}
+
+
+#manage-book-table-title>div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:30px 0;
+}
+
+.manage-book-table-content{
+    border-bottom:1px solid #bbb;
+}
+
+.manage-book-table-content>div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:10px 0;
+    height:50px;
+}
+
+.manage-book-cost{
+    width: 100px;
+    justify-content: right;
+}
+
+.manage-border-right{
+    border-right: 1px solid #bbb;
+}
+
+/*----[ 페이지 이동 버튼 ]----*/
+
+#rsc-page-skip{
+    margin-top:50px;    
+}
+#rsc-page-skip a{
+    text-decoration: none;
+    color: #767676;
+}
+#rsc-page-skip button{
+    background-color: #292526;
+    font-weight: bold;
+    font-size: 14px;
+    height: 38px;
+    width: 38px;
+}
+#rsc-page-skip button a{
+    font-weight: bold;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+#rsc-page-skip button a:hover{
+    font-weight: bold;
+    font-size: 14px;
+    color: red;
+}
