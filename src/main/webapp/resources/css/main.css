@@ -1,7 +1,8 @@
+/* ***************** 여기부터 헤더 ***************** */
 body{
-    box-sizing: border-box;
-    margin: 0;
-  }
+  box-sizing: border-box;
+  margin: 0;
+}
 
 #header>div{
 width:1000px;
@@ -77,16 +78,16 @@ z-index:100;
 #nav-area>ul{
 
 /* 비율상 이부분 수정 */
-width: 1300px; 
+/* width: 1200px; */ 
 /* margin-left: 80px; */
-display: flex;
 justify-content: center;
 
-margin:auto;
+margin:0;
 
 padding:0;
 list-style: none;
 
+display: flex;
 height: 100%;
 
 }
@@ -94,11 +95,12 @@ height: 100%;
 /* 네비게이터 메뉴 */
 #nav-area li{
 flex-basis: 140px;
-flex-shrink: 0;
+width: 140px;
 
 display: flex;
 justify-content: center;
 align-items: center;
+flex-wrap: wrap;
 }
 
 /* 메뉴 내부 a 태그 */
@@ -178,9 +180,12 @@ justify-content: center;
 
 font-size: 30px;
 }
+
 /* ***************** 여기까지 헤더 ***************** */
 
-/* ************ footer ************* */
+
+
+/* ***************** 여기부터 footer ***************** */
 
 footer{
     margin-top:100px;
@@ -373,4 +378,128 @@ footer{
     color:rgb(136, 134, 134);
 }
 
+/* ***************** 여기까지 footer ***************** */
 
+/* ----------------------- */
+
+#main-example{
+    width: 1300px;
+    margin:auto;
+}
+
+#main-example span{
+    display: flex;
+    justify-content: center;
+    font-size: 27px;
+    margin-bottom: 40px;
+    margin-top: 70px;
+}
+
+#main-slide-photo{
+    background-color: black;
+    height: 550px;
+}
+
+
+.main-content{
+    width: 1000px;
+    margin:auto;
+    
+}
+.main-content>*{
+    display: block;
+}
+
+.main-content>div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.main-content a{
+    width:300px;
+    height:180px;
+    border: 1px solid black;
+}
+
+.main-content>span{
+    display: flex;
+    justify-content: center;
+    font-size: 27px;
+    margin-bottom: 40px;
+}
+
+#main-movie-lib{
+    width: 1000px;
+    margin:auto;
+    margin-top: 70px;
+}
+#main-movie-lib>span{
+    display: flex;
+    justify-content: center;
+    font-size: 27px;
+    margin-bottom: 40px;
+} 
+
+#main-photo-zone{
+    background-color: black;
+    margin:auto;
+    width: 1000px;
+    height: 550px;
+}
+
+/* ***************** 미디어 라이브러리 ***************** */
+
+body{
+    margin:0;
+}
+
+#header-top-media-main{
+    width: 1000px;
+    margin:auto;
+}
+
+ #top-photo{
+    background-color: antiquewhite;
+    height: 150px;
+}
+
+#top-menu{
+    color:rgb(133, 131, 131);
+    font-size:14px;
+    padding:20px 0;
+}
+
+#top-menu>a{
+    text-decoration: none;
+    color:rgb(133, 131, 131);
+    padding:0 10px;
+}
+
+
+#info-title{
+    height: 10%;
+    font-family:'나눔명조';
+    font-size: 30px;
+    margin:20px 0;
+}
+
+
+
+#media-youtube{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+   
+}
+
+.media-youtube-link{
+    margin: 10px 0;
+    height: 223px;
+    width: 320px;
+    background-color: black;
+}

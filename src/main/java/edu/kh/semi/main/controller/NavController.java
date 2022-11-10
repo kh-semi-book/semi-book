@@ -10,5 +10,10 @@ public class NavController {
 	public String infinitiPool() {
 		return "/nav/infinitiPool/infinitiPool";
 	}
+	
+	@RequestMapping(value="/nav/specialOffer")
+	public String specialOffer() {
+		return "/nav/specialOffer/roomPromotion/roomPromotionMain";
+	}
 
 }

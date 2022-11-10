@@ -36,7 +36,7 @@
     <div id="nav-area">
         <ul>
             <li><a href="#">HIDDEN CLIFF</a></li>
-            <li><a href="#">SPECIAL OFFER</a></li>
+            <li><a href="/nav/specialOffer">SPECIAL OFFER</a></li>
             <li><a href="#">ROOMS</a></li>
             <li><a href="#">DINING</a></li>
             <li><a href="/nav/infinitiPool">THE INFINITY POOL</a></li>
