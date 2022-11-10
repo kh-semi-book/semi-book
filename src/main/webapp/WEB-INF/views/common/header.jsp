@@ -39,7 +39,7 @@
             <li><a href="#">SPECIAL OFFER</a></li>
             <li><a href="#">ROOMS</a></li>
             <li><a href="#">DINING</a></li>
-            <li><a href="#">THE INFINITY POOL</a></li>
+            <li><a href="/nav/infinitiPool">THE INFINITY POOL</a></li>
             <li><a href="#">MEETING</a></li>
             <li><a href="#">FACILITIES</a></li>
             <li><a href="#">SPA</a></li>
