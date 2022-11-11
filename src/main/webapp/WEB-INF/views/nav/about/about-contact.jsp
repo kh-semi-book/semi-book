@@ -7,6 +7,10 @@
     <title>오시는 길</title>
 </head>
 <body>
+
+<jsp:include page="/WEB-INF/views/common/header.jsp"/>
+
+
     <div id="top-photo">
         사진자리
     </div>
@@ -43,6 +47,9 @@
             </div>
         </div>
     </div>
+    
+    
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
    
 </body>
 </html>

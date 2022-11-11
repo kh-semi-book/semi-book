@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="about.css">
 </head>
 <body>
+
+<jsp:include page="/WEB-INF/views/common/header.jsp"/>
     <div id="top-photo">
         사진자리
     </div>
@@ -28,6 +30,8 @@
 
         <div id="cmm-in-goto-list"><a href="#">목록</a></div>
     </div>
+    
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
 </body>
 </html>
