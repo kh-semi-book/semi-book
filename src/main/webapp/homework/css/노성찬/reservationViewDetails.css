@@ -1,0 +1,143 @@
+
+/*=========[ 기본 뼈대 ]========= */
+.reservation-lookUp-page{
+    margin: 0 auto 0 auto;
+    width: 100%;
+    height: 100%;
+    background-color: #F7F7F7;
+}
+.rsc-top-image{
+    width: 100%;
+    height: 185px;
+    background-image: url(/image/visual_promotion.jpg);
+    background-attachment: fixed;
+    background-size: 1800px 400px;
+    background-repeat: no-repeat;
+    background-position: 50% 65px;
+    margin: 0 auto;
+}
+.rsc-head-area,.rsc-foot-area{
+    height: 150px;
+    background-color: #FFFFFF
+}
+.rsc-body-area{
+    width: 1000px;
+    height: 1200px;
+    background-color:#FFFFFF ;
+    margin: 0 auto 0 auto;
+}
+.rsc-main-side{
+    width: 80%;
+    width: 1000px;
+    min-width: 1000px;
+}
+
+/*=========[ 상단 영역 ]========= */
+.rsc-head-area{
+    display: flex;
+    flex-direction: column;
+}
+.rsc-body-TopArea{
+    width: 1000px;
+    height: 1200px;
+    background-color:#FFFFFF ;
+    margin: 0 auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/*----[ 페이지 리스트 조회 ]---- */
+.rsc-page-list>a, .rsc-page-list{
+    text-decoration: none;
+    color: #767676;
+    font-size: 13px;
+}
+
+/*----[ 페이지 제목 ]----*/
+.rsc-page-title >h1{
+    margin: 15px 0 0 0;
+    font-size: 33px;
+    color: #000000;
+}
+
+/*=========[ 메인 영역 ]========= */
+/*----[ 테이블명 ]---- */
+.rsc-table h4{
+    color: #333333;
+    font-size: 18px;
+    margin: 0;
+    padding: 10px 0 10px 10px;
+    background-color: #FFFFFF;
+}
+
+/*----[ 1번 기본 정보 테이블 ]---- */
+.rsc-basic-info{
+    border-top: 2px solid black;
+    width: 960px;
+    border-collapse: collapse;
+    background-color: #FFFFFF;
+    margin-left: 10px ;
+}
+.rsc-basic-info td, .rsc-basic-info th{
+    border: 1px solid #c9c9c9;
+    color: #333333;
+    font-size: 17px;
+    text-align: left;
+    padding: 0 0 0 10px;
+}
+.rsc-basic-info td{
+    font-size: 15px;
+    padding: 20px 0 18px 35px;
+}
+
+/*----[ 2번 객실 정보 테이블 ]----*/
+.rsc-room-info{
+    border-top: 2px solid black;
+    width: 960px;
+    border-collapse: collapse;
+    margin-left: 10px ;
+}
+.rsc-room-info td, .rsc-room-info th{
+    border: 1px solid #c9c9c9;
+    color: #333333;
+    font-size: 17px;
+    text-align: left;
+    padding: 0 0 0 10px;
+}
+.rsc-room-info td{
+    font-size: 15px;
+    padding: 20px 0 18px 35px;
+}
+
+#rsc-first-th{
+    border-left: none;
+}
+#rsc-last-td{
+    border-right: none;
+}
+
+/*----[ 버튼 ]----*/
+.rsc-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#rsc-btn-list, #rsc-btn-change{
+    width: 210px;
+    height: 58px;
+    font-size: 17px;
+    font-weight: bold;
+    background-color: #FFF;
+    border: 2px solid #b3b3b3;
+    cursor: pointer;
+}
+#rsc-btn-list:hover, #rsc-btn-change:hover{
+    border: 2px solid darkblue;
+}
+/*=========[ 하단 영역 ]========= */
+
+
+
+

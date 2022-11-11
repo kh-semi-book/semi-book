@@ -1,0 +1,103 @@
+/*=========[ 기본 뼈대 ]========= */
+.reservation-lookUp-page{
+    margin: 0 auto 0 auto;
+    width: 100%;
+    height: 100%;
+}
+.rsc-top-image{
+    width: 100%;
+    min-width: 1000px;
+    height: 185px;
+    background-image: url(/image/visual_spa.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 1800px 400px;
+    background-position: 50% 65px;
+    margin: 0 auto;
+}
+.rsc-head-area,.rsc-foot-area{
+    height: 150px;
+    background-color: #FFFFFF
+}
+.rsc-body-area{
+    width: 1000px;
+    height: 1200px;
+    background-color:#FFFFFF ;
+    margin: 0 auto 0 auto;
+}
+.rsc-main-side{
+    width: 80%;
+    width: 1000px;
+    min-width: 1000px;
+}
+/*=========[ 상단 영역 ]========= */
+.rsc-head-area{
+    display: flex;
+    flex-direction: column;
+}
+.rsc-body-TopArea{
+    width: 1000px;
+    height: 1200px;
+    background-color:#FFFFFF ;
+    margin: 0 auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/*----[ 페이지 리스트 조회 ]---- */
+.rsc-page-list>a, .rsc-page-list{
+    text-decoration: none;
+    color: #767676;
+    font-size: 13px;
+}
+
+/*----[ 페이지 제목 ]----*/
+.rsc-page-title >h1{
+    margin: 15px 0 0 0;
+    font-size: 33px;
+    color: #000000;
+}
+
+/* ==============[중간 메인 영역]]=============== */
+/* SPA 설명 */
+#rsc-SPA-info p{
+    font-size: 16px;
+    color: #000000;
+    letter-spacing: -1.8px;
+}
+/* 메뉴 전체 보기 */
+#rsc-menu-btn{
+    background-color: #333333;
+    width: 210px;
+    height: 58px;
+    border: none;
+    cursor: pointer;
+}
+#rsc-menu-btn a{
+    display: inline-block;
+    background-color: #333333;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 58px;
+}
+/* 안내 테이블 */
+#rsc-table-guideInfo{
+    border-collapse: collapse;
+    border-top:2px solid #000000;
+    border-bottom:1px solid #767676;
+}
+#rsc-table-guideInfo th{
+   font-size: 17px;
+   padding: 0 0 0 40px;
+}
+#rsc-table-guideInfo td{
+    font-size: 15px;
+    padding: 20px 0px 18px 35px;
+}
