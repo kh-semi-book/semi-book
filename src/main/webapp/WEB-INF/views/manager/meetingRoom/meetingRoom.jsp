@@ -7,22 +7,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>미팅룸</title>
+    <title>meetingRoom</title>
 
-    <link rel="stylesheet" href="/css/meetingRoom.css">
-    <link rel="stylesheet" href="/css/header,footer/footer.css">
-    <link rel="stylesheet" href="/css/header,footer/header.css">
+    <link rel="stylesheet" href="resources/css/manager/meetingRoom.css">
+    <link rel="stylesheet" href="resources/css/common/main.css">
     <style>
-        body {
-            margin: auto;
-        }
+        body { margin: auto; }
     </style>
 </head>
 
 <body>
-   
-    <jsp:include page="/WEB-INF/views/common/header.jsp"/>
-    
+
+    <!-- -------------------- [ header ] -------------------- -->
+		<jsp.include page="/WEB-INF/views/common/header.jsp">
+    <!-- -------------------- [ header ] -------------------- -->
+
     <div class="reservation-lookUp-page">
         <div class="rsc-top-image">
             <!-- 이미지 넣기 -->
@@ -80,11 +79,13 @@
                         <br><br><br><br>
                         <!-- 페이지 이동 버튼 -->
                         <div id="rsc-page-skip">
-                            <a href="#"> << </a>&nbsp;&nbsp;
-                            <a href="#"> < </a> &nbsp;&nbsp;
-                        <button><a href="#">1</a></button>&nbsp;&nbsp;
-                            <a href="#"> > </a> &nbsp;&nbsp;
-                            <a href="#"> >> </a>
+                            <a href="#">
+                                << </a>&nbsp;&nbsp;
+                                    <a href="#">
+                                        < </a> &nbsp;&nbsp;
+                                            <button><a href="#">1</a></button>&nbsp;&nbsp;
+                                            <a href="#"> > </a> &nbsp;&nbsp;
+                                            <a href="#"> >> </a>
                         </div>
                     </div>
                 </div>
@@ -94,9 +95,9 @@
         </div>
     </div>
 
-   	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-   	
-   
+    <!-- ---------------- [ footer ] ---------------- -->
+		<jsp.include page="/WEB-INF/views/common/footer.jsp">
+    <!-- ---------------- [ footer ] ---------------- -->
 </body>
 
 </html>

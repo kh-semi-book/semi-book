@@ -1,0 +1,173 @@
+
+/*=========[ 기본 뼈대 ]========= */
+.reservation-lookUp-page{
+    margin: 0 auto 0 auto;
+    width: 100%;
+    height: 100%;
+    background-color: #f7f7f7
+}
+.rsc-top-image{
+    width: 100%;
+    min-width: 1000px;
+    height: 185px;
+    background-image: url(/image/visual_promotion.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 1800px 400px;
+    background-position: 50% 65px;
+    margin: 0 auto;
+}
+.rsc-head-area,.rsc-foot-area{
+    height: 150px;
+    background-color: #FFFFFF
+}
+.rsc-body-area{
+    width: 1000px;
+    height: 1200px;
+    background-color:#FFFFFF ;
+    margin: 0 auto 0 auto;
+}
+.rsc-main-side{
+    width: 80%;
+    width: 1000px;
+    min-width: 1000px;
+}
+/*=========[ 상단 영역 ]========= */
+.rsc-head-area{
+    display: flex;
+    flex-direction: column;
+}
+.rsc-body-TopArea{
+    width: 1000px;
+    height: 1200px;
+    background-color:#FFFFFF ;
+    margin: 0 auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/*----[ 페이지 리스트 조회 ]---- */
+.rsc-page-list>a, .rsc-page-list{
+    text-decoration: none;
+    color: #767676;
+    font-size: 13px;
+}
+
+/*----[ 페이지 제목 ]----*/
+.rsc-page-title >h1{
+    margin: 15px 0 0 0;
+    font-size: 33px;
+    color: #000000;
+}
+
+/* --------[메인 영역]------------ */
+.rsc-body-area{
+    background-color: #FFFFFF;
+    width: 1000px;
+    height: 600px;
+}
+/* 프로세스 안내 */
+#reservation4_step_area {
+    width: 900px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom:1px solid black ;
+}
+.reservation4_step{
+    box-sizing: border-box;
+    width: 200px;
+    padding: 0 0 20px 20px;
+}
+.reservation4_step> p:first-child{
+    font-size: 12px;
+    color: #bbb;
+}
+.reservation4_step> p:last-child{
+    font-size: 15px;
+    color: #777;
+    font-weight: bold;
+}
+#rsc-arrow-var{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+/* 프로세스 안내 여기까지  */
+
+#memberDelete_body_area{
+    width: 900px;
+    height: 300px;
+    border: 1px solid #c9c9c9;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 회원 탈퇴 안내문  */
+#rsc-member-Notice{
+    display: flex;
+    flex-direction: column;
+    border-top:2px solid #000000;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 1000px;
+    margin-top: 80px;
+}
+#rsc-member-del-text span, #rsc-member-del-text p{
+    text-align: center;
+    color: #666666;
+}
+#rsc-member-del-text h3{
+    font-size: 20px;
+    text-align: center;
+    color: #000000;
+}
+
+.rsc-foot-area{
+    margin-top: 200px;
+}
+
+/* 버튼 */
+.rsc-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#rsc-btn-login{
+    width: 210px;
+    height: 58px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #000000;
+    cursor: pointer;
+}
+
+#rsc-btn-goMain{
+    width: 210px;
+    height: 58px;
+    font-size: 17px;
+    font-weight: bold;
+    background-color: #FFF;
+    border: 2px solid #b3b3b3;
+    cursor: pointer;
+}
+
+#rsc-btn-goMain:hover{
+    border: 2px solid darkblue;
+}
+
+/* h1 가입완료 */
+#rsc-memberDelete-subTitle{
+    width: 900px;
+    text-align: left;
+}
+

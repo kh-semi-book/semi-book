@@ -1,0 +1,137 @@
+
+/*=========[ 기본 뼈대 ]========= */
+.reservation-lookUp-page{
+    margin: 0 auto 0 auto;
+    width: 100%;
+    height: 100%;
+    background-color: #F7F7F7;
+}
+.rsc-top-image{
+    width: 100%;
+    min-width: 1000px;
+    min-height: 185px;
+    background-image: url(/image/visual_promotion.jpg);
+    background-attachment: fixed;
+    background-size: 1800px 400px;
+    background-repeat: no-repeat;
+    background-position: 50% 65px;
+    margin: 0 auto;
+}
+.rsc-head-area,.rsc-foot-area{
+    height: 150px;
+    background-color: #FFFFFF
+}
+.rsc-body-area{
+    width: 1000px;
+    height: 1200px;
+    background-color:#FFFFFF ;
+    margin: 0 auto 0 auto;
+}
+.rsc-main-side{
+    width: 80%;
+    width: 1000px;
+    min-width: 1000px;
+}
+
+/*=========[ 상단 영역 ]========= */
+.rsc-head-area{
+    display: flex;
+    flex-direction: column;
+}
+.rsc-body-TopArea{
+    width: 1000px;
+    height: 1200px;
+    background-color:#FFFFFF ;
+    margin: 0 auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/*----[ 페이지 리스트 조회 ]---- */
+.rsc-page-list>a, .rsc-page-list{
+    text-decoration: none;
+    color: #767676;
+    font-size: 13px;
+}
+
+/*----[ 페이지 제목 ]----*/
+.rsc-page-title >h1{
+    margin: 15px 0 0 0;
+    font-size: 33px;
+    color: #000000;
+}
+
+/*----[ 예약 조회 테이블 ]----*/
+.reservation-content-main{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+#table-room-view{
+    border-collapse: collapse;
+    font-size: 15px;
+    border-left: none;
+    border-right: none;
+}
+#table-room-view th, #table-room-view td{
+    border: 1px solid #767676;
+    text-align: center;
+}
+#table-room-view th{
+    font-size: 17px;
+    border-top: 2px solid #000000;
+}
+
+#table-room-view th,#table-room-view td:first-child{
+    border-left: none;
+}
+#table-room-view th, #table-room-view td:last-child{
+    border-right: none;
+}
+/*----[ 상세보기 버튼 ]----*/
+#button-view-detail{
+    background-color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    border: 1px solid #767676;
+    height: 30px;
+    width: 100px;
+    margin: 8px 0 0 35%;
+    padding: 0%;
+    line-height: 30px;
+}
+#button-view-detail a{
+    font-size: 15px;
+    color: #4D7B97;
+    text-decoration: none;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+}
+/*----[ 페이지 이동 버튼 ]----*/
+#rsc-page-skip a{
+    text-decoration: none;
+    color: #767676;
+}
+#rsc-page-skip button{
+    background-color: #292526;
+    font-weight: bold;
+    font-size: 14px;
+    height: 38px;
+    width: 38px;
+}
+#rsc-page-skip button a{
+    font-weight: bold;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+#rsc-page-skip button a:hover{
+    font-weight: bold;
+    font-size: 14px;
+    color: red;
+}

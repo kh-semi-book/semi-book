@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,9 +8,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>회원 가입</title>
         
-        <link rel="stylesheet" href="/css/reservation/reservationComplete.css">
-        <link rel="stylesheet" href="/css/header,footer/footer.css">
-        <link rel="stylesheet" href="/css/header,footer/header.css">
+        <link rel="stylesheet" href="resources/css/reservation/reservationComplete.css">
+        <link rel="stylesheet" href="resources/css/common/main.css">
+        
         <script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
         
         <style>
@@ -20,7 +19,9 @@
     </head>
 
     <body>
-        <jsp:include page="/WEB-INF/views/common/header.jsp"/>
+    <!-- =================================[ header ]=================================== -->
+        <jsp.include page="/WEB-INF/views/common/header.jsp">
+    <!-- =================================[ header ]=================================== -->
 
         <div class="reservation-lookUp-page">
             <!-- 최상단 이미지 -->
@@ -50,28 +51,28 @@
                                 <p>일정선택</p>
                             </div>
                             <div id="rsc-arrow-var">
-                                <img src="/image/화살표.png">
+                                <img src="/webapp/resources/image/화살표.png">
                             </div>
                             <div class="reservation5_step" id="step2">
                                 <p class="step">STEP 02</p>
                                 <p>객실&패키지 선택</p>
                             </div>
                             <div id="rsc-arrow-var">
-                                <img src="/image/화살표.png">
+                                <img src="/webapp/resources/image/화살표.png">
                             </div>
                             <div class="reservation5_step" id="step3">
                                 <p class="step">STEP 03</p>
                                 <p>옵션 선택</p>
                             </div>
                             <div id="rsc-arrow-var">
-                                <img src="/image/화살표.png">
+                                <img src="/webapp/resources/image/화살표.png">
                             </div>
                             <div class="reservation5_step" id="step4">
                                 <p class="step">STEP 04</p>
                                 <p>고객 정보 입력</p>
                             </div>
                             <div id="rsc-arrow-var">
-                                <img src="/image/화살표.png">
+                                <img src="/webapp/resources/image/화살표.png">
                             </div>
                             <div class="reservation5_step" id="step5">
                                 <p class="step">STEP 05</p>
@@ -114,7 +115,9 @@
 
             <!-- 하단 영역 -->
             <div class="rsc-foot-area">
-								<jsp:include page="/WEB-INF/views/common/footer.jsp"/>	
+                <!-- ========================= footer ========================= -->
+                <jsp.include page="/WEB-INF/views/common/footer.jsp">
+                <!-- ========================= footer ========================= -->
             </div>  
         </div>
         
