@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <%-- 문자열 관련 메서드를 제공하는 JSTL (EL 형식) --%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
@@ -10,50 +9,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>키즈 플레이 룸 - Hidden Cliff Hotel and Nature</title>
-
-    <link rel="stylesheet" href="/KH_예약/프로젝트css/header/headfoot.css">
-    <link rel="stylesheet" href="/KH_예약/프로젝트css/header/편의시설공통.css">
+    <title>심포니 - Hidden Cliff Hotel and Nature</title>
+    
+   	<link rel="stylesheet" href="/resources/css/nav/meeting/meetingroom(all).css">
+	<link rel="stylesheet" href="/resources/css/common/main.css">
     <script src="https://kit.fontawesome.com/f7459b8054.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
+    <header class="bsh-headerzz">
         <!-- 우측 상단 로그인 예약조회 회원가입 -->
         <!-- 헤더 오른쪽 상단 메뉴 -->
-        <div id="header-top-menu">
-            <a href="#">로그인</a>
-            |
-            <a href="/">예약조회</a>
-            |
-            <a href="/">회원가입</a>
+        <div id="header">
+            <div id="header-top">
+                <a href="#"><img src="/images/히든클리프 로고.png"></a>
+    
+                 <!-- 우측 상단 로그인 예약조회 회원가입 -->
+                <!-- 헤더 오른쪽 상단 메뉴 -->
+                <div id="header-top-menu">
+                    <a href="#">로그인</a>
+                    |
+                    <a href="/">예약조회</a>
+                    |
+                    <a href="/">회원가입</a>
+                </div>
+    
+    
+                <!-- media(내부 유튜브 링크)/instagram -->
+    
+                <div id="media-menu">
+                    <a href="#">
+                        MEDIA
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+    
+                    <a href="#">
+                        INSTAGRAM
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+    
         </div>
-
-        <!-- media(내부 유튜브 링크)/instagram -->
-
-        <div id="media-menu">
-            <a href="#">
-                MEDIA
-                <i class="fa-brands fa-youtube"></i>
-            </a>
-
-            <a href="#">
-                INSTAGRAM
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-        </div>
-
-        <section>
-            <a href="#">
-                <img src="/images/히든클리프 로고.png" id="home-logo">
-            </a>
-        </section>
-
-        <a href="#" class="book-btn">
-            <i class="fa-regular fa-calendar-days"></i>
-            예약하기
-        </a>
-
-        <nav>
+    
+        <div id="nav-area">
             <ul>
                 <li><a href="#">HIDDEN CLIFF</a></li>
                 <li><a href="#">SPECIAL OFFER</a></li>
@@ -63,8 +61,15 @@
                 <li><a href="#">MEETING</a></li>
                 <li><a href="#">FACILITIES</a></li>
                 <li><a href="#">SPA</a></li>
+                <li>
+                    <a href="#" id="book-btn"><i class="fa-regular fa-calendar-days"></i>
+                        예약하기</a> 
+                        <!— 새창으로 —>
+                </li>
+                
             </ul>
-        </nav>
+            
+        </div>
     </header>
 
 
@@ -77,30 +82,36 @@
 
 
 <div class="bsh-main">
-        <div id="head-img1" ></div>
+        <div id="head-img" ></div>
         <div class="bsh-path">
             <ol>
                 <li class="bsh-path1">
                     <a href="https://www.hiddencliff.kr/main/main.html" style="color: #767676;">home</a>
                 </li>
                 <li class="bsh-path2">
-                    <a href="http://127.0.0.1:5500/KH_%EC%98%88%EC%95%BD/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8html/%ED%8E%B8%EC%9D%98%EC%8B%9C%EC%84%A4(%ED%82%A4%EC%A6%88).html" style="color: #767676;">> &nbsp;FACILITIES</a>
+                    <a href="http://www.hiddencliff.kr/meeting/symphony.html" style="color: #767676;">> &nbsp;meeting</a>
                 </li>
-                <li class="bsh-path3">> &nbsp;키즈 플레이 룸</li>
+                <li class="bsh-path3">> &nbsp;심포니</li>
             </ol>
         </div>
 
         <div class="bsh-main-title">
-            <h1>키즈 플레이 룸</h1>
+            <h1>심포니</h1>
         </div>
 
         <div class="bsh-main-img1"></div>
 
         <div class="bsh-main-content">
             <p style="letter-spacing: -1px; font-size: 16px;" >
-                히든 클리프의 키즈 플레이 룸은 유럽을 비롯하여 해외에서 다양한 상을 수상한 바 있는 CEDAR WORKS로 꾸며져 있습니다.<br>
-                우리 아이의 즐거움을채워줄 다양한 교구와 함께 안전하고 즐거운 시간을 보내시기 바랍니다.
+                대연회장 심포니는 대규모 컨퍼런스에 최적화된 공간으로서 최대 150명까지 수용 가능합니다. <br>
+                최상의 AV 시스템이 갖춰져 있고 두 개의 독립된 공간으로 분할하여 다용도로 활용 가능합니다. <br>
+                공간은 콘크리트 월로 마감되었으며 최대 15명까지 수용 가능한 별도의 미팅룸이 마련되어 있습니다.
             </p>
+        </div>
+
+        <div class="bsh-btngroup">
+            <a href="http://127.0.0.1:5500/KH_%EC%98%88%EC%95%BD/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8html/%EC%98%88%EC%95%BD%EB%AC%B8%EC%9D%98.html" class="bsh-btngray" target="_blank">예약 문의하기</a>
+            <a href="https://www.hiddencliff.kr/pdf/plan_symphony.html" class="bsh-btngray" target="_blank">도면보기</a>
         </div>
 
         <div class="bsh-tb1-info">
@@ -115,46 +126,90 @@
                     <tr>
                         <td colspan="4" class="bsh-padding-cell"></td>
                     </tr>
-                    <tr class="bsh-con-cell concell1">
+                    <tr class="bsh-con-cell">
                         <th>위치</th>
                         <td>1F</td>
-                        <th>이용대상</th>
-                        <td>투숙객 전용 (2~7세)</td>
+                        <th>수용인원</th>
+                        <td>최대 150명</td>
                     </tr>
-                    <tr class="bsh-con-cell concell3">
+                    <tr class="bsh-con-cell">
                         <th>이용문의</th>
-                        <td>064-752-4151</td>
-                        <th>운영시간</th>
-                        <td>09:00 ~ 21:00</td>
+                        <td>02-2277-9999</td>
+                        <th>공통시설</th>
+                        <td>AV 시스템, 스크린, 무선 마이크, 빔 프로젝터</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="bsh-padding-cell2"></td>
                     </tr>
                 </tbody>
             </table>
         </div>
-            
+
         <div class="bsh-tb2-info">
             <table class="bsh-tb2">
                 <colgroup>
-                    <col style="width: 15%;">
-                    <col style="width: 85%;">
+                    <col style="width: 13%;">
+                    <col style="width: 22%;">
+                    <col style="width: 13%;">
+                    <col style="width: 13%;">
+                    <col style="width: 13%;">
+                    <col style="width: 13%;">
+                    <col style="width: 13%;">
                 </colgroup>
-                <tr>
-                    <th>이용안내</th>
-                    <td style="color: #333;">
-                        · 시설 이용 시 마스크를 착용하여 주시기 바랍니다. 미착용 시 이용이 제한될 수 있습니다. <br>
-                        · 이용 안내 및 안전 수칙 준수에 대한 동의서 서명 후 입장 가능합니다.<br>
-                        · 시설 입장 시 보호자 동반을 필수로 합니다.<br>
-                        · 키즈 플레이 룸 내 음식물 반입이 불가합니다.<br>
-                        · 귀중품은 별도로 보관 불가하며, 당 호텔은 분실에 대한 책임을 지지 않습니다.<br>
-                        · 키즈 플레이 룸 내 비치된 물품은 밖으로 가져가실 수 없습니다.<br>
-                        · 부모님 또는 어린이 부주의에 의해 발생한 안전사고 및 분쟁에 대해서는 당 호텔에서 책임지지 않습니다.
-                    </td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Room name</th>
+                        <th>Room Dimensions
+                            <br>
+                            L x W x H
+                        </th>
+                        <th>Room size
+                            <br>
+                            ㎡(Pyung)
+                        </th>
+                        <th>Banquet</th>
+                        <th>Classroom</th>
+                        <th>U-shape</th>
+                        <th>Theater</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Symphony</td>
+                        <td>24.67 x 11.45 x 5</td>
+                        <td>282.5 (85.4)</td>
+                        <td>170</td>
+                        <td>150</td>
+                        <td>70</td>
+                        <td>250</td>
+                    </tr>
+                    <tr>
+                        <td>Symphony A</td>
+                        <td>12.23 x 11.45 x 5</td>
+                        <td>141.25 (42.7)</td>
+                        <td>60</td>
+                        <td>75</td>
+                        <td>33</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>Symphony B</td>
+                        <td>12.23 x 11.45 x 5</td>
+                        <td>141.25 (42.7)</td>
+                        <td>60</td>
+                        <td>75</td>
+                        <td>33</td>
+                        <td>100</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
+</div>
 
 
 
-        
+
+
 
 <!------------------------- 아래는 풋터 ------------------------->
 

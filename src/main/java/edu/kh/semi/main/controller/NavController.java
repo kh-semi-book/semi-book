@@ -34,11 +34,11 @@ public class NavController {
 	
 	@RequestMapping(value="/nav/meeting")
 	public String meeting() {
-		return "";
+		return "/nav/meeting/meeting(symphony)";
 	}
 	@RequestMapping(value="/nav/facilities")
 	public String facilities() {
-		return "/nav/infinitiPool/infinitiPool";
+		return "";
 	}
 	@RequestMapping(value="/nav/spa")
 	public String spa() {

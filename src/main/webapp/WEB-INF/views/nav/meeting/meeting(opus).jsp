@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <%-- 문자열 관련 메서드를 제공하는 JSTL (EL 형식) --%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
@@ -9,14 +10,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>심포니 - Hidden Cliff Hotel and Nature</title>
-    
-    <link rel="stylesheet" href="/KH_예약/프로젝트css/header/headfoot.css">
-    <link rel="stylesheet" href="/KH_예약/프로젝트css/header/미팅룸공통.css">
-    <script src="https://kit.fontawesome.com/f7459b8054.js" crossorigin="anonymous"></script>
+    <title>오퍼스 - Hidden Cliff Hotel and Nature</title>
+
+    	<link rel="stylesheet" href="/resources/css/nav/meeting/meetingroom(all).css">
+	<link rel="stylesheet" href="/resources/css/common/main.css">
 </head>
 <body>
-    <header class="bsh-headerzz">
+    <header>
         <!-- 우측 상단 로그인 예약조회 회원가입 -->
         <!-- 헤더 오른쪽 상단 메뉴 -->
         <div id="header">
@@ -80,7 +80,6 @@
 
 
 
-
 <div class="bsh-main">
         <div id="head-img" ></div>
         <div class="bsh-path">
@@ -91,21 +90,20 @@
                 <li class="bsh-path2">
                     <a href="http://www.hiddencliff.kr/meeting/symphony.html" style="color: #767676;">> &nbsp;meeting</a>
                 </li>
-                <li class="bsh-path3">> &nbsp;심포니</li>
+                <li class="bsh-path3">> &nbsp;오퍼스</li>
             </ol>
         </div>
 
         <div class="bsh-main-title">
-            <h1>심포니</h1>
+            <h1>오퍼스</h1>
         </div>
 
-        <div class="bsh-main-img1"></div>
+        <div class="bsh-main-img3"></div>
 
-        <div class="bsh-main-content">
+        <div class="bsh-main-content">    
             <p style="letter-spacing: -1px; font-size: 16px;" >
-                대연회장 심포니는 대규모 컨퍼런스에 최적화된 공간으로서 최대 150명까지 수용 가능합니다. <br>
-                최상의 AV 시스템이 갖춰져 있고 두 개의 독립된 공간으로 분할하여 다용도로 활용 가능합니다. <br>
-                공간은 콘크리트 월로 마감되었으며 최대 15명까지 수용 가능한 별도의 미팅룸이 마련되어 있습니다.
+                오퍼스 (Opus)는 최대 50명까지 수용 가능한 다목적 미팅룸입니다. <br>
+                비즈니스 뿐 아니라 다양한 종류의 프라이빗한 행사 진행이 가능합니다.
             </p>
         </div>
 
@@ -128,9 +126,9 @@
                     </tr>
                     <tr class="bsh-con-cell">
                         <th>위치</th>
-                        <td>1F</td>
+                        <td>3F</td>
                         <th>수용인원</th>
-                        <td>최대 150명</td>
+                        <td>최대 50명</td>
                     </tr>
                     <tr class="bsh-con-cell">
                         <th>이용문의</th>
@@ -175,43 +173,18 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Symphony</td>
-                        <td>24.67 x 11.45 x 5</td>
-                        <td>282.5 (85.4)</td>
-                        <td>170</td>
-                        <td>150</td>
+                        <td>Opus</td>
+                        <td>16.8 x 8.4 x 3.5</td>
+                        <td>141 (42)</td>
+                        <td>40</td>
                         <td>70</td>
-                        <td>250</td>
-                    </tr>
-                    <tr>
-                        <td>Symphony A</td>
-                        <td>12.23 x 11.45 x 5</td>
-                        <td>141.25 (42.7)</td>
-                        <td>60</td>
-                        <td>75</td>
-                        <td>33</td>
-                        <td>100</td>
-                    </tr>
-                    <tr>
-                        <td>Symphony B</td>
-                        <td>12.23 x 11.45 x 5</td>
-                        <td>141.25 (42.7)</td>
-                        <td>60</td>
-                        <td>75</td>
-                        <td>33</td>
-                        <td>100</td>
+                        <td>30</td>
+                        <td>80</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 </div>
-
-
-
-
-
-
-<!------------------------- 아래는 풋터 ------------------------->
 
 <footer>
     <div id="footer-first">

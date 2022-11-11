@@ -10,50 +10,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>히든 트레일 - Hidden Cliff Hotel and Nature</title>
+    <title>하모니 - Hidden Cliff Hotel and Nature</title>
 
-    <link rel="stylesheet" href="/KH_예약/프로젝트css/header/headfoot.css">
-    <link rel="stylesheet" href="/KH_예약/프로젝트css/header/편의시설공통.css">
-    <script src="https://kit.fontawesome.com/f7459b8054.js" crossorigin="anonymous"></script>
+ 	<link rel="stylesheet" href="/resources/css/nav/meeting/meetingroom(all).css">
+	<link rel="stylesheet" href="/resources/css/common/main.css">
 </head>
 <body>
     <header>
         <!-- 우측 상단 로그인 예약조회 회원가입 -->
         <!-- 헤더 오른쪽 상단 메뉴 -->
-        <div id="header-top-menu">
-            <a href="#">로그인</a>
-            |
-            <a href="/">예약조회</a>
-            |
-            <a href="/">회원가입</a>
+        <div id="header">
+            <div id="header-top">
+                <a href="#"><img src="/images/히든클리프 로고.png"></a>
+    
+                 <!-- 우측 상단 로그인 예약조회 회원가입 -->
+                <!-- 헤더 오른쪽 상단 메뉴 -->
+                <div id="header-top-menu">
+                    <a href="#">로그인</a>
+                    |
+                    <a href="/">예약조회</a>
+                    |
+                    <a href="/">회원가입</a>
+                </div>
+    
+    
+                <!-- media(내부 유튜브 링크)/instagram -->
+    
+                <div id="media-menu">
+                    <a href="#">
+                        MEDIA
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+    
+                    <a href="#">
+                        INSTAGRAM
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+    
         </div>
-
-        <!-- media(내부 유튜브 링크)/instagram -->
-
-        <div id="media-menu">
-            <a href="#">
-                MEDIA
-                <i class="fa-brands fa-youtube"></i>
-            </a>
-
-            <a href="#">
-                INSTAGRAM
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-        </div>
-
-        <section>
-            <a href="#">
-                <img src="/images/히든클리프 로고.png" id="home-logo">
-            </a>
-        </section>
-
-        <a href="#" class="book-btn">
-            <i class="fa-regular fa-calendar-days"></i>
-            예약하기
-        </a>
-
-        <nav>
+    
+        <div id="nav-area">
             <ul>
                 <li><a href="#">HIDDEN CLIFF</a></li>
                 <li><a href="#">SPECIAL OFFER</a></li>
@@ -63,8 +61,15 @@
                 <li><a href="#">MEETING</a></li>
                 <li><a href="#">FACILITIES</a></li>
                 <li><a href="#">SPA</a></li>
+                <li>
+                    <a href="#" id="book-btn"><i class="fa-regular fa-calendar-days"></i>
+                        예약하기</a> 
+                        <!— 새창으로 —>
+                </li>
+                
             </ul>
-        </nav>
+            
+        </div>
     </header>
 
 
@@ -74,33 +79,37 @@
 
 
 
-
-
 <div class="bsh-main">
-        <div id="head-img3" ></div>
+        <div id="head-img" ></div>
         <div class="bsh-path">
             <ol>
                 <li class="bsh-path1">
                     <a href="https://www.hiddencliff.kr/main/main.html" style="color: #767676;">home</a>
                 </li>
                 <li class="bsh-path2">
-                    <a href="http://127.0.0.1:5500/KH_%EC%98%88%EC%95%BD/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8html/%ED%8E%B8%EC%9D%98%EC%8B%9C%EC%84%A4(%ED%82%A4%EC%A6%88).html" style="color: #767676;">> &nbsp;FACILITIES</a>
+                    <a href="http://www.hiddencliff.kr/meeting/symphony.html" style="color: #767676;">>&nbsp; meeting</a>
                 </li>
-                <li class="bsh-path3">> &nbsp;히든 트레일</li>
+                <li class="bsh-path3">>&nbsp; 하모니</li>
             </ol>
         </div>
 
         <div class="bsh-main-title">
-            <h1>히든 트레일</h1>
+            <h1>하모니</h1>
         </div>
 
-        <div class="bsh-main-img3"></div>
+        <div class="bsh-main-img2"></div>
 
         <div class="bsh-main-content">
-            <p style="letter-spacing: -1px; font-size: 16px;" >
-                문을 열고 나가면 가공되지 않은 제주도의 자연을 만날 수 있는 산책로 히든 트레일이 펼쳐집니다. <br>
-                고요한 시간 속에서 자연을 바라보고 호흡하며 몸과 마음의 평온을 느껴보시기 바랍니다.
+            <p style="letter-spacing: -1px; font-size: 16px;">
+                중연회장 하모니는 세미나 및 비즈니스 미팅에 최적화된 공간으로 최대 70명까지 수용할 수 있습니다. <br>
+                방문객의 성공적인 행사 진행을 위하여 최첨단 시스템과 실용성을 겸비한 이곳은 각 최대 15명씩 <br>
+                수용 가능한 별도의 미팅룸 난드르 / 뜬드르 2실이 마련되어 있어 보다 원활한 행사 진행이 가능합니다.
             </p>
+        </div>
+
+        <div class="bsh-btngroup">
+            <a href="http://127.0.0.1:5500/KH_%EC%98%88%EC%95%BD/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8html/%EC%98%88%EC%95%BD%EB%AC%B8%EC%9D%98.html" class="bsh-btngray" target="_blank">예약 문의하기</a>
+            <a href="https://www.hiddencliff.kr/pdf/plan_symphony.html" class="bsh-btngray" target="_blank">도면보기</a>
         </div>
 
         <div class="bsh-tb1-info">
@@ -115,17 +124,20 @@
                     <tr>
                         <td colspan="4" class="bsh-padding-cell"></td>
                     </tr>
-                    <tr class="bsh-con-cell concell1">
+                    <tr class="bsh-con-cell">
                         <th>위치</th>
-                        <td>2층 파노라마 레스토랑 <br> 야외데크</td>
-                        <th>이용대상</th>
-                        <td>제한없음</td>
+                        <td>2F</td>
+                        <th>수용인원</th>
+                        <td>최대 70명</td>
                     </tr>
-                    <tr class="bsh-con-cell concell3">
+                    <tr class="bsh-con-cell">
                         <th>이용문의</th>
-                        <td>064-752-7777</td>
-                        <th>운영시간</th>
-                        <td>09:00 ~ 18:00</td>
+                        <td>02-2277-9999</td>
+                        <th>공통시설</th>
+                        <td>AV 시스템, 스크린, 무선 마이크, 빔 프로젝터</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="bsh-padding-cell2"></td>
                     </tr>
                 </tbody>
             </table>
@@ -134,28 +146,74 @@
         <div class="bsh-tb2-info">
             <table class="bsh-tb2">
                 <colgroup>
-                    <col style="width: 15%;">
-                    <col style="width: 85%;">
+                    <col style="width: 13%;">
+                    <col style="width: 22%;">
+                    <col style="width: 13%;">
+                    <col style="width: 13%;">
+                    <col style="width: 13%;">
+                    <col style="width: 13%;">
+                    <col style="width: 13%;">
                 </colgroup>
-                <tr>
-                    <th>이용안내</th>
-                    <td style="color: #333;">
-                        · 산책로 이용 시 편안한 복장과 운동화, 선글라스 및 자외선 차단제를 준비하시면 도움이 됩니다. <br>
-                        · 위생 관리를 위하여 음식물 반입이 불가하며 반려동물과 같이 이용하실 수 없습니다.<br>
-                        · 본 산책로의 모든 지역은 금연구역입니다.<br>
-                        · 본 산책로에는 직원이 상주하지 않습니다.<br>
-                        · 13세 이하 어린이는 반드시 보호자 동반 시 이용이 가능합니다.<br>
-                        · 안전사고 예방을 위하여 난간을 넘어서 무단으로 풀이나 숲에 들어가시지 마십시오.<br>
-                        · 이용 규칙을 준수하지 않아 야기된 사고에 대하여는 당 호텔에서 책임을 지지 않습니다.<br>
-                        · 본 산책로는 호텔 사정에 따라 이용이 제한될 수 있습니다.
-                    </td>
-                    
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Room name</th>
+                        <th>Room Dimensions
+                            <br>
+                            L x W x H
+                        </th>
+                        <th>Room size
+                            <br>
+                            ㎡(Pyung)
+                        </th>
+                        <th>Banquet</th>
+                        <th>Classroom</th>
+                        <th>U-shape</th>
+                        <th>Theater</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Harmony</td>
+                        <td>15.5 x 7.53 x 2.5</td>
+                        <td>117.2 (35.4)</td>
+                        <td>50</td>
+                        <td>72</td>
+                        <td>50</td>
+                        <td>80</td>
+                    </tr>
+                    <tr>
+                        <td>Nandeureu</td>
+                        <td>4.5 x 6.73 x 2.5</td>
+                        <td>30.39 (9.2)</td>
+                        <td>10</td>
+                        <td>16</td>
+                        <td>15</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>Tteundeureu	</td>
+                        <td>4.5 x 6.73 x 2.5</td>
+                        <td>30.39 (9.2)</td>
+                        <td>10</td>
+                        <td>16</td>
+                        <td>15</td>
+                        <td>20</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
+</div>
 
-        
+
+
+
+
 <!------------------------- 아래는 풋터 ------------------------->
+
+
+
+
+
 
 <footer>
     <div id="footer-first">

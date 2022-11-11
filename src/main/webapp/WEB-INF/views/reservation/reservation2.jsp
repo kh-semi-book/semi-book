@@ -13,8 +13,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>예약하기 - Hidden Cliff Hotel and Nature</title>
 
-    <link rel="stylesheet" href="../프로젝트css/header/headfoot.css">
-    <link rel="stylesheet" href="../프로젝트css/예약하기2번.css">
+         <link rel="stylesheet" href="/resources/css/nav/reservation/reservation2.css">
+		<link rel="stylesheet" href="/resources/css/common/main.css">
 
 </head>
 

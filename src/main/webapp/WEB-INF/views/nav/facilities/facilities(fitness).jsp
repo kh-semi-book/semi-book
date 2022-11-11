@@ -10,48 +10,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>오퍼스 - Hidden Cliff Hotel and Nature</title>
+    <title>피트니스 센터 - Hidden Cliff Hotel and Nature</title>
 
-    <link rel="stylesheet" href="/KH_예약/프로젝트css/header/headfoot.css">
-    <link rel="stylesheet" href="/KH_예약/프로젝트css/header/미팅룸공통.css">
+     <link rel="stylesheet" href="/resources/css/nav/facilities/facilities(all).css">
+	<link rel="stylesheet" href="/resources/css/common/main.css">
+    <script src="https://kit.fontawesome.com/f7459b8054.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <!-- 우측 상단 로그인 예약조회 회원가입 -->
         <!-- 헤더 오른쪽 상단 메뉴 -->
-        <div id="header">
-            <div id="header-top">
-                <a href="#"><img src="/images/히든클리프 로고.png"></a>
-    
-                 <!-- 우측 상단 로그인 예약조회 회원가입 -->
-                <!-- 헤더 오른쪽 상단 메뉴 -->
-                <div id="header-top-menu">
-                    <a href="#">로그인</a>
-                    |
-                    <a href="/">예약조회</a>
-                    |
-                    <a href="/">회원가입</a>
-                </div>
-    
-    
-                <!-- media(내부 유튜브 링크)/instagram -->
-    
-                <div id="media-menu">
-                    <a href="#">
-                        MEDIA
-                        <i class="fa-brands fa-youtube"></i>
-                    </a>
-    
-                    <a href="#">
-                        INSTAGRAM
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                </div>
-            </div>
-    
+        <div id="header-top-menu">
+            <a href="#">로그인</a>
+            |
+            <a href="/">예약조회</a>
+            |
+            <a href="/">회원가입</a>
         </div>
-    
-        <div id="nav-area">
+
+        <!-- media(내부 유튜브 링크)/instagram -->
+
+        <div id="media-menu">
+            <a href="#">
+                MEDIA
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+
+            <a href="#">
+                INSTAGRAM
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+
+        <section>
+            <a href="#">
+                <img src="/images/히든클리프 로고.png" id="home-logo">
+            </a>
+        </section>
+
+        <a href="#" class="book-btn">
+            <i class="fa-regular fa-calendar-days"></i>
+            예약하기
+        </a>
+
+        <nav>
             <ul>
                 <li><a href="#">HIDDEN CLIFF</a></li>
                 <li><a href="#">SPECIAL OFFER</a></li>
@@ -61,15 +63,8 @@
                 <li><a href="#">MEETING</a></li>
                 <li><a href="#">FACILITIES</a></li>
                 <li><a href="#">SPA</a></li>
-                <li>
-                    <a href="#" id="book-btn"><i class="fa-regular fa-calendar-days"></i>
-                        예약하기</a> 
-                        <!— 새창으로 —>
-                </li>
-                
             </ul>
-            
-        </div>
+        </nav>
     </header>
 
 
@@ -80,36 +75,32 @@
 
 
 
+
 <div class="bsh-main">
-        <div id="head-img" ></div>
+        <div id="head-img2" ></div>
         <div class="bsh-path">
             <ol>
                 <li class="bsh-path1">
                     <a href="https://www.hiddencliff.kr/main/main.html" style="color: #767676;">home</a>
                 </li>
                 <li class="bsh-path2">
-                    <a href="http://www.hiddencliff.kr/meeting/symphony.html" style="color: #767676;">> &nbsp;meeting</a>
+                    <a href="http://127.0.0.1:5500/KH_%EC%98%88%EC%95%BD/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8html/%ED%8E%B8%EC%9D%98%EC%8B%9C%EC%84%A4(%ED%82%A4%EC%A6%88).html" style="color: #767676;">> &nbsp;FACILITIES</a>
                 </li>
-                <li class="bsh-path3">> &nbsp;오퍼스</li>
+                <li class="bsh-path3">> &nbsp;피트니스 센터</li>
             </ol>
         </div>
 
         <div class="bsh-main-title">
-            <h1>오퍼스</h1>
+            <h1>피트니스 센터</h1>
         </div>
 
-        <div class="bsh-main-img3"></div>
+        <div class="bsh-main-img2"></div>
 
-        <div class="bsh-main-content">    
+        <div class="bsh-main-content">
             <p style="letter-spacing: -1px; font-size: 16px;" >
-                오퍼스 (Opus)는 최대 50명까지 수용 가능한 다목적 미팅룸입니다. <br>
-                비즈니스 뿐 아니라 다양한 종류의 프라이빗한 행사 진행이 가능합니다.
+                유산소 운동과 웨이트 트레이닝을 위한 다양한 설비가 갖춰진 피트니스 센터에서는 <br>
+                피로를 해소하고 새로운 활력을 얻을 수 있습니다.
             </p>
-        </div>
-
-        <div class="bsh-btngroup">
-            <a href="http://127.0.0.1:5500/KH_%EC%98%88%EC%95%BD/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8html/%EC%98%88%EC%95%BD%EB%AC%B8%EC%9D%98.html" class="bsh-btngray" target="_blank">예약 문의하기</a>
-            <a href="https://www.hiddencliff.kr/pdf/plan_symphony.html" class="bsh-btngray" target="_blank">도면보기</a>
         </div>
 
         <div class="bsh-tb1-info">
@@ -121,70 +112,30 @@
                     <col style="width: 48%;">
                 </colgroup>
                 <tbody>
-                    <tr>
-                        <td colspan="4" class="bsh-padding-cell"></td>
-                    </tr>
-                    <tr class="bsh-con-cell">
+                    <tr class="bsh-con-cell concell1">
                         <th>위치</th>
-                        <td>3F</td>
-                        <th>수용인원</th>
-                        <td>최대 50명</td>
+                        <td>1층</td>
+                        <th>이용대상</th>
+                        <td>투숙객 전용</td>
                     </tr>
                     <tr class="bsh-con-cell">
                         <th>이용문의</th>
-                        <td>02-2277-9999</td>
-                        <th>공통시설</th>
-                        <td>AV 시스템, 스크린, 무선 마이크, 빔 프로젝터</td>
+                        <td>064-795-4151</td>
+                        <th>운영시간</th>
+                        <td>09:00 ~ 22:00</td>
                     </tr>
-                    <tr>
-                        <td colspan="4" class="bsh-padding-cell2"></td>
+                    <tr class="bsh-con-cell concell3">
+                        <th>주요시설</th>
+                        <td colspan="3">런닝머신, 좌식 싸이클, 레그컬, 레그익스텐션, 버터플라이, 하이풀리, 벨트 마사지 등</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <div class="bsh-tb2-info">
-            <table class="bsh-tb2">
-                <colgroup>
-                    <col style="width: 13%;">
-                    <col style="width: 22%;">
-                    <col style="width: 13%;">
-                    <col style="width: 13%;">
-                    <col style="width: 13%;">
-                    <col style="width: 13%;">
-                    <col style="width: 13%;">
-                </colgroup>
-                <thead>
-                    <tr>
-                        <th>Room name</th>
-                        <th>Room Dimensions
-                            <br>
-                            L x W x H
-                        </th>
-                        <th>Room size
-                            <br>
-                            ㎡(Pyung)
-                        </th>
-                        <th>Banquet</th>
-                        <th>Classroom</th>
-                        <th>U-shape</th>
-                        <th>Theater</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Opus</td>
-                        <td>16.8 x 8.4 x 3.5</td>
-                        <td>141 (42)</td>
-                        <td>40</td>
-                        <td>70</td>
-                        <td>30</td>
-                        <td>80</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-</div>
+        
+        
+
+<!------------------------- 아래는 풋터 ------------------------->
 
 <footer>
     <div id="footer-first">
