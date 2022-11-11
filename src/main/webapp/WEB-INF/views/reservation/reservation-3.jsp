@@ -5,9 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>예약하기-3</title>
-    <link rel="stylesheet" href="/main/css/reservation-style.css">
+    
+    
+    <link rel="stylesheet" href="/resources/css/reservation/reservation-style.css">
 </head>
 <body>
+
+	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
     <div id="reservation4_body_area">
 
@@ -213,5 +217,6 @@
         </div>
     </div>
 
+	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 </body>
 </html>

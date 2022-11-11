@@ -7,6 +7,8 @@
     <title>공지사항</title>
 </head>
 <body>
+
+	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
     <div id="top-photo">
         사진자리
     </div>
@@ -46,6 +48,8 @@
 
         <div id="other-page"><a href="#"><<</a><a href="#"><</a><a href="#">1</a><a href="#">></a><a href="#">>></a></div>
     </div>
+    
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
 </body>
 </html>

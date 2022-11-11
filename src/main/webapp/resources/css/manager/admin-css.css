@@ -1,0 +1,451 @@
+    
+#search-book-table{
+ margin-top: 20px;
+}
+
+ #search-book-option{
+     border:1px solid black;
+ }
+
+
+
+ #search-book-title{
+     font-size: 30px;
+     margin-bottom:20px;
+ }
+ 
+ #search-book-area{
+     width: 1000px;
+     margin:auto;
+ }
+
+ #search-book-table>div{
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .search-book-no{
+     width: 50px;
+ }
+ .search-book-date{
+     width: 100px;
+ }
+ .search-book-reservation-no,.search-book-room-no,.search-book-party-num{
+     width: 100px;
+ }
+ .search-book-type{
+     width:50px;
+ }
+
+ .search-book-status-change{
+     width:50px;
+ }
+
+
+ .search-book-status,.manage-booker-name{
+     width:100px;
+ }
+
+ #search-book-table-title{
+     border-top:2px solid black;
+     border-bottom:1px solid #bbb;
+     
+ }
+
+
+ #search-book-table-title>div{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding:30px 0;
+ }
+
+ .search-book-table-content{
+     border-bottom:1px solid #bbb;
+ }
+
+ .search-book-table-content>div{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding:10px 0;
+     height:30px;
+ }
+
+ .search-book-cost{
+     width: 100px;
+    justify-content: right;
+ }
+
+ .manage-border-right{
+     border-right: 1px solid #bbb;
+ }
+
+/* --------------------------------------------- */
+
+#search-book-option>span{
+display: inline-block;
+}
+
+.search-option>select{
+display: inline-block;
+width: 90px;
+margin: 20px 10px;
+padding:5px;
+}
+
+.search-option:last-child{
+text-align: right;
+}
+
+.search-option-input{
+display: inline-block;
+padding:5px;
+width: 200px;
+}
+
+#search-date{
+width:80px;
+padding-right: 10px;
+}
+
+.search-date-input{
+width: 350px;
+}
+
+.search-date-input>input{
+display: inline-block;
+padding:5px;
+}
+
+#search-book-option>button{
+width: 70px;
+height: 40px;
+}
+
+
+
+
+/*----[ 페이지 이동 버튼 ]----*/
+
+#rsc-page-skip{
+ margin-top:50px;
+}
+#rsc-page-skip a{
+text-decoration: none;
+color: #767676;
+}
+#rsc-page-skip button{
+background-color: #292526;
+font-weight: bold;
+font-size: 14px;
+height: 38px;
+width: 38px;
+}
+#rsc-page-skip button a{
+font-weight: bold;
+font-size: 14px;
+color: #FFFFFF;
+}
+#rsc-page-skip button a:hover{
+font-weight: bold;
+font-size: 14px;
+color: red;
+}
+
+
+/* --------------- 여기까지 search ------------------ */
+
+
+*{
+    /* border:1px solid black; */
+    box-sizing: border-box;
+}
+
+#manage-book-title{
+    font-size: 30px;
+    margin-bottom:20px;
+}
+
+#manage-book-area{
+    width: 1000px;
+    margin:auto;
+}
+
+#manage-book-table>div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.manage-book-no{
+    width: 50px;
+}
+.manage-book-date{
+    width: 100px;
+}
+.manage-book-name{
+    width: 300px;
+}
+.manage-book-type{
+    width:50px;
+}
+
+.manage-book-status-change{
+    width:50px;
+}
+
+
+.manage-book-status,.manage-booker-name{
+    width:100px;
+}
+
+#manage-book-table-title{
+    border-top:2px solid black;
+    border-bottom:1px solid #bbb;
+    
+}
+
+
+#manage-book-table-title>div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:30px 0;
+}
+
+.manage-book-table-content{
+    border-bottom:1px solid #bbb;
+}
+
+.manage-book-table-content>div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:10px 0;
+    height:50px;
+}
+
+.manage-book-cost{
+    width: 100px;
+   justify-content: right;
+}
+
+.manage-border-right{
+    border-right: 1px solid #bbb;
+}
+
+/*----[ 페이지 이동 버튼 ]----*/
+
+#rsc-page-skip{
+margin-top:50px;
+}
+#rsc-page-skip a{
+text-decoration: none;
+color: #767676;
+}
+#rsc-page-skip button{
+background-color: #292526;
+font-weight: bold;
+font-size: 14px;
+height: 38px;
+width: 38px;
+}
+#rsc-page-skip button a{
+font-weight: bold;
+font-size: 14px;
+color: #FFFFFF;
+}
+#rsc-page-skip button a:hover{
+font-weight: bold;
+font-size: 14px;
+color: red;
+}
+
+/* ------------------- 여기까지 select ------------------ */
+
+
+body{
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+#header>div{
+width:1000px;
+height:110px;
+margin:auto; 
+
+/* justify-content: center; */
+/* align-items: center; */
+}
+
+#header>div>a{
+display: flex;
+justify-content: center;
+}
+
+/* 헤더 오른쪽 상단 메뉴 */
+#header-top-menu{
+display: inline;
+position:relative;
+
+right:-90%;
+top:-90%;
+
+}
+
+#header-top-menu a{
+text-decoration: none;
+color:black;
+font-weight: 1px;
+font-size: 12px;
+
+margin:15px;
+}
+
+#media-menu{
+
+position:relative;
+display: inline;
+right:-70%;
+top: -45%;
+
+}
+
+#media-menu>a{
+text-decoration: none;
+color:gray;
+font-size: 14px;
+
+
+border:1px solid gray;
+padding : 3px 5px;
+}
+
+
+/********************* #nav-area **********************/
+#nav-area{
+
+height:60px;
+
+border-bottom: 1px solid black;
+border-top: 1px solid black;
+background-color: rgba(255, 255, 255, 0.665);
+
+/* 화면 밖으로 요소가 벗어났을 때 지정된 위치에 고정 */
+position: sticky;
+top:0px;
+z-index:100; 
+}
+
+
+/* ul 스타일 지정 */
+/* 줄어들었을 때 좀 잘리게 하는거 어떻게하려나 */
+#nav-area>ul{
+
+/* 비율상 이부분 수정 */
+/* width: 1200px; */ 
+/* margin-left: 80px; */
+justify-content: center;
+
+margin:0;
+
+padding:0;
+list-style: none;
+
+display: flex;
+height: 100%;
+
+}
+
+/* 네비게이터 메뉴 */
+#nav-area li{
+flex-basis: 140px;
+width: 140px;
+
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+}
+
+/* 메뉴 내부 a 태그 */
+#nav-area>ul>li>a{
+cursor: pointer;
+
+
+text-decoration: none;
+font-size: 15px;
+color:black;
+
+/* display: block; */
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+/* position: relative; */
+/* 내부에 작성된 글자를 요소로 취급해서 정가운데 배치 */
+
+/* border-radius: 5px; */
+transition-duration: 0.1s;
+}
+
+
+#nav-area>ul>li>#book-btn{
+text-decoration: none;
+color:white;
+
+border:1px solid black;
+height: 100px;
+width: 100px;
+
+background-color: rgb(92, 91, 91);
+
+position:absolute;
+
+z-index: 20;
+
+display: flex;
+flex-direction: column;
+
+justify-content: center;
+align-items: center;
+top:0;
+}
+
+#book-btn>i{
+display: block;
+font-size: 40px;
+margin-bottom: 5px;
+}
+
+#header-top-btn{
+position: fixed;
+bottom: 0;
+left:70%;
+
+height:50px;
+width: 50px;
+background-color: rgb(81, 81, 81);
+
+
+}
+
+#header-top-btn>a{
+text-decoration: none;
+color:white;
+
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+#header-top-btn>a>i{
+
+font-size: 30px;
+}
