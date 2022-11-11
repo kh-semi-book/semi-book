@@ -11,5 +11,19 @@ public class MainController {
 	public String mainPage() {
 		return "common/main";
 	}
+	@RequestMapping(value="/member/login", method=RequestMethod.GET)
+	public String loginPage() {
+		return "member/login";
+	}
+	@RequestMapping(value="/reservation/check", method=RequestMethod.GET)
+	public String reservationCheckPage() {
+		return "reservation/reservationSimple";
+	}
+	@RequestMapping(value="/member/signUp", method=RequestMethod.GET)
+	public String signUpPage() {
+		return "member/memberSignUp";
+	}
+	
+	
 
 }

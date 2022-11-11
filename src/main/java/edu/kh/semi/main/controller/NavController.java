@@ -19,12 +19,12 @@ public class NavController {
 	
 	@RequestMapping(value="/nav/rooms")
 	public String rooms() {
-		return "";
+		return "/nav/rooms/rooms";
 	}
 	
 	@RequestMapping(value="/nav/dining")
 	public String dining() {
-		return "";
+		return "/nav/dining/dining_panorama";
 	}
 	
 	@RequestMapping(value="/nav/infinitiPool")
@@ -34,7 +34,7 @@ public class NavController {
 	
 	@RequestMapping(value="/nav/meeting")
 	public String meeting() {
-		return "";
+		return "/nav/meeting/meeting(harmony)";
 	}
 	@RequestMapping(value="/nav/facilities")
 	public String facilities() {
@@ -42,7 +42,7 @@ public class NavController {
 	}
 	@RequestMapping(value="/nav/spa")
 	public String spa() {
-		return "/nav/spa/Spa";
+		return "/nav/spa/spa";
 	}
 	
 
