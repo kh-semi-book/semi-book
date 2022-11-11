@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>호텔 소개</title>
+    <link rel="stylesheet" href="/resources/css/main.css">
+    <link rel="stylesheet" href="/resources/css/nav/about.css">
 </head>
 <body>
 
-
+<jsp:include page="/WEB-INF/views/common/header.jsp"/>
      <div id="top-photo">
         사진자리
     </div>
@@ -36,6 +38,6 @@
             </div>
         </div>
     
-    
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 </body>
 </html>

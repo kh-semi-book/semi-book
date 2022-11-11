@@ -1,0 +1,307 @@
+/* ------------------ about hotel ------------------ */
+#top-photo{
+    background-color: antiquewhite;
+    height: 150px;
+}
+
+#about-main{
+    width: 1000px;
+    margin:auto;
+}
+
+#top-menu{
+    color:rgb(133, 131, 131);
+    font-size:14px;
+    padding:20px 0;
+}
+
+#top-menu>a{
+    text-decoration: none;
+    color:rgb(133, 131, 131);
+    padding:0 10px;
+}
+
+#info-title{
+    height: 10%;
+    font-family:'나눔명조';
+    font-size: 30px;
+    margin:20px 0;
+}
+
+
+#info-silde-photo{
+    background-color: black;
+    height: 550px;
+}
+
+
+#logo-info{
+    
+    width: 1000px;
+    background-color: rgb(242, 242, 242);
+    margin-top:60px;
+    margin-bottom:80px;
+    height: 180px;
+}
+
+ /* 로고만 남게 */
+#logo-photo{
+    display: inline-block;
+    width: 30%;
+    margin:20px 0;
+    margin-left: 30px;
+}
+
+#logo-text{
+    display: inline-block;
+    width: 60%;
+}
+
+#logo-text>p:first-child{
+    color: #636363;
+    font-size: 20px;
+
+}
+
+#logo-text>p:last-child{
+    color: #b3b0b0;
+    font-size: 15px;
+
+}
+
+/* ------------------ contact ------------------ */
+
+#top-photo{
+    background-color: antiquewhite;
+    height: 150px;
+}
+
+#contact-main{
+    width: 1000px;
+    margin:auto;
+}
+
+#top-menu{
+    color:rgb(133, 131, 131);
+    font-size:14px;
+    padding:20px 0;
+}
+
+#top-menu>a{
+    text-decoration: none;
+    color:rgb(133, 131, 131);
+    padding:0 10px;
+}
+
+#info-title{
+    height: 10%;
+    font-family:'나눔명조';
+    font-size: 30px;
+    margin:20px 0;
+}
+
+#info-address{
+    margin-bottom:10px
+}
+
+#info-address>span{
+    display: inline-block;
+    margin: 0 20px;
+}
+
+#info-map-area{
+    height: 600px;
+}
+
+#info-traffic{
+    margin-top:50px;
+    margin-bottom:90px;
+    border-top:2px solid black;
+}
+
+#info-traffic>div{
+    border-bottom: 1px solid #e7e7e7;
+}
+
+#info-traffic>div>div{
+    display: inline-block;
+    margin:20px;
+}
+
+.info-traffic-left{
+    width: 20%;
+    font-size: 18px;
+    padding-left: 30px;
+}
+
+.info-traffic-right{
+    /* width: 70%; */
+    font-size: 14px;
+    color:#878787;
+}
+
+/* ------------------ cmm_board ------------------ */
+body{
+    margin:0;
+}
+
+ #top-photo{
+    background-color: antiquewhite;
+    height: 150px;
+}
+
+#contact-main{
+    width: 1000px;
+    margin:auto;
+}
+
+#top-menu{
+    color:rgb(133, 131, 131);
+    font-size:14px;
+    padding:20px 0;
+}
+
+#top-menu>a{
+    text-decoration: none;
+    color:rgb(133, 131, 131);
+    padding:0 10px;
+}
+
+
+#info-title{
+    height: 10%;
+    font-family:'나눔명조';
+    font-size: 30px;
+    margin:20px 0;
+}
+
+#cmm-main{
+    width: 1000px;
+    margin:auto;
+}
+
+#cmm-contant-area{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #cfcfcf;
+    height:550px;
+
+}
+
+#cmm-contant-area a{
+    width: 480px;
+    height:550px;
+    text-decoration: none;
+}
+
+.text-area{
+    padding:30px;
+}
+
+.cmm-main-title{
+    font-weight: bold;
+    font-size:23px;
+    color:black;
+}
+
+.cmm-sub-title{
+    font-size:15px;
+    color:#848484;
+    margin:10px 0;
+}
+
+#other-page{
+    display: flex;
+    justify-content: center;
+
+    margin-top:40px;
+}
+
+#other-page>a{
+    text-decoration: none;
+    color:#848484;
+
+    display: inline-block;
+    padding:10px 15px;
+}
+
+#other-page>a:nth-child(3){
+    background-color: black;
+    color:white;
+}
+
+/* ------------------ cmm_board_in ------------------ */
+
+body{
+    margin:0;
+}
+
+ #top-photo{
+    background-color: antiquewhite;
+    height: 150px;
+}
+
+#contact-main{
+    width: 1000px;
+    margin:auto;
+}
+
+#top-menu{
+    color:rgb(133, 131, 131);
+    font-size:14px;
+    padding:20px 0;
+}
+
+#top-menu>a{
+    text-decoration: none;
+    color:rgb(133, 131, 131);
+    padding:0 10px;
+}
+
+
+#info-title{
+    height: 10%;
+    font-family:'나눔명조';
+    font-size: 30px;
+    margin:20px 0;
+}
+
+#cmm-in-main{
+    width: 1000px;
+    margin:auto;
+}
+
+#cmm-in-title{
+    border-top:2px solid black;
+    border-bottom: 1px solid black;
+
+    padding:20px;
+    font-weight: bold;
+    font-size: 20px;
+
+    margin-bottom: 40px;
+}
+
+#cmm-in-content{
+    border-bottom: 2px solid #c8c8c8;
+    padding-bottom:50px
+}
+
+#cmm-in-goto-list{
+    display:inline-block;
+    margin-top: 50px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cmm-in-goto-list>a{
+    display: block;
+    text-decoration: none;
+    color:black;
+    padding:20px 100px;
+    border: 2px solid #c8c8c8;
+    font-size: 18px;
+  
+}

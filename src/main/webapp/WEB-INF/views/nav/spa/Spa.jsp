@@ -9,8 +9,6 @@
         <title>보떼에르 스파 바이 록시땅 - Hidden Cliff Hotel and Nature</title>
 
         <link rel="stylesheet" href="/css/SPA/SPA.css">
-        <link rel="stylesheet" href="/css/header,footer/footer.css">
-        <link rel="stylesheet" href="/css/header,footer/header.css">
         <script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
 
       <style>

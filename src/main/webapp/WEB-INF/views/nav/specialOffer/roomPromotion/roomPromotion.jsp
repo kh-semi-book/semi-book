@@ -4,7 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <title>객실 프로모션</title>
-<link rel="stylesheet" href="/resources/css/specialOffer/roomPromotion/promotion_type.css">
+<link rel="stylesheet" href="/resources/css/nav/specialOffer/roomPromotion/promotion_type.css">
+<link rel="stylesheet" href="/resources/css/main.css">
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/common/header.jsp" />

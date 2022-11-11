@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>HIDDEN_CLILFF</title>
-<link rel="stylesheet" href="/resources/css/main.css">
+<link rel="stylesheet" href="/resources/css/common/main.css">
 
 </head>
 <body>

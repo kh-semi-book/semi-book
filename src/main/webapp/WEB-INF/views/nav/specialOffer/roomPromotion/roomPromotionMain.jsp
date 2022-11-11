@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>객실 프로모션</title>
-<link rel="stylesheet" href="/resources/css/specialOffer/roomPromotion/promotion_main.css">
+<link rel="stylesheet" href="/resources/css/nav/specialOffer/roomPromotion/promotion_main.css">
 <link rel="stylesheet" href="/resources/css/main.css">
 </head>
 <body>
