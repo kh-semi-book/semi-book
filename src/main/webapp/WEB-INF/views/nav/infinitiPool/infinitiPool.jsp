@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>인피니티풀 - Hidden Cliff Hotel and Nature</title>
 
-        <link rel="stylesheet" href="resources/css/nav/infinitiPool/infinitiPool.css">
+        <link rel="stylesheet" href="resources/css/nav/infinitiPool/InfinitiPool.css">
         
         <script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
 
