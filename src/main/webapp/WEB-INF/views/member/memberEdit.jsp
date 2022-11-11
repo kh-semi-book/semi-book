@@ -3,12 +3,11 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>[회원 가입] Page</title>
+        <title>[회원 수정] Page</title>
 
-      
+       
    	<link rel="stylesheet" href="/resources/css/common/main.css">
-   	<link rel="stylesheet" href="/resources/css/member/signup.css">
-
+   	<link rel="stylesheet" href="/resources/css/member/memberEdit.css">
         <script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
 
 
@@ -18,42 +17,33 @@
     </head>
 
     <body>
-     <!-- header -->
+    <!-- header -->
 	<jsp:include page="/WEB-INF/views/common/header.jsp" />
-     <div class="rsc-body-area">
+
+     <div class="kjh-head-area">
+             
+          </div>
+          <div class="rsc-body-area">
             <div class="reservation-content-main">
-              
-              <h1 class="kjh-h1">회원 가입</h1>
+              <div class="kjh-step"> 
+                <ol>
+                    <li class="kjh-path1"><a href="">HOME</a></li>
+                    <li class="kjh-path2"><a href="">> 마이페이지</a></li>
+                    <li class="kjh-path3"><a href="">> 회원정보 수정</a></li>
+
+                </ol>
+            </div>
+              <div class="kjh-title"> 
+                <span><h1 class="kjh-h1">회원정보 수정</h1>
+              </div>
                   <div class="kjh-main-border">
                       <div class="kjh-main-container">
-                          <div class="kjh-stepbox-border">
-                            <div class="kjh-stepbox">
-                              <ul>
-                                <li>
-                                  <span>STEP 01</span>
-                                  <span>약관동의</span>
-                                </li>
-                                <li class="kjh-step2">
-                                  <span>STEP 02</span>
-                                  <span>정보입력</span>
-                                </li>
-                                <li>
-                                  <span>STEP 03</span>
-                                  <span>가입완료</span>
-                                </li>
-                              </ul>
-
-                            </div> <!-- kjh-stepbox -->
-                          </div>
-                          <br><br><br>
-                          <div class="kjh-step-blank">
-
-                          </div>
-
-                        <h2 class="kjh-h2">정보입력</h2>
-                        <h4 class="kjh-h4">원활한 홈페이지 이용을 위하여 회원 정보를 정확하게 입력해주시기 바랍니다.</h4>
+                       
+                          
+                    
                         
-                        <h4>기본항목
+                        
+                        <h4 class="kjh-h4">기본항목
                           <span class="kjh-txt"><strong class="star">*</strong>표시는 필수항목입니다.</span>
                         </h4>
 
@@ -78,20 +68,16 @@
                                 
                                 <td class="kjh_input"colspan="3">
                                   <input type="text" size="20" name="m_id" id="m_id" >
-                                  <input type="button" class="btn" value="중복확인">
 
                                 </td>
                               </tr>
                               
                               <tr>
-                                <th>비밀번호<span class="star">*</span></th>
-                                <td class="kjh_input">
+                                <th>기존 비밀번호<span class="star">*</span></th>
+                                <td class="kjh_input" colspan="3">
                                   <input type="password" size="20" name="m_pw1" id="m_pw1" >
                                 </td>
-                                <th>비밀번호 확인<span class="star">*</span></th>
-                                <td class="kjh_input">
-                                  <input type="password" size="20" name="m_pw2" id="m_pw2" >
-                                </td>
+                                
                               </tr>
                               <tr>
                                 <th>휴대폰<span class="star">*</span></th>
@@ -129,24 +115,7 @@
                                 </td>
                                
                               </tr>
-                              <tr>
-                                <th>생년월일<span class="star">*</span></th>
-                                <td colspan="3">
-                                  <select class="kjh_select" name="m_birth1"id="m_birth1"class="date">
-                                    <option value=""></option>
-                                    <option value="1934">1934</option>
-                                  </select>년
-                                  <select class="kjh_select"name="m_birth2" id="m_birth2"class="date">
-                                    <option value=""></option>
-                                    <option value="1934">1934</option>
-                                  </select>월
-                                  <select class="kjh_select" name="m_birth3" id="m_birth3"class="date">
-                                    <option value=""></option>
-                                    <option value="1934">1934</option>
-                                  </select>일
-                                </td>
-                               
-                              </tr>
+                            
                               <tr>
                                 <th>이메일<br> 수신 동의<span class="star">*</span></th>
                                 <td>
@@ -159,6 +128,8 @@
                                   <label for="m_email_yn2">수신거부</label>
 
                                 </td>
+                              </tr>
+                              <tr></tr>
                                 <th>SMS<br> 수신 동의<span class="star">*</span></th>
                                 <td>
                                   <input type="radio" name="m_sms_yn" id="m_sms_yn1"
@@ -179,6 +150,10 @@
                           </h4>
                           <div class="form2">
                             <table class="kjh-form2-table">
+                              <tr>
+                                <th>생년월일</th>
+                                <td class="kjh_input"><input  type="text"></td>
+                              </tr>
                               <tr>
                                 <th>결혼유무</th>
                                 <td colspan="3">
@@ -211,24 +186,34 @@
                                 <th>주소</th>
                                 <td class="kjh_input" colspan="3">
                                   <input type="text" class="kjh_address"size="5px" readonly>
-                                  <input type="button" class="btn2"  value="우편번호검색"><br>
-                                  <input type="text" class="kjh_address" size="50px"readonly> <br>
-                                  <input type="text"  class="kjh_address"size="50px">
+                                  <input type="button" class="kjh-btn"  value="우편번호검색"><br>
+                                  <input type="text" class="kjh_address" size="50px"readonly> 
+                                  <input type="text"  class="kjh_address"size="35px">
 
                                 </td>
 
-                              </tr>                              
+                              </tr>      
+                              <tr>
+                                <th>회원탈퇴</th>
+                                <td  colspan="3">
+                                  <a class="kjh-member-delete" href="" >회원탈퇴</a>
+                                </td>
+                              </tr>                        
                             </table>
                           </div>
+                          <div class="kjh-btn-yn">
+                            <a href="" class="yes">확인</a>
+                            <a href="" class="no">취소</a>
 
+                          </div>
                         
                       </div> <!-- main-container -->
             
                   </div>
             </div>
           </div>
-            </div>  
-            <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+
+        <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
     </body>
 
