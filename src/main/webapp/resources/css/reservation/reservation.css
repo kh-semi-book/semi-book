@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Sans+KR&display=swap');
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+#header-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 179px;
+    width: 100%;
+    font-size: 50px;
+    background-color: black;
+    color: white;
+}
+
+#head-img{
+    /* width: 100%; */
+    height: 185px;
+    background-attachment: fixed;
+    background-image: url(/images/visual_qna.jpg);
+    /* background-repeat: no-repeat; */
+    background-size: 100%;
+    margin: 0px;
+}
+
+.bsh-main{
+    /* border: 1px solid red; */
+    height: 1453.5px;
+}
+
+.bsh-path{
+    justify-content: flex-start;
+    /* border: 1px solid green; */
+    width: 1000px;
+    height: 50px;
+    margin: 0 auto;
+    line-height: 50px;
+    text-transform: uppercase;
+    color: #767676;
+}
+
+.bsh-path li{
+    justify-content: flex-start;
+    display: inline-block;
+    /* float: left; */
+    /* padding: 0 8px 0 0; */
+    font-size: 13px;
+    color: #767676;
+    /* opacity: 0; */
+}
+
+.bsh-main-title h1{
+    /* border: 1px solid red; */
+    width: 1000px;
+    margin: 0 auto;
+    height: 83px;
+    padding: 18px 0 0;
+    font-size: 33px;
+    font-family: 'Nanum Myeongjo';
+    letter-spacing: -1px;
+    vertical-align: middle;
+    font-weight: 200;
+}
+
+.bsh-section{
+    /* border: 1px solid blue; */
+    width: 1000px;
+    height: 1332px;
+    margin: 0 auto;
+}
+
+.bsh-warning{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* border: 1px solid red; */
+    width: 920px;
+    height: 80px;
+    margin: auto;
+    padding: 30px 0 0;
+    font-size: 15px;
+    font-weight: 300px;
+    border-bottom: 2px solid black;
+}
+
+.bsh-tb1{
+    border-collapse: collapse;
+    display: flex;
+    /* border: 1px solid red; */
+    width: 1000px;
+    height: 779.5px;
+    padding: 0 40px;
+}
+
+.bsh-tb1 th{
+    display: flex;
+    align-items: center;
+    width: 156.39px;
+    height: 79px;
+    padding: 20px 0px 18px 25px;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+input[type="text"]{
+    height: 40px;
+    padding: 0 20px;
+    border: 1px solid #cdcdcd;
+    font-size: 16px;
+    line-height: 40px;
+    color: #333;
+}
+
+select{
+    height: 40px;
+    padding: 0 20px;
+    border: 1px solid #cdcdcd;
+    font-size: 16px;
+    line-height: 40px;
+    color: #333;
+}
+
+td{
+    width: 760px;
+    height: 79px;
+    padding: 20px 0 18px 35px;
+    border-left: 1px solid #c9c9c9;
+    border-bottom: 1px solid #c9c9c9;
+    background: #fff;
+    line-height: 1.7;
+}
+
+.inf-name2{
+    /* border-top: 2px solid black; */
+}
+
+.inf-name{
+    /* border-top: 2px solid black; */
+}
+
+th{
+    border-bottom: 1px solid #c9c9c9;
+    font-size: 17px;
+    color: #333;
+    letter-spacing: -1px;
+    font-weight: 400;
+}
+
+textarea{
+    border: 1px solid #cdcdcd;
+    color: #333;
+    padding: 8px 20px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#lastbox{
+    height: 303.5px;
+}
+
+label{
+    cursor: pointer;
+}
+
+.bsh-last-info{
+    /* border: 1px solid red; */
+    width: 1000px;
+    height: 333px;
+    padding: 0 40px;
+    border-bottom: 2px solid #e7e7e7;
+}
+
+.bsh-last-info > h2{
+    margin: 40px 0 15px;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    /* font-family: 'nSquare'; */
+    color: #333;
+}
+
+/************ 회원 탈퇴 약관 *************/
+.bsh-terms{
+    width: 920px;
+    height: 200px;
+    padding: 30px;
+    border: 1px solid #ccc;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* 내용이 요소를 벗어나는 경우 
+        방향에 맞춰서 자동으로 스크롤 추가
+    */
+    
+    font-family: sans-serif;
+    font-size: 13px;
+}
+
+.bsh-agree{
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid blue; */
+    width: 920px;
+    height: 44px;
+    padding: 20px 0 0;
+    font-size: 15px;
+}
+
+.bsh-btn{
+    display: inline-block;
+    justify-content: center;
+    width: 1000px;
+    height: 88px;
+    padding: 30px 0 0;
+    padding: 30px 0 0;
+    background: #fff;
+    text-align: center;
+}
+
+input[type="submit"]{
+    display: inline-block;
+    width: 220px;
+    height: 58px;
+    margin-left: 10px;
+    background: #231f20;
+    font-weight: 300;
+    font-size: 17px;
+    /* font-family: 'nSquare'; */
+    line-height: 58px;
+    color: #fff;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+a.bsh-btn-white{
+    border: 2px solid #b3b3b3;
+    background: #fff;
+    line-height: 56px;
+    margin-left: 4px;
+    color: #333333;
+    display: inline-block;
+    width: 220px;
+    height: 58px;
+    text-align: center;
+    font-size: 17px;
+}
+
+a.bsh-btn-white:hover{
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: all;
+
+    border: 2px solid #b3b3b3;
+    background: #fff;
+    line-height: 56px;
+    color: #333333;
+}
+
+.bsh-gotop-btn {
+    display: inline-block;
+    position: relative;
+    top: 10px;
+    width: 50px;
+    height: 50px;
+    padding: 10px 0 0;
+    border: 1px solid #c4c4c4;
+    background: #aaabaa;
+    color: #fff !important;
+    text-align: center;
+    opacity: .7;
+    filter: alpha(opacity=70);
+    transition: opacity .6s ease;
+}
+
+.bsh-gotop {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    z-index: 1000;
+    width: 1000px;
+    height: 1px;
+    margin: 0 0 0 -500px;
+    text-align: right;
+    cursor: pointer;
+}
+
+.bsh-gotop-btn:before {
+    content: "";
+    display: block;
+    width: 19px;
+    height: 13px;
+    margin: 0 auto 5px;
+    background: url(/images/logo.jpg) no-repeat -113px 0;
+}
+
+
+
+
+
+
+/* .footer-area{
+    display: flex;
+    width: 100%;
+    height: 821.36px;
+    font-size: 50px;
+    background-color: black;
+    color: white;
+    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
+} */

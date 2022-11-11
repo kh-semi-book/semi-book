@@ -38,7 +38,7 @@ public class NavController {
 	}
 	@RequestMapping(value="/nav/facilities")
 	public String facilities() {
-		return "/nav/infinitiPool/infinitiPool";
+		return "/nav/facilities/facilities(fitness)";
 	}
 	@RequestMapping(value="/nav/spa")
 	public String spa() {
