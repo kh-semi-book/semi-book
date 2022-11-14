@@ -44,7 +44,7 @@ public class NavController {
 	}
 	@GetMapping("/spa")
 	public String spa() {
-		return "/nav/spa";
+		return "/nav/spa/spa";
 	}
 	
 
