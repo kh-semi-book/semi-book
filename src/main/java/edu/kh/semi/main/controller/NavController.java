@@ -1,48 +1,50 @@
 package edu.kh.semi.main.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/nav")
 public class NavController {
 	
-	@RequestMapping(value="/nav/about")
+	@GetMapping("/about")
 	public String about() {
 		return "/nav/about/about-hotel";
 	}
 	
-	@RequestMapping(value="/nav/specialOffer")
+	@GetMapping("/specialOffer/roompromotion")
 	public String specialOffer() {
 		return "/nav/specialOffer/roomPromotion/roomPromotionMain";
 	}
 	
 	
-	@RequestMapping(value="/nav/rooms")
+	@GetMapping("/rooms")
 	public String rooms() {
 		return "/nav/rooms/rooms";
 	}
 	
-	@RequestMapping(value="/nav/dining")
+	@GetMapping("/dining/panorama")
 	public String dining() {
 		return "/nav/dining/dining_panorama";
 	}
 	
-	@RequestMapping(value="/nav/infinitiPool")
+	@GetMapping("/infinitiPool")
 	public String infinitiPool() {
 		return "/nav/infinitiPool/infinitiPool";
 	}
 	
-	@RequestMapping(value="/nav/meeting")
+	@GetMapping("/meeting/symphony")
 	public String meeting() {
-		return "/nav/meeting/meeting(harmony)";
+		return "/nav/meeting/meeting(symphony)";
 	}
-	@RequestMapping(value="/nav/facilities")
+	@GetMapping("/facilities/kids")
 	public String facilities() {
-		return "/nav/facilities/facilities(fitness)";
+		return "/nav/facilities/facilities(kids)";
 	}
-	@RequestMapping(value="/nav/spa")
+	@GetMapping("/spa")
 	public String spa() {
-		return "/nav/spa/spa";
+		return "/nav/spa";
 	}
 	
 
