@@ -4,7 +4,7 @@
 
 <div id="header">
     <div id="header-top">
-        <a href="#"><img src="/img/logo.png"></a>
+        <a href="#"><img src="/resources/image/logo.png"></a>
 
             <!-- 우측 상단 로그인 예약조회 회원가입 -->
         <!-- 헤더 오른쪽 상단 메뉴 -->
