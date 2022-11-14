@@ -45,9 +45,9 @@
             <div id="footer-middle">
             <ul>
                 <p class="footer-menu-title">HIDDEN CLIFF</p>
-                <li><a href="">호텔소개</a></li>
-                <li><a href="">오시는길</a></li>
-                <li><a href="">공지사항</a></li>
+                <li><a href="/nav/about/about-hotel">호텔소개</a></li>
+                <li><a href="/nav/about/about-contact">오시는길</a></li>
+                <li><a href="/nav/about/about-cmm">공지사항</a></li>
             </ul>
             <ul>
                 <p class="footer-menu-title">SPECIAL OFFER</p>

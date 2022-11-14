@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공지사항</title>
-    <link rel="stylesheet" href="about.css">
+   
+    <link rel="stylesheet" href="/resources/css/common/main.css">
+    <link rel="stylesheet" href="/resources/css/nav/about/about.css">
 </head>
 <body>
 
