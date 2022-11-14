@@ -2,7 +2,6 @@
 
 
 <footer>
-       
         <div id="footer-first">
            
             
@@ -37,7 +36,7 @@
 
             </table>
             
-            <a href="#" class="book-btn2">예약하기</a>
+            <a href="/reservation/reservation1" class="book-btn2">예약하기</a>
         </div>
         </div>
 
@@ -45,45 +44,45 @@
             <div id="footer-middle">
             <ul>
                 <p class="footer-menu-title">HIDDEN CLIFF</p>
-                <li><a href="/nav/about/about-hotel">호텔소개</a></li>
-                <li><a href="/nav/about/about-contact">오시는길</a></li>
-                <li><a href="/nav/about/about-cmm">공지사항</a></li>
+                <li><a href="/nav/about">호텔소개</a></li>
+                <li><a href="/nav/about/contact">오시는길</a></li>
+                <li><a href="/nav/about/cmm">공지사항</a></li>
             </ul>
             <ul>
                 <p class="footer-menu-title">SPECIAL OFFER</p>
-                <li><a href="#">객실 프로모션</a></li>
-                <li><a href="#">다이닝</a></li>
-                <li><a href="#">이벤트</a></li>
+                <li><a href="/nav/specialOffer/roompromotion">객실 프로모션</a></li>
+                <li><a href="/nav/specialOffer/dining">다이닝</a></li>
+                <li><a href="/nav/specialOffer/event">이벤트</a></li>
             </ul>
             <ul>
                 <p>ROOMS</p>
-                <li><a href="#">객실 리스트</a></li>
+                <li><a href="/nav/rooms">객실 리스트</a></li>
             </ul>
             <ul>
                 <p>DINING</p>
-                <li><a href="">파노라마</a></li>
-                <li><a href="">비욘드</a></li>
-                <li><a href="">치치</a></li>
+                <li><a href="/nav/dining/panorama">파노라마</a></li>
+                <li><a href="/nav/dining/beyond">비욘드</a></li>
+                <li><a href="/nav/dining/chichi">치치</a></li>
             </ul>
             <ul>
                 <p id="small-text">THE INFINITY POOL</p>
-                <li> <a href="#">인피니티 풀</a></li>
+                <li> <a href="/nav/infinitiPool">인피니티 풀</a></li>
             </ul>
             <ul>
                 <p>MEETING</p>
-                <li><a href="">심포니</a></li>
-                <li><a href="">하모니</a></li>
-                <li><a href="">오퍼스</a></li>
+                <li><a href="/nav/dining/panorama">심포니</a></li>
+                <li><a href="/nav/dining/beyond">하모니</a></li>
+                <li><a href="/nav/dining/chichi">오퍼스</a></li>
             </ul>
             <ul>
                 <p>FACILITIES</p>
-                <li><a href="#">키즈 플레이 룸</a></li>
-                <li><a href="#">피트니트 센터</a></li>
-                <li><a href="#">히든 트레일</a></li>
+                <li><a href="/nav/facilities/kids">키즈 플레이 룸</a></li>
+                <li><a href="/nav/facilities/fitness">피트니트 센터</a></li>
+                <li><a href="/nav/facilities/trail">히든 트레일</a></li>
             </ul>
             <ul>
                 <p>SPA</p>
-                <li><a href="#">보떼에르 스파 바이 록시땅</a></li>
+                <li><a href="/nav/spa">보떼에르 스파 바이 록시땅</a></li>
             </ul>
 
         
@@ -110,11 +109,11 @@
             <span>
                 <a href="#">개인정보 처리 방침</a>
                 |
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.facebook.com/hiddencliff/?fref=ts"><i class="fa-brands fa-facebook-f"></i></a>
                 |
-                <a href="#"><i class="fa-sharp fa-solid fa-n"></i></a>
+                <a href="https://search.naver.com/search.naver?where=post&sm=tab_jum&ie=utf8&query=히든+클리프"><i class="fa-sharp fa-solid fa-n"></i></a>
                 |
-                <a href="#"><i class="fa-solid fa-hotel"></i></a>
+                <a href="https://www.tripadvisor.com/Hotel_Review-g297892-d10205958-Reviews-Hidden_Cliff_Hotel_Nature-Seogwipo_Jeju_Island.html"><i class="fa-solid fa-hotel"></i></a>
             </span>
         </div>
 
