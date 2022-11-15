@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <title>HIDDEN_CLILFF</title>
 <link rel="stylesheet" href="/resources/css/common/main.css">
-<script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
+
 
 
 </head>
@@ -50,6 +50,6 @@
 	
 	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
-    <script src="/resources/js/header.js"></script>
+    
 </body>
 </html>

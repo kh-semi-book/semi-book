@@ -4,7 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <title>이벤트</title>
-<link rel="stylesheet" href="/resources/css/specialOffer/event/event_main.css">
+<link rel="stylesheet" href="/resources/css/nav/specialOffer/event/eventMain.css">
+<link rel="stylesheet" href="/resources/css/common/main.css">
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/common/header.jsp" />
@@ -21,7 +22,7 @@
 		<div id="event_body_area">
 			<div id="event_body_menu">
 				<ul id="event_list">
-					<li><a href="/html/event_1.html"> <span> <img src="/image/event1.jpg"></img>
+					<li><a href="/nav/specialOffer/event/detail"> <span> <img src="/resources/image/nav/specialOffer/event/event1.jpg"></img>
 						</span>
 							<div id="strong">
 								<strong>[스파] Refresh Your Day</strong>
@@ -51,19 +52,19 @@
 				</ul>
 			</div>
 			<div class="paging">
-				<span> <a href=""> <img src="/image/btn_paging_first.png" alt="">
+				<span> <a href=""> <img src="/resources/image/button/btn_paging_first.png" alt="">
 				</a>
-				</span> <span> <a href=""> <img src="/image/btn_paging_prev_on.png" alt="">
+				</span> <span> <a href=""> <img src="/resources/image/button/btn_paging_prev_on.png" alt="">
 				</a>
 				</span> <span> <a href="" class="on">1</a>
-				</span> <span> <a href=""> <img src="/image/btn_paging_next_on.png" alt="">
+				</span> <span> <a href=""> <img src="/resources/image/button/btn_paging_next_on.png" alt="">
 				</a>
-				</span> <span> <a href=""> <img src="/image/btn_paging_last_on.png" alt="">
+				</span> <span> <a href=""> <img src="/resources/image/button/btn_paging_last_on.png" alt="">
 				</a>
 				</span>
 			</div>
 		</div>
-		<div id="dining_foot_area">하단 영역</div>
+		<div id="dining_foot_area"></div>
 	</div>
 	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
 </body>

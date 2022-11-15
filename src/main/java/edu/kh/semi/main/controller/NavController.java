@@ -31,18 +31,18 @@ public class NavController {
 	//------------------------------------------
 
 	
-	@GetMapping("/specialOffer/roompromotion")
+	@GetMapping("/specialOffer/roomPromotion")
 	public String specialOffer() {
 		return "/nav/specialOffer/roomPromotion/roomPromotionMain";
 	}
 	
-	@GetMapping("/specialOffer/diniing")
+	@GetMapping("/specialOffer/dining")
 	public String specialOfferDining() {
-		return "/nav/specialOffer/roomPromotion/diningMain";
+		return "/nav/specialOffer/dining/diningMain";
 	}
 	@GetMapping("/specialOffer/event")
 	public String specialOfferEvent() {
-		return "/nav/specialOffer/roomPromotion/roomEventMain";
+		return "/nav/specialOffer/event/eventMain";
 	}
 	
 	//------------------------------------------

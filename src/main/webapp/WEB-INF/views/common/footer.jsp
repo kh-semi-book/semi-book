@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-
+<script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
 <footer>
         <div id="footer-first">
            
@@ -116,5 +116,6 @@
                 <a href="https://www.tripadvisor.com/Hotel_Review-g297892-d10205958-Reviews-Hidden_Cliff_Hotel_Nature-Seogwipo_Jeju_Island.html"><i class="fa-solid fa-hotel"></i></a>
             </span>
         </div>
+        <script src="/resources/js/header.js"></script>
 
     </footer>

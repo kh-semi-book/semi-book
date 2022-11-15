@@ -4,7 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <title>이벤트</title>
-<link rel="stylesheet" href="/resources/css/specialOffer/event/event_type.css">
+<link rel="stylesheet" href="/resources/css/nav/specialOffer/event/eventType.css">
+<link rel="stylesheet" href="/resources/css/common/main.css">
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/common/header.jsp" />
@@ -31,11 +32,11 @@
 				</div>
 			</section>
 			<section id="event_detail_content">
-				<img src="/image/event_1.jpg">
+				<img src="/resources/image/nav/specialOffer/event/event1_detail.jpg">
 			</section>
 			<section id="event_menu_return">
 				<div>
-					<a href="/html/event_main.html">목록</a>
+					<a href="/nav/specialOffer/event">목록</a>
 				</div>
 			</section>
 		</div>
