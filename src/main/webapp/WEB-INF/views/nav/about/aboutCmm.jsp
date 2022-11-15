@@ -20,14 +20,14 @@
     </div>
     <div id="cmm-main">
         <div id="top-menu">
-            <a href="#">HOME</a>><a href="#">HIDDEN CLIFF</a>><a href="#">공지사항</a>
+            <a href="/">HOME</a>><a href="/nav/about/aboutHotel">HIDDEN CLIFF</a>><a href="/nav/about/cmm">공지사항</a>
         </div>
         <div id="info-title">
             공지사항
         </div>
         
         <div id="cmm-contant-area">
-            <a href="#" name="left">
+            <a href="/nav/about/cmmContent" name="left">
                 <div id="right-area" name="left">
                     <label for="left">
                         <img src="/img/cmm-content-1.jpeg" width="485px" height="335px">
@@ -39,7 +39,7 @@
                 </div>
             </a>
 
-            <a href="#" name="right">
+            <a href="/nav/about/cmmContent" name="right">
                 <div id="right-area" name="right">
                     <label for="right">
                         <img src="/img/cmm-content-2.jpeg" width="485px" height="335px">

@@ -20,7 +20,7 @@
     
         <div id="about-main">
             <div id="top-menu">
-                <a href="#">HOME</a>><a href="#">HIDDEN CLIFF</a>><a href="#">호텔 소개</a>
+                <a href="/">HOME</a>><a href="/nav/about/aboutHotel">HIDDEN CLIFF</a>><a href="/nav/about/aboutHotel">호텔 소개</a>
             </div>
 
 
@@ -42,5 +42,6 @@
         </div>
     
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+    <script src="/resources/js/header.js"></script>
 </body>
 </html>
