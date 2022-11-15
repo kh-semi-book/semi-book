@@ -8,8 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>예약조회 - Hidden Cliff Hotel and Nature</title>
 				
-        <link rel="stylesheet" href="resources/css/reservation/reservationViewDetails.css">
-        <link rel="stylesheet" href="resources/css/common/main.css">
+        <link rel="stylesheet" href="/resources/css/reservation/reservationViewDetails.css">
+        <link rel="stylesheet" href="/resources/css/common/main.css">
         
         <script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
 
@@ -20,7 +20,7 @@
 
     <body>
             <!-- =================================[ header ]=================================== -->
-            	<jsp.include page="/WEB-INF/views/common/header.jsp">
+            	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
             <!-- =================================[ header ]=================================== -->
 
 
@@ -151,7 +151,7 @@
         <div class="rsc-foot-area"></div>
         </div>  
         <!-- ========================= footer ========================= -->
-        	<jsp.include page="/WEB-INF/views/common/footer.jsp">
+        	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
         <!-- ========================= footer ========================= -->
 
 
