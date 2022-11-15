@@ -4,9 +4,8 @@
     padding: 0;
     width: 100%;
     height: 100%;
-    background-color: #F7F7F7;
 }
-#dining_head_area, #dining_foot_area{
+#dining_head_area{
     height: 150px;
     background-color: #FFFFFF
 }
@@ -22,10 +21,10 @@
     width: 100%;
     height: 185px;
     background-attachment: fixed;
-    background-image: url(/image/visual_promotion.jpg);
+    background-image: url(/resources/image/nav/specialOffer/dining/visual_diningevent.jpg);
     background-repeat: no-repeat;
     background-position: 50% 65px;
-    background-size: 1800px 400px;
+    background-size: 100% 400px;
     margin: 0 auto;
 }
 
@@ -105,7 +104,7 @@
     flex-direction: row;
 }
 #dining_list #notice2 #date{
-    flex-basis: 65%;
+    flex-basis: 100%;
     background-color: #eee;
     padding-left: 20px;
     height: 44px;

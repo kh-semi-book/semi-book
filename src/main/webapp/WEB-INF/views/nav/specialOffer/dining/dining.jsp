@@ -4,7 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <title>다이닝</title>
-<link rel="stylesheet" href="/resources/css/specialOffer/dining/dining_type.css">
+<link rel="stylesheet" href="/resources/css/nav/specialOffer/dining/diningType.css">
+<link rel="stylesheet" href="/resources/css/common/main.css">
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/common/header.jsp" />
@@ -30,11 +31,11 @@
 				</div>
 			</section>
 			<section id="dining_detail_content">
-				<img src="/image/dining_1.jpg">
+				<img src="/resources/image/nav/specialOffer/dining/dining1_detail.jpg">
 			</section>
 			<section id="dining_menu_return">
 				<div>
-					<a href="/html/dining_main.html">목록</a>
+					<a href="/nav/specialOffer/dining">목록</a>
 				</div>
 			</section>
 		</div>
