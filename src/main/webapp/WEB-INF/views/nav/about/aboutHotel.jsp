@@ -20,7 +20,7 @@
     
         <div id="about-main">
             <div id="top-menu">
-                <a href="/">HOME</a>><a href="/nav/about/aboutHotel">HIDDEN CLIFF</a>><a href="/nav/about/aboutHotel">호텔 소개</a>
+                <a href="/">HOME</a>><a href="/nav/about">HIDDEN CLIFF</a>><a href="/nav/about">호텔 소개</a>
             </div>
 
 

@@ -20,7 +20,7 @@
     </div>
     <div id="cmm-main">
         <div id="top-menu">
-            <a href="/">HOME</a>><a href="/nav/about/aboutHotel">HIDDEN CLIFF</a>><a href="/nav/about/cmm">공지사항</a>
+            <a href="/">HOME</a>><a href="/nav/about">HIDDEN CLIFF</a>><a href="/nav/about/cmm">공지사항</a>
         </div>
         <div id="info-title">
             공지사항
@@ -56,6 +56,7 @@
     </div>
     
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+     <script src="/resources/js/header.js"></script>
 
 </body>
 </html>

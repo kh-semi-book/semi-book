@@ -21,7 +21,7 @@
     </div>
     <div id="contact-main">
         <div id="top-menu">
-            <a href="/">HOME</a>><a href="/nav/about/aboutHotel">HIDDEN CLIFF</a>><a href="/nav/about/contact">오시는 길</a>
+            <a href="/">HOME</a>><a href="/nav/about">HIDDEN CLIFF</a>><a href="/nav/about/contact">오시는 길</a>
         </div>
         <div id="info-title">
             오시는 길
