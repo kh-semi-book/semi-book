@@ -17,7 +17,6 @@
 
 
     <div id="top-photo">
-        사진자리
     </div>
     <div id="contact-main">
         <div id="top-menu">

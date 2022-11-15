@@ -13,7 +13,6 @@
 
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
     <div id="top-photo">
-        사진자리
     </div>
     <div id="cmm-in-main">
         <div id="top-menu">
