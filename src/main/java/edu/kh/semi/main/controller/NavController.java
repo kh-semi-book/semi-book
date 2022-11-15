@@ -10,13 +10,43 @@ public class NavController {
 	
 	@GetMapping("/about")
 	public String about() {
-		return "/nav/about/about-hotel";
+		return "/nav/about/aboutHotel";
 	}
+	
+	@GetMapping("/about/contact")
+	public String aboutContact() {
+		return "/nav/about/aboutContact";
+	}
+	
+	@GetMapping("/about/cmm")
+	public String aboutCmm() {
+		return "/nav/about/aboutCmm";
+	}
+	
+	@GetMapping("/about/cmmContent")
+	public String aboutCmmContent() {
+		return "/nav/about/aboutCmmContent";
+	}
+	
+	//------------------------------------------
+
 	
 	@GetMapping("/specialOffer/roompromotion")
 	public String specialOffer() {
 		return "/nav/specialOffer/roomPromotion/roomPromotionMain";
 	}
+	
+	@GetMapping("/specialOffer/diniing")
+	public String specialOfferDining() {
+		return "/nav/specialOffer/roomPromotion/diningMain";
+	}
+	@GetMapping("/specialOffer/event")
+	public String specialOfferEvent() {
+		return "/nav/specialOffer/roomPromotion/roomEventMain";
+	}
+	
+	//------------------------------------------
+
 	
 	
 	@GetMapping("/rooms")
@@ -24,24 +54,64 @@ public class NavController {
 		return "/nav/rooms/rooms";
 	}
 	
+	//------------------------------------------
+
+	
 	@GetMapping("/dining/panorama")
 	public String dining() {
-		return "/nav/dining/dining_panorama";
+		return "/nav/dining/diningPanorama";
 	}
+	@GetMapping("/dining/beyond")
+	public String diningBeyond() {
+		return "/nav/dining/diningBeyond";
+	}
+	@GetMapping("/dining/chichi")
+	public String diningChichi() {
+		return "/nav/dining/diningChichi";
+	}
+	
+	//------------------------------------------
+
+	
 	
 	@GetMapping("/infinitiPool")
 	public String infinitiPool() {
 		return "/nav/infinitiPool/infinitiPool";
 	}
 	
+	//------------------------------------------
+
+	
 	@GetMapping("/meeting/symphony")
 	public String meeting() {
-		return "/nav/meeting/meeting(symphony)";
+		return "/nav/meeting/meetingSymphony";
 	}
+	@GetMapping("/meeting/harmony")
+	public String meetingHarmony() {
+		return "/nav/meeting/meetingHarmony";
+	}
+	@GetMapping("/meeting/opus")
+	public String meetingOpus() {
+		return "/nav/meeting/meetingOpus";
+	}
+	
+	//------------------------------------------
+
 	@GetMapping("/facilities/kids")
 	public String facilities() {
-		return "/nav/facilities/facilities(kids)";
+		return "/nav/facilities/facilitiesKids";
 	}
+	@GetMapping("/facilities/fitness")
+	public String facilitiesFitness() {
+		return "/nav/facilities/facilitiesFitness";
+	}
+	@GetMapping("/facilities/trail")
+	public String facilitiesTrail() {
+		return "/nav/facilities/facilitiesTrail";
+	}
+	
+	//------------------------------------------
+
 	@GetMapping("/spa")
 	public String spa() {
 		return "/nav/spa/spa";

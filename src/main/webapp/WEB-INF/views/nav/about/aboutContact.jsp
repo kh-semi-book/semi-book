@@ -21,7 +21,7 @@
     </div>
     <div id="contact-main">
         <div id="top-menu">
-            <a href="#">HOME</a>><a href="#">HIDDEN CLIFF</a>><a href="#">오시는 길</a>
+            <a href="/">HOME</a>><a href="/nav/about">HIDDEN CLIFF</a>><a href="/nav/about/contact">오시는 길</a>
         </div>
         <div id="info-title">
             오시는 길
@@ -55,6 +55,7 @@
     
     
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+    <script src="/resources/js/header.js"></script>
    
 </body>
 </html>
