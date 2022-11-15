@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>예약 조회</title>
     
-   	<link rel="stylesheet" href="/resources/css/manager/admin-css.css">
+   	<link rel="stylesheet" href="/resources/css/manager/admin.css">
 </head>
 <body>
 
