@@ -64,7 +64,7 @@
                             <button id="rsc-btn-menu">메뉴 전체보기</button>
                         </form>
                         &nbsp;
-                        <form action="#"> 
+                        <form action="/nav/specialOffer/dining"> 
                             <button id="rsc-btn-event">다이닝이벤트</button>
                         </form>
                         </div>
