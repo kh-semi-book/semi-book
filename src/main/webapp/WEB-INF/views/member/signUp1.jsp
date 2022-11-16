@@ -6,7 +6,7 @@
 
   <title>회원가입 약관 Page</title>
 
-   	<link rel="stylesheet" href="/resources/css/member/signupbefore.css">
+   	<link rel="stylesheet" href="/resources/css/member/signUp1.css">
    	<link rel="stylesheet" href="/resources/css/common/main.css">
 
         <style>
