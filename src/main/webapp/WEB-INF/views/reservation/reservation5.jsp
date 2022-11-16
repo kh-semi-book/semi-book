@@ -6,10 +6,11 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>회원 가입</title>
+        <title>예약 완료</title>
         
-        <link rel="stylesheet" href="resources/css/reservation/reservationComplete.css">
-        <link rel="stylesheet" href="resources/css/common/main.css">
+        
+        <link rel="stylesheet" href="/resources/css/reservation/reservation5.css">
+        <link rel="stylesheet" href="/resources/css/common/main.css">
         
         <script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
         
@@ -20,7 +21,7 @@
 
     <body>
     <!-- =================================[ header ]=================================== -->
-        <jsp.include page="/WEB-INF/views/common/header.jsp">
+        <jsp:include page="/WEB-INF/views/common/header.jsp"/>
     <!-- =================================[ header ]=================================== -->
 
         <div class="reservation-lookUp-page">
@@ -116,7 +117,7 @@
             <!-- 하단 영역 -->
             <div class="rsc-foot-area">
                 <!-- ========================= footer ========================= -->
-                <jsp.include page="/WEB-INF/views/common/footer.jsp">
+                <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
                 <!-- ========================= footer ========================= -->
             </div>  
         </div>
