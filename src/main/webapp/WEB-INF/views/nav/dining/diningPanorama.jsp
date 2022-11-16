@@ -6,7 +6,7 @@
 
  <title>[다이닝 - 파노라마] Page</title>
 
-        <link rel="stylesheet" href="css/dining_panorama.css">
+        <link rel="stylesheet" href="/resources/css/nav/dining/diningPanorama.css">
     	<link rel="stylesheet" href="/resources/css/common/main.css">
 
         <script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
@@ -21,10 +21,9 @@
          <!-- header -->
 	<jsp:include page="/WEB-INF/views/common/header.jsp" />
        
-        <div class="kjh-head-area">
-        <!-- 헤더밑에 파노라마 사진 -->
-    </div>
-
+      <div class="kjh-head-area">
+                 
+     </div>
                  
 
           <div class="rsc-body-area">
@@ -38,7 +37,7 @@
                 </div>
               <h1 class="kjh-h1">파노라마 올데이 다이닝</h1>
               <div>
-                <img src="/img/panorama1.jpg" alt="">
+                <img src="/resources/image/nav/dining/panorama1.jpg" alt="">
               </div>
               <div class="kjh-sub-section">
                 <p class="kjh-content">

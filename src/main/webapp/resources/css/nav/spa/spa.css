@@ -8,7 +8,7 @@
     width: 100%;
     min-width: 1000px;
     height: 185px;
-    background-image: url(/image/visual_spa.jpg);
+    background-image: url(/resources/image/nav/spa/spaTop.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: 1800px 400px;
@@ -85,7 +85,7 @@
     color: #FFFFFF;
     cursor: pointer;
     text-decoration: none;
-    line-height: 58px;
+    line-height: 10px;
 }
 /* 안내 테이블 */
 #rsc-table-guideInfo{

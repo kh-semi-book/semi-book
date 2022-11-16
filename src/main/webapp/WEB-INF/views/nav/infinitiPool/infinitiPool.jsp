@@ -7,7 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>인피니티풀 - Hidden Cliff Hotel and Nature</title>
 
-        <link rel="stylesheet" href="resources/css/nav/infinitiPool/InfinitiPool.css">
+        <link rel="stylesheet" href="/resources/css/nav/infinitiPool/infinitiPool.css">
+        <link rel="stylesheet" href="/resources/css/common/main.css">
         
         <script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
 
@@ -18,21 +19,10 @@
 
     <body>
         <!-- =================================[ header ]=================================== -->
-        	<jsp.include page="/WEB-INF/views/common/header.jsp">
+        	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
         <!-- =================================[ /header ]=================================== -->
 
 
-
-
-
-
-
-
-
-
-
-
-            
                 <div class="reservation-lookUp-page">
                     <!-- 상단 배경 이미지 -->
                     <div class="rsc-top-image" width="100%"></div>
@@ -55,7 +45,7 @@
 
                         <!-- 이미지 영역(자바스크립트 필요) -->
                         <div id="rsc-image-pool">
-                        <img src="/image/infinity1.jpg" width="1000px">
+                        <img src="/resources/image/nav/infinitiPool/infinityPool1.jpg" width="1000px">
                         
                         <br><br><br>
 
@@ -74,7 +64,7 @@
                             <button id="rsc-btn-menu">메뉴 전체보기</button>
                         </form>
                         &nbsp;
-                        <form action="#"> 
+                        <form action="/nav/specialOffer/dining"> 
                             <button id="rsc-btn-event">다이닝이벤트</button>
                         </form>
                         </div>
@@ -171,16 +161,17 @@
                         <!-- 인피니티 이미지 -->
                         <div id="rsc-bottom-image">
                             <div id="rsc-bottom-image-1">
-                                <img src="/image/infinity1.jpg" width="500px" height="222px">
+                                <img src="/resources/image/nav/infinitiPool/infinityBottom.jpg" width="500px" height="222px">
                             </div>
                             <div id="rsc-bottom-image-2">
                                 <h4>감각적인 음악과 화려한 불빛에 몸을 맡기고 <br>
-                                    인피니티 풀에서 특별한 제주의 밤을 즐겨보세요.</h4> <br>
+                                    인피니티 풀에서 특별한 제주의 밤을 즐겨보세요.</h4>
                                     <dl>
                                         <dt id="image-left-text">운영기간</dt> <dd id="image-right-text">상시운영</dd>
                                         <dt id="image-left-text">운영시간</dt> <dd id="image-right-text">19:30 ~ 22:00 (21:30부터 DJ 공연 없음 / DJ 목요일 휴무)</dd>
                                         <dt id="image-left-text">이용대상</dt> <dd id="image-right-text">투숙객 한정</dd>
                                         <dt id="image-left-text">이용요금</dt> <dd id="image-right-text">유료 (문의 064-795-4151)</dd>
+                                        <dt id="image-left-text">이용문의</dt> <dd id="image-right-text">064-795-4151</dd>
                                     </dl>
                             </div>
                         </div>
@@ -197,7 +188,7 @@
 
 
         <!-- ----------------------[footer]--------------------------- -->
-				<jsp.include page="/WEB-INF/views/common/footer.jsp">	
+				<jsp:include page="/WEB-INF/views/common/footer.jsp"/>	
         <!-- ----------------------[/footer]--------------------------- -->
     
     </body>

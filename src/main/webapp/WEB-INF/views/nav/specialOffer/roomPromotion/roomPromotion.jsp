@@ -4,8 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <title>객실 프로모션</title>
-<link rel="stylesheet" href="/resources/css/nav/specialOffer/roomPromotion/promotion_type.css">
-<link rel="stylesheet" href="/resources/css/main.css">
+<link rel="stylesheet" href="/resources/css/nav/specialOffer/roomPromotion/promotionType.css">
+<link rel="stylesheet" href="/resources/css/common/main.css">
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/common/header.jsp" />
@@ -15,7 +15,11 @@
 		<div id="promotion_head_area">
 			<section></section>
 			<section id="promotion_title">
-				<div>HOME > SPECIAL OFFER > 객실 프로모션</div>
+				<div>
+					<a href="/">HOME</a> > 
+					<a href="/nav/specialOffer/roomPromotion">SPECIAL OFFER</a> > 
+					<a href="/nav/specialOffer/roomPromotion">객실 프로모션</a> 
+				</div>
 				<div>객실 프로모션</div>
 			</section>
 			<section></section>
@@ -40,11 +44,11 @@
 				</div>
 			</section>
 			<section id="promotion_detail_content">
-				<img src="/image/promotion_1.jpg">
+				<img src="/resources/image/nav/specialOffer/roomPromotion/promotion1_detail.jpg">
 			</section>
 			<section id="promotion_menu_return">
 				<div>
-					<a href="/html/promotion_main.html">목록</a>
+					<a href="/nav/specialOffer/roomPromotion">목록</a>
 				</div>
 			</section>
 		</div>

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-
+<script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
  <div id="header">
         <div id="header-top">
             <a href="/"><img src="/resources/image/logo.png"></a>
@@ -25,7 +25,7 @@
                     <i class="fa-brands fa-youtube"></i>
                 </a>
 
-                <a href="https://www.instagram.com/hidden_cliff/">
+                <a href="/manager/main">
                     INSTAGRAM
                     <i class="fa-brands fa-instagram"></i>
                 </a>
@@ -33,6 +33,7 @@
         </div>
 
     </div>
+
 
     <div id="outer-nav-area">
         <div id="nav-area">
@@ -109,3 +110,5 @@
         </div>
        
     </div>
+    
+    <script src="/resources/js/header.js"></script>

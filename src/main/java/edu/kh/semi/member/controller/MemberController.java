@@ -34,5 +34,11 @@ public class MemberController {
 		return path;
 	}
 	
+	
+	@GetMapping("/member/signUp2")
+	public String signUp2() {
+		return "/member/signUp2";
+	}
+	
 
 }

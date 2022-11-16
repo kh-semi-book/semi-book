@@ -4,8 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <title>객실 프로모션</title>
-<link rel="stylesheet" href="/resources/css/nav/specialOffer/roomPromotion/promotion_main.css">
-<link rel="stylesheet" href="/resources/css/main.css">
+<link rel="stylesheet" href="/resources/css/nav/specialOffer/roomPromotion/promotionMain.css">
+<link rel="stylesheet" href="/resources/css/common/main.css">
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/common/header.jsp" />
@@ -14,7 +14,11 @@
 		<div id="promotion_head_area">
 			<section></section>
 			<section id="promotion_title">
-				<div>HOME > SPECIAL OFFER > 객실 프로모션</div>
+				<div>
+					<a href="/">HOME</a> > 
+					<a href="/nav/specialOffer/roomPromotion">SPECIAL OFFER</a> > 
+					<a href="/nav/specialOffer/roomPromotion">객실 프로모션</a> 
+				</div>
 				<div>객실 프로모션</div>
 			</section>
 			<section></section>
@@ -22,7 +26,7 @@
 		<div id="promotion_body_area">
 			<div id="promotion_body_menu">
 				<ul id="promotion_list">
-					<li><a href="/html/promotion_1.html"> <span> <img src="/image/promotion1.jpg"></img>
+					<li><a href="/nav/specialOffer/roomPromotion/detail"> <span> <img src="/resources/image/nav/specialOffer/roomPromotion/promotion1.jpg"></img>
 						</span>
 							<div id="strong">
 								<strong>[얼리버드] Hiddem Earlybird</strong>
@@ -121,19 +125,19 @@
 				</ul>
 			</div>
 			<div class="paging">
-				<span> <a href=""> <img src="/image/btn_paging_first.png" alt="">
+				<span> <a href=""> <img src="/resources/image/button/btn_paging_first.png" alt="">
 				</a>
-				</span> <span> <a href=""> <img src="/image/btn_paging_prev_on.png" alt="">
+				</span> <span> <a href=""> <img src="/resources/image/button/btn_paging_prev_on.png" alt="">
 				</a>
 				</span> <span> <a href="" class="on">1</a>
-				</span> <span> <a href=""> <img src="/image/btn_paging_next_on.png" alt="">
+				</span> <span> <a href=""> <img src="/resources/image/button/btn_paging_next_on.png" alt="">
 				</a>
-				</span> <span> <a href=""> <img src="/image/btn_paging_last_on.png" alt="">
+				</span> <span> <a href=""> <img src="/resources/image/button/btn_paging_last_on.png" alt="">
 				</a>
 				</span>
 			</div>
 		</div>
-		<div id="promotion_foot_area">하단 영역</div>
+		<div id="promotion_foot_area"></div>
 	</div>
 	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
 

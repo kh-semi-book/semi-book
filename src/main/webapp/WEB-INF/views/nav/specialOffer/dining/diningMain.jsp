@@ -4,7 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <title>다이닝</title>
-<link rel="stylesheet" href="/resources/css/specialOffer/dining/dining_main.css">
+<link rel="stylesheet" href="/resources/css/nav/specialOffer/dining/diningMain.css">
+<link rel="stylesheet" href="/resources/css/common/main.css">
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/common/header.jsp" />
@@ -13,7 +14,11 @@
 		<div id="dining_head_area">
 			<section></section>
 			<section id="dining_title">
-				<div>HOME > SPECIAL OFFER > 다이닝</div>
+				<div>
+					<a href="/">HOME</a> > 
+					<a href="/nav/specialOffer/roomPromotion">SPECIAL OFFER</a> > 
+					<a href="/nav/specialOffer/dining">다이닝</a> 
+				</div>
 				<div>다이닝</div>
 			</section>
 			<section></section>
@@ -21,7 +26,7 @@
 		<div id="dining_body_area">
 			<div id="dining_body_menu">
 				<ul id="dining_list">
-					<li><a href="/html/dining_1.html"> <span> <img src="/image/dining1.jpg"></img>
+					<li><a href="/nav/specialOffer/dining/detail"> <span> <img src="/resources/image/nav/specialOffer/dining/dining1.jpg"></img>
 						</span>
 							<div id="strong">
 								<strong>[치치/인피니티 바] Autumn Vibes</strong>
@@ -50,32 +55,21 @@
 
 				</ul>
 			</div>
+			
 			<div class="paging">
-				<span> <a href=""> <img src="/image/first.png" alt="">
+				<span> <a href=""> <img src="/resources/image/button/btn_paging_first.png" alt="">
 				</a>
-				</span> <span> <a href=""> <img src="/image/prev.png" alt="">
-				</a>
-				</span> <span> <a href=""> </a>
-				</span> <span> <a href=""> <img src="/image/next.png" alt="">
-				</a>
-				</span> <span> <a href=""> <img src="/image/last.png" alt="">
-				</a>
-				</span>
-			</div>
-			<div class="paging">
-				<span> <a href=""> <img src="/image/btn_paging_first.png" alt="">
-				</a>
-				</span> <span> <a href=""> <img src="/image/btn_paging_prev_on.png" alt="">
+				</span> <span> <a href=""> <img src="/resources/image/button/btn_paging_prev_on.png" alt="">
 				</a>
 				</span> <span> <a href="" class="on">1</a>
-				</span> <span> <a href=""> <img src="/image/btn_paging_next_on.png" alt="">
+				</span> <span> <a href=""> <img src="/resources/image/button/btn_paging_next_on.png" alt="">
 				</a>
-				</span> <span> <a href=""> <img src="/image/btn_paging_last_on.png" alt="">
+				</span> <span> <a href=""> <img src="/resources/image/button/btn_paging_last_on.png" alt="">
 				</a>
 				</span>
 			</div>
 		</div>
-		<div id="dining_foot_area">하단 영역</div>
+		<div id="dining_foot_area"></div>
 	</div>
 	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
 </body>
