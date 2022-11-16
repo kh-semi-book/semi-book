@@ -12,7 +12,9 @@
  #search-book-title{
      font-size: 30px;
      margin-bottom:20px;
+     margin-top:20px;
  }
+ 
  
  #search-book-area{
      width: 1000px;

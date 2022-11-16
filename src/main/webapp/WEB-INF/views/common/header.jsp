@@ -25,7 +25,7 @@
                     <i class="fa-brands fa-youtube"></i>
                 </a>
 
-                <a href="https://www.instagram.com/hidden_cliff/">
+                <a href="/manager/main">
                     INSTAGRAM
                     <i class="fa-brands fa-instagram"></i>
                 </a>

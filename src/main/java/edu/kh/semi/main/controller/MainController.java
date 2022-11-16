@@ -18,6 +18,7 @@ public class MainController {
 		return "member/login";
 	}
 	
+	
 	@GetMapping("/reservation/check")
 	public String reservationCheckPage() {
 		return "reservation/reservation1";

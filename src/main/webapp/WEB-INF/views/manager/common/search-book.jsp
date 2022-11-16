@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>예약 검색</title>
     
-    <link rel="stylesheet" href="/resources/css/manager/admin-css.css">
+    <link rel="stylesheet" href="/resources/css/manager/admin.css">
 </head>
 <body>
 
-<jsp:include page="/WEB-INF/views/manager/common/admin-header.jsp"/>
+	<jsp:include page="/WEB-INF/views/manager/common/admin-header.jsp"/>
     <div id="search-book-area">
     <div id="search-book-title">예약 검색 페이지</div>
 
