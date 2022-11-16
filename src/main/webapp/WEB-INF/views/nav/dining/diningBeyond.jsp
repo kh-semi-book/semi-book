@@ -6,7 +6,7 @@
 
  <title>[다이닝 - 비욘드] Page</title>
 
-        <link rel="stylesheet" href="css/dining_beyond.css">
+        <link rel="stylesheet" href="/resources/css/nav/dining/diningBeyond.css">
        	<link rel="stylesheet" href="/resources/css/common/main.css">
 
         <script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
@@ -37,7 +37,7 @@
                 </div>
               <h1 class="kjh-h1">비욘드 루프탑 바</h1>
               <div>
-                <img src="/img/beyond3.jpg" alt="">
+                <img src="/resources/image/nav/dining/beyond3.jpg" alt="">
               </div>
               <div class="kjh-sub-section">
                     <p class="kjh-content">
