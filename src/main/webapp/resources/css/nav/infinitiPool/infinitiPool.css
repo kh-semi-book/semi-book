@@ -82,6 +82,11 @@
     border: 1px solid #c9c9c9;
 }
 
+#rsc-btn-menu a, #rsc-btn-event a{
+	text-decoration: none;
+	color: white;
+}
+
 /*----[ 안내사항 ]----*/
 #rsc-notification{
     display: block;
@@ -156,7 +161,7 @@ td[id*="blank"]{
     color: #FFFFFF;
 }
 #image-right-text{
-    margin: 0 0 0 80px;
+    margin: 0 0 2px 80px;
     font-size: 15px;
     letter-spacing: -1px;
     color: #FFFFFF;
