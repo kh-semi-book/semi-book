@@ -28,7 +28,10 @@
             </div>
 
             <div id="info-silde-photo">
-                사진존
+                 <span class="move prev">&#x3C;</span>
+                <span class="move next">&#x3E;</span>
+                
+                <img src="/resources/image/nav/about/hidden_company01.jpg" id="aboutImage">
             </div>
             <div id="logo-info">
                 <div id="logo-photo"><img src="/resources/image/nav/about/logo3.png" width="248px"></div>

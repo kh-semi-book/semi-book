@@ -55,12 +55,6 @@
 }
 
 
-#info-silde-photo{
-    background-color: black;
-    height: 550px;
-}
-
-
 #logo-info{
     
     width: 1000px;
@@ -93,6 +87,25 @@
     color: #b3b0b0;
     font-size: 15px;
 
+}
+
+ #info-silde-photo{
+    height: 550px;
+    width: 1000px;
+    position:relative;
+}
+
+.move{
+    position: absolute;
+    font-size: 60px;
+    cursor: pointer;
+
+    top:255px;
+    color:white;
+    font-family: "나눔명조", sans-serif;
+}
+.next{
+    right:0;
 }
 
 /* ------------------ contact ------------------ */
