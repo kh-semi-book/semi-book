@@ -5,7 +5,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
   <title>[다이닝 - 치치] Page</title>
 
-        <link rel="stylesheet" href="css/dining_chichi.css">
+        <link rel="stylesheet" href="/resources/css/nav/dining/diningChichi.css">
     	<link rel="stylesheet" href="/resources/css/common/main.css">
 
         <script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
@@ -36,7 +36,7 @@
                 </div>
               <h1 class="kjh-h1">치치 (라운드 카페)</h1>
               <div>
-                <img src="/img/chichi1.jpg" alt="">
+                <img src="/resources/image/nav/dining/chichi1.jpg" alt="">
               </div>
               <div class="kjh-sub-section">
                     <p class="kjh-content">
@@ -44,7 +44,8 @@
                 사랑하는 사람과 도란도란 이야기를 나누며 차 한 잔의 여유를 즐겨보세요.
                     </p>
               
-               </div>
+              </div>
+              
                 <div class="kjh-btn">
                   <a href="">전체 메뉴보기</a>
                   <a href="">다이닝 이벤트</a>

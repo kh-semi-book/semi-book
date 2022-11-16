@@ -27,7 +27,9 @@
 
      <!-- header -->
 	<jsp:include page="/WEB-INF/views/common/header.jsp" />
-
+	 <div class="kjh-head-area">
+                 
+     </div>
     <div class="rsc-body-area">
                     <div class="reservation-content-main">
                         <div class="step"> 
