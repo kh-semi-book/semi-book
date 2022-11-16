@@ -1,9 +1,29 @@
 /* ------------------ about hotel ------------------ */
-#top-photo{
+#top-photo1{
       width: 100%;
-    height: 185px;
+    height: 200px;
     background-attachment: fixed;
-    /*  background-image: url(/resources/image/nav/specialOffer/dining/visual_diningevent.jpg);*/
+    background-image: url(/resources/image/nav/about/aboutHotelTop.jpeg);
+    background-repeat: no-repeat;
+    background-position: 50% 65px;
+    background-size: 100% 400px;
+    margin: 0 auto;
+}
+#top-photo2{
+      width: 100%;
+    height: 200px;
+    background-attachment: fixed;
+    background-image: url(/resources/image/nav/about/aboutContact.jpeg);
+    background-repeat: no-repeat;
+    background-position: 50% 65px;
+    background-size: 100% 400px;
+    margin: 0 auto;
+}
+#top-photo3{
+      width: 100%;
+    height: 200px;
+    background-attachment: fixed;
+    background-image: url(/resources/image/nav/about/aboutCmmTop.jpeg);
     background-repeat: no-repeat;
     background-position: 50% 65px;
     background-size: 100% 400px;

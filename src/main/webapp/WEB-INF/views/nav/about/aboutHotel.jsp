@@ -14,7 +14,7 @@
 <body>
 
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
-     <div id="top-photo">
+     <div id="top-photo1">
     </div>
     
         <div id="about-main">
@@ -31,7 +31,7 @@
                 사진존
             </div>
             <div id="logo-info">
-                <div id="logo-photo"><img src="/img/logo3.png" width="248px"></div>
+                <div id="logo-photo"><img src="/resources/image/nav/about/logo3.png" width="248px"></div>
                 <div id="logo-text">
                     <p>히든 클리프 호텔 & 네이쳐 브랜드 아이덴티티(BI)</p>
                     <p>6개의 클리프 기둥은 제주의 하늘, 구름, 초원, 절벽, 바다, 땅을 의미합니다. <br>
