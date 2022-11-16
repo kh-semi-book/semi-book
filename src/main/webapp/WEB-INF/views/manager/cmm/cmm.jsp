@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <title>공지사항</title>
 <link rel="stylesheet" href="/resources/css/manager/board_detail.css">
+<link rel="stylesheet" href="/resources/css/manager/admin.css">
 <style>
 body {
 	margin: auto;
@@ -12,7 +13,7 @@ body {
 </style>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/common/header.jsp" />
+<jsp:include page="/WEB-INF/views/manager/common/admin-header.jsp"/>
 	<div class="board-lookUp-page">
 		<div class="board-head-area">
 			<div></div>
@@ -24,7 +25,7 @@ body {
 		</div>
 		<div class="board-body-area">
 			<div id="board-post">
-				<a href="/html/cmm_post.html" class="update">공지사항 수정</a>
+				<a href="/manager/cmm/cmmPost" class="update">공지사항 수정</a>
 			</div>
 
 			<table id="board_table">
@@ -48,12 +49,11 @@ body {
 			</table>
 
 			<div id="board_return">
-				<a href="/html/cmm_board.html">목록</a>
+				<a href="/manager/cmm/cmmBoard">목록</a>
 			</div>
 		</div>
 		<div class="board-foot-area"></div>
 	</div>
-	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
 
 </body>
 </html>
