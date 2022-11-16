@@ -1,221 +1,295 @@
-/* ***************** 여기부터 헤더 ***************** */
-
-body{
-    box-sizing: border-box;
-    margin: 0;
-  }
+  body{
+        box-sizing: border-box;
+        margin: 0;
+      }
 
 
 
 #header>div{
-width:1000px;
-height:110px;
-margin:auto; 
+    width:1000px;
+    height:110px;
+    margin:auto; 
 
 
 
-/* justify-content: center; */
-/* align-items: center; */
+    /* justify-content: center; */
+    /* align-items: center; */
 }
 
 #header>div>a{
-display: flex;
-justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 /* 헤더 오른쪽 상단 메뉴 */
 #header-top-menu{
-display: inline;
-position:relative;
+    display: inline;
+    position:relative;
 
-right:-90%;
-top:-90%;
-
+    right:-90%;
+    top:-90%;
+    
 }
 
 #header-top-menu a{
-text-decoration: none;
-color:black;
-font-weight: 1px;
-font-size: 12px;
+    text-decoration: none;
+    color:black;
+    font-weight: 1px;
+    font-size: 12px;
 
-margin:15px;
+    margin:15px;
 }
 
 #media-menu{
-
-position:relative;
-display: inline;
-right:-70%;
-top: -45%;
+    
+    position:relative;
+    display: inline;
+    right:-70%;
+    top: -45%;
 
 }
 
 #media-menu>a{
-text-decoration: none;
-color:gray;
-font-size: 14px;
+    text-decoration: none;
+    color:gray;
+    font-size: 14px;
 
 
-border:1px solid gray;
-padding : 3px 5px;
+    border:1px solid gray;
+    padding : 3px 5px;
 }
 
 /********************* #nav-area **********************/
-#nav-area{
+#outer-nav-area{
+   
+   height:60px;
+   border-top: 1px solid black;
 
-height:60px;
-
-border-bottom: 1px solid black;
-border-top: 1px solid black;
-background-color: rgba(255, 255, 255, 0.665);
-
-/* 화면 밖으로 요소가 벗어났을 때 지정된 위치에 고정 */
-position: sticky;
-top:0px;
-z-index:100; 
+   /* 화면 밖으로 요소가 벗어났을 때 지정된 위치에 고정 */
+   position: sticky;
+   top:0px;
+   z-index:100; 
 }
 
+#nav-area{
+    width: 100%;
+    border-bottom: 1px solid black;
+    background-color: rgba(255, 255, 255, 0.765);
+}
 
 /* ul 스타일 지정 */
 /* 줄어들었을 때 좀 잘리게 하는거 어떻게하려나 */
 #nav-area>ul{
+   
+   /* 비율상 이부분 수정 */
+   width: 1300px; 
+   padding:0;
+   height: 60px;
+  
+   margin: auto;
+   position: relative;
+   
 
-/* 비율상 이부분 수정 */
-width: 1300px; 
-padding:0;
-height: 60px;
-
-margin: auto;
-position: relative;
-
+   /* display: flex;
+   flex-direction: row; */
+   /* background-color: rgb(255, 255, 255); */
 }
 
 /* 네비게이터 메뉴 */
 #nav-area>ul>li{
-flex-basis: 140px;
-width: 140px;
+   flex-basis: 140px;
+   width: 140px;
 
-display: inline-block;
+   display: inline-block;
 
-/* display: flex;
-flex-direction: row; */
-justify-content: center;
-align-items: center;
-flex-wrap: wrap;
+   /* display: flex;
+   flex-direction: row; */
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
 }
 
 /* 메뉴 내부 a 태그 */
 #nav-area>ul>li>a{
-cursor: pointer;
+   cursor: pointer;
 
+   
+   text-decoration: none;
+   font-size: 15px;
+   color:black;
 
-text-decoration: none;
-font-size: 15px;
-color:black;
+   /* display: block; */
+   
+   display: flex;
+   justify-content: center;
+   align-items: center;
 
-/* display: block; */
+   /* position: relative; */
+   /* 내부에 작성된 글자를 요소로 취급해서 정가운데 배치 */
 
-display: flex;
-justify-content: center;
-align-items: center;
-
-/* position: relative; */
-/* 내부에 작성된 글자를 요소로 취급해서 정가운데 배치 */
-
-/* border-radius: 5px; */
-transition-duration: 0.1s;
-height:60px;
+   /* border-radius: 5px; */
+   transition-duration: 0.1s;
+   height:60px;
 }
 
 
 #nav-area>ul>li>#book-btn{
-text-decoration: none;
-color:white;
+   text-decoration: none;
+   color:white;
 
-/* border:1px solid black; */
-height: 100px;
-width: 100px;
+   /* border:1px solid black; */
+   height: 100px;
+   width: 100px;
 
-background-color: rgb(150, 150, 150);
+   background-color: rgb(150, 150, 150);
 
-position:absolute;
+   position:absolute;
 
-z-index: 20;
+   z-index: 20;
 
-display: flex;
-flex-direction: column;
+   display: flex;
+   flex-direction: column;
 
-justify-content: center;
-align-items: center;
-top:0;
-right:1px;
+   justify-content: center;
+   align-items: center;
+   top:0;
+   right:1px;
 }
 
 #book-btn>i{
-display: block;
-font-size: 40px;
-margin-bottom: 5px;
+    display: block;
+    font-size: 40px;
+    margin-bottom: 5px;
 }
 
 #header-top-btn{
-position: fixed;
-bottom: 0;
-left:70%;
+    position: fixed;
+    bottom: 0;
+    left:70%;
 
-height:50px;
-width: 50px;
-background-color: rgb(81, 81, 81);
+    height:50px;
+    width: 50px;
+    background-color: rgb(81, 81, 81);
 
-
+    
 }
 
 #header-top-btn>a{
-text-decoration: none;
-color:white;
+    text-decoration: none;
+    color:white;
 
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #header-top-btn>a>i{
-
-font-size: 30px;
+    
+    font-size: 30px;
 }
 
+
+#top-photo{
+            background-color: antiquewhite;
+            height: 150px;
+        }
+
+        #about-main{
+            width: 1000px;
+            margin:auto;
+        }
+
+        #top-menu{
+            color:rgb(133, 131, 131);
+            font-size:14px;
+            padding:20px 0;
+        }
+    
+        #top-menu>a{
+            text-decoration: none;
+            color:rgb(133, 131, 131);
+            padding:0 10px;
+        }
+
+        #info-title{
+            height: 10%;
+            font-family:'나눔명조';
+            font-size: 30px;
+            margin:20px 0;
+        }
+
+        
+        #info-silde-photo{
+            background-color: black;
+            height: 550px;
+        }
+       
+
+        #logo-info{
+            
+            width: 1000px;
+            background-color: rgb(242, 242, 242);
+            margin-top:60px;
+            margin-bottom:80px;
+            height: 180px;
+        }
+
+         /* 로고만 남게 */
+        #logo-photo{
+            display: inline-block;
+            width: 30%;
+            margin:20px 0;
+            margin-left: 30px;
+        }
+
+        #logo-text{
+            display: inline-block;
+            width: 60%;
+        }
+
+        #logo-text>p:first-child{
+            color: #636363;
+            font-size: 20px;
+
+        }
+
+        #logo-text>p:last-child{
+            color: #b3b0b0;
+            font-size: 15px;
+
+        }
 
 
 
 
 .inner-list{
-/* display: none; */
-opacity: 0;
-list-style: none;
-
-padding:0;
-position: absolute;
-
+    /* display: none; */
+    opacity: 0;
+    list-style: none;
+   
+    padding:0;
+    position: absolute;
+    
 
 }
 
 .inner-list>li{
-margin:10px;
-float:left;
+    margin:10px;
+    float:left;
 }
 
 .inner-list>li>a{
-display: inline-block;
-text-decoration: none;
-color:rgb(54, 54, 54);
-font-size: 14px;
+    display: inline-block;
+    text-decoration: none;
+    color:rgb(54, 54, 54);
+    font-size: 14px;
 
 }
 
 .inner-list>li>a:hover{
-font-weight: bold;
-
+    font-weight: bold;
+    
 }
 
 /* ***************** 여기까지 헤더 ***************** */
@@ -539,4 +613,32 @@ body{
     height: 223px;
     width: 320px;
     background-color: black;
+}
+
+
+/* --------------------------------------------- */
+
+#titleImage{
+    position: relative;
+    width:1300px;
+    height:580px;
+}
+
+#mainImage{
+    width:1300px;
+    height:580px;
+}
+
+.move{
+    position: absolute;
+    font-size: 60px;
+    cursor: pointer;
+
+    top:255px;
+    color:white;
+    font-family: "나눔명조", sans-serif;
+}
+
+.next{
+    right:0;
 }
