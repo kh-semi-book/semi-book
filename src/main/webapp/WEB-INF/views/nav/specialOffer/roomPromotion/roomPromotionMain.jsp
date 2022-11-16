@@ -14,7 +14,11 @@
 		<div id="promotion_head_area">
 			<section></section>
 			<section id="promotion_title">
-				<div>HOME > SPECIAL OFFER > 객실 프로모션</div>
+				<div>
+					<a href="/">HOME</a> > 
+					<a href="/nav/specialOffer/roomPromotion">SPECIAL OFFER</a> > 
+					<a href="/nav/specialOffer/roomPromotion">객실 프로모션</a> 
+				</div>
 				<div>객실 프로모션</div>
 			</section>
 			<section></section>
