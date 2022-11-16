@@ -79,13 +79,11 @@
                         <br><br><br><br>
                         <!-- 페이지 이동 버튼 -->
                         <div id="rsc-page-skip">
-                            <a href="#">
-                                << </a>&nbsp;&nbsp;
-                                    <a href="#">
-                                        < </a> &nbsp;&nbsp;
-                                            <button><a href="#">1</a></button>&nbsp;&nbsp;
-                                            <a href="#"> > </a> &nbsp;&nbsp;
-                                            <a href="#"> >> </a>
+                            <a href="#"> << </a>&nbsp;&nbsp;
+                            <a href="#"> < </a> &nbsp;&nbsp;
+                            <button><a href="#">1</a></button>&nbsp;&nbsp;
+                            <a href="#"> > </a> &nbsp;&nbsp;
+                            <a href="#"> >> </a>
                         </div>
                     </div>
                 </div>
