@@ -66,24 +66,24 @@
                           <div class="form1">
                             <table class="kjh-form1-table">
                               <tr>
-                                <label for="m_name">
+                                <label for="m-name">
                                   <th>성명<span class="star">*</span>
                                 </label>
                                 </th>
                                 
-                                <td class="kjh_input"colspan="3">
+                                <td class="kjh-input"colspan="3">
                                   <input type="text" size="20" name="m_name" id="m_name" >
                                 </td>
                               </tr>
 
                               <tr>
-                                <label for="m_id">
+                                <label for="m-id">
                                    <th>아이디<span class="star">*</span>
                                 </label>
                                 </th>
                                 
-                                <td class="kjh_input"colspan="3">
-                                  <input type="text" size="20" name="m_id" id="m_id" >
+                                <td class="kjh-input"colspan="3">
+                                  <input type="text" size="20" name="m-id" id="m-id" >
                                   <input type="button" class="btn" value="중복확인">
 
                                 </td>
@@ -91,27 +91,27 @@
                               
                               <tr>
                                 <th>비밀번호<span class="star">*</span></th>
-                                <td class="kjh_input">
+                                <td class="kjh-input">
                                   <input type="password" size="20" name="m_pw1" id="m_pw1" >
                                 </td>
                                  <th>비밀번호 확인<span class="star">*</span></th>
-                                <td class="kjh_input">
+                                <td class="kjh-input">
                                   <input type="password" size="20" name="m_pw2" id="m_pw2" >
                                 </td>
                               </tr>
                               <tr>
                                 <th>휴대폰<span class="star">*</span></th>
-                                <td class="kjh_input" colspan="3">
-                                  <input type="text" size="1" name="m_phone" id="m_phone"> -
-                                  <input type="text" size="1" name="m_phone" id="m_phone"> -
-                                  <input type="text" size="1" name="m_phone" id="m_phone">
+                                <td class="kjh-input" colspan="3">
+                                  <input type="text" size="1" name="m-phone" id="m-phone"> -
+                                  <input type="text" size="1" name="m-phone" id="m-phone"> -
+                                  <input type="text" size="1" name="m-phone" id="m-phone">
                                 </td>
                           
                               </tr>
                               <tr>
                                  <th>이메일<span class="star">*</span></th>
-                                <td class="kjh_input" colspan="3">
-                                  <input type="text" size="20" name="m_email" id="m_email">@
+                                <td class="kjh-input" colspan="3">
+                                  <input type="text" size="20" name="m-email" id="m-email">@
                                   <input type="text" size="13"name="" id="">
                                   <select class="kjh-address" name="" id="">
                                     <option value="naver.com">naver.com</option>
@@ -126,8 +126,8 @@
                               </tr>
                               <tr>
                                 <th>성별<span class="star">*</span></th>
-                                <td class="kjh_input"colspan="3">
-                                  <select class="kjh_select"name="m_gender" id="m_gender">
+                                <td class="kjh-input"colspan="3">
+                                  <select class="kjh-select"name="m-gender" id="m-gender">
                                     <option value="">성별</option>
                                     <option value="F">여</option>
                                     <option value="M">남</option>
@@ -138,15 +138,15 @@
                               <tr>
                                <th>생년월일<span class="star">*</span></th>
                                 <td colspan="3">
-                                  <select class="kjh_select" name="m_birth1"id="m_birth1"class="date">
+                                  <select class="kjh-select" name="m-birth1"id="m-birth1"class="date">
                                     <option value=""></option>
                                     <option value="1934">1934</option>
                                   </select>년
-                                  <select class="kjh_select"name="m_birth2" id="m_birth2"class="date">
+                                  <select class="kjh-select"name="m-birth2" id="m-birth2"class="date">
                                     <option value=""></option>
                                     <option value="1934">1934</option>
                                   </select>월
-                                  <select class="kjh_select" name="m_birth3" id="m_birth3"class="date">
+                                  <select class="kjh-select" name="m-birth3" id="m-birth3"class="date">
                                     <option value=""></option>
                                     <option value="1934">1934</option>
                                   </select>일
@@ -206,7 +206,7 @@
                               </tr>                              
                               <tr>
                                 <th>유선전화</th>
-                                <td class="kjh_input" colspan="3">
+                                <td class="kjh-input" colspan="3">
                                   <input type="text" size="1" name="m_col" id="m_col"> -
                                   <input type="text" size="1" name="m_col" id="m_col"> -
                                   <input type="text" size="1" name="m_col" id="m_col"> 
@@ -215,11 +215,11 @@
                               </tr>                              
                               <tr>
                                 <th>주소</th>
-                                <td class="kjh_input" colspan="3">
-                                  <input type="text" class="kjh_address"size="5px" readonly>
+                                <td class="kjh-input" colspan="3">
+                                  <input type="text" class="kjh-address"size="5px" readonly>
                                   <input type="button" class="btn2"  value="우편번호검색"><br>
-                                  <input type="text" class="kjh_address" size="50px"readonly> <br>
-                                  <input type="text"  class="kjh_address"size="50px">
+                                  <input type="text" class="kjh-address" size="50px"readonly> <br>
+                                  <input type="text"  class="kjh-address"size="50px">
 
                                 </td>
                               </tr>                              
