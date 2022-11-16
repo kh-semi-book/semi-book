@@ -34,75 +34,76 @@
 
     </div>
 
-    <div id="nav-area">
-        <ul>
-            <li>
-                <a href="/nav/about" class="li-animation">HIDDEN CLIFF</a>
-                <ul class="inner-list">
-                    <li><a href="/nav/about">호텔소개</a></li>
-                    <li><a href="/nav/about/contact">오시는길</a></li>
-                    <li><a href="/nav/about/cmm">공지사항</a></li>
-                </ul>
-            </li>
-            <li >
-                <a href="/nav/specialOffer/roompromotion" class="li-animation">SPECIAL OFFER</a>
-                <ul class="inner-list">
-                    <li><a href="/nav/specialOffer/roompromotion">객실 프로모션</a></li>
-                    <li><a href="/nav/specialOffer/dining">다이닝</a></li>
-                    <li><a href="/nav/specialOffer/event">이벤트</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="/nav/rooms" class="li-animation" >ROOMS</a>
-                <ul class="inner-list">
-                    <li><a href="/nav/rooms">객실 리스트</a></li>
-                </ul>
-            </li>
-            <li >
-                <a href="/nav/dining/panorama" class="li-animation">DINING</a>
-                <ul class="inner-list">
-                    <li><a href="/nav/dining/panorama">파노라마</a></li>
-                    <li><a href="/nav/dining/beyond">비욘드</a></li>
-                    <li><a href="/nav/dining/chichi">치치</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="/nav/infinitiPool" class="li-animation">THE INFINITY POOL</a>
-                <ul class="inner-list">
-                    <li><a href="/nav/infinitiPool">인피니티 풀</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="/nav/meeting/symphony" class="li-animation">MEETING</a>
-                <ul class="inner-list">
-                    <li><a href="/nav/meeting/symphony">심포니</a></li>
-                    <li><a href="/nav/meeting/harmony">하모니</a></li>
-                    <li><a href="/nav/meeting/opus">오퍼스</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="/nav/facilities/kids" class="li-animation">FACILITIES</a>
-                <ul class="inner-list">
-                    <li><a href="/nav/facilities/kids">키즈 플레이 룸</a></li>
-                    <li><a href="/nav/facilities/fitness">피트니스 센터</a></li>
-                    <li><a href="/nav/facilities/trail">히든 트레일</a></li>
-                </ul>
-            </li>
-            <li >
-                <a href="/nav/spa" class="li-animation">SPA</a>
-                <ul class="inner-list">
-                    <li><a href="/nav/spa">보떼에르 스파 바이 록시땅</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="/reservation/reservation1" id="book-btn"><i class="fa-regular fa-calendar-days"></i>
-                    예약하기</a> 
-                    <!-- 새창으로 -->
-            </li>
-            
-        </ul>
+    <div id="outer-nav-area">
+        <div id="nav-area">
+            <ul>
+                <li>
+                    <a href="/nav/about" class="li-animation">HIDDEN CLIFF</a>
+                    <ul class="inner-list">
+                        <li><a href="/nav/about">호텔소개</a></li>
+                        <li><a href="/nav/about/contact">오시는길</a></li>
+                        <li><a href="/nav/about/cmm">공지사항</a></li>
+                    </ul>
+                </li>
+                <li >
+                    <a href="/nav/specialOffer/roompromotion" class="li-animation">SPECIAL OFFER</a>
+                    <ul class="inner-list">
+                        <li><a href="/nav/specialOffer/roompromotion">객실 프로모션</a></li>
+                        <li><a href="/nav/specialOffer/dining">다이닝</a></li>
+                        <li><a href="/nav/specialOffer/event">이벤트</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/nav/rooms" class="li-animation" >ROOMS</a>
+                    <ul class="inner-list">
+                        <li><a href="/nav/rooms">객실 리스트</a></li>
+                    </ul>
+                </li>
+                <li >
+                    <a href="/nav/dining/panorama" class="li-animation">DINING</a>
+                    <ul class="inner-list">
+                        <li><a href="/nav/dining/panorama">파노라마</a></li>
+                        <li><a href="/nav/dining/beyond">비욘드</a></li>
+                        <li><a href="/nav/dining/chichi">치치</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/nav/infinitiPool" class="li-animation">THE INFINITY POOL</a>
+                    <ul class="inner-list">
+                        <li><a href="/nav/infinitiPool">인피니티 풀</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/nav/meeting/symphony" class="li-animation">MEETING</a>
+                    <ul class="inner-list">
+                        <li><a href="/nav/meeting/symphony">심포니</a></li>
+                        <li><a href="/nav/meeting/harmony">하모니</a></li>
+                        <li><a href="/nav/meeting/opus">오퍼스</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/nav/facilities/kids" class="li-animation">FACILITIES</a>
+                    <ul class="inner-list">
+                        <li><a href="/nav/facilities/kids">키즈 플레이 룸</a></li>
+                        <li><a href="/nav/facilities/fitness">피트니스 센터</a></li>
+                        <li><a href="/nav/facilities/trail">히든 트레일</a></li>
+                    </ul>
+                </li>
+                <li >
+                    <a href="/nav/spa" class="li-animation">SPA</a>
+                    <ul class="inner-list">
+                        <li><a href="/nav/spa">보떼에르 스파 바이 록시땅</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/reservation/reservation1" id="book-btn"><i class="fa-regular fa-calendar-days"></i>
+                        예약하기</a> 
+                        <!-- 새창으로 -->
+                </li>
+                
+            </ul>
+        </div>
 
-       
         <div id="header-top-btn">
             <a href="#"><i class="fa-solid fa-arrow-up"></i>TOP</a>
         </div>

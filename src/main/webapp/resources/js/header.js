@@ -1,11 +1,13 @@
 const liAnimation=document.getElementsByClassName("li-animation");
+const navArea=document.getElementById("nav-area");
+const innerList=document.getElementById("inner-list");
 
 for(let item of liAnimation){ 
     item.addEventListener("mouseover",function(){
-       // nav area
-     this.parentElement.parentElement.parentElement.style.height="100px";
-     //this.parentElement.parentElement.parentElement.style.backgroundColor="white";
-     this.parentElement.parentElement.parentElement.style.transitionDuration="0.7s";
+        // nav area
+        navArea.style.height="100px";
+        navArea.style.backgroundColor="white";
+        navArea.style.transitionDuration="0.7s";
      
      // innerlist
      this.parentElement.children[1].style.display="block";
@@ -18,34 +20,27 @@ for(let item of liAnimation){
 
 
     item.parentElement.addEventListener("mouseleave",function(){
-        this.children[1].style.display="none";
         this.children[1].style.opacity="0";
+        this.children[1].style.transitionDuration="0s";
         this.children[0].style.border="none";
     })
 }
 
-document.getElementById("nav-area").addEventListener("mouseleave", function(){
+navArea.addEventListener("mouseleave", function(){
     // nav area
     this.style.height="60px";
-    this.style.transitionDuration="0.8s";
+    this.style.backgroundColor="rgba(255, 255, 255, 0.665)";
 
     // a태그
-    this.children[0].children[0].children[0].style.border="none";
-    this.children[0].children[1].children[0].style.border="none";
-    this.children[0].children[2].children[0].style.border="none";
-    this.children[0].children[3].children[0].style.border="none";
-    this.children[0].children[4].children[0].style.border="none";
-    this.children[0].children[5].children[0].style.border="none";
-    this.children[0].children[6].children[0].style.border="none";
-    this.children[0].children[7].children[0].style.border="none";
-
-    // innerlist
-    this.children[0].children[0].children[1].style.display="none";
-    this.children[0].children[1].children[1].style.display="none";
-    this.children[0].children[2].children[1].style.display="none";
-    this.children[0].children[3].children[1].style.display="none";
-    this.children[0].children[4].children[1].style.display="none";
-    this.children[0].children[5].children[1].style.display="none";
-    this.children[0].children[6].children[1].style.display="none";
-    this.children[0].children[7].children[1].style.display="none";
+    for(let item of liAnimation){
+        item.style.border="none";
+    }
+   
+    // innerList
+    for(let item of innerList){
+        item.style.opacity="0";
+        item.style.transitionDuration="0s";
+    }
 });
+
+
