@@ -8,8 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>회원 가입 최종 페이지</title>
         
-        <link rel="stylesheet" href="resources/css/member/memberSession.css">
-        <link rel="stylesheet" href="resources/css/common/main.css">
+        <link rel="stylesheet" href="/resources/css/member/signUp3.css">
+        <link rel="stylesheet" href="/resources/css/common/main.css">
         
         <script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
         
@@ -20,7 +20,7 @@
 
     <body>
         <!-- =================================[ header ]=================================== -->
-       	<jsp.include page="/WEB-INF/views/common/header.jsp">
+       	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
         <!-- =================================[ header ]=================================== -->
 
 
@@ -109,7 +109,7 @@
             <!-- 하단 영역 -->
             <div class="rsc-foot-area">
                 <!-- ========================= footer ========================= -->
-                <jsp.include page="/WEB-INF/views/common/footer.jsp">
+                <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
                 <!-- ========================= footer ========================= -->
         
 </body>

@@ -24,7 +24,7 @@ public class MainController {
 		return "reservation/reservation1";
 	}
 	
-	@GetMapping("/member/memberSignUp")
+	@GetMapping("/member/signUp")
 	public String signUpPage() {
 		return "member/signUp1";
 	}

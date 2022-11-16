@@ -1,0 +1,168 @@
+/*=========[ 기본 뼈대 ]========= */
+.reservation-lookUp-page{
+    margin: 0 auto 0 auto;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+.rsc-top-image{
+    width: 100%;
+    height: 185px;
+    background-image: url(/resources/image/nav/infinitiPool/infinitiPoolTop.jpg);
+    background-attachment: fixed;
+    background-size: 100% 400px;
+    background-repeat: no-repeat;
+    background-position: 50% 65px;
+    margin: 0 auto;
+    
+}
+.rsc-head-area,.rsc-foot-area{
+    height: 150px;
+    background-color: #FFFFFF
+}
+.rsc-body-area{
+    width: 1000px;
+    height: auto;
+    background-color: #FFFFFF;
+    margin: 0 auto 0 auto;
+}
+
+/*=========[ 상단 영역 ]========= */
+.rsc-head-area{
+    display: flex;
+    flex-direction: column;
+}
+.rsc-body-TopArea{
+    width: 1000px;
+    height: 1200px;
+    background-color:#FFFFFF ;
+    margin: 0 auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/*----[ 페이지 리스트 조회 ]---- */
+.rsc-page-list>a, .rsc-page-list{
+    text-decoration: none;
+    color: #767676;
+    font-size: 13px;
+}
+
+
+/*----[ 페이지 제목 ]----*/
+.rsc-page-title >h1{
+    margin: 15px 0 0 0;
+    font-size: 33px;
+    color: #000000;
+}
+
+/*----[ 상단 이미지 영역 ]----*/
+#rsc-image-text{
+    font-size: 16px;
+    letter-spacing: -1px;
+    color: #000000;
+}
+
+
+/*----[ 버튼 (메뉴 전체보기 / 다이닝이벤트) ]----*/
+.rsc-btn{
+    display: flex;
+    flex-direction: row;
+}
+
+#rsc-btn-menu, #rsc-btn-event{
+    width: 210px;
+    height: 58px;
+    font-size: 17px;
+    font-weight: bold;
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #c9c9c9;
+}
+
+#rsc-btn-menu a, #rsc-btn-event a{
+	text-decoration: none;
+	color: white;
+}
+
+/*----[ 안내사항 ]----*/
+#rsc-notification{
+    display: block;
+    background-color: #f8f8f8;
+    width: 1000px;
+    text-align: left;
+}
+#rsc-notification-p{
+    padding: 13px 20px;
+}
+
+
+/*----[ 1번, 2번 테이블 (인피니티 온수 풀, 이용안내) ]----*/
+td[id*="blank"]{
+    height: 10px;
+    width: 1000px;
+    padding: 0;
+    margin: 0;
+}
+#rsc-table-pool{ border-top: 2px solid #000000; }
+#rsc-last-tr th,#rsc-last-tr td{
+    margin: 0;
+    padding: 0;
+}
+#rsc-table-var{
+    margin: 0%;
+    padding: 0;
+    border-top:2px solid #000000;
+    border-bottom:1px solid #767676;
+}
+#rsc-blank-1{ border-bottom: 1px solid #767676; }
+#rsc-blank-2{
+    border-top: 1px solid #767676;
+}
+
+#rsc-table-pool th , #rsc-table-var th{
+    text-align: left;
+    padding: 0 0 0 40px;
+    font-size: 17px;
+}
+#table-content{
+    text-align: left;
+    padding: 0 0 0 35px;
+    font-size: 14px;
+    margin: 0;
+}
+#table-content>p{line-height: 150%;}
+
+/* 하단 이미지 영역 */
+#rsc-bottom-image{
+    background-color: #000000;
+    height: 222px;
+    margin: 0 0 30px 0;
+    padding: 0;
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+}
+#rsc-bottom-image-1{
+    width: 50%;
+}
+
+#image-left-text{
+    color: #FFF119;
+    float: left;
+    font-size: 15px;
+}
+#rsc-bottom-image-2{
+    width: 50%;
+    padding: 10px 0 29px 30px;
+    line-height: normal;
+    color: #FFFFFF;
+}
+#image-right-text{
+    margin: 0 0 2px 80px;
+    font-size: 15px;
+    letter-spacing: -1px;
+    color: #FFFFFF;
+}

@@ -12,8 +12,7 @@
 <body>
 
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
-    <div id="top-photo">
-        사진자리
+    <div id="top-photo3">
     </div>
     <div id="cmm-in-main">
         <div id="top-menu">
@@ -27,10 +26,10 @@
             코로나 19 관련 안내
         </div>
         <div id="cmm-in-content">
-            <img src="/img/cmm-in-content-ex.jpeg">
+            <img src="/resources/image/nav/about/aboutCmmContent.jpeg">
         </div>
 
-        <div id="cmm-in-goto-list"><a href="#">목록</a></div>
+        <div id="cmm-in-goto-list"><a href="/nav/about/cmm">목록</a></div>
     </div>
     
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

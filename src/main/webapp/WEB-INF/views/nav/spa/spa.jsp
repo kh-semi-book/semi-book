@@ -9,8 +9,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>보떼에르 스파 바이 록시땅 - Hidden Cliff Hotel and Nature</title>
 
-  <link rel="stylesheet" href="resources/css/nav/spa/spa.css">
-  <link rel="stylesheet" href="resources/css/common/main.css">
+  <link rel="stylesheet" href="/resources/css/nav/spa/spa.css">
+  <link rel="stylesheet" href="/resources/css/common/main.css">
   
   <script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
 
@@ -23,7 +23,7 @@
 
 <body>
 
-	<jsp.include page="/WEB-INF/views/common/header.jsp">
+	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
   <!-- 상단영역 -->
   <div class="reservation-lookUp-page">
@@ -36,7 +36,8 @@
       <section class="rsc-body-TopArea">
         <!-- 페이지 조회  -->
         <nav class="rsc-page-list">
-          <a href="#">HOME</a> > <a href="#">SPA</a> >
+          <a href="/">HOME</a> > 
+          <a href="#">SPA</a> >
           <a href="#">보떼에르 스파 바이 록시땅</a>
         </nav>
         <!-- 페이지 제목 -->
@@ -53,9 +54,9 @@
       <div class="reservation-content-main">
         <!-- 중간 메인 영역 -->
         <!-- 이미지 영역 -->
-        <img src="/webapp/resources/image/new_spa4.jpg" width="1000px" height="550px" />
+        <img src="/resources/image/nav/spa/spa1.jpg" width="1000px" height="550px"/>
 
-        <br /><br />
+        <br/><br/>
         <!-- SPA 설명 -->
         <div id="rsc-SPA-info">
           <p>
@@ -74,7 +75,7 @@
 
         <!-- 메뉴 전체 보기 -->
         <button id="rsc-menu-btn">
-          <a href="/webapp/resources/image/spa.info.pdf">전체 메뉴 보기</a>
+          <a href="/resources/image/nav/spa/spa_info.pdf">전체 메뉴 보기</a>
         </button>
 
         <br /><br /><br />
@@ -102,7 +103,7 @@
 
 
   <!-- -------------------[footer]-------------------- -->
-	<jsp.include page="/WEB-INF/views/common/footer.jsp">
+	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
   <!-- -------------------[footer]-------------------- -->
 
 </body>

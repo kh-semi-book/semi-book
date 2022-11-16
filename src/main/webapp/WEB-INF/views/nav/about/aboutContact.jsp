@@ -16,8 +16,7 @@
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
 
-    <div id="top-photo">
-        사진자리
+    <div id="top-photo2">
     </div>
     <div id="contact-main">
         <div id="top-menu">

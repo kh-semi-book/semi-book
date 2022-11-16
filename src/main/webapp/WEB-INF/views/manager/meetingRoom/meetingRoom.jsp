@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>meetingRoom</title>
 
-    <link rel="stylesheet" href="resources/css/manager/meetingRoom.css">
-    <link rel="stylesheet" href="resources/css/common/main.css">
+    <link rel="stylesheet" href="/resources/css/manager/meetingRoom.css">
+    <link rel="stylesheet" href="/resources/css/manager/admin.css">
     <style>
         body { margin: auto; }
     </style>
@@ -19,7 +19,7 @@
 <body>
 
     <!-- -------------------- [ header ] -------------------- -->
-		<jsp.include page="/WEB-INF/views/common/header.jsp">
+		<jsp:include page="/WEB-INF/views/manager/common/admin-header.jsp"/>
     <!-- -------------------- [ header ] -------------------- -->
 
     <div class="reservation-lookUp-page">
@@ -79,13 +79,11 @@
                         <br><br><br><br>
                         <!-- 페이지 이동 버튼 -->
                         <div id="rsc-page-skip">
-                            <a href="#">
-                                << </a>&nbsp;&nbsp;
-                                    <a href="#">
-                                        < </a> &nbsp;&nbsp;
-                                            <button><a href="#">1</a></button>&nbsp;&nbsp;
-                                            <a href="#"> > </a> &nbsp;&nbsp;
-                                            <a href="#"> >> </a>
+                            <a href="#"> << </a>&nbsp;&nbsp;
+                            <a href="#"> < </a> &nbsp;&nbsp;
+                            <button><a href="#">1</a></button>&nbsp;&nbsp;
+                            <a href="#"> > </a> &nbsp;&nbsp;
+                            <a href="#"> >> </a>
                         </div>
                     </div>
                 </div>
@@ -95,9 +93,6 @@
         </div>
     </div>
 
-    <!-- ---------------- [ footer ] ---------------- -->
-		<jsp.include page="/WEB-INF/views/common/footer.jsp">
-    <!-- ---------------- [ footer ] ---------------- -->
 </body>
 
 </html>

@@ -37,17 +37,18 @@
     width: 1000px;
     height: 150px;
     background-color:#FFFFFF ;
-    margin: 0 auto 0 auto;
+    margin: 20px auto 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
-#promotion_title>div:first-child{
+#promotion_title>div:first-child>*{
     font-size: 13px;
     color: rgb(87, 87, 87);
     padding: 13px 0;
     margin-left: 0;
     width: 1000px;
+    text-decoration: none;
 }
 #promotion_title>div:last-child{
     font-size: 33px;
