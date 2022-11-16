@@ -2,17 +2,17 @@
 .board-lookUp-page{
     margin: 0 auto 0 auto;
     width: 100%;
-    height: 100%;
-    background-color: #F7F7F7;
+    min-height: 850px;
+    /* background-color: #F7F7F7; */
 }
 
 .board-head-area, .board-foot-area{
     height: 150px;
-    background-color: #FFFFFF
+    background-color: #FFFFFF;
 }
 .board-body-area{
     width: 1500px;
-    height: 700px;
+    min-height: 700px;
     background-color:#FFFFFF ;
     margin: 0 auto 0 auto;
 }
@@ -62,13 +62,14 @@
     height: 30px;
     line-height: 30px;
     border: 2px solid #ddd;
-    text-decoration: none;
+    background-color: #f9f9f9;
     color: black;
     text-align: center;
 }
 #board_table {
     border-top: 2px solid black;
     width: 100%;
+    height: auto;
     border-collapse: collapse;
     margin-bottom: 50px;
 }
@@ -76,6 +77,8 @@
     background-color: #f9f9f9;
     border-right: 1px solid #ccc;
     border-bottom: 1px solid black;
+    width: 350px;
+    height: auto;
 }
 #board_table th, td{
     padding: 20px;
@@ -95,6 +98,24 @@ input{
     width: 100%;
     border: none;
     margin: 5px;
+}
+#selectTitleImg, #selectSubImg{
+		display:none;
+}
+
+/* 이미지 선택 버튼 */
+.select-area> label{
+	 	width: 110px;
+    height: 33px;
+    padding: 5px 10px;
+
+    border: 2px solid #ddd;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    
+    
 }
 
 
