@@ -31,7 +31,7 @@
                         <section class="rsc-body-TopArea">
                             <!-- 페이지 조회  -->
                             <nav class="rsc-page-list">
-                            <a href="#">HOME</a> > 
+                            <a href="/">HOME</a> > 
                             <a href="#">THE INFINITI POOL</a> > 
                             <a href="#">인피티니풀</a>
                             </nav>
@@ -60,13 +60,17 @@
 
                         <!-- 버튼 (메뉴 전체보기 / 다이닝이벤트) -->
                         <div class="rsc-btn">
-                        <form action="/image/spa_info.pdf"> 
-                            <button id="rsc-btn-menu">메뉴 전체보기</button>
-                        </form>
+                            <button id="rsc-btn-menu">
+                        	    <a href="/resources/image/nav/infinitiPool/infinifi_pool_Menu.pdf">
+                           	 		메뉴 전체보기
+                         	 		</a>
+                            </button>
                         &nbsp;
-                        <form action="/nav/specialOffer/dining"> 
-                            <button id="rsc-btn-event">다이닝이벤트</button>
-                        </form>
+                            <button id="rsc-btn-event">
+                            	<a href="/nav/specialOffer/dining">
+                           	 		다이닝이벤트
+                         	 		</a>
+                            </button>
                         </div>
 
                         <br><br>

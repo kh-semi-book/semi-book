@@ -36,7 +36,8 @@
       <section class="rsc-body-TopArea">
         <!-- 페이지 조회  -->
         <nav class="rsc-page-list">
-          <a href="#">HOME</a> > <a href="#">SPA</a> >
+          <a href="/">HOME</a> > 
+          <a href="#">SPA</a> >
           <a href="#">보떼에르 스파 바이 록시땅</a>
         </nav>
         <!-- 페이지 제목 -->
