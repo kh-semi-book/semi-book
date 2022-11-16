@@ -49,7 +49,7 @@
                                         <li>
                                             <a href="#">
                                                 <span>
-                                                    <img src="/img/deluxe1.jpg">
+                                                    <img src="/resources/image/nav/rooms/deluxe1.jpg">
                                                 </span>
                                                 <div class="room_info">
                                                         <strong>디럭스</strong>
@@ -61,7 +61,7 @@
                                         <li>
                                             <a href="#">
                                                 <span class="list-frame">
-                                                    <img src="/img/corner_deluxe1.jpg">
+                                                    <img src="/resources/image/nav/rooms/corner_deluxe1.jpg">
                                                 </span>
                                                 <div class="room_info">
                                                     
@@ -74,7 +74,7 @@
                                         <li>
                                             <a href="#">
                                                 <span>
-                                                    <img src="/img/family_suite1.jpg">
+                                                    <img src="/resources/image/nav/rooms/family_suite1.jpg">
                                                 </span>
                                                 <div class="room_info">
                                                 
@@ -87,7 +87,7 @@
                                         <li>
                                             <a href="#">
                                                 <span>
-                                                    <img src="/img/yerae_suite1.jpg">
+                                                    <img src="/resources/image/nav/rooms/yerae_suite1.jpg">
                                                 </span>
                                                 <div class="room_info">
                                                         <strong>예래 스위트</strong><br>

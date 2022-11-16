@@ -365,7 +365,7 @@
                       
                     </div>
                     <div class="kjh-confirm">
-                      <a href="/member/signUp2" >확인</a>
+
                     </div>
           </div>
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
