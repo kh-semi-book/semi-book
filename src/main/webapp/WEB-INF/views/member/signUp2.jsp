@@ -1,3 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<%-- 문자열 관련 메서드를 제공하는 JSTL(EL형식) --%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -7,7 +13,7 @@
 
       
    	<link rel="stylesheet" href="/resources/css/common/main.css">
-   	<link rel="stylesheet" href="/resources/css/member/signup.css">
+   	<link rel="stylesheet" href="/resources/css/member/signUp2.css">
 
         <script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
 
@@ -23,28 +29,28 @@
      <div class="rsc-body-area">
             <div class="reservation-content-main">
               
-              <h1 class="kjh-h1">회원 가입</h1>
+               <h1 class="kjh-h1">회원 가입</h1>
                   <div class="kjh-main-border">
-                      <div class="kjh-main-container">
-                          <div class="kjh-stepbox-border">
-                            <div class="kjh-stepbox">
-                              <ul>
-                                <li>
-                                  <span>STEP 01</span>
-                                  <span>약관동의</span>
-                                </li>
-                                <li class="kjh-step2">
-                                  <span>STEP 02</span>
-                                  <span>정보입력</span>
-                                </li>
-                                <li>
-                                  <span>STEP 03</span>
-                                  <span>가입완료</span>
-                                </li>
-                              </ul>
+                        <div class="kjh-main-container">
+                            <div class="kjh-stepbox-border">
+                                <div class="kjh-stepbox">
+                                      <ul>
+                                        <li>
+                                          <span>STEP 01</span>
+                                          <span>약관동의</span>
+                                        </li>
+                                        <li class="kjh-step2">
+                                          <span>STEP 02</span>
+                                          <span>정보입력</span>
+                                        </li>
+                                        <li>
+                                          <span>STEP 03</span>
+                                          <span>가입완료</span>
+                                        </li>
+                                      </ul>
 
-                            </div> <!-- kjh-stepbox -->
-                          </div>
+                                </div> <!-- kjh-stepbox -->
+                            </div>
                           <br><br><br>
                           <div class="kjh-step-blank">
 
@@ -72,7 +78,7 @@
 
                               <tr>
                                 <label for="m_id">
-                                  <th>아이디<span class="star">*</span>
+                                   <th>아이디<span class="star">*</span>
                                 </label>
                                 </th>
                                 
@@ -88,7 +94,7 @@
                                 <td class="kjh_input">
                                   <input type="password" size="20" name="m_pw1" id="m_pw1" >
                                 </td>
-                                <th>비밀번호 확인<span class="star">*</span></th>
+                                 <th>비밀번호 확인<span class="star">*</span></th>
                                 <td class="kjh_input">
                                   <input type="password" size="20" name="m_pw2" id="m_pw2" >
                                 </td>
@@ -103,7 +109,7 @@
                           
                               </tr>
                               <tr>
-                                <th>이메일<span class="star">*</span></th>
+                                 <th>이메일<span class="star">*</span></th>
                                 <td class="kjh_input" colspan="3">
                                   <input type="text" size="20" name="m_email" id="m_email">@
                                   <input type="text" size="13"name="" id="">
@@ -130,7 +136,7 @@
                                
                               </tr>
                               <tr>
-                                <th>생년월일<span class="star">*</span></th>
+                               <th>생년월일<span class="star">*</span></th>
                                 <td colspan="3">
                                   <select class="kjh_select" name="m_birth1"id="m_birth1"class="date">
                                     <option value=""></option>
@@ -147,7 +153,7 @@
                                 </td>
                                
                               </tr>
-                              <tr>
+                               <tr>
                                 <th>이메일<br> 수신 동의<span class="star">*</span></th>
                                 <td>
                                   <input type="radio" name="m_email_yn" id="m_email_yn1"
@@ -216,11 +222,15 @@
                                   <input type="text"  class="kjh_address"size="50px">
 
                                 </td>
-
                               </tr>                              
                             </table>
                           </div>
 
+						 <div class="kjh-btn">
+                            <a href="#" class="btn-a">다음단계</a>
+                            <a href="#" class="btn-b">취소</a>   <!-- 메인화면으로  -->
+                          </div>
+						
                         
                       </div> <!-- main-container -->
             

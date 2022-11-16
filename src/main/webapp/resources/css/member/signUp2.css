@@ -399,6 +399,37 @@ list-style: none;
     font-size: 12px;
     color: #666;
  }
+ 
+ .kjh-btn{
+    padding: 60px 0 0 0;
+    text-align: center;
+}
+
+ .kjh-btn a{
+    display: inline-block;
+    height: 60px;
+   
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    line-height: 60px;
+
+    
+ }
+
+ a.btn-a{
+    background-color: #231f20;
+    color: white;
+    display: inline-block;
+    width: 210px;
+ }
+
+ a.btn-b{
+    width: 125px;
+    color: black;
+    border: 1px solid #a4a4a4;
+ }
+ 
 
  /* ======================================== */
 
