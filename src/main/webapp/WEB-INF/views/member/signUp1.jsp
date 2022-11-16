@@ -6,7 +6,7 @@
 
   <title>회원가입 약관 Page</title>
 
-   	<link rel="stylesheet" href="/resources/css/member/signupbefore.css">
+   	<link rel="stylesheet" href="/resources/css/member/signUp1.css">
    	<link rel="stylesheet" href="/resources/css/common/main.css">
 
         <style>
@@ -365,7 +365,7 @@
                       
                     </div>
                     <div class="kjh-confirm">
-                      <a href="" >확인</a>
+                      <a href="/signUp2" >확인</a>
                     </div>
           </div>
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
