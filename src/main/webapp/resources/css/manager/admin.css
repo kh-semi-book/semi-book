@@ -1,89 +1,89 @@
     
-#search-book-table{
- margin-top: 20px;
-}
 
- #search-book-option{
-     border:1px solid black;
- }
-
-
-
- #search-book-title{
-     font-size: 30px;
-     margin-bottom:20px;
-     margin-top:20px;
- }
- 
- 
- #search-book-area{
-     width: 1000px;
-     margin:auto;
- }
-
- #search-book-table>div{
-     display: flex;
-     flex-direction: row;
-     justify-content: center;
-     align-items: center;
- }
-
- .search-book-no{
-     width: 50px;
- }
- .search-book-date{
-     width: 100px;
- }
- .search-book-reservation-no,.search-book-room-no,.search-book-party-num{
-     width: 100px;
- }
- .search-book-type{
-     width:50px;
- }
-
- .search-book-status-change{
-     width:50px;
- }
+   #search-book-table{
+    margin-top: 20px;
+   }
+   
+    #search-book-option{
+        border:1px solid black;
+    }
 
 
- .search-book-status,.manage-booker-name{
-     width:100px;
- }
 
- #search-book-table-title{
-     border-top:2px solid black;
-     border-bottom:1px solid #bbb;
-     
- }
+    #search-book-title{
+        font-size: 30px;
+        margin-bottom:20px;
+    }
+    
+    #search-book-area{
+        width: 1500px;
+        margin:auto;
+    }
+
+    #search-book-table>div{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search-book-no{
+        width: 100px;
+    }
+    .search-book-date{
+        width: 150px;
+    }
+    .search-book-reservation-no,.search-book-room-no,.search-book-party-num{
+        width: 150px;
+    }
+    .search-book-type{
+        width:100px;
+    }
+
+    .search-book-status-change{
+        width:100px;
+    }
+
+   
+    .search-book-status,.manage-booker-name{
+        width:150px;
+    }
+
+    #search-book-table-title{
+        border-top:2px solid black;
+        border-bottom:1px solid #bbb;
+        
+    }
 
 
- #search-book-table-title>div{
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     padding:30px 0;
- }
+    #search-book-table-title>div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding:30px 0;
+    }
 
- .search-book-table-content{
-     border-bottom:1px solid #bbb;
- }
+    .search-book-table-content{
+        border-bottom:1px solid #bbb;
+    }
 
- .search-book-table-content>div{
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     padding:10px 0;
-     height:30px;
- }
+    .search-book-table-content>div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding:10px 0;
+        height:30px;
+    }
 
- .search-book-cost{
-     width: 100px;
-    justify-content: right;
- }
+    .search-book-cost{
+        width: 200px;
+       justify-content: right;
+    }
 
- .manage-border-right{
-     border-right: 1px solid #bbb;
- }
+    .manage-border-right{
+        border-right: 1px solid #bbb;
+    }
+
 
 /* --------------------------------------------- */
 
@@ -93,8 +93,8 @@ display: inline-block;
 
 .search-option>select{
 display: inline-block;
-width: 90px;
-margin: 20px 10px;
+width: 150px;
+margin: 20px 20px;
 padding:5px;
 }
 
@@ -105,20 +105,21 @@ text-align: right;
 .search-option-input{
 display: inline-block;
 padding:5px;
-width: 200px;
+width: 400px;
 }
 
 #search-date{
-width:80px;
+width:100px;
 padding-right: 10px;
 }
 
 .search-date-input{
-width: 350px;
+width: 440px;
 }
 
 .search-date-input>input{
 display: inline-block;
+width:180px;
 padding:5px;
 }
 
@@ -130,11 +131,11 @@ height: 40px;
 
 
 
-/*----[ 페이지 이동 버튼 ]----*/
+   /*----[ 페이지 이동 버튼 ]----*/
 
-#rsc-page-skip{
- margin-top:50px;
-}
+   #rsc-page-skip{
+    margin-top:50px;
+   }
 #rsc-page-skip a{
 text-decoration: none;
 color: #767676;
@@ -157,9 +158,7 @@ font-size: 14px;
 color: red;
 }
 
-
 /* --------------- 여기까지 search ------------------ */
-
 
 *{
     /* border:1px solid black; */
@@ -172,7 +171,7 @@ color: red;
 }
 
 #manage-book-area{
-    width: 1000px;
+    width: 1500px;
     margin:auto;
 }
 
@@ -184,16 +183,16 @@ color: red;
 }
 
 .manage-book-no{
-    width: 50px;
-}
-.manage-book-date{
     width: 100px;
 }
+.manage-book-date{
+    width: 200px;
+}
 .manage-book-name{
-    width: 300px;
+    width: 400px;
 }
 .manage-book-type{
-    width:50px;
+    width:100px;
 }
 
 .manage-book-status-change{
@@ -202,7 +201,7 @@ color: red;
 
 
 .manage-book-status,.manage-booker-name{
-    width:100px;
+    width:150px;
 }
 
 #manage-book-table-title{
@@ -266,6 +265,7 @@ font-weight: bold;
 font-size: 14px;
 color: red;
 }
+
 
 /* ------------------- 여기까지 select ------------------ */
 

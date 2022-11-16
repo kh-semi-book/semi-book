@@ -14,8 +14,13 @@
 	
 	<div id="main-example">
         
-        <div id="main-slide-photo">
-            <img src="/img/main_photo.jpeg" alt="">
+       <div id="titleImage">
+        
+            <span class="move prev">&#x3C;</span>
+            <span class="move next">&#x3E;</span>
+            
+            <img src="/resources/image/mainimg1.jpeg" id="mainImage">
+        
         </div>
     
         <div class="main-content">
@@ -50,6 +55,9 @@
 	
 	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
-    
+
+    <script src="/resources/js/header.js"></script>
+    <script src="/resources/js/main.js"></script>
+
 </body>
 </html>
