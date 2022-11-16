@@ -4,7 +4,7 @@ for(let item of liAnimation){
     item.addEventListener("mouseover",function(){
        // nav area
      this.parentElement.parentElement.parentElement.style.height="100px";
-     this.parentElement.parentElement.parentElement.style.backgroundColor="white";
+     //this.parentElement.parentElement.parentElement.style.backgroundColor="white";
      this.parentElement.parentElement.parentElement.style.transitionDuration="0.7s";
      
      // innerlist

@@ -15,9 +15,10 @@
 <body>
 
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-    <div id="top-photo">
-        사진자리
-    </div>
+	
+	<!-- 상단 배경 이미지 -->
+   
+    <div id="top-photo" display="background-image: url(/image/visual_promotion.jpg);"></div>
     <div id="cmm-main">
         <div id="top-menu">
             <a href="/">HOME</a>><a href="/nav/about">HIDDEN CLIFF</a>><a href="/nav/about/cmm">공지사항</a>
