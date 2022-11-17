@@ -47,9 +47,9 @@
                     </ul>
                 </li>
                 <li >
-                    <a href="/nav/specialOffer/roompromotion" class="li-animation">SPECIAL OFFER</a>
+                    <a href="/nav/specialOffer/roomPromotion" class="li-animation">SPECIAL OFFER</a>
                     <ul class="inner-list">
-                        <li><a href="/nav/specialOffer/roompromotion">객실 프로모션</a></li>
+                        <li><a href="/nav/specialOffer/roomPromotion">객실 프로모션</a></li>
                         <li><a href="/nav/specialOffer/dining">다이닝</a></li>
                         <li><a href="/nav/specialOffer/event">이벤트</a></li>
                     </ul>
