@@ -44,6 +44,22 @@
 }
 
 /*----[ 페이지 제목 ]----*/
+h1.kjh-h1{
+/* 	display : inline-block;
+   
+    
+    margin: 40px auto 60px auto;
+    padding: 40px 60px 60px 60px;
+     */
+     color: red;
+     position: relative;
+     width: 1120px;
+     margin: 0 auto;
+     /* padding: 50; */
+     /* margin: 40px auto; */
+     padding: 40px 0 20px 0;
+}
+
 .kjh-page-title >h1{
     margin: 15px 0 0 0;
     font-size: 33px;
