@@ -11,7 +11,15 @@
 <body>
 
 <jsp:include page="/WEB-INF/views/manager/common/admin-header.jsp"/>
+    
+    
     <div id="manage-book-area">
+    
+    	<div id="top-menu">
+        	<a href="#">MAIN</a>><a href="#">예약 조회/수</a>
+    	</div>
+    	
+    
         <div id="manage-book-title">
             예약 관리 페이지
         </div>
@@ -22,7 +30,8 @@
                 <div class="manage-book-no">번호</div>
                 <div class="manage-book-date">예약일</div>
                 <div class="manage-book-name">상품명</div>
-                <div class="manage-book-type">룸타입</div>
+                <div class="manage-book-head-count">인원수</div>
+                <div class="manage-book-room-no">호수</div>
                 <div class="manage-book-date">체크인</div>
                 <div class="manage-book-date">체크아웃</div>
                 <div class="manage-book-cost">금액</div>
@@ -36,7 +45,12 @@
                 <div class="manage-book-no manage-border-right">1</div>
                 <div class="manage-book-date manage-border-right">2022-10-13</div>
                 <div class="manage-book-name manage-border-right">디럭스 더블 가든</div>
-                <div class="manage-book-type manage-border-right">A</div>
+                <div class="manage-book-head-count manage-border-right">
+                    <input type="text" value="2">
+                </div>
+                <div class="manage-book-room-no manage-border-right">
+                    <input type="text" value="203">
+                </div>
                 <div class="manage-book-date manage-border-right">2022-11-11</div>
                 <div class="manage-book-date manage-border-right">2022-11-20</div>
                 <div class="manage-book-cost manage-border-right">560,000</div>
