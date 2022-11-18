@@ -12,6 +12,13 @@
 
 	<jsp:include page="/WEB-INF/views/manager/common/admin-header.jsp"/>
     <div id="search-book-area">
+    
+     <div id="top-menu">
+        <a href="#">MAIN</a>><a href="#">예약 검색</a>
+    </div>
+    
+    
+    
     <div id="search-book-title">예약 검색 페이지</div>
 
     <fieldset id="search-book-option">

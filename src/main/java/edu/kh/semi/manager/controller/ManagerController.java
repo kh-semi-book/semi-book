@@ -12,11 +12,11 @@ public class ManagerController {
 		return "manager/common/search-book";
 	}
 	
-	@GetMapping("/manager/selectBook")
-	public String managerSelectBook() {
-		return "manager/common/select-book";
-	}
-	
+//	@GetMapping("/manager/selectBook")
+//	public String managerSelectBook() {
+//		return "manager/common/select-book";
+//	}
+//	
 	//----------------------------------------
 	
 	@GetMapping("/manager/cmm")
