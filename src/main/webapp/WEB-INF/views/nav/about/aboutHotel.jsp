@@ -28,9 +28,9 @@
             </div>
 
             <div id="info-silde-photo">
-                 <span class="move" id="prev">&#x3C;</span>
-                <span class="move" id="next">&#x3E;</span>
-                
+                <span class="move prev">&#x3C;</span>
+                <span class="move next">&#x3E;</span>
+            
                 <img src="/resources/image/nav/about/hidden_company01.jpg" id="aboutImage">
             </div>
             <div id="logo-info">

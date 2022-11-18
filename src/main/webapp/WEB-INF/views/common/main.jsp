@@ -14,13 +14,12 @@
 	
 	<div id="main-example">
         
-       <div id="titleImage">
+       <div id="main-slide-photo">
         
             <span class="move prev">&#x3C;</span>
             <span class="move next">&#x3E;</span>
             
             <img src="/resources/image/mainimg1.jpeg" id="mainImage">
-        
         </div>
     
         <div class="main-content">
