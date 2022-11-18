@@ -185,7 +185,6 @@
 /* ***************** 여기까지 헤더 ***************** */
 
 .kjh-h1{
-    
     margin: 40px auto;
     
     padding: 40px 0 20px 0;
@@ -250,12 +249,13 @@ list-style: none;
 .kjh-main-border{
     width: 1000px;
     height: auto;
-    border: 1px solid black;
+    border: 1px solid #e5e5e5; /* 이해불가 */
     margin: 70px auto;
 }
 
 .kjh-main-container{
  padding: 50px;
+ 
 }
 
 .kjh-txt{

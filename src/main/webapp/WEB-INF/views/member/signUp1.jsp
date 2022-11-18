@@ -17,10 +17,19 @@
     <body>
      <!-- header -->
 	<jsp:include page="/WEB-INF/views/common/header.jsp" />
+     <h1 class="kjh-h1" 
+     style="
+    color: red;
+    position: relative;
+    width: 1120px;
+    margin: 0 auto;
+    /* padding: 50; */
+    /* margin: 40px auto; */
+    padding: 40px 0 20px 0;">회원 가입</h1>
      <div class="rsc-body-area">
 
               <div class="reservation-content-main">
-
+	
 
                       <!-- 회원가입 프로세스 -->
                       <section id="kjh-signUp-process">
