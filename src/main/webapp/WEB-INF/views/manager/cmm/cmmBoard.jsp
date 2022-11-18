@@ -47,14 +47,14 @@ body {
 
 			</table>
 			<div class="paging">
-				<span> <a href=""> <img src="/resources/image/btn_paging_first.png" alt="">
+				<span> <a href=""> <img src="/resources/image/btn_paging_first.png">
 				</a>
-				</span> <span> <a href=""> <img src="/resources/image/btn_paging_prev_on.png" alt="">
+				</span> <span> <a href=""> <img src="/resources/image/btn_paging_prev_on.png">
 				</a>
 				</span> <span> <a href="" class="on">1</a>
-				</span> <span> <a href=""> <img src="/resources/image/btn_paging_next_on.png" alt="">
+				</span> <span> <a href=""> <img src="/resources/image/btn_paging_next_on.png">
 				</a>
-				</span> <span> <a href=""> <img src="/resources/image/btn_paging_last_on.png" alt="">
+				</span> <span> <a href=""> <img src="/resources/image/btn_paging_last_on.png">
 				</a>
 				</span>
 			</div>
