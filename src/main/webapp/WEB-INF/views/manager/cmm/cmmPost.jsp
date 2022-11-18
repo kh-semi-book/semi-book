@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,10 +24,10 @@ body {
 			</div>
 			<div></div>
 		</div>
-		<form action="" method="post">
+		<form action="/cmm/cmmPost" method="post">
 		<div class="board-body-area">
 			<div id="board-post">
-				<button class="update">저장</button>
+				<button class="save">저장</button>
 			</div>
 
 			<table id="board_table">
@@ -37,11 +38,11 @@ body {
 				<tr>
 					<th class="select-area">
 						타이틀 이미지
-						<label for="selectTitleImg">이미지 선택</label>
-  	        <input type="file" name="cmmTitleImage" id="selectTitleImg" accept="image/*">
+						<label for="inputTitleImg">이미지 선택</label>
+  	        			<input type="file" name="cmmTitleImage" id="inputTitleImg" accept="image/*"><button type="button" class="deleteBtn">삭제</button>
 					</th>
 					<td>
-						<img class="select-image" src="/resources/image/nav/specialOffer/event/event1.jpg">
+						<img class="select-image" src="">
 					</td>
 				</tr>
 				<tr>
@@ -51,11 +52,11 @@ body {
 				<tr>
 					<th class="select-area">
 						내용
-						<label for="selectSubImg">이미지 선택</label>
-            <input type="file" name="cmmSubImage" id="selectSubImg" accept="image/*">
+						<label for="inputConImg">이미지 선택</label>
+            			<input type="file" name="cmmConImage" id="inputConImg" accept="image/*"><button type="button" class="deleteBtn">삭제</button>
 					</th>
 					<td>
-						<!-- <img class="select-image" src="/resources/image/nav/specialOffer/event/event1_detail.jpg"> -->
+						<img class="select-image" src="">
 					</td>
 				</tr>
 
@@ -68,5 +69,7 @@ body {
 		</form>
 	</div>
 	<div class="board-foot-area"></div>
+	
+	<script src="/resources/js/manager/board/boardPost.js"></script>
 </body>
 </html>
