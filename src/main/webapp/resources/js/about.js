@@ -1,6 +1,8 @@
-let myImage=document.getElementById("titleImage");
-let imageArray=["/resources/image/mainimg1.jpeg","/resources/image/mainImg2.jpeg","/resources/image/mainImg3.jpeg"];
+let myImage=document.getElementById("aboutImage");
+let imageArray=["/resources/image/nav/about/hidden_company01.jpg","/resources/image/nav/about/hidden_company02.jpg","/resources/image/nav/about/hidden_company03.jpg"];
 let imageIndex=0;
+
+
 
 function changeImage(){
     myImage.setAttribute("src",imageArray[imageIndex]);
@@ -9,7 +11,7 @@ function changeImage(){
         imageIndex=0;
     }
 
-   
+    
     console.log(imageIndex);
 }
 
