@@ -19,7 +19,7 @@
 	<jsp:include page="/WEB-INF/views/common/header.jsp" />
      <h1 class="kjh-h1" 
      style="
-    color: red;
+    color: black;
     position: relative;
     width: 1120px;
     margin: 0 auto;
