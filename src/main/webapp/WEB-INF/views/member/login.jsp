@@ -22,11 +22,11 @@
 
         <div id="login-main">
             <div id="member-login">
-                <form action="#">
+                <form action="/member/login" method="post">
                     <p>회원 로그인</p>
                     <div class="input-section">
-                        <input type="text" name="inputId" placeholder="아이디">
-                        <input type="password" name="inputPw" placeholder="비밀번호">
+                        <input type="text" name="memberId" placeholder="아이디">
+                        <input type="password" name="memberPw" placeholder="비밀번호">
                     </div
                     ><div class="button-section">
                         <button id="member-login-btn">로그인</button>

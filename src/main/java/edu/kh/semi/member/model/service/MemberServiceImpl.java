@@ -10,9 +10,21 @@ import edu.kh.semi.member.model.vo.Member;
 public class MemberServiceImpl implements MemberService{
 	
 	 @Autowired
+	 private BCryptPasswordEncoder bcrypt;
+	 
+	 @Autowired
 	 private MemberDAO dao;
 	 
-	
-	
 
+	// 로그인 기능
+//	@Override
+//	public Member login(Member inputMember) {
+//
+//		Member loginMember = dao.login(inputMember);
+//		
+//		return loginMember;
+//	}
+
+	
+	
 }
