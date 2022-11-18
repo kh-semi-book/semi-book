@@ -40,14 +40,14 @@ public class ManagerController {
 	
 	@GetMapping("/manager/dining")
 	public String managerDiningPage() {
-		return "manager/promotion/promotion";
+		return "manager/promotion/diningBoard";
 	}
 
 	//----------------------------------------
 	
 	@GetMapping("/manager/event")
 	public String managerEventPage() {
-		return "manager/promotion/promotion";
+		return "manager/promotion/eventBoard";
 	}
 	
 	

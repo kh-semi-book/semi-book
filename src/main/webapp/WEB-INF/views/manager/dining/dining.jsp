@@ -17,14 +17,14 @@ body {
 		<div class="board-head-area">
 			<div></div>
 			<div id="board_title">
-				<div>HOME > 프로모션 관리 > 프로모션 세부 사항</div>
-				<div>프로모션 세부 사항</div>
+				<div>HOME > 다이닝 관리 > 다이닝 세부 사항</div>
+				<div>다이닝 세부 사항</div>
 			</div>
 			<div></div>
 		</div>
 		<div class="board-body-area">
 			<div id="board-post">
-				<a href="/manager/promotionUpdate" class="update">프로모션 수정</a>
+				<a href="/manager/diningUpdate" class="update">다이닝 수정</a>
 			</div>
 
 			<table id="board_table">
@@ -56,7 +56,7 @@ body {
 
 			</table>
 			<div id="board_return">
-				<a href="/manager/promotion">목록</a>
+				<a href="/manager/dining">목록</a>
 			</div>
 		</div>
 		<div class="board-foot-area"></div>
