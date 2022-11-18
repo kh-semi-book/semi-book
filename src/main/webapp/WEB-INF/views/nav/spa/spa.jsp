@@ -75,7 +75,7 @@
 
         <!-- 메뉴 전체 보기 -->
         <button id="rsc-menu-btn">
-          <a href="/resources/image/nav/spa/spa_info.pdf">전체 메뉴 보기</a>
+          <a href="/resources/image/nav/spa/spa_info.pdf"  target="_blank">전체 메뉴 보기</a>
         </button>
 
         <br /><br /><br />
