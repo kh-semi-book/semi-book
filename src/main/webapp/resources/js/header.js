@@ -1,6 +1,6 @@
 const liAnimation=document.getElementsByClassName("li-animation");
 const navArea=document.getElementById("nav-area");
-const innerList=document.getElementById("inner-list");
+const innerList=document.getElementsByClassName("inner-list");
 
 for(let item of liAnimation){ 
     item.addEventListener("mouseover",function(){
@@ -8,7 +8,7 @@ for(let item of liAnimation){
         navArea.style.height="100px";
         navArea.style.backgroundColor="white";
         navArea.style.transitionDuration="0.7s";
-     
+      
      // innerlist
      this.parentElement.children[1].style.display="block";
      this.parentElement.children[1].style.opacity ="1";
@@ -42,41 +42,3 @@ navArea.addEventListener("mouseleave", function(){
         item.style.transitionDuration="0s";
     }
 });
-
-
-
- let myImage=document.getElementById("aboutImage");
-        let imageArray=["/resources/image/nav/about/hidden_company01.jpg","/resources/image/nav/about/hidden_company02.jpg","/resources/image/nav/about/hidden_company03.jpg"];
-        let imageIndex=0;
-
-        function changeImage(){
-            myImage.setAttribute("src",imageArray[imageIndex]);
-            imageIndex++;
-            if(imageIndex>=imageArray.length){
-                imageIndex=0;
-            }
-
-           
-            console.log(imageIndex);
-        }
-
-        document.getElementsByClassName("prev")[0].addEventListener("click",()=>{
-            imageIndex--;
-            if(imageIndex<0){
-                imageIndex=imageArray.length-1;
-            }
-
-            myImage.setAttribute("src",imageArray[imageIndex]);
-        })
-
-        document.getElementsByClassName("next")[0].addEventListener("click",()=>{
-            imageIndex++;
-            if(imageIndex>=imageArray.length){
-                imageIndex=0;
-            }
-            myImage.setAttribute("src",imageArray[imageIndex]);
-        })
-
-        setInterval(changeImage,10000);
-
-
