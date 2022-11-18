@@ -17,4 +17,13 @@ public class MemberDAO {
 		return sqlSession.selectOne("memberMapper.view");
 	}
 
+	public Member login(String memberId, String memberPw) {
+
+		
+		return sqlSession.selectOne("memberMapper.login" , );
+	}
+
+	
+
+
 }

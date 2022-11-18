@@ -6,4 +6,11 @@ public interface MemberService {
 
 	public abstract Member view();
 
+	/** 로그인 기능
+	 * @param inputMember
+	 * @return
+	 */
+//	public abstract Member login(Member inputMember);
+
+
 }
