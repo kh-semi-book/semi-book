@@ -618,15 +618,10 @@ body{
 
 /* --------------------------------------------- */
 
-#titleImage{
+#main-slide-photo{
+    width:1300px;
+    height:580px;
     position: relative;
-    width:1300px;
-    height:580px;
-}
-
-#mainImage{
-    width:1300px;
-    height:580px;
 }
 
 .move{

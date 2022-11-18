@@ -1,8 +1,7 @@
+
 let myImage=document.getElementById("aboutImage");
 let imageArray=["/resources/image/nav/about/hidden_company01.jpg","/resources/image/nav/about/hidden_company02.jpg","/resources/image/nav/about/hidden_company03.jpg"];
 let imageIndex=0;
-
-
 
 function changeImage(){
     myImage.setAttribute("src",imageArray[imageIndex]);
@@ -15,16 +14,16 @@ function changeImage(){
     console.log(imageIndex);
 }
 
-document.getElementById("prev").addEventListener("click",function(){
+document.getElementsByClassName("prev")[0].addEventListener("click",()=>{
     imageIndex--;
     if(imageIndex<0){
         imageIndex=imageArray.length-1;
     }
-    alert("클릭");
+
     myImage.setAttribute("src",imageArray[imageIndex]);
 })
 
-document.getElementById("next").addEventListener("click",function(){
+document.getElementsByClassName("next")[0].addEventListener("click",()=>{
     imageIndex++;
     if(imageIndex>=imageArray.length){
         imageIndex=0;
@@ -33,5 +32,3 @@ document.getElementById("next").addEventListener("click",function(){
 })
 
 setInterval(changeImage,10000);
-
-
