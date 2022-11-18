@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>프로모션</title>
+<title>프로모션 등록</title>
 <link rel="stylesheet" href="/resources/css/manager/board_detail.css">
 <style>
 body {
@@ -17,36 +17,36 @@ body {
 		<div class="board-head-area">
 			<div></div>
 			<div id="board_title">
-				<div>HOME > 프로모션 관리 > 프로모션 세부 사항</div>
-				<div>프로모션 세부 사항</div>
+				<div>HOME > 프로모션 관리 > 프로모션 등록</div>
+				<div>프로모션 등록</div>
 			</div>
 			<div></div>
 		</div>
 		<div class="board-body-area">
 			<div id="board-post">
-				<a href="/manager/promotionUpdate" class="update">프로모션 수정</a>
+				<a href="#" class="update">저장</a>
 			</div>
 
 			<table id="board_table">
 				<tr>
-					<th>1</th>
-					<td colspan="3">[얼리버드] Hidden Earlybird</td>
+					<th>제목</th>
+					<td colspan="3"><input type="text" id="title"></td>
 				</tr>
 				<tr>
 					<th>타이틀 이미지</th>
 					<td>이미지 등록</td>
 					<th>세부 내용</th>
-					<td>디럭스 1박+치치 아메리카노 2잔</td>
+					<td><input type="text" id="content"></td>
 				</tr>
 				<tr>
 					<th>투숙 기간</th>
-					<td>2022-11-27 ~ 2023-07-16</td>
+					<td><input type="text" id="date1"></td>
 					<th>판매 기간</th>
-					<td>2022-10-13 ~ 2023-07-15</td>
+					<td><input type="text" id="date2"></td>
 				</tr>
 				<tr>
 					<th>가격</th>
-					<td colspan="3">220,000원 ~</td>
+					<td colspan="3"><input type="text" id="price"></td>
 				</tr>
 				<tr>
 					<th>내용</th>
@@ -55,13 +55,13 @@ body {
 
 
 			</table>
+
 			<div id="board_return">
-				<a href="/manager/promotion">목록</a>
+				<a href="/html/promotion_board.html">목록</a>
 			</div>
 		</div>
 		<div class="board-foot-area"></div>
 	</div>
 	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
-
 </body>
 </html>
