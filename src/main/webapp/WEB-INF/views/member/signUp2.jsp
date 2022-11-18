@@ -85,6 +85,7 @@
                                 <td class="kjh-input"colspan="3">
                                   <input type="text" size="20" name="m-id" id="m-id" >
                                   <input type="button" class="btn" value="중복확인">
+                                  <span class="kjh-subtxt">(영소문자, 숫자로 6~20자까지 가능합니다.)</span>
 
                                 </td>
                               </tr>
@@ -93,10 +94,14 @@
                                 <th>비밀번호<span class="star">*</span></th>
                                 <td class="kjh-input">
                                   <input type="password" size="20" name="m_pw1" id="m_pw1" >
+                                  <span class="kjh-subtxt">(특수문자를 포함해 8~20자로 입력해 주세요.)</span>
+                                  
                                 </td>
                                  <th>비밀번호 확인<span class="star">*</span></th>
                                 <td class="kjh-input">
                                   <input type="password" size="20" name="m_pw2" id="m_pw2" >
+                                  <span class="kjh-subtxt">(다시 한 번 비밀번호를 입력해 주세요.)</span>
+                                  
                                 </td>
                               </tr>
                               <tr>
@@ -113,7 +118,7 @@
                                 <td class="kjh-input" colspan="3">
                                   <input type="text" size="20" name="m-email" id="m-email">@
                                   <input type="text" size="13"name="" id="">
-                                  <select class="kjh-address" name="" id="">
+                                  <select class="kjh-address email" name="" id="">
                                     <option value="naver.com">naver.com</option>
                                     <option value="gmail.com">gmail.com</option>
                                     <option value="nate.com">nate.com</option>
@@ -122,6 +127,9 @@
                                     <option value="freechal.com">freechal.com</option>
                                     <option value="1">직접 입력</option>
                                   </select>
+  								<span class="kjh-subtxt">(다음/한메일은 수신이 안될 수 있습니다.)</span>
+                                  
+
                                 </td>
                               </tr>
                               <tr>
@@ -216,7 +224,7 @@
                               <tr>
                                 <th>주소</th>
                                 <td class="kjh-input" colspan="3">
-                                  <input type="text" class="kjh-address"size="5px" readonly>
+                                  <input type="text" class="kjh-address a"size="5px" readonly>
                                   <input type="button" class="btn2"  value="우편번호검색"><br>
                                   <input type="text" class="kjh-address" size="50px"readonly> <br>
                                   <input type="text"  class="kjh-address"size="50px">

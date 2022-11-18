@@ -263,6 +263,13 @@ list-style: none;
 
 }
 
+.kjh-subtxt{
+	display : block;
+	margin-top: 5px;
+	font-size : 12px;
+	color: #666;
+}
+
 .kjh-form1-table{
     margin-bottom: 50px;
 }
@@ -290,14 +297,23 @@ list-style: none;
 }
 
 .kjh-select{
-    width: 70px;
-    height: 35px;
+/*     width: 70px;
+ */    height: 35px;
     border: 1px solid #cdcdcd;
 
 }
+.kjh-select.email{
+    width: 220px;
+    
+
+} 
 
 .kjh-address{
     margin-top: 5px;
+}
+
+.kjh-address.a{
+    background-color: #eee;
 }
 
 .kjh-married input[type="text"]{
@@ -352,17 +368,17 @@ list-style: none;
 }
 
 .kjh-form1-table select{
-    width: 80px;
-    height: 35px;
+/*     width: 80px;
+ */    height: 35px;
     font-size: 15px;
     padding: 0 20px;
     border: 1px solid #cdcdcd;
 }
 
-.kjh-form1-table select:first-of-type{
+/* .kjh-form1-table select:first-of-type{
     width: 200px;
    
-}
+}  */
 
  /* ======================================== */
 
