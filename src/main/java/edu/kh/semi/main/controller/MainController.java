@@ -19,7 +19,7 @@ public class MainController {
 	}
 	
 	
-	@GetMapping("/reservation/check")
+	@GetMapping("/reservation/reservationView")
 	public String reservationCheckPage() {
 		return "reservation/reservationView";
 	}

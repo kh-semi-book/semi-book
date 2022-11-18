@@ -138,7 +138,7 @@
                     <br><br>
                         <!-- 버튼 -->
                     <div class="rsc-btn">
-                        <form action="#">
+                        <form action="/reservation/reservationView">
                             <button id="rsc-btn-list">목록</button>
                         </form> 
                         &nbsp;

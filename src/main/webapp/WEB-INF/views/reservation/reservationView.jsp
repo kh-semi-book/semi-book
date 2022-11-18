@@ -57,7 +57,7 @@
                         <td>
                             [얼리버드] Hidden Earlybird <br>
                             <button id="button-view-detail">
-                                <a href="#">상세보기</a>
+                                <a href="/reservation/reservationViewDetail">상세보기</a>
                             </button>
                         </td>
                         <td>디럭스 더블 가든</td>
