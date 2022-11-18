@@ -61,7 +61,7 @@
                         <!-- 버튼 (메뉴 전체보기 / 다이닝이벤트) -->
                         <div class="rsc-btn">
                             <button id="rsc-btn-menu">
-                        	    <a href="/resources/image/nav/infinitiPool/infinifi_pool_Menu.pdf">
+                        	    <a href="/resources/image/nav/infinitiPool/infinifi_pool_Menu.pdf" target="_blank">
                            	 		메뉴 전체보기
                          	 		</a>
                             </button>
