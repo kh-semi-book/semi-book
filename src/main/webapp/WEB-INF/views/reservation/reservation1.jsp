@@ -969,7 +969,7 @@
                                 kr;\"=""><span style="\&quot;font-size:12.0pt;\&quot;">.</span></span></span></span></p>
             </div>
             <div class="btnCenterGroup">
-                <a href="javascript:;" id="btn_next" class="btn gray">계속</a>
+                <a href="/reservation/reservation2" id="btn_next" class="btn gray">계속</a>
                 <a href="../main/main.html" class="btn white">취소</a>
             </div>
         </div>

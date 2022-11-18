@@ -12,12 +12,7 @@ public class MemberServiceImpl implements MemberService{
 	 @Autowired
 	 private MemberDAO dao;
 	 
-	@Override
-	public Member view() {
-		
-		Member loginMember = dao.view();
-		
-		return loginMember;
-	}
+	
+	
 
 }
