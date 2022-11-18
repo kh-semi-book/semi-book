@@ -17,22 +17,8 @@ public class MemberController {
 	@Autowired
 	private MemberService service;
 	
-	@GetMapping("/member/view")
-	public String view(Model model, @RequestHeader(value="referer") String referer) {
-		
-		Member loginMember = service.view();
-		String path="";
-		
-		if(loginMember!=null) {
-			path="redirect:/";
-			model.addAttribute("loginMember", loginMember);
-		} else {
-			path="/common/header";
-		}
-		
-		
-		return path;
-	}
+	
+	
 	
 	
 	@GetMapping("/member/signUp2")

@@ -15,5 +15,10 @@ public class ReservationController {
 	public String reservation1() {
 		return "reservation/reservation1";
 	}
+	
+	@GetMapping("/reservation/reservation2")
+	public String reservation2() {
+		return "reservation/reservation2";
+	}
 
 }
