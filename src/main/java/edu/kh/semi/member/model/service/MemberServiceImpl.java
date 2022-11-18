@@ -15,20 +15,7 @@ public class MemberServiceImpl implements MemberService{
 	 @Autowired
 	 private MemberDAO dao;
 	 
-	@Override
-	public Member view() {
-		
-		Member loginMember = dao.view();
-		
-		return loginMember;
-	}
-	
-	@Override
-	public Member login(String inputId, String inputPw) {
-		
-		
-		return null;
-	}
+
 	// 로그인 기능
 //	@Override
 //	public Member login(Member inputMember) {
@@ -37,4 +24,7 @@ public class MemberServiceImpl implements MemberService{
 //		
 //		return loginMember;
 //	}
+
+	
+	
 }

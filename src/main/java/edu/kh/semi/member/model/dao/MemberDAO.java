@@ -12,10 +12,6 @@ public class MemberDAO {
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 
-	public Member view() {
-		
-		return sqlSession.selectOne("memberMapper.view");
-	}
 
 	public Member login(String memberId, String memberPw) {
 

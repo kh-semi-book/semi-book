@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="meetingRoomMapper">
+
+	<resultMap type="MeetingRoom" id="meetingRoom_rm">
+	
+		<id property="meetingRoomBookNo" column="MEETING_BOOK_NO"/>
+		<result property="meetingRoomDate" column="MEETING_DATE"/>
+		<result property="meetingRoomMenName" column="MEETING_MEM_NAME"/>
+		<result property="meetingRoomProcess" column="MEETING_PROCESS"/>
+		<result property="meetingRoomCancelFL" column="MEETING_CANCEL_FL"/>
+		<result property="roomNo" column="MEETING_ROOM_NO"/>
+		
+	</resultMap>
+
+
+
+ <select id="selectMeetingRoom" resultMap="meetingRoom_rm" resultType="MeetingRoom"> 
+ 	SELECT * FROM "MEETING_BOOK"
+ </select>
+</mapper>

@@ -56,11 +56,11 @@
     padding: 10px;
     text-align: right;
 }
-#board-post > .update{
+#board-post > .save{
     display: inline-block;
-    width: 130px;
+    width: 100px;
     height: 30px;
-    line-height: 30px;
+    line-height: 27px;
     border: 2px solid #ddd;
     background-color: #f9f9f9;
     color: black;
@@ -99,13 +99,13 @@ input{
     border: none;
     margin: 5px;
 }
-#selectTitleImg, #selectSubImg{
+#inputTitleImg, #inputSubImg{
 		display:none;
 }
 
-/* 이미지 선택 버튼 */
+/* 이미지 선택 버튼, 삭제 버튼 */
 .select-area> label{
-	 	width: 110px;
+	width: 110px;
     height: 33px;
     padding: 5px 10px;
 
@@ -114,8 +114,17 @@ input{
     font-size: 14px;
     cursor: pointer;
     text-align: center;
-    
-    
+}
+.deleteBtn {
+    height: 33px;
+    padding: 5px 10px;
+
+    border: 2px solid #ddd;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
 }
 
 

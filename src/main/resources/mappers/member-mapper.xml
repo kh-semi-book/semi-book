@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="memberMapper">
 
+
 		<resultMap type="Member" id="member_rm">
   		
   		<!-- DB에서 PK에 해당되는 필드, 컬럼명을 작성하는 태그 -->
@@ -42,6 +43,8 @@
 	<!-- 마이페이지 : 이름, 아이디, 기존비밀번호?, 휴대폰번호, 이메일, 성별,
 	 이메일 수신동의, SMS수신동의, 생년월일, 결혼유무, 유선전화, 주소
 	 -->
+
+
 
 
 </mapper>
