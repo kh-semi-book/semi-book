@@ -11,7 +11,7 @@
             <div id="header-top-menu">
                 <a href="/member/login">로그인</a>
                 |
-                <a href="/reservation/check">예약조회</a>
+                <a href="/reservation/reservationView">예약조회</a>
                 |
                 <a href="/member/signUp">회원가입</a>
             </div>
