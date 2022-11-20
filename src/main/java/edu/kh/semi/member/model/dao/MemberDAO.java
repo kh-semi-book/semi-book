@@ -13,10 +13,15 @@ public class MemberDAO {
 	private SqlSessionTemplate sqlSession;
 
 
-	public Member login(String memberId, String memberPw) {
 
-		
-		return sqlSession.selectOne("memberMapper.login" , );
+
+
+	/** 로그인 DAO
+	 * @param memberEmail
+	 * @return
+	 */
+	public Member login(String memberId) {
+		return sqlSession.selectOne("memberMapper.login", memberId  );
 	}
 
 	
