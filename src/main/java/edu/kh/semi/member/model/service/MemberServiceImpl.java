@@ -16,28 +16,7 @@ public class MemberServiceImpl implements MemberService{
 	 
 	 @Autowired
 	 private MemberDAO dao;
-	 
-<<<<<<< Updated upstream
 
-	// 로그인 기능
-//	@Override
-//	public Member login(Member inputMember) {
-//
-//		Member loginMember = dao.login(inputMember);
-//		
-//		return loginMember;
-//	}
-
-	
-	
-=======
-	@Override
-	public Member view() {
-		
-		Member loginMember = dao.view();
-		
-		return loginMember;
-	}
 	// 로그인 기능
 	@Override
 	public Member login(Member inputMember) {
@@ -61,6 +40,4 @@ public class MemberServiceImpl implements MemberService{
 		return loginMember;
 	}
 	
-
->>>>>>> Stashed changes
 }
