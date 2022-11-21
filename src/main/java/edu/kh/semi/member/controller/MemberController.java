@@ -12,7 +12,7 @@ import edu.kh.semi.member.model.service.MemberService;
 import edu.kh.semi.member.model.vo.Member;
 
 @Controller
-@SessionAttributes({"loginMember"})
+@SessionAttributes({"loginMember", "message"})
 public class MemberController {
 	
 	@Autowired
@@ -28,13 +28,21 @@ public class MemberController {
 	}
 	
 	// 11월 18일 22시 45분 로그인
+	
 	@PostMapping("/member/login")
-	public String login(String inputId, String inputPw , Model model) {
+	public String login(Member inputMember , Model model) {
 		
-		Member loginMember = service.login(inputId, inputPw);
+		Member loginMember = service.login(inputMember);
 		
-		
+		// 로그인 성공시 loginMember를 세션에 추가
+		// 로그인 실패시 "아이디 또는 비밀번호가 일치하지 않습ㄴ디ㅏ." 세션에 추가
+		if(loginMember != null) {
 		model.addAttribute("loginMember", loginMember);
+		
+		}else{
+			
+			model.addAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.")
+		}
 		
 		return "nav/dining/diningBeyond";
 	
