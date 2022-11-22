@@ -14,11 +14,11 @@ public class MemberDAO {
 
 
 
-public Member login(String memberId, String memberPw) {
-
-	
-	return sqlSession.selectOne("memberMapper.login" , );
-	}
+//public Member login(String memberId, String memberPw) {
+//
+//	
+//	return sqlSession.selectOne("memberMapper.login" , );
+//	}
 
 
 

@@ -11,11 +11,6 @@ import edu.kh.semi.member.model.vo.Member;
 public class MemberServiceImpl implements MemberService{
 	
 
- @Autowired
-	 private BCryptPasswordEncoder bcrypt;
-	
- @Autowired
-
 	 // spring -security.xml에서 등록한 bean을 의존성 주입
 	 @Autowired
 	 private BCryptPasswordEncoder bcrypt;
