@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <title>프로모션</title>
 <link rel="stylesheet" href="/resources/css/manager/board_detail.css">
+<link rel="stylesheet" href="/resources/css/manager/admin.css">
 <style>
 body {
 	margin: auto;
@@ -12,7 +13,7 @@ body {
 </style>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/common/header.jsp" />
+	<jsp:include page="/WEB-INF/views/manager/common/admin-header.jsp"/>
 	<div class="board-lookUp-page">
 		<div class="board-head-area">
 			<div></div>
@@ -61,7 +62,6 @@ body {
 		</div>
 		<div class="board-foot-area"></div>
 	</div>
-	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
 
 </body>
 </html>

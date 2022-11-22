@@ -25,7 +25,7 @@ body {
 		</div>
 		<div class="board-body-area">
 			<div id="board-post">
-				<a href="/manager/cmm/cmmPost" class="post">공지사항 등록</a>
+				<a href="/manager/cmmPost" class="post">공지사항 등록</a>
 			</div>
 
 			<table id="board_table">
@@ -35,7 +35,7 @@ body {
 					<th>작성일</th>
 				</tr>
 				<tr>
-					<td><a href="/manager/cmm/cmmDetail" class="detail">1</a></td>
+					<td><a href="/manager/cmmDetail" class="detail">1</a></td>
 					<td>코로나 19 관련 이용안내</td>
 					<td>2021-12-30</td>
 				</tr>

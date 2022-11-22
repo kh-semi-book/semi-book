@@ -3,7 +3,9 @@
 <mapper namespace="memberMapper">
 
 
-		<resultMap type="Member" id="member_rm">
+	<resultMap type="Member" id="member_rm">
+  		<!-- edu.kh.semi.member.model.vo.Member -->
+
   		
   		<!-- DB에서 PK에 해당되는 필드, 컬럼명을 작성하는 태그 -->
   		<id property="memberNo" column="MEMBER_NO" />
@@ -30,15 +32,14 @@
   		FROM "MEMBER"
   		WHERE MEMBER_NO='1'
   	</select>
-  							<!-- 입력한 아이디가 string타입  -->
-  	<select id="login" parameterType="Member" resultMap="member_rm" resultType="Member">
-  		SELECT MEMBER_NAME, MEMBER_ID, MEMBER_PW, MEMBER_PHONE, DELETE_FL, 
+  				<!--  -->
+  	<select id="login" parameterType="string" resultMap="member_rm" >
+  	SELECT MEMBER_NAME, MEMBER_ID, MEMBER_PW, MEMBER_PHONE, DELETE_FL, 
   		TO_CHAR(ENROLL_DATE,'YYYY"년" MM"월" DD"일" HH24 "시" MI"분" SS"초"') AS ENROLL_DATE,
 		MEMBER_EMAIL, MEMBER_GENDER,MEMBER_BIRTH,EMAIL_FL,SMS_FL,AUTHORITY
 		FROM MEMBER
 		WHERE DELETE_FL='N'
-		AND MEMBER_EMAIL = #{inputMember.memberEmail}
-		AND MEMBER_PW = #{inputMember.memberPw}
+		AND MEMBER_ID = #{memberId}
   	</select>
 	<!-- 마이페이지 : 이름, 아이디, 기존비밀번호?, 휴대폰번호, 이메일, 성별,
 	 이메일 수신동의, SMS수신동의, 생년월일, 결혼유무, 유선전화, 주소
