@@ -25,7 +25,7 @@ body {
 		</div>
 		<div class="board-body-area">
 			<div id="board-post">
-				<a href="/manager/cmm/cmmPost" class="update">공지사항 수정</a>
+				<a href="/manager/cmmUpdate" class="update">공지사항 수정</a>
 			</div>
 
 			<table id="board_table">
@@ -49,7 +49,7 @@ body {
 			</table>
 
 			<div id="board_return">
-				<a href="/manager/cmm/cmmBoard">목록</a>
+				<a href="/manager/cmm">목록</a>
 			</div>
 		</div>
 		<div class="board-foot-area"></div>

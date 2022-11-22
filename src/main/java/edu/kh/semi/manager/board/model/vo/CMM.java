@@ -1,4 +1,4 @@
-package edu.kh.semi.manager.cmm.model.vo;
+package edu.kh.semi.manager.board.model.vo;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

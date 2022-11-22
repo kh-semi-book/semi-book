@@ -49,9 +49,7 @@
 }
 
 /* =======[게시판 영역]======= */
-.board-body-area{
-    
-}
+
 #board-post{
     padding: 10px;
     text-align: right;
@@ -65,6 +63,7 @@
     background-color: #f9f9f9;
     color: black;
     text-align: center;
+    cursor: pointer;
 }
 #board_table {
     border-top: 2px solid black;
@@ -99,7 +98,7 @@ input{
     border: none;
     margin: 5px;
 }
-#inputTitleImg, #inputSubImg{
+#inputTitleImg, #inputConImg{
 		display:none;
 }
 

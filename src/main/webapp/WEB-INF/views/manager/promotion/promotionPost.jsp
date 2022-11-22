@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>프로모션 등록</title>
 <link rel="stylesheet" href="/resources/css/manager/board_detail.css">
+<link rel="stylesheet" href="/resources/css/manager/admin.css">
 <style>
 body {
 	margin: auto;
@@ -12,7 +14,7 @@ body {
 </style>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/common/header.jsp" />
+	<jsp:include page="/WEB-INF/views/manager/common/admin-header.jsp"/>
 	<div class="board-lookUp-page">
 		<div class="board-head-area">
 			<div></div>
@@ -22,9 +24,10 @@ body {
 			</div>
 			<div></div>
 		</div>
+		<form action="/manager/promotionPost" method="post"  enctype="multipart/form-data">
 		<div class="board-body-area">
 			<div id="board-post">
-				<a href="#" class="update">저장</a>
+				<button class="save">저장</button>
 			</div>
 
 			<table id="board_table">
@@ -33,10 +36,18 @@ body {
 					<td colspan="3"><input type="text" id="title"></td>
 				</tr>
 				<tr>
-					<th>타이틀 이미지</th>
-					<td>이미지 등록</td>
+					<th class="select-area">
+						타이틀 이미지
+						<label for="inputTitleImg">이미지 선택</label>
+  	        			<input type="file" name="promotionTitleImage" id="inputTitleImg" accept="image/*"><button type="button" class="deleteBtn">삭제</button>
+					</th>
+					<td colspan="3">
+						<img class="select-image" src="">
+					</td>
+				</tr>
+				<tr>
 					<th>세부 내용</th>
-					<td><input type="text" id="content"></td>
+					<td colspan="3"><input type="text" id="content"></td>
 				</tr>
 				<tr>
 					<th>투숙 기간</th>
@@ -49,19 +60,25 @@ body {
 					<td colspan="3"><input type="text" id="price"></td>
 				</tr>
 				<tr>
-					<th>내용</th>
-					<td colspan="3">이미지 등록
+					<th class="select-area">
+						내용
+						<label for="inputConImg">이미지 선택</label>
+            			<input type="file" name="promotionConImage" id="inputConImg" accept="image/*"><button type="button" class="deleteBtn">삭제</button>
+					</th>
+					<td colspan="3"><img class="select-image" src=""></td>
 				</tr>
 
 
 			</table>
 
 			<div id="board_return">
-				<a href="/html/promotion_board.html">목록</a>
+				<a href="/manager/promotion">목록</a>
 			</div>
 		</div>
+		</form>
 		<div class="board-foot-area"></div>
 	</div>
-	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
+
+	<script src="/resources/js/manager/board/boardPost.js"></script>
 </body>
 </html>

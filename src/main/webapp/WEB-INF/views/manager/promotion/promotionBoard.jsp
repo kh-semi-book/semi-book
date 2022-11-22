@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <title>프로모션 관리</title>
 <link rel="stylesheet" href="/resources/css/manager/board.css">
+<link rel="stylesheet" href="/resources/css/manager/admin.css">
 <style>
 body {
 	margin: auto;
@@ -12,7 +13,7 @@ body {
 </style>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/common/header.jsp" />
+	<jsp:include page="/WEB-INF/views/manager/common/admin-header.jsp"/>
 	<div class="board-lookUp-page">
 		<div class="board-head-area">
 			<div></div>
@@ -24,7 +25,7 @@ body {
 		</div>
 		<div class="board-body-area">
 			<div id="board-post">
-				<a href="/html/promotion_post.html" class="post">프로모션 등록</a>
+				<a href="/manager/promotionPost" class="post">프로모션 등록</a>
 			</div>
 
 			<table id="board_table">
@@ -34,7 +35,7 @@ body {
 					<th>작성일</th>
 				</tr>
 				<tr>
-					<td><a href="/html/promotion.html" class="detail">1</a></td>
+					<td><a href="/manager/promotionDetail" class="detail">1</a></td>
 					<td>[얼리버드] Hidden Earlybird</td>
 					<td>2021-12-30</td>
 				</tr>
@@ -80,7 +81,6 @@ body {
 		</div>
 		<div class="board-foot-area"></div>
 	</div>
-	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
 
 </body>
 </html>
