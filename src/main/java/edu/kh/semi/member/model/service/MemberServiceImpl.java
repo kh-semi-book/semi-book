@@ -9,10 +9,10 @@ import edu.kh.semi.member.model.vo.Member;
  @Service
 public class MemberServiceImpl implements MemberService{
 	
-	 @Autowired
-	 private BCryptPasswordEncoder bcrypt;
-	 
-	 @Autowired
+//	 @Autowired
+//	 private BCryptPasswordEncoder bcrypt;
+	
+//	 @Autowired
 	 private MemberDAO dao;
 	 
 

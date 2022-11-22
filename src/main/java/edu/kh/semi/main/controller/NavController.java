@@ -92,7 +92,8 @@ public class NavController {
 	}
 	@GetMapping("/meeting/opus")
 	public String meetingOpus() {
-		return "/nav/meeting/meetingOpus";
+		// return "/nav/meeting/meetingOpus";
+		return "/nav/meeting/meetingReservation";
 	}
 	
 	//------------------------------------------

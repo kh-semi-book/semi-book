@@ -1,495 +1,117 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Sans+KR&display=swap');
 
-*{
-    box-sizing: border-box;
-
-    /* HTML 요소가 가지고 있는 고유한 padding, margin을 모두 없앰 */
-    padding:0;
-    margin:0;
-    text-decoration: none;
-    list-style: none;
-
-}
-
-
-header>section{
-    width:1200px;
-    height:100px;
-    margin:auto;
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-}
-
-
-/* header */
-header{
-    /* height:0px; */
-
-    display: flex;
-    /* 내부 요소를 유연하게 배치/정렬
-        -> 내부 요소의 자동으로 지정된 margin이 모두 사라져 
-        한 줄(기본값 row)로 바치
-    */
-
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
- 
-}
-
-
-
-
-/********************* nav **********************/
-nav{
-   
-    height:60px;
-
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
-
-    position: sticky;
-    /* 화면 밖으로 요소가 벗어났을 때 지정된 위치에 고정 */
-
-    /* 어디 고정할 지 지정 */
-    top:0;
-    background-color: white;
-}
-
-
-/* ul 스타일 지정 */
-/* 줄어들었을 때 좀 잘리게 하는거 어떻게하려나 */
-nav>ul{
-    width: 1200px;
-    margin-left: 80px;
-    padding:0;
-    list-style: none;
-
-    display: flex;
-    height: 100%;
-}
-
-/* 네비게이터 메뉴 */
-nav li{
-    flex-basis: 140px;
-}
-
-/* 메뉴 내부 a 태그 */
-nav li>a{
-    cursor: pointer;
-    
-    text-decoration: none;
-    font-size: 15px;
-    color:black;
-
-    display: block;
-    height: 100%;
-    
-    /* padding:11px 0; */
-        /*  세로 가로  */
-    /* text-align: center; */
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    position: relative;
-    /* 내부에 작성된 글자를 요소로 취급해서 정가운데 배치 */
-
-    border-radius: 5px;
-    transition-duration: 0.1s;
-}
-
-/* 아마 이부분은 자바스크립트 */
-/* nav에 커서 올렸을 때  */
-nav li>a:hover{
-  
-    transform: scaleY(2);
-
-    transition-duration: 1s;
-}
-
-
-/* 헤더 오른쪽 상단 메뉴 */
-
-
-#header-top-menu{
-    position:relative;
-
-    left:1100px;
-    top:5px;
-    
-}
-
-#header-top-menu a{
-    text-decoration: none;
-    color:black;
-
-    margin:15px;
-}
-
-#header-top-menu *{
-    font-weight: 1px;
-    font-size: 12px;
-}
-
-/* <!-- media(내부 유튜브 링크)/instagram + 각각 아이콘 있음 --> */
-#media-menu{
-    position:absolute;
-
-    left:1150px;
-    top: 60px;
-}
-
-#media-menu>a{
-    text-decoration: none;
-    color:gray;
-    font-size: 14px;
-
-
-    border:1px solid gray;
-    padding : 3px 5px;
-}
-
-.book-btn{
-    text-decoration: none;
-    color:white;
-
-    border:1px solid black;
-    height: 100px;
-    width: 100px;
-
-    background-color: rgb(92, 91, 91);
-
-    position:absolute;
-
-    left:1200px;
-
-    top:120px;
-    z-index: 20;
-
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
-}
-
-
-.book-btn>i{
-    font-size: 40px;
-    margin-bottom:10px;
-}
-
-
-/* ************ footer ************* */
-
-footer{
-
-    display:flex;
-
-    flex-direction: column;
-    justify-content: center;
-    /* align-items: center; */
-
-}
-
-#footer-first{
-    background-color: rgb(61, 61, 61);
-    margin-top: 65px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-
-#footer-first>p{
-    
-    color:rgb(144, 143, 143);
-
-}
-
-#inner-footer-contact{
-   
-    width: 1400px;
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-   
-}
-
-
-
-#inner-footer-contact>table{
-    color:white;
-    margin:20px 0;
-    width:800px
-}
-
-#inner-footer-contact>table:first-child{
-    padding-right: 50px;
-}
-
-.float-right{
-    float:right;
-    padding-right: 40px;
-}
-
-
-.book-btn2{
-
-    text-decoration: none;
-    color:white;
-
-    border:1px solid black;
-    height: 70px;
-    width: 150px;
-
-    background-color: rgb(92, 91, 91);
-
-    position:relative;
-
-    /* left:1200px;
-    top: 120px; */
-
-
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
-    top:30px;
-}
-
-
-
-/* ******************* 가운데 메뉴 ******************** */
-
-
-#footer-middle-back{
-    background-color: rgb(131, 128, 128);
-    height:200px;
-
-    display: flex;
-    /* justify-content: space-around; */
-}
-
-#footer-middle{
-
-    width: 1400px;
-    display:flex;
-    margin: 0 auto;
-    justify-content: center;
-    /* justify-content: space-between; */
-    position:relative;
-    padding-left: 1px;
-}
-
-
-
-
-#footer-middle ul{
-    width: 100px;
-    margin-top: 30px;
-    padding:0 10px;
-
-    flex-basis: 120px;
-}
-
-#footer-middle>ul>p{
-    border-bottom: 1px solid white;
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-}
-
-#footer-middle li{
-    line-height:25px;
-}
-
-#footer-middle *{
-    color:white;
-    text-decoration: none;
-    list-style: none;
-    font-size: 12px;
-}
-
-
-/************ footer 하얀부분 ***************/
-
-#footer-last{
-    display:flex;
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
-}
-
-#footer-last>img{
-    width: 180px;
-    margin:20px 50px;
-}
-
-#footer-last *{
-    color:gray;
-    letter-spacing: 1px;
-}
-
-#footer-last a{
-    text-decoration: none;
-    margin:px 20px;
-}
-
-#footer-last>p{
-    font-size: 15px;
-    line-height:20px;
-}
-
-#footer-last>span{
-    margin-top:10px;
-    /* 아래에 간격 추가해야됨 */
-    margin-bottom: 80px;
-}
-
-#small-text{
-    letter-spacing:0px;
-    font-size: 11px;
-}
-#small-font{
-    letter-spacing:0px;
-    font-size: 5px;
-}
-
-#inner-footer-contact p{
-    font-size: 18px;
-    margin-bottom: 10px;
-    color:rgb(136, 134, 134);
-}
-
-
-
-
-
-/******************************* 위에는 헤더/푸터 ********************************/
-
-
-#head-img{
+/* 상단 뒷 배경 */
+#head-img {
     width: 100%;
     height: 185px;
     background-attachment: fixed;
-    background-image: url(/images/visual_meeting.jpg);
+    background-image: url(/resources/image/nav/meeting/visual_meeting.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
     margin: 0px;
 }
 
-.bsh-main{
-    /* border: 1px solid red; */
-    height: 1598.7px;
+.bsh-main {
+    min-height: 1600px;
+    height: auto;
 }
 
-.bsh-path{
-    justify-content: flex-start;
-    /* border: 1px solid green; */
+/* 상단 페이징  */
+.bsh-path {
     width: 1000px;
     height: 50px;
     margin: 0 auto;
-    line-height: 50px;
-    text-transform: uppercase;
-    color: #767676;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 13px;
-    
 }
 
-.bsh-path li{
+.bsh-path ol {
+    padding-left: 0px;
+}
+
+.bsh-path li {
     justify-content: flex-start;
     display: inline-block;
-    /* float: left; */
-    /* padding: 0 8px 0 0; */
-    font-size: 13px;
-    color: #767676;
-    /* opacity: 0; */
     padding-right: 8px;
 }
 
-.bsh-main-title h1{
-    /* border: 1px solid red; */
+.bsh-path a {
+    text-decoration: none;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #767676;
+    font-size: 13px;
+}
+
+/* 페이지 제목 */
+.bsh-main-title h1 {
     width: 1000px;
     margin: 0 auto;
     height: 83px;
-    padding: 18px 0 0;
+    padding: 18px 0 0 0;
     font-size: 33px;
     font-family: 'Nanum Myeongjo';
-    letter-spacing: -1px;
-    vertical-align: middle;
     font-weight: 300;
 }
 
-.bsh-main-img1{
+/* 페이지별 메인 이미지 */
+
+/* 심포니 이미지 */
+.bsh-main-img1 {
     width: 1000px;
     height: 550px;
-    /* border: 1px solid red; */
     margin: 0 auto 60px;
-    background-image: url(/images/symphony2.jpg);
-}
-.bsh-main-img2{
-    width: 1000px;
-    height: 550px;
-    /* border: 1px solid red; */
-    margin: 0 auto 60px;
-    background-image: url(/images/harmony1.jpg);
-}
-.bsh-main-img3{
-    width: 1000px;
-    height: 550px;
-    /* border: 1px solid red; */
-    margin: 0 auto 60px;
-    background-image: url(/images/opus2.jpg);
+    background-image: url(/resources/image/nav/meeting/symphony/symphony1.jpg);
 }
 
-.bsh-main-content{
+/* 하모니 이미지 */
+.bsh-main-img2 {
     width: 1000px;
-    height: 51.78px;
-    /* border: 1px solid blue; */
+    height: 550px;
+    margin: 0 auto 60px;
+    background-image: url(/resources/image/nav/meeting/harmony/harmony1.jpg);
+}
+
+/* 오퍼스 이미지 */
+.bsh-main-img3 {
+    width: 1000px;
+    height: 550px;
+    margin: 0 auto 60px;
+    background-image: url(/resources/image/nav/meeting/opus/opus1.jpg);
+}
+
+/* 중간 텍스트 */
+.bsh-main-content {
+    box-sizing: border-box;
+    width: 1000px;
     margin: 0 auto;
     font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: -1px;
+    font-size: 16px;
 }
 
-.bsh-btngroup{
+/* 버튼 영역 */
+.bsh-btngroup {
     margin: 60px auto 0;
     width: 1000px;
     height: 58px;
-    /* border: 1px solid black; */
     font-family: 'Noto Sans KR', sans-serif;
 }
 
-a.bsh-btngray{
+/* 버튼 영역 내부 텍스트 */
+a.bsh-btngray {
     display: inline-block;
     width: 210px;
     height: 58px;
     background: #231f20;
     font-size: 17px;
     line-height: 60px;
-    /* font-family: 'nSquare'; */
+    font-family: 'nSquare';
     color: #fff;
+    text-decoration: none;
     text-align: center;
-    transition-timing-function: ease;
-    transition-duration: 0.3s;
-    transition-delay: 0s;
-    transition-property: all;
 }
 
-a.bsh-btngray:hover{
-    background-color: rgb(95, 92, 92)
-}
-
-.bsh-tb1{
-    /* border: 1px solid red; */
+/* 테이블 1 */
+.bsh-tb1 {
     width: 1000px;
     height: 145px;
     margin: 60px auto 0;
@@ -513,7 +135,7 @@ a.bsh-btngray:hover{
     line-height: 1.7;
 }
 
-.bsh-tb1-info .bsh-con-cell > * {
+.bsh-tb1-info .bsh-con-cell>* {
     border-bottom: 0;
 }
 
@@ -543,11 +165,12 @@ a.bsh-btngray:hover{
     font-family: 'Noto Sans KR', sans-serif;
 }
 
-.bsh-padding-cell{
+.bsh-padding-cell {
     border-top: 2px solid black;
 }
 
-th, td {
+th,
+td {
     text-align: left;
     vertical-align: middle;
     word-wrap: break-word;
@@ -555,20 +178,19 @@ th, td {
     font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
-.bsh-tb2-info{
+.bsh-tb2-info {
     width: 1000px;
     margin: 65px auto;
-    /* border: 1px solid red; */
     border-top: 2px solid black;
 }
 
 
 
-.bsh-tb2 th{
+.bsh-tb2 th {
     border-bottom: 1px solid #c9c9c9;
     font-size: 16px;
     color: #111;
-    letter-spacing: -1px; 
+    letter-spacing: -1px;
     font-weight: 400;
     padding: 10px 0;
     text-align: center;
@@ -592,8 +214,4 @@ table {
     table-layout: fixed;
     border-collapse: collapse;
     border-spacing: 0;
-}
-
-.bsh-binbox{
-    /* border: 1px solid red; */
 }
