@@ -8,7 +8,19 @@
   		<id property="bookNo" column="BOOK_NO" />
   		
   		<!-- 나머지 일반 컬럼 -->
+  		
   		<result property="bookDate" column="BOOK_DATE" />
+  		<result property="checkIn" column="CHECK_IN" />
+  		<result property="checkOut" column="CHECK_OUT" />
+  		<result property="bookProcess" column="BOOK_PROCESS" />
+  		<result property="bookMemberNo" column="MEMBER_NO" />
+  		<result property="bookMemberName" column="MEMBER_NAME" />
+  		<result property="bookGuestNo" column="GUEST_NO" />
+  	<result property="bookGuestName" column="GUEST_NAME" />
+  		<result property="bookRoomNum" column="ROOM_NUM" />  		
+  		<result property="bookPrice" column="PRICE" />
+  		<result property="bookPromotion" column="BOOK_PROMOTION" />
+  		<result property="bookHeadCount" column="BOOK_HEADCOUNT" />
   	</resultMap>
   	
   	<select id="getBookCount" resultType="_int">
@@ -20,7 +32,94 @@
   		FROM BOOK
   		WHERE BOOK_NO=7
   	</select>
+  	
+  	<select id="selectBookList" resultMap="book_rm">
+  		SELECT BOOK_NO, TO_CHAR(BOOK_DATE,'YYYY-MM-DD') BOOK_DATE, BOOK_PROMOTION, ROOM_NUM, 
+		TO_CHAR(CHECK_IN,'YYYY-MM-DD') CHECK_IN, TO_CHAR(CHECK_OUT,'YYYY-MM-DD') CHECK_OUT, BOOK_PROCESS,
+		MEMBER_NAME, ROOM_NUM, PRICE
+		FROM BOOK 
+		JOIN "MEMBER" USING(MEMBER_NO)
+		JOIN ROOM USING(ROOM_NUM)
+  	</select>
 
+
+	<select id="searchBooker" parameterType="string" resultMap="book_rm">
+		SELECT BOOK_NO, TO_CHAR(BOOK_DATE,'YYYY-MM-DD') BOOK_DATE, BOOK_PROMOTION, ROOM_NUM, 
+		TO_CHAR(CHECK_IN,'YYYY-MM-DD') CHECK_IN, TO_CHAR(CHECK_OUT,'YYYY-MM-DD') CHECK_OUT, BOOK_PROCESS,
+		MEMBER_NAME, ROOM_NUM,PRICE, BOOK_HEADCOUNT
+		FROM BOOK 
+		JOIN "MEMBER" USING(MEMBER_NO)
+		JOIN ROOM USING(ROOM_NUM)
+		WHERE MEMBER_NAME =#{inputName}
+	
+	</select>
+	
+	
+	<select id="searchRoomNum" parameterType="string" resultMap="book_rm">
+		SELECT BOOK_NO, TO_CHAR(BOOK_DATE,'YYYY-MM-DD') BOOK_DATE, BOOK_PROMOTION, ROOM_NUM, 
+		TO_CHAR(CHECK_IN,'YYYY-MM-DD') CHECK_IN, TO_CHAR(CHECK_OUT,'YYYY-MM-DD') CHECK_OUT, BOOK_PROCESS,
+		MEMBER_NAME, ROOM_NUM, TO_CHAR(PRICE,'FM999,999,999,999') PRICE, BOOK_HEADCOUNT
+		FROM BOOK 
+		JOIN "MEMBER" USING(MEMBER_NO)
+		JOIN ROOM USING(ROOM_NUM)
+		WHERE ROOM_NUM =#{inputRoomNum}
+	
+	</select>
+	
+	
+	<select id="searchBookStatus" parameterType="string" resultMap="book_rm">
+		SELECT BOOK_NO, TO_CHAR(BOOK_DATE,'YYYY-MM-DD') BOOK_DATE, BOOK_PROMOTION, ROOM_NUM, 
+		TO_CHAR(CHECK_IN,'YYYY-MM-DD') CHECK_IN, TO_CHAR(CHECK_OUT,'YYYY-MM-DD') CHECK_OUT, BOOK_PROCESS,
+		MEMBER_NAME, ROOM_NUM, TO_CHAR(PRICE,'FM999,999,999,999') PRICE, BOOK_HEADCOUNT
+		FROM BOOK 
+		JOIN "MEMBER" USING(MEMBER_NO)
+		JOIN ROOM USING(ROOM_NUM)
+		WHERE BOOK_PROCESS =#{inputBookStatus}
+	
+	</select>
+	
+	<select id="searchBookerDate" parameterType="string" resultMap="book_rm">
+		SELECT BOOK_NO, TO_CHAR(BOOK_DATE,'YYYY-MM-DD') BOOK_DATE, BOOK_PROMOTION, ROOM_NUM, 
+		TO_CHAR(CHECK_IN,'YYYY-MM-DD') CHECK_IN, TO_CHAR(CHECK_OUT,'YYYY-MM-DD') CHECK_OUT, BOOK_PROCESS,
+		MEMBER_NAME, ROOM_NUM, TO_CHAR(PRICE,'FM999,999,999,999') PRICE, BOOK_HEADCOUNT
+		FROM BOOK 
+		JOIN "MEMBER" USING(MEMBER_NO)
+		JOIN ROOM USING(ROOM_NUM)
+		WHERE MEMBER_NAME =#{inputName}
+		AND TO_CHAR(BOOK_DATE,'YYYY-MM-DD')
+		BETWEEN #{searchDateInput1} AND #{searchDateInput2}
+	
+	</select>
+	
+	
+	<select id="searchRoomNumDate" parameterType="string" resultMap="book_rm">
+		SELECT BOOK_NO, TO_CHAR(BOOK_DATE,'YYYY-MM-DD') BOOK_DATE, BOOK_PROMOTION, ROOM_NUM, 
+		TO_CHAR(CHECK_IN,'YYYY-MM-DD') CHECK_IN, TO_CHAR(CHECK_OUT,'YYYY-MM-DD') CHECK_OUT, BOOK_PROCESS,
+		MEMBER_NAME, ROOM_NUM, TO_CHAR(PRICE,'FM999,999,999,999') PRICE, BOOK_HEADCOUNT
+		FROM BOOK 
+		JOIN "MEMBER" USING(MEMBER_NO)
+		JOIN ROOM USING(ROOM_NUM)
+		WHERE ROOM_NUM =#{inputRoomNum}
+		AND TO_CHAR(BOOK_DATE,'YYYY-MM-DD')
+		BETWEEN #{searchDateInput1} AND #{searchDateInput2}
+	
+	</select>
+	
+	
+	<select id="searchBookStatusDate" parameterType="string" resultMap="book_rm">
+		SELECT BOOK_NO, TO_CHAR(BOOK_DATE,'YYYY-MM-DD') BOOK_DATE, BOOK_PROMOTION, ROOM_NUM, 
+		TO_CHAR(CHECK_IN,'YYYY-MM-DD') CHECK_IN, TO_CHAR(CHECK_OUT,'YYYY-MM-DD') CHECK_OUT, BOOK_PROCESS,
+		MEMBER_NAME, ROOM_NUM, TO_CHAR(PRICE,'FM999,999,999,999') PRICE, BOOK_HEADCOUNT
+		FROM BOOK 
+		JOIN "MEMBER" USING(MEMBER_NO)
+		JOIN ROOM USING(ROOM_NUM)
+		WHERE BOOK_PROCESS =#{inputBookStatus}
+		AND TO_CHAR(BOOK_DATE,'YYYY-MM-DD')
+		BETWEEN #{searchDateInput1} AND #{searchDateInput2}
+	
+	</select>
+	
+	
 
 
 </mapper>

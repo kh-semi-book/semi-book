@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import edu.kh.semi.manager.book.model.dao.BookDAO;
 import edu.kh.semi.manager.book.model.vo.Book;
 import edu.kh.semi.manager.book.model.vo.Pagination;
+import edu.kh.semi.manager.book.model.vo.SearchOption;
 
 @Service
 public class BookServiceImpl implements BookService {
@@ -29,6 +30,52 @@ public class BookServiceImpl implements BookService {
 		
 		// 3. 페이징 처리 객체를 이용해서 게시글 목록 조회 
 		List<Book> bookList=dao.selectBookList(pagination);
+		
+		Map<String, Object> map=new HashMap<String, Object>();
+		
+		map.put("pagination", pagination);
+		map.put("bookList",bookList);
+		
+		return map;
+	}
+
+	@Override
+	public Map<String, Object> searchBook(int cp, SearchOption sc) {
+		List<Book> bookList=null;
+		int bookCount = 0;
+		
+		if(sc.getSearchDateInput1()=="" && sc.getSearchDateInput2()=="") {
+		
+		
+			if(sc.getSearchOption().equals("bookerName")) {
+				bookList=dao.searchBooker(sc.getSearchOptionInput());
+				bookCount=bookList.size();
+			}else if(sc.getSearchOption().equals("roomNum")) {
+				bookList=dao.searchRoomNum(sc.getSearchOptionInput());
+				bookCount=bookList.size();
+			}else if(sc.getSearchOption().equals("bookStatus")) {
+				bookList=dao.searchBookStatus(sc.getSearchOptionInput());
+				bookCount=bookList.size();
+			}
+	}
+		
+		else {
+			if(sc.getSearchOption().equals("bookerName")) {
+				bookList=dao.searchBookerDate(sc.getSearchOptionInput());
+				bookCount=bookList.size();
+			}else if(sc.getSearchOption().equals("roomNum")) {
+				bookList=dao.searchRoomNumDate(sc.getSearchOptionInput());
+				bookCount=bookList.size();
+			}else if(sc.getSearchOption().equals("bookStatus")) {
+				bookList=dao.searchBookStatusDate(sc.getSearchOptionInput());
+				bookCount=bookList.size();
+			}
+		}
+		
+		
+		
+		
+		Pagination pagination=new Pagination(bookCount, cp);
 		
 		Map<String, Object> map=new HashMap<String, Object>();
 		

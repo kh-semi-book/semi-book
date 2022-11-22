@@ -11,8 +11,12 @@ for(let item of liAnimation){
       
      // innerlist
      this.parentElement.children[1].style.display="block";
-     this.parentElement.children[1].style.opacity ="1";
+     this.parentElement.children[1].style.opacity ="0";
      this.parentElement.children[1].style.transitionDuration="2s";
+
+     setTimeout(() => {
+        e.target.parentElement.children[1].style.opacity ="1";
+    }, 20);
  
      // a태그
      this.style.borderBottom="1px solid black";

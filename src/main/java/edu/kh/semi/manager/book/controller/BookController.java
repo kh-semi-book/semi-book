@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import edu.kh.semi.manager.book.model.service.BookService;
+import edu.kh.semi.manager.book.model.vo.SearchOption;
 
 @Controller
 public class BookController {
@@ -29,6 +30,21 @@ public class BookController {
 		model.addAttribute("map", map);
 		
 		return "manager/common/select-book";
+		
+	}
+	
+	@GetMapping("/manager/searchBook")
+	public String searchBook(SearchOption sc,
+			Model model,
+			@RequestParam(value="cp", required=false, defaultValue="1") int cp
+			) {
+		
+		
+		Map<String,Object> map=service.searchBook(cp, sc);
+		
+		model.addAttribute("map", map);
+		
+		return "manager/common/search-book";
 		
 	}
 	

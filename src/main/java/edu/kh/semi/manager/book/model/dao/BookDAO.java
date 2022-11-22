@@ -23,9 +23,9 @@ public class BookDAO {
 	}
 	
 	
-	public String selectBook() {	
-		return sqlSession.selectOne("bookMapper.selectBook"); 
-	}
+//	public String selectBook() {	
+//		return sqlSession.selectOne("bookMapper.selectBook"); 
+//	}
 
 
 	public List<Book> selectBookList(Pagination pagination) {
@@ -35,5 +35,34 @@ public class BookDAO {
 		RowBounds rowBounds = new RowBounds(offset, pagination.getLimit());
 		
 		return sqlSession.selectList("bookMapper.selectBookList", rowBounds);
+	}
+
+
+	public List<Book> searchBooker(String inputName) {
+		return sqlSession.selectList("bookMapper.searchBooker",inputName);
+	}
+
+
+	public List<Book> searchRoomNum(String inputNum) {
+		return sqlSession.selectList("bookMapper.searchRoomNum",inputNum);
+	}
+
+
+	public List<Book> searchBookStatus(String inputStatus) {
+		return sqlSession.selectList("bookMapper.searchBookStatus",inputStatus);
+	}
+
+
+	public List<Book> searchBookerDate(String inputName) {
+		return sqlSession.selectList("bookMapper.searchBookerDate",inputName);
+	}
+	
+	public List<Book> searchRoomNumDate(String inputNum) {
+		return sqlSession.selectList("bookMapper.searchRoomNumDate",inputNum);
+	}
+
+
+	public List<Book> searchBookStatusDate(String inputStatus) {
+		return sqlSession.selectList("bookMapper.searchBookStatusDate",inputStatus);
 	}
 }

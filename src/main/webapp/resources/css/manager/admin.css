@@ -15,9 +15,9 @@
         }
 
 
-        #search-book-option{
+       /*  #search-book-option{
             border:1px solid black;
-        }
+        } */
 
 
 
@@ -142,32 +142,6 @@
 
 
 
-       /*----[ 페이지 이동 버튼 ]----*/
-
-       #rsc-page-skip{
-        margin-top:50px;
-       }
-#rsc-page-skip a{
-    text-decoration: none;
-    color: #767676;
-}
-#rsc-page-skip button{
-   background-color: #292526;
-   font-weight: bold;
-   font-size: 14px;
-   height: 38px;
-   width: 38px;
-}
-#rsc-page-skip button a{
-   font-weight: bold;
-   font-size: 14px;
-   color: #FFFFFF;
-}
-#rsc-page-skip button a:hover{
-   font-weight: bold;
-   font-size: 14px;
-   color: red;
-}
 
 /* --------------- 여기까지 search ------------------ */
 
@@ -179,7 +153,6 @@
 #manage-book-title{
     font-size: 30px;
     margin-bottom:20px;
-    margin-top:20px;
 }
 
 #manage-book-area{
@@ -201,10 +174,15 @@
     width: 200px;
 }
 .manage-book-name{
-    width: 400px;
+    width: 300px;
 }
-.manage-book-type{
+.manage-book-head-count,.manage-book-room-no{
     width:100px;
+}
+.manage-book-head-count>input,.manage-book-room-no>input{
+    display: inline-block;
+    width:50px;
+    text-align: center;
 }
 
 .manage-book-status-change{
@@ -250,35 +228,6 @@
 .manage-border-right{
     border-right: 1px solid #bbb;
 }
-
-/*----[ 페이지 이동 버튼 ]----*/
-
-#rsc-page-skip{
-margin-top:50px;
-}
-#rsc-page-skip a{
-text-decoration: none;
-color: #767676;
-}
-#rsc-page-skip button{
-background-color: #292526;
-font-weight: bold;
-font-size: 14px;
-height: 38px;
-width: 38px;
-}
-#rsc-page-skip button a{
-font-weight: bold;
-font-size: 14px;
-color: #FFFFFF;
-}
-#rsc-page-skip button a:hover{
-font-weight: bold;
-font-size: 14px;
-color: red;
-}
-
-
 /* ------------------- 여기까지 select ------------------ */
 
 
@@ -462,4 +411,32 @@ justify-content: center;
 #header-top-btn>a>i{
 
 font-size: 30px;
+}
+
+
+       /*----[ 페이지 이동 버튼 ]----*/
+
+       #rsc-page-skip{
+        margin-top:50px;
+       }
+#rsc-page-skip a{
+    text-decoration: none;
+    color: #767676;
+}
+#rsc-page-skip button{
+   background-color: #292526;
+   font-weight: bold;
+   font-size: 14px;
+   height: 38px;
+   width: 38px;
+}
+#rsc-page-skip button a{
+   font-weight: bold;
+   font-size: 14px;
+   color: #FFFFFF;
+}
+#rsc-page-skip button a:hover{
+   font-weight: bold;
+   font-size: 14px;
+   color: red;
 }
