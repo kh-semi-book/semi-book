@@ -164,16 +164,13 @@
 <strong>③</strong> 히든 클리프 호텔 & 네이쳐는 개인정보의 이용목적의 달성 및 해지 시까지 개인정보를 보유, 이용하되 개인정보의 수집 및 이용 목적이 달성된 때에는 고객
 &nbsp;&nbsp;&nbsp; 의 개인정보를 지체없이 파기합니다.
                    </pre>
-                    <!-- <div class="bsh-terms">
-                        <iframe src="/KH_예약/프로젝트html/약관동의.html" width="920px" height="200px" ></iframe>
-                    </div> -->
                     <div class="bsh-agree">
                         <label><input type="checkbox"> 개인정보 수집 및 이용에 대한 동의하기</label>
                     </div>
                 </div>
                 <div class="bsh-btn">
                     <input type="submit" name="sub" class="bsh-btn-gray" value="등록하기">
-                    <a href="https://www.hiddencliff.kr/main/main.html" class="bsh-btn-white">취소</a>
+                    <a href="#" class="bsh-btn-white">취소</a>
                 </div>
             </form>
         </div>

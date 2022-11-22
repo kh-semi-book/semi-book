@@ -53,18 +53,11 @@
     font-weight: 300;
 }
 
-
-
-
-
-
 .bsh-section {
     box-sizing: border-box;
-    border: 1px solid blue;
     padding: 18px 0 50px 0;
     width: 1000px;
-    /* height: auto; */
-    height: 3000px;
+    height: auto;
     margin: 0 auto;
 }
 
@@ -153,12 +146,10 @@ label {
 /* 개인정보 수집 및 동의 */
 
 .bsh-last-info {
-    border: 1px solid red;
     width: 915px;
-    height: 450px;
+    height: 350px;
     padding: 0 40px;
     border-bottom: 2px solid #e7e7e7;
-    margin-bottom: 50px;
 }
 
 .bsh-last-info>h2 {
@@ -166,7 +157,7 @@ label {
     font-weight: 600;
     font-size: 15px;
     line-height: 22px;
-    /* font-family: 'nSquare'; */
+    font-family: 'nSquare';
     color: #333;
 }
 
@@ -191,7 +182,6 @@ label {
 .bsh-agree {
     display: flex;
     justify-content: center;
-    /* border: 1px solid blue; */
     width: 920px;
     height: 44px;
     padding: 20px 0 0;
@@ -212,43 +202,25 @@ label {
 input[type="submit"] {
     display: inline-block;
     width: 220px;
-    height: 58px;
-    margin-left: 10px;
+    height: 59px;
     background: #231f20;
     font-weight: 300;
     font-size: 17px;
-    /* font-family: 'nSquare'; */
-    line-height: 58px;
     color: #fff;
-    text-align: center;
     box-sizing: border-box;
     cursor: pointer;
-    transition: all 0.3s;
 }
 
 a.bsh-btn-white {
     border: 2px solid #b3b3b3;
     background: #fff;
+    text-decoration: none;
     line-height: 56px;
-    margin-left: 4px;
     color: #333333;
     display: inline-block;
     width: 220px;
     height: 58px;
-    text-align: center;
     font-size: 17px;
-}
-
-a.bsh-btn-white:hover {
-    transition-duration: 0.3s;
-    transition-timing-function: ease;
-    transition-delay: 0s;
-    transition-property: all;
-
-    border: 2px solid #b3b3b3;
-    background: #fff;
-    line-height: 56px;
-    color: #333333;
 }
 
 .bsh-gotop-btn {
@@ -262,9 +234,6 @@ a.bsh-btn-white:hover {
     background: #aaabaa;
     color: #fff !important;
     text-align: center;
-    opacity: .7;
-    filter: alpha(opacity=70);
-    transition: opacity .6s ease;
 }
 
 .bsh-gotop {
