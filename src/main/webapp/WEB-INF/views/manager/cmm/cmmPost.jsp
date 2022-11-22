@@ -24,7 +24,7 @@ body {
 			</div>
 			<div></div>
 		</div>
-		<form action="/cmm/cmmPost" method="post">
+		<form action="/manager/cmmPost" method="post"  enctype="multipart/form-data">
 		<div class="board-body-area">
 			<div id="board-post">
 				<button class="save">저장</button>
@@ -63,7 +63,7 @@ body {
 
 			</table>
 			<div id="board_return">
-				<a href="/manager/cmm/cmmBoard">목록</a>
+				<a href="/manager/cmm">목록</a>
 			</div>
 		</div>
 		</form>

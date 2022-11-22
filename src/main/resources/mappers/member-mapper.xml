@@ -2,13 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="memberMapper">
 
-<<<<<<< Updated upstream
 
-		<resultMap type="Member" id="member_rm">
-=======
 	<resultMap type="Member" id="member_rm">
   		<!-- edu.kh.semi.member.model.vo.Member -->
->>>>>>> Stashed changes
+
   		
   		<!-- DB에서 PK에 해당되는 필드, 컬럼명을 작성하는 태그 -->
   		<id property="memberNo" column="MEMBER_NO" />
