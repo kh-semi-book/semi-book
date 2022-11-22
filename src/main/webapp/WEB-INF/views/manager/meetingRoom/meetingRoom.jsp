@@ -27,8 +27,8 @@
 				<div class="manage-book-name">상품명</div>
 				<div class="manage-book-count">인원</div>
 				<div class="manage-booker-name">예약자명</div>
-				<div class="manage-book-status">진행상태</div>
 				<div class="manage-book-del">취소여부</div>
+				<div class="manage-book-status">진행상태</div>
 				<div class="manage-book-status-change">저장</div>
 			</div>
 			<div class="manage-book-table-content">
@@ -37,14 +37,34 @@
 				<div class="manage-book-name manage-border-right">${meeting.meetingRoomName}</div>
 				<div class="manage-book-count manage-border-right">${meeting.meetingHeadCount}</div>
 				<div class="manage-booker-name manage-border-right">${meeting.meetingRoomMenName}</div>
-				<div class="manage-book-status manage-border-right"> ${meeting.meetingRoomProcess}
-					<select name="book-status" id="book-status">
-						<option value="">예약대기</option>
-						<option value="">예약완료</option>
-						<option value="">취소완료</option>
-					</select>
-				</div>
 				<div class="manage-book-del manage-border-right">${meeting.meetingRoomCancelFL}</div>
+				<c:if test="${meeting.meetingRoomProcess == 0}"> 
+					<div class="manage-book-status manage-border-right"> 예약대기
+						<select name="book-status" id="book-status">
+							<option value="0">예약대기</option>
+							<option value="1">예약완료</option>
+							<option value="2">취소완료</option>
+						</select>
+					</div>
+				</c:if>
+				<c:if test="${meeting.meetingRoomProcess == 1}"> 
+					<div class="manage-book-status manage-border-right"> 예약완료
+						<select name="book-status" id="book-status">
+							<option value="0">예약대기</option>
+							<option value="1">예약완료</option>
+							<option value="2">취소완료</option>
+						</select>
+					</div>
+				</c:if>
+				<c:if test="${meeting.meetingRoomProcess == 2}"> 
+					<div class="manage-book-status manage-border-right"> 취소완료
+						<select name="book-status" id="book-status">
+							<option value="0">예약대기</option>
+							<option value="1">예약완료</option>
+							<option value="2">취소완료</option>
+						</select>
+					</div>
+				</c:if>
 				<div class="manage-book-status-change"> 
 					<button id="save-btn">저장</button>
 				</div>
