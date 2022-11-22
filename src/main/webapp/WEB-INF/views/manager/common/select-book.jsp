@@ -1,4 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+
+<c:set var="bookList" value="${map.bookList}"/>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -40,30 +44,32 @@
                 <div class="manage-book-status-change"></div>
             </div>
 
+            <c:forEach var="bookList" items="${bookList}">
+            
+                <div class="manage-book-table-content">
+                    <div class="manage-book-no manage-border-right">${bookList.bookNo}</div>
+                    <div class="manage-book-date manage-border-right">${bookList.bookDate}</div>
+                    <div class="manage-book-name manage-border-right">${bookList.bookPromotion}</div>
+                    <div class="manage-book-head-count manage-border-right">
+                        <input type="text" value="${bookList.bookHeadCount}">
+                    </div>
+                    <div class="manage-book-room-no manage-border-right">
+                        <input type="text" value="${bookList.bookRoomNum}">
+                    </div>
+                    <div class="manage-book-date manage-border-right">${bookList.checkIn}</div>
+                    <div class="manage-book-date manage-border-right">${bookList.checkOut}</div>
+                    <div class="manage-book-cost manage-border-right">${bookList.bookPrice}</div>
+                    <div class="manage-booker-name manage-border-right">${bookList.bookMemberName}</div>
+                    <div class="manage-book-status">
+                        <select name="book-status" id="book-status" value="${bookList.bookProcess}">
+                            <option value="0">예약대기</option>
+                            <option value="1">예약완료</option>
+                        </select>
+                    </div>
+                    <div class="manage-book-status-change"><button>저장</button></div>
+                </div>
 
-            <div class="manage-book-table-content">
-                <div class="manage-book-no manage-border-right">1</div>
-                <div class="manage-book-date manage-border-right">2022-10-13</div>
-                <div class="manage-book-name manage-border-right">디럭스 더블 가든</div>
-                <div class="manage-book-head-count manage-border-right">
-                    <input type="text" value="2">
-                </div>
-                <div class="manage-book-room-no manage-border-right">
-                    <input type="text" value="203">
-                </div>
-                <div class="manage-book-date manage-border-right">2022-11-11</div>
-                <div class="manage-book-date manage-border-right">2022-11-20</div>
-                <div class="manage-book-cost manage-border-right">560,000</div>
-                <div class="manage-booker-name manage-border-right">홍길동</div>
-                <div class="manage-book-status">
-                    <select name="book-status" id="book-status">
-                        <option value="">예약대기</option>
-                        <option value="">예약완료</option>
-                        <option value=""></option>
-                    </select>
-                </div>
-                <div class="manage-book-status-change"><button>저장</button></div>
-            </div>
+             </c:forEach>
         
             <!-- 페이지 이동 버튼 -->
             <div id="rsc-page-skip">

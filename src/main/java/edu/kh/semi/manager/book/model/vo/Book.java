@@ -15,8 +15,10 @@ public class Book {
 	private String checkOut;
 	private int bookProcess;
 	private String bookMemberNo;
+	private String bookMemberName;
 	private String bookGuestNo;
-	private int bookRoomNo;
+	private String bookGuestName;
+	private int bookRoomNum;
 	private int bookPrice;
 	private String bookPromotion;
 	private int bookHeadCount;
