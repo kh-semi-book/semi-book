@@ -1,118 +1,111 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Sans+KR&display=swap');
 
-
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-    font-family: 'Noto Sans KR', sans-serif;
-}
-
-
-#header-area{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 179px;
+/* 상단 배경 이미지 */
+#head-img {
     width: 100%;
-    font-size: 50px;
-    background-color: black;
-    color: white;
-}
-
-#head-img{
-    /* width: 100%; */
     height: 185px;
     background-attachment: fixed;
-    background-image: url(/images/visual_qna.jpg);
-    /* background-repeat: no-repeat; */
+    background-image: url(/resources/image/nav/meeting/visual_qna.jpg);
+    background-repeat: no-repeat;
     background-size: 100%;
     margin: 0px;
 }
 
-.bsh-main{
-    /* border: 1px solid red; */
-    height: 1453.5px;
+.bsh-main {
+    min-height: 1600px;
+    height: auto;
 }
 
-.bsh-path{
-    justify-content: flex-start;
-    /* border: 1px solid green; */
+/* 상단 페이징  */
+.bsh-path {
     width: 1000px;
     height: 50px;
     margin: 0 auto;
-    line-height: 50px;
-    text-transform: uppercase;
-    color: #767676;
 }
 
-.bsh-path li{
+.bsh-path ol {
+    padding-left: 0px;
+}
+
+.bsh-path li {
     justify-content: flex-start;
     display: inline-block;
-    /* float: left; */
-    /* padding: 0 8px 0 0; */
-    font-size: 13px;
-    color: #767676;
-    /* opacity: 0; */
+    padding-right: 8px;
 }
 
-.bsh-main-title h1{
-    /* border: 1px solid red; */
+.bsh-path a {
+    text-decoration: none;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #767676;
+    font-size: 13px;
+}
+
+
+/* 페이지 제목 */
+.bsh-main-title h1 {
     width: 1000px;
     margin: 0 auto;
     height: 83px;
-    padding: 18px 0 0;
+    padding: 18px 0 0 0;
     font-size: 33px;
     font-family: 'Nanum Myeongjo';
-    letter-spacing: -1px;
-    vertical-align: middle;
-    font-weight: 200;
+    font-weight: 300;
 }
 
-.bsh-section{
-    /* border: 1px solid blue; */
+
+
+
+
+
+.bsh-section {
+    box-sizing: border-box;
+    border: 1px solid blue;
+    padding: 18px 0 50px 0;
     width: 1000px;
-    height: 1332px;
+    /* height: auto; */
+    height: 3000px;
     margin: 0 auto;
 }
 
-.bsh-warning{
+.bsh-warning {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    /* border: 1px solid red; */
     width: 920px;
-    height: 80px;
-    margin: auto;
-    padding: 30px 0 0;
+    height: 30px;
+    margin: 0 40px;
+    padding: 10px 0;
     font-size: 15px;
     font-weight: 300px;
     border-bottom: 2px solid black;
 }
 
-.bsh-tb1{
+.bsh-tb1 {
+    box-sizing: border-box;
     border-collapse: collapse;
-    display: flex;
-    /* border: 1px solid red; */
-    width: 1000px;
-    height: 779.5px;
-    padding: 0 40px;
+    width: 920px;
+    height: 1000px;
+    margin: 0 40px;
 }
 
-.bsh-tb1 th{
-    display: flex;
-    align-items: center;
-    width: 156.39px;
-    height: 79px;
-    padding: 20px 0px 18px 25px;
+.bsh-tb1 th {
+    width: 150px;
+    padding: 0;
     font-size: 17px;
     font-weight: 400;
 }
 
-input[type="text"]{
+input[type="text"] {
+    padding: 0 20px;
+    border: 1px solid #cdcdcd;
+    font-size: 16px;
+    line-height: 40px;
+    color: #333;
+}
+
+/* 이메일 선택 단추 */
+select {
     height: 40px;
     padding: 0 20px;
     border: 1px solid #cdcdcd;
@@ -121,42 +114,26 @@ input[type="text"]{
     color: #333;
 }
 
-select{
-    height: 40px;
-    padding: 0 20px;
-    border: 1px solid #cdcdcd;
-    font-size: 16px;
-    line-height: 40px;
-    color: #333;
-}
-
-td{
+.bsh-tb1 td {
     width: 760px;
-    height: 79px;
-    padding: 20px 0 18px 35px;
+    padding-left: 35px;
     border-left: 1px solid #c9c9c9;
     border-bottom: 1px solid #c9c9c9;
     background: #fff;
     line-height: 1.7;
 }
 
-.inf-name2{
-    /* border-top: 2px solid black; */
-}
 
-.inf-name{
-    /* border-top: 2px solid black; */
-}
-
-th{
+.bsh-tb1 th {
     border-bottom: 1px solid #c9c9c9;
     font-size: 17px;
+    height: 60px;
     color: #333;
     letter-spacing: -1px;
     font-weight: 400;
 }
 
-textarea{
+textarea {
     border: 1px solid #cdcdcd;
     color: #333;
     padding: 8px 20px;
@@ -164,23 +141,27 @@ textarea{
     font-weight: 400;
 }
 
-#lastbox{
-    height: 303.5px;
+#lastbox {
+    height: 200px;
 }
 
-label{
+label {
     cursor: pointer;
 }
 
-.bsh-last-info{
-    /* border: 1px solid red; */
-    width: 1000px;
-    height: 333px;
+
+/* 개인정보 수집 및 동의 */
+
+.bsh-last-info {
+    border: 1px solid red;
+    width: 915px;
+    height: 450px;
     padding: 0 40px;
     border-bottom: 2px solid #e7e7e7;
+    margin-bottom: 50px;
 }
 
-.bsh-last-info > h2{
+.bsh-last-info>h2 {
     margin: 40px 0 15px;
     font-weight: 600;
     font-size: 15px;
@@ -190,7 +171,8 @@ label{
 }
 
 /************ 회원 탈퇴 약관 *************/
-.bsh-terms{
+.bsh-terms {
+    box-sizing: border-box;
     width: 920px;
     height: 200px;
     padding: 30px;
@@ -201,12 +183,12 @@ label{
     /* 내용이 요소를 벗어나는 경우 
         방향에 맞춰서 자동으로 스크롤 추가
     */
-    
+
     font-family: sans-serif;
     font-size: 13px;
 }
 
-.bsh-agree{
+.bsh-agree {
     display: flex;
     justify-content: center;
     /* border: 1px solid blue; */
@@ -216,7 +198,7 @@ label{
     font-size: 15px;
 }
 
-.bsh-btn{
+.bsh-btn {
     display: inline-block;
     justify-content: center;
     width: 1000px;
@@ -227,7 +209,7 @@ label{
     text-align: center;
 }
 
-input[type="submit"]{
+input[type="submit"] {
     display: inline-block;
     width: 220px;
     height: 58px;
@@ -244,7 +226,7 @@ input[type="submit"]{
     transition: all 0.3s;
 }
 
-a.bsh-btn-white{
+a.bsh-btn-white {
     border: 2px solid #b3b3b3;
     background: #fff;
     line-height: 56px;
@@ -257,7 +239,7 @@ a.bsh-btn-white{
     font-size: 17px;
 }
 
-a.bsh-btn-white:hover{
+a.bsh-btn-white:hover {
     transition-duration: 0.3s;
     transition-timing-function: ease;
     transition-delay: 0s;
@@ -305,20 +287,3 @@ a.bsh-btn-white:hover{
     margin: 0 auto 5px;
     background: url(/images/logo.jpg) no-repeat -113px 0;
 }
-
-
-
-
-
-
-/* .footer-area{
-    display: flex;
-    width: 100%;
-    height: 821.36px;
-    font-size: 50px;
-    background-color: black;
-    color: white;
-    justify-content: flex-end;
-    justify-content: center;
-    align-items: center;
-} */

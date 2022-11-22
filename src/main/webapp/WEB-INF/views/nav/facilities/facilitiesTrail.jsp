@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="/resources/css/common/main.css">
     <script src="https://kit.fontawesome.com/f7459b8054.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body> 
     <header>
         <!-- 우측 상단 로그인 예약조회 회원가입 -->
         <!-- 헤더 오른쪽 상단 메뉴 -->
