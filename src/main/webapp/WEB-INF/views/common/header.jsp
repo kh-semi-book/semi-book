@@ -9,13 +9,29 @@
 
              <!-- 우측 상단 로그인 예약조회 회원가입 -->
             <!-- 헤더 오른쪽 상단 메뉴 -->
-            <div id="header-top-menu">
-                <a href="/member/login">로그인</a>
-                |
-                <a href="/reservation/reservationView">예약조회</a>
-                |
-                <a href="/member/signUp">회원가입</a>
-            </div>
+            <c:choose>
+                <c:when test="${empty sessionScope.loginMember}">
+                    <div id="header-top-menu">
+                        <a href="/member/login">로그인</a>
+                        |
+                        <a href="/reservation/reservationView">예약조회</a>
+                        |
+                        <a href="/member/signUp">회원가입</a>
+                    </div>
+                </c:when>
+
+                <c:otherwise>
+                     <div id="header-top-menu">
+                        <a href="/member/login">로그아웃</a>
+                        |
+                        <a href="/reservation/reservationView">마이페이지</a>
+                        |
+                        <a href="/member/signUp">예약조회</a>
+                    </div>
+                
+                </c:otherwise>
+            </c:choose>
+
 
 
             <!-- media(내부 유튜브 링크)/instagram -->

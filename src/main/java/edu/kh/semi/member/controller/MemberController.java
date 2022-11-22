@@ -1,12 +1,16 @@
 package edu.kh.semi.member.controller;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.kh.semi.member.model.service.MemberService;
 import edu.kh.semi.member.model.vo.Member;
@@ -30,26 +34,30 @@ public class MemberController {
 	// 11월 18일 22시 45분 로그인
 	
 	@PostMapping("/member/login")
-	public String login(Member inputMember , Model model) {
+	public String login(Member inputMember , Model model,
+			RedirectAttributes ra,
+			@RequestParam(value="saveId", required = false) String saveId,
+			HttpServletResponse resp,
+			@RequestHeader(value="referer") String referer) {
 		
 		Member loginMember = service.login(inputMember);
 		
-		// 로그인 성공시 loginMember를 세션에 추가
-		// 로그인 실패시 "아이디 또는 비밀번호가 일치하지 않습ㄴ디ㅏ." 세션에 추가
-		if(loginMember != null) {
-		model.addAttribute("loginMember", loginMember);
+		String path = null;
 		
-		}else{
+		
+		if(loginMember != null) {
+//		path = "/"; 
+		model.addAttribute("loginMember", loginMember);
 			
-			model.addAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
+		}else{
+//			path = referer; // 이전페이지로 이동
+//			model.addAttribute("message","회원 아이디 또는 비밀번호가 일치하지 않습니다.");
+			ra.addFlashAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
 		}
 		
-		return "nav/dining/diningBeyond";
+		return "redirect:/";
 	
+		}
 	
-	
-	
-}
-	
-}
 
+}
