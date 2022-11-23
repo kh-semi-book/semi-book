@@ -24,9 +24,9 @@
                      <div id="header-top-menu">
                         <a href="/member/login">로그아웃</a>
                         |
-                        <a href="/reservation/reservationView">마이페이지</a>
+                        <a href="/member/memberEdit">마이페이지</a>
                         |
-                        <a href="/member/signUp">예약조회</a>
+                        <a href="/reservation/reservationView">예약조회</a>
                     </div>
                 
                 </c:otherwise>

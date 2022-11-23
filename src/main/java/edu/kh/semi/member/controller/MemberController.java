@@ -1,5 +1,6 @@
 package edu.kh.semi.member.controller;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,18 +47,38 @@ public class MemberController {
 		
 		
 		if(loginMember != null) {
-//		path = "/"; 
+		path = "/"; 
 		model.addAttribute("loginMember", loginMember);
 			
+			Cookie cookie = new Cookie("saveId", loginMember.getMemberId());
+			
+			if(saveId != null) {
+				
+				cookie.setMaxAge(60 * 60 * 24 * 365);
+				
+			}else {
+				cookie.setMaxAge(0);
+			}
+			cookie.setPath("/");
+			
+			resp.addCookie(cookie);
+		
 		}else{
-//			path = referer; // 이전페이지로 이동
+			path = referer; // 이전페이지로 이동
 //			model.addAttribute("message","회원 아이디 또는 비밀번호가 일치하지 않습니다.");
 			ra.addFlashAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
 		}
 		
-		return "redirect:/";
+		return "redirect:" + path;
 	
 		}
 	
+		/*
+		 * // 로그인 페이지로 이동?
+		 * 
+		 * @GetMapping("/member/login") public String loginPage() {
+		 * 
+		 * return "member/login"; }
+		 */
 
 }
