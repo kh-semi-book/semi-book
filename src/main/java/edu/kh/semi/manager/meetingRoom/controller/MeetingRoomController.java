@@ -1,6 +1,7 @@
 package edu.kh.semi.manager.meetingRoom.controller;
 
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class MeetingRoomController {
 	@Autowired
 	private MeetingRoomService service;
 
-//	단순 1개의 객실 조회
+//	예약 1개의 값 조회 
 //	@GetMapping("/manager/meetingRoom")
 //	public String selectMeetingRoom( Model model) {
 //
@@ -29,16 +30,27 @@ public class MeetingRoomController {
 //		 return "manager/meetingRoom/meetingRoom"; 
 //	}
 	
-//	미팅룸 리스트 조회
+	// 예약 리스트를 조회 
 	@GetMapping("/manager/meetingRoom")
-	public String selectMeetingRoom(Model model, 
-									@RequestParam(value="cp",required=false, defaultValue="1") int cp) {
+	public String selectMeetingRoomList(Model model) {
 		
-		Map<String, Object> map = service.selectMeetingRoom(cp);
+		List<MeetingRoom> bookList = service.selectMeetingRoom();
 		
-		model.addAttribute("map",map);
+		model.addAttribute("bookList",bookList);
 		
 		return "manager/meetingRoom/meetingRoom";
 	}
+	
+//	@GetMapping("/manager/meetingRoom")
+//	public String selectMeetingRoomList(Model model, @RequestParam(value="cp",required=false, defaultValue="1") int cp) {
+//		
+//		Map<String, Object> map = service.selectMeetingRoom(cp);
+//		
+//		model.addAttribute("map",map);
+//		
+//		System.out.println(map);
+//		
+//		return "manager/meetingRoom/meetingRoom";
+//	}
 
 }

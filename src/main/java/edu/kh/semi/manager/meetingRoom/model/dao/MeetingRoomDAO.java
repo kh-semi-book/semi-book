@@ -17,23 +17,31 @@ public class MeetingRoomDAO {
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 	
-	// 1개 조회
+    // 예약 1개 조회
 //	public MeetingRoom selectMeetingRoom() {
 //		return session.selectOne("meetingRoomMapper.selectMeetingRoom");
 //	}
 
-
-	public int getBookCount() {
-		return sqlSession.selectOne("meetingRoomMapper.getBookCount");
+	// 예약 리스트 조회 + 페이징 처리
+//	public int getBookCount() {
+//		return sqlSession.selectOne("meetingRoomMapper.getBookCount");
+//	}
+	
+	// 예약 리스트 조회 
+	public List<MeetingRoom> selectMeetingRoom() {
+		return sqlSession.selectList("meetingRoomMapper.selectBookList");
 	}
+	
+	
+	
+//	public List<MeetingRoom> selectBookList(Pagination pagination) {
+//		
+//		int offset=(pagination.getCurrentPage()-1)*pagination.getLimit();
+//		
+//		RowBounds rowBounds = new RowBounds(offset, pagination.getLimit());
+//		
+//		return sqlSession.selectList("meetingRoomMapper.selectBookList",rowBounds);
+//	}
 
-	public List<MeetingRoom> selectBookList(Pagination pagination) {
-		
-		int offset=(pagination.getCurrentPage()-1)*pagination.getLimit();
-		
-		RowBounds rowBounds = new RowBounds(offset, pagination.getLimit());
-		
-		return sqlSession.selectList("meetingRoomMapper.selectBookList",rowBounds);
-	}
 
 }

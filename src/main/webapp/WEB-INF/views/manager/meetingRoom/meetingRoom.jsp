@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<%-- <c:set var="book" value="${map.bookList}"/> --%>
+<c:set var="bookList" value="${bookList}"/>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,6 +30,7 @@
 		<div id="manage-book-table">
 			<div id="manage-book-table-title">
 				<div class="manage-book-no">번호</div>
+				<div class="manage-book-date">작성일</div>
 				<div class="manage-book-date">예약일</div>
 				<div class="manage-book-name">상품명</div>
 				<div class="manage-book-count">인원</div>
@@ -38,11 +39,15 @@
 				<div class="manage-book-status">진행상태</div>
 				<div class="manage-book-status-change">저장</div>
 			</div>
-			<%-- <c:forEach var="book" items="${bookList}"> --%>
+			<c:forEach var="book" items="${bookList}">
 			<div class="manage-book-table-content">
-				<div class="manage-book-no manage-border-right">${meeting.meetingRoomBookNo}</div>
-				<div class="manage-book-date manage-border-right">${meeting.meetingRoomDate}</div>
-				<div class="manage-book-name manage-border-right">${meeting.meetingRoomName}</div>
+				<div class="manage-book-no manage-border-right">${book.meetingRoomBookNo}</div>
+				<div class="manage-book-date manage-border-right">${book.meetingRoomDate}</div>
+				<div class="manage-book-date manage-border-right">${book.meetingRoomBookDate}</div>
+				<div class="manage-book-name manage-border-right">
+					${book.meetingRoomName} &nbsp;&nbsp;
+					<button>상세보기</button>
+				</div>
 				<div class="manage-book-count manage-border-right">${book.meetingHeadCount}</div>
 				<div class="manage-booker-name manage-border-right">${book.meetingRoomMenName}</div>
 				<div class="manage-book-del manage-border-right">${book.meetingRoomCancelFL}</div>
@@ -74,11 +79,12 @@
 					</div>
 				</c:if>
 
-				<div class="manage-book-status-change"> 
-					<button id="save-btn">저장</button>
-				</div>
-				<%-- </c:forEach> --%>
+					<div class="manage-book-status-change"> 
+						<button id="save-btn">저장</button>
+					</div>
 			</div>
+			</c:forEach>
+
 			<!-- 페이지 이동 버튼 -->
 			<div id="rsc-page-skip">
 				<a href="#"><<</a>&nbsp;&nbsp; <a href="#">< </a> &nbsp;&nbsp;
