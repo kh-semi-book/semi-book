@@ -112,4 +112,4 @@
        
     </div>
     
-    <%-- <script src="/resources/js/header.js"></script> --%>
+    <script src="/resources/js/header.js"></script>

@@ -44,32 +44,45 @@
                 <div class="manage-book-status-change"></div>
             </div>
 
-            <c:forEach var="bookList" items="${bookList}">
-            
-                <div class="manage-book-table-content">
-                    <div class="manage-book-no manage-border-right">${bookList.bookNo}</div>
-                    <div class="manage-book-date manage-border-right">${bookList.bookDate}</div>
-                    <div class="manage-book-name manage-border-right">${bookList.bookPromotion}</div>
-                    <div class="manage-book-head-count manage-border-right">
-                        <input type="text" value="${bookList.bookHeadCount}">
+                <form action="#" method="post">
+            <c:forEach var="bookContent" items="${bookList}">
+                    <div class="manage-book-table-content">
+                        <div class="manage-book-no manage-border-right" name="bookNo" value="${bookContent.bookNo}">${bookContent.bookNo}</div>
+                        <div class="manage-book-date manage-border-right" value="${bookContent.bookDate}">${bookContent.bookDate}</div>
+                        <div class="manage-book-name manage-border-right" name="bookPromotion">${bookContent.bookPromotion}</div>
+                        <div class="manage-book-head-count manage-border-right">
+                            <input type="text" value="${bookContent.bookHeadCount}" name="bookHeadCount">
+                        </div>
+                        <div class="manage-book-room-no manage-border-right">
+                            <input type="text" value="${bookContent.bookRoomNum}" name="bookRoomNum">
+                        </div>
+                        <div class="manage-book-date manage-border-right">${bookContent.checkIn}</div>
+                        <div class="manage-book-date manage-border-right">${bookContent.checkOut}</div>
+                        <div class="manage-book-cost manage-border-right">${bookContent.bookPrice}</div>
+                        <div class="manage-booker-name manage-border-right">${bookContent.bookMemberName}</div>
+                        <div class="manage-book-status">
+                            <c:choose>
+                                <c:when test="${bookContent.bookProcess == 0}">
+                                    <c:set var="sel0" value="selected"/>
+                                </c:when>
+                                <c:when test="${bookContent.bookProcess == 1}">
+                                    <c:set var="sel1" value="selected"/>
+                                </c:when>
+                                <c:when test="${bookContent.bookProcess == 2}">
+                                    <c:set var="sel2" value="selected"/>
+                                </c:when>
+                            </c:choose>
+                            <select name="book-status" id="book-status" >
+                                <option value="0" ${sel0}>예약대기</option>
+                                <option value="1" ${sel1}>예약완료</option>
+                                <option value="2" ${sel2}>예약취소</option>
+                            </select>
+                        </div>
+                        <div id="manage-book-status-change"><button>저장</button></div>
                     </div>
-                    <div class="manage-book-room-no manage-border-right">
-                        <input type="text" value="${bookList.bookRoomNum}">
-                    </div>
-                    <div class="manage-book-date manage-border-right">${bookList.checkIn}</div>
-                    <div class="manage-book-date manage-border-right">${bookList.checkOut}</div>
-                    <div class="manage-book-cost manage-border-right">${bookList.bookPrice}</div>
-                    <div class="manage-booker-name manage-border-right">${bookList.bookMemberName}</div>
-                    <div class="manage-book-status">
-                        <select name="book-status" id="book-status" value="${bookList.bookProcess}">
-                            <option value="0">예약대기</option>
-                            <option value="1">예약완료</option>
-                        </select>
-                    </div>
-                    <div class="manage-book-status-change"><button>저장</button></div>
-                </div>
-
              </c:forEach>
+                </form>
+
         
             <!-- 페이지 이동 버튼 -->
             <div id="rsc-page-skip">
@@ -83,5 +96,11 @@
         
         </div>
     </div>
+
+    <script>
+        const process="${bookList}";
+    </script>
+
+    <script src="/resources/js/manager/select.js"></script>
 </body>
 </html>

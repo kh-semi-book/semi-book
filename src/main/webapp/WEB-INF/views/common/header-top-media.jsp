@@ -5,8 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>미디어 라이브러리</title>
+
+    <link rel="stylesheet" href="/resources/css/common/main.css">
 </head>
 <body>
+    <jsp:include page="/WEB-INF/views/common/header.jsp"/>
+
      <div id="top-photo"></div>
     <div id="header-top-media-main">
         <div id="top-menu">
@@ -32,6 +36,8 @@
             <div class="media-youtube-link"></div>
         </div>
     </div>
+
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
 </body>
 </html>
