@@ -33,7 +33,7 @@ body {
 			<table id="board_table">
 				<tr>
 					<th>제목</th>
-					<td colspan="3"><input type="text" id="title"></td>
+					<td colspan="3"><input type="text" id="promotionTitle"></td>
 				</tr>
 				<tr>
 					<th class="select-area">
@@ -47,17 +47,23 @@ body {
 				</tr>
 				<tr>
 					<th>세부 내용</th>
-					<td colspan="3"><input type="text" id="content"></td>
+					<td colspan="3"><input type="text" id="promotionSub"></td>
 				</tr>
-				<tr>
+				<tr class="date-area">
 					<th>투숙 기간</th>
-					<td><input type="text" id="date1"></td>
+					<td>
+						<input type="text" id="promotionStayStartDate">~
+						<input type="text" id="promotionStayEndDate"
+						</td>
 					<th>판매 기간</th>
-					<td><input type="text" id="date2"></td>
+					<td>
+						<input type="text" id="promotionSaleStartDate">~
+						<input type="text" id="promotionSaleEndDate">
+					</td>
 				</tr>
 				<tr>
 					<th>가격</th>
-					<td colspan="3"><input type="text" id="price"></td>
+					<td colspan="3"><input type="text" id="promotionPrice"></td>
 				</tr>
 				<tr>
 					<th class="select-area">

@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>프로모션</title>
+<title>프로모션 등록</title>
 <link rel="stylesheet" href="/resources/css/manager/board_detail.css">
 <link rel="stylesheet" href="/resources/css/manager/admin.css">
 <style>
@@ -18,50 +19,68 @@ body {
 		<div class="board-head-area">
 			<div></div>
 			<div id="board_title">
-				<div>HOME > 프로모션 관리 > 프로모션 세부 사항</div>
-				<div>프로모션 세부 사항</div>
+				<div>HOME > 프로모션 관리 > 프로모션 등록</div>
+				<div>프로모션 등록</div>
 			</div>
 			<div></div>
 		</div>
+		<form action="/manager/promotionUpdate" method="post"  enctype="multipart/form-data">
 		<div class="board-body-area">
 			<div id="board-post">
-				<a href="/manager/promotionUpdate" class="update">프로모션 수정</a>
+				<button class="save">수정</button>
 			</div>
 
 			<table id="board_table">
 				<tr>
-					<th>1</th>
-					<td colspan="3">[얼리버드] Hidden Earlybird</td>
+					<th>제목</th>
+					<td colspan="3"><input type="text" id="promotionTitle"></td>
 				</tr>
 				<tr>
-					<th>타이틀 이미지</th>
-					<td>이미지 등록</td>
+					<th class="select-area">
+						타이틀 이미지
+					</th>
+					<td colspan="3">
+						<img class="select-image" src="">
+					</td>
+				</tr>
+				<tr>
 					<th>세부 내용</th>
-					<td>디럭스 1박+치치 아메리카노 2잔</td>
+					<td colspan="3"><input type="text" id="promotionSub"></td>
 				</tr>
-				<tr>
+				<tr class="date-area">
 					<th>투숙 기간</th>
-					<td>2022-11-27 ~ 2023-07-16</td>
+					<td>
+						<input type="text" id="promotionStayStartDate">~
+						<input type="text" id="promotionStayEndDate"
+						</td>
 					<th>판매 기간</th>
-					<td>2022-10-13 ~ 2023-07-15</td>
+					<td>
+						<input type="text" id="promotionSaleStartDate">~
+						<input type="text" id="promotionSaleEndDate">
+					</td>
 				</tr>
 				<tr>
 					<th>가격</th>
-					<td colspan="3">220,000원 ~</td>
+					<td colspan="3"><input type="text" id="promotionPrice"></td>
 				</tr>
 				<tr>
-					<th>내용</th>
-					<td colspan="3">이미지 등록
+					<th class="select-area">
+						내용
+					</th>
+					<td colspan="3"><img class="select-image" src=""></td>
 				</tr>
 
 
 			</table>
+
 			<div id="board_return">
 				<a href="/manager/promotion">목록</a>
 			</div>
 		</div>
+		</form>
 		<div class="board-foot-area"></div>
 	</div>
 
+	<script src="/resources/js/manager/board/boardPost.js"></script>
 </body>
 </html>
