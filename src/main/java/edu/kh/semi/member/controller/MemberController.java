@@ -64,12 +64,11 @@ public class MemberController {
 			resp.addCookie(cookie);
 		
 		}else{
-//			path = referer; // 이전페이지로 이동
-			model.addAttribute("message","회원 아이디 또는 비밀번호가 일치하지 않습니다.");
-//			ra.addFlashAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
+			path = referer; // 이전페이지로 이동
+//			model.addAttribute("message","회원 아이디 또는 비밀번호가 일치하지 않습니다.");
+			ra.addFlashAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
 		}
 		
-//		return "redirect:" + path;
-		return "redirect:/";
+		return "redirect:" + path;
 		}
 }
