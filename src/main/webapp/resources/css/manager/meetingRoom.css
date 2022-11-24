@@ -1,4 +1,17 @@
 /* 미팅룸 관리 페이지 */
+#top-menu {
+    color: rgb(133, 131, 131);
+    font-size: 14px;
+    padding: 20px 0;
+}
+
+#top-menu>a {
+    text-decoration: none;
+    color: rgb(133, 131, 131);
+    padding: 0 10px;
+}
+
+
 #manage-book-title {
     font-size: 30px;
 
