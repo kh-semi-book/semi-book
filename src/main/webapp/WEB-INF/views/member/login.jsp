@@ -63,15 +63,5 @@
     </div>
 
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-    <c:if test="${not empty message}">
-
-     <script>
-        alert("${message}")
-    </script>
-
-    <%-- message 1회 출력 후 session scope에서 삭제 --%>
-    <%-- 세션에 남아있어서 계속 알림이 뜸(로그인하든 로그아웃하든) --%>
-    <c:remove var="message" />
-  </c:if>
 </body>
 </html>
