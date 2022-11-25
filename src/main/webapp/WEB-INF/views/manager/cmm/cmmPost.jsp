@@ -33,7 +33,7 @@ body {
 			<table id="board_table">
 				<tr>
 					<th>제목</th>
-					<td colspan="3"><input type="text" name="cmmTitle" id="title"></td>
+					<td colspan="3"><input type="text" name="cmmTitle"></td>
 				</tr>
 				<tr>
 					<th class="select-area">

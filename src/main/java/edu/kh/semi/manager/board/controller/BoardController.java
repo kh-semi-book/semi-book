@@ -65,7 +65,7 @@ public class BoardController {
 
 		if (result > 0) {
 			message = "공지사항 등록 성공";
-			path = "/manager/cmm/cmm";
+			path = "/manager/cmm";
 		} else {
 			message = "공지사항 등록 실패";
 			path = referer;
@@ -88,6 +88,7 @@ public class BoardController {
 		return "/manager/promotion/promotion";
 	}
 
+	//프로모션 등록
 	@PostMapping("/promotionPost")
 	public String savePromotionPost(Promotion promotion,
 			@RequestParam(value = "promotionTitleImage") MultipartFile promotionTitleImage,
@@ -115,7 +116,7 @@ public class BoardController {
 
 		if (result > 0) {
 			message = "프로모션 등록 성공";
-			path = "/manager/promotion/promotion";
+			path = "/manager/promotion";
 		} else {
 			message = "프로모션 등록 실패";
 			path = referer;
@@ -127,26 +128,26 @@ public class BoardController {
 	}
 	
 	// =================[다이닝]======================
-//	@GetMapping("/promotionPost")
-//	public String promotionPost() {
-//		return "/manager/promotion/promotionPost";
-//	}
-//
-//	@GetMapping("/promotionDetail")
-//	public String promotionDetail() {
-//		return "/manager/promotion/promotion";
-//	}
-//	
-//	// =================[이벤트]======================
-//	@GetMapping("/promotionPost")
-//	public String promotionPost() {
-//		return "/manager/promotion/promotionPost";
-//	}
-//
-//	@GetMapping("/promotionDetail")
-//	public String promotionDetail() {
-//		return "/manager/promotion/promotion";
-//	}
+	@GetMapping("/diningPost")
+	public String diningPost() {
+		return "/manager/dining/diningPost";
+	}
+
+	@GetMapping("/diningDetail")
+	public String diningDetail() {
+		return "/manager/dining/dining";
+	}
+	
+	// =================[이벤트]======================
+	@GetMapping("/eventPost")
+	public String eventPost() {
+		return "/manager/event/eventPost";
+	}
+
+	@GetMapping("/eventDetail")
+	public String eventDetail() {
+		return "/manager/event/event";
+	}
 }
 
 
