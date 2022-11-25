@@ -29,6 +29,11 @@ public class MainController {
 		return "member/signUp2";
 	}
 	
+	@GetMapping("/media")
+	public String mediaLibrary() {
+		return "common/header-top-media";
+	}
+	
 	
 
 }

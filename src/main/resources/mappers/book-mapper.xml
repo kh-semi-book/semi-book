@@ -16,13 +16,14 @@
   		<result property="bookMemberNo" column="MEMBER_NO" />
   		<result property="bookMemberName" column="MEMBER_NAME" />
   		<result property="bookGuestNo" column="GUEST_NO" />
-  	<result property="bookGuestName" column="GUEST_NAME" />
+  		<result property="bookGuestName" column="GUEST_NAME" />
   		<result property="bookRoomNum" column="ROOM_NUM" />  		
   		<result property="bookPrice" column="PRICE" />
   		<result property="bookPromotion" column="BOOK_PROMOTION" />
   		<result property="bookHeadCount" column="BOOK_HEADCOUNT" />
   	</resultMap>
   	
+ 
   	<select id="getBookCount" resultType="_int">
   		SELECT COUNT(*) FROM BOOK
   	</select>
@@ -36,89 +37,94 @@
   	<select id="selectBookList" resultMap="book_rm">
   		SELECT BOOK_NO, TO_CHAR(BOOK_DATE,'YYYY-MM-DD') BOOK_DATE, BOOK_PROMOTION, ROOM_NUM, 
 		TO_CHAR(CHECK_IN,'YYYY-MM-DD') CHECK_IN, TO_CHAR(CHECK_OUT,'YYYY-MM-DD') CHECK_OUT, BOOK_PROCESS,
-		MEMBER_NAME, ROOM_NUM, PRICE
+		MEMBER_NAME, ROOM_NUM, PRICE, BOOK_HEADCOUNT
 		FROM BOOK 
 		JOIN "MEMBER" USING(MEMBER_NO)
 		JOIN ROOM USING(ROOM_NUM)
   	</select>
 
-
-	<select id="searchBooker" parameterType="string" resultMap="book_rm">
-		SELECT BOOK_NO, TO_CHAR(BOOK_DATE,'YYYY-MM-DD') BOOK_DATE, BOOK_PROMOTION, ROOM_NUM, 
-		TO_CHAR(CHECK_IN,'YYYY-MM-DD') CHECK_IN, TO_CHAR(CHECK_OUT,'YYYY-MM-DD') CHECK_OUT, BOOK_PROCESS,
-		MEMBER_NAME, ROOM_NUM,PRICE, BOOK_HEADCOUNT
+	<update id="updateBook">
+		UPDATE BOOK SET 
+		BOOK_HEADCOUNT=#{bookHeadCount},
+		ROOM_NUM=#{bookRoomNum},
+		CHECK_IN=#{checkIn},
+		CHECK_OUT=#{checkOut},
+		BOOK_PROCESS=#{bookProcess}
+		WHERE BOOK_NO=#{bookNo}
+	
+	</update>
+	
+	<select id="getBookCount_search" resultType="_int">
+		SELECT COUNT(*) 
 		FROM BOOK 
 		JOIN "MEMBER" USING(MEMBER_NO)
-		JOIN ROOM USING(ROOM_NUM)
-		WHERE MEMBER_NAME =#{inputName}
+		WHERE
+		<if test='searchOptionInput!=null and searchOptionInput!=""'>
+			<choose>
+				<when test='searchOption=="bookerName"'>
+					MEMBER_NAME=#{searchOptionInput}
+				</when>
+				<when test='searchOption=="roomNum"'>
+					ROOM_NUM=#{searchOptionInput}
+				</when>
+				<when test='searchOption=="bookProcess"'>
+					BOOK_PROCESS=#{searchOptionInput}
+				</when>
+			</choose>
+			
+			<if test='searchDateOptionInput1!=null or searchDateOptionInput2!=null'>
+				<choose>
+					<when test='searchDateOption=="bookDate"'>
+						AND BOOK_DATE BETWEEN #{searchDateOptionInput1} AND #{searchDateOptionInput2}
+					</when>
+					<when test='searchDateOption=="checkIn"'>
+						AND BOOK_DATE BETWEEN #{searchDateOptionInput1} AND #{searchDateOptionInput2}
+					</when>
+					<when test='searchDateOption=="checkOut"'>
+						AND BOOK_DATE BETWEEN #{searchDateOptionInput1} AND #{searchDateOptionInput2}
+					</when>
+				</choose>
+			</if>
+		</if>
 	
 	</select>
 	
-	
-	<select id="searchRoomNum" parameterType="string" resultMap="book_rm">
-		SELECT BOOK_NO, TO_CHAR(BOOK_DATE,'YYYY-MM-DD') BOOK_DATE, BOOK_PROMOTION, ROOM_NUM, 
+	<select id="selectBookList_search" resultMap="book_rm">
+  		SELECT BOOK_NO, TO_CHAR(BOOK_DATE,'YYYY-MM-DD') BOOK_DATE, BOOK_PROMOTION, ROOM_NUM, 
 		TO_CHAR(CHECK_IN,'YYYY-MM-DD') CHECK_IN, TO_CHAR(CHECK_OUT,'YYYY-MM-DD') CHECK_OUT, BOOK_PROCESS,
-		MEMBER_NAME, ROOM_NUM, TO_CHAR(PRICE,'FM999,999,999,999') PRICE, BOOK_HEADCOUNT
+		MEMBER_NAME, ROOM_NUM, PRICE, BOOK_HEADCOUNT
 		FROM BOOK 
 		JOIN "MEMBER" USING(MEMBER_NO)
 		JOIN ROOM USING(ROOM_NUM)
-		WHERE ROOM_NUM =#{inputRoomNum}
-	
-	</select>
-	
-	
-	<select id="searchBookStatus" parameterType="string" resultMap="book_rm">
-		SELECT BOOK_NO, TO_CHAR(BOOK_DATE,'YYYY-MM-DD') BOOK_DATE, BOOK_PROMOTION, ROOM_NUM, 
-		TO_CHAR(CHECK_IN,'YYYY-MM-DD') CHECK_IN, TO_CHAR(CHECK_OUT,'YYYY-MM-DD') CHECK_OUT, BOOK_PROCESS,
-		MEMBER_NAME, ROOM_NUM, TO_CHAR(PRICE,'FM999,999,999,999') PRICE, BOOK_HEADCOUNT
-		FROM BOOK 
-		JOIN "MEMBER" USING(MEMBER_NO)
-		JOIN ROOM USING(ROOM_NUM)
-		WHERE BOOK_PROCESS =#{inputBookStatus}
-	
-	</select>
-	
-	<select id="searchBookerDate" parameterType="string" resultMap="book_rm">
-		SELECT BOOK_NO, TO_CHAR(BOOK_DATE,'YYYY-MM-DD') BOOK_DATE, BOOK_PROMOTION, ROOM_NUM, 
-		TO_CHAR(CHECK_IN,'YYYY-MM-DD') CHECK_IN, TO_CHAR(CHECK_OUT,'YYYY-MM-DD') CHECK_OUT, BOOK_PROCESS,
-		MEMBER_NAME, ROOM_NUM, TO_CHAR(PRICE,'FM999,999,999,999') PRICE, BOOK_HEADCOUNT
-		FROM BOOK 
-		JOIN "MEMBER" USING(MEMBER_NO)
-		JOIN ROOM USING(ROOM_NUM)
-		WHERE MEMBER_NAME =#{inputName}
-		AND TO_CHAR(BOOK_DATE,'YYYY-MM-DD')
-		BETWEEN #{searchDateInput1} AND #{searchDateInput2}
-	
-	</select>
-	
-	
-	<select id="searchRoomNumDate" parameterType="string" resultMap="book_rm">
-		SELECT BOOK_NO, TO_CHAR(BOOK_DATE,'YYYY-MM-DD') BOOK_DATE, BOOK_PROMOTION, ROOM_NUM, 
-		TO_CHAR(CHECK_IN,'YYYY-MM-DD') CHECK_IN, TO_CHAR(CHECK_OUT,'YYYY-MM-DD') CHECK_OUT, BOOK_PROCESS,
-		MEMBER_NAME, ROOM_NUM, TO_CHAR(PRICE,'FM999,999,999,999') PRICE, BOOK_HEADCOUNT
-		FROM BOOK 
-		JOIN "MEMBER" USING(MEMBER_NO)
-		JOIN ROOM USING(ROOM_NUM)
-		WHERE ROOM_NUM =#{inputRoomNum}
-		AND TO_CHAR(BOOK_DATE,'YYYY-MM-DD')
-		BETWEEN #{searchDateInput1} AND #{searchDateInput2}
-	
-	</select>
-	
-	
-	<select id="searchBookStatusDate" parameterType="string" resultMap="book_rm">
-		SELECT BOOK_NO, TO_CHAR(BOOK_DATE,'YYYY-MM-DD') BOOK_DATE, BOOK_PROMOTION, ROOM_NUM, 
-		TO_CHAR(CHECK_IN,'YYYY-MM-DD') CHECK_IN, TO_CHAR(CHECK_OUT,'YYYY-MM-DD') CHECK_OUT, BOOK_PROCESS,
-		MEMBER_NAME, ROOM_NUM, TO_CHAR(PRICE,'FM999,999,999,999') PRICE, BOOK_HEADCOUNT
-		FROM BOOK 
-		JOIN "MEMBER" USING(MEMBER_NO)
-		JOIN ROOM USING(ROOM_NUM)
-		WHERE BOOK_PROCESS =#{inputBookStatus}
-		AND TO_CHAR(BOOK_DATE,'YYYY-MM-DD')
-		BETWEEN #{searchDateInput1} AND #{searchDateInput2}
-	
-	</select>
-	
+		<if test='searchOptionInput!=null and searchOptionInput!=""'>
+		 WHERE
+			<choose>
+				<when test='searchOption=="bookerName"'>
+					MEMBER_NAME=#{searchOptionInput}
+				</when>
+				<when test='searchOption=="roomNum"'>
+					ROOM_NUM=#{searchOptionInput}
+				</when>
+				<when test='searchOption=="bookProcess"'>
+					BOOK_PROCESS=#{searchOptionInput}
+				</when>
+			</choose>
+			
+			<if test='searchDateOptionInput1!=null or searchDateOptionInput2!=null'>
+				<choose>
+					<when test='searchDateOption=="bookDate"'>
+						AND BOOK_DATE BETWEEN #{searchDateOptionInput1} AND #{searchDateOptionInput2}
+					</when>
+					<when test='searchDateOption=="checkIn"'>
+						AND BOOK_DATE BETWEEN #{searchDateOptionInput1} AND #{searchDateOptionInput2}
+					</when>
+					<when test='searchDateOption=="checkOut"'>
+						AND BOOK_DATE BETWEEN #{searchDateOptionInput1} AND #{searchDateOptionInput2}
+					</when>
+				</choose>
+			</if>
+		</if>
+  	</select>
 	
 
 

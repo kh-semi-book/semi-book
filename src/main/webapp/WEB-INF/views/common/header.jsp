@@ -42,7 +42,7 @@
                     <i class="fa-brands fa-youtube"></i>
                 </a>
 
-                <a href="/manager/main">
+                <a href="/manager/selectBook">
                     INSTAGRAM
                     <i class="fa-brands fa-instagram"></i>
                 </a>

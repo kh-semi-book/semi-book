@@ -48,7 +48,32 @@
     
         <div id="main-photo-gallary">
             <span>Photo Gallery</span>
-            <div id="main-photo-zone"></div>
+            <div id="main-photo-zone">
+                <div id="main-photo-left">
+                    <div id="main-left-up">
+                        <img src="/resources/image/mainImage/new_photo1.jpeg" class="photo-zoom">
+                    </div><div id="main-left-down">
+                        <div id="main-left-down-left">
+                            <img src="/resources/image/mainImage/new_photo3.jpg" class="photo-zoom">
+                        </div><div id="main-left-down-right">
+                           <img src="/resources/image/mainImage/new_photo2.jpg" class="photo-zoom" href="#">
+                             <a id="photo-inner-text" href="/media">빌딩숲이 아닌 진짜 숲으로<br>
+                            떠나는 힐링 여행<br><br><br>더보기+</a>
+                        
+                        </div>
+                    </div>
+
+                    </div><div id="main-photo-right">
+
+                        <div id="main-right-up">
+                            <img src="/resources/image/mainImage/new_photo4.jpg" class="photo-zoom">
+                        </div><div id="main-right-down">
+                            <img src="/resources/image/mainImage/new_photo5.jpg" class="photo-zoom">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 	
