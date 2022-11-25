@@ -11,6 +11,7 @@ import lombok.ToString;
 @ToString
 public class SearchOption {
 	
+	
 	private String searchOption;
 	private String searchOptionInput;
 	private String searchDateOption;

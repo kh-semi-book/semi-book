@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>히든 트레일 - Hidden Cliff Hotel and Nature</title>
 
-    	<link rel="stylesheet" href="/resources/css/nav/facilities/facilities(all).css">
+    <link rel="stylesheet" href="/resources/css/nav/facilities/facilities.css">
 	<link rel="stylesheet" href="/resources/css/common/main.css">
     <script src="https://kit.fontawesome.com/f7459b8054.js" crossorigin="anonymous"></script>
 </head>
@@ -24,6 +24,13 @@
                 <ol>
                     <li class="bsh-path1">
                         <a href="/" style="color: #767676;">home</a>
+
+    <div class="bsh-main">
+            <div id="head-img3"></div>
+            <div class="bsh-path">
+                <ol>
+                    <li class="bsh-path1">
+                        <a href="/">Home</a>
                     </li>
                     <li class="bsh-path2">
                         <a href="#">> &nbsp;FACILITIES</a>
@@ -42,6 +49,12 @@
 
             <div class="bsh-main-content">
                 <p>
+            <div class="bsh-main-img">
+                <img src="/resources/image/nav/facilities/trail/trail1.jpg">
+            </div>
+
+            <div class="bsh-main-content">
+                <p style="letter-spacing: -1px; font-size: 16px;" >
                     문을 열고 나가면 가공되지 않은 제주도의 자연을 만날 수 있는 산책로 히든 트레일이 펼쳐집니다. <br>
                     고요한 시간 속에서 자연을 바라보고 호흡하며 몸과 마음의 평온을 느껴보시기 바랍니다.
                 </p>
@@ -100,6 +113,13 @@
 
     <!------------------------- 아래는 풋터 ------------------------->
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+                    </tr>
+                </table>
+            </div>
+        </div>
 
+        
+    <!------------------------- 아래는 풋터 ------------------------->
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 </body>
 </html>

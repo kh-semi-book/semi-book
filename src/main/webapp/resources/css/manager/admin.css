@@ -32,6 +32,7 @@
             margin:auto;
         }
 
+
         #search-book-table>div{
             display: flex;
             flex-direction: row;
@@ -57,7 +58,7 @@
         }
 
        
-        .search-book-status,.manage-booker-name{
+        .search-book-process,.manage-booker-name{
             width:150px;
         }
 
@@ -190,7 +191,7 @@
 }
 
 
-.manage-book-status,.manage-booker-name{
+.manage-book-process,.manage-booker-name{
     width:150px;
 }
 
@@ -210,6 +211,7 @@
 
 .manage-book-table-content{
     border-bottom:1px solid #bbb;
+    display: flex;
 }
 
 .manage-book-table-content>div{

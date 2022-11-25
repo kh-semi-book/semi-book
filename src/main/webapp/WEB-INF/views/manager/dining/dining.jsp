@@ -3,8 +3,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>프로모션</title>
+<title>다이닝</title>
 <link rel="stylesheet" href="/resources/css/manager/board_detail.css">
+<link rel="stylesheet" href="/resources/css/manager/admin.css">
 <style>
 body {
 	margin: auto;
@@ -12,7 +13,7 @@ body {
 </style>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/common/header.jsp" />
+	<jsp:include page="/WEB-INF/views/manager/common/admin-header.jsp"/>
 	<div class="board-lookUp-page">
 		<div class="board-head-area">
 			<div></div>
@@ -22,35 +23,47 @@ body {
 			</div>
 			<div></div>
 		</div>
+		<form action="/manager/diningUpdate" method="post"  enctype="multipart/form-data">
 		<div class="board-body-area">
 			<div id="board-post">
-				<a href="/manager/diningUpdate" class="update">다이닝 수정</a>
+				<button class="save">수정</button>
 			</div>
 
 			<table id="board_table">
 				<tr>
-					<th>1</th>
-					<td colspan="3">[얼리버드] Hidden Earlybird</td>
+					<th>제목</th>
+					<td colspan="3"><input type="text" name="diningTitle" id="title"></td>
 				</tr>
 				<tr>
-					<th>타이틀 이미지</th>
-					<td>이미지 등록</td>
+					<th class="select-area">
+						타이틀 이미지
+						<label for="inputTitleImg">이미지 선택</label>
+  	        			<input type="file" name="diningTitleImage" id="inputTitleImg" accept="image/*"><button type="button" class="deleteBtn">삭제</button>
+					</th>
+					<td>
+						<img class="select-image" src="">
+					</td>
+				</tr>
+				<tr>
 					<th>세부 내용</th>
-					<td>디럭스 1박+치치 아메리카노 2잔</td>
+					<td><input type="text" name="diningSub" id="content"></td>
+				</tr>
+				<tr class="date-area">
+					<th>프로모션 기간</th>
+					<td>
+						<input type="text" id="diningStartDate">~
+						<input type="text" id="diningEndDate">
+					</td>
 				</tr>
 				<tr>
-					<th>투숙 기간</th>
-					<td>2022-11-27 ~ 2023-07-16</td>
-					<th>판매 기간</th>
-					<td>2022-10-13 ~ 2023-07-15</td>
-				</tr>
-				<tr>
-					<th>가격</th>
-					<td colspan="3">220,000원 ~</td>
-				</tr>
-				<tr>
-					<th>내용</th>
-					<td colspan="3">이미지 등록
+					<th class="select-area">
+						내용
+						<label for="inputConImg">이미지 선택</label>
+            			<input type="file" name="diningConImage" id="inputConImg" accept="image/*"><button type="button" class="deleteBtn">삭제</button>
+					</th>
+					<td>
+						<img class="select-image" src="">
+					</td>
 				</tr>
 
 
@@ -59,9 +72,9 @@ body {
 				<a href="/manager/dining">목록</a>
 			</div>
 		</div>
+		</form>
 		<div class="board-foot-area"></div>
 	</div>
-	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
 
 </body>
 </html>

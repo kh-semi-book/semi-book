@@ -22,6 +22,15 @@ public class MeetingRoom {
 	private String meetingMenPhone;    // 미팅룸 예약자 전화번호
 	private String meetingBookCompany; // 미팅룸 예약 업체명
 	private String meetingBookContent; // 미팅룸 예약 업체명
+	private int meetingRoomBookNo;
+	private String meetingRoomDate;
+	private String meetingRoomBookDate;
+	private String meetingRoomName; // MEETING_ROOM_NAME
+	private int meetingHeadCount; // MEETING_HEADCOUNT
+	private String meetingRoomMenName;
+	private String meetingRoomCancelFL;
+	private String meetingRoomProcess;
+	private int roomNo;
 	
 	
 	

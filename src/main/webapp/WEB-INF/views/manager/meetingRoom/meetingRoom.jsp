@@ -21,11 +21,17 @@
 <body>
 	<jsp:include page="/WEB-INF/views/manager/common/admin-header.jsp" />
 	<div id="manage-book-area">
+	
+	<div id="top-menu">
+    	<a href="#">MAIN</a>><a href="#">미팅룸 예약 관리</a>
+	</div>
+	
 		<div id="manage-book-title">미팅룸 관리 페이지</div>
 		<div id="manage-book-table">
 			<div id="manage-book-table-title">
 				<div class="manage-book-no">번호</div>
 				<div class="manage-book-date">접수일</div>
+				<div class="manage-book-date">작성일</div>
 				<div class="manage-book-date">예약일</div>
 				<div class="manage-book-name">상품명</div>
 				<div class="manage-book-count">인원 수</div>
@@ -59,10 +65,49 @@
 				</div>
 				<div class="manage-book-status-change"> 
 					<button id="save-btn">저장</button>
+				<div class="manage-book-no manage-border-right">${book.meetingRoomBookNo}</div>
+				<div class="manage-book-date manage-border-right">${book.meetingRoomDate}</div>
+				<div class="manage-book-date manage-border-right">${book.meetingRoomBookDate}</div>
+				<div class="manage-book-name manage-border-right">
+					${book.meetingRoomName} &nbsp;&nbsp;
+					<button>상세보기</button>
 				</div>
+				<div class="manage-book-count manage-border-right">${book.meetingHeadCount}</div>
+				<div class="manage-booker-name manage-border-right">${book.meetingRoomMenName}</div>
+				<div class="manage-book-del manage-border-right">${book.meetingRoomCancelFL}</div>
+				<c:if test="${book.meetingRoomProcess == 0}"> 
+					<div class="manage-book-status manage-border-right"> 예약대기
+						<select name="book-status" id="book-status">
+							<option value="0">예약대기</option>
+							<option value="1">예약완료</option>
+							<option value="2">취소완료</option>
+						</select>
+					</div>
+				</c:if>
+				<c:if test="${book.meetingRoomProcess == 1}"> 
+					<div class="manage-book-status manage-border-right"> 예약완료
+						<select name="book-status" id="book-status">
+							<option value="0">예약대기</option>
+							<option value="1">예약완료</option>
+							<option value="2">취소완료</option>
+						</select>
+					</div>
+				</c:if>
+				<c:if test="${book.meetingRoomProcess == 2}"> 
+					<div class="manage-book-status manage-border-right"> 취소완료
+						<select name="book-status" id="book-status">
+							<option value="0">예약대기</option>
+							<option value="1">예약완료</option>
+							<option value="2">취소완료</option>
+						</select>
+					</div>
+				</c:if>
+
+					<div class="manage-book-status-change"> 
+						<button id="save-btn">저장</button>
+					</div>
 			</div>
 			</c:forEach>
-			
 			<!-- 페이지 이동 버튼 -->
 			<div id="rsc-page-skip">
 				<a href="#">&lt;&lt;</a>&nbsp;&nbsp; <a href="#">&lt;</a> &nbsp;&nbsp;

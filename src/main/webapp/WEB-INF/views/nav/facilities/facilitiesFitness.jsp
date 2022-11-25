@@ -33,6 +33,18 @@
                     </li>
                     <li class="bsh-path">
                         <a href="#">> &nbsp;피트니스 센터</a>
+    <div class="bsh-main">
+            <div id="head-img2" ></div>
+            <div class="bsh-path">
+                <ol>
+                    <li class="bsh-path1">
+                        <a href="/">Home</a>
+                    </li>
+                    <li class="bsh-path2">
+                        <a href="#">> &nbsp;FACILITIES</a>
+                    </li>
+                    <li class="bsh-path3">
+                        <a href="">> &nbsp;피트니스 센터</a>
                     </li>
                 </ol>
             </div>
@@ -83,5 +95,12 @@
         
     <!------------------------- 아래는 풋터 ------------------------->
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+        </div>
+            
+            
+
+    <!------------------------- 아래는 풋터 ------------------------->
+    <jsp:include page="/WEB-INF/views/common/footer.jsp" />
+
 </body>
 </html>

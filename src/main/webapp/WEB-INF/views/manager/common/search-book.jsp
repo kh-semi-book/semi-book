@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 
+<c:set var="bookList" value="${map.bookList}"/>
 
 <!DOCTYPE html>
 
-<c:set var="bookList" value="${map.bookList}"/>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -38,7 +38,7 @@
             </select>
         </span>   
         
-        <input type="text" class="search-option-input" name="searchOptionInput">
+        <input type="text" class="search-option-input" name="searchOptionInput" value="${sc.searchOptionInput}">
 
             
         
@@ -53,15 +53,17 @@
             </select>
         </span>
         <span class="search-date-input">
-          <input name="searchDateInput1" type="date"> ~ <input name="searchDateInput2" type="date">
+          <input name="searchDateInput1" type="date" value="${sc.searchDateInput1}"> ~ <input name="searchDateInput2" type="date" value="${sc.searchDateInput2}">
         </span> 
         <button id="searchOptionBtn">검색</button>
 
     </form>
 
     </fieldset>
+
     
     <div id="search-book-table">
+
 
         <div id="search-book-table-title">
             <div class="search-book-no">번호</div>
@@ -69,7 +71,6 @@
             <div class="search-book-reservation-no">예약번호</div>
             <div class="search-book-room-no">호수</div>
             <div class="search-book-party-num">인원</div>
-            <div class="search-book-type">룸타입</div>
             <div class="search-book-date">체크인</div>
             <div class="search-book-date">체크아웃</div>
             <div class="search-book-cost">금액</div>
@@ -80,7 +81,7 @@
         <c:choose>
             <c:when test="${empty bookList}">
             <div class="search-book-table-content">
-                
+                조회된 내용이 없습니다. 
             </div>
             </c:when>
         
@@ -92,8 +93,7 @@
 		                <div class="search-book-date manage-border-right">${bookList.bookDate}</div>
 		                <div class="search-book-reservation-no manage-border-right">${bookList.bookNo}</div>
 		                <div class="search-book-room-no manage-border-right">${bookList.bookRoomNum}</div>
-		                <div class="search-book-party-num manage-border-right">${bookList.checkOut}</div>
-		                <div class="search-book-type manage-border-right">${bookList.checkOut}</div>
+		                <div class="search-book-party-num manage-border-right">${bookList.bookHeadCount}</div>
 		                <div class="search-book-date manage-border-right">${bookList.checkIn}</div>
 		                <div class="search-book-date manage-border-right">${bookList.checkOut}</div>
 		                <div class="search-book-cost manage-border-right">${bookList.bookPrice}</div>
@@ -118,7 +118,7 @@
         
         </div>
     </div>
-
+    <script src="/resources/js/manager/search.js"></script>
     
 </body>
 </html>

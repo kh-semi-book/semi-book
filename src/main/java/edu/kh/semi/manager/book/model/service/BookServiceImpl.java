@@ -39,43 +39,25 @@ public class BookServiceImpl implements BookService {
 		return map;
 	}
 
+	
+
 	@Override
-	public Map<String, Object> searchBook(int cp, SearchOption sc) {
-		List<Book> bookList=null;
-		int bookCount = 0;
+	public int updateBook(Book bookPerson) {
 		
-		if(sc.getSearchDateInput1()=="" && sc.getSearchDateInput2()=="") {
-		
-		
-			if(sc.getSearchOption().equals("bookerName")) {
-				bookList=dao.searchBooker(sc.getSearchOptionInput());
-				bookCount=bookList.size();
-			}else if(sc.getSearchOption().equals("roomNum")) {
-				bookList=dao.searchRoomNum(sc.getSearchOptionInput());
-				bookCount=bookList.size();
-			}else if(sc.getSearchOption().equals("bookStatus")) {
-				bookList=dao.searchBookStatus(sc.getSearchOptionInput());
-				bookCount=bookList.size();
-			}
+		return dao.updateBook(bookPerson);
 	}
+
+	@Override
+	public Map<String, Object> selectBook(Map<String, Object> pm, int cp) {
+		// 1. 검색 결과 개수 조회 
+		int bookCount=dao.getBookCount(pm);
 		
-		else {
-			if(sc.getSearchOption().equals("bookerName")) {
-				bookList=dao.searchBookerDate(sc.getSearchOptionInput());
-				bookCount=bookList.size();
-			}else if(sc.getSearchOption().equals("roomNum")) {
-				bookList=dao.searchRoomNumDate(sc.getSearchOptionInput());
-				bookCount=bookList.size();
-			}else if(sc.getSearchOption().equals("bookStatus")) {
-				bookList=dao.searchBookStatusDate(sc.getSearchOptionInput());
-				bookCount=bookList.size();
-			}
-		}
-		
-		
-		
-		
+		// 2. 전체 예약 수 + cp(현재페이지)를 이용해서 
+		// 페이징 처리 객체 생성
 		Pagination pagination=new Pagination(bookCount, cp);
+		
+		// 3. 페이징 처리 객체를 이용해서 게시글 목록 조회 
+		List<Book> bookList=dao.selectBookList(pagination, pm);
 		
 		Map<String, Object> map=new HashMap<String, Object>();
 		
@@ -84,5 +66,4 @@ public class BookServiceImpl implements BookService {
 		
 		return map;
 	}
-
 }

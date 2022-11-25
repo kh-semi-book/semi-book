@@ -18,6 +18,9 @@
 <typeAlias type="edu.kh.semi.manager.book.model.vo.Book" alias="Book"/>
 <typeAlias type="edu.kh.semi.manager.meetingRoom.model.vo.MeetingRoom" alias="MeetingRoom"/>
 <typeAlias type="edu.kh.semi.manager.board.model.vo.CMM" alias="CMM"/>
+<typeAlias type="edu.kh.semi.manager.board.model.vo.Promotion" alias="Promotion"/>
+<typeAlias type="edu.kh.semi.manager.board.model.vo.Dining" alias="Dining"/>
+<typeAlias type="edu.kh.semi.manager.board.model.vo.Event" alias="Event"/>
 
 </typeAliases>
 
@@ -27,6 +30,12 @@
 	<mapper resource="/mappers/book-mapper.xml"/>
 	<mapper resource="/mappers/meetingRoom-mapper.xml"/>
 	<mapper resource="/mappers/cmm-mapper.xml"/>
+<mapper resource="/mappers/member-mapper.xml"/>
+
+<mapper resource="/mappers/book-mapper.xml"/>
+<mapper resource="/mappers/meetingRoom-mapper.xml"/>
+<mapper resource="/mappers/board-mapper.xml"/>
+
 </mappers>
 
 </configuration>

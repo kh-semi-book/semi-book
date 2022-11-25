@@ -26,7 +26,12 @@ public class MainController {
 	
 	@GetMapping("/member/signUp")
 	public String signUpPage() {
-		return "member/signUp1";
+		return "member/signUp2";
+	}
+	
+	@GetMapping("/media")
+	public String mediaLibrary() {
+		return "common/header-top-media";
 	}
 	
 	

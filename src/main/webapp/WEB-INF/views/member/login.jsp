@@ -30,11 +30,15 @@
                     </div
                     ><div class="button-section">
                         <button id="member-login-btn">로그인</button>
-                   </div
-                   ><label for="saveId"><input type="checkbox" id="saveId">아이디 저장</label>
+                    </div>
+                    <label for="saveId"><input type="checkbox" id="saveId" ${temp}>아이디 저장</label>
                 </form>
-            </div
-            ><div id="guest-login">
+            </div>
+            <c:if test="${!empty cookie.saveId.value}">
+                <c:set var="temp" value="checked" />
+            
+            </c:if>
+            <div id="guest-login">
                 <form action="#">
                     <p>비회원 로그인</p>
                     <div class="input-section">
@@ -63,5 +67,19 @@
     </div>
 
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+
+    <c:if test="${not empty message}">
+
+    <script>
+        alert("${message}")
+    </script>
+
+    <%-- message 1회 출력 후 session scope에서 삭제 --%>
+    <%-- 세션에 남아있어서 계속 알림이 뜸(로그인하든 로그아웃하든) --%>
+    <c:remove var="message" />
+    </c:if>
+
+
 </body>
 </html>
+

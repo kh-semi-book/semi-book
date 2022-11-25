@@ -63,7 +63,7 @@
                             <button id="rsc-btn-menu">
                         	    <a href="/resources/image/nav/infinitiPool/infinifi_pool_Menu.pdf" target="_blank">
                            	 		메뉴 전체보기
-                         	 		</a>
+                         	 	</a>
                             </button>
                         &nbsp;
                             <button id="rsc-btn-event">

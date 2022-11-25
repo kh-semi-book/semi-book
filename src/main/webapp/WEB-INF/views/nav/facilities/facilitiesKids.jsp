@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>키즈 플레이 룸 - Hidden Cliff Hotel and Nature</title>
 
-   <link rel="stylesheet" href="/resources/css/nav/facilities/facilities(all).css">
+    <link rel="stylesheet" href="/resources/css/nav/facilities/facilities.css">
 	<link rel="stylesheet" href="/resources/css/common/main.css">
     <script src="https://kit.fontawesome.com/f7459b8054.js" crossorigin="anonymous"></script>
 </head>
@@ -31,6 +31,10 @@
                     </li>
                     <li class="bsh-path2">
                         <a href="/">> &nbsp;FACILITIES</a>
+                        <a href="/">Home</a>
+                    </li>
+                    <li class="bsh-path2">
+                        <a href="#">> &nbsp;FACILITIES</a>
                     </li>
                     <li class="bsh-path3">
                         <a href="#">> &nbsp;키즈 플레이 룸</a>
@@ -43,6 +47,9 @@
             </div>
 
             <div class="bsh-main-img1"></div>
+            <div class="bsh-main-img">
+                <img src="/resources/image/nav/facilities/kiz/kiz1.jpg">
+            </div>
 
             <div class="bsh-main-content">
                 <p style="letter-spacing: -1px; font-size: 16px;" >
@@ -102,5 +109,9 @@
 
     <!------------------------- 아래는 풋터 ------------------------->
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+
+    <!------------------------- 아래는 풋터 ------------------------->
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+
 </body>
 </html>
