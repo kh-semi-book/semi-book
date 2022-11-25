@@ -22,14 +22,14 @@
     width: 100px;
 }
 
-/* 예약일 */
+/* 접수일 / 예약일 */
 .manage-book-date {
-    width: 350px;
+    width: 250px;
 }
 
 /* 상품명 */
 .manage-book-name {
-    width: 250px;
+    width: 300px;
 }
 
 /* 인원수 */
@@ -42,25 +42,26 @@
     width: 200px;
 }
 
+/* 취소여부 */
+.manage-book-del {
+    width: 100px;
+}
+
 /* 진행상태 */
 .manage-book-status {
     width: 200px;
 }
 
-/* 취소여부 */
-.manage-book-del {
-    width: 200px;
-}
 
 /* 저장 */
 .manage-book-status-change {
     width: 100px;
 }
 
-#book-status {
+/* #book-status {
     display: flex;
     justify-content: center;
-}
+} */
 
 #manage-book-table-title {
     border-top: 2px solid black;
