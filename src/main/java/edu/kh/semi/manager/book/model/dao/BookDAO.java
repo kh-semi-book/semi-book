@@ -1,6 +1,7 @@
 package edu.kh.semi.manager.book.model.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
@@ -23,11 +24,6 @@ public class BookDAO {
 		return sqlSession.selectOne("bookMapper.getBookCount");
 	}
 	
-	
-//	public String selectBook() {	
-//		return sqlSession.selectOne("bookMapper.selectBook"); 
-//	}
-
 
 	public List<Book> selectBookList(Pagination pagination) {
 		
@@ -39,8 +35,24 @@ public class BookDAO {
 	}
 
 
-	public List<Book> searchAll(String condition) {
+	public int updateBook(Book bookPerson) {
 		
-		return sqlSession.selectList("bookMapper.searchAll", condition);
+		return sqlSession.update("bookMapper.updateBook", bookPerson);
+	}
+
+
+	public int getBookCount(Map<String, Object> pm) {
+		
+		return sqlSession.selectOne("bookMapper.getBookCount_search",pm);
+	}
+
+
+	public List<Book> selectBookList(Pagination pagination, Map<String, Object> pm) {
+		int offset=(pagination.getCurrentPage()-1)*pagination.getLimit();
+		
+		RowBounds rowBounds = new RowBounds(offset, pagination.getLimit());
+		
+		return sqlSession.selectList("bookMapper.selectBookList_search", pm ,rowBounds);
+	
 	}
 }

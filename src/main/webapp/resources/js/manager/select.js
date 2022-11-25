@@ -1,13 +1,24 @@
+const input1=document.querySelector("[name='searchDateInput1']").value;
+const input2=document.querySelector("[name='searchDateInput2']").value;
 
-const statusChange = document.getElementById("manage-book-status-change");
+document.getElementById("searchOptionBtn").addEventListener("click",()=>{
+    if((input1!=''&&input2=='')||(input1==''&&input2!='')){
+        alert("날짜를 모두 선택해주세요");
+    }
+})
 
-statusChange.addEventListener("click",()=>{
+function updateBook(bookNo, btn){
     $.ajax({
-        url:"/changeStatus",
-        data:{},
-        type:"GET",
-        success:(result)=>{
+        url:"/manager/select/update",
+        data:{
+    
+        },
+        type:"POST",
+        success: function(result){
+            if(result>0){
+                confirm("")
+            }
+        }
 
-        }, error:()=>{console.log("수정 에러");}
     })
-});
+}

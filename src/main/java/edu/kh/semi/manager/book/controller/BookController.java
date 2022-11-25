@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestAttribute;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -25,47 +26,26 @@ public class BookController {
 	
 	
 	@GetMapping("/manager/selectBook")
-	public String selectBook(Model model, 
-			@RequestParam(value="cp", required=false, defaultValue="1") int cp
-			) {
-		
-		Map<String,Object> map=service.selectBook(cp);
-		
-		model.addAttribute("map", map);
-		
-		return "manager/common/select-book";
-		
-	}
-	
-	@PostMapping("/manager/selectBook")
-	public String updateBook(
-			Book bookPerson) {
-		
-		System.out.println(bookPerson);
-		
-		return "manager/common/select-book";
-		
-	}
-	
-	@GetMapping("/manager/searchBook")
-	public String searchBook(SearchOption sc,
-			Model model,
+	public String selectBook(
+			Model model, 
 			@RequestParam(value="cp", required=false, defaultValue="1") int cp,
-			RedirectAttributes ra
+			@RequestParam Map<String,Object> pm
 			) {
 		
-		System.out.println(sc);
-		Map<String,Object> map=service.searchBook(cp, sc);
+		System.out.println(pm.get("searchOption"));
 		
-		System.out.println(sc);
-		model.addAttribute("map", map);
+		if(pm.get("searchOption")==null) {
+			Map<String,Object> map=service.selectBook(cp);			
+			model.addAttribute("map", map);
+		}else {
+			Map<String, Object> map=service.selectBook(pm,cp);
+			model.addAttribute("map", map);
+		}
 		
-		model.addAttribute("sc",sc);
 		
-		
-		return "manager/common/search-book";
+		return "manager/common/select-book";
 		
 	}
-	
+
 
 }

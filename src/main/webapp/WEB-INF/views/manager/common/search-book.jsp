@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 
+<c:set var="bookList" value="${map.bookList}"/>
 
 <!DOCTYPE html>
 
-<c:set var="bookList" value="${map.bookList}"/>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -81,7 +81,7 @@
         <c:choose>
             <c:when test="${empty bookList}">
             <div class="search-book-table-content">
-                
+                조회된 내용이 없습니다. 
             </div>
             </c:when>
         
@@ -98,20 +98,7 @@
 		                <div class="search-book-date manage-border-right">${bookList.checkOut}</div>
 		                <div class="search-book-cost manage-border-right">${bookList.bookPrice}</div>
 		                <div class="manage-booker-name manage-border-right">${bookList.bookMemberName}</div>
-		                <div class="search-book-status">
-                        <c:choose>
-                            <c:when test=" ${bookList.bookProcess==0}">
-                                예약대기
-                            </c:when>
-                            <c:when test=" ${bookList.bookProcess==1}">
-                                예약완료
-                            </c:when>
-                            <c:when test=" ${bookList.bookProcess==2}">
-                                예약취소
-                            </c:when>
-                        </c:choose>
-                        
-                       </div>
+		                <div class="search-book-status">${bookList.bookProcess}</div>
 		            </div>
 		            
 		

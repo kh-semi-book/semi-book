@@ -39,56 +39,25 @@ public class BookServiceImpl implements BookService {
 		return map;
 	}
 
-	@Override
-	public Map<String, Object> searchBook(int cp, SearchOption sc) {
-		List<Book> bookList=null;
-		int bookCount = 0;
-		
-		String condition="";
-		String option=sc.getSearchOption();
-		String optionInput=sc.getSearchOptionInput();
-		
-		String dateOption=sc.getSearchDateOption();
-		String dateOptionInput1=sc.getSearchDateInput1();
-		String dateOptionInput2=sc.getSearchDateInput2();
-		
-		switch(option) {
-		case "bookerName":
-			option="MEMBER_NAME"; break;
-		case "roomNum":
-			option="ROOM_NUM"; break;
-		case "bookStatus":
-			option="BOOK_PROCESS"; break;
-		}
-		
-		
-		
-		if(sc.getSearchDateInput1()=="" && sc.getSearchDateInput2()=="") {	
-			condition="WHERE "+option+"='"+optionInput+"'";
+	
 
-		}
+	@Override
+	public int updateBook(Book bookPerson) {
 		
-		else {
-			
-			switch(dateOption) {
-			case "bookDate":
-				dateOption="BOOK_DATE"; break;
-			case "checkIn":
-				dateOption="CHECK_IN"; break;
-			case "checkOut":
-				dateOption="CHECK_OUT"; break;
-			}
-			
-			condition="WHERE "+option+"='"+optionInput+"' AND "+dateOption+" BETWEEN '"+dateOptionInput1+"' AND '"+dateOptionInput2+"'";
-			
-		}
+		return dao.updateBook(bookPerson);
+	}
+
+	@Override
+	public Map<String, Object> selectBook(Map<String, Object> pm, int cp) {
+		// 1. 검색 결과 개수 조회 
+		int bookCount=dao.getBookCount(pm);
 		
-		bookList=dao.searchAll(condition);
-		bookCount=bookList.size();
-		
-		
-		
+		// 2. 전체 예약 수 + cp(현재페이지)를 이용해서 
+		// 페이징 처리 객체 생성
 		Pagination pagination=new Pagination(bookCount, cp);
+		
+		// 3. 페이징 처리 객체를 이용해서 게시글 목록 조회 
+		List<Book> bookList=dao.selectBookList(pagination, pm);
 		
 		Map<String, Object> map=new HashMap<String, Object>();
 		
@@ -97,5 +66,4 @@ public class BookServiceImpl implements BookService {
 		
 		return map;
 	}
-
 }
