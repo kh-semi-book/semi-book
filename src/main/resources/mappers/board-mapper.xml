@@ -10,7 +10,7 @@
 	</insert>
 
 	<!-- 프로모션 등록 -->
-	<insert id="savePromotionPost" parameterType="CMM">
+	<insert id="savePromotionPost" parameterType="Promotion">
 		INSERT INTO "PROMOTION" VALUES(
 		SEQ_PROMOTION_NO.NEXTVAL, #{promotionTitle},#{promotionSub},#{promotionTitleImg},#{promotionConImg},
 		#{promotionStayStartDate},#{promotionStayEndDate},#{promotionSaleStartDate},#{promotionSaleEndDate},
@@ -19,7 +19,7 @@
 
 
 	<!-- 다이닝 등록 -->
-	<insert id="saveDiningPost">
+	<insert id="saveDiningPost" parameterType="Dining">
 		INSERT INTO "DINING" VALUES(
 		SEQ_DINING_NO.NEXTVAL, #{diningTitle}, #{diningSub}, #{dininigTitleImg}, #{diningConImg},
 		#{diningStartDate}, #{diningEndDate}, DEFAULT)
@@ -27,7 +27,7 @@
 
 
 	<!-- 이벤트 등록 -->
-	<insert id="saveDiningPost">
+	<insert id="saveEventPost" parameterType="Event">
 		INSERT INTO "EVENT" VALUES(
 		SEQ_EVENT_NO.NEXTVAL, #{eventTitle}, #{eventSub}, #{eventTitleImg}, #{eventConImg},
 		#{eventStartDate}, #{eventEndDate}, DEFAULT)
