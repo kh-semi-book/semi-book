@@ -11,6 +11,7 @@ public class MeetingRoom {
 	
 	private int meetingRoomBookNo;
 	private String meetingRoomDate;
+	private String meetingRoomBookDate;
 	private String meetingRoomName; // MEETING_ROOM_NAME
 	private int meetingHeadCount; // MEETING_HEADCOUNT
 	private String meetingRoomMenName;

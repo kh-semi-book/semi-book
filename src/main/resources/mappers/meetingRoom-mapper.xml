@@ -6,6 +6,7 @@
 	
 		<id property="meetingRoomBookNo" column="MEETING_BOOK_NO"/>
 		<result property="meetingRoomDate" column="MEETING_DATE"/>
+		<result property="meetingRoomBookDate" column="MEETING_BOOK_DATE"/>
 		<result property="meetingRoomName" column="MEETING_ROOM_NAME"/>
 		<result property="meetingHeadCount" column="MEETING_HEADCOUNT"/>
 		<result property="meetingRoomMenName" column="MEETING_MEM_NAME"/>
@@ -14,15 +15,19 @@
 		<result property="roomNo" column="MEETING_ROOM_NO"/>
 		
 	</resultMap>
+	
+		<select id="getBookCount" resultType="_int">
+  		SELECT COUNT(*) FROM MEETING_BOOK 
+  	</select>
+  	
+  	<select id="selectBookList" resultMap="meetingRoom_rm">
+  		SELECT MEETING_BOOK_NO,  
+	   				 TO_CHAR(MEETING_DATE,'YYYY-MM-DD') MEETING_DATE,  
+	           TO_CHAR(MEETING_BOOK_DATE,'YYYY-MM-DD') MEETING_BOOK_DATE, MEETING_ROOM_NAME,
+	           MEETING_HEADCOUNT, MEETING_MEM_NAME, MEETING_CANCEL_FL, MEETING_PROCESS 
+	    FROM MEETING_BOOK 
+	    JOIN MEETING_ROOM USING (MEETING_ROOM_NO)
+  	</select>
 
 
-
- <select id="selectMeetingRoom" resultMap="meetingRoom_rm" resultType="MeetingRoom"> 
- 	SELECT MEETING_BOOK_NO, 
-	   TO_CHAR(MEETING_DATE, 'YYYY"년" MM"월" DD"일" HH24"시" MI"분" SS"초"') MEETING_DATE,
-	   MEETING_ROOM_NAME, 
-	   MEETING_HEADCOUNT, MEETING_MEM_NAME, MEETING_CANCEL_FL, MEETING_PROCESS 
-	FROM MEETING_BOOK B
-	JOIN MEETING_ROOM R ON (B.MEETING_ROOM_NO = R.MEETING_ROOM_NO)
- </select>
 </mapper>

@@ -1,4 +1,39 @@
 /* 미팅룸 관리 페이지 */
+#top-menu {
+    color: rgb(133, 131, 131);
+    font-size: 14px;
+    padding: 20px 0;
+}
+
+#top-menu>a {
+    text-decoration: none;
+    color: rgb(133, 131, 131);
+    padding: 0 10px;
+}
+
+
+/* 상세보기 버튼 */
+.rsc-btn{
+    display: flex;
+    flex-direction: row;
+}
+
+#rsc-btn-menu, #rsc-btn-event{
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #c9c9c9;
+}
+
+#rsc-btn-menu a, #rsc-btn-event a{
+	text-decoration: none;
+	color: white;
+}
+/* 까지 */
+
 #manage-book-title {
     font-size: 30px;
 
@@ -22,9 +57,9 @@
     width: 100px;
 }
 
-/* 예약일 */
+/* 접수일 / 예약일  */
 .manage-book-date {
-    width: 350px;
+    width: 225px;
 }
 
 /* 상품명 */
@@ -49,7 +84,7 @@
 
 /* 취소여부 */
 .manage-book-del {
-    width: 200px;
+    width: 100px;
 }
 
 /* 저장 */
@@ -89,6 +124,10 @@
 
 .manage-border-right {
     border-right: 1px solid #bbb;
+}
+.manage-border-right>a{
+    text-decoration: none;
+    font-size: 10px;
 }
 
 /*----[ 페이지 이동 버튼 ]----*/
