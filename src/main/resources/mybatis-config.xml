@@ -18,6 +18,8 @@
 <typeAlias type="edu.kh.semi.manager.book.model.vo.Book" alias="Book"/>
 <typeAlias type="edu.kh.semi.manager.meetingRoom.model.vo.MeetingRoom" alias="MeetingRoom"/>
 <typeAlias type="edu.kh.semi.manager.board.model.vo.CMM" alias="CMM"/>
+<typeAlias type="edu.kh.semi.manager.board.model.vo.Promotion" alias="Promotion"/>
+<typeAlias type="edu.kh.semi.manager.board.model.vo.Dining" alias="Dining"/>
 
 </typeAliases>
 <!-- mapper 파일(SQL 작성되는파일) 위치 등록 부분 -->
@@ -26,7 +28,7 @@
 
 <mapper resource="/mappers/book-mapper.xml"/>
 <mapper resource="/mappers/meetingRoom-mapper.xml"/>
-<mapper resource="/mappers/cmm-mapper.xml"/>
+<mapper resource="/mappers/board-mapper.xml"/>
 
 </mappers>
 
