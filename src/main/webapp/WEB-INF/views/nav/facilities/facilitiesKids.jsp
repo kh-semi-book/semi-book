@@ -27,11 +27,7 @@
             <div class="bsh-path">
                 <ol>
                     <li class="bsh-path1">
-                        <a href="/" style="color: #767676;">home</a>
-                    </li>
-                    <li class="bsh-path2">
-                        <a href="/">> &nbsp;FACILITIES</a>
-                        <a href="/">Home</a>
+                        <a href="/">home</a>
                     </li>
                     <li class="bsh-path2">
                         <a href="#">> &nbsp;FACILITIES</a>
@@ -46,7 +42,6 @@
                 <h1>키즈 플레이 룸</h1>
             </div>
 
-            <div class="bsh-main-img1"></div>
             <div class="bsh-main-img">
                 <img src="/resources/image/nav/facilities/kiz/kiz1.jpg">
             </div>
@@ -110,8 +105,6 @@
     <!------------------------- 아래는 풋터 ------------------------->
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
-    <!------------------------- 아래는 풋터 ------------------------->
-    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
 </body>
 </html>
