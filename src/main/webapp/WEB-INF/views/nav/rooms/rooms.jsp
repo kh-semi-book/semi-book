@@ -27,6 +27,7 @@
 
      <!-- header -->
 	<jsp:include page="/WEB-INF/views/common/header.jsp" />
+
 	 <div class="kjh-head-area">
                  
      </div>
@@ -44,8 +45,8 @@
                             </div>
 
                             <div class="room_section">
-                                <div class="room_list">    
-                                    <ul>
+                                <div class="room-list-div">    
+                                    <ul class="room-list-ul">
                                         <li>
                                             <a href="#">
                                                 <span>

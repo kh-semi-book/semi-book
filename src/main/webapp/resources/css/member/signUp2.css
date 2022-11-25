@@ -421,7 +421,7 @@ list-style: none;
     text-align: center;
 }
 
- .kjh-btn a{
+ .kjh-btn button{
     display: inline-block;
     height: 60px;
    
@@ -433,14 +433,14 @@ list-style: none;
     
  }
 
- a.btn-a{
+ button.btn-a{
     background-color: #231f20;
     color: white;
     display: inline-block;
     width: 210px;
  }
 
- a.btn-b{
+ button.btn-b{
     width: 125px;
     color: black;
     border: 1px solid #a4a4a4;
