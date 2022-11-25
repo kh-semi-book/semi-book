@@ -41,7 +41,7 @@
 				<div class="manage-book-date manage-border-right">${book.meetingBookDate}</div>
 				<div class="manage-book-name manage-border-right">
 					${book.meetingName}&nbsp;&nbsp;
-					<button>상세보기</button>
+					<button id="detail-btn">상세보기</button>
 				</div>
 				<div class="manage-book-count manage-border-right">${book.meetingHeadCount}</div>
 				<div class="manage-booker-name manage-border-right">${book.meetingMenName}</div>
@@ -50,6 +50,7 @@
 				<c:if test="${book.meetingProcess==0}">예약대기</c:if> 
 				<c:if test="${book.meetingProcess==1}">예약완료</c:if> 
 				<c:if test="${book.meetingProcess==2}">취소완료</c:if> 
+					&nbsp;&nbsp;
 					<select name="book-status" id="book-status">
 						<option value="0">예약대기</option>
 						<option value="1">예약완료</option>
