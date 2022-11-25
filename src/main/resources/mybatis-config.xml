@@ -29,8 +29,6 @@
 <mapper resource="/mappers/book-mapper.xml"/>
 <mapper resource="/mappers/meetingRoom-mapper.xml"/>
 <mapper resource="/mappers/board-mapper.xml"/>
-<mapper resource="/mappers/cmm-mapper.xml"/>
-<mapper resource="/mappers/promotion-mapper.xml"/>
 
 </mappers>
 

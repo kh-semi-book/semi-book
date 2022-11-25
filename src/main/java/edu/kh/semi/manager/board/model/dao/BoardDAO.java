@@ -48,8 +48,6 @@ public class BoardDAO {
 		return sqlSession.insert("boardMapper.saveEventPost", event);
 	}
 
-	public int savePromotionPost(Promotion promotion) {
-		return sqlSession.insert("promotionMapper.savePromotionPost", promotion);
-	}
+	
 
 }

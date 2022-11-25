@@ -129,32 +129,7 @@ public class BoardServiceImpl implements BoardService {
 	}
 	
 	
-	// 프로모션 등록
-	@Override
-	public int savePromotionPost(Promotion promotion, Map<String, Object> map, MultipartFile promotionTitleImage,
-			MultipartFile promotionConImage) throws Exception {
-		
-		String renameTitle = Util.fileRename(promotionTitleImage.getOriginalFilename());
-		String renameContent = Util.fileRename(promotionConImage.getOriginalFilename());
-		
-		promotion.setPromotionTitleImg(map.get("webPathTitle")+renameTitle);
-		promotion.setPromotionConImg(map.get("webPathContent")+renameContent);
-		
-		int result = dao.savePromotionPost(promotion);
-		
-		if(result > 0) {
-			
-			if(renameTitle!=null && renameContent!=null) {
-				promotionTitleImage.transferTo(new File(map.get("filePathTitle")+renameTitle));
-				promotionConImage.transferTo(new File(map.get("filePathContent")+renameContent));
-			}
-		} else {
-			throw new Exception("업로드 실패");
-		}
-		
-		return result;
-		
-	}
+	
 	
 	
 	

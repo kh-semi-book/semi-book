@@ -44,7 +44,6 @@ public class BoardController {
 	@PostMapping("/cmmPost")
 	public String saveCmmPost(CMM cmm, @RequestParam(value = "cmmTitleImage") MultipartFile cmmTitleImage,
 			@RequestParam(value = "cmmConImage") MultipartFile cmmConImage, RedirectAttributes ra,
-			HttpServletRequest req) throws Exception {
 			HttpServletRequest req, @RequestHeader(value = "referer") String referer) throws Exception {
 
 		// 인터넷 주소로 접근할 수 있는 경로
@@ -167,69 +166,7 @@ public class BoardController {
 
 		String message = null;
 		String path = null;
-
-	//프로모션 등록
-	@PostMapping("/promotionPost")
-	public String savePromotionPost(Promotion promotion,
-			@RequestParam(value = "promotionTitleImage") MultipartFile promotionTitleImage,
-			@RequestParam(value = "promotionConImage") MultipartFile promotionConImage, RedirectAttributes ra,
-			HttpServletRequest req, @RequestHeader(value = "referer") String referer) throws Exception {
-
-		// 인터넷 주소로 접근할 수 있는 경로
-		String webPathTitle = "/resources/image/boardImage/title/";
-		String webPathContent = "/resources/image/boardImage/content/";
-
-		// 실제 파일이 저장된 컴퓨터 상의 절대 경로
-		String filePathTitle = req.getSession().getServletContext().getRealPath(webPathTitle);
-		String filePathContent = req.getSession().getServletContext().getRealPath(webPathContent);
-
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("webPathTitle", webPathTitle);
-		map.put("webPathContent", webPathContent);
-		map.put("filePathTitle", filePathTitle);
-		map.put("filePathContent", filePathContent);
-
-		int result = service.savePromotionPost(promotion, map, promotionTitleImage, promotionConImage);
-
-		String message = null;
-		String path = null;
-
-		if (result > 0) {
-			message = "프로모션 등록 성공";
-			path = "/manager/promotion";
-		} else {
-			message = "프로모션 등록 실패";
-			path = referer;
-		}
-
-		ra.addFlashAttribute("message", message);
-
-		return "redirect:"+path;
-	}
-	
-	// =================[다이닝]======================
-	@GetMapping("/diningPost")
-	public String diningPost() {
-		return "/manager/dining/diningPost";
-	}
-
-	@GetMapping("/diningDetail")
-	public String diningDetail() {
-		return "/manager/dining/dining";
-	}
-	
-	// =================[이벤트]======================
-	@GetMapping("/eventPost")
-	public String eventPost() {
-		return "/manager/event/eventPost";
-	}
-
-	@GetMapping("/eventDetail")
-	public String eventDetail() {
-		return "/manager/event/event";
-	}
-}
-
+		
 		if (result > 0) {
 			message = "다이닝 등록 성공";
 			path = "/manager/dining";
@@ -241,7 +178,10 @@ public class BoardController {
 		ra.addFlashAttribute("message", message);
 
 		return "redirect:" + path;
+
 	}
+	
+	
 
 	// =================[이벤트]======================
 	@GetMapping("/eventPost")
