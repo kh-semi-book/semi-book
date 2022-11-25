@@ -22,7 +22,7 @@
 
                 <c:otherwise>
                      <div id="header-top-menu">
-                        <a href="/member/login">로그아웃</a>
+                        <a href="/member/logout">로그아웃</a>
                         |
                         <a href="/member/memberEdit">마이페이지</a>
                         |

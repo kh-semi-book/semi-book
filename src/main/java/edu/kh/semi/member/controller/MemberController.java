@@ -2,15 +2,18 @@ package edu.kh.semi.member.controller;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.kh.semi.member.model.service.MemberService;
@@ -71,4 +74,34 @@ public class MemberController {
 		
 		return "redirect:" + path;
 		}
+
+
+	//로그아웃
+	@GetMapping("/member/logout")
+	public String logout(SessionStatus status) {
+			
+			status.setComplete(); // 세션 무효화
+		
+		
+		return "redirect:/";
+	}
+	
+	/*
+	 * //회원가입페이지
+	 * 
+	 * @GetMapping("/member/signUp") public String signUpPage() {
+	 * 
+	 * return "member/signUp2"; }
+	 */
+	//회원가입
+	@PostMapping("/member/signUp")
+	public String signUp(@ModelAttribute Member inputMember) {
+		
+		return null;
+	}
+	
+	
+	
+	
+
 }

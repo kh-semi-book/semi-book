@@ -62,7 +62,7 @@
                         <h4>기본항목
                           <span class="kjh-txt"><strong class="star">*</strong>표시는 필수항목입니다.</span>
                         </h4>
-
+                        <form name="joinform" id ="joinform" method="post" action="/member/signUp">
                           <div class="form1">
                             <table class="kjh-form1-table">
                               <tr>
@@ -72,7 +72,7 @@
                                 </th>
                                 
                                 <td class="kjh-input"colspan="3">
-                                  <input type="text" size="20" name="m_name" id="m_name" >
+                                  <input type="text" size="20" name="memberName" id="memberName" >
                                 </td>
                               </tr>
 
@@ -83,7 +83,7 @@
                                 </th>
                                 
                                 <td class="kjh-input"colspan="3">
-                                  <input type="text" size="20" name="m-id" id="m-id" >
+                                  <input type="text" size="20" name="memberId" id="memberId" >
                                   <input type="button" class="btn" value="중복확인">
                                   <span class="kjh-subtxt">(영소문자, 숫자로 6~20자까지 가능합니다.)</span>
 
@@ -93,13 +93,13 @@
                               <tr>
                                 <th>비밀번호<span class="star">*</span></th>
                                 <td class="kjh-input">
-                                  <input type="password" size="20" name="m_pw1" id="m_pw1" >
+                                  <input type="password" size="20" name="memberPw" id="memberPw" >
                                   <span class="kjh-subtxt">(특수문자를 포함해 8~20자로 입력해 주세요.)</span>
                                   
                                 </td>
                                  <th>비밀번호 확인<span class="star">*</span></th>
                                 <td class="kjh-input">
-                                  <input type="password" size="20" name="m_pw2" id="m_pw2" >
+                                  <input type="password" size="20" name="memberPwConfirm" id="memberPwConfirm" >
                                   <span class="kjh-subtxt">(다시 한 번 비밀번호를 입력해 주세요.)</span>
                                   
                                 </td>
@@ -107,18 +107,18 @@
                               <tr>
                                 <th>휴대폰<span class="star">*</span></th>
                                 <td class="kjh-input" colspan="3">
-                                  <input type="text" size="1" name="m-phone" id="m-phone"> -
-                                  <input type="text" size="1" name="m-phone" id="m-phone"> -
-                                  <input type="text" size="1" name="m-phone" id="m-phone">
+                                  <input type="text" size="1" name="memberPhone"> -
+                                  <input type="text" size="1" name="memberPhone"> -
+                                  <input type="text" size="1" name="memberPhone">
                                 </td>
                           
                               </tr>
                               <tr>
                                  <th>이메일<span class="star">*</span></th>
                                 <td class="kjh-input" colspan="3">
-                                  <input type="text" size="20" name="m-email" id="m-email">@
-                                  <input type="text" size="13"name="" id="">
-                                  <select class="kjh-address email" name="" id="">
+                                  <input type="text" size="20" name="memberEmail" id="memberEmail">@
+                                  <input type="text" size="13"name="memberEmail" id="">
+                                  <select class="kjh-address email" name="memberEmail" id="">
                                     <option value="naver.com">naver.com</option>
                                     <option value="gmail.com">gmail.com</option>
                                     <option value="nate.com">nate.com</option>
@@ -127,7 +127,7 @@
                                     <option value="freechal.com">freechal.com</option>
                                     <option value="1">직접 입력</option>
                                   </select>
-  								<span class="kjh-subtxt">(다음/한메일은 수신이 안될 수 있습니다.)</span>
+  							          	<span class="kjh-subtxt">(다음/한메일은 수신이 안될 수 있습니다.)</span>
                                   
 
                                 </td>
@@ -234,11 +234,11 @@
                             </table>
                           </div>
 
-						 <div class="kjh-btn">
-                            <a href="#" class="btn-a">다음단계</a>
-                            <a href="#" class="btn-b">취소</a>   <!-- 메인화면으로  -->
+						               <div class="kjh-btn">
+                            <button class="btn-a">다음단계</button>
+                            <button class="btn-b">취소</button>   <!-- 메인화면으로  -->
                           </div>
-						
+                      </form>
                         
                       </div> <!-- main-container -->
             
@@ -247,7 +247,7 @@
           </div>
             </div>  
             <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-
+            <script src="/resources/js/member/signUp2.js"></script>
     </body>
 
 </html>
