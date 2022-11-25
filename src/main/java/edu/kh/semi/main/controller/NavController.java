@@ -100,7 +100,9 @@ public class NavController {
 
 	@GetMapping("/facilities/kids")
 	public String facilities() {
-		return "/nav/facilities/facilitiesKids";
+//		return "/nav/facilities/facilitiesKids";
+		return "/nav/facilities/facilitiesFitness";
+//		return "/nav/facilities/facilitiesTrail";
 	}
 	@GetMapping("/facilities/fitness")
 	public String facilitiesFitness() {

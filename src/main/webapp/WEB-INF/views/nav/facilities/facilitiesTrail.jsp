@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +18,12 @@
 
     <jsp:include page="/WEB-INF/views/common/header.jsp"/>
     <!------------------------- 위쪽은 헤더 ----------------------->
+    <div class="bsh-main">
+            <div id="head-img3" ></div>
+            <div class="bsh-path">
+                <ol>
+                    <li class="bsh-path1">
+                        <a href="/" style="color: #767676;">home</a>
 
     <div class="bsh-main">
             <div id="head-img3"></div>
@@ -38,6 +45,10 @@
                 <h1>히든 트레일</h1>
             </div>
 
+            <div class="bsh-main-img3"></div>
+
+            <div class="bsh-main-content">
+                <p>
             <div class="bsh-main-img">
                 <img src="/resources/image/nav/facilities/trail/trail1.jpg">
             </div>
@@ -95,6 +106,13 @@
                             · 이용 규칙을 준수하지 않아 야기된 사고에 대하여는 당 호텔에서 책임을 지지 않습니다.<br>
                             · 본 산책로는 호텔 사정에 따라 이용이 제한될 수 있습니다.
                         </td>
+                        
+                    </tr>
+                </table>
+            </div>
+
+    <!------------------------- 아래는 풋터 ------------------------->
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
                     </tr>
                 </table>
             </div>

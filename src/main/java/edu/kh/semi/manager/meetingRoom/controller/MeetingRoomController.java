@@ -1,6 +1,5 @@
 package edu.kh.semi.manager.meetingRoom.controller;
 
-
 import java.util.List;
 import java.util.Map;
 
@@ -30,6 +29,15 @@ public class MeetingRoomController {
 //		 return "manager/meetingRoom/meetingRoom"; 
 //	}
 	
+	// 목록으로 조회 
+	@GetMapping("/manager/meetingRoom")
+	public String selectMeetingRoomList(Model model) {
+		
+		List<MeetingRoom> bookList = service.selectMeetingRoomList();
+		
+		model.addAttribute("bookList",bookList);
+		
+		 return "manager/meetingRoom/meetingRoom"; 
 	// 예약 리스트를 조회 
 	@GetMapping("/manager/meetingRoom")
 	public String selectMeetingRoomList(Model model) {
