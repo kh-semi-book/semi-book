@@ -3,7 +3,7 @@
     margin: 0 auto 0 auto;
     width: 100%;
     min-height: 850px;
-    /* background-color: #F7F7F7; */
+    background-color: #FFFFFF;
 }
 
 .board-head-area, .board-foot-area{
@@ -125,7 +125,10 @@ input{
     cursor: pointer;
     text-align: center;
 }
-
+/* 기간 입력 */
+.date-area input {
+    width: 40% !important;
+}
 
 /* =======[목록 돌아가기]======== */
 #board_return{
