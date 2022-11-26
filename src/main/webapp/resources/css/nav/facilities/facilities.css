@@ -2,13 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Sans+KR&display=swap');
 
 
-#head-img1{
-    width: 100%;
-    height: 185px;
-    background-attachment: fixed;
-    background-image: url(/resources/image/nav/facilities/visual_fitness.jpg);
 /* 상단 배경 */
-
 /* 키즈플레이룸 상단 배경 */
 #head-img1 {
     width: 100%;
@@ -43,16 +37,9 @@
 }
 
 .bsh-main{
-    border: 1px solid red;
     height: auto;
 }
 
-.bsh-path{
-    justify-content: flex-start;
-    border: 1px solid green;
-.bsh-main {
-    height: auto;
-}
 
 /* 상단 페이지 리스트 */
 .bsh-path {
@@ -150,14 +137,12 @@
     font-size: 14px;
     background: #fff;
     color: #333;
-    /* vertical-align: top; */
     font-family: 'Noto Sans KR', sans-serif;
 }
 
 .bsh-tb1-info th {
     border-bottom: 1px solid #c9c9c9;
     font-size: 17px;
-    /* font-family: 'nSquare'; */
     color: #333;
     letter-spacing: -1px;
     font-weight: 400;
@@ -179,16 +164,12 @@ td {
     width: 1000px;
     height: 205px;
     margin: 0 auto;
-    /* border: 1px solid red; */
-    /* border-top: 2px solid black; */
-    /* border-bottom: 1px solid #c9c9c9; */
 }
 
 
 
 .bsh-tb2 th {
     padding: 10px 0 0 40px;
-    /* padding-left: 40px; */
     margin-bottom: 20px;
     font-size: 17px;
     letter-spacing: -1px;
@@ -212,9 +193,5 @@ table {
     width: 100%;
     table-layout: fixed;
     border-collapse: collapse;
-    border-spacing: 0;
 }
 
-.bsh-binbox {
-    /* border: 1px solid red; */
-}

@@ -29,12 +29,8 @@
 	<mapper resource="/mappers/member-mapper.xml"/>
 	<mapper resource="/mappers/book-mapper.xml"/>
 	<mapper resource="/mappers/meetingRoom-mapper.xml"/>
-	<mapper resource="/mappers/cmm-mapper.xml"/>
-<mapper resource="/mappers/member-mapper.xml"/>
-
-<mapper resource="/mappers/book-mapper.xml"/>
-<mapper resource="/mappers/meetingRoom-mapper.xml"/>
-<mapper resource="/mappers/board-mapper.xml"/>
+	<!-- <mapper resource="/mappers/cmm-mapper.xml"/> -->
+	<mapper resource="/mappers/board-mapper.xml"/>
 
 </mappers>
 

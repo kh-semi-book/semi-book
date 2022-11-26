@@ -17,21 +17,11 @@ public class MeetingRoom {
 	private String meetingMenName;     // 미팅룸 예약자명
 	private String meetingCancelFL;    // 미팅룸 취소여부
 	private String meetingProcess;     // 미팅룸 진행상태
-	private int meetingroomNo;         // 미팅룸 번호 
+	private int meetingRoomNo;         // 미팅룸 번호 
 	private String meetingMenEmail;    // 미팅룸 예약자 이메일
 	private String meetingMenPhone;    // 미팅룸 예약자 전화번호
 	private String meetingBookCompany; // 미팅룸 예약 업체명
 	private String meetingBookContent; // 미팅룸 예약 업체명
-	private int meetingRoomBookNo;
-	private String meetingRoomDate;
-	private String meetingRoomBookDate;
-	private String meetingRoomName; // MEETING_ROOM_NAME
-	private int meetingHeadCount; // MEETING_HEADCOUNT
-	private String meetingRoomMenName;
-	private String meetingRoomCancelFL;
-	private String meetingRoomProcess;
-	private int roomNo;
-	
-	
+
 	
 }
