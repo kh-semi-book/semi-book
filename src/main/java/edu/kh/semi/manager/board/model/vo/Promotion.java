@@ -16,10 +16,10 @@ public class Promotion {
 	private String promotionSub;
 	private String promotionTitleImg;
 	private String promotionConImg;
-	private String promotionStayStartDate;
-	private String promotionStayEndDate;
-	private String promotionSaleStartDate;
-	private String promotionSaleEndDate;
+	private String pStayStartDate;
+	private String pStayEndDate;
+	private String pSaleStartDate;
+	private String pSaleEndDate;
 	private int promotionPrice;
 	private String promotionDeleteFlag;
 
