@@ -13,7 +13,7 @@
 	<insert id="savePromotionPost" parameterType="Promotion">
 		INSERT INTO "PROMOTION" VALUES(
 		SEQ_PROMOTION_NO.NEXTVAL, #{promotionTitle},#{promotionSub},#{promotionTitleImg},#{promotionConImg},
-		#{promotionStayStartDate},#{promotionStayEndDate},#{promotionSaleStartDate},#{promotionSaleEndDate},
+		#{pStayStartDate},#{pStayEndDate},#{pSaleStartDate},#{pSaleEndDate},
 		#{promotionPrice},DEFAULT)
 	</insert>
 
