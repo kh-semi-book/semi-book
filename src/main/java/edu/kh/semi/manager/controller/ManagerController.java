@@ -9,7 +9,7 @@ public class ManagerController {
 
 	@GetMapping("/manager/main")
 	public String managerMainPage() {
-		return "manager/common/search-book";
+		return "manager/promotion/promotion";
 	}
 	
 //	@GetMapping("/manager/selectBook")
