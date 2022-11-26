@@ -51,7 +51,7 @@ body {
 					<th>투숙 기간</th>
 					<td>
 						<input type="text" id="promotionStayStartDate">~
-						<input type="text" id="promotionStayEndDate"
+						<input type="text" id="promotionStayEndDate">
 						</td>
 					<th>판매 기간</th>
 					<td>

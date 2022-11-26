@@ -113,8 +113,16 @@
     .book-list-room-no{
         width: 125px;
     }
+    .book-list-room-no>input{
+        display: block;
+        width: 100px;
+    }
     .book-list-party-num{
         width: 125px;
+    }
+    .book-list-party-num>input{
+        display: block;
+        width: 100px;
     }
     .book-list-type{
         width:100px;

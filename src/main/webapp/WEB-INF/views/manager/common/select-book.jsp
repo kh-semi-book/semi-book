@@ -91,13 +91,13 @@
                 <input type="text" value="${book.bookRoomNum}" name="bookRoomNum"> 
             </div>
             <div class="book-list-party-num manage-border-right">
-                <input type="text" value="${bookContent.bookHeadCount}" name="bookHeadCount">
+                <input type="text" value="${book.bookHeadCount}" name="bookHeadCount">
             </div>
             <div class="book-list-date manage-border-right">
-                 <input name="checkIn" type="date" value="${bookContent.checkIn}">
+                 <input name="checkIn" type="date" value="${book.checkIn}" name="checkIn">
             </div>
             <div class="book-list-date manage-border-right">
-                <input name="checkOut" type="date" value="${bookContent.checkOut}">
+                <input name="checkOut" type="date" value="${book.checkOut}" name="checkOut">
             </div>
             <div class="book-list-cost money manage-border-right" id="money">${book.bookPrice}</div>
             <div class="book-list-booker-name manage-border-right">${book.bookMemberName}</div>

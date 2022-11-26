@@ -52,8 +52,10 @@ body {
 				<tr class="date-area">
 					<th>투숙 기간</th>
 					<td>
-						<input type="text" name="pStayStartDate">~
-						<input type="text" name="pStayEndDate"
+
+						<input type="text" name="promotionStayStartDate">~
+						<input type="text" name="promotionStayEndDate">
+
 						</td>
 					<th>판매 기간</th>
 					<td>
