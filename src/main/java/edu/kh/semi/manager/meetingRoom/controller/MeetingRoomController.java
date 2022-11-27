@@ -52,12 +52,22 @@ public class MeetingRoomController {
 //		
 //		return "manager/meetingRoom/meetingRoom";
 //	}
-
-	
+//
+//	@GetMapping()
+//	public String meetingRoomReservation() {
+//		return ;
+//	}
+//	
 	@GetMapping("/manager/meetingRoom/meetingRoomDetail")
 	public String meetingRoomDetail() {
 		
 		return "/manager/meetingRoom/meetingRoomDetail";
+	}
+	
+	@GetMapping("/nav/meeting/meetingReservation")
+	public String meetingReservation() {
+		
+		return "/nav/meeting/meetingReservation";
 	}
 	
 	

@@ -95,6 +95,10 @@
     height: 58px;
     font-family: 'Noto Sans KR', sans-serif;
 }
+.bsh-btngroup>a:hover{
+    transition: all 0.3s ease;
+    background: #5e5a5b;
+}
 
 /* 버튼 영역 내부 텍스트 */
 a.bsh-btngray {
@@ -150,14 +154,12 @@ a.bsh-btngray {
     font-size: 14px;
     background: #fff;
     color: #333;
-    /* vertical-align: top; */
     font-family: 'Noto Sans KR', sans-serif;
 }
 
 .bsh-tb1-info th {
     border-bottom: 1px solid #c9c9c9;
     font-size: 17px;
-    /* font-family: 'nSquare'; */
     color: #333;
     letter-spacing: -1px;
     font-weight: 400;

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Sans+KR&display=swap');
 /*=========[ 기본 뼈대 ]========= */
 .reservation-lookUp-page{
     margin: 0 auto 0 auto;
@@ -11,7 +13,7 @@
     background-image: url(/resources/image/nav/spa/spaTop.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: 1800px 400px;
+    background-size: 100% 400px;
     background-position: 50% 65px;
     margin: 0 auto;
 }
@@ -46,17 +48,20 @@
 }
 
 /*----[ 페이지 리스트 조회 ]---- */
-.rsc-page-list>a, .rsc-page-list{
+.rsc-page-list>a{
     text-decoration: none;
     color: #767676;
     font-size: 13px;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 /*----[ 페이지 제목 ]----*/
 .rsc-page-title >h1{
     margin: 15px 0 0 0;
     font-size: 33px;
+    font-family: 'Nanum Myeongjo';
     color: #000000;
+    font-weight: 300;
 }
 
 /* ==============[중간 메인 영역]]=============== */
@@ -74,18 +79,14 @@
     border: none;
     cursor: pointer;
 }
+#rsc-menu-btn:hover{
+    transition: all 0.3s ease;
+    background: #5e5a5b;
+}
 #rsc-menu-btn a{
-    display: inline-block;
-    background-color: #333333;
-    width: 100%;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    border: none;
     color: #FFFFFF;
-    cursor: pointer;
     text-decoration: none;
-    line-height: 10px;
+    font-size: 17px;
 }
 /* 안내 테이블 */
 #rsc-table-guideInfo{

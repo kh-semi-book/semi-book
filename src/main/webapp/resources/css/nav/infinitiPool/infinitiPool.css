@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Sans+KR&display=swap');
+
 /*=========[ 기본 뼈대 ]========= */
 .reservation-lookUp-page{
     margin: 0 auto 0 auto;
@@ -8,6 +11,7 @@
 }
 .rsc-top-image{
     width: 100%;
+    min-width: 1000px;
     height: 185px;
     background-image: url(/resources/image/nav/infinitiPool/infinitiPoolTop.jpg);
     background-attachment: fixed;
@@ -44,10 +48,11 @@
 }
 
 /*----[ 페이지 리스트 조회 ]---- */
-.rsc-page-list>a, .rsc-page-list{
+.rsc-page-list>a{
     text-decoration: none;
     color: #767676;
     font-size: 13px;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 
@@ -55,7 +60,9 @@
 .rsc-page-title >h1{
     margin: 15px 0 0 0;
     font-size: 33px;
+    font-family: 'Nanum Myeongjo';
     color: #000000;
+    font-weight: 300;
 }
 
 /*----[ 상단 이미지 영역 ]----*/
@@ -86,6 +93,15 @@
 	text-decoration: none;
 	color: white;
 }
+#rsc-btn-menu:hover{
+    transition: all 0.3s ease;
+        background: #5e5a5b;
+}
+#rsc-btn-event:hover{
+    transition: all 0.3s ease;
+        background: #5e5a5b;
+}
+
 
 /*----[ 안내사항 ]----*/
 #rsc-notification{

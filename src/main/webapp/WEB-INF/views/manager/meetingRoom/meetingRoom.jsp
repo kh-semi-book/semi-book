@@ -12,22 +12,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>meetingRoom</title>
 
-    <link rel="stylesheet" href="/resources/css/common/main.css">
+    <link rel="stylesheet" href="/resources/css/manager/admin.css">
     <link rel="stylesheet" href="/resources/css/manager/meetingRoom.css">
-    <style>
-        body { margin: auto; }
-    </style>
 </head>
 
 <body>
+
 	<jsp:include page="/WEB-INF/views/manager/common/admin-header.jsp" />
+	
 	<div id="manage-book-area">
 	
-	<div id="top-menu">
-    	<a href="#">MAIN</a>><a href="#">미팅룸 예약 관리</a>
-	</div>
+		<div id="top-menu">
+	    	<a href="#">MAIN</a>><a href="#">미팅룸 예약 관리</a>
+		</div>
 	
 		<div id="manage-book-title">미팅룸 관리 페이지</div>
+		
 		<div id="manage-book-table">
 			<div id="manage-book-table-title">
 				<div class="manage-book-no">번호</div>
@@ -40,6 +40,7 @@
 				<div class="manage-book-status">진행상태</div>
 				<div class="manage-book-status-change">저장</div>
 			</div>
+			
 			<c:forEach var="book" items="${bookList}">
 			<div class="manage-book-table-content">
 				<div class="manage-book-no manage-border-right">${book.meetingBookNo}</div>
@@ -68,6 +69,7 @@
 				</div>
 			</div>
 			</c:forEach>
+			
 			<!-- 페이지 이동 버튼 -->
 			<div id="rsc-page-skip">
 				<a href="#">&lt;&lt;</a>&nbsp;&nbsp; <a href="#">&lt;</a> &nbsp;&nbsp;
@@ -76,6 +78,7 @@
 				</button>
 				&nbsp;&nbsp; <a href="#">&gt;</a> &nbsp;&nbsp; <a href="#">&gt;&gt;</a>
 			</div>
+			
 		</div>
 	</div>
 </body>

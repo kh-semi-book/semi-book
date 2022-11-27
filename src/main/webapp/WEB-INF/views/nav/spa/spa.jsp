@@ -14,11 +14,7 @@
   
   <script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
 
-  <style>
-    body {
-      margin: auto;
-    }
-  </style>
+  <style> body {margin: auto;}</style>
 </head>
 
 <body>
@@ -28,7 +24,7 @@
   <!-- 상단영역 -->
   <div class="reservation-lookUp-page">
     <!-- 상단 이미지 영역 -->
-    <div class="rsc-top-image" width="100%"></div>
+    <div class="rsc-top-image"></div>
     <div class="rsc-head-area">
       <section></section>
 
@@ -104,7 +100,6 @@
 
   <!-- -------------------[footer]-------------------- -->
 	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-  <!-- -------------------[footer]-------------------- -->
 
 </body>
 

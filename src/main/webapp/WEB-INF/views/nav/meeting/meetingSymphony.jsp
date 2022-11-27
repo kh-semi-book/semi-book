@@ -24,7 +24,7 @@
             <div class="bsh-path">
                 <ol>
                     <li class="bsh-path1">
-                        <a href="/">Home</a>
+                        <a href="/">HOME</a>
                     </li>
                     <li class="bsh-path2">
                         <a href="/meeting/symphony">> &nbsp;meeting</a>

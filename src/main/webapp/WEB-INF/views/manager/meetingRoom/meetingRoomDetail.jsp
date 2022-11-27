@@ -15,7 +15,7 @@
     <script src="https://kit.fontawesome.com/f7459b8054.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <jsp:include page="/WEB-INF/views/common/header.jsp"/>
+    <jsp:include page="/WEB-INF/views/manager/common/admin-header.jsp" />
     <!-- **************** 위는 헤더 *************** -->
 
     <%-- 상단 배경 이미지 --%>

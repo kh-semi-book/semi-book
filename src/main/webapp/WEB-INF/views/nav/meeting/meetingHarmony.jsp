@@ -50,7 +50,7 @@
                 </div>
 
                 <div class="bsh-btngroup">
-                    <a href="/meeting/symphony" class="bsh-btngray" target="_blank">예약 문의하기</a>
+                    <a href="" class="bsh-btngray" target="_blank">예약 문의하기</a>
                     <a href="/resources/image/nav/meeting/harmony/harmony.jpg" class="bsh-btngray" target="_blank">도면보기</a>
                 </div>
 
