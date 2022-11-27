@@ -38,18 +38,21 @@
 		</div>
 		<div class="rsc-body-area">
 			<div class="reservation-content-main">
-				<!-- 이미지 영역(자바스크립트 필요) -->
+				<!-- 이미지 영역-->
 				<div id="rsc-image-pool">
-					<img src="/resources/image/nav/infinitiPool/infinityPool1.jpg" width="1000px"> <br>
-					<br>
-					<br>
-					<p id="rsc-image-text">
-						국내 최대 47m를 자랑하는 인피니티 풀은 1년 365일 이용 가능한 사계절 온수풀입니다.<br> 제주도 원시림에 둘러싸인 채 지상에서 15m, 계곡에서 35m 떨어져 있어 마치 숲 속에서<br> 유영하는 듯한 이국적이고 색다른 분위기를 즐길 수 있습니다.<br>
-					</p>
+					<span class="move prev">&#x3C;</span>
+					<span class="move next">&#x3E;</span>
+					<img src="/resources/image/nav/infinitiPool/infinityPool1.jpg" width="1000px" id="mainImage"> 
 				</div>
-				<br>
-				<br>
-				<br>
+
+				<br><br><br>
+
+				<p id="rsc-image-text">
+					국내 최대 47m를 자랑하는 인피니티 풀은 1년 365일 이용 가능한 사계절 온수풀입니다.<br> 제주도 원시림에 둘러싸인 채 지상에서 15m, 계곡에서 35m 떨어져 있어 마치 숲 속에서<br> 유영하는 듯한 이국적이고 색다른 분위기를 즐길 수 있습니다.<br>
+				</p>
+
+				<br><br><br>
+
 				<!-- 버튼 (메뉴 전체보기 / 다이닝이벤트) -->
 				<div class="rsc-btn">
 					<button id="rsc-btn-menu">
@@ -167,5 +170,6 @@
 	</div>
 	<!-- ----------------------[footer]--------------------------- -->
 	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
+	<script src="/resources/js/nav/infinitiPool/infinitiPool.js"></script>
 </body>
 </html>

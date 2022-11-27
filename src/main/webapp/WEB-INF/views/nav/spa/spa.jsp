@@ -50,7 +50,12 @@
       <div class="reservation-content-main">
         <!-- 중간 메인 영역 -->
         <!-- 이미지 영역 -->
-        <img src="/resources/image/nav/spa/spa1.jpg" width="1000px" height="550px"/>
+
+        <div id="rsc-image-pool">
+          <span class="move prev">&#x3C;</span>
+					<span class="move next">&#x3E;</span>
+          <img src="/resources/image/nav/spa/spa1.jpg" id="mainImage"  onload="resize(this)"/>
+        </div>
 
         <br/><br/>
         <!-- SPA 설명 -->
@@ -101,6 +106,7 @@
   <!-- -------------------[footer]-------------------- -->
 	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
+  <script src="/resources/js/nav/spa/spa.js"></script>
 </body>
 
 </html>
