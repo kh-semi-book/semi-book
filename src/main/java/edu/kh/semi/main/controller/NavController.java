@@ -54,6 +54,24 @@ public class NavController {
 		return "/nav/rooms/rooms";
 	}
 	
+	@GetMapping("/rooms/roomDeluxe")
+	public String roomDeluxe() {
+		return "nav/rooms/roomDeluxe";
+	}
+	
+	@GetMapping("/rooms/roomCornerDeluxe")
+	public String roomCornerDeluxe() {
+		return "nav/rooms/roomCornerDeluxe";
+	}
+	@GetMapping("/rooms/roomFamilySuite")
+	public String roomFamilySuite() {
+		return "nav/rooms/roomFamilySuite";
+	}
+	@GetMapping("/rooms/roomYeraeSuite")
+	public String roomYeraeSuite() {
+		return "nav/rooms/roomYeraeSuite";
+	}
+	
 	//------------------------------------------
 
 	

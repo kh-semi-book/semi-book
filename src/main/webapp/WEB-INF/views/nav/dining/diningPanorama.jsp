@@ -55,6 +55,7 @@
             
                 <p class="kjh-gray_box">· 조식 뷔페 요금은 세금 포함된 가격이며 할인카드 및 기타 중복 할인이 불가합니다.</p>
               </div>
+              
             <div class="kjh-tbl">
               <table class="kjh-border">
                 <tr class="kjh-no">

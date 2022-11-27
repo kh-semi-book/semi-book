@@ -44,7 +44,7 @@
                 사랑하는 사람과 도란도란 이야기를 나누며 차 한 잔의 여유를 즐겨보세요.
                     </p>
               
-              </div>
+             
               
                 <div class="kjh-btn">
                   <a href="">전체 메뉴보기</a>
@@ -52,7 +52,8 @@
                 </div>
 
             
-              
+               </div>
+               
                 <div class="kjh-tbl">
                     <table class="kjh-border">
                             <tr class="kjh-no">

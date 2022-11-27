@@ -35,8 +35,8 @@
                     <div class="reservation-content-main">
                         <div class="step"> 
                             <ol>
-                                <li class="path1"><a href="">HOME</a></li>
-                                <li class="path2"><a href="">> ROOMS</a></li>
+                                <li class="path1"><a href="/">HOME</a></li>
+                                <li class="path2"><a href="#">> ROOMS</a></li>
                             </ol>
                         </div>
                             <div class="kjh-title"> 
@@ -48,7 +48,7 @@
                                 <div class="room-list-div">    
                                     <ul class="room-list-ul">
                                         <li>
-                                            <a href="#">
+                                            <a href="rooms/roomDeluxe">
                                                 <span>
                                                     <img src="/resources/image/nav/rooms/deluxe1.jpg">
                                                 </span>
@@ -60,7 +60,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="rooms/roomCornerDeluxe">
                                                 <span class="list-frame">
                                                     <img src="/resources/image/nav/rooms/corner_deluxe1.jpg">
                                                 </span>
@@ -73,7 +73,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="rooms/roomFamilySuite">
                                                 <span>
                                                     <img src="/resources/image/nav/rooms/family_suite1.jpg">
                                                 </span>
@@ -86,7 +86,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="rooms/roomYeraeSuite">
                                                 <span>
                                                     <img src="/resources/image/nav/rooms/yerae_suite1.jpg">
                                                 </span>

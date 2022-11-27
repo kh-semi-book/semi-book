@@ -11,7 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>[rooms-디럭스] Page</title>
 
-      <link rel="stylesheet" href="/resources/css/nav/rooms/room_deluxe.css">
+      <link rel="stylesheet" href="/resources/css/nav/rooms/roomDeluxe.css">
    	<link rel="stylesheet" href="/resources/css/common/main.css">
 
         <script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
@@ -22,62 +22,8 @@
     </head>
 
     <body>
-      <!-- header -->
+     <!-- header -->
 	<jsp:include page="/WEB-INF/views/common/header.jsp" />
-        <div class="reservation-lookUp-page">
-            <div class="rsc-head-area">
-                <div id="header">
-                    <div id="header-top">
-                        <a href="#"><img src="/img/logo.png"></a>
-            
-                         <!-- 우측 상단 로그인 예약조회 회원가입 -->
-                        <!-- 헤더 오른쪽 상단 메뉴 -->
-                        <div id="header-top-menu">
-                            <a href="#">로그인</a>
-                            |
-                            <a href="/">예약조회</a>
-                            |
-                            <a href="/">회원가입</a>
-                        </div>
-            
-            
-                        <!-- media(내부 유튜브 링크)/instagram -->
-            
-                        <div id="media-menu">
-                            <a href="#">
-                                MEDIA
-                                <i class="fa-brands fa-youtube"></i>
-                            </a>
-            
-                            <a href="#">
-                                INSTAGRAM
-                                <i class="fa-brands fa-instagram"></i>
-                            </a>
-                        </div>
-                    </div>
-            
-                </div>
-            
-                <div id="nav-area">
-                    <ul>
-                        <li><a href="#">HIDDEN CLIFF</a></li>
-                        <li><a href="#">SPECIAL OFFER</a></li>
-                        <li><a href="#">ROOMS</a></li>
-                        <li><a href="#">DINING</a></li>
-                        <li><a href="#">THE INFINITY POOL</a></li>
-                        <li><a href="#">MEETING</a></li>
-                        <li><a href="#">FACILITIES</a></li>
-                        <li><a href="#">SPA</a></li>
-                        <li>
-                            <a href="#" id="book-btn"><i class="fa-regular fa-calendar-days"></i>
-                                예약하기</a> 
-                                <!— 새창으로 —>
-                        </li>
-                        
-                    </ul>
-                    
-                
-            </div>
 
             <div class="kjh-head-area">
                  
@@ -86,9 +32,9 @@
                     <div class="reservation-content-main">
                         <div class="kjh-step"> 
                             <ol>
-                                <li class="kjh-path1"><a href="">HOME</a></li>
-                                <li class="kjh-path2"><a href="">> ROOMS</a></li>
-                                <li class="kjh-path3"><a href="">> 디럭스</a></li>
+                                <li class="kjh-path1"><a href="/">HOME</a></li>
+                                <li class="kjh-path2"><a href="/nav/rooms">> ROOMS</a></li>
+                                <li class="kjh-path3"><a href="#">> 디럭스</a></li>
 
                             </ol>
                         </div>
@@ -98,7 +44,7 @@
                             </div>
 
                             <div>
-                                <img src="/img/deluxe1.jpg" alt="">
+                                <img src="/resources/image/nav/rooms/deluxe/deluxe1.jpg" alt="">
                             </div>
                             <div class="kjh-sub-section">
                                 <p class="kjh-content">
