@@ -26,7 +26,7 @@ public class MainController {
 	
 	@GetMapping("/member/signUp")
 	public String signUpPage() {
-		return "member/signUp2";
+		return "member/signUp1";
 	}
 	
 	@GetMapping("/media")

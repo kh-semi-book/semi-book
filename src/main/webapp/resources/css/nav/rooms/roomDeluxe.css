@@ -41,15 +41,12 @@
 .kjh-head-area{
     background-image: url("/resources/image/nav/rooms/rooms_beyond.jpg");
     width: 100%;
-    min-width: 1320px ;
-    height: 180px;
-    margin: 0 auto;
-    background-repeat: no-repeat;
-    /* background-position: 50% 65px; */
-    /* background-size: contain; */
-    background-position: 0% 5px;
+    height: 185px;
     background-attachment: fixed;
-    background-size: 2200px 350px;
+    background-repeat: no-repeat;
+    background-position: 50% 65px;
+    background-size: 100% 400px;
+    margin: 0 auto;
     
 }
 
@@ -171,190 +168,27 @@ text-decoration: none;
 color: bla;
 }
 
-.kjh-member-delete{
-    
+/* --------------------------------------------- */
+
+#slide-photo{
+    width:1000px;
+    height:580px;
+    position: relative;
 }
 
-/* ************ footer ************* */
+.move{
+    position: absolute;
+    font-size: 60px;
+    cursor: pointer;
 
-footer{
-
-    display:flex;
-
-    flex-direction: column;
-    justify-content: center;
-    /* align-items: center; */
-
-}
-
-#footer-first{
-    background-color: rgb(61, 61, 61);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-
-#footer-first>p{
-    
-    color:rgb(144, 143, 143);
-
-}
-
-#inner-footer-contact{
-   
-    width: 1400px;
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-   
-}
-
-
-
-#inner-footer-contact>table{
+    top:235px;
     color:white;
-    margin:20px 0;
-    width:800px
+    font-family: "나눔명조", sans-serif;
 }
 
-#inner-footer-contact>table:first-child{
-    padding-right: 50px;
-}
-
-.float-right{
-    float:right;
-    padding-right: 40px;
+.next{
+    right:0;
 }
 
 
-.book-btn2{
-
-    text-decoration: none;
-    color:white;
-
-    border:1px solid black;
-    height: 70px;
-    width: 150px;
-
-    background-color: rgb(92, 91, 91);
-
-    position:relative;
-
-    /* left:1200px;
-    top: 120px; */
-
-
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
-    top:30px;
-}
-
-
-
-/* ******************* 가운데 메뉴 ******************** */
-
-
-#footer-middle-back{
-    background-color: rgb(131, 128, 128);
-    height:200px;
-
-    display: flex;
-    /* justify-content: space-around; */
-}
-
-#footer-middle{
-
-    width: 1400px;
-    display:flex;
-
-    justify-content: center;
-    /* justify-content: space-between; */
-    position:relative;
-    padding-left: 1px;
-}
-
-
-
-
-#footer-middle ul{
-    width: 100px;
-    margin-top: 30px;
-    padding:0 10px;
-
-    flex-basis: 120px;
-}
-
-#footer-middle>ul>p{
-    border-bottom: 1px solid white;
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-}
-
-#footer-middle li{
-    line-height:25px;
-}
-
-#footer-middle *{
-    color:white;
-    text-decoration: none;
-    list-style: none;
-    font-size: 12px;
-}
-
-
-/************ footer 하얀부분 ***************/
-
-#footer-last{
-    display:flex;
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
-}
-
-#footer-last>img{
-    width: 180px;
-    margin:20px 50px;
-}
-
-#footer-last *{
-    color:gray;
-    letter-spacing: 1px;
-}
-
-#footer-last a{
-    text-decoration: none;
-    margin:px 20px;
-}
-
-#footer-last>p{
-    font-size: 15px;
-    line-height:20px;
-}
-
-#footer-last>span{
-    margin-top:10px;
-    /* 아래에 간격 추가해야됨 */
-    margin-bottom: 80px;
-}
-
-#small-text{
-    letter-spacing:0px;
-    font-size: 11px;
-}
-#small-font{
-    letter-spacing:0px;
-    font-size: 5px;
-}
-
-#inner-footer-contact p{
-    font-size: 18px;
-    margin-bottom: 10px;
-    color:rgb(136, 134, 134);
-}
+/* ----------------- */

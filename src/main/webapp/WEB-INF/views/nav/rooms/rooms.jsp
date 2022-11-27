@@ -50,7 +50,7 @@
                                         <li>
                                             <a href="rooms/roomDeluxe">
                                                 <span>
-                                                    <img src="/resources/image/nav/rooms/deluxe1.jpg">
+                                                    <img src="/resources/image/nav/rooms/deluxe1.jpg" id="slideImage">
                                                 </span>
                                                 <div class="room_info">
                                                         <strong>디럭스</strong>

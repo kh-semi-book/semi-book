@@ -32,29 +32,23 @@
                <h1 class="kjh-h1">회원 가입</h1>
                   <div class="kjh-main-border">
                         <div class="kjh-main-container">
-                            <div class="kjh-stepbox-border">
-                                <div class="kjh-stepbox">
-                                      <ul>
-                                        <li>
-                                          <span>STEP 01</span>
-                                          <span>약관동의</span>
-                                        </li>
-                                        <li class="kjh-step2">
-                                          <span>STEP 02</span>
-                                          <span>정보입력</span>
-                                        </li>
-                                        <li>
-                                          <span>STEP 03</span>
-                                          <span>가입완료</span>
-                                        </li>
-                                      </ul>
+                        
+                        <!-- 회원가입 프로세스 -->
+                      <section id="kjh-signUp-process">
+                        <div> STEP 01 <br>
+                              약관동의   
+                        </div>
+                        <div> STEP 02 <br>
+                              정보입력
+                        </div>
+                        <div> STEP 03 <br>
+                              가입 완료
+                        </div>
+                      </section>
+                          <br>
+                          <%-- <div class="kjh-step-blank">
 
-                                </div> <!-- kjh-stepbox -->
-                            </div>
-                          <br><br><br>
-                          <div class="kjh-step-blank">
-
-                          </div>
+                          </div> --%>
 
                         <h2 class="kjh-h2">정보입력</h2>
                         <h4 class="kjh-h4">원활한 홈페이지 이용을 위하여 회원 정보를 정확하게 입력해주시기 바랍니다.</h4>

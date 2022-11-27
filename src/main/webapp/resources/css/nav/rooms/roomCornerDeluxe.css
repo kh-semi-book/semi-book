@@ -41,15 +41,13 @@
 .kjh-head-area{
     background-image: url("/resources/image/nav/rooms/rooms_beyond.jpg");
     width: 100%;
-    min-width: 1320px ;
-    height: 180px;
-    margin: 0 auto;
-    background-repeat: no-repeat;
-    /* background-position: 50% 65px; */
-    /* background-size: contain; */
-    background-position: 0% 5px;
+    height: 185px;
     background-attachment: fixed;
-    background-size: 2200px 350px;
+    background-repeat: no-repeat;
+    background-position: 50% 65px;
+    background-size: 100% 400px;
+    margin: 0 auto;
+    
     
 }
 

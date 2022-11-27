@@ -78,48 +78,34 @@ li{
 list-style: none;    
 }
 
+/* 회원가입 프로세스 */
+#kjh-signUp-process{
+    display: flex;
+    flex-direction: row;
+    
 
-
-.kjh-stepbox{
-    position: relative;
-    margin-top: 20px;
-    color: #aaa;
 }
-
-.kjh-stepbox ul li{
-    position: relative;
-    font-size: 15px;
-    float: left;
-    width: 33.3%;
+#kjh-signUp-process div{
+    text-align: left;
+    width: 33%;
+    height: 60px;
     padding: 0 0 20px 20px;
-    margin-bottom: 30px;
+    color: #aaa;
+    border-bottom: 1px solid black;
 
-    
+}
+#kjh-signUp-process div:first-child{
+    border-bottom: 3px solid #000000; 
+    color : black;
 }
 
-.kjh-stepbox ul li:nth-child(2){
-    
 
-    border-bottom: 4px solid black;
-}
-
-
-.kjh-stepbox ul li span{
-    display: block;
-    }
-
-.kjh-step2 span {
-    color : #333;
-    font-weight: 800;
-   
-}
-
-.kjh-step-blank{
+/* .kjh-step-blank{
     margin: 0;
     border-top: 1px solid black;
     width: auto;
-    height: 11px;
-}
+    height: 15px;
+} */
 
 
 .kjh-main-border{
@@ -173,16 +159,28 @@ list-style: none;
 }
 
 .kjh-select{
-/*     width: 70px;
- */    height: 35px;
+  width: 80px;
+    height: 40px;
     border: 1px solid #cdcdcd;
+    padding-left: 10px;
+
 
 }
-.kjh-select.email{
+.kjh-address.email{
     width: 220px;
-    
+    padding: 0 20px;
 
 } 
+.kjh-select option{
+    color: #666;
+    padding: 0;
+    white-space: nowrap;
+    font-weight: normal;
+    display: block;
+    font-size: 15px;
+    text-align: start;
+}
+
 
 .kjh-address{
     margin-top: 5px;
@@ -247,8 +245,8 @@ list-style: none;
 /*     width: 80px;
  */    height: 35px;
     font-size: 15px;
-    padding: 0 20px;
     border: 1px solid #cdcdcd;
+    
 }
 
 /* .kjh-form1-table select:first-of-type{
