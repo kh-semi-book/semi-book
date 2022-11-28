@@ -55,27 +55,25 @@
 /* 페이지별 메인 이미지 */
 
 /* 심포니 이미지 */
-.bsh-main-img1 {
+.bsh-main-img {
     width: 1000px;
     height: 550px;
     margin: 0 auto 60px;
-    background-image: url(/resources/image/nav/meeting/symphony/symphony1.jpg);
+    position: relative;
 }
 
-/* 하모니 이미지 */
-.bsh-main-img2 {
-    width: 1000px;
-    height: 550px;
-    margin: 0 auto 60px;
-    background-image: url(/resources/image/nav/meeting/harmony/harmony1.jpg);
+.move{
+    position: absolute;
+    font-size: 60px;
+    cursor: pointer;
+
+    top:235px;
+    color:white;
+    font-family: "나눔명조", sans-serif;
 }
 
-/* 오퍼스 이미지 */
-.bsh-main-img3 {
-    width: 1000px;
-    height: 550px;
-    margin: 0 auto 60px;
-    background-image: url(/resources/image/nav/meeting/opus/opus1.jpg);
+.next{
+    right:0;
 }
 
 /* 중간 텍스트 */

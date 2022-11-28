@@ -39,7 +39,11 @@
                 <h1>심포니</h1>
             </div>
 
-            <div class="bsh-main-img1"></div>
+            <div class="bsh-main-img">
+                <span class="move prev">&#x3C;</span>
+                <span class="move next">&#x3E;</span>
+                <img src="/resources/image/nav/meeting/symphony/symphony1.jpg" id="mainImage">
+            </div>
 
             <div class="bsh-main-content">
                 <p style="letter-spacing: -1px; font-size: 16px;" >
@@ -141,5 +145,7 @@
     </div>
     <!------------------------- 아래는 풋터 ------------------------->
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+
+    <script src="/resources/js/nav/meeting/meeting1.js"></script>
 </body>
 </html>

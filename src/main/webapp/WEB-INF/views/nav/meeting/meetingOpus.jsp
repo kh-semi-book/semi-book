@@ -41,7 +41,11 @@
                 <h1>오퍼스</h1>
             </div>
 
-            <div class="bsh-main-img3"></div>
+            <div class="bsh-main-img">
+                <span class="move prev">&#x3C;</span>
+                <span class="move next">&#x3E;</span>
+                <img src="/resources/image/nav/meeting/opus/opus1.jpg" id="mainImage">
+            </div>
 
             <div class="bsh-main-content">    
                 <p>
@@ -123,5 +127,6 @@
             </div>
     </div>
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+    <script src="/resources/js/nav/meeting/meeting3.js"></script>
 </body>
 </html>
