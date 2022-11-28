@@ -81,6 +81,9 @@
     color: #777;
     font-weight: bold;
 }
+#step4{
+    border-bottom: 2px solid black;
+}
 
 
 /* 메인 영역 분할 */
@@ -95,6 +98,7 @@
 
 #reservation4_input_area{
     width: 700px;
+    position: relative;
 }
 #reservation4_side_area{
     width: 260px;
@@ -105,6 +109,7 @@
     font-weight: bold;
     font-size: 18px;
     margin-bottom: 15px;
+    width: 700px;
 }
 .reservation-table, .agree-content{
     border-collapse: collapse;
@@ -181,6 +186,7 @@ textarea{
 }
 
 .agree-content{
+    box-sizing: border-box;
     width: 700px;
     height: 200px;
     padding: 30px 0 18px 35px;
@@ -219,7 +225,7 @@ textarea{
     width: 260px;
 }
 .side-margin{
-    height: 38px;
+    height: 55px;
 }
 .side-table-head {
     border-top: 2px solid black;
@@ -354,4 +360,10 @@ textarea{
     font-size: 14px;
     text-decoration: none;
     font-weight: normal;
+}
+
+.side-sticky{
+    position: sticky ; /* 고정하는 부분 */
+    top: 86px; /* 고정할 위치 */
+    z-index: 99; /* 고정하고나서 스크롤하면 다른이미지와 겹치는데 이때 다른이미지 위에 오게하는 부분 */
 }

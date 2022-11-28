@@ -8,6 +8,7 @@
     
     
     <link rel="stylesheet" href="/resources/css/reservation/reservation-style.css">
+    <link rel="stylesheet" href="/resources/css/common/main.css">
 </head>
 <body>
 
@@ -209,7 +210,7 @@
 
                         <div id="option-btn-area">
                             <a href="#">이전</a>
-                            <a href="#">일정 재선택하기</a>
+                            <a href="/reservation/reservation4">일정 재선택하기</a>
                           
                         </div>
                     </div>

@@ -17,7 +17,7 @@
 			<section id="dining_title">
 				<div>
 					<a href="/">HOME</a> > 
-					<a href="/nav/specialOffer/roomPromotion">SPECIAL OFFER</a> > 
+					<a href="/nav/specialOffer/dining">SPECIAL OFFER</a> > 
 					<a href="/nav/specialOffer/dining">다이닝</a> 
 				</div>
 				<div>다이닝</div>
