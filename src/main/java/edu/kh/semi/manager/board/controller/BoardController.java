@@ -35,46 +35,45 @@ public class BoardController {
 
 	@GetMapping("/cmm")
 	public String selectCmmList(Model model) {
-		
+
 		List<CMM> cmmList = service.selectCmmList();
-		
+
 		model.addAttribute("cmmList", cmmList);
-		
+
 		return "manager/cmm/cmmBoard";
 	}
 
 	@GetMapping("/cmmDetail/{cmmNo}")
-	public String cmmDetail(@PathVariable("cmmNo") int cmmNo, Model model, 
-							RedirectAttributes ra, @RequestHeader("referer") String referer) {
-		
+	public String cmmDetail(@PathVariable("cmmNo") int cmmNo, Model model, RedirectAttributes ra,
+			@RequestHeader("referer") String referer) {
+
 		CMM cmm = service.cmmDetail(cmmNo);
-		
-		if(cmm!=null) {
+
+		if (cmm != null) {
 			model.addAttribute("cmm", cmm);
 			return "/manager/cmm/cmm";
 		} else {
-			String message="해당 게시글이 존재하지 않습니다.";
+			String message = "해당 게시글이 존재하지 않습니다.";
 			ra.addFlashAttribute("message", message);
-			return "redirect:/"+referer;
+			return "redirect:/" + referer;
 		}
-		
+
 	}
-	
+
 	@PostMapping("/cmmUpdate")
 	public String cmmUpdate() {
 		return "/manager/cmm/cmmPost";
 	}
-	
+
 	@PostMapping("/cmmDelete")
 	public String cmmDelete() {
 		return "/manager/cmm/cmmPost";
 	}
-	
+
 	@GetMapping("/cmmPost")
 	public String cmmPost() {
 		return "/manager/cmm/cmmPost";
 	}
-
 
 	// 공지사항 등록
 	@PostMapping("/cmmPost")
@@ -116,12 +115,14 @@ public class BoardController {
 
 	// =================[프로모션]======================
 
+	// 프로모션 조회
 	@GetMapping("/promotion")
-	public String promotionPage(Model model) {
-		
-		
-		
-		
+	public String selectPromotionList(Model model) {
+
+		List<Promotion> promotionList = service.selectPromotionList();
+
+		model.addAttribute("promotionList", promotionList);
+
 		return "manager/promotion/promotionBoard";
 	}
 
@@ -130,9 +131,22 @@ public class BoardController {
 		return "/manager/promotion/promotionPost";
 	}
 
-	@GetMapping("/promotionDetail")
-	public String promotionDetail() {
-		return "/manager/promotion/promotion";
+	// 프로모션 세부 조회
+	@GetMapping("/promotionDetail/{promotionNo}")
+	public String promotionDetail(@PathVariable("promotionNo") int promotionNo, Model model, RedirectAttributes ra,
+			@RequestHeader("referer") String referer) {
+
+		Promotion promotion = service.promotionDetail(promotionNo);
+
+		if (promotion != null) {
+			model.addAttribute("promotion", promotion);
+			return "/manager/promotion/promotion";
+		} else {
+			String message = "해당 게시글이 존재하지 않습니다.";
+			ra.addFlashAttribute("message", message);
+			return "redirect:/" + referer;
+		}
+
 	}
 
 	// 프로모션 등록
@@ -233,7 +247,6 @@ public class BoardController {
 	}
 
 	// =================[이벤트]======================
-
 
 	@GetMapping("/event")
 	public String eventPage() {
