@@ -49,6 +49,7 @@
                            	<img src="/resources/image/nav/rooms/deluxe/deluxe1.jpg" id="slideImage">
                             
                         </div>
+
                             <div class="kjh-sub-section">
                                 <p class="kjh-content">
                         포근한 우드 톤의 인테리어로 꾸며진 디럭스 룸에서는 일상에 없던 휴식을 선사합니다.                 
@@ -118,7 +119,7 @@
                     </div> <!-- content-main -->
                 </div><!-- rsc-body-area --> 
          <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-	     <script src="/resources/js/room.js"></script>
+	     <script src="/resources/js/nav/room/roomDeluxe.js"></script>
 	
           
     </body>
