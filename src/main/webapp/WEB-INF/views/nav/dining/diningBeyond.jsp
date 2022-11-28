@@ -36,8 +36,11 @@
                     </ol>
                 </div>
               <h1 class="kjh-h1">비욘드 루프탑 바</h1>
-              <div>
-                <img src="/resources/image/nav/dining/beyond3.jpg" alt="">
+               <div id = "slide-photo">
+                    <span class="move prev">&#x3C;</span>
+            		<span class="move next">&#x3E;</span>
+
+                <img src="/resources/image/nav/dining/beyond3.jpg"  id="slideImage">
               </div>
               <div class="kjh-sub-section">
                     <p class="kjh-content">
@@ -81,6 +84,8 @@
 
         </div>
   <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+    	     <script src="/resources/js/nav/dining/diningBeyond.js"></script>
+
          </body>
 
 </html>
