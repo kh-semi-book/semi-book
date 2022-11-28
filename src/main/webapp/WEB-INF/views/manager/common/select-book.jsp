@@ -101,7 +101,7 @@
             </div>
             <div class="book-list-cost money manage-border-right" id="money">${book.bookPrice}</div>
             <div class="book-list-booker-name manage-border-right">${book.bookMemberName}</div>
-            <div class="manage-book-status">${book.bookProcess}
+            <div class="manage-book-status">
                 <c:choose>
                     <c:when test="${book.bookProcess == 0}">
                         <c:set var="sel0" value="selected"/>

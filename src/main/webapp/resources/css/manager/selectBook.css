@@ -105,24 +105,26 @@
         width: 100px;
     }
     .book-list-date{
-        width: 150px;
+        width: 170px;
     }
     .book-list-reservation-no{
         width: 150px;
     }
     .book-list-room-no{
-        width: 125px;
+        width: 115px;
     }
     .book-list-room-no>input{
         display: block;
         width: 100px;
+        text-align: center;
     }
     .book-list-party-num{
-        width: 125px;
+        width: 115px;
     }
     .book-list-party-num>input{
         display: block;
         width: 100px;
+        text-align: center;
     }
     .book-list-type{
         width:100px;
