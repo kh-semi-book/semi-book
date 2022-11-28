@@ -52,8 +52,8 @@
               
 
                 <div class="kjh-btn">
-                  <a href="">전체 메뉴보기</a>
-                  <a href="">다이닝 이벤트</a>
+                  <a href="/resources/image/nav/dining/panorama/panorama_menu_221031.pdf">전체 메뉴보기</a>
+                  <a href="/nav/specialOffer/dining">다이닝 이벤트</a>
                 </div>
 
             

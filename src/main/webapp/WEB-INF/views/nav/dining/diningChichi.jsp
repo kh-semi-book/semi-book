@@ -29,8 +29,8 @@
             <div class="reservation-content-main">
                 <div class="kjh-step"> 
                     <ol>
-                        <li class="kjh-path1"><a href="">HOME</a></li>
-                        <li class="kjh-path2"><a href="">> DINING</a></li>
+                        <li class="kjh-path1"><a href="/">HOME</a></li>
+                        <li class="kjh-path2"><a href="/nav/dining">> DINING</a></li>
                         <li class="kjh-path3"><a href="">> 치치</a></li>
                     </ol>
                 </div>
@@ -38,7 +38,7 @@
                <div id = "slide-photo">
                 <span class="move prev">&#x3C;</span>
             		<span class="move next">&#x3E;</span>
-                <img src="/resources/image/nav/dining/chichi1.jpg" id="slideImage">
+                <img src="/resources/image/nav/dining/chichi/chichi1.jpg" id="slideImage">
               </div>
               <div class="kjh-sub-section">
                     <p class="kjh-content">
@@ -49,8 +49,8 @@
              
               
                 <div class="kjh-btn">
-                  <a href="">전체 메뉴보기</a>
-                  <a href="">다이닝 이벤트</a>
+                  <a href="/resources/image/nav/dining/chichi/chichi_menu_221005.pdf">전체 메뉴보기</a>
+                  <a href="/nav/specialOffer/dining">다이닝 이벤트</a>
                 </div>
 
             
