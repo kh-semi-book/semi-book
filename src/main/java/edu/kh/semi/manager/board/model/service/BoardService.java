@@ -34,6 +34,23 @@ public interface BoardService {
 	 */
 	int saveCmmPost(CMM cmm, Map<String, Object> map, MultipartFile cmmTitleImage, MultipartFile cmmConImage) throws Exception;
 
+	
+	//==========================================================================
+	
+	/** 프로모션 조회
+	 * @return
+	 */
+	List<Promotion> selectPromotionList();
+	
+	 
+	/** 프로모션 세부 조회
+	 * @param promotionNo
+	 * @return
+	 */
+	Promotion promotionDetail(int promotionNo);
+	
+	
+	
 	/** 프로모션 등록
 	 * @param promotion
 	 * @param map
@@ -68,6 +85,12 @@ public interface BoardService {
 	 */
 	int saveEventPost(Event event, Map<String, Object> map, MultipartFile eventTitleImage,
 			MultipartFile eventConImage) throws Exception;
+
+	
+
+	
+
+	
 
 	
 

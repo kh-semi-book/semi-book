@@ -80,13 +80,27 @@
 		SEQ_CMM_NO.NEXTVAL,
 		#{cmmTitle},#{cmmSub},#{cmmTitleImg},#{cmmConImg},DEFAULT,DEFAULT)
 	</insert>
+	
+	
+	<!-- 프로모션 조회 -->
+	<select id="selectPromotionList" resultMap="promotion_rm">
+		SELECT PROMOTION_NO, PROMOTION_TITLE, TO_CHAR(PROMOTION_CREATE_DATE, 'YYYY-MM-DD') PROMOTION_CREATE_DATE
+		FROM "PROMOTION"
+	</select>
+	
+	<!-- 프로모션 세부 조회 -->
+	<select id="promotionDetail" resultMap="promotion_rm">
+		SELECT PROMOTION_TITLE, PROMOTION_TITLE_IMG, PROMOTION_SUB, PROMOTION_CON_IMG, PROMOTION_PRICE, P_STAY_START_DATE
+					, P_STAY_END_DATE, P_SALE_START_DATE, P_SALE_END_DATE
+		FROM "PROMOTION"
+		WHERE PROMOTION=#{promotionNo}
+	</select>
 
 	<!-- 프로모션 등록 -->
 	<insert id="savePromotionPost" parameterType="Promotion">
 		INSERT INTO "PROMOTION" VALUES(
-		SEQ_PROMOTION_NO.NEXTVAL, #{promotionTitle},#{promotionSub},#{promotionTitleImg},#{promotionConImg},
-		#{pStayStartDate},#{pStayEndDate},#{pSaleStartDate},#{pSaleEndDate},
-		#{promotionPrice},DEFAULT,DEFAULT)
+		SEQ_PROMOTION_NO.NEXTVAL, #{promotionTitle},#{promotionSub},#{promotionTitleImg},#{promotionConImg},#{promotionPrice}
+		,DEFAULT,#{pStayStartDate},#{pStayEndDate},#{pSaleStartDate},#{pSaleEndDate},DEFAULT)
 	</insert>
 
 

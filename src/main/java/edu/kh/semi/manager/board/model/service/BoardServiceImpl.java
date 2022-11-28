@@ -58,6 +58,20 @@ public class BoardServiceImpl implements BoardService {
 
 		return result;
 	}
+	
+	
+	// 프로모션 조회
+	@Override
+	public List<Promotion> selectPromotionList() {
+		return dao.selectPromotionList();
+	}
+	
+	// 프로모션 세부 조회
+	@Override
+	public Promotion promotionDetail(int promotionNo) {
+		return dao.promotionDetail(promotionNo);
+	}
+	
 
 	// 프로모션 등록
 	@Override

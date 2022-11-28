@@ -42,6 +42,25 @@ public class BoardDAO {
 	public int saveCmmPost(CMM cmm) {
 		return sqlSession.insert("boardMapper.saveCmmPost", cmm);
 	}
+	
+	
+	/** 프로모션 조회
+	 * @return
+	 */
+	public List<Promotion> selectPromotionList() {
+		return sqlSession.selectList("boardMapper.selectPromotionList");
+	}
+	
+	
+	/** 프로모션 세부 조회
+	 * @param promotionNo
+	 * @return
+	 */
+	public Promotion promotionDetail(int promotionNo) {
+		return sqlSession.selectOne("boardMapper.promotionDetail", promotionNo);
+	}
+
+	
 
 	/** 프로모션 등록
 	 * @param promotion
@@ -66,6 +85,11 @@ public class BoardDAO {
 	public int saveEventPost(Event event) {
 		return sqlSession.insert("boardMapper.saveEventPost", event);
 	}
+
+
+	
+
+	
 
 	
 
