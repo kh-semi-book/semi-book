@@ -13,7 +13,7 @@
         <title>[rooms-코너디럭스] Page</title>
 
 
-         <link rel="stylesheet" href="/resources/css/nav/rooms/room_cornerDeluxe.css">
+         <link rel="stylesheet" href="/resources/css/nav/rooms/roomCornerDeluxe.css">
    	<link rel="stylesheet" href="/resources/css/common/main.css">
 
         <style>
@@ -32,8 +32,8 @@
                     <div class="reservation-content-main">
                         <div class="kjh-step"> 
                             <ol>
-                                <li class="kjh-path1"><a href="">HOME</a></li>
-                                <li class="kjh-path2"><a href="">> ROOMS</a></li>
+                                <li class="kjh-path1"><a href="/">HOME</a></li>
+                                <li class="kjh-path2"><a href="/nav/rooms">> ROOMS</a></li>
                                 <li class="kjh-path3"><a href="">> 코너 디럭스</a></li>
 
                             </ol>
@@ -44,7 +44,7 @@
                             </div>
 
                             <div>
-                                <img src="/img/corner_deluxe1.jpg" alt="">
+                                <img src="/resources/image/nav/rooms/cornerDeluxe/cornerDeluxe1.jpg" alt="">
                             </div>
                             <div class="kjh-sub-section">
                                 <p class="kjh-content">

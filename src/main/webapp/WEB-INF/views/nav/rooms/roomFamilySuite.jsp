@@ -1,3 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<%-- 문자열 관련 메서드를 제공하는 JSTL(EL형식) --%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -5,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>[rooms-패밀리스위트] Page</title>
 
-       <link rel="stylesheet" href="/resources/css/nav/rooms/room_Familysuite.css">
+       <link rel="stylesheet" href="/resources/css/nav/rooms/roomFamilySuite.css">
    	<link rel="stylesheet" href="/resources/css/common/main.css">
 
         <script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
@@ -25,8 +30,8 @@
                     <div class="reservation-content-main">
                         <div class="kjh-step"> 
                             <ol>
-                                <li class="kjh-path1"><a href="">HOME</a></li>
-                                <li class="kjh-path2"><a href="">> ROOMS</a></li>
+                                <li class="kjh-path1"><a href="/">HOME</a></li>
+                                <li class="kjh-path2"><a href="/nav/rooms">> ROOMS</a></li>
                                 <li class="kjh-path3"><a href="">> 패밀리 스위트</a></li>
 
                             </ol>
@@ -37,7 +42,7 @@
                             </div>
 
                             <div>
-                                <img src="/img/corner_deluxe1.jpg" alt="">
+                                <img src="/resources/image/nav/rooms/familySuite/familySuite1.jpg" alt="">
                             </div>
                             <div class="kjh-sub-section">
                                 <p class="kjh-content">
