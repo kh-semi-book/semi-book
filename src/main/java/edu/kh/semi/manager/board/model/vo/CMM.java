@@ -17,5 +17,6 @@ public class CMM {
 	private String cmmTitleImg;
 	private String cmmConImg;
 	private String cmmDeleteFlag;
+	private String cmmCreateDate;
 
 }
