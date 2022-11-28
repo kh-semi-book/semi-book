@@ -41,7 +41,7 @@
                         </div>
                             <div class="kjh-title"> 
                                 <span><h1>객실</h1></span>
-                                <a href="">룸 서비스 메뉴 보기</a>
+                                <a href="/resources/image/nav/rooms/roomService_220920.pdf">룸 서비스 메뉴 보기</a>
                             </div>
 
                             <div class="room_section">
