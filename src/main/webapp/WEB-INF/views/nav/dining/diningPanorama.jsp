@@ -30,14 +30,18 @@
             <div class="reservation-content-main">
                 <div class="kjh-step"> 
                     <ol>
-                        <li class="kjh-path1"><a href="">HOME</a></li>
-                        <li class="kjh-path2"><a href="">> DINING</a></li>
+                        <li class="kjh-path1"><a href="/">HOME</a></li>
+                        <li class="kjh-path2"><a href="/nav/dining">> DINING</a></li>
                         <li class="kjh-path3"><a href="">> 파노라마</a></li>
                     </ol>
                 </div>
               <h1 class="kjh-h1">파노라마 올데이 다이닝</h1>
-              <div>
-                <img src="/resources/image/nav/dining/panorama1.jpg" alt="">
+              <div id = "slide-photo">
+
+                <span class="move prev">&#x3C;</span>
+            		<span class="move next">&#x3E;</span>
+
+                <img src="/resources/image/nav/dining/panorama/panorama1.jpg" id="slideImage">
               </div>
               <div class="kjh-sub-section">
                 <p class="kjh-content">
@@ -48,8 +52,8 @@
               
 
                 <div class="kjh-btn">
-                  <a href="">전체 메뉴보기</a>
-                  <a href="">다이닝 이벤트</a>
+                  <a href="/resources/image/nav/dining/panorama/panorama_menu_221031.pdf">전체 메뉴보기</a>
+                  <a href="/nav/specialOffer/dining">다이닝 이벤트</a>
                 </div>
 
             
@@ -89,6 +93,8 @@
 
           </div>
   <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+  	     <script src="/resources/js/nav/dining/diningPanorama.js"></script>
+
            </body>
 
 </html>

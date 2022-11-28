@@ -42,8 +42,10 @@
                                 <span><h1 class="kjh-h1">예래 스위트</h1>
                             </div>
 
-                            <div>
-                                <img src="/resources/image/nav/rooms/YeraeSuite/YeraeSuite1.jpg" alt="">
+                            <div id = "slide-photo">
+                            <span class="move prev">&#x3C;</span>
+            			    <span class="move next">&#x3E;</span>
+                                <img src="/resources/image/nav/rooms/YeraeSuite/YeraeSuite1.jpg" id="slideImage">
                             </div>
                             <div class="kjh-sub-section">
                                 <p class="kjh-content">
@@ -115,6 +117,7 @@
                 </div><!-- rsc-body-area --> 
                 
                 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+	     <script src="/resources/js/nav/room/roomYeraeSuite.js"></script>
 
 
                  </body>
