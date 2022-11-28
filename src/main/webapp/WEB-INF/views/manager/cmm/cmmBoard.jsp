@@ -1,4 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<c:set var="cmmList" value="${cmmList}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +17,7 @@ body {
 </style>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/manager/common/admin-header.jsp"/>
+	<jsp:include page="/WEB-INF/views/manager/common/admin-header.jsp" />
 	<div class="board-lookUp-page">
 		<div class="board-head-area">
 			<div></div>
@@ -34,29 +38,22 @@ body {
 					<th>공지사항 제목</th>
 					<th>작성일</th>
 				</tr>
-				<tr>
-					<td><a href="/manager/cmmDetail" class="detail">1</a></td>
-					<td>코로나 19 관련 이용안내</td>
-					<td>2021-12-30</td>
-				</tr>
-				<tr>
-					<td><a href="#" class="detail">2</a></td>
-					<td>히든클리프 이용안내</td>
-					<td>2021-12-30</td>
-				</tr>
+				<c:forEach var="cmm" items="${cmmList}">
+					<tr>
+						<td><a href="/manager/cmmDetail/${cmm.cmmNo}" class="detail">${cmm.cmmNo}</a></td>
+						<td>${cmm.cmmTitle}</td>
+						<td>${cmm.cmmCreateDate}</td>
+					</tr>
+				</c:forEach>
+				
 
 			</table>
 			<div class="paging">
-				<span> <a href=""> <img src="/resources/image/btn_paging_first.png">
-				</a>
-				</span> <span> <a href=""> <img src="/resources/image/btn_paging_prev_on.png">
-				</a>
-				</span> <span> <a href="" class="on">1</a>
-				</span> <span> <a href=""> <img src="/resources/image/btn_paging_next_on.png">
-				</a>
-				</span> <span> <a href=""> <img src="/resources/image/btn_paging_last_on.png">
-				</a>
-				</span>
+				<span> <a href="">&lt;&lt;</a></span> 
+				<span> <a href="">&lt;</a></span> 
+				<span> <a href="" class="on">1</a></span> 
+				<span> <a href="">&gt;</a></span> 
+				<span> <a href="">&gt;&gt;</a></span>
 			</div>
 		</div>
 		<div class="board-foot-area"></div>

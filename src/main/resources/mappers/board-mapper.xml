@@ -2,11 +2,83 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="boardMapper">
 
+	<resultMap type="CMM" id="cmm_rm">
+	
+		<id property="cmmNo" column="CMM_NO" />
+		<result property="cmmTitle" column="CMM_TITLE" />
+		<result property="cmmSub" column="CMM_SUB" />
+		<result property="cmmTitleImg" column="CMM_TITLE_IMG" />
+		<result property="cmmConImg" column="CMM_CON_IMG" />
+		<result property="cmmDeleteFlag" column="CMM_DEL_FL" />
+		<result property="cmmCreateDate" column="CMM_CREATE_DATE" />
+	
+	</resultMap>
+	
+	<resultMap type="PROMOTION" id="promotion_rm">
+	
+		<id property="promotionNo" column="PROMOTION_NO" />
+		<result property="promotionTitle" column="PROMOTION_TITLE" />
+		<result property="promotionSub" column="PROMOTION_SUB" />
+		<result property="promotionTitleImg" column="PROMOTION_TITLE_IMG" />
+		<result property="promotionConImg" column="PROMOTION_CON_IMG" />
+		<result property="promotionPrice" column="PROMOTION_PRICE" />
+		<result property="promotionDeleteFlag" column="PROMOTION_DEL_FL" />
+		<result property="pStayStartDate" column="P_STAY_START_DATE" />
+		<result property="pStayEndDate" column="P_STAY_END_DATE" />
+		<result property="pSaleStartDate" column="P_SALE_START_DATE" />
+		<result property="pSaleEndDate" column="P_SALE_END_DATE" />
+		<result property="promotionCreateDate" column="PROMOTION_CREATE_DATE" />
+	
+	</resultMap>
+	
+	<resultMap type="DINING" id="dining_rm">
+	
+		<id property="diningNo" column="DINING_NO" />
+		<result property="diningTitle" column="DINING_TITLE" />
+		<result property="diningSub" column="DINING_SUB" />
+		<result property="diningTitleImg" column="DINING_TITLE_IMG" />
+		<result property="diningConImg" column="DINING_CON_IMG" />
+		<result property="diningDeleteFlag" column="DINING_DEL_FL" />
+		<result property="diningStartDate" column="DINING_START_DATE" />
+		<result property="diningEndDate" column="DINING_END_DATE" />
+		<result property="diningCreateDate" column="DINING_CREATE_DATE" />
+	
+	</resultMap>
+	
+	<resultMap type="EVENT" id="event_rm">
+	
+		<id property="eventNo" column="EVENT_NO" />
+		<result property="eventTitle" column="EVENT_TITLE" />
+		<result property="eventSub" column="EVENT_SUB" />
+		<result property="eventTitleImg" column="EVENT_TITLE_IMG" />
+		<result property="eventConImg" column="EVENT_CON_IMG" />
+		<result property="eventDeleteFlag" column="EVENT_DEL_FL" />
+		<result property="eventStartDate" column="EVENT_START_DATE" />
+		<result property="eventEndDate" column="EVENT_END_DATE" />
+		<result property="eventCreateDate" column="EVENT_CREATE_DATE" />
+	
+	</resultMap>
+	
+	
+
+	<!-- 공지사항 조회 -->
+	<select id="selectCmmList" resultMap="cmm_rm">
+		SELECT CMM_NO, CMM_TITLE, TO_CHAR(CMM_CREATE_DATE, 'YYYY-MM-DD') CMM_CREATE_DATE
+		FROM "CMM"
+	</select>
+	
+	<!-- 공지사항 세부 조회 -->
+	<select id="cmmDetail" resultMap="cmm_rm">
+		SELECT CMM_TITLE, CMM_TITLE_IMG, CMM_SUB, CMM_CON_IMG
+		FROM "CMM"
+		WHERE CMM_NO=#{cmmNo}
+	</select>
+
 	<!-- 공지사항 등록 -->
 	<insert id="saveCmmPost" parameterType="CMM">
 		INSERT INTO "CMM" VALUES(
 		SEQ_CMM_NO.NEXTVAL,
-		#{cmmTitle},#{cmmSub},#{cmmTitleImg},#{cmmConImg},DEFAULT)
+		#{cmmTitle},#{cmmSub},#{cmmTitleImg},#{cmmConImg},DEFAULT,DEFAULT)
 	</insert>
 
 	<!-- 프로모션 등록 -->
@@ -14,7 +86,7 @@
 		INSERT INTO "PROMOTION" VALUES(
 		SEQ_PROMOTION_NO.NEXTVAL, #{promotionTitle},#{promotionSub},#{promotionTitleImg},#{promotionConImg},
 		#{pStayStartDate},#{pStayEndDate},#{pSaleStartDate},#{pSaleEndDate},
-		#{promotionPrice},DEFAULT)
+		#{promotionPrice},DEFAULT,DEFAULT)
 	</insert>
 
 
@@ -22,7 +94,7 @@
 	<insert id="saveDiningPost" parameterType="Dining">
 		INSERT INTO "DINING" VALUES(
 		SEQ_DINING_NO.NEXTVAL, #{diningTitle}, #{diningSub}, #{dininigTitleImg}, #{diningConImg},
-		#{diningStartDate}, #{diningEndDate}, DEFAULT)
+		#{diningStartDate}, #{diningEndDate}, DEFAULT,DEFAULT)
 	</insert>
 
 
@@ -30,7 +102,7 @@
 	<insert id="saveEventPost" parameterType="Event">
 		INSERT INTO "EVENT" VALUES(
 		SEQ_EVENT_NO.NEXTVAL, #{eventTitle}, #{eventSub}, #{eventTitleImg}, #{eventConImg},
-		#{eventStartDate}, #{eventEndDate}, DEFAULT)
+		#{eventStartDate}, #{eventEndDate}, DEFAULT,DEFAULT)
 	</insert>
 
 

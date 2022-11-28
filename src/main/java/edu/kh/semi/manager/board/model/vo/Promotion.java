@@ -22,5 +22,6 @@ public class Promotion {
 	private String pSaleEndDate;
 	private int promotionPrice;
 	private String promotionDeleteFlag;
+	private String promotionCreateDate;
 
 }

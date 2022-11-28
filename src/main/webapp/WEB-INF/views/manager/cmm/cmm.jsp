@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,35 +25,34 @@ body {
 			</div>
 			<div></div>
 		</div>
-		<form action="/manager/cmmUpdate" method="post"  enctype="multipart/form-data">
 		<div class="board-body-area">
 			<div id="board-post">
-				<button class="save">수정</button>
+				<a class="save" href="/manager/cmmUpdate">수정</a>  <a class="save" href="/manager/cmmDelete">삭제</a> 
 			</div>
 
 			<table id="board_table">
 				<tr>
 					<th>제목</th>
-					<td colspan="3"><input type="text" name="cmmTitle" id="title"></td>
+					<td colspan="3">${cmm.cmmTitle }</td>
 				</tr>
 				<tr>
 					<th class="select-area">
 						타이틀 이미지
 					</th>
 					<td>
-						<img class="select-image" src="">
+						<img class="select-image" src="${cmm.cmmTitleImg }">
 					</td>
 				</tr>
 				<tr>
 					<th>세부 내용</th>
-					<td><input type="text" name="cmmSub" id="content"></td>
+					<td>${cmm.cmmSub }</td>
 				</tr>
 				<tr>
 					<th class="select-area">
 						내용
 					</th>
 					<td>
-						<img class="select-image" src="">
+						<img class="select-image" src="${cmm.cmmConImg }">
 					</td>
 				</tr>
 
@@ -62,7 +62,6 @@ body {
 				<a href="/manager/cmm">목록</a>
 			</div>
 		</div>
-		</form>
 	</div>
 	<div class="board-foot-area"></div>
 	

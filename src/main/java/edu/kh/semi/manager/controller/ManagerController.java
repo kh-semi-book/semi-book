@@ -9,48 +9,9 @@ public class ManagerController {
 
 	@GetMapping("/manager/main")
 	public String managerMainPage() {
-		return "manager/promotion/promotion";
-	}
-	
-//	@GetMapping("/manager/selectBook")
-//	public String managerSelectBook() {
-//		return "manager/common/select-book";
-//	}
-//	
-	//----------------------------------------
-	
-	@GetMapping("/manager/cmm")
-	public String managerCmmPage() {
-		return "manager/cmm/cmmBoard";
-	}
-	//----------------------------------------
-	
-//	@GetMapping("/manager/meetingRoom")
-//	public String managerMeetingRoomPage() {
-//		return "manager/meetingRoom/meetingRoom";
-//	}
-	
-	//----------------------------------------
-	
-	@GetMapping("/manager/promotion")
-	public String managerPromotionPage() {
-		return "manager/promotion/promotionBoard";
+		return "manager/common/select-book";
 	}
 
-	//----------------------------------------
-	
-	@GetMapping("/manager/dining")
-	public String managerDiningPage() {
-		return "manager/dining/diningBoard";
-	}
-
-	//----------------------------------------
-	
-	@GetMapping("/manager/event")
-	public String managerEventPage() {
-		return "manager/event/eventBoard";
-	}
-	
 	
 	
 }

@@ -19,7 +19,7 @@ public class Event {
 	private String eventStartDate;
 	private String eventEndDate;
 	private String eventDeleteFlag;
-	
+	private String eventCreateDate;
 	
 
 }

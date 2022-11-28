@@ -314,7 +314,7 @@
 						</form>
 					</div>
 					<div id="reservation_side_area">
-						<div class="side-table">
+						<div class="side-table" id="side-table">
 							<div>
 								<div class="side-margin"></div>
 								<div class="side-table-head">일정</div>
@@ -337,7 +337,7 @@
 									</tr>
 									<tr>
 										<th>인원수</th>
-										<td>어른 <input type="text" value="1" class="schedule-num"> 어린이 <input type="text" value="1" class="schedule-num"> <span><img src="/image/info.gif"
+										<td>어른 <input type="text" value="1" class="schedule-num"> 어린이 <input type="text" value="1" class="schedule-num"> <span><img src="/resources/image/button/info.gif"
 												id="schedule-info"></span>
 										</td>
 									</tr>
@@ -379,7 +379,7 @@
 									</div>
 								</div>
 								<div id="totalPrice_All">
-									<span>요금합계</span> <strong>340,600원 (VAT 포함)</ㄴ> 
+									<span>요금합계</span> <strong>340,600원 (VAT 포함)</strong> 
 								</div>
 								<div id="side-table-btn-area">
 									<a href="#" class="side-table-btn">이전</a> <a href="#" class="side-table-btn">일정 재선택하기</a>
@@ -396,5 +396,6 @@
 		</div>
 		<jsp:include page="/WEB-INF/views/common/footer.jsp" />
 		<script src="/resources/js/reservation/reservation.js"></script>
+		
 </body>
 </html>

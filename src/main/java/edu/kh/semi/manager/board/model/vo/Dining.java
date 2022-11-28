@@ -19,5 +19,6 @@ public class Dining {
 	private String diningStartDate;
 	private String diningEndDate;
 	private String diningDeleteFlag;
+	private String diningCreateDate;
 
 }

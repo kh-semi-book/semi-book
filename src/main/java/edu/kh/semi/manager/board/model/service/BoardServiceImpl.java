@@ -1,6 +1,7 @@
 package edu.kh.semi.manager.board.model.service;
 
 import java.io.File;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,20 @@ public class BoardServiceImpl implements BoardService {
 
 	@Autowired
 	private BoardDAO dao;
-
+	
+	// 공지사항 조회
+	@Override
+	public List<CMM> selectCmmList() {
+		return dao.selectCmmList();
+	}
+	
+	// 공지사항 세부 조회
+	@Override
+	public CMM cmmDetail(int cmmNo) {
+		return dao.cmmDetail(cmmNo);
+	}
+	
+	// 공지사항 등록
 	@Override
 	public int saveCmmPost(CMM cmm, Map<String, Object> map, MultipartFile cmmTitleImage, MultipartFile cmmConImage)
 			throws Exception {

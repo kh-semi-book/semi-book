@@ -1,13 +1,16 @@
 package edu.kh.semi.manager.board.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,15 +33,48 @@ public class BoardController {
 
 	// =================[공지사항]======================
 
+	@GetMapping("/cmm")
+	public String selectCmmList(Model model) {
+		
+		List<CMM> cmmList = service.selectCmmList();
+		
+		model.addAttribute("cmmList", cmmList);
+		
+		return "manager/cmm/cmmBoard";
+	}
+
+	@GetMapping("/cmmDetail/{cmmNo}")
+	public String cmmDetail(@PathVariable("cmmNo") int cmmNo, Model model, 
+							RedirectAttributes ra, @RequestHeader("referer") String referer) {
+		
+		CMM cmm = service.cmmDetail(cmmNo);
+		
+		if(cmm!=null) {
+			model.addAttribute("cmm", cmm);
+			return "/manager/cmm/cmm";
+		} else {
+			String message="해당 게시글이 존재하지 않습니다.";
+			ra.addFlashAttribute("message", message);
+			return "redirect:/"+referer;
+		}
+		
+	}
+	
+	@PostMapping("/cmmUpdate")
+	public String cmmUpdate() {
+		return "/manager/cmm/cmmPost";
+	}
+	
+	@PostMapping("/cmmDelete")
+	public String cmmDelete() {
+		return "/manager/cmm/cmmPost";
+	}
+	
 	@GetMapping("/cmmPost")
 	public String cmmPost() {
 		return "/manager/cmm/cmmPost";
 	}
 
-	@GetMapping("/cmmDetail")
-	public String cmmDetail() {
-		return "/manager/cmm/cmm";
-	}
 
 	// 공지사항 등록
 	@PostMapping("/cmmPost")
@@ -79,6 +115,15 @@ public class BoardController {
 	}
 
 	// =================[프로모션]======================
+
+	@GetMapping("/promotion")
+	public String promotionPage(Model model) {
+		
+		
+		
+		
+		return "manager/promotion/promotionBoard";
+	}
 
 	@GetMapping("/promotionPost")
 	public String promotionPost() {
@@ -131,6 +176,12 @@ public class BoardController {
 	}
 
 	// =================[다이닝]======================
+
+	@GetMapping("/dining")
+	public String diningPage() {
+		return "manager/dining/diningBoard";
+	}
+
 	@GetMapping("/diningPost")
 	public String diningPost() {
 		return "/manager/dining/diningPost";
@@ -166,7 +217,7 @@ public class BoardController {
 
 		String message = null;
 		String path = null;
-		
+
 		if (result > 0) {
 			message = "다이닝 등록 성공";
 			path = "/manager/dining";
@@ -180,10 +231,15 @@ public class BoardController {
 		return "redirect:" + path;
 
 	}
-	
-	
 
 	// =================[이벤트]======================
+
+
+	@GetMapping("/event")
+	public String eventPage() {
+		return "manager/event/eventBoard";
+	}
+
 	@GetMapping("/eventPost")
 	public String eventPost() {
 		return "/manager/event/eventPost";

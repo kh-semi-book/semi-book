@@ -1,5 +1,7 @@
 package edu.kh.semi.manager.board.model.dao;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -15,6 +17,23 @@ public class BoardDAO {
 
 	@Autowired
 	private SqlSessionTemplate sqlSession;
+	
+	
+	/** 공지사항 조회
+	 * @return
+	 */
+	public List<CMM> selectCmmList() {
+		return sqlSession.selectList("boardMapper.selectCmmList");
+	}
+	
+	
+	/** 공지사항 세부 조회
+	 * @param cmmNo
+	 * @return
+	 */
+	public CMM cmmDetail(int cmmNo) {
+		return sqlSession.selectOne("boardMapper.cmmDetail", cmmNo);
+	}
 
 	/** 공지사항 등록
 	 * @param cmm
@@ -47,6 +66,9 @@ public class BoardDAO {
 	public int saveEventPost(Event event) {
 		return sqlSession.insert("boardMapper.saveEventPost", event);
 	}
+
+	
+
 
 	
 
