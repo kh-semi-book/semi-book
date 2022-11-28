@@ -16,7 +16,7 @@
 			<section id="event_title">
 				<div>
 					<a href="/">HOME</a> > 
-					<a href="/nav/specialOffer/roomPromotion">SPECIAL OFFER</a> > 
+					<a href="/nav/specialOffer/event">SPECIAL OFFER</a> > 
 					<a href="/nav/specialOffer/event">이벤트</a> 
 				</div>
 				<div>이벤트</div>

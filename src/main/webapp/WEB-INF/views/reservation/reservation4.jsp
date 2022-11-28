@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <title>예약하기4</title>
 <link rel="stylesheet" href="/resources/css/reservation/reservation4.css">
+<link rel="stylesheet" href="/resources/css/common/main.css">
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/common/header.jsp" />
@@ -45,7 +46,7 @@
 				<div></div>
 				<div id="reservation4_book_area">
 					<div id="reservation_input_area">
-						<form action="#" method="post" name="reservation4_form" id="reservation4_form">
+						<form action="/reservation/reservation5" method="post" name="reservation4_form" id="reservation4_form">
 							<div id="booker-info">
 								<p class="table-title">고객정보</p>
 								<table class="reservation-table">
@@ -394,5 +395,6 @@
 			<div id="reservation4_foot_area"></div>
 		</div>
 		<jsp:include page="/WEB-INF/views/common/footer.jsp" />
+		<script src="/resources/js/reservation/reservation.js"></script>
 </body>
 </html>
