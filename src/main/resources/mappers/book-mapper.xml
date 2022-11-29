@@ -23,6 +23,16 @@
   		<result property="bookHeadCount" column="BOOK_HEADCOUNT" />
   	</resultMap>
   	
+  	<resultMap type="Room" id="room_rm">
+  		<id property="roomNum" column="ROOM_NUM" />
+  		
+  		<result property="roomViewNo" column="ROOM_VIEW_NO"/>
+  		<result property="roomTypeNo" column="ROOM_TYPE_NO"/>
+  		<result property="roomViewName" column="ROOM_VIEW_NAME"/>
+  		<result property="roomName" column="ROOM_NAME"/>
+  	
+  	</resultMap>
+  	
  
   	<select id="getBookCount" resultType="_int">
   		SELECT COUNT(*) FROM BOOK
@@ -126,6 +136,23 @@
 		</if>
   	</select>
 	
+	
+	<select id="selectRoom" resultMap="room_rm">
+	
+		SELECT ROOM_NUM, ROOM_VIEW_NAME, ROOM_NAME
+		FROM ROOM
+		JOIN ROOM_VIEW USING(ROOM_VIEW_NO)
+		JOIN ROOM_TYPE USING(ROOM_TYPE_NO)
+	
+	</select>
+	
+	<select id="searchRoom" resultMap="room_rm" parameterType="_int">
+		SELECT ROOM_VIEW_NAME, ROOM_NAME 
+		FROM BOOK 
+		JOIN ROOM_VIEW USING(ROOM_VIEW_NO)
+		JOIN ROOM_TYPE USING(ROOM_TYPE_NO)
+		WHERE BOOK_NO=#{bookNum}
+	</select>
 
 
 </mapper>

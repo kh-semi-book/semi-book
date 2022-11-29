@@ -16,6 +16,7 @@
 <typeAlias type="edu.kh.semi.member.model.vo.Member" alias="Member"/>
 
 <typeAlias type="edu.kh.semi.manager.book.model.vo.Book" alias="Book"/>
+<typeAlias type="edu.kh.semi.manager.book.model.vo.Room" alias="Room"/>
 <typeAlias type="edu.kh.semi.manager.meetingRoom.model.vo.MeetingRoom" alias="MeetingRoom"/>
 <typeAlias type="edu.kh.semi.manager.board.model.vo.CMM" alias="CMM"/>
 <typeAlias type="edu.kh.semi.manager.board.model.vo.Promotion" alias="Promotion"/>

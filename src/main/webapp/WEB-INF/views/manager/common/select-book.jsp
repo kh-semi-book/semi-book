@@ -86,9 +86,9 @@
         <div class="book-list-content">
             <div class="book-list-no manage-border-right">${book.bookNo}</div>
             <div class="book-list-date manage-border-right">${book.bookDate}</div>
-            <div class="book-list-reservation-no manage-border-right">${book.bookNo}</div>
+            <div class="book-list-reservation-no manage-border-right" class="bookNo">${book.bookNo}</div>
             <div class="book-list-room-no manage-border-right">
-                <input type="text" value="${book.bookRoomNum}" name="bookRoomNum"> 
+                <input type="text" value="${book.bookRoomNum}" name="bookRoomNum" class="bookRoomNum"> 
             </div>
             <div class="book-list-party-num manage-border-right">
                 <input type="text" value="${book.bookHeadCount}" name="bookHeadCount">
@@ -140,6 +140,7 @@
         const process="${bookList}";
     </script>
 
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="/resources/js/manager/select.js"></script>
 </body>
 </html>
