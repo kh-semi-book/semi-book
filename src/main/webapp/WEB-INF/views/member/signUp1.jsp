@@ -51,11 +51,11 @@
                         <p class="kjh-p">회원이 되시면 다양한 서비스를 더욱 편하게 이용 가능하십니다.</p>
                         
                         <div class="kjh-all-check">
-                          <input type="checkbox" name="allcheck" value="allcheck">
+                          <input type="checkbox" name="checkAll" value="allcheck">
                           <label for="allcheck">홈페이지 가입 약관 전체 동의</label>
                         </div>
                       </section>
-
+                  <form action="" name="agreeform" id="agreeform" method="post"  >
                       <!-- 이용약관 -->
                       <section>
                         
@@ -173,7 +173,7 @@
                                 <dd>① 다른 회원이나 타인을 비방하거나, 프라이버시를 침해하거나, 중상모략으로 명예를 손상시키는 내용인 경우.</dd>
                                 <dd>② 서비스의 안정적인 운영에 지장을 주거나 줄 우려가 있는 경우</dd>
                                 <dd>③ 범죄적 행위에 관련된다고 인정되는 내용일 경우</dd>
-                                <dd>④ 호텔의 지적재산권, 타인의 지적재산권 등 기타 권리를 침해하는 내용인 경우</dd>
+                                <dd>④ 호텔의 지적재산권, 타인의 지적재2산권 등 기타 권리를 침해하는 내용인 경우</dd>
                                 <dd>⑤ 호텔에서 규정한 게시기간을 초과한 경우</dd>
                                 <dd>⑥ 기타 관계법령에 위반된다고 판단되는 경우</dd>
                                   
@@ -239,7 +239,7 @@
                             </div> <!-- kjh-cent-in-a -->
                           </div> <!-- kjh-content-in -->
                           <div class="kjh-check-border">
-                            <input type="checkbox" id="check1">
+                            <input type="checkbox" id="check1" name="checkAgree">
                             <label for="check1" ></label>동의합니다.
                           </div>  
                         </div><!-- kjh-cotent -->
@@ -282,27 +282,17 @@
 
                           <dl>
                             <dt>개인정보의 수집목적 및 이용목적</dt>
-<dd>히든 클리프 호텔 & 네이쳐는 개인정보보호 관련 주요 법률인 ‘정보통신망 이용촉진 및 정보보호 등에 관한 법률’을 준수하기 위하여 개인정보취급방침을 제정하고 이를 준수하고 있습니다.</dd>
-<dd>① 수집 항목: 개인 식별 정보 (성명, 성별, 생년월일), 서비스 제공 연락 정보 (휴대폰, 이메일)</dd>
-<dd>* 인터넷 서비스 이용과정에서IP주소, 쿠키, 방문기록, 등 개인정보가 자동으로 생성되어 수집될 수 있습니다.</dd>
-<dd>② 이용 목적: 본인 확인 절차에 활용, 고객 불만 처리</dd>
-<dd>③ 히든 클리프 호텔 & 네이쳐는 개인정보의 이용목적의 달성 및 해지 시까지 개인정보를 보유, 이용하되 개인정보의 수집 및 이용 목적이 달성된 때에는 고객의 개인정보를 지체없이 파기합니다.</dd>
+                            <dd>히든 클리프 호텔 & 네이쳐는 개인정보보호 관련 주요 법률인 ‘정보통신망 이용촉진 및 정보보호 등에 관한 법률’을 준수하기 위하여 개인정보취급방침을 제정하고 이를 준수하고 있습니다.</dd>
+                            <dd>① 수집 항목: 개인 식별 정보 (성명, 성별, 생년월일), 서비스 제공 연락 정보 (휴대폰, 이메일)</dd>
+                            <dd>* 인터넷 서비스 이용과정에서IP주소, 쿠키, 방문기록, 등 개인정보가 자동으로 생성되어 수집될 수 있습니다.</dd>
+                            <dd>② 이용 목적: 본인 확인 절차에 활용, 고객 불만 처리</dd>
+                            <dd>③ 히든 클리프 호텔 & 네이쳐는 개인정보의 이용목적의 달성 및 해지 시까지 개인정보를 보유, 이용하되 개인정보의 수집 및 이용 목적이 달성된 때에는 고객의 개인정보를 지체없이 파기합니다.</dd>    
                           </dl>
 
-
-
-
-
-
-
-
-
-
-
-</div> <!-- kjh-cent-in-a -->
-</div> <!-- kjh-content-in -->
+              </div> <!-- kjh-cent-in-a -->
+              </div> <!-- kjh-content-in -->
                         <div class="kjh-check-border">
-                          <input type="checkbox" id="check1">
+                          <input type="checkbox" id="check1" name="checkAgree">
                           <label for="check1" ></label>동의합니다.
                         </div>
                       </section>
@@ -322,17 +312,17 @@
                               위탁 대상자와 위탁 업무 내용에 대해 고객님에게 통지하고 필요한 경우 사전 동의를 받도록 하겠습니다.</dd>
                           
                           </dl>
-      회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만, 아래의 경우에는 예외로 합니다.
-      - 이용자들이 사전에 동의한 경우
-      
-      
-      회사는 고객님의 동의없이 고객님의 정보를 외부 업체에 위탁하지 않습니다. 향후 그러한 필요가 생길 경우, 
-      위탁 대상자와 위탁 업무 내용에 대해 고객님에게 통지하고 필요한 경우 사전 동의를 받도록 하겠습니다.
-                        </textarea>
+                              회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만, 아래의 경우에는 예외로 합니다.
+                              - 이용자들이 사전에 동의한 경우
+                              
+                              
+                              회사는 고객님의 동의없이 고객님의 정보를 외부 업체에 위탁하지 않습니다. 향후 그러한 필요가 생길 경우, 
+                              위탁 대상자와 위탁 업무 내용에 대해 고객님에게 통지하고 필요한 경우 사전 동의를 받도록 하겠습니다.
+
                       
                       </section>
                       <div class="kjh-check-border">
-                        <input type="checkbox" id="check1">
+                        <input type="checkbox" id="check1" name="checkAgree">
                         <label for="check1" ></label>동의합니다.
                       </div>
 
@@ -364,10 +354,9 @@
 
         <dd>취소 및 변경은 업무시간(09:00~18:00) 내에만 가능하며, 예약변경은 취소와 동일하게 간주됩니다.</dd>
         <dd>기타 궁금하신 사항은  이메일 (info@hiddencliff.kr ), 전화 (02 2277 9999)로 문의 바랍니다.</dd>
-                        </textarea> 
                       </section>
                       <div class="kjh-check-border">
-                        <input type="checkbox" id="check1">
+                        <input type="checkbox" id="check1" name="checkAgree">
                         <label for="check1" ></label>동의합니다.
                       </div>
                       
@@ -377,7 +366,10 @@
                 		<a href="/member/signUp2" >확인</a>
                     </div>
           </div>
-    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-              </body>
+          </form>
 
+                <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+                <script src="/resources/js/member/signUp1.js"></script>
+
+              </body>
 </html>
