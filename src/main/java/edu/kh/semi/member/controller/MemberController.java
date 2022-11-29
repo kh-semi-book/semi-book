@@ -2,7 +2,6 @@ package edu.kh.semi.member.controller;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -93,9 +92,57 @@ public class MemberController {
 	 * 
 	 * return "member/signUp2"; }
 	 */
-	//회원가입
+	//회원가입 진행
 	@PostMapping("/member/signUp")
-	public String signUp(@ModelAttribute Member inputMember) {
+	public String signUp(Member inputMember,
+			String[] memberPhone,String[] memberEmail, String[] memberBirth,
+			String[]memberWedding, String[] memberTel, String[] memberAddress
+			
+			) {
+		// 배열 값이 작성되지 않은 경우 ==> null로 변환
+		// 작성된 경우 값,값,값  (값 사이에 ,)
+		if(inputMember.getMemberPhone().equals(",,")) {
+			
+			inputMember.setMemberPhone(null);
+		} else {
+			inputMember.setMemberPhone(String.join(",,", memberPhone));
+		}
+			
+		if(inputMember.getMemberEmail().equals(",,")) {
+			
+			inputMember.setMemberEmail(null);
+		} else {
+			inputMember.setMemberEmail(String.join(",,", memberEmail));
+		}
+		
+		if(inputMember.getMemberBirth().equals(",,")) {
+			
+			inputMember.setMemberBirth(null);
+		} else {
+			inputMember.setMemberBirth(String.join(",,", memberBirth));
+		}
+		
+		if(inputMember.getMemberWedding().equals(",,")) {
+			
+			inputMember.setMemberWedding(null);
+		} else {
+			inputMember.setMemberWedding(String.join(",,", memberWedding));
+		}
+		
+		if(inputMember.getMemberTel().equals(",,")) {
+			
+			inputMember.setMemberTel(null);
+		} else {
+			inputMember.setMemberTel(String.join(",,", memberTel));
+		}
+		if(inputMember.getMemberAddress().equals(",,")) {
+			
+			inputMember.setMemberAddress(null);
+		} else {
+			inputMember.setMemberAddress(String.join(",,", memberAddress));
+		}
+		
+		int result = service.signUp(inputMember);
 		
 		return null;
 	}

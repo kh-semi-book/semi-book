@@ -32,6 +32,17 @@ public class MemberDAO {
 	}
 
 
+
+	/** 회원가입 DAO
+	 * @param inputMember
+	 * @return
+	 */
+	public int signUp(Member inputMember) {
+
+		return sqlSession.insert("memberMapper.signUp", inputMember);
+	}
+
+	
 	
 
 

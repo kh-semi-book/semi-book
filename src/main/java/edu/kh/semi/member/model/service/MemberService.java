@@ -6,14 +6,19 @@ public interface MemberService {
 
 
 
-
-	public abstract Member login(Member inputMember);
-
 	/** 로그인 기능
 	 * @param inputMember
 	 * @return
 	 */
-//	public abstract Member login(Member inputMember);
+	public abstract Member login(Member inputMember);
+
+	/** 회원 가입 기능
+	 * @param inputMember
+	 * @return
+	 */
+	public abstract int signUp(Member inputMember);
+
+
 
 
 }

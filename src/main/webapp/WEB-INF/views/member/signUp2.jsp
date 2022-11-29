@@ -129,7 +129,7 @@
                               <tr>
                                 <th>성별<span class="star">*</span></th>
                                 <td class="kjh-input"colspan="3">
-                                  <select class="kjh-select"name="m-gender" id="m-gender">
+                                  <select class="kjh-select"name="memberGender" id="memberGender">
                                     <option value="">성별</option>
                                     <option value="F">여</option>
                                     <option value="M">남</option>
@@ -140,7 +140,7 @@
                               <tr>
                                <th>생년월일<span class="star">*</span></th>
                                 <td colspan="3">
-                                  <select class="kjh-select" name="m-birth1"id="m-birth1"class="date">
+                                  <select class="kjh-select" name="memberBirth"id="m-birth1"class="date">
                                     <option value=""></option>
                                     <option value="1934">1934</option>
                                     <option value="1935">1935</option>
@@ -214,7 +214,7 @@
                                     <option value="2003">2003</option>
                                     <option value="2004">2004</option>
                                     </select>년
-                                  <select class="kjh-select"name="m-birth2" id="m-birth2"class="date">
+                                  <select class="kjh-select"name="memberBirth" id="m-birth2"class="date">
                                     <option value=""></option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -229,7 +229,7 @@
                                     <option value="11">11</option>
                                     <option value="12">12</option>
                                   </select>월
-                                  <select class="kjh-select" name="m-birth3" id="m-birth3"class="date">
+                                  <select class="kjh-select" name="memberBirth" id="m-birth3"class="date">
                                     <option value=""></option>
                                     <option value="1">1</option>
                                     <option value="1">1</option>
@@ -240,22 +240,22 @@
                                <tr>
                                 <th>이메일<br> 수신 동의<span class="star">*</span></th>
                                 <td>
-                                  <input type="radio" name="m_email_yn" id="m_email_yn1"
+                                  <input type="radio" name="emailFlag" id="m_email_yn1"
                                   value="Y">
                                   <label for="m_email_yn1">수신</label>
 
-                                  <input type="radio" name="m_email_yn" id="m_email_yn2"
+                                  <input type="radio" name="emailFlag" id="m_email_yn2"
                                   value="N">
                                   <label for="m_email_yn2">수신거부</label>
 
                                 </td>
                                 <th>SMS<br> 수신 동의<span class="star">*</span></th>
                                 <td>
-                                  <input type="radio" name="m_sms_yn" id="m_sms_yn1"
+                                  <input type="radio" name="smsFlag" id="m_sms_yn1"
                                   value="Y">
                                   <label for="m_sms_yn1">수신</label>
 
-                                  <input type="radio" name="m_sms_yn" id="m_sms_yn2"
+                                  <input type="radio" name="smsFlag" id="m_sms_yn2"
                                   value="N">
                                   <label for="m_sms_yn2">수신거부</label>
                                 </td>
@@ -272,38 +272,38 @@
                               <tr>
                                 <th>결혼유무</th>
                                 <td colspan="3">
-                                  <input type="radio" name="marriage_yn" id="marriage_yn1"
+                                  <input type="radio" name="marriageFlag" id="marriage_yn1"
                                   value="N">
                                   <label for="marriage_yn1">미혼</label>
 
-                                  <input type="radio" name="marriage_yn" id="marriage_yn2"
+                                  <input type="radio" name="marriageFlag" id="marriage_yn2"
                                   value="Y">
-                                  <label for="marriage_yn1">기혼</label>
+                                  <label for="marriage_yn2">기혼</label>
                                   <span class="kjh-married">
                                     (결혼기념일 : 
-                                    <input type="text" size="4" maxlength="4" >년
+                                    <input type="text" name="memberWedding" size="4" maxlength="4" >년
                                   
-                                    <input type="text" size="4" maxlength="4" >월
+                                    <input type="text" name="memberWedding" size="4" maxlength="4" >월
                                   
-                                    <input type="text" size="4" maxlength="4" >일
+                                    <input type="text" name="memberWedding" size="4" maxlength="4" >일
                                   </span>
                               </tr>                              
                               <tr>
                                 <th>유선전화</th>
                                 <td class="kjh-input" colspan="3">
-                                  <input type="text" size="1" name="m_col" id="m_col"> -
-                                  <input type="text" size="1" name="m_col" id="m_col"> -
-                                  <input type="text" size="1" name="m_col" id="m_col"> 
+                                  <input type="text" size="1" name="memberTel" id="m_col"> -
+                                  <input type="text" size="1" name="memberTel" id="m_col"> -
+                                  <input type="text" size="1" name="memberTel" id="m_col"> 
                                 
                                 </td>
                               </tr>                              
                               <tr>
                                 <th>주소</th>
                                 <td class="kjh-input" colspan="3">
-                                  <input type="text" class="kjh-address a"size="5px" readonly>
-                                  <input type="button" class="btn2"  value="우편번호검색"><br>
-                                  <input type="text" class="kjh-address" size="50px"readonly> <br>
-                                  <input type="text"  class="kjh-address"size="50px">
+                                  <input type="text" name = "memberAddress"class="kjh-address a"size="5px" readonly>
+                                  <input type="button"  class="btn2"  value="우편번호검색"><br>
+                                  <input type="text" name = "memberAddress" class="kjh-address" size="50px"readonly> <br>
+                                  <input type="text" name = "memberAddress"  class="kjh-address"size="50px">
 
                                 </td>
                               </tr>                              
