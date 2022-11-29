@@ -43,6 +43,13 @@ public class BoardDAO {
 		return sqlSession.insert("boardMapper.saveCmmPost", cmm);
 	}
 	
+	/** 공지사항 수정
+	 * @param inputCmm
+	 * @return result
+	 */
+	public int saveCmmUpdate(CMM inputCmm) {
+		return sqlSession.update("boardMapper.saveCmmUpdate", inputCmm);
+	}
 	
 	/** 프로모션 조회
 	 * @return
@@ -85,6 +92,8 @@ public class BoardDAO {
 	public int saveEventPost(Event event) {
 		return sqlSession.insert("boardMapper.saveEventPost", event);
 	}
+
+
 
 
 	

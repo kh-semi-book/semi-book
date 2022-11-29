@@ -43,6 +43,7 @@ public class BoardController {
 		return "manager/cmm/cmmBoard";
 	}
 
+	// 공지사항 세부 조회
 	@GetMapping("/cmmDetail/{cmmNo}")
 	public String cmmDetail(@PathVariable("cmmNo") int cmmNo, Model model, RedirectAttributes ra,
 			@RequestHeader("referer") String referer) {
@@ -60,15 +61,7 @@ public class BoardController {
 
 	}
 
-	@PostMapping("/cmmUpdate")
-	public String cmmUpdate() {
-		return "/manager/cmm/cmmPost";
-	}
-
-	@PostMapping("/cmmDelete")
-	public String cmmDelete() {
-		return "/manager/cmm/cmmPost";
-	}
+	
 
 	@GetMapping("/cmmPost")
 	public String cmmPost() {
@@ -111,6 +104,70 @@ public class BoardController {
 		ra.addFlashAttribute("message", message);
 
 		return "redirect:" + path;
+	}
+	
+	@GetMapping("/cmmDetail/{cmmNo}/update")
+	public String cmmUpdate(@PathVariable("cmmNo") int cmmNo, Model model,
+			@RequestHeader(value = "referer") String referer, RedirectAttributes ra) {
+
+		CMM cmm = service.cmmDetail(cmmNo);
+
+		if (cmm != null) {
+			model.addAttribute("cmm", cmm);
+			return "/manager/cmm/cmmUpdate";
+		} else {
+			String message = "오류";
+			ra.addFlashAttribute("message", message);
+			return "redirect:/" + referer;
+		}
+
+	}
+
+	// 공지사항 수정
+	@PostMapping("/cmmDetail/{cmmNo}/cmmUpdate")
+	public String saveCmmUpdate(CMM cmm, @RequestParam(value = "cmmTitleImage") MultipartFile cmmTitleImage,
+			@RequestParam(value = "cmmConImage") MultipartFile cmmConImage, RedirectAttributes ra,
+			HttpServletRequest req, @RequestHeader(value = "referer") String referer) throws Exception {
+
+		// 인터넷 주소로 접근할 수 있는 경로
+		String webPathTitle = "/resources/image/boardImage/title/";
+		String webPathContent = "/resources/image/boardImage/content/";
+
+		// 실제 파일이 저장된 컴퓨터 상의 절대 경로
+		String filePathTitle = req.getSession().getServletContext().getRealPath(webPathTitle);
+		String filePathContent = req.getSession().getServletContext().getRealPath(webPathContent);
+
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("webPathTitle", webPathTitle);
+		map.put("webPathContent", webPathContent);
+		map.put("filePathTitle", filePathTitle);
+		map.put("filePathContent", filePathContent);
+		
+		CMM inputCmm = new CMM();
+		inputCmm.setCmmTitle(cmm.getCmmTitle());
+		inputCmm.setCmmSub(cmm.getCmmSub());
+
+		int result = service.saveCmmUpdate(inputCmm, map, cmmTitleImage, cmmConImage);
+
+		String message = null;
+		String path = null;
+
+		if (result > 0) {
+			message = "공지사항 수정 성공";
+			path = "/manager/cmmDetail/{cmmNo}";
+		} else {
+			message = "공지사항 수정 실패";
+			path = referer;
+		}
+
+		ra.addFlashAttribute("message", message);
+
+		return "redirect:" + path;
+	}
+
+	@PostMapping("/cmmDelete")
+	public String cmmDelete() {
+		return "/manager/cmm/cmmPost";
 	}
 
 	// =================[프로모션]======================
