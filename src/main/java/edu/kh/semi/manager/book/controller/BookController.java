@@ -1,5 +1,6 @@
 package edu.kh.semi.manager.book.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.kh.semi.manager.book.model.service.BookService;
 import edu.kh.semi.manager.book.model.vo.Book;
+import edu.kh.semi.manager.book.model.vo.Room;
 import edu.kh.semi.manager.book.model.vo.SearchOption;
 
 @Controller
@@ -32,7 +34,7 @@ public class BookController {
 			@RequestParam Map<String,Object> pm
 			) {
 		
-		System.out.println(pm.get("searchOption"));
+//		System.out.println(pm.get("searchOption"));
 		
 		if(pm.get("searchOption")==null) {
 			Map<String,Object> map=service.selectBook(cp);			
@@ -45,6 +47,23 @@ public class BookController {
 		
 		return "manager/common/select-book";
 		
+	}
+	
+	@GetMapping("/manager/test")
+	public String selectRoom(Model model,
+			int bookNum) {
+		
+		Room inputRoom=service.searchRoom(bookNum);
+		
+		List<Room> roomList=service.selectRoom();
+		
+		model.addAttribute(roomList);
+		model.addAttribute(inputRoom);
+		
+		System.out.println(bookNum);
+		System.out.println(inputRoom);
+		
+		return "manager/common/SelectRoom";
 	}
 
 

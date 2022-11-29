@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import edu.kh.semi.manager.book.model.dao.BookDAO;
 import edu.kh.semi.manager.book.model.vo.Book;
 import edu.kh.semi.manager.book.model.vo.Pagination;
+import edu.kh.semi.manager.book.model.vo.Room;
 import edu.kh.semi.manager.book.model.vo.SearchOption;
 
 @Service
@@ -65,5 +66,21 @@ public class BookServiceImpl implements BookService {
 		map.put("bookList",bookList);
 		
 		return map;
+	}
+
+
+
+	@Override
+	public List<Room> selectRoom() {
+		
+		return dao.selectRoom();
+	}
+
+
+
+	@Override
+	public Room searchRoom(int bookNum) {
+		
+		return dao.searchRoom(bookNum);
 	}
 }
