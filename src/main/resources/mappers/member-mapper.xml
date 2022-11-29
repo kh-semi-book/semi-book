@@ -45,7 +45,12 @@
 	 이메일 수신동의, SMS수신동의, 생년월일, 결혼유무, 유선전화, 주소
 	 -->
 
-
+	<!-- 회원 가입 -->
+	<insert id="signUp" parameterType = "Member">
+		INSERT INTO "MEMBER"
+		VALUES(SEQ_MEMBER_NO.NEXTVAL, #{memberName}, #{memberId}, #{memberPw}, #{memberPhone}, #{memberEmail},
+		 #{memberGender},    )
+	</insert>
 
 
 </mapper>
