@@ -39,7 +39,7 @@
 								<br>
 							</p>
 					</a></li>
-					<li><a href="/html/dining_2.html"> <span> <img src="/image/dining2.jpg"></img>
+					<li><a href="/html/dining_2.html"> <span> <img src="/image/dining2.jpg">
 						</span>
 							<div id="strong">
 								<strong>[파노라마/비욘드] 1+1 Promotion</strong>

@@ -22,7 +22,6 @@
     <!------------------------- 위쪽은 헤더 ----------------------->
 
 
-    <div class="bsh-main">
             <div id="head-img1" ></div>
             <div class="bsh-path">
                 <ol>
@@ -43,7 +42,9 @@
             </div>
 
             <div class="bsh-main-img">
-                <img src="/resources/image/nav/facilities/kiz/kiz1.jpg">
+                <span class="move prev">&#x3C;</span>
+                <span class="move next">&#x3E;</span>
+                <img src="/resources/image/nav/facilities/kiz/kiz1.jpg" id="mainImage">
             </div>
 
             <div class="bsh-main-content">
@@ -104,7 +105,7 @@
 
     <!------------------------- 아래는 풋터 ------------------------->
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-
-
+    <script src="/resources/js/nav/facilities/facilities1.js"></script>
+    
 </body>
 </html>

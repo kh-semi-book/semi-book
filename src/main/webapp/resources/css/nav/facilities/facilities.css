@@ -80,7 +80,24 @@
     width: 1000px;
     height: 550px;
     margin: 0 auto 60px;
+    position: relative;
+    
 }
+
+.move{
+    position: absolute;
+    font-size: 60px;
+    cursor: pointer;
+
+    top:235px;
+    color:white;
+    font-family: "나눔명조", sans-serif;
+}
+
+.next{
+    right:0;
+}
+
 
 .bsh-main-content {
     width: 1000px;
