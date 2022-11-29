@@ -7,13 +7,14 @@
     <title>예약하기-3</title>
     
     
-    <link rel="stylesheet" href="/resources/css/reservation/reservation-style.css">
+    <link rel="stylesheet" href="/resources/css/reservation/reservation3.css">
     <link rel="stylesheet" href="/resources/css/common/main.css">
 </head>
 <body>
 
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
+     <div id="top-photo"></div>
     <div id="reservation4_body_area">
 
         <div id="top-menu">
