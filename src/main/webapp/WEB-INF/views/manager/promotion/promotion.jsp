@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="promotionList" value="${promotionList}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,47 +28,53 @@ body {
 		<form action="/manager/promotionUpdate" method="post"  enctype="multipart/form-data">
 		<div class="board-body-area">
 			<div id="board-post">
-				<button class="save">수정</button>
+				<a class="save" href="/manager/promotionUpdate">수정</a>  <a class="save" href="/manager/promotionDelete">삭제</a>
 			</div>
 
 			<table id="board_table">
 				<tr>
 					<th>제목</th>
-					<td colspan="3"><input type="text" id="promotionTitle"></td>
+					<td colspan="3">
+						${promotion.promotionTitle}
+					</td>
 				</tr>
 				<tr>
 					<th class="select-area">
 						타이틀 이미지
 					</th>
 					<td colspan="3">
-						<img class="select-image" src="">
+						<img class="select-image" src="${promotion.promotionTitleImg}">
 					</td>
 				</tr>
 				<tr>
 					<th>세부 내용</th>
-					<td colspan="3"><input type="text" id="promotionSub"></td>
+					<td colspan="3">
+						${promotion.promotionSub}
+					</td>
 				</tr>
 				<tr class="date-area">
 					<th>투숙 기간</th>
 					<td>
-						<input type="text" id="promotionStayStartDate">~
-						<input type="text" id="promotionStayEndDate">
+						${promotion.pStayStartDate}~
+						${promotion.pStayEndDate}
 						</td>
 					<th>판매 기간</th>
 					<td>
-						<input type="text" id="promotionSaleStartDate">~
-						<input type="text" id="promotionSaleEndDate">
+						${promotion.pSaleStartDate}~
+						${promotion.pSaleEndDate}
 					</td>
 				</tr>
 				<tr>
 					<th>가격</th>
-					<td colspan="3"><input type="text" id="promotionPrice"></td>
+					<td colspan="3">
+						${promotion.promotionPrice}
+					</td>
 				</tr>
 				<tr>
 					<th class="select-area">
 						내용
 					</th>
-					<td colspan="3"><img class="select-image" src=""></td>
+					<td colspan="3"><img class="select-image" src="${promotion.promotionConImg}"></td>
 				</tr>
 
 

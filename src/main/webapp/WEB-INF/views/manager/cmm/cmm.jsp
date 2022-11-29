@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +26,7 @@ body {
 		</div>
 		<div class="board-body-area">
 			<div id="board-post">
-				<a class="save" href="/manager/cmmUpdate">수정</a>  <a class="save" href="/manager/cmmDelete">삭제</a> 
+				<button class="save" id="updateBtn">수정</button>  <button class="save" id="deleteBtn">삭제</button> 
 			</div>
 
 			<table id="board_table">

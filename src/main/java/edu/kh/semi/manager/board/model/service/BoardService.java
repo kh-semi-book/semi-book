@@ -11,6 +11,10 @@ import edu.kh.semi.manager.board.model.vo.Event;
 import edu.kh.semi.manager.board.model.vo.Promotion;
 
 
+/**
+ * @author user
+ *
+ */
 public interface BoardService {
 	
 	/** 공지사항 조회
@@ -34,6 +38,16 @@ public interface BoardService {
 	 */
 	int saveCmmPost(CMM cmm, Map<String, Object> map, MultipartFile cmmTitleImage, MultipartFile cmmConImage) throws Exception;
 
+	
+	/** 공지사항 수정
+	 * @param inputCmm
+	 * @param map
+	 * @param cmmTitleImage
+	 * @param cmmConImage
+	 * @return
+	 * @throws Exception
+	 */
+	int saveCmmUpdate(CMM inputCmm, Map<String, Object> map, MultipartFile cmmTitleImage, MultipartFile cmmConImage) throws Exception;
 	
 	//==========================================================================
 	
@@ -85,6 +99,7 @@ public interface BoardService {
 	 */
 	int saveEventPost(Event event, Map<String, Object> map, MultipartFile eventTitleImage,
 			MultipartFile eventConImage) throws Exception;
+
 
 	
 

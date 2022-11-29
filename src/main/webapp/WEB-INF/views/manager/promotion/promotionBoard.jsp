@@ -1,4 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<c:set var="promotionList" value="${promotionList}" />
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,49 +39,22 @@ body {
 					<th>프로모션 제목</th>
 					<th>작성일</th>
 				</tr>
-				<tr>
-					<td><a href="/manager/promotionDetail" class="detail">1</a></td>
-					<td>[얼리버드] Hidden Earlybird</td>
-					<td>2021-12-30</td>
-				</tr>
-				<tr>
-					<td><a href="#" class="detail">2</a></td>
-					<td>LA DOLCE VITA</td>
-					<td>2021-12-30</td>
-				</tr>
-				<tr>
-					<td><a href="#" class="detail">3</a></td>
-					<td>Fall in Infiniti</td>
-					<td>2021-12-30</td>
-				</tr>
-				<tr>
-					<td><a href="#" class="detail">4</a></td>
-					<td>Full of Love</td>
-					<td>2021-12-30</td>
-				</tr>
-				<tr>
-					<td><a href="#" class="detail">5</a></td>
-					<td>[4인 패키지] Dear My Family</td>
-					<td>2021-12-30</td>
-				</tr>
-				<tr>
-					<td><a href="#" class="detail">6</a></td>
-					<td>[스파 패키지] Time to Relax</td>
-					<td>2021-12-30</td>
-				</tr>
+				<c:forEach var="promotion" items="${promotionList}">
+					<tr>
+						<td><a href="/manager/promotionDetail/${promotion.promotionNo}" class="detail">${promotion.promotionNo}</a></td>
+						<td>${promotion.promotionTitle}</td>
+						<td>${promotion.promotionCreateDate}</td>
+					</tr>
+				</c:forEach>
+				
 
 			</table>
 			<div class="paging">
-				<span> <a href=""> <img src="/image/btn_paging_first.png" alt="">
-				</a>
-				</span> <span> <a href=""> <img src="/image/btn_paging_prev_on.png" alt="">
-				</a>
-				</span> <span> <a href="" class="on">1</a>
-				</span> <span> <a href=""> <img src="/image/btn_paging_next_on.png" alt="">
-				</a>
-				</span> <span> <a href=""> <img src="/image/btn_paging_last_on.png" alt="">
-				</a>
-				</span>
+				<span> <a href="">&lt;&lt;</a></span> 
+				<span> <a href="">&lt;</a></span> 
+				<span> <a href="" class="on">1</a></span> 
+				<span> <a href="">&gt;</a></span> 
+				<span> <a href="">&gt;&gt;</a></span>
 			</div>
 		</div>
 		<div class="board-foot-area"></div>

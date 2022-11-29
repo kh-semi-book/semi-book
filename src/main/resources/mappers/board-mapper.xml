@@ -72,6 +72,7 @@
 		SELECT CMM_TITLE, CMM_TITLE_IMG, CMM_SUB, CMM_CON_IMG
 		FROM "CMM"
 		WHERE CMM_NO=#{cmmNo}
+		AND CMM_DEL_FL='N'
 	</select>
 
 	<!-- 공지사항 등록 -->
@@ -81,6 +82,15 @@
 		#{cmmTitle},#{cmmSub},#{cmmTitleImg},#{cmmConImg},DEFAULT,DEFAULT)
 	</insert>
 	
+	<!-- 공지사항 수정 -->
+	<update id="saveCmmUpdate" parameterType="CMM">
+		UPDATE "CMM" SET 
+		CMM_TITLE=#{cmmTitle},
+		CMM_SUB=#{cmmSub},
+		CMM_TITLE_IMG=#{cmmTitleImg},
+		CMM_CON_IMG=#{cmmConImg}
+		WHERE CMM_NO=#{cmmNo}
+	</update>
 	
 	<!-- 프로모션 조회 -->
 	<select id="selectPromotionList" resultMap="promotion_rm">
@@ -93,7 +103,8 @@
 		SELECT PROMOTION_TITLE, PROMOTION_TITLE_IMG, PROMOTION_SUB, PROMOTION_CON_IMG, PROMOTION_PRICE, P_STAY_START_DATE
 					, P_STAY_END_DATE, P_SALE_START_DATE, P_SALE_END_DATE
 		FROM "PROMOTION"
-		WHERE PROMOTION=#{promotionNo}
+		WHERE PROMOTION_NO=#{promotionNo}
+		AND PROMOTION_DEL_FL='N'
 	</select>
 
 	<!-- 프로모션 등록 -->

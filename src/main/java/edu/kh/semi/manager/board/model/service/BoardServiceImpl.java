@@ -59,6 +59,35 @@ public class BoardServiceImpl implements BoardService {
 		return result;
 	}
 	
+	// 공지사항 수정
+	@Override
+	public int saveCmmUpdate(CMM inputCmm, Map<String, Object> map, MultipartFile cmmTitleImage,
+			MultipartFile cmmConImage) throws Exception {
+		
+		String renameTitle = Util.fileRename(cmmTitleImage.getOriginalFilename());
+		String renameContent = Util.fileRename(cmmConImage.getOriginalFilename());
+
+		inputCmm.setCmmTitleImg(map.get("webPathTitle") + renameTitle);
+		inputCmm.setCmmConImg(map.get("webPathContent") + renameContent);
+		
+		int result = dao.saveCmmUpdate(inputCmm);
+
+		if (result > 0) {
+
+			if (renameTitle != null && renameContent != null) {
+				cmmTitleImage.transferTo(new File(map.get("filePathTitle") + renameTitle));
+				cmmConImage.transferTo(new File(map.get("filePathContent") + renameContent));
+			}
+		} else {
+			throw new Exception("수정 실패");
+		}
+
+		return result;
+	}
+	
+	
+	//==================================================================================
+	
 	
 	// 프로모션 조회
 	@Override
