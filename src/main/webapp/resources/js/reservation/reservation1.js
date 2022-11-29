@@ -143,11 +143,11 @@ function nextCalendarInit() {
             }
         }else{
             if(currentMonth+1<10){
-                checkOutText=currentYear+"-0"+(currentMonth+1)+"-0"+selectday.innerHTML;
-                checkOutText1=currentYear+"0"+(currentMonth+1)+"0"+selectday.innerHTML;
+                checkOutText=currentYear+"-0"+(currentMonth+1)+"-"+selectday.innerHTML;
+                checkOutText1=currentYear+"0"+(currentMonth+1)+""+selectday.innerHTML;
             }else{
-                checkOutText=currentYear+"-"+(currentMonth+1)+"-0"+selectday.innerHTML;
-                checkOutText1=currentYear+""+(currentMonth+1)+"0"+selectday.innerHTML;
+                checkOutText=currentYear+"-"+(currentMonth+1)+"-"+selectday.innerHTML;
+                checkOutText1=currentYear+""+(currentMonth+1)+""+selectday.innerHTML;
             }
         }
 
@@ -252,11 +252,11 @@ function nextCalendarInit() {
                 }
             }else{
                 if(currentMonth+1<10){
-                    checkOutText=currentYear+"-0"+(currentMonth+1)+"-0"+selectday.innerHTML;
-                    checkOutText1=currentYear+"0"+(currentMonth+1)+"0"+selectday.innerHTML;
+                    checkOutText=currentYear+"-0"+(currentMonth+1)+"-"+selectday.innerHTML;
+                    checkOutText1=currentYear+"0"+(currentMonth+1)+""+selectday.innerHTML;
                 }else{
-                    checkOutText=currentYear+"-"+(currentMonth+1)+"-0"+selectday.innerHTML;
-                    checkOutText1=currentYear+""+(currentMonth+1)+"0"+selectday.innerHTML;
+                    checkOutText=currentYear+"-"+(currentMonth+1)+"-"+selectday.innerHTML;
+                    checkOutText1=currentYear+""+(currentMonth+1)+""+selectday.innerHTML;
                 }
             }
 
