@@ -66,10 +66,15 @@
 
 /* ==============[중간 메인 영역]=============== */
 #rsc-image-pool{
-    width: 1000px; 
-    height: 550px;
     position: relative;
 }
+
+#rsc-image-pool>img{
+    width: 1000px; 
+    height: 550px;
+    object-fit: cover;
+}
+
 
 .move{
     position: absolute;

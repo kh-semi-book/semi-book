@@ -11,7 +11,7 @@
     <title>히든 트레일 - Hidden Cliff Hotel and Nature</title>
 
     <link rel="stylesheet" href="/resources/css/nav/facilities/facilities.css">
-	<link rel="stylesheet" href="/resources/css/common/main.css">
+		<link rel="stylesheet" href="/resources/css/common/main.css">
     <script src="https://kit.fontawesome.com/f7459b8054.js" crossorigin="anonymous"></script>
 </head>
 <body> 
@@ -19,7 +19,6 @@
     <jsp:include page="/WEB-INF/views/common/header.jsp"/>
     <!------------------------- 위쪽은 헤더 ----------------------->
 
-    <div class="bsh-main">
             <div id="head-img3"></div>
             <div class="bsh-path">
                 <ol>
@@ -40,7 +39,9 @@
             </div>
 
             <div class="bsh-main-img">
-                <img src="/resources/image/nav/facilities/trail/trail1.jpg">
+                <span class="move prev">&#x3C;</span>
+                <span class="move next">&#x3E;</span>
+                <img src="/resources/image/nav/facilities/trail/trail1.jpg" id="mainImage">
             </div>
 
             <div class="bsh-main-content">
@@ -102,5 +103,6 @@
 
     <!------------------------- 아래는 풋터 ------------------------->
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+    <script src="/resources/js/nav/facilities/facilities3.js"></script>
 </body>
 </html>

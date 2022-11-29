@@ -10,7 +10,7 @@
     <title>MeetingRoom 예약 상세보기 - Hidden Cliff Hotel and Nature</title>
 
     <link rel="stylesheet" href="/resources/css/nav/meeting/meetingReservation.css">
-	<link rel="stylesheet" href="/resources/css/common/main.css">
+	<link rel="stylesheet" href="/resources/css/manager/admin.css">
 
     <script src="https://kit.fontawesome.com/f7459b8054.js" crossorigin="anonymous"></script>
 </head>
@@ -22,16 +22,10 @@
     <div id="head-img"></div>
     
     <div class="bsh-main">
-        <div class="bsh-path">
-            <ol>
-                <li class="bsh-path1">
-                    <a href="/">Home &nbsp;</a>
-                </li>
-                <li class="bsh-path2">
-                    <a href="#"> > &nbsp;MeetingRoom</a>
-                </li>
-            </ol>
-        </div>
+
+        <div id="top-menu">
+	    	<a href="#">MAIN</a>><a href="#">미팅룸 예약 상세보기</a>
+		</div>
 
         <div class="bsh-main-title">
             <h1>예약문의</h1>
@@ -74,7 +68,7 @@
                 
                 <div class="bsh-btn">
                     <input type="submit" name="sub" class="bsh-btn-gray" value="수정하기">
-                    <a href="#" class="bsh-btn-white">돌아가기</a>
+                    <a href="/manager/meetingRoom/meetingRoom" class="bsh-btn-white">돌아가기</a>
                 </div>
             </form>
         </div>
@@ -85,7 +79,5 @@
 
     </div>
 
-    <!------------------------- 아래는 풋터 ------------------------->
-    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 </body>
 </html>
