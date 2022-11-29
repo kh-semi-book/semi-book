@@ -229,11 +229,15 @@
                                     <option value="11">11</option>
                                     <option value="12">12</option>
                                   </select>월
-                                  <select class="kjh-select" name="memberBirth" id="m-birth3"class="date">
+                                 
+                                  <select class="kjh-select" name="memberBirth" id="m-birth4" class="date">
                                     <option value=""></option>
                                     <option value="1">1</option>
-                                    <option value="1">1</option>
-                                  </select>일
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                  </select>일 
                                 </td>
                                
                               </tr>

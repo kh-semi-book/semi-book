@@ -3,8 +3,10 @@ package edu.kh.semi.member.model.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import edu.kh.semi.member.model.dao.MemberDAO;
+import edu.kh.semi.member.model.vo.Add;
 import edu.kh.semi.member.model.vo.Member;
 
  @Service
@@ -42,17 +44,20 @@ public class MemberServiceImpl implements MemberService{
 		return loginMember;
 	}
 	
-	// 회원 가입 기능
+	@Transactional(rollbackFor = Exception.class)
 	@Override
 	public int signUp(Member inputMember) {
-		
-		//비밀번호 암호화
+//		비밀번호 암호화
 		String encPw = bcrypt.encode(inputMember.getMemberPw()); // 암호화된 비밀번호
 		
-		inputMember.setMemberPw(encPw);
+		inputMember.setMemberPw(encPw);		
 		
 		int result = dao.signUp(inputMember);
+
 		
-		return 0;
+		return result;
 	}
+	
+
+		
 }

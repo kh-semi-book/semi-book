@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -96,17 +95,19 @@ public class MemberController {
 	@PostMapping("/member/signUp")
 	public String signUp(Member inputMember,
 			String[] memberPhone,String[] memberEmail, String[] memberBirth,
-			String[]memberWedding, String[] memberTel, String[] memberAddress
-			
-			) {
+			String[]memberWedding, String[] memberTel, String[] memberAddress,
+			RedirectAttributes ra, 
+			@RequestHeader("referer") String referer){
 		// 배열 값이 작성되지 않은 경우 ==> null로 변환
 		// 작성된 경우 값,값,값  (값 사이에 ,)
-		if(inputMember.getMemberPhone().equals(",,")) {
-			
-			inputMember.setMemberPhone(null);
-		} else {
-			inputMember.setMemberPhone(String.join(",,", memberPhone));
-		}
+//		if(inputMember.getMemberPhone().equals(",,")) {
+//			
+//			inputMember.setMemberPhone(null);
+//		} else {
+//			inputMember.setMemberPhone(String.join(",,", memberPhone));
+//		}
+		String temp = memberPhone[0] + memberPhone[1] + memberPhone[2];
+		inputMember.setMemberPhone(temp);
 			
 		if(inputMember.getMemberEmail().equals(",,")) {
 			
@@ -115,36 +116,53 @@ public class MemberController {
 			inputMember.setMemberEmail(String.join(",,", memberEmail));
 		}
 		
-		if(inputMember.getMemberBirth().equals(",,")) {
-			
-			inputMember.setMemberBirth(null);
-		} else {
-			inputMember.setMemberBirth(String.join(",,", memberBirth));
-		}
+		String temp2 = memberBirth[0]+"-" +  memberBirth[1]+"-" + memberBirth[2];
+//		if(inputMember.getMemberBirth().equals(",,")) {
+		inputMember.setMemberBirth(temp2);
+//			
+//			inputMember.setMemberBirth(null);
+//		} else {
+//			inputMember.setMemberBirth(String.join(",,", memberBirth));
+//		}
 		
-		if(inputMember.getMemberWedding().equals(",,")) {
-			
-			inputMember.setMemberWedding(null);
-		} else {
-			inputMember.setMemberWedding(String.join(",,", memberWedding));
-		}
-		
-		if(inputMember.getMemberTel().equals(",,")) {
-			
-			inputMember.setMemberTel(null);
-		} else {
-			inputMember.setMemberTel(String.join(",,", memberTel));
-		}
-		if(inputMember.getMemberAddress().equals(",,")) {
-			
-			inputMember.setMemberAddress(null);
-		} else {
-			inputMember.setMemberAddress(String.join(",,", memberAddress));
-		}
+//		if(inputAdd.getMemberWedding().equals(",,")) {
+//			
+//			inputAdd.setMemberWedding(null);
+//		} else {
+//			inputAdd.setMemberWedding(String.join(",,", memberWedding));
+//		}
+//		
+//		if(inputAdd.getMemberTel().equals(",,")) {
+//			
+//			inputAdd.setMemberTel(null);
+//		} else {
+//			inputAdd.setMemberTel(String.join(",,", memberTel));
+//		}
+//		if(inputAdd.getMemberAddress().equals(",,")) {
+//			
+//			inputAdd.setMemberAddress(null);
+//		} else {
+//			inputAdd.setMemberAddress(String.join(",,", memberAddress));
+//		}
 		
 		int result = service.signUp(inputMember);
 		
-		return null;
+		String path = null;
+		String message = null;
+		
+		if(result > 0) {
+			path="/";
+			message = "회원가입 성공";
+		} else {
+			path = referer;
+			message = "회원 가입 실패";
+			
+			inputMember.setMemberPw(null);
+			ra.addFlashAttribute("tempMember", inputMember);
+		}
+		ra.addFlashAttribute("message", message);
+		
+		return "redirect:" + path;
 	}
 	
 	

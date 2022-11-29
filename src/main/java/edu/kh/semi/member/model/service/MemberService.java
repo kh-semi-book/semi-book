@@ -1,5 +1,6 @@
 package edu.kh.semi.member.model.service;
 
+import edu.kh.semi.member.model.vo.Add;
 import edu.kh.semi.member.model.vo.Member;
 
 public interface MemberService {
@@ -12,7 +13,8 @@ public interface MemberService {
 	 */
 	public abstract Member login(Member inputMember);
 
-	/** 회원 가입 기능
+
+	/** 회원가입 기능
 	 * @param inputMember
 	 * @return
 	 */
