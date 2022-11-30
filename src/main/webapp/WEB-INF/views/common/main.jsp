@@ -23,7 +23,7 @@
         </div>
     
         <div class="main-content">
-            <span>Special Package</span>
+            <span class="main-sub-title">Special Package</span>
             <div>
                 <a href=""></a>
                 <a href=""></a>
@@ -32,7 +32,7 @@
         </div>
     
         <div class="main-content">
-            <span>Events & Notice</span>
+            <span class="main-sub-title">Events & Notice</span>
             <div>
                 <a href=""></a>
                 <a href=""></a>
@@ -41,13 +41,33 @@
         </div>
     
         <div id="main-movie-lib">
-            <span>Movie Library</span>
-            <iframe width="1000px" height="550px" src="https://www.youtube.com/embed/e8QNxsnYC58" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <span class="main-sub-title">Movie Library</span>
 
+            <ul id="videoSlide">
+                <li>
+                    <iframe width="1000px" height="550px" src="https://www.youtube.com/embed/baJClWIqtUk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </li>
+                <li>
+                    <iframe width="1000px" height="550px" src="https://www.youtube.com/embed/lz1vsGB307g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </li>
+                <li>
+                    <iframe width="1000px" height="550px" src="https://www.youtube.com/embed/RlKPXS6RQ_g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </li>
+                <li>
+                    <iframe width="1000px" height="550px" src="https://www.youtube.com/embed/QdaVkZNfIbw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </li>
+                <li>
+                    <iframe width="1000px" height="550px" src="https://www.youtube.com/embed/66CEGbqrvzY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </li>
+            </ul>
+
+
+            <span class="move1 prev1">&#x3C;</span>
+            <span class="move1 next1">&#x3E;</span>
         </div>
     
         <div id="main-photo-gallary">
-            <span>Photo Gallery</span>
+            <span class="main-sub-title">Photo Gallery</span>
             <div id="main-photo-zone">
                 <div id="main-photo-left">
                     <div id="main-left-up">
@@ -80,7 +100,7 @@
 	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
 
-    <script src="/resources/js/header.js"></script>
+    <%-- <script src="/resources/js/header.js"></script> --%>
     <script src="/resources/js/main.js"></script>
 
 </body>

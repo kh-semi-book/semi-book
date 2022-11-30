@@ -82,11 +82,11 @@
             <div class="manage-book-status-change"></div>
         </div>
 
-    <c:forEach var="book" items="${bookList}">
+    <c:forEach var="book" items="${bookList}" varStatus="index">
         <div class="book-list-content">
-            <div class="book-list-no manage-border-right">${book.bookNo}</div>
+            <div class="book-list-no manage-border-right">${index.count}</div>
             <div class="book-list-date manage-border-right">${book.bookDate}</div>
-            <div class="book-list-reservation-no manage-border-right" class="bookNo">${book.bookNo}</div>
+            <div class="book-list-reservation-no manage-border-right bookNo">${book.bookNo}</div>
             <div class="book-list-room-no manage-border-right">
                 <input type="text" value="${book.bookRoomNum}" name="bookRoomNum" class="bookRoomNum"> 
             </div>
@@ -102,6 +102,8 @@
             <div class="book-list-cost money manage-border-right" id="money">${book.bookPrice}</div>
             <div class="book-list-booker-name manage-border-right">${book.bookMemberName}</div>
             <div class="manage-book-status">
+
+             ${book.roomProcess}
                 <c:choose>
                     <c:when test="${book.bookProcess == 0}">
                         <c:set var="sel0" value="selected"/>

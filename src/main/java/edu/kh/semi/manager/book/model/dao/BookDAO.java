@@ -64,8 +64,14 @@ public class BookDAO {
 	}
 
 
-	public Room searchRoom(int bookNum) {
+	public Room searchRoom(int bookNo) {
 		
-		return sqlSession.selectOne("bookMapper.searchRoom", bookNum);
+		return sqlSession.selectOne("bookMapper.searchRoom", bookNo);
+	}
+
+
+	public List<Room> selectRoom(Room inputRoom) {
+		
+		return sqlSession.selectList("bookMapper.selectRoom_input", inputRoom);
 	}
 }

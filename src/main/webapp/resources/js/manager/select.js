@@ -39,25 +39,64 @@ const options="width=1200, height=500, top=50, left=100";
 // const bookNum=document.getElementsByClassName("bookNum");
 
 const bookRoomNum = document.getElementsByClassName("bookRoomNum");
+const bookNo = document.getElementsByClassName("bookNo");
+var temp;
+// for(let book of bookRoomNum){
+for(let i=0;i<bookRoomNum.length;i++){
+   
+    bookRoomNum[i].onclick = function (event) {
+        // alert(event);
+        console.log(i);
+        temp=i;
+        // const nodes = [bookRoomNum.parentElement.children];
 
-for(let book of bookRoomNum){
-
-    book.addEventListener("focus",()=>{
-
-        let popup=window.open("about:blank","popupWindow", options);
-
-        const bookNum=book.parentElement.parentElement.children[2].innerHTML;
+        // const index = nodes.indexOf(book);
         
-        $.ajax({
-            url:"/manager/test",
-            data:{"bookNum":bookNum},
-            method:"GET",
-            success:function(){
-                popup.location.href="test"
-            },
-            error:function(){
         
+        console.log(temp);
+        const bookNum=event.target.parentElement.parentElement.children[2].innerHTML;
+        window.open("/manager/test?bookNum="+bookNum,"popupWindow", options);
+    };
+
+
+}
+
+// function clickBookRoom(e){
+//     const bookNum=e.parentElement.parentElement.children[2].innerHTML;
+//     window.open("/manager/test?bookNum="+bookNum,"popupWindow", options);
+
+//     console.log("click");
+// }
+
+const chooseRoomBtn =document.getElementsByClassName("chooseRoomBtn");
+
+
+for(let chooseBtn of chooseRoomBtn){
+    chooseBtn.addEventListener("click",function(){
+        
+            
+        console.log(this.parentElement.parentElement.children[1].innerHTML);
+
+        const urlStr=location.href;
+        const url=new URL(urlStr);
+
+        const urlParams=url.searchParams;
+
+        const bookNum=urlParams.get("bookNum");
+
+        let result;
+        const openerBookNo=opener.document.getElementsByClassName("bookNo");
+        for(let i=0;i<openerBookNo.length;i++){
+            if(openerBookNo[i].innerHTML==bookNum){
+                result=i;
             }
-        })
+        }
+
+
+        opener.document.getElementsByClassName("bookRoomNum")[result].value=this.parentElement.parentElement.children[1].innerHTML;
+
+       
+        window.close();
     })
+    
 }

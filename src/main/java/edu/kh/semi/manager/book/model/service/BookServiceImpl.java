@@ -78,9 +78,17 @@ public class BookServiceImpl implements BookService {
 
 
 
+	// 해당 예약번호의 룸타입, 전망타입 조회
 	@Override
-	public Room searchRoom(int bookNum) {
+	public Room searchRoom(int bookNo) {
 		
-		return dao.searchRoom(bookNum);
+		return dao.searchRoom(bookNo);
+	}
+
+
+
+	@Override
+	public List<Room> selectRoom(Room inputRoom) {
+		return dao.selectRoom(inputRoom);
 	}
 }
