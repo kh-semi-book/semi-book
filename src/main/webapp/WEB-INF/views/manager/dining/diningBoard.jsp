@@ -24,9 +24,7 @@ body {
 			<div></div>
 		</div>
 		<div class="board-body-area">
-			<div id="board-post">
-				<a href="/manager/diningPost" class="post">다이닝 등록</a>
-			</div>
+			
 
 			<table id="board_table">
 				<tr>
@@ -42,17 +40,15 @@ body {
 				
 
 			</table>
+			<div id="board-post">
+				<a href="/manager/diningPost" class="post">다이닝 등록</a>
+			</div>
 			<div class="paging">
-				<span> <a href=""> <img src="/image/btn_paging_first.png" alt="">
-				</a>
-				</span> <span> <a href=""> <img src="/image/btn_paging_prev_on.png" alt="">
-				</a>
-				</span> <span> <a href="" class="on">1</a>
-				</span> <span> <a href=""> <img src="/image/btn_paging_next_on.png" alt="">
-				</a>
-				</span> <span> <a href=""> <img src="/image/btn_paging_last_on.png" alt="">
-				</a>
-				</span>
+				<span> <a href="">&lt;&lt;</a></span> 
+				<span> <a href="">&lt;</a></span> 
+				<span> <a href="" class="on">1</a></span> 
+				<span> <a href="">&gt;</a></span> 
+				<span> <a href="">&gt;&gt;</a></span>
 			</div>
 		</div>
 		<div class="board-foot-area"></div>

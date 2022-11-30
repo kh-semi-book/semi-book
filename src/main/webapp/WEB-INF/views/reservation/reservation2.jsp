@@ -132,24 +132,30 @@
 								<table id="schedule">
 									<tr>
 										<th>체크인</th>
-										<td><input type="text" value="2022-11-04 (금)"></td>
+										<td><input type="text" value="2022-11-04 (금)" readonly></td>
 									</tr>
 									<tr>
 										<th>체크아웃</th>
-										<td><input type="text" value="2022-11-04 (금)"></td>
+										<td><input type="text" value="2022-11-04 (금)" readonly></td>
 									</tr>
 									<tr>
 										<th>박수</th>
-										<td><input type="text" value="1" class="schedule-num"> 박</td>
+										<td><input type="text" value="1" class="schedule-num" readonly> 박</td>
 									</tr>
 									<tr>
 										<th><label for="roomCnt">객실수</label></th>
-										<td><input type="text" value="1" class="schedule-num" id="roomCnt"> 실</td>
+										<td><input type="text" value="1" class="schedule-num" id="roomCnt" readonly> 실</td>
 									</tr>
 									<tr>
 										<th>인원수</th>
-										<td>어른 <input type="text" value="1" class="schedule-num"> 어린이 <input type="text" value="1" class="schedule-num"> <span><img src="/resources/image/button/info.gif"
-												id="schedule-info"></span>
+										<td>어른 <input type="text" value="1" class="schedule-num" readonly> 어린이 <input type="text" value="1" class="schedule-num" readonly> 
+											<span  class="tooltip">
+												<img src="/resources/image/button/info.gif" id="schedule-info">
+												<span class="tooltip-text">
+													<div>48개월 이상~만12세 이하</div>
+													<div>(인원 추가 요금 별도 발생)</div>
+												</span>
+											</span>
 										</td>
 									</tr>
 								</table>

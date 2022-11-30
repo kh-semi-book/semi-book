@@ -45,8 +45,7 @@ public class BoardController {
 
 	// 공지사항 세부 조회
 	@GetMapping("/cmmDetail/{cmmNo}")
-	public String cmmDetail(@PathVariable("cmmNo") int cmmNo, Model model, RedirectAttributes ra,
-			@RequestHeader("referer") String referer) {
+	public String cmmDetail(@PathVariable("cmmNo") int cmmNo, Model model, RedirectAttributes ra) {
 
 		CMM cmm = service.cmmDetail(cmmNo);
 
@@ -56,7 +55,7 @@ public class BoardController {
 		} else {
 			String message = "해당 게시글이 존재하지 않습니다.";
 			ra.addFlashAttribute("message", message);
-			return "redirect:/" + referer;
+			return "redirect:/manager/cmm";
 		}
 
 	}
@@ -72,7 +71,7 @@ public class BoardController {
 	@PostMapping("/cmmPost")
 	public String saveCmmPost(CMM cmm, @RequestParam(value = "cmmTitleImage") MultipartFile cmmTitleImage,
 			@RequestParam(value = "cmmConImage") MultipartFile cmmConImage, RedirectAttributes ra,
-			HttpServletRequest req, @RequestHeader(value = "referer") String referer) throws Exception {
+			HttpServletRequest req) throws Exception {
 
 		// 인터넷 주소로 접근할 수 있는 경로
 		String webPathTitle = "/resources/image/boardImage/title/";
@@ -91,24 +90,21 @@ public class BoardController {
 		int result = service.saveCmmPost(cmm, map, cmmTitleImage, cmmConImage);
 
 		String message = null;
-		String path = null;
 
 		if (result > 0) {
 			message = "공지사항 등록 성공";
-			path = "/manager/cmm";
 		} else {
 			message = "공지사항 등록 실패";
-			path = referer;
 		}
 
 		ra.addFlashAttribute("message", message);
 
-		return "redirect:" + path;
+		return "redirect:/manager/cmm";
 	}
 	
+	// 공지사항 수정 페이지 이동
 	@GetMapping("/cmmDetail/{cmmNo}/update")
-	public String cmmUpdate(@PathVariable("cmmNo") int cmmNo, Model model,
-			@RequestHeader(value = "referer") String referer, RedirectAttributes ra) {
+	public String cmmUpdate(@PathVariable("cmmNo") int cmmNo, Model model, RedirectAttributes ra) {
 
 		CMM cmm = service.cmmDetail(cmmNo);
 
@@ -118,16 +114,19 @@ public class BoardController {
 		} else {
 			String message = "오류";
 			ra.addFlashAttribute("message", message);
-			return "redirect:/" + referer;
+			return "redirect:/manager/cmm";
 		}
 
 	}
 
 	// 공지사항 수정
 	@PostMapping("/cmmDetail/{cmmNo}/cmmUpdate")
-	public String saveCmmUpdate(CMM cmm, @RequestParam(value = "cmmTitleImage") MultipartFile cmmTitleImage,
+	public String saveCmmUpdate(CMM cmm, @PathVariable("cmmNo") int cmmNo,
+			@RequestParam(value = "cmmTitleImage") MultipartFile cmmTitleImage,
 			@RequestParam(value = "cmmConImage") MultipartFile cmmConImage, RedirectAttributes ra,
-			HttpServletRequest req, @RequestHeader(value = "referer") String referer) throws Exception {
+			HttpServletRequest req) throws Exception {
+		
+		cmm.setCmmNo(cmmNo);
 
 		// 인터넷 주소로 접근할 수 있는 경로
 		String webPathTitle = "/resources/image/boardImage/title/";
@@ -142,27 +141,22 @@ public class BoardController {
 		map.put("webPathContent", webPathContent);
 		map.put("filePathTitle", filePathTitle);
 		map.put("filePathContent", filePathContent);
-		
-		CMM inputCmm = new CMM();
-		inputCmm.setCmmTitle(cmm.getCmmTitle());
-		inputCmm.setCmmSub(cmm.getCmmSub());
 
-		int result = service.saveCmmUpdate(inputCmm, map, cmmTitleImage, cmmConImage);
+		int result = service.saveCmmUpdate(cmm, map, cmmTitleImage, cmmConImage);
 
 		String message = null;
-		String path = null;
 
 		if (result > 0) {
 			message = "공지사항 수정 성공";
-			path = "/manager/cmmDetail/{cmmNo}";
+			ra.addFlashAttribute("message", message);
+			return "redirect:/manager/cmmDetail/"+cmmNo;
 		} else {
 			message = "공지사항 수정 실패";
-			path = referer;
+			ra.addFlashAttribute("message", message);
+			return "redirect:/manager/cmmDetail/"+cmmNo;
 		}
 
-		ra.addFlashAttribute("message", message);
 
-		return "redirect:" + path;
 	}
 
 	@PostMapping("/cmmDelete")
@@ -190,8 +184,7 @@ public class BoardController {
 
 	// 프로모션 세부 조회
 	@GetMapping("/promotionDetail/{promotionNo}")
-	public String promotionDetail(@PathVariable("promotionNo") int promotionNo, Model model, RedirectAttributes ra,
-			@RequestHeader("referer") String referer) {
+	public String promotionDetail(@PathVariable("promotionNo") int promotionNo, Model model, RedirectAttributes ra) {
 
 		Promotion promotion = service.promotionDetail(promotionNo);
 
@@ -201,7 +194,7 @@ public class BoardController {
 		} else {
 			String message = "해당 게시글이 존재하지 않습니다.";
 			ra.addFlashAttribute("message", message);
-			return "redirect:/" + referer;
+			return "redirect:/manager/promotion";
 		}
 
 	}
@@ -211,7 +204,7 @@ public class BoardController {
 	public String savePromotionPost(Promotion promotion,
 			@RequestParam(value = "promotionTitleImage") MultipartFile promotionTitleImage,
 			@RequestParam(value = "promotionConImage") MultipartFile promotionConImage, RedirectAttributes ra,
-			HttpServletRequest req, @RequestHeader(value = "referer") String referer) throws Exception {
+			HttpServletRequest req) throws Exception {
 
 		// 인터넷 주소로 접근할 수 있는 경로
 		String webPathTitle = "/resources/image/boardImage/title/";
@@ -230,20 +223,14 @@ public class BoardController {
 		int result = service.savePromotionPost(promotion, map, promotionTitleImage, promotionConImage);
 
 		String message = null;
-		String path = null;
 
 		if (result > 0) {
 			message = "프로모션 등록 성공";
-			path = "/manager/promotion";
 		} else {
 			message = "promotion 등록 실패";
-			path = referer;
 		}
-
 		ra.addFlashAttribute("message", message);
-
-		return "redirect:" + path;
-
+		return "redirect:/manager/promotion";
 	}
 
 	// =================[다이닝]======================

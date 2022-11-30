@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="promotionList" value="${promotionList}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,15 +19,14 @@ body {
 		<div class="board-head-area">
 			<div></div>
 			<div id="board_title">
-				<div>HOME > 프로모션 관리 > 프로모션 등록</div>
-				<div>프로모션 등록</div>
+				<div>HOME > 프로모션 관리 > 프로모션 세부 사항</div>
+				<div>프로모션 세부 사항</div>
 			</div>
 			<div></div>
 		</div>
-		<form action="/manager/promotionUpdate" method="post"  enctype="multipart/form-data">
 		<div class="board-body-area">
-			<div id="board-post">
-				<a class="save" href="/manager/promotionUpdate">수정</a>  <a class="save" href="/manager/promotionDelete">삭제</a>
+			<div id="board_return">
+				<a href="/manager/promotion">목록</a>
 			</div>
 
 			<table id="board_table">
@@ -55,13 +53,13 @@ body {
 				<tr class="date-area">
 					<th>투숙 기간</th>
 					<td>
-						${promotion.pStayStartDate}~
+						${promotion.pStayStartDate} ~ 
 						${promotion.pStayEndDate}
 						</td>
 					<th>판매 기간</th>
 					<td>
-						${promotion.pSaleStartDate}~
-						${promotion.pSaleEndDate}
+						${promotion.pSaleStartDate} ~
+						${promotion.pSaleEndDate}  
 					</td>
 				</tr>
 				<tr>
@@ -80,11 +78,11 @@ body {
 
 			</table>
 
-			<div id="board_return">
-				<a href="/manager/promotion">목록</a>
+			
+			<div id="board-post">
+				<button class="save" id="updateBtn">수정</button>  <button class="save" id="deleteBtn">삭제</button> 
 			</div>
 		</div>
-		</form>
 		<div class="board-foot-area"></div>
 	</div>
 

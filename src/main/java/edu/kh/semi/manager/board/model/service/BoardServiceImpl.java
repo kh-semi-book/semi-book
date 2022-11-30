@@ -61,16 +61,20 @@ public class BoardServiceImpl implements BoardService {
 	
 	// 공지사항 수정
 	@Override
-	public int saveCmmUpdate(CMM inputCmm, Map<String, Object> map, MultipartFile cmmTitleImage,
+	public int saveCmmUpdate(CMM cmm, Map<String, Object> map, MultipartFile cmmTitleImage,
 			MultipartFile cmmConImage) throws Exception {
+		
+		if(cmmTitleImage.getSize()==0) {
+			cmm.setCmmTitleImg(null);
+		}
 		
 		String renameTitle = Util.fileRename(cmmTitleImage.getOriginalFilename());
 		String renameContent = Util.fileRename(cmmConImage.getOriginalFilename());
 
-		inputCmm.setCmmTitleImg(map.get("webPathTitle") + renameTitle);
-		inputCmm.setCmmConImg(map.get("webPathContent") + renameContent);
+		cmm.setCmmTitleImg(map.get("webPathTitle") + renameTitle);
+		cmm.setCmmConImg(map.get("webPathContent") + renameContent);
 		
-		int result = dao.saveCmmUpdate(inputCmm);
+		int result = dao.saveCmmUpdate(cmm);
 
 		if (result > 0) {
 
