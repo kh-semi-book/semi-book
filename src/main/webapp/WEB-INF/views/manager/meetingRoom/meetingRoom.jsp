@@ -76,9 +76,7 @@
 				<div class="manage-book-no manage-border-right">${book.meetingBookNo}</div>
 				<div class="manage-book-date manage-border-right">${book.meetingDate}</div>
 				<div class="manage-book-date manage-border-right">${book.meetingBookDate}</div>
-				<div class="manage-book-name manage-border-right">${book.meetingName}&nbsp;&nbsp;
-					<button id="detail-btn"><a href="/manager/meetingRoom/meetingRoomDetail">상세보기</a></button>
-				</div>
+				<div class="manage-book-name manage-border-right"><a href="/manager/meetingRoom/meetingRoomDetail">${book.meetingName}</a></div>
 				<div class="manage-book-count manage-border-right">${book.meetingHeadCount}</div>
 				<div class="manage-booker-name manage-border-right">${book.meetingMenName}</div>
 				<div class="manage-book-del manage-border-right">${book.meetingCancelFL}</div>

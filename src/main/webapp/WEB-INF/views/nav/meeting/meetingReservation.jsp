@@ -22,16 +22,9 @@
     <div id="head-img"></div>
     
     <div class="bsh-main">
-        <div class="bsh-path">
-            <ol>
-                <li class="bsh-path1">
-                    <a href="/">HOME &nbsp;</a>
-                </li>
-                <li class="bsh-path2">
-                    <a href="#"> > &nbsp;Q&A</a>
-                </li>
-            </ol>
-        </div>
+       <div id="top-menu">
+	    	<a href="#">HOME</a>><a href="#">Q&A</a>
+		</div>
 
         <div class="bsh-main-title">
             <h1>예약문의</h1>
@@ -175,9 +168,6 @@
             </form>
         </div>
         
-        <div class="bsh-gotop" onclick="gotop();return false;">
-            <a class="bsh-gotop-btn" style="top: -49px;" href="#head-img">TOP</a>
-        </div>
 
     </div>
 
