@@ -25,8 +25,6 @@
 
 
 /*=========[ 기본 뼈대 ]========= */
-
-
 .kjh-head-area{
     background-image: url(/resources/image/visual_promotion.jpg);
     width: 100%;
@@ -37,34 +35,25 @@
     background-size: 100% 400px;
     margin: 0 auto;
 }
+
+.kjh-page-list{
+    margin-top: 20px;
+}
+
+.kjh-page-list>a{
+    text-decoration: none;
+    color: #767676;
+    font-size: 13px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+
 .kjh-h1{
     
     margin: 10px auto;
     
     padding: 30px 0 0 0;
 }
-
-.kjh-step{
-    margin-top: 15px;
-}
-
-.kjh-step ol{
-    padding: 0;
-
-}
-
-.kjh-step a{
-    text-decoration: none;
-    color: #767676;
-    size: 13px;
-}
-
-.kjh-path1,.kjh-path2,.kjh-path3{
-    display: inline-block;
-
-}
-
-
 
 
 .kjh-main-border{
