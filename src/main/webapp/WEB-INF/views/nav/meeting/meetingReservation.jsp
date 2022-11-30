@@ -22,16 +22,9 @@
     <div id="head-img"></div>
     
     <div class="bsh-main">
-        <div class="bsh-path">
-            <ol>
-                <li class="bsh-path1">
-                    <a href="/">HOME &nbsp;</a>
-                </li>
-                <li class="bsh-path2">
-                    <a href="#"> > &nbsp;Q&A</a>
-                </li>
-            </ol>
-        </div>
+            <div id="top-menu">
+	    	    <a href="#">MAIN</a>><a href="#">미팅룸 예약 상세보기</a>
+		    </div>
 
         <div class="bsh-main-title">
             <h1>예약문의</h1>

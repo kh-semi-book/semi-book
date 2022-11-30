@@ -11,11 +11,6 @@
     padding: 0 10px;
 }
 
-/* 상세보기 버튼 */
-.rsc-btn{
-    display: flex;
-    flex-direction: row;
-}
 
 #rsc-btn-menu, #rsc-btn-event{
     width: 100px;
@@ -165,8 +160,16 @@
     color: red;
 }
 
-#detail-btn a{
-    text-decoration: none;
-    color: black;
 
+/* 상품명 상세보기 버튼 */
+.manage-book-name>a{
+    font-size: 20px;
+    color: black;
 }
+
+.manage-book-name>a:hover{
+
+    color: blue;
+    text-decoration: solid;
+}
+

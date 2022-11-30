@@ -3,7 +3,6 @@
     margin: 0 auto 0 auto;
     width: 100%;
     height: auto;
-    background-color: #F7F7F7;
 }
 .rsc-top-image{
     width: 100%;
@@ -18,7 +17,7 @@
 }
 
 
-.rsc-head-area,.rsc-foot-area{
+.rsc-head-area{
     width: 100%;
     height: 150px;
     background-color: #FFFFFF
@@ -29,11 +28,7 @@
     background-color:#FFFFFF ;
     margin: 0 auto 0 auto;
 }
-.rsc-main-side{
-    width: 80%;
-    width: 1500px;
-    min-width: 1000px;
-}
+
 
 /*=========[ 상단 영역 ]========= */
 .rsc-head-area{
@@ -137,4 +132,8 @@
     font-weight: bold;
     font-size: 14px;
     color: red;
+}
+#rsc-page-skip{
+    margin-top: 30px;
+    margin-bottom: 0px;
 }

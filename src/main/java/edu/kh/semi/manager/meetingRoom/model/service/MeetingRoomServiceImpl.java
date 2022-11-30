@@ -59,6 +59,15 @@ public class MeetingRoomServiceImpl implements MeetingRoomService{
 				return map;
 	}
 
+	// 진행상태 변경 
+	@Override
+	public int changeProcess(int input) {
+		
+		int result = dao.changeProcess(input);
+		
+		return result;
+	}
+
 	
 
 }

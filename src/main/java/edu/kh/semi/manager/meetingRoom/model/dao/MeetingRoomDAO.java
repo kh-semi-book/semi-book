@@ -53,6 +53,11 @@ public class MeetingRoomDAO {
 		
 		return sqlSession.selectList("meetingRoomMapper.selectBookList_search", pm ,rowBounds);
 	}
+
+	// 진행상태 변경
+	public int changeProcess(int input) {
+		return sqlSession.update("meetingRoomMapper.changeProcess",input);
+	}
 	
 	
 	

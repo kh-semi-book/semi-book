@@ -27,7 +27,6 @@ public class MemberController {
 	
 	
 	
-	
 	@GetMapping("/member/signUp2")
 	public String signUp2() {
 		return "/member/signUp2";

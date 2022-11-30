@@ -6,10 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import edu.kh.semi.manager.meetingRoom.model.service.MeetingRoomService;
+import oracle.jdbc.proxy.annotation.Post;
 
 @Controller
 public class MeetingRoomController {
@@ -40,7 +42,6 @@ public class MeetingRoomController {
 	 }
 	
 
-
 	//  예약 리스트를 조회 + 페이징 처리 
 	@GetMapping("/manager/meetingRoom")
 	public String selectMeetingRoomList(
@@ -64,6 +65,15 @@ public class MeetingRoomController {
 		return "manager/meetingRoom/meetingRoom";
 	}
 
+	
+	// 진행상태 변경 
+	@PostMapping("/manager/meetingRoom")
+	public String changeProcess(int input) {
+
+		int result = service.changeProcess(input);
+		
+		return "redirect:manager/meetingRoom/meetingRoom";
+	}
 
 	
 

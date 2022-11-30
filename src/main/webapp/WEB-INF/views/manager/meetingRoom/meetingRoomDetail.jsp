@@ -9,8 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MeetingRoom 예약 상세보기 - Hidden Cliff Hotel and Nature</title>
 
-    <link rel="stylesheet" href="/resources/css/nav/meeting/meetingReservation.css">
+    <%-- <link rel="stylesheet" href="/resources/css/nav/meeting/meetingReservation.css"> --%>
 	<link rel="stylesheet" href="/resources/css/manager/admin.css">
+	<link rel="stylesheet" href="/resources/css/manager/meetingRoomDetail.css">
 
     <script src="https://kit.fontawesome.com/f7459b8054.js" crossorigin="anonymous"></script>
 </head>
@@ -73,9 +74,7 @@
             </form>
         </div>
         
-        <div class="bsh-gotop" onclick="gotop();return false;">
-            <a class="bsh-gotop-btn" style="top: -49px;" href="#head-img">TOP</a>
-        </div>
+     
 
     </div>
 
