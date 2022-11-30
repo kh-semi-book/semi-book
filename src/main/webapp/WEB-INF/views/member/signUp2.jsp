@@ -110,9 +110,9 @@
                               <tr>
                                  <th>이메일<span class="star">*</span></th>
                                 <td class="kjh-input" colspan="3">
-                                  <input type="text" size="20" name="memberEmail" id="memberEmail">@
-                                  <input type="text" size="13"name="memberEmail" id="">
-                                  <select class="kjh-address email" name="memberEmail" id="">
+                                  <input type="text" size="20" name="memberEmail" id="memberEmail1">@
+                                  <input type="text" size="13"name="memberEmail" id="memberEmail2" >
+                                  <select class="kjh-address email" name="memberEmail" id="selected">
                                     <option value="naver.com">naver.com</option>
                                     <option value="gmail.com">gmail.com</option>
                                     <option value="nate.com">nate.com</option>
@@ -229,11 +229,15 @@
                                     <option value="11">11</option>
                                     <option value="12">12</option>
                                   </select>월
-                                  <select class="kjh-select" name="memberBirth" id="m-birth3"class="date">
+                                 
+                                  <select class="kjh-select" name="memberBirth" id="m-birth4" class="date">
                                     <option value=""></option>
                                     <option value="1">1</option>
-                                    <option value="1">1</option>
-                                  </select>일
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                  </select>일 
                                 </td>
                                
                               </tr>
@@ -323,7 +327,7 @@
           </div>
             </div>  
             <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-            <script src="/resources/js/member/signUp2.js"></script>
+            <%-- <script src="/resources/js/member/signUp2.js"></script> --%>
     </body>
 
 </html>

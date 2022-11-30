@@ -1,23 +1,34 @@
-var m_birth1 = document.getElementById("m-birth1"); // 년
-var m_birth2 = document.getElementById("m-birth2"); // 월
-var m_birth3 = document.getElementById("m-birth3"); // 일
 
 
-var arrayMonth = [31,28,31,30,31,30,31,31,30,31,30,31];
+    const selected = document.getElementById("selected");
 
-if((m_birth1 % 4 == 0 && m_birth1 % 100 != 0) || m_birth1 % 400 == 0){
-    arrayMonth[1] = 29;
+    
+    const emailValue =selected.options[selected.selectedIndex].value;
+    const selectedEmailValue = document.getElementById("memberEmail2");
+
+
+function selectBoxChange(){
+
+
+    if(selected.val()== '1'){ //직접입력일 경우
+        selectedEmailValue[1].val('');                //값 초기화
+        selectedEmailValue[1].attr("disabled",false); //활성화
+   }else{ //직접입력이 아닐경우
+        selectedEmailValue[1].val($(this).val());      //선택값 입력
+        selectedEmailValue[1].attr("disabled",true); //비활성화
+    }
+
 
 }
 
-for (var i = m_birth3.length; i > 0 ; i--){
-    m_birth3.remove(m_birth3.selectedIndex);
-}
+	// 이메일
+	// $("select[id= selected]").change(function() {
+	// 	if($(this).val()== '1'){ //직접입력일 경우
+    //         $("#memberEmail2").val('');                        //값 초기화
+    //         $("#memberEmail2").attr("disabled",false); //활성화
+    //    }else{ //직접입력이 아닐경우
+    //         $("#memberEmail2").val($(this).val());      //선택값 입력
+    //         $("#memberEmail2").attr("disabled",true); //비활성화
+    //    }
 
-// 이메일
-
-/* $("select[name=memberEmail].on("change", funtion(){
-
-})
-
- */
+	// });
