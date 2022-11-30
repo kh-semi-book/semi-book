@@ -20,18 +20,81 @@
 		
 	</resultMap>
 	
+	<!-- 예약 수 조회 -->
 		<select id="getBookCount" resultType="_int">
-  		SELECT COUNT(*) FROM MEETING_BOOK 
+  		SELECT COUNT(*) FROM MEETING_BOOK
+  		WHERE MEETING_CANCEL_FL = 'N'
   	</select>
   	
-	<!-- 미팅룸 예약리스트 조회 -->
- 	<select id="selectMeetingRoomList" resultType="list" resultMap="meetingRoom_rm">
- 	SELECT MEETING_BOOK_NO,  
-	   TO_CHAR(MEETING_DATE,'YYYY-MM-DD') MEETING_DATE,  
-	   TO_CHAR(MEETING_BOOK_DATE,'YYYY-MM-DD') MEETING_BOOK_DATE, MEETING_ROOM_NAME,
-	   MEETING_HEADCOUNT, MEETING_MEM_NAME, MEETING_CANCEL_FL, MEETING_PROCESS 
-	FROM MEETING_BOOK 
-	JOIN MEETING_ROOM USING (MEETING_ROOM_NO)
- 	</select>
+ 	<!-- 예약 게시글 수 조회  -->
+  	<select id="selectBookList" resultType="list" resultMap="meetingRoom_rm">
+				SELECT MEETING_BOOK_NO,  
+				   TO_CHAR(MEETING_DATE,'YYYY-MM-DD') MEETING_DATE,  
+				   TO_CHAR(MEETING_BOOK_DATE,'YYYY-MM-DD') MEETING_BOOK_DATE, MEETING_ROOM_NAME,
+				   MEETING_HEADCOUNT , MEETING_MEM_NAME, MEETING_CANCEL_FL , MEETING_PROCESS
+				FROM MEETING_BOOK 
+				JOIN "MEETING_ROOM" USING (MEETING_ROOM_NO)
+				WHERE MEETING_CANCEL_FL = 'N'
+		</select>
+  
+  <!-- 검색 결과 수 조회 -->
+  	<select id="getBookCount_search" resultType="_int">
+  		SELECT COUNT(*) 
+  		FROM MEETING_BOOK 
+  		JOIN "MEETING_ROOM" USING (MEETING_ROOM_NO)
+  		WHERE MEETING_CANCEL_FL = 'N'
+ 			<if test='searchOptionInput != null and searchOptionInput!=""'>
+	  		<choose>
+					<when test='searchOption=="bookerName"'>
+						AND MEETING_MEM_NAME=#{searchOptionInput}
+					</when>  		
+					<when test='searchOption=="roomName"'>
+						AND MEETING_ROOM_NAME=#{searchOptionInput}
+					</when>  		
+	  		</choose>
+	  		<!-- <if test='searchDateOption!=null'>
+				<choose>
+					<when test='searchDateOption=="bookDate"'>
+						AND MEETING_DATE = #{searchDateInput} 
+					</when>
+					<when test='searchDateOption=="receiptDate"'>
+						AND MEETING_BOOK_DATE = #{searchDateInput} 
+					</when>
+				</choose>
+			</if> -->
+	  	</if>
+  	</select>
+  	
+  	
+	<!-- 검색 결과 목록 수 조회 -->
+	 	<select id="selectBookList_search" resultType="list" resultMap="meetingRoom_rm">
+			 	SELECT MEETING_BOOK_NO,  
+				   TO_CHAR(MEETING_DATE,'YYYY-MM-DD') MEETING_DATE,  
+				   TO_CHAR(MEETING_BOOK_DATE,'YYYY-MM-DD') MEETING_BOOK_DATE, MEETING_ROOM_NAME,
+				   MEETING_HEADCOUNT , MEETING_MEM_NAME, MEETING_CANCEL_FL , MEETING_PROCESS
+				FROM MEETING_BOOK 
+				JOIN "MEETING_ROOM" USING (MEETING_ROOM_NO)
+		  	WHERE MEETING_CANCEL_FL = 'N'
+	  	<if test='searchOptionInput != null and searchOptionInput!=""'>
+	  		<choose>
+					<when test='searchOption=="bookerName"'>
+						AND MEETING_MEM_NAME=#{searchOptionInput}
+					</when>  		
+					<when test='searchOption=="roomName"'>
+						AND MEETING_ROOM_NAME=#{searchOptionInput}
+					</when>  		
+	  		</choose>
+	  		<if test='searchDateOption!=null'>
+				<choose>
+					<when test='searchDateOption=="bookDate"'>
+						AND MEETING_DATE = #{searchDateInput} 
+					</when>
+					<when test='searchDateOption=="receiptDate"'>
+						AND MEETING_BOOK_DATE = #{searchDateInput} 
+					</when>
+				</choose>
+			</if> 
+	  	</if>
+	 	</select>
 
 </mapper>

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<c:set var="bookList" value="${bookList}"/>
+<c:set var="bookList" value="${map.bookList}"/>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,6 +28,36 @@
 	
 		<div id="manage-book-title">미팅룸 관리 페이지</div>
 		
+	<fieldset>
+        <legend>검색 상세</legend>
+		<form action="/manager/meetingRoom" id="search-book-option">
+			<span class="search-option">
+				<select name="searchOption">
+					<option value="bookerName">예약자명</option>
+					<option value="roomName">상품명</option>
+				</select>
+			</span>   
+			<input type="text" class="search-option-input" name="searchOptionInput">
+
+
+			<span id="search-date">
+				<div class="search-option">날짜 선택</div>
+			</span>
+			<span class="search-option">
+				<select name="searchDateOption">
+					<option value="bookDate">예약일</option>
+					<option value="receiptDate">접수일</option>
+				</select>
+			</span>
+			<span class="search-date-input">
+			<input name="searchDateInput" type="date">
+			</span> 
+			<button id="searchOptionBtn">검색</button>
+
+		</form>
+
+    </fieldset>
+
 		<div id="manage-book-table">
 			<div id="manage-book-table-title">
 				<div class="manage-book-no">번호</div>
@@ -46,8 +76,7 @@
 				<div class="manage-book-no manage-border-right">${book.meetingBookNo}</div>
 				<div class="manage-book-date manage-border-right">${book.meetingDate}</div>
 				<div class="manage-book-date manage-border-right">${book.meetingBookDate}</div>
-				<div class="manage-book-name manage-border-right">
-					${book.meetingName}&nbsp;&nbsp;
+				<div class="manage-book-name manage-border-right">${book.meetingName}&nbsp;&nbsp;
 					<button id="detail-btn"><a href="/manager/meetingRoom/meetingRoomDetail">상세보기</a></button>
 				</div>
 				<div class="manage-book-count manage-border-right">${book.meetingHeadCount}</div>
