@@ -22,7 +22,6 @@
 <typeAlias type="edu.kh.semi.manager.board.model.vo.Dining" alias="Dining"/>
 <typeAlias type="edu.kh.semi.manager.board.model.vo.Event" alias="Event"/>
 <typeAlias type="edu.kh.semi.member.model.vo.Reservation2" alias="Reservation2"/>
-
 </typeAliases>
 
 <!-- mapper 파일(SQL 작성되는파일) 위치 등록 부분 -->

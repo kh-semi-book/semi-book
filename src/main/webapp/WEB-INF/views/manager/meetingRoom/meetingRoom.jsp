@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <c:set var="bookList" value="${map.bookList}"/>
-
+<!-- 무서우니까 한번더 커밋 -->
 <!DOCTYPE html>
 <html lang="en">
 
