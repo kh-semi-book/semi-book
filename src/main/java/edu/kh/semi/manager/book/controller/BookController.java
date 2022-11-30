@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.kh.semi.manager.book.model.service.BookService;
@@ -48,20 +49,22 @@ public class BookController {
 		return "manager/common/select-book";
 		
 	}
+
 	
 	@GetMapping("/manager/test")
 	public String selectRoom(Model model,
-			int bookNum) {
+		@RequestParam(value="bookNum") int bookNum) {
 		
-		Room inputRoom=service.searchRoom(bookNum);
+		System.out.println(bookNum);
+		Room inputRoom=service.searchRoom(bookNum); // 해당 예약번호의 룸타입, 전망타입 조회
+		inputRoom.setBookNo(bookNum);
+		System.out.println(inputRoom);
 		
-		List<Room> roomList=service.selectRoom();
+		List<Room> roomList=service.selectRoom(inputRoom);
 		
 		model.addAttribute(roomList);
 		model.addAttribute(inputRoom);
-		
-		System.out.println(bookNum);
-		System.out.println(inputRoom);
+		model.addAttribute(bookNum);
 		
 		return "manager/common/SelectRoom";
 	}

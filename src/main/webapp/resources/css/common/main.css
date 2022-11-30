@@ -540,21 +540,59 @@ footer{
     border: 1px solid black;
 }
 
+/* -----------------------동영상 css------------------------- */
 
 
 #main-movie-lib{
-    width: 1000px;
+    position: relative;
+    width:1000px;
+    height:700px;
+    overflow: hidden; 
     margin:auto;
-    margin-top: 70px;
+} 
+ul,li {
+    margin:0;
+    padding:0;
 }
 
-.main-content>span,#main-movie-lib>span,#main-photo-gallary>span{
+#videoSlide{
+    
+    list-style: none;
+    position: absolute;
+    width: 10000px; /* 슬라이드할 사진과 마진 총 넓이 */
+    transition: 0.5s ease-out; 
+}
+
+#videoSlide li:not(:last-child){
+    float:left;
+}
+
+
+
+.move1{
+    position: absolute;
+    font-size: 60px;
+    cursor: pointer;
+
+    top:400px;
+    color:white;
+    font-family: "나눔명조", sans-serif;
+}
+
+.next1{
+    right:0;
+}
+
+/* --------------------------------------------------------- */
+
+.main-sub-title{
     display: flex;
     justify-content: center;
     font-size: 27px;
     margin-bottom: 40px;
     margin-top: 70px;
 } 
+
 
 
 /* --------------------------- */

@@ -30,3 +30,39 @@ document.getElementsByClassName("next")[0].addEventListener("click",function(){
 setInterval(changeImage,10000);
 
 
+// 유튜브 이동
+
+let slides= document.querySelector("#videoSlide");
+let slideImg=document.querySelector("#videoSlide li");
+
+let i=0;
+let count=slides.childElementCount;
+
+const prev1=document.getElementsByClassName("prev1")[0];
+const next1=document.getElementsByClassName("next1")[0];
+
+let slideWidth=1000;
+
+next1.addEventListener("click",function(){
+    i++;
+
+    if(i>=count){
+        i=0;
+    }
+
+
+    slides.style.translate= -(i*1000)+"px";
+
+})
+prev1.addEventListener("click",function(){
+    i--;
+
+    if(i<0){
+        i=count-1;
+    }
+
+    slides.style.translate=-(i*1000)+"px";
+
+})
+
+
