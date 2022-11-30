@@ -19,9 +19,10 @@
     </head>
 
     <body>
-            <!-- =================================[ header ]=================================== -->
-            	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-            <!-- =================================[ header ]=================================== -->
+    
+    <!-- =================================[ header ]=================================== -->
+    	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
+    <!-- =================================[ header ]=================================== -->
 
 
 
@@ -42,6 +43,7 @@
                 </section>
                 <section></section>
             </div>
+         </div>
             <!-- 중간 영역 -->
             <div class="rsc-body-area">
                 <div class="reservation-content-main">
@@ -148,8 +150,6 @@
                     </div>
                 </div>
             </div>
-        <div class="rsc-foot-area"></div>
-        </div>  
         <!-- ========================= footer ========================= -->
         	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
         <!-- ========================= footer ========================= -->

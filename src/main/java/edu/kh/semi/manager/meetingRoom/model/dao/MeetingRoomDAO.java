@@ -47,6 +47,10 @@ public class MeetingRoomDAO {
 		
 		RowBounds rowBounds = new RowBounds(offset, pagination.getLimit());
 
+		System.out.println(pm.get("searchDateInput").equals(""));
+		System.out.println(pm.get("searchDateInput").equals(null));
+		System.out.println(pm.get("searchDateInput").equals("null"));
+		
 		return sqlSession.selectList("meetingRoomMapper.selectBookList_search", pm ,rowBounds);
 	}
 	

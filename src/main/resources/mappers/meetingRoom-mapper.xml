@@ -52,18 +52,18 @@
 						AND MEETING_ROOM_NAME=#{searchOptionInput}
 					</when>  		
 	  		</choose>
-	  		<!-- <if test='searchDateOption!=null'>
+	  	</if>
+  		<if test='searchDateInput!=""'>
 				<choose>
 					<when test='searchDateOption=="bookDate"'>
-						AND MEETING_DATE = #{searchDateInput} 
+						AND TO_CHAR(MEETING_BOOK_DATE,'YYYY-MM-DD') = #{searchDateInput}
 					</when>
 					<when test='searchDateOption=="receiptDate"'>
-						AND MEETING_BOOK_DATE = #{searchDateInput} 
+						AND TO_CHAR(MEETING_DATE,'YYYY-MM-DD') = #{searchDateInput}
 					</when>
 				</choose>
-			</if> -->
-	  	</if>
-  	</select>
+			</if>
+			</select>
   	
   	
 	<!-- 검색 결과 목록 수 조회 -->
@@ -84,17 +84,17 @@
 						AND MEETING_ROOM_NAME=#{searchOptionInput}
 					</when>  		
 	  		</choose>
-	  		<if test='searchDateOption!=null'>
+	  	</if>
+  		<if test='searchDateInput!=""'>
 				<choose>
 					<when test='searchDateOption=="bookDate"'>
-						AND MEETING_DATE = #{searchDateInput} 
+						AND TO_CHAR(MEETING_BOOK_DATE,'YYYY-MM-DD') = #{searchDateInput}
 					</when>
 					<when test='searchDateOption=="receiptDate"'>
-						AND MEETING_BOOK_DATE = #{searchDateInput} 
+						AND TO_CHAR(MEETING_DATE,'YYYY-MM-DD') = #{searchDateInput}
 					</when>
 				</choose>
-			</if> 
-	  	</if>
+			</if>
 	 	</select>
 
 </mapper>
