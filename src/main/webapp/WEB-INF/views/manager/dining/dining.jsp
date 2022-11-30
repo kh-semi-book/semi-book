@@ -23,10 +23,9 @@ body {
 			</div>
 			<div></div>
 		</div>
-		<form action="/manager/diningUpdate" method="post"  enctype="multipart/form-data">
 		<div class="board-body-area">
-			<div id="board-post">
-				<button class="save">수정</button>
+			<div id="board_return">
+				<a href="/manager/dining">목록</a>
 			</div>
 
 			<table id="board_table">
@@ -68,12 +67,14 @@ body {
 
 
 			</table>
-			<div id="board_return">
-				<a href="/manager/dining">목록</a>
+			
+			<div id="board-post">
+				<button class="save">수정</button>  <button class="save" id="deleteBtn">삭제</button> 
 			</div>
 		</div>
-		</form>
+		
 		<div class="board-foot-area"></div>
+		<script src="/resources/js/manager/board/boardPost.js"></script>
 	</div>
 
 </body>

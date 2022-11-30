@@ -40,14 +40,14 @@ public interface BoardService {
 
 	
 	/** 공지사항 수정
-	 * @param inputCmm
+	 * @param cmm
 	 * @param map
 	 * @param cmmTitleImage
 	 * @param cmmConImage
 	 * @return
 	 * @throws Exception
 	 */
-	int saveCmmUpdate(CMM inputCmm, Map<String, Object> map, MultipartFile cmmTitleImage, MultipartFile cmmConImage) throws Exception;
+	int saveCmmUpdate(CMM cmm, Map<String, Object> map, MultipartFile cmmTitleImage, MultipartFile cmmConImage) throws Exception;
 	
 	//==========================================================================
 	

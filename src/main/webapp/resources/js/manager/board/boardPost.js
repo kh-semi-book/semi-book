@@ -72,20 +72,26 @@ if (deleteConBtn != null) {
 // 게시글 수정
 const updateBtn = document.getElementById("updateBtn");
 
-updateBtn.addEventListener("click", () => {
+if (updateBtn != null) {
+    updateBtn.addEventListener("click", () => {
 
-    location.href = location.pathname + "/update";
+        location.href = location.pathname + "/update";
 
-});
+    });
+}
+
 
 // 게시글 삭제
 const deleteBtn = document.getElementById("deleteBtn");
-deleteBtn.addEventListener("click", () => {
-    if (confirm("정말 삭제하시겠습니까?")) {
-        location.href = location.pathname + "/delete";
-    }
+if (deleteBtn != null) {
+    deleteBtn.addEventListener("click", () => {
+        if (confirm("정말 삭제하시겠습니까?")) {
+            location.href = location.pathname + "/delete";
+        }
 
-});
+    });
+}
+
 
 
 

@@ -29,9 +29,7 @@ body {
 			<div></div>
 		</div>
 		<div class="board-body-area">
-			<div id="board-post">
-				<a href="/manager/promotionPost" class="post">프로모션 등록</a>
-			</div>
+			
 
 			<table id="board_table">
 				<tr>
@@ -41,14 +39,17 @@ body {
 				</tr>
 				<c:forEach var="promotion" items="${promotionList}">
 					<tr>
-						<td><a href="/manager/promotionDetail/${promotion.promotionNo}" class="detail">${promotion.promotionNo}</a></td>
-						<td>${promotion.promotionTitle}</td>
+						<td>${promotion.promotionNo}</a></td>
+						<td><a href="/manager/promotionDetail/${promotion.promotionNo}" class="detail">${promotion.promotionTitle}</a></td>
 						<td>${promotion.promotionCreateDate}</td>
 					</tr>
 				</c:forEach>
 				
 
 			</table>
+			<div id="board-post">
+				<a href="/manager/promotionPost" class="post">프로모션 등록</a>
+			</div>
 			<div class="paging">
 				<span> <a href="">&lt;&lt;</a></span> 
 				<span> <a href="">&lt;</a></span> 

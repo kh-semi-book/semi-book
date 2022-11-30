@@ -26,8 +26,8 @@ body {
 		</div>
 		<form action="/manager/promotionPost" method="post"  enctype="multipart/form-data">
 		<div class="board-body-area">
-			<div id="board-post">
-				<button class="save">저장</button>
+			<div id="board_return">
+				<a href="/manager/promotion">목록</a>
 			</div>
 
 			<table id="board_table">
@@ -79,8 +79,9 @@ body {
 
 			</table>
 
-			<div id="board_return">
-				<a href="/manager/promotion">목록</a>
+			
+			<div id="board-post">
+				<button class="save">저장</button>
 			</div>
 		</div>
 		</form>
