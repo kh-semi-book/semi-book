@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/nav/specialOffer")
 public class SpecialOfferController {
 	
-	@GetMapping("/specialOffer/roomPromotion")
+	@GetMapping("/roomPromotion")
 	public String specialOffer(Model model) {
 		
 		
@@ -17,11 +17,11 @@ public class SpecialOfferController {
 		return "/nav/specialOffer/roomPromotion/roomPromotionMain";
 	}
 	
-	@GetMapping("/specialOffer/dining")
+	@GetMapping("/dining")
 	public String specialOfferDining() {
 		return "/nav/specialOffer/dining/diningMain";
 	}
-	@GetMapping("/specialOffer/event")
+	@GetMapping("/event")
 	public String specialOfferEvent() {
 		return "/nav/specialOffer/event/eventMain";
 	}

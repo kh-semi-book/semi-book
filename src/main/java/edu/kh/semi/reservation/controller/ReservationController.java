@@ -2,6 +2,7 @@ package edu.kh.semi.reservation.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class ReservationController {
@@ -31,7 +32,7 @@ public class ReservationController {
 		return "reservation/reservation4";
 	}
 	
-	@GetMapping("/reservation/reservation5")
+	@PostMapping("/reservation/reservation5")
 	public String reservation5() {
 		return "reservation/reservation5";
 	}

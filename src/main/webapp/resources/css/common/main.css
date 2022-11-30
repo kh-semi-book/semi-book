@@ -654,6 +654,13 @@ footer{
 }
 
 
+/* 이미지 안에 a태그 있이 하기 */
+#main-left-down-right:hover img{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+
 
 
 
