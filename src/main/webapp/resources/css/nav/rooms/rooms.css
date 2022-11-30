@@ -50,24 +50,17 @@
     
 }
 
-.step{
-
+.kjh-page-list{
+    margin-top: 20px;
 }
 
-.step ol{
-    padding: 0;
-
-}
-
-.step a{
+.kjh-page-list>a{
     text-decoration: none;
-    color: black;
+    color: #767676;
+    font-size: 13px;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
-.path1,.path2{
-    display: inline-block;
-
-}
 
 .kjh-title h1{
     font-size: 33px;

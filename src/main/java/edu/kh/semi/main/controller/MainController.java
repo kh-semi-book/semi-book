@@ -33,6 +33,11 @@ public class MainController {
 	public String mediaLibrary() {
 		return "common/header-top-media";
 	}
+
+	@GetMapping("/member/memberEdit")
+	public String myPage(){
+		return "member/memberEdit";
+	}
 	
 	
 

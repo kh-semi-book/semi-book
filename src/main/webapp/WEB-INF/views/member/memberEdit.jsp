@@ -1,3 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<%-- 문자열 관련 메서드를 제공하는 JSTL(EL형식) --%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -20,8 +26,8 @@
     <!-- header -->
 	<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
-     <div class="kjh-head-area">
-             
+          <div class="kjh-head-area">
+
           </div>
           <div class="rsc-body-area">
             <div class="reservation-content-main">
@@ -113,7 +119,7 @@
                                     <option value="M">남</option>
                                   </select>
                                 </td>
-                               
+                              
                               </tr>
                             
                               <tr>
@@ -144,7 +150,7 @@
                             </table>
                           </div> 
 
-                         
+                        
                           <h4>추가정보
                             <span>(선택항목)</span>
                           </h4>
