@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Sans+KR&display=swap');
+
 /*=========[ 기본 뼈대 ]========= */
 .board-lookUp-page{
     margin: 0 auto 0 auto;
@@ -46,6 +49,7 @@
     margin-left: 0;
     width: 1500px;
     letter-spacing: -1px;
+    font-family: 'Nanum Myeongjo';
 }
 
 /* =======[게시판 영역]======= */
