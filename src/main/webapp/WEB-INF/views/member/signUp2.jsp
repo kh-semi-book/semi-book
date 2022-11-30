@@ -112,7 +112,7 @@
                                 <td class="kjh-input" colspan="3">
                                   <input type="text" size="20" name="memberEmail" id="memberEmail1">@
                                   <input type="text" size="13"name="memberEmail" id="memberEmail2" >
-                                  <select class="kjh-address email" name="memberEmail" id="selected" ">
+                                  <select class="kjh-address email" name="memberEmail" id="selected">
                                     <option value="naver.com">naver.com</option>
                                     <option value="gmail.com">gmail.com</option>
                                     <option value="nate.com">nate.com</option>
@@ -327,7 +327,7 @@
           </div>
             </div>  
             <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-            <script src="/resources/js/member/signUp2.js"></script>
+            <%-- <script src="/resources/js/member/signUp2.js"></script> --%>
     </body>
 
 </html>
