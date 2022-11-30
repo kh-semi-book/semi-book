@@ -165,3 +165,8 @@
     color: red;
 }
 
+#detail-btn a{
+    text-decoration: none;
+    color: black;
+
+}

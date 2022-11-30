@@ -1,15 +1,15 @@
 package edu.kh.semi.manager.meetingRoom.controller;
 
-import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import edu.kh.semi.manager.meetingRoom.model.service.MeetingRoomService;
-import edu.kh.semi.manager.meetingRoom.model.vo.MeetingRoom;
 
 @Controller
 public class MeetingRoomController {
@@ -35,54 +35,36 @@ public class MeetingRoomController {
 	 @GetMapping("/manager/meetingRoom/meetingRoom") 
 	 public String retrunMeetingRoom(@RequestHeader("referer") String referer) {
 	  
-		 
-		 
-		 
-	 return "redirect:/manager/meetingRoom/meetingRoom"; 
+		 return "redirect:/manager/meetingRoom/meetingRoom"; 
 	  
 	 }
 	
 
-//	예약 1개의 값 조회
 
-//	@GetMapping("/manager/meetingRoom")
-//	public String selectMeetingRoom( Model model) {
-//
-//		MeetingRoom meeting = service.selectMeetingRoom();
-//		
-//		model.addAttribute("meeting", meeting);
-//
-//		 return "manager/meetingRoom/meetingRoom"; 
-//	}
-
-	// 예약 리스트를 조회
+	//  예약 리스트를 조회 + 페이징 처리 
 	@GetMapping("/manager/meetingRoom")
-	public String selectMeetingRoomList(Model model) {
-
-		List<MeetingRoom> bookList = service.selectMeetingRoomList();
-
-		model.addAttribute("bookList", bookList);
-
+	public String selectMeetingRoomList(
+			Model model, 
+			@RequestParam(value="cp",required=false, defaultValue="1") int cp,
+			@RequestParam Map<String,Object> pm) {
+		
+		System.out.println(pm.get("searchOption"));
+		System.out.println(pm);
+		
+		
+		if(pm.get("searchOption")==null) {
+			Map<String,Object> map = service.selectBookList(cp);			
+			model.addAttribute("map", map);
+		}else {
+			Map<String, Object> map = service.selectBookList(pm,cp);
+			model.addAttribute("map", map);
+		}
+		
+		
 		return "manager/meetingRoom/meetingRoom";
 	}
 
-//  예약 리스트를 조회 + 페이징 처리 
-//	@GetMapping("/manager/meetingRoom")
-//	public String selectMeetingRoomList(Model model, @RequestParam(value="cp",required=false, defaultValue="1") int cp) {
-//		
-//		Map<String, Object> map = service.selectMeetingRoom(cp);
-//		
-//		model.addAttribute("map",map);
-//		
-//		System.out.println(map);
-//		
-//		return "manager/meetingRoom/meetingRoom";
-//	}
-//
-//	@GetMapping()
-//	public String meetingRoomReservation() {
-//		return ;
-//	}
-//	
+
+	
 
 }

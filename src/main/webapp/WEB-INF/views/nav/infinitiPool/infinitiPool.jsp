@@ -166,7 +166,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="rsc-foot-area"></div>
 	</div>
 	<!-- ----------------------[footer]--------------------------- -->
 	<jsp:include page="/WEB-INF/views/common/footer.jsp" />

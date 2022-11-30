@@ -19,10 +19,8 @@
 </head>
 
 <body>
-    <!-- =================================[ header ]=================================== -->
-			<jsp:include page="/WEB-INF/views/common/header.jsp"/>
-    <!-- =================================[ header ]=================================== -->
-
+    
+    <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
     <div class="reservation-lookUp-page">
         <div class="rsc-top-image"></div>
@@ -72,8 +70,8 @@
 
                 <!-- 페이지 이동 버튼 -->
                 <div id="rsc-page-skip">
-                    <a href="#"><<< /a>&nbsp;&nbsp;
-                    <a href="#"><</a> &nbsp;&nbsp;
+                    <a href="#"> << </a>&nbsp;&nbsp;
+                    <a href="#"> < </a> &nbsp;&nbsp;
                     <button><a href="#">1</a></button>&nbsp;&nbsp;
                     <a href="#">></a> &nbsp;&nbsp;
                     <a href="#">>></a>
@@ -81,12 +79,12 @@
                     <br><br><br>
                 </div>
                 
-                <div class="rsc-foot-area">
-                    <!-- ============================footer============================= -->
-										<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-                    <!-- ============================footer============================= -->
-                </div>
             </div>
+          </div>
+          
+      </div>
+
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 </body>
 
 </html>

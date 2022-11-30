@@ -35,7 +35,7 @@ public class BookController {
 			@RequestParam Map<String,Object> pm
 			) {
 		
-//		System.out.println(pm.get("searchOption"));
+		System.out.println(pm.get("searchOption"));
 		
 		if(pm.get("searchOption")==null) {
 			Map<String,Object> map=service.selectBook(cp);			
