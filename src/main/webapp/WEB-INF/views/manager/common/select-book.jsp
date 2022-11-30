@@ -105,13 +105,13 @@
 
              ${book.roomProcess}
                 <c:choose>
-                    <c:when test="${book.bookProcess == 0}">
+                    <c:when test="${book.roomProcess == 0}">
                         <c:set var="sel0" value="selected"/>
                     </c:when>
-                    <c:when test="${book.bookProcess == 1}">
+                    <c:when test="${book.roomProcess == 1}">
                         <c:set var="sel1" value="selected"/>
                     </c:when>
-                    <c:when test="${book.bookProcess == 2}">
+                    <c:when test="${book.roomProcess == 2}">
                         <c:set var="sel2" value="selected"/>
                     </c:when>
                 </c:choose>
