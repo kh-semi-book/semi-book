@@ -112,17 +112,18 @@
                                 <td class="kjh-input" colspan="3">
                                   <input type="text" size="20" name="memberEmail" id="memberEmail1">@
                                   <input type="text" size="13"name="memberEmail" id="memberEmail2" >
-                                  <select class="kjh-address email" name="memberEmail" id="selected">
+                                  <select class="kjh-address email" name="memberEmail" id="memberEmail3">
                                     <option value="naver.com">naver.com</option>
                                     <option value="gmail.com">gmail.com</option>
                                     <option value="nate.com">nate.com</option>
                                     <option value="hotmail.com">hotmail.com</option>
                                     <option value="dreamwiz.com">dreamwiz.com</option>
                                     <option value="freechal.com">freechal.com</option>
-                                    <option value="1">직접 입력</option>
+                                    <option value="">직접 입력</option>
                                   </select>
   							          	<span class="kjh-subtxt">(다음/한메일은 수신이 안될 수 있습니다.)</span>
-                                  
+                         
+
 
                                 </td>
                               </tr>
@@ -229,7 +230,7 @@
                                     <option value="11">11</option>
                                     <option value="12">12</option>
                                   </select>월
-                                 
+
                                   <select class="kjh-select" name="memberBirth" id="m-birth4" class="date">
                                     <option value=""></option>
                                     <option value="1">1</option>
@@ -237,6 +238,32 @@
                                     <option value="3">3</option>
                                     <option value="4">4</option>
                                     <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7 </option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
                                   </select>일 
                                 </td>
                                
@@ -327,7 +354,17 @@
           </div>
             </div>  
             <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-            <%-- <script src="/resources/js/member/signUp2.js"></script> --%>
+            <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></scrip>
+           
+            <script src="/resources/js/member/signUp2.js"></script> 
+            <script>
+            $("#memberEmail3").change(function(){
+              $("#memberEmail2").val($("#memberEmail3").val());
+            })
+            </script>
+
+            
+             
     </body>
 
 </html>

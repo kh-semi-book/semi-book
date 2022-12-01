@@ -1,34 +1,20 @@
 
-
-    const selected = document.getElementById("selected");
-
-    
-    const emailValue =selected.options[selected.selectedIndex].value;
-    const selectedEmailValue = document.getElementById("memberEmail2");
+const newPw1 = document.getElementById("new-pw1");
+const newPw2 = document.getElementById("new-pw2");
 
 
-function selectBoxChange(){
+const pwCheckBox = document.getElementById("chpwboxcheck")
 
 
-    if(selected.val()== '1'){ //직접입력일 경우
-        selectedEmailValue[1].val('');                //값 초기화
-        selectedEmailValue[1].attr("disabled",false); //활성화
-   }else{ //직접입력이 아닐경우
-        selectedEmailValue[1].val($(this).val());      //선택값 입력
-        selectedEmailValue[1].attr("disabled",true); //비활성화
+pwCheckBox.addEventListener("click" , function(){
+
+    if(pwCheckBox.checked){
+        newPw1.classList.remove("hide");
+        newPw2.classList.remove("hide");
+    } else{
+        newPw1.classList.add("hide");
+        newPw2.classList.add("hide");
     }
+})
 
 
-}
-
-	// 이메일
-	// $("select[id= selected]").change(function() {
-	// 	if($(this).val()== '1'){ //직접입력일 경우
-    //         $("#memberEmail2").val('');                        //값 초기화
-    //         $("#memberEmail2").attr("disabled",false); //활성화
-    //    }else{ //직접입력이 아닐경우
-    //         $("#memberEmail2").val($(this).val());      //선택값 입력
-    //         $("#memberEmail2").attr("disabled",true); //비활성화
-    //    }
-
-	// });
