@@ -1,34 +1,19 @@
+const selectEmail = document.getElementById("memberEmail3");
+const inputEmail = document.getElementById("memberEmail2");
 
+const chpwd = document.getElementById("chpboxcheck");
 
-    const selected = document.getElementById("selected");
+const newPw1 = document.getElementById("new-pw1");
+const newPw2 = document.getElementById("new-pw2");
 
-    
-    const emailValue =selected.options[selected.selectedIndex].value;
-    const selectedEmailValue = document.getElementById("memberEmail2");
+// selectEmail.addEventListener("change", (){
+//     inputEmail.val(selectEmail.val())
+// })
 
+function checkNewPw(){
 
-function selectBoxChange(){
-
-
-    if(selected.val()== '1'){ //직접입력일 경우
-        selectedEmailValue[1].val('');                //값 초기화
-        selectedEmailValue[1].attr("disabled",false); //활성화
-   }else{ //직접입력이 아닐경우
-        selectedEmailValue[1].val($(this).val());      //선택값 입력
-        selectedEmailValue[1].attr("disabled",true); //비활성화
-    }
-
+   if($(".new-pw1").hasClass("hide")){
+    $(".new-pw1").removeClass("hide"); // 새비밀번호가 보이게 된다.
+   }
 
 }
-
-	// 이메일
-	// $("select[id= selected]").change(function() {
-	// 	if($(this).val()== '1'){ //직접입력일 경우
-    //         $("#memberEmail2").val('');                        //값 초기화
-    //         $("#memberEmail2").attr("disabled",false); //활성화
-    //    }else{ //직접입력이 아닐경우
-    //         $("#memberEmail2").val($(this).val());      //선택값 입력
-    //         $("#memberEmail2").attr("disabled",true); //비활성화
-    //    }
-
-	// });

@@ -32,9 +32,7 @@ public class MemberController {
 	public String signUp2() {
 		return "/member/signUp2";
 	}
-	
-	// 11월 18일 22시 45분 로그인
-	
+		
 	@PostMapping("/member/login")
 	public String login(Member inputMember , Model model,
 			RedirectAttributes ra,
@@ -102,7 +100,7 @@ public class MemberController {
 		String phone = memberPhone[0] + memberPhone[1] + memberPhone[2];
 		inputMember.setMemberPhone(phone);
 		
-		String email = memberEmail[0] + memberEmail[1] + memberEmail[2];
+		String email = memberEmail[0]+"@" + memberEmail[1] /* + memberEmail[2] */;
 		inputMember.setMemberEmail(email);
 			
 		String birth = memberBirth[0]+"-" +  memberBirth[1]+"-" + memberBirth[2];
