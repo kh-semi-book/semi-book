@@ -1,4 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<c:set var="bookList" value="${map.bookList}"/>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -50,20 +53,17 @@
                         <th width="100px">금액<br>(VAT포함)</th>
                         <th width="100px">진행상태</th>
                     </tr>
+                    <c:forEach var="book" items="${bookList}">
                     <tr>
-                        <td height="100px">2022-10-13</td>
-                        <td>
-                            [얼리버드] Hidden Earlybird <br>
-                            <button id="button-view-detail">
-                                <a href="/reservation/reservationViewDetail">상세보기</a>
-                            </button>
-                        </td>
-                        <td>디럭스 더블 가든</td>
-                        <td>2023-01-12</td>
-                        <td>2023-01-13</td>
-                        <td>253,000 </td>
-                        <td>취소완료</td>
+                        <td height="100px">${book.bookDate}</td>
+                        <td><a href="/reservation/reservationViewDetail">${book.promotionTitle}</a></td>
+                        <td>${book.roomName}${book.roomViewName}</td>
+                        <td>${book.checkIn}</td>
+                        <td>${book.checkOut}</td>
+                        <td>${book.bookPrice}</td>
+                        <td>${book.roomProcess}</td>
                     </tr>
+                    </c:forEach>
                 </table>
 
                 <br><br><br>
@@ -75,16 +75,14 @@
                     <button><a href="#">1</a></button>&nbsp;&nbsp;
                     <a href="#">></a> &nbsp;&nbsp;
                     <a href="#">>></a>
-
-                    <br><br><br>
                 </div>
                 
             </div>
-          </div>
-          
-      </div>
-
+        </div>
+        
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+    </div>
+
 </body>
 
 </html>
