@@ -41,7 +41,7 @@
 
 			</table>
 
-			<a href="/reservation/reservation1" class="book-btn2">예약하기</a>
+			<a href="/reservation/reservation1" class="book-btn2"  target="_blank">예약하기</a>
 		</div>
 	</div>
 

@@ -48,8 +48,8 @@
 	<!-- 회원 가입 -->
 	<insert id="signUp" parameterType = "Member">
 		INSERT INTO "MEMBER"
-		VALUES(SEQ_MEMBER_NO.NEXTVAL, #{memberName}, #{memberId}, #{memberPw}, #{memberPhone}, #{memberEmail},
-		 #{memberGender},    )
+		VALUES(SEQ_MEMBER_NO.NEXTVAL, #{memberName}, #{memberId}, #{memberPw}, #{memberPhone},
+		DEFAULT, DEFAULT, #{memberEmail}, #{memberGender}, #{memberBirth}, #{emailFlag}, #{smsFlag}, DEFAULT    )
 	</insert>
 
 

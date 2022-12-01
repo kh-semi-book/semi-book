@@ -4,6 +4,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import edu.kh.semi.member.model.vo.Add;
 import edu.kh.semi.member.model.vo.Member;
 
 @Repository
@@ -33,14 +34,18 @@ public class MemberDAO {
 
 
 
-	/** 회원가입 DAO
-	 * @param inputMember
-	 * @return
-	 */
-	public int signUp(Member inputMember) {
 
+
+
+
+	public int signUp(Member inputMember) {
+		
 		return sqlSession.insert("memberMapper.signUp", inputMember);
 	}
+
+
+
+	
 
 	
 	

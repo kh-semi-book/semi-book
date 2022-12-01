@@ -61,10 +61,17 @@
 	
 	
 
+
+
+
+
+
 	<!-- 공지사항 조회 -->
 	<select id="selectCmmList" resultMap="cmm_rm">
 		SELECT CMM_NO, CMM_TITLE, TO_CHAR(CMM_CREATE_DATE, 'YYYY-MM-DD') CMM_CREATE_DATE
 		FROM "CMM"
+		WHERE CMM_NO != 0
+		ORDER BY 1 DESC
 	</select>
 	
 	<!-- 공지사항 세부 조회 -->
@@ -83,25 +90,54 @@
 	</insert>
 	
 	<!-- 공지사항 수정 -->
-	<update id="saveCmmUpdate" parameterType="CMM">
+	<update id="cmmBoardUpdate" parameterType="CMM">
 		UPDATE "CMM" SET 
 		CMM_TITLE=#{cmmTitle},
-		CMM_SUB=#{cmmSub},
-		CMM_TITLE_IMG=#{cmmTitleImg},
-		CMM_CON_IMG=#{cmmConImg}
+		CMM_SUB=#{cmmSub}
 		WHERE CMM_NO=#{cmmNo}
 	</update>
+	
+	<!-- 공지사항 타이틀 이미지 수정 -->
+	<update id="cmmTitleImageUpdate" parameterType="CMM">
+		UPDATE "CMM" SET CMM_TITLE_IMG=#{cmmTitleImg}
+		WHERE CMM_NO=#{cmmNo}
+	</update>
+	
+	<!-- 공지사항 컨텐츠 이미지 수정 -->
+	<update id="cmmContentImageUpdate" parameterType="CMM">
+		UPDATE "CMM" SET CMM_CON_IMG=#{cmmConImg}
+		WHERE CMM_NO=#{cmmNo}
+	</update>
+	
+	<!-- 공지사항 삭제 -->
+	<delete id="cmmDelete" parameterType="_int">
+		DELETE FROM "CMM" WHERE CMM_NO=#{cmmNo}
+	</delete>
+	
+	
+	
+
+
+
+
+
+	
 	
 	<!-- 프로모션 조회 -->
 	<select id="selectPromotionList" resultMap="promotion_rm">
 		SELECT PROMOTION_NO, PROMOTION_TITLE, TO_CHAR(PROMOTION_CREATE_DATE, 'YYYY-MM-DD') PROMOTION_CREATE_DATE
 		FROM "PROMOTION"
+		WHERE PROMOTION_NO != 0
+		ORDER BY 1 DESC
 	</select>
 	
 	<!-- 프로모션 세부 조회 -->
 	<select id="promotionDetail" resultMap="promotion_rm">
-		SELECT PROMOTION_TITLE, PROMOTION_TITLE_IMG, PROMOTION_SUB, PROMOTION_CON_IMG, PROMOTION_PRICE, P_STAY_START_DATE
-					, P_STAY_END_DATE, P_SALE_START_DATE, P_SALE_END_DATE
+		SELECT PROMOTION_TITLE, PROMOTION_TITLE_IMG, PROMOTION_SUB, PROMOTION_CON_IMG, PROMOTION_PRICE, 
+					TO_CHAR(P_STAY_START_DATE, 'YYYY-MM-DD') P_STAY_START_DATE,
+					TO_CHAR(P_STAY_END_DATE, 'YYYY-MM-DD') P_STAY_END_DATE,
+					TO_CHAR(P_SALE_START_DATE, 'YYYY-MM-DD') P_SALE_START_DATE,
+					TO_CHAR(P_SALE_END_DATE, 'YYYY-MM-DD') P_SALE_END_DATE
 		FROM "PROMOTION"
 		WHERE PROMOTION_NO=#{promotionNo}
 		AND PROMOTION_DEL_FL='N'
@@ -129,8 +165,6 @@
 		SEQ_EVENT_NO.NEXTVAL, #{eventTitle}, #{eventSub}, #{eventTitleImg}, #{eventConImg},
 		#{eventStartDate}, #{eventEndDate}, DEFAULT,DEFAULT)
 	</insert>
-
-
 
 
 </mapper>

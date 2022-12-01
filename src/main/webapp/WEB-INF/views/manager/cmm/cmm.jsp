@@ -19,14 +19,14 @@ body {
 		<div class="board-head-area">
 			<div></div>
 			<div id="board_title">
-				<div>HOME > 프로모션 관리 > 공지사항 등록</div>
-				<div>공지사항 등록</div>
+				<div>HOME > 공지사항 관리 > 공지사항 세부 사항</div>
+				<div>공지사항 세부 사항</div>
 			</div>
 			<div></div>
 		</div>
 		<div class="board-body-area">
-			<div id="board-post">
-				<button class="save" id="updateBtn">수정</button>  <button class="save" id="deleteBtn">삭제</button> 
+			<div id="board_return">
+				<a href="/manager/cmm">목록</a>
 			</div>
 
 			<table id="board_table">
@@ -57,10 +57,11 @@ body {
 
 
 			</table>
-			<div id="board_return">
-				<a href="/manager/cmm">목록</a>
-			</div>
+			
 		</div>
+		<div id="board-post">
+				<button class="save" id="updateBtn">수정</button>  <button class="save" id="deleteBtn">삭제</button> 
+			</div>
 	</div>
 	<div class="board-foot-area"></div>
 	

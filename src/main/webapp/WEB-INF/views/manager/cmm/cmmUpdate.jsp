@@ -19,17 +19,17 @@ body {
 		<div class="board-head-area">
 			<div></div>
 			<div id="board_title">
-				<div>HOME > 프로모션 관리 > 공지사항 수정</div>
+				<div>HOME > 공지사항 관리 > 공지사항 수정</div>
 				<div>공지사항 수정</div>
 			</div>
 			<div></div>
 		</div>
 		<form action="cmmUpdate" method="post"  enctype="multipart/form-data">
 		<div class="board-body-area">
-			<div id="board-post">
-				<button class="save">수정</button>
+			
+			<div id="board_return">
+				<a href="/manager/cmm">목록</a>
 			</div>
-
 			<table id="board_table">
 				<tr>
 					<th>제목</th>
@@ -62,10 +62,11 @@ body {
 
 
 			</table>
-			<div id="board_return">
-				<a href="/manager/cmm">목록</a>
-			</div>
+			
 		</div>
+			<div id="board-post">
+				<button class="save">수정</button>
+			</div>
 		</form>
 	</div>
 	<div class="board-foot-area"></div>

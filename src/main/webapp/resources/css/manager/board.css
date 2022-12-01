@@ -55,18 +55,26 @@
 /* =======[게시판 영역]======= */
 
 #board-post{
-    padding: 10px;
+    padding: 10px 0 10px 10px;
     text-align: right;
 }
 #board-post > .post{
     display: inline-block;
-    width: 130px;
-    height: 30px;
-    line-height: 30px;
-    border: 2px solid #ddd;
-    text-decoration: none;
-    color: black;
+    width: 150px;
+    height: 40px;
+    line-height: 35px;
+    border: 2px solid rgb(188, 188, 188);
+    background-color: rgb(188, 188, 188);
+    color: white;
+    font-weight: 500;
     text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+#board-post > .post:hover{
+    border: 2px solid #656565;
+    background-color: #656565;
+    transition: 0.3s;
 }
 #board_table {
     border-top: 2px solid black;
@@ -82,12 +90,15 @@
     text-align: center;
     border-bottom: 1px solid #ccc;
 }
-.detail {
+#board_table .detail {
     padding: 5px;
     margin-left: 20px;
     color: rgb(37, 37, 37);
+    text-decoration: none;
 }
-
+#board_table .detail:hover{
+    border-bottom: 1px solid black;
+}
 
 /* 페이지 넘기기 */
 .paging{

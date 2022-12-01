@@ -19,7 +19,10 @@ public interface BookService {
 
 	List<Room> selectRoom();
 
+	// 해당 예약번호의 룸타입, 전망타입 조회
+	Room searchRoom(int bookNo);
 
-	Room searchRoom(int bookNum);
+
+	List<Room> selectRoom(Room inputRoom);
 
 }

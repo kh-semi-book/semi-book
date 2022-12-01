@@ -13,7 +13,7 @@ public class Book {
 	private String bookDate;
 	private String checkIn;
 	private String checkOut;
-	private int bookProcess;
+	private int roomProcess;
 	private String bookMemberNo;
 	private String bookMemberName;
 	private String bookGuestNo;

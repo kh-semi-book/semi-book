@@ -235,30 +235,34 @@
 								<table class="reservation-table">
 									<tr>
 										<th class="row-title">카드 종류</th>
-										<td class="card-input"><select name="cardtype" id="">
-												<option value="">선택</option>
-												<option value="">국민카드</option>
-												<option value="">우리카드</option>
-												<option value="">하나카드</option>
-												<option value="">신한카드</option>
-												<option value="">삼성카드</option>
-												<option value="">현대카드</option>
-												<option value="">롯데카드</option>
-												<option value="">아멕스카드</option>
-												<option value="">비씨카드</option>
-												<option value="">마스터카드</option>
-												<option value="">비자카드</option>
-												<option value="">농협카드</option>
+										<td class="card-input"><select name="cardtype" id="book-input-cardType">
+												<option value="선택">선택</option>
+												<option value="국민카드">국민카드</option>
+												<option value="우리카드">우리카드</option>
+												<option value="하나카드">하나카드</option>
+												<option value="신한카드">신한카드</option>
+												<option value="삼성카드">삼성카드</option>
+												<option value="현대카드">현대카드</option>
+												<option value="롯데카드">롯데카드</option>
+												<option value="아멕스카드">아멕스카드</option>
+												<option value="비씨카드">비씨카드</option>
+												<option value="마스터카드">마스터카드</option>
+												<option value="비자카드">비자카드</option>
+												<option value="농협카드">농협카드</option>
 										</select></td>
 									</tr>
 									<tr>
 										<th class="row-title">카드 번호</th>
-										<td class="card-input"><input type="number" class="input cardnumber" name="cardnumber1">- <input type="number" class="input cardnumber" name="cardnumber2">- <input
-											type="number" class="input cardnumber" name="cardnumber3">- <input type="number" class="input cardnumber" name="cardnumber4"></td>
+										<td class="card-input">
+											<input type="number" class="input cardnumber" name="cardnumber1" id="book-input-cardNum1"> - 
+											<input type="number" class="input cardnumber" name="cardnumber2" id="book-input-cardNum2"> - 
+											<input type="number" class="input cardnumber" name="cardnumber3" id="book-input-cardNum3"> - 
+											<input type="number" class="input cardnumber" name="cardnumber4" id="book-input-cardNum4">
+										</td>
 									</tr>
 									<tr>
 										<th class="row-title">만기일</th>
-										<td class="card-input"><select name="cardmonth" id="">
+										<td class="card-input"><select name="cardmonth" id="book-input-cardValidity1">
 												<option value="1">1</option>
 												<option value="2">2</option>
 												<option value="3">3</option>
@@ -271,7 +275,7 @@
 												<option value="10">10</option>
 												<option value="11">11</option>
 												<option value="12">12</option>
-										</select> 월 <select name="cardyear" id="">
+										</select> 월 <select name="cardyear" id="book-input-cardValidity2">
 												<option value="2022">2022</option>
 												<option value="2023">2023</option>
 												<option value="2024">2024</option>
@@ -321,24 +325,30 @@
 								<table id="schedule">
 									<tr>
 										<th>체크인</th>
-										<td><input type="text" value="2022-11-04 (금)"></td>
+										<td><input type="text" value="2022-11-04 (금)" readonly></td>
 									</tr>
 									<tr>
 										<th>체크아웃</th>
-										<td><input type="text" value="2022-11-04 (금)"></td>
+										<td><input type="text" value="2022-11-04 (금)" readonly></td>
 									</tr>
 									<tr>
 										<th>박수</th>
-										<td><input type="text" value="1" class="schedule-num"> 박</td>
+										<td><input type="text" value="1" class="schedule-num" readonly> 박</td>
 									</tr>
 									<tr>
 										<th><label for="roomCnt">객실수</label></th>
-										<td><input type="text" value="1" class="schedule-num" id="roomCnt"> 실</td>
+										<td><input type="text" value="1" class="schedule-num" id="roomCnt" readonly> 실</td>
 									</tr>
 									<tr>
 										<th>인원수</th>
-										<td>어른 <input type="text" value="1" class="schedule-num"> 어린이 <input type="text" value="1" class="schedule-num"> <span><img src="/resources/image/button/info.gif"
-												id="schedule-info"></span>
+										<td>어른 <input type="text" value="1" class="schedule-num" readonly> 어린이 <input type="text" value="1" class="schedule-num" readonly> 
+										<span  class="tooltip">
+												<img src="/resources/image/button/info.gif" id="schedule-info">
+												<span class="tooltip-text">
+													<div>48개월 이상~만12세 이하</div>
+													<div>(인원 추가 요금 별도 발생)</div>
+												</span>
+											</span>
 										</td>
 									</tr>
 								</table>
@@ -396,6 +406,7 @@
 		</div>
 		<jsp:include page="/WEB-INF/views/common/footer.jsp" />
 		<script src="/resources/js/reservation/reservation.js"></script>
+		<script src="/resources/js/reservation/reservation4.js"></script>
 		
 </body>
 </html>

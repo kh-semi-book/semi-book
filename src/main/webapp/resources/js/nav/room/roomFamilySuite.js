@@ -1,6 +1,6 @@
 let slideImage = document.getElementById("slideImage");
 let imageArray1 = [
-"/resources/image/nav/rooms/YeraeSuite/familySuite1.jpg",
+"/resources/image/nav/rooms/familySuite/familySuite1.jpg",
 "/resources/image/nav/rooms/familySuite/familySuite2.jpg",
 "/resources/image/nav/rooms/familySuite/familySuite3.jpg",
 "/resources/image/nav/rooms/familySuite/familySuite4.jpg"]

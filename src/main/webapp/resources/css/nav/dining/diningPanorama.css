@@ -37,23 +37,15 @@
     margin: 0 auto;
 }
 
-.kjh-step{
-    margin-top: 10px;
+.kjh-page-list{
+    margin-top: 20px;
 }
 
-.kjh-step ol{
-    padding: 0;
-
-}
-
-.kjh-step a{
+.kjh-page-list>a{
     text-decoration: none;
     color: #767676;
-    size: 13px;
-}
-.kjh-path1,.kjh-path2,.kjh-path3{
-    display: inline-block;
-
+    font-size: 13px;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .kjh-h1{
@@ -129,7 +121,7 @@
 }
 
 .kjh-last{
-    margin-left: 30px;
+    margin-left: -20px;
 }
 
 /* ======================================== */
