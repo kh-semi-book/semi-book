@@ -26,18 +26,18 @@
 <typeAlias type="edu.kh.semi.nav.model.vo.CMM" alias="NavCMM"/>
 <typeAlias type="edu.kh.semi.nav.model.vo.RoomPromotion" alias="NavRoomPromotion"/>
 <typeAlias type="edu.kh.semi.reservation.model.vo.ReservationViewDetail" alias="Reservation2"/>
-<typeAlias type="edu.kh.semi.member.model.vo.Reservation2" alias="Reservation2"/>
 
 </typeAliases>
 
 <!-- mapper 파일(SQL 작성되는파일) 위치 등록 부분 -->
 <mappers>
 	<mapper resource="/mappers/member-mapper.xml"/>
+	<mapper resource="/mappers/mypage-mapper.xml"/>
 	<mapper resource="/mappers/book-mapper.xml"/>
 	<mapper resource="/mappers/meetingRoom-mapper.xml"/>
 	<mapper resource="/mappers/reservation-mapper.xml"/>
-	<!-- <mapper resource="/mappers/cmm-mapper.xml"/> -->
 	<mapper resource="/mappers/board-mapper.xml"/>
+	<mapper resource="/mappers/nav-mapper.xml"/>
 
 </mappers>
 
