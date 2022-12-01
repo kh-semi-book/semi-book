@@ -52,7 +52,8 @@
                         </th>
                         
                         <td class="kjh-input"colspan="3">
-                          <input type="text" size="20" name="memberName" id="memberName" >
+                          <input type="text" size="20" name="memberName" id="memberName">
+                          <span>${loginMember.memberName}</span>
                         </td>
                       </tr>
 
@@ -65,6 +66,7 @@
                         
                         <td class="kjh-input"colspan="3">
                           <input type="text" size="20" name="m_id" id="m_id">
+                          <span>${loginMember.memberId}</span>
                         </td>
                       </tr>
                       
@@ -98,7 +100,7 @@
                         </td>
                       </tr>
 
-                      <%-- --------------------------------------%>
+                      <%----------------------------------------%>
 
                       <tr>
                         <th>휴대폰<span class="star">*</span></th>
@@ -241,7 +243,7 @@
             $("#memberEmail3").change(function(){
               $("#memberEmail2").val($("#memberEmail3").val());
             })
-            
+
 
 
           </script>
