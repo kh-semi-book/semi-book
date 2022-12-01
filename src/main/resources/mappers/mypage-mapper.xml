@@ -25,7 +25,11 @@
   		<result property="authority" column="AUTHORITY"/>
   		
   	</resultMap>
+<!--   	<update id="updateInfo' parameterType="Member">
+  		
   	
+  	
+  	</update> -->
 
 
 </mapper>
