@@ -1,4 +1,4 @@
-package edu.kh.semi.member.model.vo;
+package edu.kh.semi.reservation.model.vo;
 
 
 import lombok.Getter;
@@ -10,7 +10,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class Reservation2 {
+public class ReservationViewDetail {
 
 	private int bookNo;           // 예약 번호 
 	private String bookDate;      //  예약 완료 날짜 

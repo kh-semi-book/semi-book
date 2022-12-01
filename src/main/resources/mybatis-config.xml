@@ -25,7 +25,7 @@
 <typeAlias type="edu.kh.semi.nav.model.vo.Dining" alias="NavDining"/>
 <typeAlias type="edu.kh.semi.nav.model.vo.CMM" alias="NavCMM"/>
 <typeAlias type="edu.kh.semi.nav.model.vo.RoomPromotion" alias="NavRoomPromotion"/>
-<typeAlias type="edu.kh.semi.member.model.vo.Reservation2" alias="Reservation2"/>
+<typeAlias type="edu.kh.semi.reservation.model.vo.ReservationViewDetail" alias="Reservation2"/>
 
 
 </typeAliases>

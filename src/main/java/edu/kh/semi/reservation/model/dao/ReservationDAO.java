@@ -1,4 +1,4 @@
-package edu.kh.semi.member.model.dao;
+package edu.kh.semi.reservation.model.dao;
 
 import java.util.List;
 
@@ -7,10 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import edu.kh.semi.manager.book.model.vo.Pagination;
-import edu.kh.semi.member.model.vo.Reservation2;
+import edu.kh.semi.reservation.model.vo.ReservationViewDetail;
 
 @Repository
-public class ReservationDAO2 {
+public class ReservationDAO {
 
 	@Autowired
 	private SqlSessionTemplate sqlSession;
@@ -26,7 +26,7 @@ public class ReservationDAO2 {
 	 * @param pagination
 	 * @return
 	 */
-	public List<Reservation2> selectBookList(Pagination pagination) {
+	public List<ReservationViewDetail> selectBookList(Pagination pagination) {
 		return sqlSession.selectList("reservationMapper.selectBookList");
 	}
 
