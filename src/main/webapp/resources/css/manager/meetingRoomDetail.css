@@ -17,13 +17,16 @@
     height: auto;
 }
 
-/* 상단 페이징  */
-#meeting-top-menu>a {
+/* 상단 페이징 */
+#top-menu{
+    width: 1000px;
+    margin: 0 auto 0 auto;
+}
+#top-menu a{
     text-decoration: none;
     color: rgb(133, 131, 131);
     padding: 0 10px;
 }
-
 /* 페이지 제목 */
 .bsh-main-title h1 {
     width: 1000px;
@@ -170,6 +173,7 @@ label {
     font-size: 15px;
 }
 
+/* 수정하기 / 돌아가기 버튼 */
 .bsh-btn {
     display: inline-block;
     justify-content: center;
@@ -181,6 +185,7 @@ label {
     text-align: center;
 }
 
+/* 수정하기 버튼 */
 input[type="submit"] {
     display: inline-block;
     width: 220px;
@@ -193,6 +198,7 @@ input[type="submit"] {
     cursor: pointer;
 }
 
+/* 돌아가기 버튼 */
 a.bsh-btn-white {
     border: 2px solid #b3b3b3;
     background: #fff;
@@ -205,14 +211,5 @@ a.bsh-btn-white {
     font-size: 17px;
 }
 
-#top-menu{
-    width: 1000px;
-    height: 50px;
-    margin: 0 auto 0 auto;
-}
 
-#top-menu a{
-    text-decoration: none;
-    color: rgb(133, 131, 131);
-    padding: 0 10px;
-}
+

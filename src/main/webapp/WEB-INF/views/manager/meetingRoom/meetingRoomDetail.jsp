@@ -73,9 +73,6 @@
             </form>
         </div>
         
-        <div class="bsh-gotop" onclick="gotop();return false;">
-            <a class="bsh-gotop-btn" style="top: -49px;" href="#head-img">TOP</a>
-        </div>
 
     </div>
 

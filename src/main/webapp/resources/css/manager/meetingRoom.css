@@ -165,8 +165,12 @@
     color: red;
 }
 
-#detail-btn a{
-    text-decoration: none;
-    color: black;
 
+.manage-book-name > a{
+    font-size: 18px;
+    color:  black;
+}
+.manage-book-name > a:hover{
+    text-decoration: underline;
+    color:  blue;
 }

@@ -53,6 +53,12 @@ public class MeetingRoomDAO {
 		
 		return sqlSession.selectList("meetingRoomMapper.selectBookList_search", pm ,rowBounds);
 	}
+
+	// 미팅룸 예약 문의 추가
+	public int meetingBookAdd(MeetingRoom inputMeetingRoom) {
+		
+		return sqlSession.insert("meetingRoomMapper.meetingBookAdd",inputMeetingRoom);
+	}
 	
 	
 	

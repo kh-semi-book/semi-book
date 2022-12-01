@@ -21,7 +21,7 @@ public class MeetingRoom {
 	private String meetingMenEmail;    // 미팅룸 예약자 이메일
 	private String meetingMenPhone;    // 미팅룸 예약자 전화번호
 	private String meetingBookCompany; // 미팅룸 예약 업체명
-	private String meetingBookContent; // 미팅룸 예약 업체명
+	private String meetingBookContent; // 미팅룸 예약 내용
 
 	
 }
