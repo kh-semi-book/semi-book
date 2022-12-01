@@ -18,11 +18,7 @@
 }
 
 /* 상단 페이징  */
-#top-menu{
-    width: 1000px;
-    margin: 0 auto 0 auto;
-}
-#top-menu a{
+#meeting-top-menu>a {
     text-decoration: none;
     color: rgb(133, 131, 131);
     padding: 0 10px;

@@ -17,7 +17,7 @@
 }
 
 
-.rsc-head-area{
+.rsc-head-area,.rsc-foot-area{
     width: 100%;
     height: 150px;
     background-color: #FFFFFF
@@ -28,7 +28,11 @@
     background-color:#FFFFFF ;
     margin: 0 auto 0 auto;
 }
-
+.rsc-main-side{
+    width: 80%;
+    width: 1500px;
+    min-width: 1000px;
+}
 
 /*=========[ 상단 영역 ]========= */
 .rsc-head-area{
@@ -133,7 +137,15 @@
     font-size: 14px;
     color: red;
 }
-#rsc-page-skip{
-    margin-top: 30px;
-    margin-bottom: 0px;
+
+/* 상품명 상세보기 */
+#table-room-view a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+#table-room-view a:hover{
+    text-decoration: underline;
+    color: blue;
 }

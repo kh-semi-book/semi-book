@@ -47,7 +47,7 @@ public class ReservationController {
 	@Autowired
 	private ReservationService service;
 	
-	
+	// 예약 조회 
 	@GetMapping("/reservation/reservationView")
 	public String reservationCheckPage(Model model,
 			@RequestParam(value="cp",required=false, defaultValue="1") int cp,
