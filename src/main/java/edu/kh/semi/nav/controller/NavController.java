@@ -1,12 +1,18 @@
-package edu.kh.semi.main.controller;
+package edu.kh.semi.nav.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import edu.kh.semi.nav.model.service.NavService;
+
 @Controller
 @RequestMapping("/nav")
 public class NavController {
+	
+	@Autowired
+	private NavService service;
 	
 	@GetMapping("/about")
 	public String about() {
