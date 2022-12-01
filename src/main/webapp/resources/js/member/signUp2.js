@@ -1,19 +1,20 @@
-const selectEmail = document.getElementById("memberEmail3");
-const inputEmail = document.getElementById("memberEmail2");
-
-const chpwd = document.getElementById("chpboxcheck");
 
 const newPw1 = document.getElementById("new-pw1");
 const newPw2 = document.getElementById("new-pw2");
 
-// selectEmail.addEventListener("change", (){
-//     inputEmail.val(selectEmail.val())
-// })
 
-function checkNewPw(){
+const pwCheckBox = document.getElementById("chpwboxcheck")
 
-   if($(".new-pw1").hasClass("hide")){
-    $(".new-pw1").removeClass("hide"); // 새비밀번호가 보이게 된다.
-   }
 
-}
+pwCheckBox.addEventListener("click" , function(){
+
+    if(pwCheckBox.checked){
+        newPw1.classList.remove("hide");
+        newPw2.classList.remove("hide");
+    } else{
+        newPw1.classList.add("hide");
+        newPw2.classList.add("hide");
+    }
+})
+
+

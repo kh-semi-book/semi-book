@@ -74,7 +74,7 @@
                           <input type="password" size="20" name="memberPw" id="memberPw" >
                           <span class="changePwBox">
                             <input type="checkbox" name="chpwboxcheck" id="chpwboxcheck" value= "Y"
-                            onclick ="checkNewPw();">
+                            >
                             <label for="chpwboxcheck">비밀번호 변경</label>
                           </span>
                         </td>
@@ -241,6 +241,7 @@
             $("#memberEmail3").change(function(){
               $("#memberEmail2").val($("#memberEmail3").val());
             })
+            
 
 
           </script>
