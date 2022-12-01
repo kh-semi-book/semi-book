@@ -49,6 +49,15 @@ public interface BoardService {
 	 */
 	int saveCmmUpdate(CMM cmm, Map<String, Object> map, MultipartFile cmmTitleImage, MultipartFile cmmConImage) throws Exception;
 	
+	
+
+	/** 공지사항 삭제
+	 * @param cmmNo
+	 * @return result
+	 */
+	int cmmDelete(int cmmNo);
+	
+	
 	//==========================================================================
 	
 	/** 프로모션 조회
@@ -99,6 +108,7 @@ public interface BoardService {
 	 */
 	int saveEventPost(Event event, Map<String, Object> map, MultipartFile eventTitleImage,
 			MultipartFile eventConImage) throws Exception;
+
 
 
 	

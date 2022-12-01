@@ -96,6 +96,15 @@
 				</choose>
 			</if>
 	 	</select>
+	 	
+	 	<!-- 미팅룸 예약 문의 추가 -->
+	 	<insert id="meetingBookAdd" parameterType="MeetingRoom">
+	 			INSERT INTO "MEETING_BOOK" 
+				VALUES(SEQ_MEETING_BOOK_NO.NEXTVAL, SYSDATE, #{meetingMenName},0 , 'N',
+				#{meetingHeadCount}, #{meetingBookDate}, #{meetingMenEmail},
+	      #{meetingMenPhone},#{meetingBookCompany},{meetingBookContent}, 3);
+	 	
+	 	</insert>
 
 		<!-- 진행상태 변경 -->
 

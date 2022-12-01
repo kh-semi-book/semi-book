@@ -55,7 +55,7 @@
                           <label for="allcheck">홈페이지 가입 약관 전체 동의</label>
                         </div>
                       </section>
-                  <form action="" name="agreeform" id="agreeform" method="post"  >
+                  <form action="" name="agreeform" id="agreeform" method="post" onsubmit= "return OnSave()">
                       <!-- 이용약관 -->
                       <section>
                         

@@ -24,28 +24,28 @@
             예약하기
         </div>
 
-        <div id="reservation4_step_area">
-          <div class="reservation4_step" id="step1">
-            <p class="step">STEP 01</p>
-            <p>일정선택</p>
-          </div>
-          <div class="reservation4_step" id="step2">
-              <p class="step">STEP 02</p>
-              <p>객실&패키지 선택</p>
-          </div>
-          <div class="reservation4_step" id="step3">
-              <p class="step">STEP 03</p>
-              <p>옵션 선택</p>
-          </div>
-          <div class="reservation4_step" id="step4">
-              <p class="step">STEP 04</p>
-              <p>고객 정보 입력</p>
-          </div>
-          <div class="reservation4_step" id="step5">
-              <p class="step">STEP 05</p>
-              <p>예약 완료</p>
-          </div>
-        </div>
+       <div id="reservation2_step_area">
+				<div class="reservation2_step" id="step1">
+					<p class="step">STEP 01</p>
+					<p>일정선택</p>
+				</div>
+				<div class="reservation2_step" id="step2">
+					<p class="step">STEP 02</p>
+					<p>객실&패키지 선택</p>
+				</div>
+				<div class="reservation2_step" id="step3">
+					<p class="step">STEP 03</p>
+					<p>옵션 선택</p>
+				</div>
+				<div class="reservation2_step" id="step4">
+					<p class="step">STEP 04</p>
+					<p>고객 정보 입력</p>
+				</div>
+				<div class="reservation2_step" id="step5">
+					<p class="step">STEP 05</p>
+					<p>예약 완료</p>
+				</div>
+			</div>
 
             <div id="reservation3_option_title_area">
                 <span>추가 옵션</span>

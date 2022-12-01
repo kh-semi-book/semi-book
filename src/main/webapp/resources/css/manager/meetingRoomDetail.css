@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Sans+KR&display=swap');
+
+/* 상단 배경 이미지 */
+#head-img {
+    width: 100%;
+    height: 185px;
+    background-attachment: fixed;
+    background-image: url(/resources/image/nav/meeting/visual_qna.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 0px;
+}
+
+.bsh-main {
+    min-height: 1600px;
+    height: auto;
+}
+
+/* 상단 페이징 */
+#top-menu{
+    width: 1000px;
+    margin: 0 auto 0 auto;
+}
+#top-menu a{
+    text-decoration: none;
+    color: rgb(133, 131, 131);
+    padding: 0 10px;
+}
+/* 페이지 제목 */
+.bsh-main-title h1 {
+    width: 1000px;
+    margin: 0 auto;
+    height: 83px;
+    padding: 18px 0 0 0;
+    font-size: 33px;
+    font-family: 'Nanum Myeongjo';
+    font-weight: 300;
+}
+
+.bsh-section {
+    box-sizing: border-box;
+    padding: 18px 0 50px 0;
+    width: 1000px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.bsh-warning {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 920px;
+    height: 30px;
+    margin: 0 40px;
+    padding: 10px 0;
+    font-size: 15px;
+    font-weight: 300px;
+    border-bottom: 2px solid black;
+}
+
+.bsh-tb1 {
+    box-sizing: border-box;
+    border-collapse: collapse;
+    width: 920px;
+    height: 1000px;
+    margin: 0 40px;
+}
+
+.bsh-tb1 th {
+    width: 150px;
+    padding: 0;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+input[type="text"] {
+    padding: 0 20px;
+    border: 1px solid #cdcdcd;
+    font-size: 16px;
+    line-height: 40px;
+    color: #333;
+}
+
+/* 이메일 선택 단추 */
+select {
+    height: 40px;
+    padding: 0 20px;
+    border: 1px solid #cdcdcd;
+    font-size: 16px;
+    line-height: 40px;
+    color: #333;
+}
+
+.bsh-tb1 td {
+    width: 760px;
+    padding-left: 35px;
+    border-left: 1px solid #c9c9c9;
+    border-bottom: 1px solid #c9c9c9;
+    background: #fff;
+    line-height: 1.7;
+}
+
+
+.bsh-tb1 th {
+    border-bottom: 1px solid #c9c9c9;
+    font-size: 17px;
+    height: 60px;
+    color: #333;
+    letter-spacing: -1px;
+    font-weight: 400;
+}
+
+textarea {
+    border: 1px solid #cdcdcd;
+    color: #333;
+    padding: 8px 20px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#lastbox {
+    height: 200px;
+}
+
+label {
+    cursor: pointer;
+}
+
+
+/* 개인정보 수집 및 동의 */
+
+.bsh-last-info {
+    width: 915px;
+    height: 350px;
+    padding: 0 40px;
+    border-bottom: 2px solid #e7e7e7;
+}
+
+.bsh-last-info>h2 {
+    margin: 40px 0 15px;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    font-family: 'nSquare';
+    color: #333;
+}
+
+/************ 회원 탈퇴 약관 *************/
+.bsh-terms {
+    box-sizing: border-box;
+    width: 920px;
+    height: 200px;
+    padding: 30px;
+    border: 1px solid #ccc;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* 내용이 요소를 벗어나는 경우 
+        방향에 맞춰서 자동으로 스크롤 추가
+    */
+
+    font-family: sans-serif;
+    font-size: 13px;
+}
+
+.bsh-agree {
+    display: flex;
+    justify-content: center;
+    width: 920px;
+    height: 44px;
+    padding: 20px 0 0;
+    font-size: 15px;
+}
+
+/* 수정하기 / 돌아가기 버튼 */
+.bsh-btn {
+    display: inline-block;
+    justify-content: center;
+    width: 1000px;
+    height: 88px;
+    padding: 30px 0 0;
+    padding: 30px 0 0;
+    background: #fff;
+    text-align: center;
+}
+
+/* 수정하기 버튼 */
+input[type="submit"] {
+    display: inline-block;
+    width: 220px;
+    height: 59px;
+    background: #231f20;
+    font-weight: 300;
+    font-size: 17px;
+    color: #fff;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+/* 돌아가기 버튼 */
+a.bsh-btn-white {
+    border: 2px solid #b3b3b3;
+    background: #fff;
+    text-decoration: none;
+    line-height: 56px;
+    color: #333333;
+    display: inline-block;
+    width: 220px;
+    height: 58px;
+    font-size: 17px;
+}
+
+
+

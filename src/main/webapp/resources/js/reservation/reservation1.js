@@ -24,17 +24,21 @@ var thisMonth = new Date(today.getFullYear(), today.getMonth(), today.getDate())
 function nextCalendarInit() {
 
   
-    
     var currentYear = thisMonth.getFullYear(); // 달력에서 표기하는 연
     var currentMonth = thisMonth.getMonth(); // 달력에서 표기하는 월
     var currentDate = thisMonth.getDate(); // 달력에서 표기하는 일
 
+    var checkOutDate1 = currentDate+1; // 달력에서 checkout 표기용
 
+    // 박수 계산용?
     let checkInText1="";
     let checkOutText1="";
     
+    // 오른쪽에 표시되는 텍스트
+    // 달력에서 날짜 선택시 바뀜
     const checkInInput=document.getElementById("checkInInput");
     const checkOutInput=document.getElementById("checkOutInput");
+    
     
     if(currentMonth<10){
         currentMonth="0"+currentMonth;
@@ -42,23 +46,30 @@ function nextCalendarInit() {
     if(currentDate<10){
         currentDate="0"+currentDate;
     }
+    if(checkOutDate1<10){
+        checkOutDate1="0"+checkOutDate1;
+    }
     
-    checkInText1=currentYear+""+(currentMonth+1)+"0"+currentDate;
+    checkInText1=currentYear+""+(currentMonth+1)+""+currentDate;
 
-    checkOutText1=currentYear+""+(currentMonth+1)+""+currentDate;
-   
-    
+    checkOutText1=currentYear+""+(currentMonth+1)+""+checkOutDate1;
+  
+    // 여기가 오른쪽에 표시되는 텍스트 대입용
     let checkInText=currentYear+"-"+(currentMonth+1)+"-"+(currentDate);
+    const saveToday=checkInText;
     checkInInput.innerText=checkInText+" ("+getDayOfWeek(checkInText)+")";
 
-    let checkOutText=currentYear+"-"+(currentMonth+1)+"-"+(currentDate+1);
+    // 날짜 출력
+    let checkOutText=currentYear+"-"+(currentMonth+1)+"-"+(checkOutDate1);
     checkOutInput.innerText=checkOutText+" ("+getDayOfWeek(checkOutText)+")";
-  
   
     const nights=document.getElementById("nights");
     
 
+
+
     // 캘린더 렌더링
+    // 달력이 양쪽에 있기 때문에 따로 렌더링
     renderCalender(thisMonth);
     renderCalender1(thisMonth);
 
@@ -81,9 +92,6 @@ function nextCalendarInit() {
 
         let checkinbefore;
 
-        // console.log(prevDay);
-
-        // console.log(prevDate, prevDay, nextDate, nextDay);
 
         // 현재 월 표기
         $('.year-month').text(currentYear + '.' + (currentMonth + 1));
@@ -109,7 +117,7 @@ function nextCalendarInit() {
             calendar.innerHTML = calendar.innerHTML + '<div class="day next disable">' + i + '</div>'
         }
 
-        // 내일 날짜 표기
+        // 오늘 날짜 표기
         if (today.getMonth() == currentMonth) {
             todayDate = today.getDate()-1;
             var currentMonthDate = document.querySelectorAll('.dates .current');
@@ -135,19 +143,19 @@ function nextCalendarInit() {
         
         if(selectday.innerHTML<10){
             if(currentMonth+1<10){
-                checkOutText=currentYear+"-0"+(currentMonth+1)+"-0"+selectday.innerHTML;
-                checkOutText1=currentYear+"0"+(currentMonth+1)+"0"+selectday.innerHTML;
+                checkInText=currentYear+"-0"+(currentMonth+1)+"-0"+selectday.innerHTML;
+                checkInText1=currentYear+"0"+(currentMonth+1)+"0"+selectday.innerHTML;
             }else{
-                checkOutText=currentYear+"-"+(currentMonth+1)+"-0"+selectday.innerHTML;
-                checkOutText1=currentYear+""+(currentMonth+1)+"0"+selectday.innerHTML;
+                checkInText=currentYear+"-"+(currentMonth+1)+"-0"+selectday.innerHTML;
+                checkInText1=currentYear+""+(currentMonth+1)+"0"+selectday.innerHTML;
             }
         }else{
             if(currentMonth+1<10){
-                checkOutText=currentYear+"-0"+(currentMonth+1)+"-"+selectday.innerHTML;
-                checkOutText1=currentYear+"0"+(currentMonth+1)+""+selectday.innerHTML;
+                checkInText=currentYear+"-0"+(currentMonth+1)+"-"+selectday.innerHTML;
+                checkInText1=currentYear+"0"+(currentMonth+1)+""+selectday.innerHTML;
             }else{
-                checkOutText=currentYear+"-"+(currentMonth+1)+"-"+selectday.innerHTML;
-                checkOutText1=currentYear+""+(currentMonth+1)+""+selectday.innerHTML;
+                checkInText=currentYear+"-"+(currentMonth+1)+"-"+selectday.innerHTML;
+                checkInText1=currentYear+""+(currentMonth+1)+""+selectday.innerHTML;
             }
         }
 

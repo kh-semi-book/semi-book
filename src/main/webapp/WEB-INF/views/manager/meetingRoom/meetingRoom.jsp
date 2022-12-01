@@ -54,7 +54,7 @@
 			</span> 
 			<button id="searchOptionBtn">검색</button>
 
-		</form>
+		</form><br>
 
     </fieldset><br>
 

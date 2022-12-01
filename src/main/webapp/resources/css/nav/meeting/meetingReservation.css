@@ -209,36 +209,14 @@ a.bsh-btn-white {
     font-size: 17px;
 }
 
-.bsh-gotop-btn {
-    display: inline-block;
-    position: relative;
-    top: 10px;
-    width: 50px;
-    height: 50px;
-    padding: 10px 0 0;
-    border: 1px solid #c4c4c4;
-    background: #aaabaa;
-    color: #fff !important;
-    text-align: center;
-}
-
-.bsh-gotop {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    z-index: 1000;
+#top-menu{
     width: 1000px;
-    height: 1px;
-    margin: 0 0 0 -500px;
-    text-align: right;
-    cursor: pointer;
+    height: 50px;
+    margin: 0 auto 0 auto;
 }
 
-.bsh-gotop-btn:before {
-    content: "";
-    display: block;
-    width: 19px;
-    height: 13px;
-    margin: 0 auto 5px;
-    background: url(/images/logo.jpg) no-repeat -113px 0;
+#top-menu a{
+    text-decoration: none;
+    color: rgb(133, 131, 131);
+    padding: 0 10px;
 }
