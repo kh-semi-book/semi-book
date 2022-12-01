@@ -713,6 +713,10 @@ body{
     margin:auto;
 }
 
+ #top-photo{
+    background-color: antiquewhite;
+    height: 150px;
+}
 
 #top-menu{
     color:rgb(133, 131, 131);
@@ -743,6 +747,9 @@ body{
     justify-content: space-between;
 
     flex-wrap: wrap;
+
+    margin-top:10px;
+
    
 }
 
@@ -751,8 +758,43 @@ body{
     height: 223px;
     width: 320px;
     background-color: black;
+
+    cursor: pointer;
+    box-sizing: border-box;
+    position: relative;
+
 }
 
+.media-youtube-link>img{
+    width: 100%;
+    height: 100%;
+}
+/* .media-youtube-link>span{
+    opacity: 0;
+} */
+
+.media1{
+    cursor: pointer;
+}
+
+.mediaClick{
+    border:2px solid rgb(66, 188, 210);
+}
+
+
+.playLogoDefault{
+    opacity: 0;
+}
+.playLogo{
+    position: absolute;
+    right: 45%;
+    top: 40%;
+
+    font-size: 60px;
+    color: rgb(66, 188, 210);
+    opacity: 1;
+    
+}
 
 /* --------------------------------------------- */
 
