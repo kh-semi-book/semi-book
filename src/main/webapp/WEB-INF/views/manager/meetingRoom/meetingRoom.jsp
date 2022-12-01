@@ -56,7 +56,7 @@
 
 		</form><br>
 
-    </fieldset>
+    </fieldset><br>
 
 		<div id="manage-book-table">
 			<div id="manage-book-table-title">

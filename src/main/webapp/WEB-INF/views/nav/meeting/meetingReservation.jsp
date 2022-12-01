@@ -22,9 +22,9 @@
     <div id="head-img"></div>
     
     <div class="bsh-main">
-       <div id="top-menu">
-	    	<a href="#">HOME</a>><a href="#">Q&A</a>
-		</div>
+            <div id="top-menu">
+	    	    <a href="#">MAIN</a>><a href="#">미팅룸 예약 상세보기</a>
+		    </div>
 
         <div class="bsh-main-title">
             <h1>예약문의</h1>
@@ -33,28 +33,43 @@
         <div class="bsh-section">
             <div class="bsh-warning">※ 모든 항목은 필수 입력 사항입니다.</div>
             
-            <form action="reservationInquiry" name="bsh-frm" id="bsh-frm" method="POST">
+            <form name="bsh-frm" id="bsh-frm" method="#" action="#">
                 <table class="bsh-tb1">
                     <tr>
-                        <th class="info-name"><label for="meetingMenName">성명</label></th>
-                        <td class="info-name">
-                            <input type="text" id="meetingMenName" name="meetingMenName" maxlength="10" style="width:360px;">
+                        <th class="inf-name"><label for="info-name">성명</label></th>
+                        <td class="inf-name2">
+                            <input type="text" title="성함 입력" id="info-name"
+                            name="info-name" maxlength="10" required style="width:360px;">
                         </td>
                     </tr>
                     <tr>
-                        <th><label for="info-phone">휴대폰</label></th>
+                        <th><label for="info-tel">휴대폰</label></th>
                         <td>
-                            <input type="text" id="meetingMenPhone" style="width:80px;" name="meetingMenPhone" maxlength="4"> -
-                            <input type="text" id="meetingMenPhone" style="width:80px;" name="meetingMenPhone" maxlength="4"> -
-                            <input type="text" id="meetingMenPhone"  style="width:80px;" name="meetingMenPhone" maxlength="4">
+                            <input type="text" title="연락처 입력" id="info-tel"
+                            style="width:80px;" name="info-tel" maxlength="4"
+                            required> -
+                            
+                            <input type="text" title="연락처 입력" id="info-tel2"
+                            style="width:80px;" name="info-tel2" maxlength="4"
+                            required> -
+
+                            <input type="text" title="연락처 입력" id="info-tel3"
+                            style="width:80px;" name="info-tel3" maxlength="4"
+                            required>
                         </td>
                     </tr>
                     <tr>
                         <th><label for="info-email">이메일</label></th>
                         <td>
-                            <input type="text" id="meetingMenEmail" style="width:160px;" name="meetingMenEmail" maxlength="25"> @
-                            <input type="text" id="meetingMenEmail" style="width:160px;" name="meetingMenEmail" maxlength="25">&nbsp;
-                            <select name="email" id="meetingMenEmail">
+                            <input type="text" title="이메일 입력" id="info-email"
+                            style="width:160px;" name="info-email" maxlength="25"
+                            required> @
+
+                            <input type="text" title="이메일 입력" id="info-email2"
+                            style="width:160px;" name="info-email2" maxlength="25"
+                            required>&nbsp;
+
+                            <select name="email" id="">
                                 <option value="">직접입력</option>
                                 <option value="naver.com">naver.com</option>
                                 <option value="gmail.com">gmail.com</option>
@@ -67,20 +82,35 @@
                     </tr>
                     <tr>
                         <th><label for="info-company">업체명</label></th>
-                        <td><input type="text" id="meetingBookCompany" style="width:680px;" name="meetingBookCompany"></td>
+                        <td>
+                            <input type="text" title="업체명 입력" id="info-company"
+                            style="width:680px;" name="info-company" maxlength="50"
+                            required>
+                        </td>
                     </tr>
                     <tr>
-                        <th><label for="info-headCount">인원수</label></th>
-                        <td><input type="text" id="meetingHeadCount" style="width:680px;" name="meetingHeadCount"></td>
+                        <th><label for="info-cnt">인원수</label></th>
+                        <td>
+                            <input type="text" title="인원수 입력" id="info-cnt"
+                            style="width:680px;" name="info-cnt" maxlength="50"
+                            required>
+                        </td>
                     </tr>
                     <tr>
                         <th><label for="info-date">행사일시</label></th>
-                        <td><input type="text" id="meetingBookDate" style="width:680px;" name="meetingBookDate"
-                                    placeholder="'1999-01-01' 형식으로 입력해주세요"></td>
+                        <td>
+                            <input type="text" title="행사일자 입력" id="info-date"
+                            style="width:680px;" name="info-date" maxlength="50"
+                            required>
+                        </td>
                     </tr>
                     <tr>
-                        <th id="lastbox"><label for="info-content">내용</label></th>
-                        <td><textarea id="meetingBookContent" style="width:680px;" name="meetingBookContent" cols="45" rows="30"></textarea></td>
+                        <th id="lastbox"><label for="info-cntnt">내용</label></th>
+                        <td>
+                            <textarea title="내용 입력" id="info-cntnt"
+                            style="width:680px;" name="info-cntnt" maxlength="300"
+                            required cols="45" rows="30"></textarea>
+                        </td>
                     </tr>
                 </table>
                 
@@ -128,22 +158,23 @@
 &nbsp;&nbsp;&nbsp; 의 개인정보를 지체없이 파기합니다.
                    </pre>
                     <div class="bsh-agree">
-                        <label><input type="checkbox" id="checkBox" value="off"/> 개인정보 수집 및 이용에 대한 동의하기</label>
+                        <label><input type="checkbox"> 개인정보 수집 및 이용에 대한 동의하기</label>
                     </div>
                 </div>
                 <div class="bsh-btn">
                     <input type="submit" name="sub" class="bsh-btn-gray" value="등록하기">
-                    <a href="/" class="bsh-btn-white">취소</a>
+                    <a href="#" class="bsh-btn-white">취소</a>
                 </div>
             </form>
         </div>
         
+        <div class="bsh-gotop" onclick="gotop();return false;">
+            <a class="bsh-gotop-btn" style="top: -49px;" href="#head-img">TOP</a>
+        </div>
 
     </div>
 
     <!------------------------- 아래는 풋터 ------------------------->
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-
-    <script src="/resources/js/nav/meeting/meetingReservation.js"></script>
 </body>
 </html>
