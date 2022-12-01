@@ -305,60 +305,37 @@ margin:auto;
     }
 
 
-/* #head-img {
-width: 100%;
-height: 185px;
-background-attachment: fixed;
-background-image: url(/images/visual_예약하기\ 상단.jpg);
-background-repeat: no-repeat;
-background-size: 100%;
-margin: 0px;
-} */
-
-
-.bsh-stepbox{
-/* border: 1px solid red; */
-width: 1000px;
-height: 59px;
-
-
-position: relative;
-margin: 20px auto 0px;
-background: #fff;
-border-bottom: 1px solid #4e4e4e;
+/* 메인 영역 - step */
+#reservation2_step_area {
+	width: 1000px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	border-bottom: 1px solid black;
 }
 
-.bsh-stepbox ul li span {
-display: block;
-/* font-family: 'nSquare'; */
-font-size: 12px;
-color: #bbb;
-font-weight: 400;
+.reservation2_step {
+	box-sizing: border-box;
+	width: 200px;
+	padding: 0 0 10px 20px;
+	background: url(/resources/image/button/btn_paging_next_on.png) 0 0 no-repeat;
+	background-position: right;
 }
 
-.bsh-stepbox ul li {
-float: left;
-position: relative;
-width: 20%;
-font-size: 15px;
-color: #777;
-font-weight: 500;
-padding: 0 0 20px 20px;
-line-height: normal;
-box-sizing: border-box;
-font-family: 'Noto Sans KR', sans-serif;
+.reservation2_step>p:first-child {
+	font-size: 12px;
+	color: #bbb;
 }
 
-.bsh-stepbox ul li.bsh-on:after {
-content: "";
-position: absolute;
-left: 0;
-bottom: -1px;
-width: 100%;
-height: 3px;
-background: #333;
+.reservation2_step>p:last-child {
+	font-size: 15px;
+	color: #777;
+	font-weight: bold;
 }
 
+#step1 {
+	border-bottom: 2px solid black;
+}
 
 .bsh-sub-section{
 
@@ -505,4 +482,70 @@ background: #fff;
 line-height: 56px;
 color: #333333;
 transition: all 0.3s ease;
+}
+
+/* 툴팁 */
+/* 툴팁 */
+.tooltip {
+	cursor: pointer;
+	position: relative;
+	margin: auto;
+}
+
+.tooltip .tooltip-text {
+	visibility: hidden;
+	transition: 0.5s;
+	padding: 10px;
+	width: 150px;
+	border: 1px solid #a4a4a4;
+	border-radius: 5px;
+	position: absolute;
+	z-index: 1;
+	bottom: 30px;
+	left: 30px;
+	margin-left: -100px;
+	background-color: white;
+	text-align:left;
+}
+
+.tooltip .tooltip-text::after {
+	content: "";
+	position: absolute;
+	bottom: -20px;
+	left: 75px;
+	margin-left: -10px;
+	border-width: 10px;
+	border-style: solid;
+	background-color: transparent;
+	border-color: #a4a4a4 transparent transparent;
+	z-index: -1;
+}
+
+.tooltip .tooltip-text::before {
+  content: "";
+	position: absolute;
+	bottom: -18px;
+	left: 75px;
+	margin-left: -10px;
+	border-width: 10px;
+	border-style: solid;
+	background-color: transparent;
+	border-color: white transparent transparent transparent;
+	z-index: 1;
+} 
+
+.tooltip:hover .tooltip-text {
+	visibility: visible;
+}
+
+.tooltip-text> div{
+	font-size: 12px;
+}
+.tooltip-text> div:last-child{
+	color:red;
+	font-weight:bold;
+}
+
+#schedule-info {
+	vertical-align: middle;
 }

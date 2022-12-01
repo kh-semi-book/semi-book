@@ -160,6 +160,7 @@
 
     .book-list-content{
         border-bottom:1px solid #bbb;
+        display: flex;
     }
 
     .book-list-content>div{

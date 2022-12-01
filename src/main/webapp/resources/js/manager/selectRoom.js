@@ -1,9 +1,11 @@
+// 회원 정보에 부합하는 방 출력 -------------------
 const chooseRoomBtn =document.getElementsByClassName("chooseRoomBtn");
 
 
 for(let chooseBtn of chooseRoomBtn){
     chooseBtn.addEventListener("click",function(){
         
+            
         console.log(this.parentElement.parentElement.children[1].innerHTML);
 
         const urlStr=location.href;
@@ -20,14 +22,9 @@ for(let chooseBtn of chooseRoomBtn){
                 result=i;
             }
         }
-
-
         opener.document.getElementsByClassName("bookRoomNum")[result].value=this.parentElement.parentElement.children[1].innerHTML;
 
-       
-        //
-
-        // window.close();
+        window.close();
     })
     
 }
