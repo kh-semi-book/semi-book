@@ -49,11 +49,7 @@ function nextCalendarInit() {
     if(checkOutDate1<10){
         checkOutDate1="0"+checkOutDate1;
     }
-    
-    checkInText1=currentYear+""+(currentMonth+1)+""+currentDate;
 
-    checkOutText1=currentYear+""+(currentMonth+1)+""+checkOutDate1;
-  
     // 여기가 오른쪽에 표시되는 텍스트 대입용
     let checkInText=currentYear+"-"+(currentMonth+1)+"-"+(currentDate);
     const saveToday=checkInText;
@@ -144,24 +140,21 @@ function nextCalendarInit() {
         if(selectday.innerHTML<10){
             if(currentMonth+1<10){
                 checkInText=currentYear+"-0"+(currentMonth+1)+"-0"+selectday.innerHTML;
-                checkInText1=currentYear+"0"+(currentMonth+1)+"0"+selectday.innerHTML;
             }else{
                 checkInText=currentYear+"-"+(currentMonth+1)+"-0"+selectday.innerHTML;
-                checkInText1=currentYear+""+(currentMonth+1)+"0"+selectday.innerHTML;
             }
         }else{
             if(currentMonth+1<10){
                 checkInText=currentYear+"-0"+(currentMonth+1)+"-"+selectday.innerHTML;
-                checkInText1=currentYear+"0"+(currentMonth+1)+""+selectday.innerHTML;
             }else{
                 checkInText=currentYear+"-"+(currentMonth+1)+"-"+selectday.innerHTML;
-                checkInText1=currentYear+""+(currentMonth+1)+""+selectday.innerHTML;
             }
         }
 
-        console.log(checkInText1);
 
-        console.log(thisMonth.getMonth());
+
+        checkInText1=new Date(currentYear,currentMonth,selectday.innerHTML);
+
         
 
         // if(Number(selectday.innerHTML)<10){
@@ -171,7 +164,7 @@ function nextCalendarInit() {
         // renderCalender2(thisMonth, selectday.innerHTML);
 
         checkInInput.innerText=checkInText+" ("+getDayOfWeek(checkInText)+")";
-
+        
 
         })
     }
@@ -268,11 +261,12 @@ function nextCalendarInit() {
                 }
             }
 
-            console.log(checkOutText1);
+            checkOutText1=new Date(currentYear,currentMonth,selectday.innerHTML);
+
             checkOutInput.innerText=checkOutText+" ("+getDayOfWeek(checkOutText)+")";
 
-            nights.value=Number(checkOutText1)-Number(checkInText1);
-            })
+            nights.value=(checkOutText1.getTime()-checkInText1.getTime())/(1000*60*60*24);
+        })
         }
     }
 

@@ -1,27 +1,44 @@
-const checkAll = document.getElementsByName("checkAll"); // 전체동의 체크박스
-// const checked = document.get // 선택된 체크박스
-// const checkAgree = document.getElementsByName("checkAgree"); // 나머지 체크박스
-const checkAgree = document.querySelectorAll('input[name="checkAgree"]:checked').length; // 나머지 체크박스
+const checkAll=document.getElementsByName("checkAll")[0];
+const checkAgree=document.getElementsByName("checkAgree");
+let flag=false;
 
-// function OnSave(){
-// checkAll[0].addEventListener("change", () => {
-//     console.log("전체체크박스 체크됨");
-    
-//     if(checkAgree == 0){
-//         alert("체크박스를 하나 이상 선택해주세요")
-//         return false;
-//     }
-//     // for ( checkList of checkAgree){
-//     //     checkList.checked = checkAll.checked;
-//     // }
-// });
-// }
-function OnSave(){
-
-    
-    if(checkAgree == 0){
-        alert("체크박스를 하나 이상 선택해주세요")
-        return false;
+checkAll.addEventListener("change",()=>{
+    for(let check of checkAgree){
+        if(checkAll.checked){
+            check.checked=true;
+            flag=true;
+        }else{
+            check.checked=false;
+            flag=false;
+        }
     }
-  
+});
+
+for(let check of checkAgree){
+    check.addEventListener("change",()=>{
+        console.log("클릭");
+
+        
+        if(checkAgree[0].checked&&checkAgree[1].checked&&checkAgree[2].checked&&checkAgree[3].checked){
+            checkAll.checked=true;
+            flag=true;
+        }else{
+            checkAll.checked=false;
+            flag=false;
+        }
+        
+    })
+
 }
+
+document.getElementById("signup1check").addEventListener("click",(event)=>{
+
+    // if(flag){
+    //     checkAll.checked=true;
+    // }
+    
+    if(!flag){
+        alert("이용약관에 동의하셔야 가입하실 수 있습니다.\n\n끝까지 읽어주셔야 동의하실 수 있습니다.");
+        event.preventDefault();
+    }
+})
