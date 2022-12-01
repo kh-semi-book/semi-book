@@ -83,10 +83,16 @@
         </div>
 
     <c:forEach var="book" items="${bookList}" varStatus="index">
+   
+      <form action="/manager/updateBook" method="POST">
         <div class="book-list-content">
+      
             <div class="book-list-no manage-border-right">${index.count}</div>
             <div class="book-list-date manage-border-right">${book.bookDate}</div>
-            <div class="book-list-reservation-no manage-border-right bookNo">${book.bookNo}</div>
+            <div class="book-list-reservation-no manage-border-right bookNo">
+            <%-- 수정 완료 후 리다이렉트 시 사용 예정 --%>
+            <input type="hidden" name="bookNo" value="${book.bookNo}">
+            ${book.bookNo}</div>
             <div class="book-list-room-no manage-border-right">
                 <input type="text" value="${book.bookRoomNum}" name="bookRoomNum" class="bookRoomNum"> 
             </div>
@@ -102,8 +108,6 @@
             <div class="book-list-cost money manage-border-right" id="money">${book.bookPrice}</div>
             <div class="book-list-booker-name manage-border-right">${book.bookMemberName}</div>
             <div class="manage-book-status">
-
-             ${book.roomProcess}
                 <c:choose>
                     <c:when test="${book.roomProcess == 0}">
                         <c:set var="sel0" value="selected"/>
@@ -115,14 +119,16 @@
                         <c:set var="sel2" value="selected"/>
                     </c:when>
                 </c:choose>
-                <select name="bookProcess" id="book-process">
+                <select name="roomProcess" id="book-process">
                     <option value="0" ${sel0}>예약대기</option>
                     <option value="1" ${sel1}>예약완료</option>
                     <option value="2" ${sel2}>예약취소</option>
                 </select>
             </div>
-            <div class="manage-book-status-change"><button>저장</button></div>
+            <div class="manage-book-status-change"><button id="updateBtn">저장</button></div>
+            
         </div>
+        </form>
         </c:forEach>
 
    

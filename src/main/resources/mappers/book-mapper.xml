@@ -60,7 +60,7 @@
 		ROOM_NUM=#{bookRoomNum},
 		CHECK_IN=#{checkIn},
 		CHECK_OUT=#{checkOut},
-		BOOK_PROCESS=#{bookProcess}
+		ROOM_PROCESS=#{roomProcess}
 		WHERE BOOK_NO=#{bookNo}
 	
 	</update>

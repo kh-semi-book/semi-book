@@ -46,7 +46,7 @@ public class BookController {
 		}
 		
 		
-		return "manager/common/select-book";
+		return "manager/book/select-book";
 		
 	}
 
@@ -55,7 +55,6 @@ public class BookController {
 	public String selectRoom(Model model,
 		@RequestParam(value="bookNum") int bookNum) {
 		
-		System.out.println(bookNum);
 		Room inputRoom=service.searchRoom(bookNum); // 해당 예약번호의 룸타입, 전망타입 조회
 		inputRoom.setBookNo(bookNum);
 		System.out.println(inputRoom);
@@ -66,8 +65,16 @@ public class BookController {
 		model.addAttribute(inputRoom);
 		model.addAttribute(bookNum);
 		
-		return "manager/common/SelectRoom";
+		return "manager/book/SelectRoom";
 	}
+	
 
+	@PostMapping("/manager/updateBook")
+	public int updateBook(Book bookPerson) {
+		
+		System.out.println(bookPerson);
+		
+		return service.updateBook(bookPerson);
+	}
 
 }
