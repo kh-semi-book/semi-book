@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import edu.kh.semi.common.Util;
@@ -34,6 +35,7 @@ public class BoardServiceImpl implements BoardService {
 	}
 	
 	// 공지사항 등록
+	@Transactional(rollbackFor = Exception.class)
 	@Override
 	public int saveCmmPost(CMM cmm, Map<String, Object> map, MultipartFile cmmTitleImage, MultipartFile cmmConImage)
 			throws Exception {
@@ -60,33 +62,59 @@ public class BoardServiceImpl implements BoardService {
 	}
 	
 	// 공지사항 수정
+	@Transactional(rollbackFor = Exception.class)
 	@Override
 	public int saveCmmUpdate(CMM cmm, Map<String, Object> map, MultipartFile cmmTitleImage,
 			MultipartFile cmmConImage) throws Exception {
 		
-		if(cmmTitleImage.getSize()==0) {
-			cmm.setCmmTitleImg(null);
-		}
+		// 내용 수정
+		int result = dao.cmmBoardUpdate(cmm);
 		
-		String renameTitle = Util.fileRename(cmmTitleImage.getOriginalFilename());
-		String renameContent = Util.fileRename(cmmConImage.getOriginalFilename());
-
-		cmm.setCmmTitleImg(map.get("webPathTitle") + renameTitle);
-		cmm.setCmmConImg(map.get("webPathContent") + renameContent);
+		String renameTitle=null;
+		String renameContent=null;
+		int resultTitle=0;
+		int resultContent=0;
 		
-		int result = dao.saveCmmUpdate(cmm);
-
-		if (result > 0) {
-
-			if (renameTitle != null && renameContent != null) {
-				cmmTitleImage.transferTo(new File(map.get("filePathTitle") + renameTitle));
-				cmmConImage.transferTo(new File(map.get("filePathContent") + renameContent));
+		if(result>0) {
+			
+			if(cmmTitleImage.getSize()>0) {
+				renameTitle = Util.fileRename(cmmTitleImage.getOriginalFilename());
+				cmm.setCmmTitleImg(map.get("webPathTitle") + renameTitle);
+				resultTitle=dao.cmmTitleImageUpdate(cmm);
+				if(resultTitle==0) {
+					throw new Exception("수정 실패");
+				} else {
+					cmmTitleImage.transferTo(new File(map.get("filePathTitle") + renameTitle));
+				}
 			}
+			
+			
+			if(cmmConImage.getSize()>0) {
+				renameContent = Util.fileRename(cmmConImage.getOriginalFilename());
+				cmm.setCmmConImg(map.get("webPathContent") + renameContent);
+				resultContent=dao.cmmContentImageUpdate(cmm);
+				if(resultContent==0) {
+					throw new Exception("수정 실패");
+				} else {
+					cmmConImage.transferTo(new File(map.get("filePathContent") + renameContent));
+				}
+			}
+			
 		} else {
 			throw new Exception("수정 실패");
 		}
 
+		
 		return result;
+		
+	}
+	
+	
+	// 공지사항 삭제
+	@Transactional(rollbackFor = Exception.class)
+	@Override
+	public int cmmDelete(int cmmNo) {
+		return dao.cmmDelete(cmmNo);
 	}
 	
 	
@@ -107,6 +135,7 @@ public class BoardServiceImpl implements BoardService {
 	
 
 	// 프로모션 등록
+	@Transactional(rollbackFor = Exception.class)
 	@Override
 	public int savePromotionPost(Promotion promotion, Map<String, Object> map, MultipartFile promotionTitleImage,
 			MultipartFile promotionConImage) throws Exception {

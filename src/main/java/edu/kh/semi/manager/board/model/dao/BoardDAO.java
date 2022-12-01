@@ -12,6 +12,10 @@ import edu.kh.semi.manager.board.model.vo.Event;
 import edu.kh.semi.manager.board.model.vo.Promotion;
 
 
+/**
+ * @author user
+ *
+ */
 @Repository
 public class BoardDAO {
 
@@ -43,13 +47,45 @@ public class BoardDAO {
 		return sqlSession.insert("boardMapper.saveCmmPost", cmm);
 	}
 	
+
 	/** 공지사항 수정
-	 * @param inputCmm
+	 * @param cmm
 	 * @return result
 	 */
-	public int saveCmmUpdate(CMM inputCmm) {
-		return sqlSession.update("boardMapper.saveCmmUpdate", inputCmm);
+	public int cmmBoardUpdate(CMM cmm) {
+		return sqlSession.update("boardMapper.cmmBoardUpdate", cmm);
 	}
+
+	
+	/** 공지사항 타이틀 이미지 수정
+	 * @param cmm
+	 * @return result
+	 */ 
+	public int cmmTitleImageUpdate(CMM cmm) {
+		return sqlSession.update("boardMapper.cmmTitleImageUpdate",cmm);
+	}
+
+
+	/** 공지사항 컨텐츠 이미지 수정
+	 * @param cmm
+	 * @return result
+	 */
+	public int cmmContentImageUpdate(CMM cmm) {
+		return sqlSession.update("boardMapper.cmmContentImageUpdate",cmm);
+	}
+	
+	/** 공지사항 수정
+	 * @param cmmNo
+	 * @return
+	 */
+	public int cmmDelete(int cmmNo) {
+		// TODO Auto-generated method stub
+		return sqlSession.delete("boardMapper.cmmDelete", cmmNo);
+	}
+	
+	
+//======================================================================================
+
 	
 	/** 프로모션 조회
 	 * @return
@@ -92,6 +128,12 @@ public class BoardDAO {
 	public int saveEventPost(Event event) {
 		return sqlSession.insert("boardMapper.saveEventPost", event);
 	}
+
+
+	
+
+
+
 
 
 

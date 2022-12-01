@@ -159,8 +159,20 @@ public class BoardController {
 
 	}
 
-	@PostMapping("/cmmDelete")
-	public String cmmDelete() {
+	@PostMapping("/cmmDetail/{cmmNo}/cmmDelete")
+	public String cmmDelete(@PathVariable(value="cmmNo") int cmmNo, RedirectAttributes ra) {
+		
+		int result=service.cmmDelete(cmmNo);
+		String message = null;
+		
+		if(result > 0) {
+			message = "게시글 삭제 완료";
+		} else {
+			message = "게시글 삭제 실패";
+		}
+		
+		ra.addFlashAttribute("message", message);
+		
 		return "/manager/cmm/cmmPost";
 	}
 
