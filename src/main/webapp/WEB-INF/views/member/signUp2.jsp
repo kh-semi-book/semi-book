@@ -354,17 +354,13 @@
           </div>
             </div>  
             <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-            <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></scrip>
-           
+            <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+        
             <script src="/resources/js/member/signUp2.js"></script> 
-            <script>
-            $("#memberEmail3").change(function(){
-              $("#memberEmail2").val($("#memberEmail3").val());
-            })
-            </script>
-
+          
             
-             
+            
+          
     </body>
 
 </html>

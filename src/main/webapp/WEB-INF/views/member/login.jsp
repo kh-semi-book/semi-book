@@ -22,7 +22,8 @@
 
         <div id="login-main">
             <div id="member-login">
-                <form action="/member/login" method="post">
+                <form action="/member/login" method="post" 
+                onsubmit="return loginValidate();">
                     <p>회원 로그인</p>
                     <div class="input-section">
                         <input type="text" name="memberId" placeholder="아이디">
@@ -67,7 +68,7 @@
     </div>
 
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-
+    <script src="/resources/js/member/login.js"></script>
 
 
 </body>

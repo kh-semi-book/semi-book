@@ -1,32 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<%-- 문자열 관련 메서드를 제공하는 JSTL(EL형식) --%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>[회원 수정] Page</title>
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>[회원 수정] Page</title>
 
+      <script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
       <link rel="stylesheet" href="/resources/css/common/main.css">
       <link rel="stylesheet" href="/resources/css/member/memberEdit.css">
-      <script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
 
       <style>
           body{margin: auto;}
       </style>
-    </head>
+  </head>
 
   <body>
-        <!-- header -->
-        <jsp:include page="/WEB-INF/views/common/header.jsp" />
-    <div class="kjh-head-area">
 
-    </div>
-      <div class="rsc-body-area">
+    <jsp:include page="/WEB-INF/views/common/header.jsp" />
+      <div class="kjh-head-area">
+
+      </div>
+        <div class="rsc-body-area">
 
           <nav class="kjh-page-list">
                 <a href="/">HOME</a> > <a href=""> 마이페이지</a> > <a href=""> 회원정보 수정</a>
@@ -37,10 +37,10 @@
           </div>
           <div class="kjh-main-border">
             <div class="kjh-main-container">
-                                    
-                <h4 class="kjh-h4">기본항목
-                  <span class="kjh-txt"><strong class="star">*</strong>표시는 필수항목입니다.</span>
-                </h4>
+                                      
+              <h4 class="kjh-h4">기본항목
+                <span class="kjh-txt"><strong class="star">*</strong>표시는 필수항목입니다.</span>
+              </h4>
 
                 <form name="joinform" id ="joinform" method="post" action="">
                   <div class="form1">
@@ -81,26 +81,26 @@
                           </span>
                         </td>
                       </tr>
-                      <%------------- 새 비밀번호 구역 style="display: none;"----------%>
-                      <tr class = "new-pw1" > <%-- class에 hide 추가시 안보이게됨 --%>
+                      
+                      <tr class = "new-pw1 hide" >
                         <label for="newMemberPw1">
                         <th>새 비밀번호<span class="star">*</span></th>
                         </label>
-                        <td class="kjh-input" colspan="3">
+                        <td class="kjh-input " colspan="3">
                           <input type="password" size="20" name="newMemberPw1" id="newMemberPw1" >
                         </td>
                       </tr>
 
-                      <tr class ="new-pw2" >
+                      <tr class ="new-pw2 hide" >
                         <label for="newMemberPw2">
                         <th>새 비밀번호 확인<span class="star">*</span></th>
                         </label>
-                        <td class="kjh-input" colspan="3">
+                        <td class="kjh-input " colspan="3">
                           <input type="password" size="20" name="newMemberPw2" id="newMemberPw2" >
                         </td>
                       </tr>
 
-                      <%----------------------------------------%>
+                      
 
                       <tr>
                         <th>휴대폰<span class="star">*</span></th>
@@ -223,30 +223,22 @@
                           </td>
                         </tr>                        
                       </table>
-                    </div> <%-- form2 --%>
-                      <div class="kjh-btn-yn">
-                        <a href="" class="yes">확인</a>
-                        <a href="" class="no">취소</a>
+                    </div> 
+                        <div class="kjh-btn-yn">
+                          <a href="" class="yes">확인</a>
+                          <a href="" class="no">취소</a>
 
-                      </div>
+                        </div>
                 </form>
-            </div> <!-- main-container -->
-        
-          </div>  <!-- main-border -->
-      </div> <%-- rsc-body --%>
+              </div> 
+          
+            </div>  
+        </div> 
+            <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+            <script src="/resources/js/member/memberEdit.js"></script> 
+            <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
-          <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-          <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></scrip>
-          <script src="/resources/js/member/signUp2.js"></script> 
-
-         <script>
-            $("#memberEmail3").change(function(){
-              $("#memberEmail2").val($("#memberEmail3").val());
-            })
-
-
-
-          </script>
-  </body>
+          
+    </body>
 
 </html>

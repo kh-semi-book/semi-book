@@ -26,10 +26,6 @@
   		
   	</resultMap>
   	
-  	<update id="updateInfo' parameterType="Member">
-  		
-  	
-  	
-  	</update>
+  
 
 </mapper>
