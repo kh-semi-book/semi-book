@@ -122,7 +122,8 @@
                                     <option value="">직접 입력</option>
                                   </select>
   							          	<span class="kjh-subtxt">(다음/한메일은 수신이 안될 수 있습니다.)</span>
-                         
+                            
+                            <%-- jstl --%>
 
 
                                 </td>

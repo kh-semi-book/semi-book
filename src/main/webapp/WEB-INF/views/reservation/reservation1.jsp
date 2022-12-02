@@ -27,7 +27,7 @@
 </head>
 
 <body>
-   <jsp:include page="/WEB-INF/views/common/header.jsp"/>
+   <jsp:include page="/WEB-INF/views/reservation/reservation-header.jsp"/>
 
         <div id="top-photo"></div>
     <div class="reservation1-main">
@@ -40,30 +40,29 @@
             예약하기
         </div>
 
-        <div class="bsh-stepbox">
-            <ul>
-                <li class="bsh-on" title="현재 위치" style="color: #333;">
-                    <span>STEP 01</span>
-                    일정선택
-                </li>
-                <li>
-                    <span>STEP 02</span>
-                    객실&패키지 선택
-                </li>
-                <li>
-                    <span>STEP 03</span>
-                    옵션 선택
-                </li>
-                <li>
-                    <span>STEP 04</span>
-                    고객 정보 입력
-                </li>
-                <li>
-                    <span>STEP 05</span>
-                    예약 완료
-                </li>
-            </ul>
+         <div id="reservation2_step_area">
+            <div class="reservation2_step" id="step1">
+                <p class="step">STEP 01</p>
+                <p>일정선택</p>
+            </div>
+            <div class="reservation2_step" id="step2">
+                <p class="step">STEP 02</p>
+                <p>객실&패키지 선택</p>
+            </div>
+            <div class="reservation2_step" id="step3">
+                <p class="step">STEP 03</p>
+                <p>옵션 선택</p>
+            </div>
+            <div class="reservation2_step" id="step4">
+                <p class="step">STEP 04</p>
+                <p>고객 정보 입력</p>
+            </div>
+            <div class="reservation2_step" id="step5">
+                <p class="step">STEP 05</p>
+                <p>예약 완료</p>
+            </div>
         </div>
+
 
         <div class="bsh-sub-section">
             <div class="bsh-leftbox">
@@ -194,7 +193,15 @@
                                     <option value="">3</option>
                                 </select>
                             </div>
-                                <i class="fa-solid fa-circle-info"></i>
+                            <span  class="tooltip">
+												<img src="/resources/image/button/info.gif" id="schedule-info">
+												<span class="tooltip-text">
+													<div>48개월 이상~만12세 이하</div>
+													<div>(인원 추가 요금 별도 발생)</div>
+												</span>
+											</span>
+                                <%-- <i class="fa-solid fa-circle-info"></i> --%>
+                                
                             </td>
                         </tr>
                     </table>

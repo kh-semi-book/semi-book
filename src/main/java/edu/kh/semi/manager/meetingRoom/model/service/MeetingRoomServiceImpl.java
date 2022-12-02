@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import edu.kh.semi.manager.book.model.vo.Pagination;
 import edu.kh.semi.manager.meetingRoom.model.dao.MeetingRoomDAO;
@@ -17,6 +18,8 @@ public class MeetingRoomServiceImpl implements MeetingRoomService{
 	@Autowired
 	private MeetingRoomDAO dao;
 
+	
+	// 예약 리스트 조회(검색이 없는 경우)
 	@Override
 	public Map<String, Object> selectBookList(int cp) {
 				
@@ -38,6 +41,7 @@ public class MeetingRoomServiceImpl implements MeetingRoomService{
 				return map;
 	}
 
+	// 예약 리스트 조회(검색이 있는 경우)
 	@Override
 	public Map<String, Object> selectBookList(Map<String, Object> pm, int cp) {
 				
@@ -57,6 +61,26 @@ public class MeetingRoomServiceImpl implements MeetingRoomService{
 				map.put("bookList",bookList);
 				
 				return map;
+	}
+
+	// 진행상태 변경 
+	@Override
+	public int changeProcess(int input) {
+		
+		int result = dao.changeProcess(input);
+		
+		return result;
+	}
+	
+	
+	// 미팅룸 예약 문의 추가
+	@Transactional(rollbackFor = Exception.class)
+	@Override
+	public int meetingBookAdd(MeetingRoom inputMeetingRoom) {
+		
+		int result = dao.meetingBookAdd(inputMeetingRoom);
+		
+		return result;
 	}
 
 	

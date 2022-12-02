@@ -3,7 +3,6 @@
     margin: 0 auto 0 auto;
     width: 100%;
     height: auto;
-    background-color: #F7F7F7;
 }
 .rsc-top-image{
     width: 100%;
@@ -137,4 +136,16 @@
     font-weight: bold;
     font-size: 14px;
     color: red;
+}
+
+/* 상품명 상세보기 */
+#table-room-view a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+#table-room-view a:hover{
+    text-decoration: underline;
+    color: blue;
 }

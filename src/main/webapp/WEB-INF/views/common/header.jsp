@@ -114,7 +114,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="/reservation/reservation1" id="book-btn"><i class="fa-regular fa-calendar-days"></i>
+                    <a href="/reservation/reservation1" id="book-btn" target="_blank"><i class="fa-regular fa-calendar-days"></i>
                         예약하기</a> 
                         <!-- 새창으로 -->
                 </li>

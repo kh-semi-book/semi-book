@@ -18,11 +18,10 @@ public class MainController {
 		return "member/login";
 	}
 	
-	
-	@GetMapping("/reservation/reservationView")
-	public String reservationCheckPage() {
-		return "reservation/reservationView";
-	}
+//	@GetMapping("/reservation/reservationView")
+//	public String reservationCheckPage() {
+//		return "reservation/reservationView";
+//	}
 	
 	@GetMapping("/member/signUp")
 	public String signUpPage() {

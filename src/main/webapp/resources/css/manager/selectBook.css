@@ -1,5 +1,4 @@
-
-  #search-book-area{
+#search-book-area{
     width: 1500px;
     margin:auto;
 }
@@ -160,6 +159,7 @@
 
     .book-list-content{
         border-bottom:1px solid #bbb;
+        display: flex;
     }
 
     .book-list-content>div{

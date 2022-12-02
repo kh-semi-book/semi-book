@@ -363,7 +363,7 @@
                     </div>
                     <div class="kjh-confirm">
 
-                		<a href="/member/signUp2" >확인</a>
+                		<a href="/member/signUp2" id="signup1check">확인</a>
                     </div>
           </div>
           </form>
