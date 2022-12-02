@@ -27,15 +27,15 @@
 
 		<div id="dining_body_area">
 			<section id="dining_detail_title">
-				<div>[치치/인피니티 바] Autumn vibes</div>
+				<div>${dining.diningTitle}</div>
 			</section>
 			<section id="dining_detail_date">
 				<div class="detail date">
-					<strong class="strong">프로모션 기간</strong> 2022-10-01 ~ 2022-12-31
+					<strong class="strong">프로모션 기간</strong> ${dining.diningStartDate} ~ ${dining.diningEndDate}
 				</div>
 			</section>
 			<section id="dining_detail_content">
-				<img src="/resources/image/nav/specialOffer/dining/dining1_detail.jpg">
+				<img src="${dining.diningConImg}">
 			</section>
 			<section id="dining_menu_return">
 				<div>

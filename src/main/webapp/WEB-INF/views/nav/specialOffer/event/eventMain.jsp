@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<c:set var="eventList" value="${eventList}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,33 +27,24 @@
 		<div id="event_body_area">
 			<div id="event_body_menu">
 				<ul id="event_list">
-					<li><a href="/nav/specialOffer/event/detail"> <span> <img src="/resources/image/nav/specialOffer/event/event1.jpg"></img>
-						</span>
-							<div id="strong">
-								<strong>[스파] Refresh Your Day</strong>
-							</div>
-							<div id="notice1">페이셜 . 바디 트리트먼트 10% 할인</div>
-							<div id="notice2">
-								<div id="date">프로모션 기간 2022-07-15 ~ 2022-12-31</div>
-							</div>
+					<c:forEach var="event" items="${eventList}">
+						<li>
+							<a href="/nav/specialOffer/event/detail/${event.eventNo}"> 
+								<span> <img src="${event.eventTitleImg}"></img> </span>
+								<div id="strong">
+									<strong>${event.eventTitle}</strong>
+								</div>
+								<div id="notice1">${event.eventSub}</div>
+								<div id="notice2">
+									<div id="date">프로모션 기간 ${event.eventStartDate} ~ ${event.eventEndDate}</div>
+								</div>
 							<p>
 								<br>
 							</p>
-					</a></li>
-					<li><a href="/html/event_2.html"> <span> <img src="/image/event2.jpg"></img>
-						</span>
-							<div id="strong">
-								<strong>[아트 클래스] My Palette</strong>
-							</div>
-							<div id="notice1">세상에 하나뿐인 나만의 작품을 완성해 보는 시간</div>
-							<div id="notice2">
-								<div id="date">프로모션 기간 2019-10-05 ~ 2022-12-31</div>
-							</div>
-							<p>
-								<br>
-							</p>
-					</a></li>
-
+							</a>
+						</li>	
+					</c:forEach>
+					
 				</ul>
 			</div>
 			<div class="paging">

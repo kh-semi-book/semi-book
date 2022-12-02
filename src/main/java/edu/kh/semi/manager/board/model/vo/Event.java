@@ -20,6 +20,7 @@ public class Event {
 	private String eventEndDate;
 	private String eventDeleteFlag;
 	private String eventCreateDate;
-	
+	private int memberNo;
+	private String memberName;
 
 }

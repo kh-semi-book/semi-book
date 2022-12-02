@@ -1,4 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<c:set var="eventList" value="${eventList}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,12 +35,16 @@ body {
 					<th>번호</th>
 					<th>이벤트 제목</th>
 					<th>작성일</th>
+					<th>작성자</th>
 				</tr>
-				<tr>
-					<td><a href="/manager/eventDetail" class="detail">1</a></td>
-					<td>[얼리버드] Hidden Earlybird</td>
-					<td>2021-12-30</td>
-				</tr>
+				<c:forEach var="event" items="${eventList}">
+					<tr>
+						<td>${event.eventNo}</a></td>
+						<td><a href="/manager/eventDetail/${event.eventNo}" class="detail">${event.eventTitle}</a></td>
+						<td>${event.eventCreateDate}</td>
+						<td>${event.memberNo}</td>
+					</tr>
+				</c:forEach>
 				
 
 			</table>

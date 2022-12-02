@@ -37,7 +37,7 @@
 	
 	</resultMap>
 	
-	<resultMap type="Promotion" id="dining_rm">
+	<resultMap type="Dining" id="dining_rm">
 	
 		<id property="diningNo" column="DINING_NO" />
 		<result property="diningTitle" column="DINING_TITLE" />
@@ -53,7 +53,7 @@
 	
 	</resultMap>
 	
-	<resultMap type="Promotion" id="event_rm">
+	<resultMap type="Event" id="event_rm">
 	
 		<id property="eventNo" column="EVENT_NO" />
 		<result property="eventTitle" column="EVENT_TITLE" />
@@ -93,9 +93,12 @@
 	</select>
 
 	<!-- 공지사항 등록 -->
-	<insert id="saveCmmPost" parameterType="CMM">
+	<insert id="saveCmmPost" parameterType="CMM" useGeneratedKeys="true">
+		<selectKey keyProperty="cmmNo" resultType="_int" order="BEFORE">
+			SELECT SEQ_CMM_NO.NEXTVAL FROM DUAL
+		</selectKey>
 		INSERT INTO "CMM" VALUES(
-		SEQ_CMM_NO.NEXTVAL,
+		#{cmmNo},
 		#{cmmTitle},#{cmmSub},#{cmmTitleImg},#{cmmConImg},DEFAULT,#{memberNo},DEFAULT)
 	</insert>
 	
@@ -135,7 +138,13 @@
 	
 	<!-- 프로모션 조회 -->
 	<select id="selectPromotionList" resultMap="promotion_rm">
-		SELECT PROMOTION_NO, PROMOTION_TITLE, TO_CHAR(PROMOTION_CREATE_DATE, 'YYYY-MM-DD') PROMOTION_CREATE_DATE, MEMBER_NO, MEMBER_NAME
+		SELECT PROMOTION_NO, PROMOTION_TITLE, PROMOTION_SUB, TO_CHAR(PROMOTION_CREATE_DATE, 'YYYY-MM-DD') PROMOTION_CREATE_DATE, 
+		MEMBER_NO, MEMBER_NAME,
+		TO_CHAR(P_STAY_START_DATE, 'YYYY-MM-DD') P_STAY_START_DATE,
+           TO_CHAR(P_STAY_END_DATE, 'YYYY-MM-DD') P_STAY_END_DATE,
+           TO_CHAR(P_SALE_START_DATE, 'YYYY-MM-DD') P_SALE_START_DATE,
+           TO_CHAR(P_SALE_END_DATE, 'YYYY-MM-DD') P_SALE_END_DATE,
+            PROMOTION_TITLE_IMG, PROMOTION_CON_IMG,PROMOTION_PRICE
 		FROM "PROMOTION"
 		JOIN MEMBER USING (MEMBER_NO)
 		WHERE PROMOTION_NO != 0
@@ -167,9 +176,12 @@
 
 
 	<!-- 프로모션 등록 -->
-	<insert id="savePromotionPost" parameterType="Promotion">
+	<insert id="savePromotionPost" parameterType="Promotion" useGeneratedKeys="true">
+		<selectKey keyProperty="promotionNo" resultType="_int" order="BEFORE">
+			SELECT SEQ_PROMOTION_NO.NEXTVAL FROM DUAL
+		</selectKey>
 		INSERT INTO "PROMOTION" VALUES(
-		SEQ_PROMOTION_NO.NEXTVAL, #{promotionTitle},#{promotionSub},#{promotionTitleImg},#{promotionConImg},#{promotionPrice}
+		#{promotionNo}, #{promotionTitle},#{promotionSub},#{promotionTitleImg},#{promotionConImg},#{promotionPrice}
 		,DEFAULT,#{pStayStartDate},#{pStayEndDate},#{pSaleStartDate},#{pSaleEndDate},DEFAULT,#{memberNo})
 	</insert>
 	
@@ -179,7 +191,6 @@
 		<selectKey keyProperty="promotionNo" resultType="_int" order="BEFORE">
 			SELECT SEQ_PROMOTION_NO.CURRVAL FROM DUAL
 		</selectKey>
-		
 		INSERT INTO PROMOTION_ROOM VALUES(
 		#{promotionNo},#{roomViewNo},#{roomTypeNo})
 	</insert>
@@ -187,26 +198,26 @@
 	<!-- 프로모션 내용 수정 -->
 	<update id="promotionBoardUpdate">
 		UPDATE PROMOTION SET 
-		PROMOTION_TITLE=#{promotionTitle}
-		PROMOTION_SUB=#{promotionSub}
-		PROMOTION_PRICE=#{promotionPrice}
-		P_STAY_START_DATE=#{pStayStartDate}
-		P_STAY_END_DATE=#{pStayEndDate}
-		P_SALE_START_DATE=#{pSaleStartDate}
+		PROMOTION_TITLE=#{promotionTitle},
+		PROMOTION_SUB=#{promotionSub},
+		PROMOTION_PRICE=#{promotionPrice},
+		P_STAY_START_DATE=#{pStayStartDate},
+		P_STAY_END_DATE=#{pStayEndDate},
+		P_SALE_START_DATE=#{pSaleStartDate},
 		P_SALE_END_DATE=#{pSaleEndDate}
 		WHERE PROMOTION_NO=#{promotionNo}
 	</update>
 	
 	<!-- 프로모션 타이틀 이미지 수정 -->
 	<update id="promotionTitleImageUpdate" parameterType="Promotion">
-		UPDATE "Promotion" SET PROMOTION_TITLE_IMG=#{PromotionTitleImg}
-		WHERE PROMOTION_NO=#{PromotionNo}
+		UPDATE PROMOTION SET PROMOTION_TITLE_IMG=#{promotionTitleImg}
+		WHERE PROMOTION_NO=#{promotionNo}
 	</update>
 	
 	<!-- 프로모션 컨텐츠 이미지 수정 -->
 	<update id="promotionContentImageUpdate" parameterType="Promotion">
-		UPDATE "Promotion" SET PROMOTION_CON_IMG=#{PromotionConImg}
-		WHERE PROMOTION_NO=#{PromotionNo}
+		UPDATE PROMOTION SET PROMOTION_CON_IMG=#{promotionConImg}
+		WHERE PROMOTION_NO=#{promotionNo}
 	</update>
 	
 	<!-- 프로모션 객실 수정 -->
@@ -230,22 +241,139 @@
 	
 	
 	
+	
+	
+	
+	<!-- 다이닝 조회 -->
+	<select id="selectDiningList" resultMap="dining_rm">
+		SELECT DINING_NO, DINING_TITLE, DINING_SUB, TO_CHAR(DINING_CREATE_DATE, 'YYYY-MM-DD') DINING_CREATE_DATE, 
+		MEMBER_NO, MEMBER_NAME,
+		TO_CHAR(DINING_START_DATE, 'YYYY-MM-DD') DINING_START_DATE,
+           TO_CHAR(DINING_END_DATE, 'YYYY-MM-DD') DINING_END_DATE, DINING_TITLE_IMG, DINING_CON_IMG
+    FROM DINING
+    JOIN MEMBER USING (MEMBER_NO)
+    WHERE DINING_NO !=0
+    ORDER BY 1 DESC
+	</select>
+
+
+	<!-- 다이닝 세부 조회 -->
+	<select id="diningDetail" resultMap="dining_rm" resultType="Dining">
+		SELECT DINING_NO, DINING_TITLE, DINING_TITLE_IMG, DINING_SUB, DINING_CON_IMG, MEMBER_NO,
+           TO_CHAR(DINING_START_DATE, 'YYYY-MM-DD') DINING_START_DATE,
+           TO_CHAR(DINING_END_DATE, 'YYYY-MM-DD') DINING_END_DATE
+  FROM "DINING" 
+  WHERE DINING_NO=#{diningNo}
+	</select>
 
 
 	<!-- 다이닝 등록 -->
-	<insert id="saveDiningPost" parameterType="Dining">
+	<insert id="saveDiningPost" parameterType="Dining" useGeneratedKeys="true">
+		<selectKey keyProperty="diningNo" resultType="_int" order="BEFORE">
+			SELECT SEQ_DINIG_NO.NEXTVAL FROM DUAL
+		</selectKey>
 		INSERT INTO "DINING" VALUES(
-		SEQ_DINING_NO.NEXTVAL, #{diningTitle}, #{diningSub}, #{dininigTitleImg}, #{diningConImg},
-		#{diningStartDate}, #{diningEndDate}, DEFAULT,DEFAULT)
+		 #{diningNo}, #{diningTitle}, #{diningSub}, #{diningTitleImg}, #{diningConImg},
+		#{diningStartDate}, #{diningEndDate}, DEFAULT,#{memberNo},DEFAULT)
 	</insert>
+
+
+	<!-- 다이닝 내용 수정 -->
+	<update id="diningBoardUpdate">
+		UPDATE DINING SET 
+		DINING_TITLE=#{diningTitle},
+		DINING_SUB=#{diningSub},
+		DINING_START_DATE=#{diningStartDate},
+		DINING_END_DATE=#{diningEndDate}
+		WHERE DINING_NO=#{diningNo}
+	</update>
+	
+	<!-- 다이닝 타이틀 이미지 수정 -->
+	<update id="diningTitleImageUpdate" parameterType="Dining">
+		UPDATE DINING SET DINING_TITLE_IMG=#{diningTitleImg}
+		WHERE DINING_NO=#{diningNo}
+	</update>
+	
+	<!-- 다이닝 컨텐츠 이미지 수정 -->
+	<update id="diningContentImageUpdate" parameterType="Dining">
+		UPDATE DINING SET DINING_CON_IMG=#{diningConImg}
+		WHERE DINING_NO=#{diningNo}
+	</update>
+	
+	
+	<!-- 다이닝 삭제 -->
+	<delete id="diningDelete">
+		DELETE FROM DINING WHERE DINING_NO=#{diningNo}
+	</delete>
+	
+
+
+
+
+
+
+	<!-- 이벤트 조회 -->
+	<select id="selectEventList" resultMap="event_rm">
+		SELECT EVENT_NO, EVENT_TITLE, EVENT_SUB, TO_CHAR(EVENT_CREATE_DATE, 'YYYY-MM-DD') EVENT_CREATE_DATE, 
+		MEMBER_NO, MEMBER_NAME,
+		TO_CHAR(EVENT_START_DATE, 'YYYY-MM-DD') EVENT_START_DATE,
+           TO_CHAR(EVENT_END_DATE, 'YYYY-MM-DD') EVENT_END_DATE, EVENT_TITLE_IMG, EVENT_CON_IMG
+    FROM EVENT
+    JOIN MEMBER USING (MEMBER_NO)
+    WHERE EVENT_NO !=0
+    ORDER BY 1 DESC
+	</select>
+
+
+	<!-- 이벤트 세부 조회 -->
+	<select id="eventDetail" resultMap="event_rm" resultType="Event">
+		SELECT EVENT_NO, EVENT_TITLE, EVENT_TITLE_IMG, EVENT_SUB, EVENT_CON_IMG, MEMBER_NO,
+           TO_CHAR(EVENT_START_DATE, 'YYYY-MM-DD') EVENT_START_DATE,
+           TO_CHAR(EVENT_END_DATE, 'YYYY-MM-DD') EVENT_END_DATE
+  FROM "EVENT" 
+  WHERE EVENT_NO=#{eventNo}
+	</select>
 
 
 	<!-- 이벤트 등록 -->
-	<insert id="saveEventPost" parameterType="Event">
+	<insert id="saveEventPost" parameterType="Event" useGeneratedKeys="true">
+		<selectKey keyProperty="eventNo" resultType="_int" order="BEFORE">
+			SELECT SEQ_EVENT_NO.NEXTVAL FROM DUAL
+		</selectKey>
 		INSERT INTO "EVENT" VALUES(
-		SEQ_EVENT_NO.NEXTVAL, #{eventTitle}, #{eventSub}, #{eventTitleImg}, #{eventConImg},
-		#{eventStartDate}, #{eventEndDate}, DEFAULT,DEFAULT)
+		 #{eventNo}, #{eventTitle}, #{eventSub}, #{eventTitleImg}, #{eventConImg},
+		#{eventStartDate}, #{eventEndDate}, DEFAULT,#{memberNo},DEFAULT)
 	</insert>
+
+
+	<!-- 이벤트 내용 수정 -->
+	<update id="eventBoardUpdate">
+		UPDATE EVENT SET 
+		EVENT_TITLE=#{eventTitle},
+		EVENT_SUB=#{eventSub},
+		EVENT_START_DATE=#{eventStartDate},
+		EVENT_END_DATE=#{eventEndDate}
+		WHERE EVENT_NO=#{eventNo}
+	</update>
+	
+	<!-- 이벤트 타이틀 이미지 수정 -->
+	<update id="eventTitleImageUpdate" parameterType="Event">
+		UPDATE EVENT SET EVENT_TITLE_IMG=#{eventTitleImg}
+		WHERE EVENT_NO=#{eventNo}
+	</update>
+	
+	<!-- 이벤트 컨텐츠 이미지 수정 -->
+	<update id="eventContentImageUpdate" parameterType="Event">
+		UPDATE EVENT SET EVENT_CON_IMG=#{eventConImg}
+		WHERE EVENT_NO=#{eventNo}
+	</update>
+	
+	
+	<!-- 이벤트 삭제 -->
+	<delete id="eventDelete">
+		DELETE FROM EVENT WHERE EVENT_NO=#{eventNo}
+	</delete>
+	
 
 
 </mapper>

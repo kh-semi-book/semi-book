@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="promotionList" value="${promotionList}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,102 +28,30 @@
 		<div id="promotion_body_area">
 			<div id="promotion_body_menu">
 				<ul id="promotion_list">
-					<li><a href="/nav/specialOffer/roomPromotion/detail"> <span> <img src="/resources/image/nav/specialOffer/roomPromotion/promotion1.jpg"></img>
-						</span>
-							<div id="strong">
-								<strong>[얼리버드] Hiddem Earlybird</strong>
-							</div>
-							<div id="notice1">디럭스 1박+치치 아메리카노 2잔</div>
-							<div id="notice2">
-								<div id="date">
-									투숙기간 : 2022-11-27 ~ 2023-07-16 <br> 판매기간 : 2022-10-13 ~ 2023-07-15
+					
+					<c:forEach var="promotion" items="${promotionList}">
+						<li>
+							<a href="/nav/specialOffer/roomPromotion/detail/${promotion.promotionNo}"> 
+								<span> <img src="${promotion.promotionTitleImg}"></img> </span>
+								<div id="strong">
+									<strong>${promotion.promotionTitle}</strong>
 								</div>
-								<div id="price">220,000원 ~</div>
+								<div id="notice1">${promotion.promotionSub}</div>
+								<div id="notice2">
+									<div id="date">
+										투숙기간 : ${promotion.pStayStartDate} ~ ${promotion.pStayEndDate} 
+										<br> 판매기간 : ${promotion.pSaleStartDate} ~ ${promotion.pSaleEndDate}
+									</div>
+								<div id="price">${promotion.promotionPrice} ~</div>
 							</div>
 							<p>
 								<br>
 							</p>
-					</a></li>
-					<li><a href="/html/promotion_2.html"> <span> <img src="/image/promotion2.jpg"></img>
-						</span>
-							<div id="strong">
-								<strong>LA DOLCE VITA</strong>
-							</div>
-							<div id="notice1">스위트 1박+조식 2인+풀문나이트+말피 칵테일 2잔&비치타올</div>
-							<div id="notice2">
-								<div id="date">
-									투숙기간 : 2022-08-08 ~ 2022-12-31 <br> 판매기간 : 2022-07-29 ~ 2022-12-30
-								</div>
-								<div id="price">300,000원 ~</div>
-							</div>
-							<p>
-								<br>
-							</p>
-					</a></li>
-					<li><a href="/html/promotion_3.html"> <span> <img src="/image/promotion3.jpg"></img>
-						</span>
-							<div id="strong">
-								<strong>Fall in Infiniti</strong>
-							</div>
-							<div id="notice1">디럭스 1박+풀문나이트+말피 칵테일 2잔</div>
-							<div id="notice2">
-								<div id="date">
-									투숙기간 : 2022-10-15 ~ 2022-11-30 <br> 판매기간 : 2022-08-23 ~ 2022-11-29
-								</div>
-								<div id="price">230,000원 ~</div>
-							</div>
-							<p>
-								<br>
-							</p>
-					</a></li>
-					<li><a href="/html/promotion_4.html"> <span> <img src="/image/promotion4.jpg"></img>
-						</span>
-							<div id="strong">
-								<strong>Full of Love</strong>
-							</div>
-							<div id="notice1">디럭스 2박+조식 2인+웰컴드링크+풀문나이트+선착순 달바 썸머키트</div>
-							<div id="notice2">
-								<div id="date">
-									투숙기간 : 2022-05-01 ~ 2022-10-31 <br> 판매기간 : 2022-04-25 ~ 2022-10-30
-								</div>
-								<div id="price">560,000원 ~</div>
-							</div>
-							<p>
-								<br>
-							</p>
-					</a></li>
-					<li><a href="/html/promotion_5.html"> <span> <img src="/image/promotion5.jpg"></img>
-						</span>
-							<div id="strong">
-								<strong>[4인 패키지] Dear My Family</strong>
-							</div>
-							<div id="notice1">스위트 1박+조식+인피니티 바 이용권+풀문나이트인뮤직</div>
-							<div id="notice2">
-								<div id="date">
-									투숙기간 : 2022-08-10 ~ 2022-12-31 <br> 판매기간 : 2022-08-09 ~ 2023-12-30
-								</div>
-								<div id="price">370,000원 ~</div>
-							</div>
-							<p>
-								<br>
-							</p>
-					</a></li>
-					<li><a href="/html/promotion_6.html"> <span> <img src="/image/promotion6.jpg"></img>
-						</span>
-							<div id="strong">
-								<strong>[스파 패키지] Time to Relax</strong>
-							</div>
-							<div id="notice1">클리프 뷰 무료 업그레이드+16만 8천원 상당 스파 1인+풀문나이트인뮤직</div>
-							<div id="notice2">
-								<div id="date">
-									투숙기간 : 2022-08-06 ~ 2022-12-31 <br> 판매기간 : 2022-07-20 ~ 2022-12-30
-								</div>
-								<div id="price">330,000원 ~</div>
-							</div>
-							<p>
-								<br>
-							</p>
-					</a></li>
+							</a>
+						</li>	
+					</c:forEach>
+					
+					
 				</ul>
 			</div>
 			<div class="paging">
@@ -143,3 +73,4 @@
 
 </body>
 </html>
+

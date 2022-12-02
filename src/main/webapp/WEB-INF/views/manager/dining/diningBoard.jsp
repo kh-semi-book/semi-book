@@ -1,4 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<c:set var="diningList" value="${diningList}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,14 +33,18 @@ body {
 			<table id="board_table">
 				<tr>
 					<th>번호</th>
-					<th>다이닝 제목</th>
+					<th>이벤트 제목</th>
 					<th>작성일</th>
+					<th>작성자</th>
 				</tr>
-				<tr>
-					<td><a href="/manager/diningDetail" class="detail">1</a></td>
-					<td>[얼리버드] Hidden Earlybird</td>
-					<td>2021-12-30</td>
-				</tr>
+				<c:forEach var="dining" items="${diningList}">
+					<tr>
+						<td>${dining.diningNo}</a></td>
+						<td><a href="/manager/diningDetail/${dining.diningNo}" class="detail">${dining.diningTitle}</a></td>
+						<td>${dining.diningCreateDate}</td>
+						<td>${dining.memberNo}</td>
+					</tr>
+				</c:forEach>
 				
 
 			</table>
