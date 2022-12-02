@@ -101,9 +101,9 @@
                               <tr>
                                 <th>휴대폰<span class="star">*</span></th>
                                 <td class="kjh-input" colspan="3">
-                                  <input type="text" size="1" name="memberPhone"> -
-                                  <input type="text" size="1" name="memberPhone"> -
-                                  <input type="text" size="1" name="memberPhone">
+                                  <input type="text" size="1" name="memberPhone" id = "memberPhone1" maxlength="3"> -
+                                  <input type="text" size="1" name="memberPhone" id = "memberPhone2" maxlength="4"> -
+                                  <input type="text" size="1" name="memberPhone" id = "memberPhone3" maxlength="4">
                                 </td>
                           
                               </tr>
@@ -111,7 +111,7 @@
                                  <th>이메일<span class="star">*</span></th>
                                 <td class="kjh-input" colspan="3">
                                   <input type="text" size="20" name="memberEmail" id="memberEmail1">@
-                                  <input type="text" size="13"name="memberEmail" id="memberEmail2" >
+                                  <input type="text" size="13" name="memberEmail" id="memberEmail2" disabled value="naver.com" >
                                   <select class="kjh-address email" name="memberEmail" id="memberEmail3">
                                     <option value="naver.com">naver.com</option>
                                     <option value="gmail.com">gmail.com</option>
@@ -119,7 +119,7 @@
                                     <option value="hotmail.com">hotmail.com</option>
                                     <option value="dreamwiz.com">dreamwiz.com</option>
                                     <option value="freechal.com">freechal.com</option>
-                                    <option value="">직접 입력</option>
+                                    <option value="직접입력">직접입력</option>
                                   </select>
   							          	<span class="kjh-subtxt">(다음/한메일은 수신이 안될 수 있습니다.)</span>
                             
@@ -142,7 +142,7 @@
                               <tr>
                                <th>생년월일<span class="star">*</span></th>
                                 <td colspan="3">
-                                  <select class="kjh-select" name="memberBirth"id="m-birth1"class="date">
+                                  <select class="kjh-select" name="memberBirth"id="memberBirth1"class="date">
                                     <option value=""></option>
                                     <option value="1934">1934</option>
                                     <option value="1935">1935</option>
@@ -216,7 +216,7 @@
                                     <option value="2003">2003</option>
                                     <option value="2004">2004</option>
                                     </select>년
-                                  <select class="kjh-select"name="memberBirth" id="m-birth2"class="date">
+                                  <select class="kjh-select"name="memberBirth" id="memberBirth2"class="date">
                                     <option value=""></option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -232,7 +232,7 @@
                                     <option value="12">12</option>
                                   </select>월
 
-                                  <select class="kjh-select" name="memberBirth" id="m-birth4" class="date">
+                                  <select class="kjh-select" name="memberBirth" id="memberBirth3" class="date">
                                     <option value=""></option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -304,13 +304,13 @@
                               <tr>
                                 <th>결혼유무</th>
                                 <td colspan="3">
-                                  <input type="radio" name="marriageFlag" id="marriage_yn1"
+                                  <input type="radio" name="marriageFlag" id="marriageYN1"
                                   value="N">
-                                  <label for="marriage_yn1">미혼</label>
+                                  <label for="marriageYN1">미혼</label>
 
-                                  <input type="radio" name="marriageFlag" id="marriage_yn2"
+                                  <input type="radio" name="marriageFlag" id="marriageYN2"
                                   value="Y">
-                                  <label for="marriage_yn2">기혼</label>
+                                  <label for="marriageYN2">기혼</label>
                                   <span class="kjh-married">
                                     (결혼기념일 : 
                                     <input type="text" name="memberWedding" size="4" maxlength="4" >년
@@ -323,19 +323,20 @@
                               <tr>
                                 <th>유선전화</th>
                                 <td class="kjh-input" colspan="3">
-                                  <input type="text" size="1" name="memberTel" id="m_col"> -
-                                  <input type="text" size="1" name="memberTel" id="m_col"> -
-                                  <input type="text" size="1" name="memberTel" id="m_col"> 
+                                  <input type="text" size="1" name="memberTel" id="memberTel1" maxlength="3"> -
+                                  <input type="text" size="1" name="memberTel" id="memberTel2" maxlength="4"> -
+                                  <input type="text" size="1" name="memberTel" id="memberTel3" maxlength="4"> 
                                 
                                 </td>
                               </tr>                              
                               <tr>
                                 <th>주소</th>
                                 <td class="kjh-input" colspan="3">
-                                  <input type="text" name = "memberAddress"class="kjh-address a"size="5px" readonly>
-                                  <input type="button"  class="btn2"  value="우편번호검색"><br>
-                                  <input type="text" name = "memberAddress" class="kjh-address" size="50px"readonly> <br>
-                                  <input type="text" name = "memberAddress"  class="kjh-address"size="50px">
+                                  <input type="text" id="sample6_postcode" name = "memberAddress" class="kjh-address a"size="5px" readonly>
+                                  <%-- <button type='button' onclick="sample6_execDaumPostcode()" class="btn2">우편번호검색</button><br> --%>
+                                  <input type="button" onclick="sample6_execDaumPostcode()" class="btn2"  value="우편번호검색"><br>
+                                  <input type="text" id="sample6_address" name = "memberAddress" class="kjh-address" size="50px"readonly> <br>
+                                  <input type="text" id="sample6_detailAddress" name = "memberAddress"  class="kjh-address" size="50px">
 
                                 </td>
                               </tr>                              
@@ -357,7 +358,11 @@
             <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
             <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
         
-            <script src="/resources/js/member/signUp2.js"></script> 
+            <script src="/resources/js/member/signUp2.js"></script>
+            <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+ 
+
+          
           
             
             

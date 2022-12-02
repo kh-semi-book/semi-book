@@ -51,7 +51,7 @@
                         <p class="kjh-p">회원이 되시면 다양한 서비스를 더욱 편하게 이용 가능하십니다.</p>
                         
                         <div class="kjh-all-check">
-                          <input type="checkbox" name="checkAll" value="allcheck">
+                          <input type="checkbox" id="allcheck" name="checkAll" value="allcheck">
                           <label for="allcheck">홈페이지 가입 약관 전체 동의</label>
                         </div>
                       </section>
@@ -240,7 +240,7 @@
                           </div> <!-- kjh-content-in -->
                           <div class="kjh-check-border">
                             <input type="checkbox" id="check1" name="checkAgree">
-                            <label for="check1" ></label>동의합니다.
+                            <label for="check1" >동의합니다.</label>
                           </div>  
                         </div><!-- kjh-cotent -->
                     </section>
@@ -292,8 +292,8 @@
               </div> <!-- kjh-cent-in-a -->
               </div> <!-- kjh-content-in -->
                         <div class="kjh-check-border">
-                          <input type="checkbox" id="check1" name="checkAgree">
-                          <label for="check1" ></label>동의합니다.
+                          <input type="checkbox" id="check2" name="checkAgree">
+                          <label for="check2" >동의합니다.</label>
                         </div>
                       </section>
                       
@@ -322,8 +322,8 @@
                       
                       </section>
                       <div class="kjh-check-border">
-                        <input type="checkbox" id="check1" name="checkAgree">
-                        <label for="check1" ></label>동의합니다.
+                        <input type="checkbox" id="check3" name="checkAgree">
+                        <label for="check3" >동의합니다.</label>
                       </div>
 
                       
@@ -356,8 +356,8 @@
         <dd>기타 궁금하신 사항은  이메일 (info@hiddencliff.kr ), 전화 (02 2277 9999)로 문의 바랍니다.</dd>
                       </section>
                       <div class="kjh-check-border">
-                        <input type="checkbox" id="check1" name="checkAgree">
-                        <label for="check1" ></label>동의합니다.
+                        <input type="checkbox" id="check4" name="checkAgree">
+                        <label for="check4" >동의합니다.</label>
                       </div>
                       
                     </div>
