@@ -34,37 +34,22 @@
   	
   	</resultMap>
   	
- 
+ <!-- 예약 전체 조회 -->
   	<select id="getBookCount" resultType="_int">
   		SELECT COUNT(*) FROM BOOK
-  	</select>
-  	
-  	<select id="selectBook" resultType="string">
-  		SELECT TO_CHAR(BOOK_DATE,'YYYY"년"') BOOK_DATE
-  		FROM BOOK
-  		WHERE BOOK_NO=7
   	</select>
   	
   	<select id="selectBookList" resultMap="book_rm">
   		SELECT BOOK_NO, TO_CHAR(BOOK_DATE,'YYYY-MM-DD') BOOK_DATE, 
 		TO_CHAR(CHECK_IN,'YYYY-MM-DD') CHECK_IN, TO_CHAR(CHECK_OUT,'YYYY-MM-DD') CHECK_OUT, ROOM_PROCESS,
-		MEMBER_NAME, PRICE, BOOK_HEADCOUNT
-		FROM BOOK 
+		MEMBER_NAME, PRICE, BOOK_HEADCOUNT , (SELECT ROOM_NUM FROM BOOK_ROOM WHERE BOOK_NO=BOOK.BOOK_NO)AS ROOM_NUM
+		FROM BOOK
 		JOIN "MEMBER" USING(MEMBER_NO)
 	
   	</select>
 
-	<update id="updateBook">
-		UPDATE BOOK SET 
-		BOOK_HEADCOUNT=#{bookHeadCount},
-		ROOM_NUM=#{bookRoomNum},
-		CHECK_IN=#{checkIn},
-		CHECK_OUT=#{checkOut},
-		ROOM_PROCESS=#{roomProcess}
-		WHERE BOOK_NO=#{bookNo}
 	
-	</update>
-	
+	 <!-- 예약 검색 조회 -->
 	<select id="getBookCount_search" resultType="_int">
 		SELECT COUNT(*) 
 		FROM BOOK 
@@ -103,8 +88,8 @@
 	<select id="selectBookList_search" resultMap="book_rm">
   		SELECT BOOK_NO, TO_CHAR(BOOK_DATE,'YYYY-MM-DD') BOOK_DATE, 
 		TO_CHAR(CHECK_IN,'YYYY-MM-DD') CHECK_IN, TO_CHAR(CHECK_OUT,'YYYY-MM-DD') CHECK_OUT, ROOM_PROCESS,
-		MEMBER_NAME, PRICE, BOOK_HEADCOUNT
-		FROM BOOK 
+		MEMBER_NAME, PRICE, BOOK_HEADCOUNT , (SELECT ROOM_NUM FROM BOOK_ROOM WHERE BOOK_NO=BOOK.BOOK_NO)AS ROOM_NUM
+		FROM BOOK
 		JOIN "MEMBER" USING(MEMBER_NO)
 		
 		<if test='searchOptionInput!=null and searchOptionInput!=""'>
@@ -137,25 +122,21 @@
 		</if>
   	</select>
 	
+
 	
-	<select id="selectRoom" resultMap="room_rm">
+	<select id="selectRoom_input" resultMap="room_rm">
 	
-		SELECT ROOM_NUM, ROOM_VIEW_NAME, ROOM_NAME
+	 <![CDATA[ 
+		SELECT CHECK_IN,CHECK_OUT,BOOK_NO,ROOM_NUM, ROOM_NAME, ROOM_VIEW_NAME 
 		FROM ROOM
-		JOIN ROOM_VIEW USING(ROOM_VIEW_NO)
 		JOIN ROOM_TYPE USING(ROOM_TYPE_NO)
-	
-	</select>
-	
-	<select id="selectRoom_input" resultMap="room_rm" parameterType="Room">
-	
-		SELECT ROOM_NUM, ROOM_VIEW_NAME, ROOM_NAME
-		FROM ROOM
 		JOIN ROOM_VIEW USING(ROOM_VIEW_NO)
-		JOIN ROOM_TYPE USING(ROOM_TYPE_NO)
-		WHERE ROOM_NAME=#{roomName}
-		AND ROOM_VIEW_NAME=#{roomViewName}
-	
+		LEFT JOIN BOOK_ROOM USING(ROOM_NUM)
+		LEFT JOIN BOOK USING(BOOK_NO)
+		WHERE (CHECK_IN <'2022-12-10' OR CHECK_IN IS NULL)
+		AND ROOM_NAME=#{roomName}
+		AND ROOM_VIEW_NAME=#{roomViewName}]]>
+
 	</select>
 	
 	<select id="searchRoom" resultMap="room_rm" parameterType="_int">
@@ -165,6 +146,37 @@
 		JOIN ROOM_TYPE USING(ROOM_TYPE_NO)
 		WHERE BOOK_NO=#{bookNo}
 	</select>
+	
+	
+	<update id="updateBook" parameterType="Book">
+		UPDATE BOOK SET 
+		BOOK_HEADCOUNT=#{bookHeadCount},
+		CHECK_IN=#{checkIn},
+		CHECK_OUT=#{checkOut},
+		ROOM_PROCESS=#{roomProcess}
+		WHERE BOOK_NO=#{bookNo}
+	
+	</update>
+	
+	
+	<select id="checkBookRoom" resultType="_int">
+	SELECT count(*) FROM BOOK_ROOM WHERE BOOK_NO=#{bookNo}
+	
+	</select>
+	
+	<insert id="insertBookRoom" parameterType="Book">
+		INSERT INTO BOOK_ROOM 
+		VALUES(SEQ_BOOK_ROOM_NO.NEXTVAL, DEFAULT
+		,#{bookRoomNum}, #{bookNo})
+		
+	</insert>
+	
+	<update id="updateBookRoom" parameterType="Book">
+		UPDATE BOOK_ROOM SET
+		ROOM_NUM=#{bookRoomNum}
+		WHERE BOOK_NO=#{bookNo}
+		
+	</update>
 
 
 </mapper>

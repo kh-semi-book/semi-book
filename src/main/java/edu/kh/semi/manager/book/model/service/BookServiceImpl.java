@@ -40,13 +40,6 @@ public class BookServiceImpl implements BookService {
 		return map;
 	}
 
-	
-
-	@Override
-	public int updateBook(Book bookPerson) {
-		
-		return dao.updateBook(bookPerson);
-	}
 
 	@Override
 	public Map<String, Object> selectBook(Map<String, Object> pm, int cp) {
@@ -67,16 +60,7 @@ public class BookServiceImpl implements BookService {
 		
 		return map;
 	}
-
-
-
-	@Override
-	public List<Room> selectRoom() {
-		
-		return dao.selectRoom();
-	}
-
-
+	
 
 	// 해당 예약번호의 룸타입, 전망타입 조회
 	@Override
@@ -86,9 +70,37 @@ public class BookServiceImpl implements BookService {
 	}
 
 
-
+	// 해당 예약번호의 룸타입, 전망타입 에 맞는 방 번호 출력
 	@Override
 	public List<Room> selectRoom(Room inputRoom) {
 		return dao.selectRoom(inputRoom);
+	}
+	
+	
+	
+	
+	@Override
+	public int updateBook(Book bookPerson) {
+		
+		int result1=dao.updateBook(bookPerson);
+		int result2;
+		
+		int checkBook=dao.checkBookRoom(bookPerson);
+		
+		if(checkBook==0) {
+			result2=dao.insertBookRoom(bookPerson);
+		}else {
+			result2=dao.updateBookRoom(bookPerson);
+		}
+		
+		if(result1==1&&result2==1) {
+			return 1;
+		}
+			
+		
+		return 0;
+		
+		
+		
 	}
 }
