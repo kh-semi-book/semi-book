@@ -18,7 +18,7 @@ for(let chooseBtn of chooseRoomBtn){
         let result;
         const openerBookNo=opener.document.getElementsByClassName("bookNo");
         for(let i=0;i<openerBookNo.length;i++){
-            if(openerBookNo[i].innerHTML==bookNum){
+            if(openerBookNo[i].innerText==bookNum){
                 result=i;
             }
         }

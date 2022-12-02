@@ -22,7 +22,7 @@
 
         #inputType th,
         #inputType td{
-            width: 250px;
+            width: 500px;
             text-align: center;
             border: 1px solid black;
         }
@@ -49,15 +49,15 @@
             <tr>
                 <th>전망타입</th>
                 <th>룸타입</th>
-                <th>체크인</th>
-                <th>체크아웃</th>
+                <%-- <th>체크인</th>
+                <th>체크아웃</th> --%>
 
             </tr>
             <tr>
                 <td>${inputRoom.roomViewName}</td>
                 <td>${inputRoom.roomName}</td>
-                <td>2022-12-25</td>
-                <td>2022-12-31</td>
+                <%-- <td>2022-12-25</td>
+                <td>2022-12-31</td> --%>
             </tr>
         </table>
 
@@ -70,13 +70,22 @@
                 <th>선택</th>
             </tr>
 
-            <c:forEach var="Room" items="${roomList}">
+            <c:forEach var="Room" items="${roomList}"  varStatus="index">
             <tr>
-                <td>1</td>
+                <td>${index.count}</td>
                 <td>${Room.roomNum}</td>
                 <td>${Room.roomName}</td>
                 <td>${Room.roomViewName}</td>
-                <td><button class="chooseRoomBtn">선택</button></td>
+                <c:choose>
+                    <c:when test="${Room.roomName != inputRoom.roomName || Room.roomViewName != inputRoom.roomViewName}">
+                        <c:set var="disabled1" value="disabled"/>
+                    </c:when>
+                    <c:otherwise>
+                        <c:set var="disabled1" value=""/>
+                    </c:otherwise>
+                </c:choose>
+
+                <td><button class="chooseRoomBtn" ${disabled1} >선택</button></td>
             </tr>
                                    
             </c:forEach>

@@ -42,7 +42,7 @@
             </select>
         </span>   
         
-        <input type="text" class="search-option-input" name="searchOptionInput">
+        <input type="text" class="search-option-input" name="searchOptionInput" value="${beforeSearch.searchOptionInput}">
 
             
         
@@ -57,7 +57,7 @@
             </select>
         </span>
         <span class="search-date-input">
-          <input name="inputDate1" type="date"> ~ <input name="inputDate2" type="date">
+          <input name="inputDate1" type="date"  value="${beforeSearch.inputDate1}"> ~ <input name="inputDate2" type="date"value="${beforeSearch.inputDate2}">
         </span> 
 
         <button>검색</button>

@@ -21,10 +21,14 @@ public class BookDAO {
 	public SqlSession sqlSession;
 
 
+	/** 예약 조회시 전체 예약 개수 조회
+	 * @return
+	 */
 	public int getBookCount() {
 		return sqlSession.selectOne("bookMapper.getBookCount");
 	}
 	
+
 
 	public List<Book> selectBookList(Pagination pagination) {
 		
@@ -36,18 +40,25 @@ public class BookDAO {
 	}
 
 
-	public int updateBook(Book bookPerson) {
-		
-		return sqlSession.update("bookMapper.updateBook", bookPerson);
-	}
+	
 
-
+	/** 예약 검색결과 개수 조회 
+	 * @param pm
+	 * @return
+	 */
 	public int getBookCount(Map<String, Object> pm) {
 		
 		return sqlSession.selectOne("bookMapper.getBookCount_search",pm);
 	}
 
 
+	
+
+	/** 예약 리스트 조회
+	 * @param pagination
+	 * @param pm
+	 * @return
+	 */
 	public List<Book> selectBookList(Pagination pagination, Map<String, Object> pm) {
 		int offset=(pagination.getCurrentPage()-1)*pagination.getLimit();
 		
@@ -56,22 +67,53 @@ public class BookDAO {
 		return sqlSession.selectList("bookMapper.selectBookList_search", pm ,rowBounds);
 	
 	}
+	
+	
 
-
-	public List<Room> selectRoom() {
-		
-		return sqlSession.selectList("bookMapper.selectRoom");
-	}
-
-
+	// 해당 예약번호의 룸타입, 전망타입 확인 
 	public Room searchRoom(int bookNo) {
 		
 		return sqlSession.selectOne("bookMapper.searchRoom", bookNo);
 	}
 
 
+	// 해당 예약번호의 룸타입, 전망타입 에 맞는 방 번호 출력
 	public List<Room> selectRoom(Room inputRoom) {
 		
 		return sqlSession.selectList("bookMapper.selectRoom_input", inputRoom);
 	}
+
+	
+	
+	
+	
+
+	/** BOOK_ROOM에 있는지 확인 
+	 * @param bookPerson
+	 * @return
+	 */
+	public int checkBookRoom(Book bookPerson) {
+		
+		return sqlSession.selectOne("bookMapper.checkBookRoom",bookPerson);
+	}
+
+	public int insertBookRoom(Book bookPerson) {
+		
+		return sqlSession.insert("bookMapper.insertBookRoom",bookPerson);
+	}
+	
+	public int updateBookRoom(Book bookPerson) {
+		
+		return sqlSession.insert("bookMapper.updateBookRoom",bookPerson);
+	}
+	
+
+	public int updateBook(Book bookPerson) {
+		
+		return sqlSession.update("bookMapper.updateBook", bookPerson);
+	}
+		
+
+
+
 }
