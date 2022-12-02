@@ -12,8 +12,26 @@ public class MyPageDAO {
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 
-	public int updateInfo(Member inputMember) {
-
-		return sqlSession.update("");
+	/** 회원 정보 수정 서비스 DAO (비밀번호가 없을 때) 
+	 * @param inputMember
+	 * @return result
+	 */
+	public int updateMember(Member inputMember) {
+		
+		int result = sqlSession.update("myPageMapper.updateMember", inputMember);
+		System.out.println(result);
+		
+		return result;
 	}
+
+	
+	/** 회원 정보 수정 서비스 DAO (비밀번호가 있을 때)
+	 * @param inputMember
+	 * @return result
+	 */
+	public int updateMemberPw(Member inputMember) {
+		
+		return sqlSession.update("myPageMapper.updateMemberPw",inputMember);
+	}
+
 }

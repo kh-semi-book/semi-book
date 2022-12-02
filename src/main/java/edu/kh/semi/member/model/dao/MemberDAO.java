@@ -38,6 +38,10 @@ public class MemberDAO {
 
 
 
+	/** 회원가입 기능
+	 * @param inputMember
+	 * @return
+	 */
 	public int signUp(Member inputMember) {
 		
 		return sqlSession.insert("memberMapper.signUp", inputMember);
