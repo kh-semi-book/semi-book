@@ -36,12 +36,14 @@ body {
 					<th>번호</th>
 					<th>프로모션 제목</th>
 					<th>작성일</th>
+					<th>작성자</th>
 				</tr>
 				<c:forEach var="promotion" items="${promotionList}">
 					<tr>
 						<td>${promotion.promotionNo}</a></td>
 						<td><a href="/manager/promotionDetail/${promotion.promotionNo}" class="detail">${promotion.promotionTitle}</a></td>
 						<td>${promotion.promotionCreateDate}</td>
+						<td>${promotion.memberNo}</td>
 					</tr>
 				</c:forEach>
 				

@@ -3,6 +3,7 @@ package edu.kh.semi.manager.board.model.vo;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import java.util.List;
 
 @Getter
 @Setter
@@ -21,6 +22,14 @@ public class Promotion {
 	private int promotionPrice;
 	private String promotionDeleteFlag;
 	private String promotionCreateDate;
+	private int memberNo;
+	private String memberName;
+	
+	private String roomViewNo;
+	private String roomTypeNo;
+	
+	
+	
 	public String getpStayStartDate() {
 		return pStayStartDate;
 	}

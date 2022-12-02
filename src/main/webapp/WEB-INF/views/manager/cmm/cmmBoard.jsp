@@ -34,12 +34,14 @@ body {
 					<th>번호</th>
 					<th>공지사항 제목</th>
 					<th>작성일</th>
+					<th>작성자</th>
 				</tr>
 				<c:forEach var="cmm" items="${cmmList}">
 					<tr>
 						<td>${cmm.cmmNo}</td>
 						<td><a href="/manager/cmmDetail/${cmm.cmmNo}" class="detail">${cmm.cmmTitle}</a></td>
 						<td>${cmm.cmmCreateDate}</td>
+						<td>${cmm.memberName}</td>
 					</tr>
 				</c:forEach>
 			</table>

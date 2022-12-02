@@ -1,6 +1,7 @@
 package edu.kh.semi.manager.board.model.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -113,6 +114,72 @@ public class BoardDAO {
 		return sqlSession.insert("boardMapper.savePromotionPost", promotion);
 	}
 
+	/** 프로모션 객실 등록
+	 * @param pMap
+	 * @return
+	 */
+	public int insertPromotionRoom(Map<String, Object> pMap) {
+		return sqlSession.insert("boardMapper.insertPromotionRoom",pMap);
+	}
+	
+	
+	/** 프로모션 내용 수정
+	 * @param promotion
+	 * @return
+	 */
+	public int promotionBoardUpdate(Promotion promotion) {
+		return sqlSession.update("boardMapper.promotionBoardUpdate", promotion);
+	}
+
+
+	/** 프로모션 타이틀 이미지 수정
+	 * @param promotion
+	 * @return
+	 */
+	public int promotionTitleImageUpdate(Promotion promotion) {
+		return sqlSession.update("boardMapper.promotionTitleImageUpdate", promotion);
+	}
+
+
+	/** 프로모션 컨텐츠 이미지 수정
+	 * @param promotion
+	 * @return
+	 */
+	public int promotionContentImageUpdate(Promotion promotion) {
+		return sqlSession.update("boardMapper.promotionContentImageUpdate", promotion);
+	}
+	
+
+	/** 프로모션 객실 수정 (삭제 후 삽입)
+	 * @param pMap
+	 * @return
+	 */
+	public int updatePromotionRoom(Map<String, Object> pMap) {
+		return sqlSession.insert("boardMapper.updatePromotionRoom", pMap);
+	}
+
+
+
+	/** 프로모션 객실 삭제
+	 * @param promotionNo
+	 * @return
+	 */
+	public int promotionRoomDelete(int promotionNo) {
+		return sqlSession.delete("boardMapper.promotionRoomDelete", promotionNo);
+	}
+	
+
+
+	/** 프로모션 삭제
+	 * @param promotionNo
+	 * @return 
+	 */
+	public int promotionDelete(int promotionNo) {
+		return sqlSession.delete("boardMapper.promotionDelete", promotionNo);
+	}
+
+	
+	
 	/** 다이닝 등록
 	 * @param dining
 	 * @return result
@@ -128,6 +195,11 @@ public class BoardDAO {
 	public int saveEventPost(Event event) {
 		return sqlSession.insert("boardMapper.saveEventPost", event);
 	}
+
+
+
+	
+
 
 
 	
