@@ -79,10 +79,32 @@ public interface BoardService {
 	 * @param map
 	 * @param promotionTitleImage
 	 * @param promotionConImage
+	 * @param roomType 
+	 * @param viewType 
 	 * @return result
 	 */
 	int savePromotionPost(Promotion promotion, Map<String, Object> map, MultipartFile promotionTitleImage,
-			MultipartFile promotionConImage) throws Exception;
+			MultipartFile promotionConImage, String[] viewType, String[] roomType) throws Exception;
+	
+	 /** 프로모션 수정
+	 * @param promotion
+	 * @param map
+	 * @param promotionTitleImage
+	 * @param promotionConImage
+	 * @param viewType
+	 * @param roomType
+	 * @return
+	 * @throws Exception
+	 */
+	int savePromotionUpdate(Promotion promotion, Map<String, Object> map, MultipartFile promotionTitleImage,
+			MultipartFile promotionConImage, String[] viewType, String[] roomType)  throws Exception;
+	
+	/** 프로모션 삭제
+	 * @param promotionNo
+	 * @return
+	 */
+	int promotionDelete(int promotionNo);
+	
 
 	/** 다이닝 등록
 	 * @param dining
@@ -108,6 +130,8 @@ public interface BoardService {
 	 */
 	int saveEventPost(Event event, Map<String, Object> map, MultipartFile eventTitleImage,
 			MultipartFile eventConImage) throws Exception;
+
+
 
 
 

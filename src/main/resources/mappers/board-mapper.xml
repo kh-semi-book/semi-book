@@ -11,10 +11,12 @@
 		<result property="cmmConImg" column="CMM_CON_IMG" />
 		<result property="cmmDeleteFlag" column="CMM_DEL_FL" />
 		<result property="cmmCreateDate" column="CMM_CREATE_DATE" />
+		<result property="memberNo" column="MEMBER_NO" />
+		<result property="memberName" column="MEMBER_NAME" />
 	
 	</resultMap>
 	
-	<resultMap type="PROMOTION" id="promotion_rm">
+	<resultMap type="Promotion" id="promotion_rm">
 	
 		<id property="promotionNo" column="PROMOTION_NO" />
 		<result property="promotionTitle" column="PROMOTION_TITLE" />
@@ -28,10 +30,14 @@
 		<result property="pSaleStartDate" column="P_SALE_START_DATE" />
 		<result property="pSaleEndDate" column="P_SALE_END_DATE" />
 		<result property="promotionCreateDate" column="PROMOTION_CREATE_DATE" />
+		<result property="memberNo" column="MEMBER_NO" />
+		<result property="memberName" column="MEMBER_NAME" />
+		<result property="roomViewNo" column="ROOM_VIEW_NO" />
+		<result property="roomTypeNo" column="ROOM_TYPE_NO" />
 	
 	</resultMap>
 	
-	<resultMap type="DINING" id="dining_rm">
+	<resultMap type="Promotion" id="dining_rm">
 	
 		<id property="diningNo" column="DINING_NO" />
 		<result property="diningTitle" column="DINING_TITLE" />
@@ -42,10 +48,12 @@
 		<result property="diningStartDate" column="DINING_START_DATE" />
 		<result property="diningEndDate" column="DINING_END_DATE" />
 		<result property="diningCreateDate" column="DINING_CREATE_DATE" />
+		<result property="memberNo" column="MEMBER_NO" />
+		<result property="memberName" column="MEMBER_NAME" />
 	
 	</resultMap>
 	
-	<resultMap type="EVENT" id="event_rm">
+	<resultMap type="Promotion" id="event_rm">
 	
 		<id property="eventNo" column="EVENT_NO" />
 		<result property="eventTitle" column="EVENT_TITLE" />
@@ -56,10 +64,11 @@
 		<result property="eventStartDate" column="EVENT_START_DATE" />
 		<result property="eventEndDate" column="EVENT_END_DATE" />
 		<result property="eventCreateDate" column="EVENT_CREATE_DATE" />
+		<result property="memberNo" column="MEMBER_NO" />
+		<result property="memberName" column="MEMBER_NAME" />
 	
 	</resultMap>
-	
-	
+		
 
 
 
@@ -68,15 +77,16 @@
 
 	<!-- 공지사항 조회 -->
 	<select id="selectCmmList" resultMap="cmm_rm">
-		SELECT CMM_NO, CMM_TITLE, TO_CHAR(CMM_CREATE_DATE, 'YYYY-MM-DD') CMM_CREATE_DATE
+		SELECT CMM_NO, CMM_TITLE, TO_CHAR(CMM_CREATE_DATE, 'YYYY-MM-DD') CMM_CREATE_DATE, MEMBER_NO, MEMBER_NAME
 		FROM "CMM"
+		JOIN MEMBER USING (MEMBER_NO)
 		WHERE CMM_NO != 0
 		ORDER BY 1 DESC
 	</select>
 	
 	<!-- 공지사항 세부 조회 -->
 	<select id="cmmDetail" resultMap="cmm_rm">
-		SELECT CMM_TITLE, CMM_TITLE_IMG, CMM_SUB, CMM_CON_IMG
+		SELECT CMM_TITLE, CMM_TITLE_IMG, CMM_SUB, CMM_CON_IMG, MEMBER_NO
 		FROM "CMM"
 		WHERE CMM_NO=#{cmmNo}
 		AND CMM_DEL_FL='N'
@@ -86,7 +96,7 @@
 	<insert id="saveCmmPost" parameterType="CMM">
 		INSERT INTO "CMM" VALUES(
 		SEQ_CMM_NO.NEXTVAL,
-		#{cmmTitle},#{cmmSub},#{cmmTitleImg},#{cmmConImg},DEFAULT,DEFAULT)
+		#{cmmTitle},#{cmmSub},#{cmmTitleImg},#{cmmConImg},DEFAULT,#{memberNo},DEFAULT)
 	</insert>
 	
 	<!-- 공지사항 수정 -->
@@ -125,30 +135,101 @@
 	
 	<!-- 프로모션 조회 -->
 	<select id="selectPromotionList" resultMap="promotion_rm">
-		SELECT PROMOTION_NO, PROMOTION_TITLE, TO_CHAR(PROMOTION_CREATE_DATE, 'YYYY-MM-DD') PROMOTION_CREATE_DATE
+		SELECT PROMOTION_NO, PROMOTION_TITLE, TO_CHAR(PROMOTION_CREATE_DATE, 'YYYY-MM-DD') PROMOTION_CREATE_DATE, MEMBER_NO, MEMBER_NAME
 		FROM "PROMOTION"
+		JOIN MEMBER USING (MEMBER_NO)
 		WHERE PROMOTION_NO != 0
 		ORDER BY 1 DESC
 	</select>
 	
 	<!-- 프로모션 세부 조회 -->
-	<select id="promotionDetail" resultMap="promotion_rm">
-		SELECT PROMOTION_TITLE, PROMOTION_TITLE_IMG, PROMOTION_SUB, PROMOTION_CON_IMG, PROMOTION_PRICE, 
-					TO_CHAR(P_STAY_START_DATE, 'YYYY-MM-DD') P_STAY_START_DATE,
-					TO_CHAR(P_STAY_END_DATE, 'YYYY-MM-DD') P_STAY_END_DATE,
-					TO_CHAR(P_SALE_START_DATE, 'YYYY-MM-DD') P_SALE_START_DATE,
-					TO_CHAR(P_SALE_END_DATE, 'YYYY-MM-DD') P_SALE_END_DATE
-		FROM "PROMOTION"
-		WHERE PROMOTION_NO=#{promotionNo}
-		AND PROMOTION_DEL_FL='N'
+	<select id="promotionDetail" resultMap="promotion_rm" resultType="Promotion">
+		SELECT PROMOTION_NO, PROMOTION_TITLE, PROMOTION_TITLE_IMG, PROMOTION_SUB, PROMOTION_CON_IMG, PROMOTION_PRICE, MEMBER_NO,
+           TO_CHAR(P_STAY_START_DATE, 'YYYY-MM-DD') P_STAY_START_DATE,
+           TO_CHAR(P_STAY_END_DATE, 'YYYY-MM-DD') P_STAY_END_DATE,
+           TO_CHAR(P_SALE_START_DATE, 'YYYY-MM-DD') P_SALE_START_DATE,
+           TO_CHAR(P_SALE_END_DATE, 'YYYY-MM-DD') P_SALE_END_DATE, 
+           ( SELECT LISTAGG(ROOM_VIEW_NO, ',') 
+                WITHIN GROUP (ORDER BY ROOM_VIEW_NO) 
+            FROM (SELECT DISTINCT ROOM_VIEW_NO 
+               FROM PROMOTION_ROOM R2
+               WHERE R2.PROMOTION_NO = P.PROMOTION_NO)) ROOM_VIEW_NO,
+           ( SELECT LISTAGG(ROOM_TYPE_NO, ',') 
+                WITHIN GROUP (ORDER BY ROOM_TYPE_NO) 
+            FROM (SELECT DISTINCT ROOM_TYPE_NO 
+               FROM PROMOTION_ROOM R2
+               WHERE R2.PROMOTION_NO = P.PROMOTION_NO)) ROOM_TYPE_NO
+  FROM "PROMOTION" P
+  WHERE PROMOTION_NO=#{promotionNo}
+  AND PROMOTION_DEL_FL='N'
 	</select>
+	
+
 
 	<!-- 프로모션 등록 -->
 	<insert id="savePromotionPost" parameterType="Promotion">
 		INSERT INTO "PROMOTION" VALUES(
 		SEQ_PROMOTION_NO.NEXTVAL, #{promotionTitle},#{promotionSub},#{promotionTitleImg},#{promotionConImg},#{promotionPrice}
-		,DEFAULT,#{pStayStartDate},#{pStayEndDate},#{pSaleStartDate},#{pSaleEndDate},DEFAULT)
+		,DEFAULT,#{pStayStartDate},#{pStayEndDate},#{pSaleStartDate},#{pSaleEndDate},DEFAULT,#{memberNo})
 	</insert>
+	
+	
+	<!-- 프로모션 객실 등록 -->
+	<insert id="insertPromotionRoom" parameterType="map" useGeneratedKeys="true">
+		<selectKey keyProperty="promotionNo" resultType="_int" order="BEFORE">
+			SELECT SEQ_PROMOTION_NO.CURRVAL FROM DUAL
+		</selectKey>
+		
+		INSERT INTO PROMOTION_ROOM VALUES(
+		#{promotionNo},#{roomViewNo},#{roomTypeNo})
+	</insert>
+	
+	<!-- 프로모션 내용 수정 -->
+	<update id="promotionBoardUpdate">
+		UPDATE PROMOTION SET 
+		PROMOTION_TITLE=#{promotionTitle}
+		PROMOTION_SUB=#{promotionSub}
+		PROMOTION_PRICE=#{promotionPrice}
+		P_STAY_START_DATE=#{pStayStartDate}
+		P_STAY_END_DATE=#{pStayEndDate}
+		P_SALE_START_DATE=#{pSaleStartDate}
+		P_SALE_END_DATE=#{pSaleEndDate}
+		WHERE PROMOTION_NO=#{promotionNo}
+	</update>
+	
+	<!-- 프로모션 타이틀 이미지 수정 -->
+	<update id="promotionTitleImageUpdate" parameterType="Promotion">
+		UPDATE "Promotion" SET PROMOTION_TITLE_IMG=#{PromotionTitleImg}
+		WHERE PROMOTION_NO=#{PromotionNo}
+	</update>
+	
+	<!-- 프로모션 컨텐츠 이미지 수정 -->
+	<update id="promotionContentImageUpdate" parameterType="Promotion">
+		UPDATE "Promotion" SET PROMOTION_CON_IMG=#{PromotionConImg}
+		WHERE PROMOTION_NO=#{PromotionNo}
+	</update>
+	
+	<!-- 프로모션 객실 수정 -->
+	<insert id="updatePromotionRoom" parameterType="map">
+		INSERT INTO PROMOTION_ROOM VALUES(
+		#{promotionNo},#{roomViewNo},#{roomTypeNo})
+	</insert>
+	
+	
+	
+	<!-- 프로모션 객실 삭제 -->
+	<delete id="promotionRoomDelete">
+		DELETE FROM PROMOTION_ROOM WHERE PROMOTION_NO=#{promotionNo}
+	</delete>
+	
+	
+	<!-- 프로모션 삭제 -->
+	<delete id="promotionDelete">
+		DELETE FROM PROMOTION WHERE PROMOTION_NO=#{promotionNo}
+	</delete>
+	
+	
+	
 
 
 	<!-- 다이닝 등록 -->

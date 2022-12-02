@@ -1,6 +1,7 @@
 package edu.kh.semi.manager.board.model.service;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -134,12 +135,13 @@ public class BoardServiceImpl implements BoardService {
 	}
 	
 
+	
 	// 프로모션 등록
 	@Transactional(rollbackFor = Exception.class)
 	@Override
 	public int savePromotionPost(Promotion promotion, Map<String, Object> map, MultipartFile promotionTitleImage,
-			MultipartFile promotionConImage) throws Exception {
-
+			MultipartFile promotionConImage, String[] viewType, String[] roomType) throws Exception {
+		
 		String renameTitle = Util.fileRename(promotionTitleImage.getOriginalFilename());
 		String renameContent = Util.fileRename(promotionConImage.getOriginalFilename());
 
@@ -154,15 +156,125 @@ public class BoardServiceImpl implements BoardService {
 				promotionTitleImage.transferTo(new File(map.get("filePathTitle") + renameTitle));
 				promotionConImage.transferTo(new File(map.get("filePathContent") + renameContent));
 			}
+			
+			Map<String, Object> pMap = new HashMap<String, Object>();
+			for(String view : viewType) {
+				pMap.put("roomViewNo", view);
+				for(String room : roomType) {
+					pMap.put("roomTypeNo", room);
+					result = dao.insertPromotionRoom(pMap);
+					if(result>0) {
+						pMap.remove("roomTypeNo");
+					} else {
+						throw new Exception("업로드 실패");
+					}
+				}
+				if(result>0) {
+					pMap.remove("roomViewNo");
+				} else {
+					throw new Exception("업로드 실패");
+				}
+			}
+			
+			
 		} else {
 			throw new Exception("업로드 실패");
 		}
 
 		return result;
-
 	}
+	
+	// 프로모션 수정
+	@Transactional(rollbackFor = Exception.class)
+	@Override
+	public int savePromotionUpdate(Promotion promotion, Map<String, Object> map, MultipartFile promotionTitleImage,
+			MultipartFile promotionConImage, String[] viewType, String[] roomType)  throws Exception{
+		
+		int result = dao.promotionBoardUpdate(promotion);
+		
+		String renameTitle=null;
+		String renameContent=null;
+		int resultTitle=0;
+		int resultContent=0;
+		
+		if(result>0) {
+			
+			if(promotionTitleImage.getSize()>0) {
+				renameTitle = Util.fileRename(promotionTitleImage.getOriginalFilename());
+				promotion.setPromotionTitleImg(map.get("webPathTitle") + renameTitle);
+				resultTitle=dao.promotionTitleImageUpdate(promotion);
+				if(resultTitle==0) {
+					throw new Exception("수정 실패");
+				} else {
+					promotionTitleImage.transferTo(new File(map.get("filePathTitle") + renameTitle));
+				}
+			}
+			
+			
+			if(promotionConImage.getSize()>0) {
+				renameContent = Util.fileRename(promotionConImage.getOriginalFilename());
+				promotion.setPromotionConImg(map.get("webPathContent") + renameContent);
+				resultContent=dao.promotionContentImageUpdate(promotion);
+				if(resultContent==0) {
+					throw new Exception("수정 실패");
+				} else {
+					promotionConImage.transferTo(new File(map.get("filePathContent") + renameContent));
+				}
+			}
+			
+		} else {
+			throw new Exception("수정 실패");
+		}	
+		
+		if(resultTitle>0 && resultContent>0) {
+			
+			result = dao.promotionRoomDelete(promotion.getMemberNo());
+			
+			Map<String, Object> pMap = new HashMap<String, Object>();
+			pMap.put("promotionNo", promotion.getPromotionNo());
+			for(String view : viewType) {
+				pMap.put("roomViewNo", view);
+				for(String room : roomType) {
+					pMap.put("roomTypeNo", room);
+					result = dao.updatePromotionRoom(pMap);
+					if(result>0) {
+						pMap.remove("roomTypeNo");
+					} else {
+						throw new Exception("업로드 실패");
+					}
+				}
+				if(result>0) {
+					pMap.remove("roomViewNo");
+				} else {
+					throw new Exception("업로드 실패");
+				}
+			}
+		}
+		
+		return 0;
+	}
+	
+	
+	// 프로모션 삭제
+	@Transactional(rollbackFor = Exception.class)
+	@Override
+	public int promotionDelete(int promotionNo) {
+		
+		int result = dao.promotionRoomDelete(promotionNo);	
+		
+		if(result>0) {
+			result = dao.promotionDelete(promotionNo);
+		} 
+		
+		return result;
+	}
+	
+	
+	//==================================================================================
+	
 
 	// 다이닝 등록
+	@Transactional(rollbackFor = Exception.class)
 	@Override
 	public int saveDiningPost(Dining dining, Map<String, Object> map, MultipartFile diningTitleImage,
 			MultipartFile diningConImage) throws Exception {
@@ -192,6 +304,7 @@ public class BoardServiceImpl implements BoardService {
 	
 	
 	// 이벤트 등록
+	@Transactional(rollbackFor = Exception.class)
 	@Override
 	public int saveEventPost(Event event, Map<String, Object> map, MultipartFile eventTitleImage,
 			MultipartFile eventConImage) throws Exception {

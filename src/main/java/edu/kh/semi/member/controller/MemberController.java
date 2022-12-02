@@ -18,69 +18,68 @@ import edu.kh.semi.member.model.service.MemberService;
 import edu.kh.semi.member.model.vo.Member;
 
 @Controller
-@SessionAttributes({"loginMember", "message"})
+@SessionAttributes({ "loginMember", "message" })
 public class MemberController {
-	
+
 	@Autowired
 	private MemberService service;
-	
-	
-	
-	
+
 	@GetMapping("/member/signUp2")
 	public String signUp2() {
 		return "/member/signUp2";
 	}
-		
+
 	@PostMapping("/member/login")
-	public String login(Member inputMember , Model model,
-			RedirectAttributes ra,
-			@RequestParam(value="saveId", required = false) String saveId,
-			HttpServletResponse resp,
-			@RequestHeader(value="referer") String referer) {
-		
+	public String login(Member inputMember, Model model, RedirectAttributes ra,
+			@RequestParam(value = "saveId", required = false) String saveId, HttpServletResponse resp,
+			@RequestHeader(value = "referer") String referer) {
+
 		Member loginMember = service.login(inputMember);
-		
+
 		String path = null;
-		
-		
-		if(loginMember != null) {
-		path = "/"; 
-		model.addAttribute("loginMember", loginMember);
+
+		if (loginMember != null) {
+			model.addAttribute("loginMember", loginMember);
 			
-			Cookie cookie = new Cookie("saveId", loginMember.getMemberId());
-			
-			if(saveId != null) {
+			if(loginMember.getAuthority()==2) {
+				path="/manager/selectBook";
+			} else {
 				
-				cookie.setMaxAge(60 * 60 * 24 * 365);
+				path = "/";
 				
-			}else {
-				cookie.setMaxAge(0);
+				Cookie cookie = new Cookie("saveId", loginMember.getMemberId());
+				
+				if (saveId != null) {
+					
+					cookie.setMaxAge(60 * 60 * 24 * 365);
+					
+				} else {
+					cookie.setMaxAge(0);
+				}
+				cookie.setPath("/");
+				
+				resp.addCookie(cookie);
 			}
-			cookie.setPath("/");
 			
-			resp.addCookie(cookie);
-		
-		}else{
+
+		} else {
 			path = referer; // 이전페이지로 이동
-			//model.addAttribute("message","회원 아이디 또는 비밀번호가 일치하지 않습니다.");
+			// model.addAttribute("message","회원 아이디 또는 비밀번호가 일치하지 않습니다.");
 			ra.addFlashAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
 		}
-		
+
 		return "redirect:" + path;
-		}
+	}
 
-
-	//로그아웃
+	// 로그아웃
 	@GetMapping("/member/logout")
 	public String logout(SessionStatus status) {
-			
-			status.setComplete(); // 세션 무효화
-		
-		
+
+		status.setComplete(); // 세션 무효화
+
 		return "redirect:/";
 	}
-	
+
 	/*
 	 * //회원가입페이지
 	 * 
@@ -88,21 +87,19 @@ public class MemberController {
 	 * 
 	 * return "member/signUp2"; }
 	 */
-	//회원가입 진행
+	// 회원가입 진행
 	@PostMapping("/member/signUp")
-	public String signUp(Member inputMember,
-			String[] memberPhone,String[] memberEmail, String[] memberBirth,
-			String[]memberWedding, String[] memberTel, String[] memberAddress,
-			RedirectAttributes ra, 
-			@RequestHeader("referer") String referer){
-		
+	public String signUp(Member inputMember, String[] memberPhone, String[] memberEmail, String[] memberBirth,
+			String[] memberWedding, String[] memberTel, String[] memberAddress, RedirectAttributes ra,
+			@RequestHeader("referer") String referer) {
+
 		String phone = memberPhone[0] + memberPhone[1] + memberPhone[2];
 		inputMember.setMemberPhone(phone);
-		
-		String email = memberEmail[0]+"@" + memberEmail[1] /* + memberEmail[2] */;
+
+		String email = memberEmail[0] + "@" + memberEmail[1] /* + memberEmail[2] */;
 		inputMember.setMemberEmail(email);
-			
-		String birth = memberBirth[0]+"-" +  memberBirth[1]+"-" + memberBirth[2];
+
+		String birth = memberBirth[0] + "-" + memberBirth[1] + "-" + memberBirth[2];
 		inputMember.setMemberBirth(birth);
 
 		// 회원가입 추가항목
@@ -125,29 +122,25 @@ public class MemberController {
 //		} else {
 //			inputAdd.setMemberAddress(String.join(",,", memberAddress));
 //		}
-		
+
 		int result = service.signUp(inputMember);
-		
+
 		String path = null;
 		String message = null;
-		
-		if(result > 0) {
-			path="/";
+
+		if (result > 0) {
+			path = "/";
 			message = "회원가입 성공";
 		} else {
 			path = referer;
 			message = "회원 가입 실패";
-			
+
 			inputMember.setMemberPw(null);
 			ra.addFlashAttribute("tempMember", inputMember);
 		}
 		ra.addFlashAttribute("message", message);
-		
+
 		return "redirect:" + path;
 	}
-	
-	
-	
-	
 
 }

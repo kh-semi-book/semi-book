@@ -18,5 +18,7 @@ public class CMM {
 	private String cmmConImg;
 	private String cmmDeleteFlag;
 	private String cmmCreateDate;
+	private int memberNo;
+	private String memberName;
 
 }

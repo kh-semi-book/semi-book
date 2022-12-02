@@ -14,7 +14,7 @@ body {
 </style>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/manager/common/admin-header.jsp"/>
+	<jsp:include page="/WEB-INF/views/manager/common/admin-header.jsp" />
 	<div class="board-lookUp-page">
 		<div class="board-head-area">
 			<div></div>
@@ -35,36 +35,31 @@ body {
 					<td colspan="3">${cmm.cmmTitle }</td>
 				</tr>
 				<tr>
-					<th class="select-area">
-						타이틀 이미지
-					</th>
-					<td>
-						<img class="select-image" src="${cmm.cmmTitleImg }">
-					</td>
+					<th class="select-area">타이틀 이미지</th>
+					<td><img class="select-image" src="${cmm.cmmTitleImg}"></td>
 				</tr>
 				<tr>
 					<th>세부 내용</th>
 					<td>${cmm.cmmSub }</td>
 				</tr>
 				<tr>
-					<th class="select-area">
-						내용
-					</th>
-					<td>
-						<img class="select-image" src="${cmm.cmmConImg }">
-					</td>
+					<th class="select-area">내용</th>
+					<td><img class="select-image" src="${cmm.cmmConImg }"></td>
 				</tr>
 
 
 			</table>
-			
+
 		</div>
-		<div id="board-post">
-				<button class="save" id="updateBtn">수정</button>  <button class="save" id="deleteBtn">삭제</button> 
+		<c:if test="${cmm.memberNo==loginMember.memberNo}">
+			<div id="board-post">
+				<button class="save" id="updateBtn">수정</button>
+				<button class="save" id="deleteBtn">삭제</button>
 			</div>
+		</c:if>
 	</div>
 	<div class="board-foot-area"></div>
-	
+
 	<script src="/resources/js/manager/board/boardPost.js"></script>
 </body>
 </html>

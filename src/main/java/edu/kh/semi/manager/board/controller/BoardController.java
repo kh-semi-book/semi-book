@@ -1,5 +1,6 @@
 package edu.kh.semi.manager.board.controller;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,9 +16,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
+import edu.kh.semi.member.model.vo.Member;
 import edu.kh.semi.manager.board.model.service.BoardService;
 import edu.kh.semi.manager.board.model.vo.CMM;
 import edu.kh.semi.manager.board.model.vo.Dining;
@@ -60,8 +62,6 @@ public class BoardController {
 
 	}
 
-	
-
 	@GetMapping("/cmmPost")
 	public String cmmPost() {
 		return "/manager/cmm/cmmPost";
@@ -71,7 +71,8 @@ public class BoardController {
 	@PostMapping("/cmmPost")
 	public String saveCmmPost(CMM cmm, @RequestParam(value = "cmmTitleImage") MultipartFile cmmTitleImage,
 			@RequestParam(value = "cmmConImage") MultipartFile cmmConImage, RedirectAttributes ra,
-			HttpServletRequest req) throws Exception {
+			HttpServletRequest req, @SessionAttribute(value = "loginMember", required = false) Member loginMember)
+			throws Exception {
 
 		// 인터넷 주소로 접근할 수 있는 경로
 		String webPathTitle = "/resources/image/boardImage/title/";
@@ -87,6 +88,8 @@ public class BoardController {
 		map.put("filePathTitle", filePathTitle);
 		map.put("filePathContent", filePathContent);
 
+		cmm.setMemberNo(loginMember.getMemberNo());
+
 		int result = service.saveCmmPost(cmm, map, cmmTitleImage, cmmConImage);
 
 		String message = null;
@@ -101,7 +104,7 @@ public class BoardController {
 
 		return "redirect:/manager/cmm";
 	}
-	
+
 	// 공지사항 수정 페이지 이동
 	@GetMapping("/cmmDetail/{cmmNo}/update")
 	public String cmmUpdate(@PathVariable("cmmNo") int cmmNo, Model model, RedirectAttributes ra) {
@@ -125,7 +128,7 @@ public class BoardController {
 			@RequestParam(value = "cmmTitleImage") MultipartFile cmmTitleImage,
 			@RequestParam(value = "cmmConImage") MultipartFile cmmConImage, RedirectAttributes ra,
 			HttpServletRequest req) throws Exception {
-		
+
 		cmm.setCmmNo(cmmNo);
 
 		// 인터넷 주소로 접근할 수 있는 경로
@@ -149,31 +152,30 @@ public class BoardController {
 		if (result > 0) {
 			message = "공지사항 수정 성공";
 			ra.addFlashAttribute("message", message);
-			return "redirect:/manager/cmmDetail/"+cmmNo;
 		} else {
 			message = "공지사항 수정 실패";
 			ra.addFlashAttribute("message", message);
-			return "redirect:/manager/cmmDetail/"+cmmNo;
 		}
-
-
+		
+		return "redirect:/manager/cmmDetail/" + cmmNo;
 	}
 
-	@PostMapping("/cmmDetail/{cmmNo}/cmmDelete")
-	public String cmmDelete(@PathVariable(value="cmmNo") int cmmNo, RedirectAttributes ra) {
-		
-		int result=service.cmmDelete(cmmNo);
+	// 공지사항 삭제
+	@GetMapping("/cmmDetail/{cmmNo}/delete")
+	public String cmmDelete(@PathVariable(value = "cmmNo") int cmmNo, RedirectAttributes ra) {
+
+		int result = service.cmmDelete(cmmNo);
 		String message = null;
-		
-		if(result > 0) {
+
+		if (result > 0) {
 			message = "게시글 삭제 완료";
 		} else {
 			message = "게시글 삭제 실패";
 		}
-		
+
 		ra.addFlashAttribute("message", message);
-		
-		return "/manager/cmm/cmmPost";
+
+		return "redirect:/manager/cmm";
 	}
 
 	// =================[프로모션]======================
@@ -201,7 +203,11 @@ public class BoardController {
 		Promotion promotion = service.promotionDetail(promotionNo);
 
 		if (promotion != null) {
+			List<String> viewList = Arrays.asList(promotion.getRoomViewNo().split(","));
+			List<String> typeList = Arrays.asList(promotion.getRoomTypeNo().split(","));
 			model.addAttribute("promotion", promotion);
+			model.addAttribute("viewList", viewList);
+			model.addAttribute("typeList", typeList);
 			return "/manager/promotion/promotion";
 		} else {
 			String message = "해당 게시글이 존재하지 않습니다.";
@@ -213,10 +219,11 @@ public class BoardController {
 
 	// 프로모션 등록
 	@PostMapping("/promotionPost")
-	public String savePromotionPost(Promotion promotion,
+	public String savePromotionPost(Promotion promotion, String[] viewType, String[] roomType,
 			@RequestParam(value = "promotionTitleImage") MultipartFile promotionTitleImage,
 			@RequestParam(value = "promotionConImage") MultipartFile promotionConImage, RedirectAttributes ra,
-			HttpServletRequest req) throws Exception {
+			HttpServletRequest req, @SessionAttribute(value = "loginMember", required = false) Member loginMember)
+			throws Exception {
 
 		// 인터넷 주소로 접근할 수 있는 경로
 		String webPathTitle = "/resources/image/boardImage/title/";
@@ -232,7 +239,10 @@ public class BoardController {
 		map.put("filePathTitle", filePathTitle);
 		map.put("filePathContent", filePathContent);
 
-		int result = service.savePromotionPost(promotion, map, promotionTitleImage, promotionConImage);
+		promotion.setMemberNo(loginMember.getMemberNo());
+
+		int result = service.savePromotionPost(promotion, map, promotionTitleImage, promotionConImage, viewType,
+				roomType);
 
 		String message = null;
 
@@ -242,6 +252,86 @@ public class BoardController {
 			message = "promotion 등록 실패";
 		}
 		ra.addFlashAttribute("message", message);
+		return "redirect:/manager/promotion";
+	}
+
+	
+	// 프로모션 수정 페이지 이동
+	@GetMapping("/promotionDetail/{promotionNo}/update")
+	public String promotionUpdate(@PathVariable("promotionNo") int promotionNo, Model model, RedirectAttributes ra) {
+
+		Promotion promotion = service.promotionDetail(promotionNo);
+
+		if (promotion != null) {
+			List<String> viewList = Arrays.asList(promotion.getRoomViewNo().split(","));
+			List<String> typeList = Arrays.asList(promotion.getRoomTypeNo().split(","));
+			model.addAttribute("promotion", promotion);
+			model.addAttribute("viewList", viewList);
+			model.addAttribute("typeList", typeList);
+			return "/manager/promotion/promotionUpdate";
+		} else {
+			String message = "해당 게시글이 존재하지 않습니다.";
+			ra.addFlashAttribute("message", message);
+			return "redirect:/manager/promotion";
+		}
+
+	}
+
+	// 프로모션 수정
+	@PostMapping("promotionDetail/{promotionNo}/promotionUpdate")
+	public String savePromotionUpdate(Promotion promotion, @PathVariable("promotionNo") int promotionNo,
+			String[] viewType, String[] roomType,
+			@RequestParam(value = "promotionTitleImage") MultipartFile promotionTitleImage,
+			@RequestParam(value = "promotionConImage") MultipartFile promotionConImage, RedirectAttributes ra,
+			HttpServletRequest req) throws Exception {
+
+		promotion.setPromotionNo(promotionNo);
+
+		// 인터넷 주소로 접근할 수 있는 경로
+		String webPathTitle = "/resources/image/boardImage/title/";
+		String webPathContent = "/resources/image/boardImage/content/";
+
+		// 실제 파일이 저장된 컴퓨터 상의 절대 경로
+		String filePathTitle = req.getSession().getServletContext().getRealPath(webPathTitle);
+		String filePathContent = req.getSession().getServletContext().getRealPath(webPathContent);
+
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("webPathTitle", webPathTitle);
+		map.put("webPathContent", webPathContent);
+		map.put("filePathTitle", filePathTitle);
+		map.put("filePathContent", filePathContent);
+
+		int result = service.savePromotionUpdate(promotion, map, promotionTitleImage, promotionConImage, viewType, roomType);
+
+		String message = null;
+
+		if (result > 0) {
+			message = "공지사항 수정 성공";
+			ra.addFlashAttribute("message", message);
+		} else {
+			message = "공지사항 수정 실패";
+			ra.addFlashAttribute("message", message);
+		}
+		
+		return "redirect:/manager/promotionDetail/" + promotionNo;
+
+	}
+
+	// 프로모션 삭제
+	@GetMapping("/promotionDetail/{promotionNo}/delete")
+	public String promotionDelete(@PathVariable(value = "promotionNo") int promotionNo, RedirectAttributes ra) {
+
+		int result = service.promotionDelete(promotionNo);
+		String message = null;
+
+		if (result > 0) {
+			message = "게시글 삭제 완료";
+		} else {
+			message = "게시글 삭제 실패";
+		}
+
+		ra.addFlashAttribute("message", message);
+
 		return "redirect:/manager/promotion";
 	}
 
