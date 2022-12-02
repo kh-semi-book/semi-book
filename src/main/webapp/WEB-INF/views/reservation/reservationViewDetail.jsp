@@ -64,7 +64,7 @@
                                 </tr>
                                 <tr>
                                     <th height="64.5px" id="rsc-first-th">예약자명</th>
-                                    <td>노성찬(시험)</td>
+                                    <td>${book.memberName}</td>
                                     <th>휴대폰</th>
                                     <td>010-7130-5756(시험)</td>
                                     <th>전화번호</th>

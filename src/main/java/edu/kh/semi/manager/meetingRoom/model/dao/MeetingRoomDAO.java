@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import edu.kh.semi.manager.book.model.vo.Pagination;
 import edu.kh.semi.manager.meetingRoom.model.vo.MeetingRoom;
+import edu.kh.semi.member.model.vo.Member;
 
 @Repository
 public class MeetingRoomDAO {
@@ -60,10 +61,15 @@ public class MeetingRoomDAO {
 	}
 	
 	// 미팅룸 예약 문의 추가
-		public int meetingBookAdd(MeetingRoom inputMeetingRoom) {
-			
-			return sqlSession.insert("meetingRoomMapper.meetingBookAdd",inputMeetingRoom);
-		}
+	public int meetingBookAdd(MeetingRoom inputMeetingRoom) {
+		
+		return sqlSession.insert("meetingRoomMapper.meetingBookAdd",inputMeetingRoom);
+	}
+
+	// 미팅룸 예약 상세 페이지 조회 DAO
+	public MeetingRoom meetingRoomDetail(int meetingBookNo) {
+		return sqlSession.selectOne("meetingRoomMapper.meetingRoomDetail",meetingBookNo);
+	}
 	
 	
 	

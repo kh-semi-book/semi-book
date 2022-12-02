@@ -55,7 +55,7 @@
                         더 좋은 여행상품과 서비스를 제공하기 위해 노력하겠습니다.
                     </p>
                 </div>
-                <form action="memberSecession" id="rsc-memeber-del">
+                <form action="memberSecession" id="rsc-memeber-del" method="POST">
                     <div id="rsc-del">
                         <div>
                             <ul>
@@ -66,7 +66,7 @@
                             </ul>
                         </div>
                         <div>
-                            <button id="rsc-memeber-del-btn">회원탈퇴</button>
+                            <button id="rsc-memeber-del-btn" type="submit" action="memberSecession">회원탈퇴</button>
                         </div>
                     </div>
                 </form>

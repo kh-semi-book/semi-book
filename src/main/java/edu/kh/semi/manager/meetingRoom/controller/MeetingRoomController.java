@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,20 +22,6 @@ public class MeetingRoomController {
 	@Autowired
 	private MeetingRoomService service;
 
-	// 예약 상세보기
-	@GetMapping("/manager/meetingRoom/meetingRoomDetail")
-	public String meetingRoomDetail() {
-
-		return "/manager/meetingRoom/meetingRoomDetail";
-	}
-
-	// 이전 페이지로 돌아가기
-	 @GetMapping("/manager/meetingRoom/meetingRoom") 
-	 public String retrunMeetingRoom(@RequestHeader("referer") String referer) {
-	  
-		 return "redirect:/manager/meetingRoom/meetingRoom"; 
-	  
-	 }
 	
 
 	//  예약 리스트를 조회 + 페이징 처리 
@@ -70,6 +57,24 @@ public class MeetingRoomController {
 		return "redirect:manager/meetingRoom/meetingRoom";
 	}
 
+	// 예약 상세 페이지 보기
+	@GetMapping("/manager/meetingRoom/meetingRoomDetail/{meetingBookNo}")
+	public String meetingRoomDetail(@PathVariable(value="meetingBookNo") int meetingBookNo, Model model) {
+		
+		MeetingRoom meeting = service.meetingRoomDetail(meetingBookNo);
+		
+		model.addAttribute("meeting",meeting);
+		
+		return "/manager/meetingRoom/meetingRoomDetail";
+	}
+	
+	// 이전 페이지로 돌아가기
+	@GetMapping("/manager/meetingRoom/meetingRoom") 
+	public String retrunMeetingRoom(@RequestHeader("referer") String referer) {
+		
+		return "redirect:/manager/meetingRoom/meetingRoom"; 
+		
+	}
 	
 	// 미팅룸 예약 문의하기 페이지 이동
 		@GetMapping("/nav/meeting/meetingReservation")

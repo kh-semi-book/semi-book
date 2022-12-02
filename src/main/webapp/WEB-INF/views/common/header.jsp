@@ -6,7 +6,7 @@
     <div id="header">
         <div id="header-top">
             <a href="/"><img src="/resources/image/logo.png"></a>
-
+            
              <!-- 우측 상단 로그인 예약조회 회원가입 -->
             <!-- 헤더 오른쪽 상단 메뉴 -->
             <c:choose>
@@ -14,7 +14,7 @@
                     <div id="header-top-menu">
                         <a href="/member/login">로그인</a>
                         |
-                        <a href="/reservation/reservationView">예약조회</a>
+                        <a href="/reservation/reservationView/${sessionScope.loginMember.memberNo}">예약조회</a>
                         |
                         <a href="/member/signUp">회원가입</a>
                     </div>
@@ -26,7 +26,7 @@
                         |
                         <a href="/member/memberEdit">마이페이지</a>
                         |
-                        <a href="/reservation/reservationView">예약조회</a>
+                        <a href="/reservation/reservationView/${sessionScope.loginMember.memberNo}">예약조회</a>
                     </div>
                 
                 </c:otherwise>

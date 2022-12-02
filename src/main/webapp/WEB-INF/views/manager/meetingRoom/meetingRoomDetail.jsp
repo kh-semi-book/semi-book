@@ -39,31 +39,31 @@
                 <table class="bsh-tb1">
                     <tr>
                         <th class="inf-name">성명</th>
-                        <td class="inf-name2"></td>
+                        <td>${meeting.meetingMenName}</td>
                     </tr>
                     <tr>
                         <th>휴대폰</th>
-                        <td></td>
+                        <td>${meeting.meetingMenPhone}</td>
                     </tr>
                     <tr>
                         <th>이메일</th>
-                        <td></td>
+                        <td>${meeting.meetingMenEmail}</td>
                     </tr>
                     <tr>
                         <th>업체명</th>
-                        <td></td>
+                        <td>${meeting.meetingBookCompany}</td>
                     </tr>
                     <tr>
                         <th>인원수</th>
-                        <td></td>
+                        <td>${meeting.meetingHeadCount}명</td>
                     </tr>
                     <tr>
                         <th>행사일시</th>
-                        <td></td>
+                        <td>${meeting.meetingBookDate}</td>
                     </tr>
                     <tr>
                         <th id="lastbox">내용</th>
-                        <td></td>
+                        <td>${meeting.meetingBookContent}</td>
                     </tr>
                 </table>
                 
