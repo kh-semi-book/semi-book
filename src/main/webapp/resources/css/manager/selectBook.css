@@ -1,0 +1,207 @@
+#search-book-area{
+    width: 1500px;
+    margin:auto;
+}
+  
+  #top-menu{
+       color:rgb(133, 131, 131);
+       font-size:14px;
+       padding:20px 0;
+    }
+    
+    #top-menu>a{
+        text-decoration: none;
+        color:rgb(133, 131, 131);
+        padding:0 10px;
+    }
+    
+    #book-title{
+        font-size: 30px;
+        margin-bottom:20px;
+        margin-top:20px;
+    }
+
+    /* ------------------------------ */
+
+    #book-search-option>span{
+        display: inline-block;
+        }
+        
+        .search-option>select{
+        display: inline-block;
+        width: 150px;
+        margin: 20px 20px;
+        padding:5px;
+        }
+        
+        .search-option:last-child{
+        text-align: right;
+        }
+        
+        .search-option-input{
+        display: inline-block;
+        padding:5px;
+        width: 400px;
+        }
+        
+        #search-date{
+        width:100px;
+        padding-right: 10px;
+        }
+        
+        .search-date-input{
+        width: 440px;
+        }
+        
+        .search-date-input>input{
+        display: inline-block;
+        width:180px;
+        padding:5px;
+        }
+        
+        #search-book-option>button{
+        width: 70px;
+        height: 40px;
+        }
+        
+        
+        
+    /* ------------------------------ */
+
+    #book-list-table{
+        margin-top: 20px;
+    }
+    #book-list-table div{
+        box-sizing: border-box;
+        /* border: 1px solid black; */
+    }
+
+    #book-list-table>div{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    #book-list-title{
+        border-top:2px solid black;
+        border-bottom:1px solid #bbb;
+        
+    }
+
+
+    #book-list-title>div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding:30px 0;
+    }
+
+
+
+    .book-list-no{
+        width: 100px;
+    }
+    .book-list-date{
+        width: 170px;
+    }
+    .book-list-reservation-no{
+        width: 150px;
+    }
+    .book-list-room-no{
+        width: 115px;
+    }
+    .book-list-room-no>input{
+        display: block;
+        width: 100px;
+        text-align: center;
+    }
+    .book-list-party-num{
+        width: 115px;
+    }
+    .book-list-party-num>input{
+        display: block;
+        width: 100px;
+        text-align: center;
+    }
+    .book-list-type{
+        width:100px;
+    }
+    .book-list-status-change{
+        width:100px;
+    }
+    .book-list-status{
+        width:100px;
+    }
+    .book-list-booker-name{
+        width:150px;
+    }
+    .book-list-cost{
+        width: 150px;
+    }
+    #money{
+        justify-content: right;
+        padding-right: 10px;
+
+    }
+    .manage-book-status{
+        width: 150px;
+    }
+    .manage-book-status>select{
+        display: block;
+        width: 130px;
+    }
+    .manage-book-status-change{
+        width: 100px;
+    }
+   
+
+    .book-list-content{
+        border-bottom:1px solid #bbb;
+        display: flex;
+    }
+
+    .book-list-content>div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding:20px 0;
+        height:30px;
+        box-sizing: border-box;
+    }
+
+    .manage-border-right{
+        border-right: 1px solid #bbb;
+    }
+
+/* --------------------------------------------- */
+
+
+
+   /*----[ 페이지 이동 버튼 ]----*/
+
+   #rsc-page-skip{
+    margin-top:50px;
+   }
+#rsc-page-skip a{
+text-decoration: none;
+color: #767676;
+}
+#rsc-page-skip button{
+background-color: #292526;
+font-weight: bold;
+font-size: 14px;
+height: 38px;
+width: 38px;
+}
+#rsc-page-skip button a{
+font-weight: bold;
+font-size: 14px;
+color: #FFFFFF;
+}
+#rsc-page-skip button a:hover{
+font-weight: bold;
+font-size: 14px;
+color: red;
+}
