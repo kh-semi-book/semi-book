@@ -44,6 +44,7 @@ public class MemberServiceImpl implements MemberService{
 		return loginMember;
 	}
 	
+	// 회원가입 기능 
 	@Transactional(rollbackFor = Exception.class)
 	@Override
 	public int signUp(Member inputMember) {

@@ -55,14 +55,14 @@
                         더 좋은 여행상품과 서비스를 제공하기 위해 노력하겠습니다.
                     </p>
                 </div>
-                <form action="#" id="rsc-memeber-del">
+                <form action="memberSecession" id="rsc-memeber-del">
                     <div id="rsc-del">
                         <div>
                             <ul>
-                                <li><input type="text" neme="이름" placeholder="이름" value="이름"></li>
-                                <li><input type="text" neme="아이디" placeholder="아이디" value="아이디"></li>
-                                <li><input type="password" neme="비밀번호" placeholder="비밀번호" value="비밀번호"></li>
-                                <li><input type="email" neme="이메일" placeholder="이메일" value="이메일"></li>
+                                <li><input type="text" neme="memberName"   placeholder="이름"     value="이름"></li>
+                                <li><input type="text" neme="memberId"     placeholder="아이디"   value="아이디"></li>
+                                <li><input type="password" neme="memberPw" placeholder="비밀번호" value="비밀번호"></li>
+                                <li><input type="email" neme="memberEmail" placeholder="이메일"   value="이메일"></li>
                             </ul>
                         </div>
                         <div>
