@@ -68,7 +68,7 @@
                 </table>
                 
                 <div class="bsh-btn">
-                    <input type="submit" name="sub" class="bsh-btn-gray" value="수정하기">
+                    <button type="submit" name="sub" class="bsh-btn-gray" value="수정하기">
                     <a href="/manager/meetingRoom/meetingRoom" class="bsh-btn-white">돌아가기</a>
                 </div>
             </form>
