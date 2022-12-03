@@ -20,7 +20,7 @@ public class MemberServiceImpl implements MemberService{
 	 @Autowired
 
 	 private MemberDAO dao;
-
+	
 	// 로그인 기능
 	@Override
 	public Member login(Member inputMember) {
@@ -47,14 +47,27 @@ public class MemberServiceImpl implements MemberService{
 	// 회원가입 기능 
 	@Transactional(rollbackFor = Exception.class)
 	@Override
-	public int signUp(Member inputMember) {
+	public int signUp(Member inputMember, Add inputAdd) {
 //		비밀번호 암호화
 		String encPw = bcrypt.encode(inputMember.getMemberPw()); // 암호화된 비밀번호
 		
 		inputMember.setMemberPw(encPw);		
 		
 		int result = dao.signUp(inputMember);
+		//memberNo
 
+		if(result > 0) {
+			// 추가항목들에 입력된 값이 있다면
+			if(inputAdd.getMarriageFlag() != 0 || inputAdd.getMemberWedding().length() != 0
+			|| inputAdd.getMemberTel().length() != 0 || inputAdd.getMemberAddress().length() !=0) {
+				inputAdd.setMemberNo(result);
+				
+				result = dao.signUp2(inputAdd);
+			}
+		
+		}
+		
+			
 		
 		return result;
 	}

@@ -15,6 +15,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.kh.semi.member.model.service.MemberService;
+import edu.kh.semi.member.model.vo.Add;
 import edu.kh.semi.member.model.vo.Member;
 
 @Controller
@@ -89,10 +90,12 @@ public class MemberController {
 	 */
 	// 회원가입 진행
 	@PostMapping("/member/signUp")
-	public String signUp(Member inputMember, String[] memberPhone, String[] memberEmail, String[] memberBirth,
+	public String signUp(Member inputMember, Add inputAdd,  String[] memberPhone, String[] memberEmail, String[] memberBirth,
 			String[] memberWedding, String[] memberTel, String[] memberAddress, RedirectAttributes ra,
 			@RequestHeader("referer") String referer) {
 
+//		inputMember.setMemberId(MemberId);
+		
 		String phone = memberPhone[0] + memberPhone[1] + memberPhone[2];
 		inputMember.setMemberPhone(phone);
 
@@ -103,27 +106,21 @@ public class MemberController {
 		inputMember.setMemberBirth(birth);
 
 		// 회원가입 추가항목
-//		if(inputAdd.getMemberWedding().equals(",,")) {
-//			
-//			inputAdd.setMemberWedding(null);
-//		} else {
-//			inputAdd.setMemberWedding(String.join(",,", memberWedding));
-//		}
-//		
-//		if(inputAdd.getMemberTel().equals(",,")) {
-//			
-//			inputAdd.setMemberTel(null);
-//		} else {
-//			inputAdd.setMemberTel(String.join(",,", memberTel));
-//		}
-//		if(inputAdd.getMemberAddress().equals(",,")) {
-//			
-//			inputAdd.setMemberAddress(null);
-//		} else {
-//			inputAdd.setMemberAddress(String.join(",,", memberAddress));
-//		}
+		// 결횬유무 기혼 선택시 가져올 데이터
+		String weddingDate = memberWedding[0] + memberWedding[1] + memberWedding[2];
+		inputAdd.setMemberWedding(weddingDate);
+		
+		String tel = memberTel[0] + memberTel[1] + memberTel[2];
+		inputAdd.setMemberTel(tel);
+		
+		String address = memberAddress[0] + memberAddress[1] + memberAddress[2];
+		inputAdd.setMemberAddress(address);
+		
 
-		int result = service.signUp(inputMember);
+		
+		
+//		 기본항목 회원가입시
+		int result = service.signUp(inputMember, inputAdd);
 
 		String path = null;
 		String message = null;

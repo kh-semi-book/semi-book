@@ -46,10 +46,21 @@
 	 -->
 
 	<!-- 회원 가입 -->
-	<insert id="signUp" parameterType = "Member">
+	
+	
+	<insert id="signUp" parameterType = "Member" useGeneratedKeys="true">
+		<selectKey keyProperty="memberNo" resultType ="_int" order="BEFORE">
+			SELECT SEQ_MEMBER_NO.NEXTVAL FROM DUAL
+		</selectKey>
 		INSERT INTO "MEMBER"
-		VALUES(SEQ_MEMBER_NO.NEXTVAL, #{memberName}, #{memberId}, #{memberPw}, #{memberPhone},
+		VALUES(#{memberNo}, #{memberName}, #{memberId}, #{memberPw}, #{memberPhone},
 		DEFAULT, DEFAULT, #{memberEmail}, #{memberGender}, #{memberBirth}, #{emailFlag}, #{smsFlag}, DEFAULT    )
+	</insert> 
+	
+	<!-- 회원 가입 / add테이블에 넣어보자 -->
+	<insert id="signUp2" parameterType = "Add">
+		INSERT INTO "ADD"
+		VALUES(#{memberTel}, #{memberAddress}, #{memberNo}, #{marriageFlag}  )
 	</insert>
 
 
