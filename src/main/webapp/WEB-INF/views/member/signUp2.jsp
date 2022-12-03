@@ -272,22 +272,22 @@
                                <tr>
                                 <th>이메일<br> 수신 동의<span class="star">*</span></th>
                                 <td>
-                                  <input type="radio" name="emailFlag" id="m_email_yn1"
+                                  <input type="radio" name="emailFlag" id="emailFlag1"
                                   value="Y">
-                                  <label for="m_email_yn1">수신</label>
+                                  <label for="emailFlag1">수신</label>
 
-                                  <input type="radio" name="emailFlag" id="m_email_yn2"
+                                  <input type="radio" name="emailFlag" id="emailFlag2"
                                   value="N">
-                                  <label for="m_email_yn2">수신거부</label>
+                                  <label for="emailFlag2">수신거부</label>
 
                                 </td>
                                 <th>SMS<br> 수신 동의<span class="star">*</span></th>
                                 <td>
-                                  <input type="radio" name="smsFlag" id="m_sms_yn1"
+                                  <input type="radio" name="smsFlag" id="smsFlag1"
                                   value="Y">
                                   <label for="m_sms_yn1">수신</label>
 
-                                  <input type="radio" name="smsFlag" id="m_sms_yn2"
+                                  <input type="radio" name="smsFlag" id="smsFlag2"
                                   value="N">
                                   <label for="m_sms_yn2">수신거부</label>
                                 </td>
@@ -333,7 +333,6 @@
                                 <th>주소</th>
                                 <td class="kjh-input" colspan="3">
                                   <input type="text" id="sample6_postcode" name = "memberAddress" class="kjh-address a"size="5px" readonly>
-                                  <%-- <button type='button' onclick="sample6_execDaumPostcode()" class="btn2">우편번호검색</button><br> --%>
                                   <input type="button" onclick="sample6_execDaumPostcode()" class="btn2"  value="우편번호검색"><br>
                                   <input type="text" id="sample6_address" name = "memberAddress" class="kjh-address" size="50px"readonly> <br>
                                   <input type="text" id="sample6_detailAddress" name = "memberAddress"  class="kjh-address" size="50px">

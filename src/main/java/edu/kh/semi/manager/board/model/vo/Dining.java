@@ -20,5 +20,7 @@ public class Dining {
 	private String diningEndDate;
 	private String diningDeleteFlag;
 	private String diningCreateDate;
+	private int memberNo;
+	private String memberName;
 
 }

@@ -25,10 +25,7 @@ public class Member {
 	private String smsFlag;
 	private int authority; // 디폴트
 	
-	private char marriageFlag;
-	private String memberWedding;
-	private String memberTel;
-	private String memberAddress;
+	
 	
 
 

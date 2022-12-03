@@ -90,11 +90,11 @@ public class BoardController {
 
 		cmm.setMemberNo(loginMember.getMemberNo());
 
-		int result = service.saveCmmPost(cmm, map, cmmTitleImage, cmmConImage);
+		int cmmNo = service.saveCmmPost(cmm, map, cmmTitleImage, cmmConImage);
 
 		String message = null;
 
-		if (result > 0) {
+		if (cmmNo > 0) {
 			message = "공지사항 등록 성공";
 		} else {
 			message = "공지사항 등록 실패";
@@ -102,7 +102,7 @@ public class BoardController {
 
 		ra.addFlashAttribute("message", message);
 
-		return "redirect:/manager/cmm";
+		return "redirect:/manager/cmmDetail/" + cmmNo;
 	}
 
 	// 공지사항 수정 페이지 이동
@@ -156,7 +156,7 @@ public class BoardController {
 			message = "공지사항 수정 실패";
 			ra.addFlashAttribute("message", message);
 		}
-		
+
 		return "redirect:/manager/cmmDetail/" + cmmNo;
 	}
 
@@ -191,11 +191,6 @@ public class BoardController {
 		return "manager/promotion/promotionBoard";
 	}
 
-	@GetMapping("/promotionPost")
-	public String promotionPost() {
-		return "/manager/promotion/promotionPost";
-	}
-
 	// 프로모션 세부 조회
 	@GetMapping("/promotionDetail/{promotionNo}")
 	public String promotionDetail(@PathVariable("promotionNo") int promotionNo, Model model, RedirectAttributes ra) {
@@ -215,6 +210,12 @@ public class BoardController {
 			return "redirect:/manager/promotion";
 		}
 
+	}
+
+	// 프로모션 등록 페이지 이동
+	@GetMapping("/promotionPost")
+	public String promotionPost() {
+		return "/manager/promotion/promotionPost";
 	}
 
 	// 프로모션 등록
@@ -241,21 +242,21 @@ public class BoardController {
 
 		promotion.setMemberNo(loginMember.getMemberNo());
 
-		int result = service.savePromotionPost(promotion, map, promotionTitleImage, promotionConImage, viewType,
+		int promotionNo = service.savePromotionPost(promotion, map, promotionTitleImage, promotionConImage, viewType,
 				roomType);
 
 		String message = null;
 
-		if (result > 0) {
+		if (promotionNo > 0) {
 			message = "프로모션 등록 성공";
+
 		} else {
 			message = "promotion 등록 실패";
 		}
 		ra.addFlashAttribute("message", message);
-		return "redirect:/manager/promotion";
+		return "redirect:/manager/promotionDetail/" + promotionNo;
 	}
 
-	
 	// 프로모션 수정 페이지 이동
 	@GetMapping("/promotionDetail/{promotionNo}/update")
 	public String promotionUpdate(@PathVariable("promotionNo") int promotionNo, Model model, RedirectAttributes ra) {
@@ -301,7 +302,8 @@ public class BoardController {
 		map.put("filePathTitle", filePathTitle);
 		map.put("filePathContent", filePathContent);
 
-		int result = service.savePromotionUpdate(promotion, map, promotionTitleImage, promotionConImage, viewType, roomType);
+		int result = service.savePromotionUpdate(promotion, map, promotionTitleImage, promotionConImage, viewType,
+				roomType);
 
 		String message = null;
 
@@ -312,8 +314,8 @@ public class BoardController {
 			message = "공지사항 수정 실패";
 			ra.addFlashAttribute("message", message);
 		}
-		
-		return "redirect:/manager/promotionDetail/" + promotionNo;
+
+		return "redirect:/manager/promotionDetail/" + promotion.getPromotionNo();
 
 	}
 
@@ -337,19 +339,38 @@ public class BoardController {
 
 	// =================[다이닝]======================
 
+	// 다이닝 조회
 	@GetMapping("/dining")
-	public String diningPage() {
+	public String selectDiningList(Model model) {
+
+		List<Dining> diningList = service.selectDiningList();
+
+		model.addAttribute("diningList", diningList);
+
 		return "manager/dining/diningBoard";
 	}
 
+	// 다이닝 세부 조회
+	@GetMapping("/diningDetail/{diningNo}")
+	public String diningDetail(@PathVariable("diningNo") int diningNo, Model model, RedirectAttributes ra) {
+
+		Dining dining = service.diningDetail(diningNo);
+
+		if (dining != null) {
+			model.addAttribute("dining", dining);
+			return "/manager/dining/dining";
+		} else {
+			String message = "해당 게시글이 존재하지 않습니다.";
+			ra.addFlashAttribute("message", message);
+			return "redirect:/manager/dining";
+		}
+
+	}
+
+	// 다이닝 등록 페이지 이동
 	@GetMapping("/diningPost")
 	public String diningPost() {
 		return "/manager/dining/diningPost";
-	}
-
-	@GetMapping("/diningDetail")
-	public String diningDetail() {
-		return "/manager/dining/dining";
 	}
 
 	// 다이닝 등록
@@ -357,7 +378,8 @@ public class BoardController {
 	public String saveDiningPost(Dining dining,
 			@RequestParam(value = "diningTitleImage") MultipartFile diningTitleImage,
 			@RequestParam(value = "diningConImage") MultipartFile diningConImage, RedirectAttributes ra,
-			HttpServletRequest req, @RequestHeader(value = "referer") String referer) throws Exception {
+			HttpServletRequest req, @SessionAttribute(value = "loginMember", required = false) Member loginMember)
+			throws Exception {
 
 		// 인터넷 주소로 접근할 수 있는 경로
 		String webPathTitle = "/resources/image/boardImage/title/";
@@ -373,47 +395,141 @@ public class BoardController {
 		map.put("filePathTitle", filePathTitle);
 		map.put("filePathContent", filePathContent);
 
-		int result = service.saveDiningPost(dining, map, diningTitleImage, diningConImage);
+		dining.setMemberNo(loginMember.getMemberNo());
+
+		int diningNo = service.saveDiningPost(dining, map, diningTitleImage, diningConImage);
 
 		String message = null;
-		String path = null;
 
-		if (result > 0) {
+		if (diningNo > 0) {
 			message = "다이닝 등록 성공";
-			path = "/manager/dining";
 		} else {
 			message = "다이닝 등록 실패";
-			path = referer;
 		}
 
 		ra.addFlashAttribute("message", message);
 
-		return "redirect:" + path;
+		return "redirect:/manager/diningDetail/" + diningNo;
 
+	}
+
+	// 다이닝 수정 페이지 이동
+	@GetMapping("/diningDetail/{diningNo}/update")
+	public String diningUpdate(@PathVariable("diningNo") int diningNo, Model model, RedirectAttributes ra) {
+
+		Dining dining = service.diningDetail(diningNo);
+
+		if (dining != null) {
+			model.addAttribute("dining", dining);
+			return "/manager/dining/diningUpdate";
+		} else {
+			String message = "해당 게시글이 존재하지 않습니다.";
+			ra.addFlashAttribute("message", message);
+			return "redirect:/manager/dining";
+		}
+
+	}
+
+	// 다이닝 수정
+	@PostMapping("/diningDetail/{diningNo}/diningUpdate")
+	public String saveDiningUpdate(Dining dining, @PathVariable("diningNo") int diningNo,
+			@RequestParam(value = "diningTitleImage") MultipartFile diningTitleImage,
+			@RequestParam(value = "diningConImage") MultipartFile diningConImage, RedirectAttributes ra,
+			HttpServletRequest req) throws Exception {
+
+		dining.setDiningNo(diningNo);
+
+		// 인터넷 주소로 접근할 수 있는 경로
+		String webPathTitle = "/resources/image/boardImage/title/";
+		String webPathContent = "/resources/image/boardImage/content/";
+
+		// 실제 파일이 저장된 컴퓨터 상의 절대 경로
+		String filePathTitle = req.getSession().getServletContext().getRealPath(webPathTitle);
+		String filePathContent = req.getSession().getServletContext().getRealPath(webPathContent);
+
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("webPathTitle", webPathTitle);
+		map.put("webPathContent", webPathContent);
+		map.put("filePathTitle", filePathTitle);
+		map.put("filePathContent", filePathContent);
+
+		int result = service.saveDiningUpdate(dining, map, diningTitleImage, diningConImage);
+
+		String message = null;
+
+		if (result > 0) {
+			message = "다이닝 수정 성공";
+			ra.addFlashAttribute("message", message);
+		} else {
+			message = "다이닝 수정 실패";
+			ra.addFlashAttribute("message", message);
+		}
+
+		return "redirect:/manager/diningDetail/" + dining.getDiningNo();
+
+	}
+
+	// 다이닝 삭제
+	@GetMapping("/diningDetail/{diningNo}/delete")
+	public String diningDelete(@PathVariable(value = "diningNo") int diningNo, RedirectAttributes ra) {
+
+		int result = service.diningDelete(diningNo);
+		String message = null;
+
+		if (result > 0) {
+			message = "게시글 삭제 완료";
+		} else {
+			message = "게시글 삭제 실패";
+		}
+
+		ra.addFlashAttribute("message", message);
+
+		return "redirect:/manager/dining";
 	}
 
 	// =================[이벤트]======================
 
+	// 이벤트 조회
 	@GetMapping("/event")
-	public String eventPage() {
+	public String selectEventList(Model model) {
+
+		List<Event> eventList = service.selectEventList();
+
+		model.addAttribute("eventList", eventList);
+
 		return "manager/event/eventBoard";
 	}
 
+	// 이벤트 세부 조회
+	@GetMapping("/eventDetail/{eventNo}")
+	public String eventDetail(@PathVariable("eventNo") int eventNo, Model model, RedirectAttributes ra) {
+
+		Event event = service.eventDetail(eventNo);
+
+		if (event != null) {
+			model.addAttribute("event", event);
+			return "/manager/event/event";
+		} else {
+			String message = "해당 게시글이 존재하지 않습니다.";
+			ra.addFlashAttribute("message", message);
+			return "redirect:/manager/event";
+		}
+
+	}
+
+	// 이벤트 등록 페이지 이동
 	@GetMapping("/eventPost")
 	public String eventPost() {
 		return "/manager/event/eventPost";
 	}
 
-	@GetMapping("/eventDetail")
-	public String eventDetail() {
-		return "/manager/event/event";
-	}
-
-	// 다이닝 등록
+	// 이벤트 등록
 	@PostMapping("/eventPost")
-	public String saveDiningPost(Event event, @RequestParam(value = "eventTitleImage") MultipartFile eventTitleImage,
+	public String saveDiningPost(Event event,
+			@RequestParam(value = "eventTitleImage") MultipartFile eventTitleImage,
 			@RequestParam(value = "eventConImage") MultipartFile eventConImage, RedirectAttributes ra,
-			HttpServletRequest req, @RequestHeader(value = "referer") String referer) throws Exception {
+			HttpServletRequest req, @SessionAttribute(value = "loginMember", required = false) Member loginMember)
+			throws Exception {
 
 		// 인터넷 주소로 접근할 수 있는 경로
 		String webPathTitle = "/resources/image/boardImage/title/";
@@ -429,21 +545,96 @@ public class BoardController {
 		map.put("filePathTitle", filePathTitle);
 		map.put("filePathContent", filePathContent);
 
-		int result = service.saveEventPost(event, map, eventTitleImage, eventConImage);
+		event.setMemberNo(loginMember.getMemberNo());
+
+		int eventNo = service.saveEventPost(event, map, eventTitleImage, eventConImage);
 
 		String message = null;
-		String path = null;
 
-		if (result > 0) {
-			message = "이벤트 등록 성공";
-			path = "/manager/event";
+		if (eventNo > 0) {
+			message = "다이닝 등록 성공";
 		} else {
-			message = "이벤트 등록 실패";
-			path = referer;
+			message = "다이닝 등록 실패";
 		}
 
 		ra.addFlashAttribute("message", message);
 
-		return "redirect:" + path;
+		return "redirect:/manager/eventDetail/" + eventNo;
+
 	}
+
+	// 이벤트 수정 페이지 이동
+	@GetMapping("/eventDetail/{eventNo}/update")
+	public String eventUpdate(@PathVariable("eventNo") int eventNo, Model model, RedirectAttributes ra) {
+
+		Event event = service.eventDetail(eventNo);
+
+		if (event != null) {
+			model.addAttribute("event", event);
+			return "/manager/event/eventUpdate";
+		} else {
+			String message = "해당 게시글이 존재하지 않습니다.";
+			ra.addFlashAttribute("message", message);
+			return "redirect:/manager/event";
+		}
+
+	}
+
+	// 이벤트 수정
+	@PostMapping("/eventDetail/{eventNo}/eventUpdate")
+	public String saveDiningUpdate(Event event, @PathVariable("eventNo") int eventNo,
+			@RequestParam(value = "eventTitleImage") MultipartFile eventTitleImage,
+			@RequestParam(value = "eventConImage") MultipartFile eventConImage, RedirectAttributes ra,
+			HttpServletRequest req) throws Exception {
+
+		event.setEventNo(eventNo);
+
+		// 인터넷 주소로 접근할 수 있는 경로
+		String webPathTitle = "/resources/image/boardImage/title/";
+		String webPathContent = "/resources/image/boardImage/content/";
+
+		// 실제 파일이 저장된 컴퓨터 상의 절대 경로
+		String filePathTitle = req.getSession().getServletContext().getRealPath(webPathTitle);
+		String filePathContent = req.getSession().getServletContext().getRealPath(webPathContent);
+
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("webPathTitle", webPathTitle);
+		map.put("webPathContent", webPathContent);
+		map.put("filePathTitle", filePathTitle);
+		map.put("filePathContent", filePathContent);
+
+		int result = service.saveEventUpdate(event, map, eventTitleImage, eventConImage);
+
+		String message = null;
+
+		if (result > 0) {
+			message = "다이닝 수정 성공";
+			ra.addFlashAttribute("message", message);
+		} else {
+			message = "다이닝 수정 실패";
+			ra.addFlashAttribute("message", message);
+		}
+
+		return "redirect:/manager/eventDetail/" + event.getEventNo();
+
+	}
+
+	// 이벤트 삭제
+	@GetMapping("/eventDetail/{eventNo}/delete")
+	public String eventDelete(@PathVariable(value = "eventNo") int eventNo, RedirectAttributes ra) {
+
+		int result = service.eventDelete(eventNo);
+		String message = null;
+
+		if (result > 0) {
+			message = "게시글 삭제 완료";
+		} else {
+			message = "게시글 삭제 실패";
+		}
+
+		ra.addFlashAttribute("message", message);
+
+		return "redirect:/manager/event";
+	}
+
 }

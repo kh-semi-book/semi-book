@@ -77,7 +77,6 @@ function sample6_execDaumPostcode() {
 }
 
 
-
 const checkObj = {
 
     "memberName"       : false,
@@ -253,24 +252,112 @@ memberPw.addEventListener("input", function(){
     });
 
     // 휴대폰번호 obj
-    memberPhone1 = document.getElementById("memberPhone1");
-    memberPhone1.addEventListener("input" , function(){
+    // memberPhone1.addEventListener("input" , function(){
         if(memberPhone1.value.trim().length == 0 ){
-            memberPhone1.val = "";
+            memberPhone1.value = "";
             checkObj.memberPhone1 = false;
-            return;
         } else{
             checkObj.memberPhone1 = true;
         }
-    })
+    // })
 
-    memberPhone2 = document.getElementById("memberPhone2");
     memberPhone2.addEventListener("input" , function(){
         if(memberPhone2.value.trim().length == 0 ){
-            memberPhone2.val = "";
+            memberPhone2.value = "";
             checkObj.memberPhone2 = false;
             return;
         } else{
             checkObj.memberPhone2 = true;
         }
     })
+
+    memberPhone3.addEventListener("input" , function(){
+        if(memberPhone3.value.trim().length == 0 ){
+            memberPhone3.value = "";
+            checkObj.memberPhone3 = false;
+            return;
+        } else{
+            checkObj.memberPhone3 = true;
+        }
+    })
+
+    // 이메일 obj
+
+    const memberEmail1 = document.getElementById("memberEmail1");
+    memberEmail1.addEventListener("input", function(){
+        if(memberEmail1.value.trim().length == 0){
+            memberEmail1.value = "";
+            checkObj.memberEmail1 = false;
+            return 
+        } else{
+            checkObj.memberEmail1 = true;
+
+        }
+    })
+    memberEmail2.addEventListener("input", function(){
+        if(memberEmail2.value.trim().length == 0){
+            memberEmail2.value = "";
+            checkObj.memberEmail2 = false;
+            return;
+        } else{
+            checkObj.memberEmail2 = true;
+
+        }
+    })
+
+    document.getElementById("memberGender").addEventListener("change", function(){
+        if(document.getElementById("memberGender").value =""){
+        checkObj.memberGender = false;
+        return;
+        } else{
+            checkObj.memberGender = true;
+
+        }
+    }) 
+    // 생년월일 checkobj
+    const memberBirth1 = document.getElementById("memberBirth1");
+    memberBirth1.addEventListener("change", function(){
+        if(memberBirth1.value = ""){
+            checkObj.memberBirth1 = false;
+            return
+        }else {
+            checkObj.memberBirth1 = true;
+
+        }
+    })
+    const memberBirth2 = document.getElementById("memberBirth2");
+    memberBirth2.addEventListener("change", function(){
+        if(memberBirth2.value = ""){
+            checkObj.memberBirth2 = false;
+            return
+        }else {
+            checkObj.memberBirth2 = true;
+
+        }
+    })
+    const memberBirth3 = document.getElementById("memberBirth3");
+    memberBirth3.addEventListener("change", function(){
+        if(memberBirth3.value = ""){
+            checkObj.memberBirth3 = false;
+            return
+        }else {
+            checkObj.memberBirth3 = true;
+
+        }
+    })
+
+    if(
+        document.querySelector('input[name="emailFlag"]:checked') == null){
+        checkObj.emailFlag = false;
+    } else{
+        checkObj.emailFlag = true;
+
+    }
+    if(
+        document.querySelector('input[name="smsFlag"]:checked') == null){
+        checkObj.smsFlag = false;
+        
+    } else{
+        checkObj.smsFlag = true;
+
+    }

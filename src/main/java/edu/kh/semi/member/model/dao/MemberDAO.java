@@ -44,7 +44,18 @@ public class MemberDAO {
 	 */
 	public int signUp(Member inputMember) {
 		
-		return sqlSession.insert("memberMapper.signUp", inputMember);
+		//2) int memberNo = 0;
+		
+		int result = sqlSession.insert("memberMapper.signUp", inputMember);
+		if(result > 0)  result = inputMember.getMemberNo();
+		// 1) result는 memberNo로 바꿔서 생각해도 됨.
+		
+		return result;
+	}
+
+	public int signUp2(Add inputAdd) {
+
+		return sqlSession.insert("memberMapper.signUp2", inputAdd);
 	}
 
 

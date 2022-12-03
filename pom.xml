@@ -55,6 +55,24 @@
 		    <version>21.5.0.0</version>
 		</dependency>
 		
+		
+		  <!-- 이메일 인증 -->
+      <!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+      <dependency>
+         <groupId>javax.mail</groupId>
+         <artifactId>mail</artifactId>
+         <version>1.4.7</version>
+      </dependency>
+      
+      <!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
+      <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-context-support</artifactId>
+         <version>${org.springframework-version}</version>
+      </dependency>
+		
+    	
+		
 		<!-- Spring JDBC 모듈 -->
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
 		<dependency>
