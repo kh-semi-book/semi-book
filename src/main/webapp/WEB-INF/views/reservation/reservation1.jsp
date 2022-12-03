@@ -176,21 +176,23 @@
                             <td>
                             <div>
                                 어른
-                                <select name="stayAdult" id="stayAdult">
+                                <select name="adultCount" id="stayAdult">
                                     <option value="">0</option>
                                     <option value="">1</option>
                                     <option value="">2</option>
                                     <option value="">3</option>
                                     <option value="">4</option>
+                                    <%-- 인원수 = 객실 수*3 --%>
                                 </select> 
                             </div>
                             <div>
                                 어린이
-                                <select name="stayChild" id="stayChild">
+                                <select name="childCount" id="stayChild">
                                     <option value="">0</option>
                                     <option value="">1</option>
                                     <option value="">2</option>
                                     <option value="">3</option>
+                                    <%-- 어린이 선택하면 나이 적는 부분 있어야 함 --%>
                                 </select>
                             </div>
                             <span  class="tooltip">
