@@ -45,7 +45,9 @@ public class BoardDAO {
 	 * @return result
 	 */
 	public int saveCmmPost(CMM cmm) {
-		return sqlSession.insert("boardMapper.saveCmmPost", cmm);
+		int result = sqlSession.insert("boardMapper.saveCmmPost", cmm);
+		if (result>0) result=cmm.getCmmNo();
+		return result;
 	}
 	
 
@@ -111,7 +113,9 @@ public class BoardDAO {
 	 * @return result
 	 */
 	public int savePromotionPost(Promotion promotion) {
-		return sqlSession.insert("boardMapper.savePromotionPost", promotion);
+		int result = sqlSession.insert("boardMapper.savePromotionPost", promotion);
+		if(result>0) result=promotion.getPromotionNo();
+		return result;
 	}
 
 	/** 프로모션 객실 등록
@@ -178,6 +182,24 @@ public class BoardDAO {
 		return sqlSession.delete("boardMapper.promotionDelete", promotionNo);
 	}
 
+	//======================================================================================
+	
+
+	/** 다이닝 조회
+	 * @return
+	 */
+	public List<Dining> selectDiningList() {
+		return sqlSession.selectList("boardMapper.selectDiningList");
+	}
+
+	
+	/** 다이닝 세부 조회
+	 * @param diningNo
+	 * @return
+	 */
+	public Dining diningDetail(int diningNo) {
+		return sqlSession.selectOne("boardMapper.diningDetail", diningNo);
+	}
 	
 	
 	/** 다이닝 등록
@@ -185,16 +207,110 @@ public class BoardDAO {
 	 * @return result
 	 */
 	public int saveDiningPost(Dining dining) {
-		return sqlSession.insert("boardMapper.saveDiningPost", dining);
+		int result = sqlSession.insert("boardMapper.saveDiningPost", dining);
+		if(result>0) result=dining.getDiningNo();
+		return result;
 	}
-	 
+	
+	/** 다이닝 내용 수정
+	 * @param dining
+	 * @return
+	 */
+	public int diningBoardUpdate(Dining dining) {
+		return sqlSession.update("boardMapper.diningBoardUpdate", dining);
+	}
+	
+
+	/** 다이닝 타이틀 이미지 수정
+	 * @param dining
+	 * @return
+	 */
+	public int diningTitleImageUpdate(Dining dining) {
+		return sqlSession.update("boardMapper.diningTitleImageUpdate", dining);
+	}
+
+
+	/** 다이닝 컨텐츠 이미지 수정
+	 * @param dining
+	 * @return
+	 */
+	public int diningContentImageUpdate(Dining dining) {
+		return sqlSession.update("boardMapper.diningContentImageUpdate", dining);
+	}
+	
+	/** 다이닝 삭제
+	 * @param diningNo
+	 * @return 
+	 */
+	public int diningDelete(int diningNo) {
+		return sqlSession.delete("boardMapper.diningDelete", diningNo);
+	}
+	
+	
+	//====================================================================================
+	
+
+	/** 이벤트 조회
+	 * @return
+	 */
+	public List<Event> selectEventList() {
+		return sqlSession.selectList("boardMapper.selectEventList");
+	}
+
+	
+	/** 이벤트 세부 조회
+	 * @param diningNo
+	 * @return
+	 */
+	public Event eventDetail(int eventNo) {
+		return sqlSession.selectOne("boardMapper.eventDetail", eventNo);
+	}
+	
+	
 	/** 이벤트 등록
-	 * @param event
+	 * @param dining
 	 * @return result
 	 */
 	public int saveEventPost(Event event) {
-		return sqlSession.insert("boardMapper.saveEventPost", event);
+		int result = sqlSession.insert("boardMapper.saveEventPost", event);
+		if(result>0) result=event.getEventNo();
+		return result;
 	}
+	
+	/** 이벤트 내용 수정
+	 * @param dining
+	 * @return
+	 */
+	public int eventBoardUpdate(Event event) {
+		return sqlSession.update("boardMapper.eventBoardUpdate", event);
+	}
+	
+
+	/** 이벤트 타이틀 이미지 수정
+	 * @param dining
+	 * @return
+	 */
+	public int eventTitleImageUpdate(Event event) {
+		return sqlSession.update("boardMapper.eventTitleImageUpdate", event);
+	}
+
+
+	/** 이벤트 컨텐츠 이미지 수정
+	 * @param dining
+	 * @return
+	 */
+	public int eventContentImageUpdate(Event event) {
+		return sqlSession.update("boardMapper.eventContentImageUpdate", event);
+	}
+	
+	/** 이벤트 삭제
+	 * @param diningNo
+	 * @return 
+	 */
+	public int eventDelete(int eventNo) {
+		return sqlSession.delete("boardMapper.eventDelete", eventNo);
+	}
+
 
 
 

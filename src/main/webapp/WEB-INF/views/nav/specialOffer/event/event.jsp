@@ -28,15 +28,15 @@
 
 		<div id="event_body_area">
 			<section id="event_detail_title">
-				<div>[스파] Refresh Your Day</div>
+				<div>${event.eventTitle}</div>
 			</section>
 			<section id="event_detail_date">
 				<div class="detail date">
-					<strong class="strong">프로모션 기간</strong> 2022-07-15 ~ 2022-12-31
+					<strong class="strong">프로모션 기간</strong> ${event.eventStartDate} ~ ${event.eventEndDate}
 				</div>
 			</section>
 			<section id="event_detail_content">
-				<img src="/resources/image/nav/specialOffer/event/event1_detail.jpg">
+				<img src="${event.eventConImg}">
 			</section>
 			<section id="event_menu_return">
 				<div>

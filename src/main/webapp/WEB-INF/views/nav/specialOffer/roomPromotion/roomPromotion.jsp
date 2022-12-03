@@ -27,24 +27,24 @@
 
 		<div id="promotion_body_area">
 			<section id="promotion_detail_title">
-				<div>[얼리버드 Hidden Earlybird]</div>
+				<div>${promotion.promotionTitle}</div>
 				<div>
 					<a href="#">예약</a>
 				</div>
 			</section>
 			<section id="promotion_detail_date">
 				<div class="detail date">
-					<strong class="strong">투숙기간</strong> 2022-11-27~ 2023-07-16
+					<strong class="strong">투숙기간</strong> ${promotion.pStayStartDate} ~ ${promotion.pStayEndDate}
 				</div>
 				<div class="detail date">
-					<strong class="strong">판매기간</strong> 2022-10-13~ 2023-07-15
+					<strong class="strong">판매기간</strong> ${promotion.pSaleStartDate} ~ ${promotion.pSaleEndDate}
 				</div>
 				<div class="detail price">
-					<strong class="strong">이용금액</strong> 220,000원 ~
+					<strong class="strong">이용금액</strong> ${promotion.promotionPrice} ~
 				</div>
 			</section>
 			<section id="promotion_detail_content">
-				<img src="/resources/image/nav/specialOffer/roomPromotion/promotion1_detail.jpg">
+				<img src="${promotion.promotionConImg}">
 			</section>
 			<section id="promotion_menu_return">
 				<div>

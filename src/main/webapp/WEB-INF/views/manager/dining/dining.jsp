@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,51 +32,51 @@ body {
 			<table id="board_table">
 				<tr>
 					<th>제목</th>
-					<td colspan="3"><input type="text" name="diningTitle" id="title"></td>
+					<td colspan="3">${dining.diningTitle}</td>
 				</tr>
 				<tr>
 					<th class="select-area">
 						타이틀 이미지
-						<label for="inputTitleImg">이미지 선택</label>
-  	        			<input type="file" name="diningTitleImage" id="inputTitleImg" accept="image/*"><button type="button" class="deleteBtn">삭제</button>
 					</th>
 					<td>
-						<img class="select-image" src="">
+						<img class="select-image" src="${dining.diningTitleImg}">
 					</td>
 				</tr>
 				<tr>
 					<th>세부 내용</th>
-					<td><input type="text" name="diningSub" id="content"></td>
+					<td>${dining.diningSub}</td>
 				</tr>
 				<tr class="date-area">
 					<th>프로모션 기간</th>
 					<td>
-						<input type="text" id="diningStartDate">~
-						<input type="text" id="diningEndDate">
+						${dining.diningStartDate} ~
+						${dining.diningEndDate}
 					</td>
 				</tr>
 				<tr>
 					<th class="select-area">
 						내용
-						<label for="inputConImg">이미지 선택</label>
-            			<input type="file" name="diningConImage" id="inputConImg" accept="image/*"><button type="button" class="deleteBtn">삭제</button>
 					</th>
 					<td>
-						<img class="select-image" src="">
+						<img class="select-image" src="${dining.diningConImg}">
 					</td>
 				</tr>
 
 
 			</table>
 			
-			<div id="board-post">
-				<button class="save">수정</button>  <button class="save" id="deleteBtn">삭제</button> 
-			</div>
+			<c:if test="${dining.memberNo==loginMember.memberNo}">
+				<div id="board-post">
+					<button class="save" id="updateBtn">수정</button>
+					<button class="save" id="deleteBtn">삭제</button>
+				</div>
+			</c:if>
 		</div>
 		
 		<div class="board-foot-area"></div>
 		<script src="/resources/js/manager/board/boardPost.js"></script>
 	</div>
 
+<script src="/resources/js/manager/board/boardPost.js"></script>
 </body>
 </html>

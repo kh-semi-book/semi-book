@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -77,5 +78,6 @@ body {
 		</form>
 		<div class="board-foot-area"></div>
 	</div>
+	<script src="/resources/js/manager/board/boardPost.js"></script>
 </body>
 </html>

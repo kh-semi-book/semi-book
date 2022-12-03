@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>프로모션 등록</title>
+<title>프로모션 수정</title>
 <link rel="stylesheet" href="/resources/css/manager/board_detail.css">
 <link rel="stylesheet" href="/resources/css/manager/admin.css">
 <style>
@@ -19,12 +19,12 @@ body {
         <div class="board-head-area">
             <div></div>
             <div id="board_title">
-                <div>HOME > 프로모션 관리 > 프로모션 등록</div>
-                <div>프로모션 등록</div>
+                <div>HOME > 프로모션 관리 > 프로모션 수정</div>
+                <div>프로모션 수정</div>
             </div>
             <div></div>
         </div>
-        <form action="/manager/promotionPost" method="post" enctype="multipart/form-data">
+        <form action="promotionUpdate" method="post" enctype="multipart/form-data">
             <div class="board-body-area">
                 <div id="board_return">
                     <a href="/manager/promotion">목록</a>
@@ -112,7 +112,7 @@ body {
 
 
 				<div id="board-post">
-                    <button class="save">저장</button>
+                    <button class="save">수정</button>
                 </div>
             </div>
         </form>

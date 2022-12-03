@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<c:set var="diningList" value="${diningList}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,32 +27,23 @@
 		<div id="dining_body_area">
 			<div id="dining_body_menu">
 				<ul id="dining_list">
-					<li><a href="/nav/specialOffer/dining/detail"> <span> <img src="/resources/image/nav/specialOffer/dining/dining1.jpg"></img>
-						</span>
-							<div id="strong">
-								<strong>[치치/인피니티 바] Autumn Vibes</strong>
-							</div>
-							<div id="notice1">상큼한 청귤과 레몬으로 가을의 낭만을 담은 음료 2종</div>
-							<div id="notice2">
-								<div id="date">프로모션 기간 2022-10-01 ~ 2022-12-31</div>
-							</div>
+					<c:forEach var="dining" items="${diningList}">
+						<li>
+							<a href="/nav/specialOffer/dining/detail/${dining.diningNo}"> 
+								<span> <img src="${dining.diningTitleImg}"></img> </span>
+								<div id="strong">
+									<strong>${dining.diningTitle}</strong>
+								</div>
+								<div id="notice1">${dining.diningSub}</div>
+								<div id="notice2">
+									<div id="date">프로모션 기간 ${dining.diningStartDate} ~ ${dining.diningEndDate}</div>
+								</div>
 							<p>
 								<br>
 							</p>
-					</a></li>
-					<li><a href="/html/dining_2.html"> <span> <img src="/image/dining2.jpg">
-						</span>
-							<div id="strong">
-								<strong>[파노라마/비욘드] 1+1 Promotion</strong>
-							</div>
-							<div id="notice1">부담없는 가격으로 더하는 만찬의 즐거움</div>
-							<div id="notice2">
-								<div id="date">프로모션 기간 2021-08-02 ~ 2022-12-31</div>
-							</div>
-							<p>
-								<br>
-							</p>
-					</a></li>
+							</a>
+						</li>	
+					</c:forEach>
 
 				</ul>
 			</div>
