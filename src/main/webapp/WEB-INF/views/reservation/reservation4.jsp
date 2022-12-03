@@ -225,7 +225,7 @@
 									</tr>
 									<tr>
 										<th class="row-title">요청사항</th>
-										<td class="book-input"><textarea name="text-area" class="input" id="text-area" cols="60" rows=10">
+										<td class="book-input"><textarea name="guestRequest" class="input" id="text-area" cols="60" rows=10">
                                             </textarea></td>
 									</tr>
 								</table>
