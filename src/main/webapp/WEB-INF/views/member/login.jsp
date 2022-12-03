@@ -56,11 +56,11 @@
         </div>
 
         <div id="login-others">
-            <div id="sign-in"> <a href="#">
+            <div id="sign-in"> <a href="/member/signUp">
                     <div><i class="fa-solid fa-computer-mouse"></i></div>
                     <div><p>회원가입하기</p><span>다양한 서비스를 편하게 이용하세요!</span></div>
                 </a></div
-            ><div> <a href="#">
+            ><div> <a href="/member/findIdPw">
                 <div><i class="fa-solid fa-magnifying-glass"></i></div>
                 <div><p>아이디/비밀번호 찾기</p><span>아이디/비밀번호를 잊으셨나요?</span></div>
             </a></div>

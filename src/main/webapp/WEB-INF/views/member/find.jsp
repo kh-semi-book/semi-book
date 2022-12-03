@@ -25,34 +25,37 @@
 
         <div id="login-main" class="find-id-pw-main">
             <div id="member-login">
-                <form action="#">
+                <form action="/member/findId" method="POST">
                     <p>아이디 찾기</p>
                     <div class="input-section">
-                        <input type="text" name="inputId" placeholder="이름">
-                        <input type="password" name="inputPw" placeholder="이메일">
+                        <input type="text" name="inputName-id" placeholder="이름">
+                        <input type="text" name="inputEmail-id" placeholder="이메일">
                     </div
                     ><div class="button-section">
-                        <button id="member-login-btn">확인</button>
+                        <button id="find-id-btn">확인</button>
                    </div>
                 </form>
             </div
             ><div id="guest-login">
-                <form action="#">
+                <form action="/member/findPw" method="POST">
                     <p>비밀번호 찾기</p>
                     <div class="input-section">
-                        <input type="text" name="inputName" placeholder="아이디">
-                        <input type="text" name="inputBookNo" placeholder="이름">
-                        <input type="password" name="inputTel" placeholder="이메일">
+                        <input type="text" name="inputId" placeholder="아이디">
+                        <input type="text" name="inputName-pw" placeholder="이름">
+                        <input type="password" name="inputEmail-pw" placeholder="이메일">
                     </div
                     ><div class="button-section">
-                        <button id="guest-login-btn">확인</button>
+                        <button id="find-pw-btn">확인</button>
                     </div>
                 </form>
             </div> 
         </div>
     </div>
-    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+    
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="/resources/js/member/findIdPw.js"></script>
 
 </body>
 </html>
