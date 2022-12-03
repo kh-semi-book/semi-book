@@ -18,14 +18,34 @@
     </div>
     
         <div id="about-main">
-            <div id="top-menu">
+           <!--  <div id="top-menu">
                 <a href="/">HOME</a>><a href="/nav/about">HIDDEN CLIFF</a>><a href="/nav/about">호텔 소개</a>
             </div>
-
-
-            <div id="info-title">
+            
+             <div id="info-title">
                 호텔 소개
+            </div> -->
+
+            <div class="bsh-path">
+                <ol>
+                    <li class="bsh-path1">
+                        <a href="/">HOME</a>
+                    </li>
+                    <li class="bsh-path2">
+                        <a href="/nav/about">> &nbsp;HIDDEN CILFF</a>
+                    </li>
+                    <li class="bsh-path3">
+                        <a href="/nav/about">> &nbsp;호텔 소개</a>
+                    </li>
+                </ol>
             </div>
+
+            <div class="bsh-main-title">
+                <h1>호텔 소개</h1>
+            </div>
+
+
+           
 
             <div id="info-silde-photo">
                 <span class="move prev">&#x3C;</span>

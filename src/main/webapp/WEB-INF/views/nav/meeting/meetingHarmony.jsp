@@ -22,22 +22,22 @@
         <div class="bsh-main">
                 <div id="head-img" ></div>
                 <div class="bsh-path">
-                    <ol>
-                        <li class="bsh-path1">
-                            <a href="/">HOME</a>
-                        </li>
-                        <li class="bsh-path2">
-                            <a href="/meeting/symphony">>&nbsp; meeting</a>
-                        </li>
-                        <li class="bsh-path3">
-                            <a href="#">>&nbsp; 하모니</a>
-                        </li>
-                    </ol>
-                </div>
+                <ol>
+                    <li class="bsh-path1">
+                        <a href="/">HOME</a>
+                    </li>
+                    <li class="bsh-path2">
+                        <a href="/nav/meeting/symphony">> &nbsp;MEETING</a>
+                    </li>
+                    <li class="bsh-path3">
+                        <a href="/nav/meeting/harmony">> &nbsp;하모니</a>
+                    </li>
+                </ol>
+            </div>
 
-                <div class="bsh-main-title">
-                    <h1>하모니</h1>
-                </div>
+            <div class="bsh-main-title">
+                <h1>인피니티풀</h1>
+            </div>
 
                 <div class="bsh-main-img">
                     <span class="move prev">&#x3C;</span>

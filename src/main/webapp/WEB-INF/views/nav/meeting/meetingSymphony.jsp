@@ -27,10 +27,10 @@
                         <a href="/">HOME</a>
                     </li>
                     <li class="bsh-path2">
-                        <a href="/meeting/symphony">> &nbsp;meeting</a>
+                        <a href="/nav/meeting/symphony">> &nbsp;MEETING</a>
                     </li>
                     <li class="bsh-path3">
-                        <a href="#">> &nbsp;심포니</a>
+                        <a href="/nav/meeting/symphony">> &nbsp;심포니</a>
                     </li>
                 </ol>
             </div>

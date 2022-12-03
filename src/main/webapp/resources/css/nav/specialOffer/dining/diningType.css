@@ -32,14 +32,14 @@
 
 /* 상단영역 */
 #dining_head_area{
-    display: flex;
+/*     display: flex; */
     flex-direction: column;
 }
 #dining_title{
     width: 1000px;
     height: 150px;
     background-color:#FFFFFF ;
-    margin: 20px auto 0 auto;
+    margin: 0 auto 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;

@@ -30,16 +30,25 @@
 
       <!-- 상단 메인 영역 -->
       <section class="rsc-body-TopArea">
-        <!-- 페이지 조회  -->
-        <nav class="rsc-page-list">
-          <a href="/">HOME</a> > 
-          <a href="#">SPA</a> >
-          <a href="#">보떼에르 스파 바이 록시땅</a>
-        </nav>
-        <!-- 페이지 제목 -->
-        <div class="rsc-page-title">
-          <h1>보떼에르 스파 바이 록시땅</h1>
-        </div>
+       
+        
+          <div class="bsh-path">
+                <ol>
+                    <li class="bsh-path1">
+                        <a href="/">HOME</a>
+                    </li>
+                    <li class="bsh-path2">
+                        <a href="/nav/spa">> &nbsp;ROOMS</a>
+                    </li>
+                    <li class="bsh-path3">
+                        <a href="/nav/spa">> &nbsp;보떼에르 스파 바이 록시땅</a>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="bsh-main-title">
+                <h1>보떼에르 스파 바이 록시땅</h1>
+            </div>
       </section>
 
       <section></section>

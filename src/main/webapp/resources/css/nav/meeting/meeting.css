@@ -2,14 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Sans+KR&display=swap');
 
 /* 상단 뒷 배경 */
-#head-img {
-    width: 100%;
+#head-img {  
+     width: 100%;
+    min-width: 1000px;
     height: 185px;
-    background-attachment: fixed;
     background-image: url(/resources/image/nav/meeting/visual_meeting.jpg);
+    background-attachment: fixed;
+    background-size: 100% 400px;
     background-repeat: no-repeat;
-    background-size: 100%;
-    margin: 0px;
+    background-position: 50% 65px;
+    margin: 0 auto;
 }
 
 .bsh-main {
@@ -17,40 +19,7 @@
     height: auto;
 }
 
-/* 상단 페이징  */
-.bsh-path {
-    width: 1000px;
-    height: 50px;
-    margin: 0 auto;
-}
 
-.bsh-path ol {
-    padding-left: 0px;
-}
-
-.bsh-path li {
-    justify-content: flex-start;
-    display: inline-block;
-    padding-right: 8px;
-}
-
-.bsh-path a {
-    text-decoration: none;
-    font-family: 'Noto Sans KR', sans-serif;
-    color: #767676;
-    font-size: 13px;
-}
-
-/* 페이지 제목 */
-.bsh-main-title h1 {
-    width: 1000px;
-    margin: 0 auto;
-    height: 83px;
-    padding: 18px 0 0 0;
-    font-size: 33px;
-    font-family: 'Nanum Myeongjo';
-    font-weight: 300;
-}
 
 /* 페이지별 메인 이미지 */
 
@@ -213,4 +182,40 @@ table {
     table-layout: fixed;
     border-collapse: collapse;
     border-spacing: 0;
+}
+
+
+
+/* 상단 페이지 리스트 */
+.bsh-path {
+    width: 1000px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.bsh-path ol {
+    padding: 0;
+}
+
+.bsh-path li {
+    display: inline-block;
+}
+
+.bsh-path a {
+    font-size: 13px;
+    text-decoration: none;
+    color: #767676;
+    font-family: 'Noto Sans KR', sans-serif;
+    padding-right: 0 8px 0 8px;
+}
+
+/* 메인 제목 */
+.bsh-main-title h1 {
+    width: 1000px;
+    height: 58px;
+    margin: 0 auto;
+    font-size: 33px;
+    font-family: 'Nanum Myeongjo';
+    letter-spacing: -1px;
+    font-weight: 300;
 }

@@ -35,14 +35,29 @@
             <div class="rsc-body-area">
                 <div class="reservation-content-main">
                 
-                    <nav class="kjh-page-list">
+                   <!--  <nav class="kjh-page-list">
                         <a href="/">HOME</a> > <a href=""> ROOMS</a>
                     </nav>
 
                     <div class="kjh-title"> 
                         <span><h1>객실</h1></span>
                         <a href="/resources/image/nav/rooms/roomService_220920.pdf">룸 서비스 메뉴 보기</a>
-                    </div>
+                    </div> -->
+                    
+                     <div class="bsh-path">
+                <ol>
+                    <li class="bsh-path1">
+                        <a href="/">HOME</a>
+                    </li>
+                    <li class="bsh-path2">
+                        <a href="/nav/rooms">> &nbsp;ROOMS</a>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="bsh-main-title">
+                <h1>객실</h1>
+            </div>
 
                         <div class="room_section">
                             <div class="room-list-div">    

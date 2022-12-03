@@ -15,14 +15,33 @@
 		<div id="promotion_image"></div>
 		<div id="promotion_head_area">
 			<section></section>
-			<section id="promotion_title">
-				<div>
+			
+				<!-- <div>
 					<a href="/">HOME</a> > 
 					<a href="/nav/specialOffer/roomPromotion">SPECIAL OFFER</a> > 
 					<a href="/nav/specialOffer/roomPromotion">객실 프로모션</a> 
 				</div>
-				<div>객실 프로모션</div>
-			</section>
+				<div>객실 프로모션</div> -->
+				
+				
+          <div class="bsh-path">
+                <ol>
+                    <li class="bsh-path1">
+                        <a href="/">HOME</a>
+                    </li>
+                    <li class="bsh-path2">
+                        <a href="/nav/specialOffer/roomPromotion">> &nbsp;SPECIAL OFFER</a>
+                    </li>
+                    <li class="bsh-path3">
+                        <a href="/nav/specialOffer/roomPromotion">> &nbsp;객실 프로모션</a>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="bsh-main-title">
+                <h1>객실 프로모션</h1>
+            </div>
+		
 			<section></section>
 		</div>
 		<div id="promotion_body_area">

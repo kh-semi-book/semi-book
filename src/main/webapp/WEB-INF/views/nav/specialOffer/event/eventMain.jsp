@@ -14,14 +14,32 @@
 		<div id="event_image"></div>
 		<div id="event_head_area">
 			<section></section>
-			<section id="event_title">
-				<div>
+			
+				<!-- <div>
 					<a href="/">HOME</a> > 
 					<a href="/nav/specialOffer/event">SPECIAL OFFER</a> > 
 					<a href="/nav/specialOffer/event">이벤트</a> 
 				</div>
-				<div>이벤트</div>
-			</section>
+				<div>이벤트</div> -->
+				
+				<div class="bsh-path">
+                <ol>
+                    <li class="bsh-path1">
+                        <a href="/">HOME</a>
+                    </li>
+                    <li class="bsh-path2">
+                        <a href="/nav/specialOffer/event">> &nbsp;SPECIAL OFFER</a>
+                    </li>
+                    <li class="bsh-path3">
+                        <a href="/nav/specialOffer/event">> &nbsp;이벤트</a>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="bsh-main-title">
+                <h1>이벤트</h1>
+            </div>
+			
 			<section></section>
 		</div>
 		<div id="event_body_area">

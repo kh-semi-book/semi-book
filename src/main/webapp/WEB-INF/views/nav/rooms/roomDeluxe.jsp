@@ -31,13 +31,31 @@
                 <div class="rsc-body-area">
                     <div class="reservation-content-main">
             
-                        <nav class="kjh-page-list">
+                        <!-- <nav class="kjh-page-list">
                             <a href="/">HOME</a> > <a href="/nav/rooms"> ROOMS</a> > <a href=""> 디럭스</a>
                         </nav>
 
                         <div class="kjh-title"> 
                             <span><h1 class="kjh-h1">디럭스</h1>
-                        </div>
+                        </div> -->
+                        
+                        <div class="bsh-path">
+                <ol>
+                    <li class="bsh-path1">
+                        <a href="/">HOME</a>
+                    </li>
+                    <li class="bsh-path2">
+                        <a href="/nav/rooms">> &nbsp;ROOMS</a>
+                    </li>
+                    <li class="bsh-path3">
+                        <a href="#">> &nbsp;디럭스</a>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="bsh-main-title">
+                <h1>디럭스</h1>
+            </div>
                         
 						<div id = "slide-photo">
                             <span class="move prev">&#x3C;</span>

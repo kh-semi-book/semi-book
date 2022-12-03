@@ -23,7 +23,7 @@
     
     <div class="bsh-main">
        <div id="top-menu">
-	    	<a href="#">HOME</a>><a href="#">Q&A</a>
+	    	<a href="/">HOME</a>><a href="#">Q&A</a>
 		</div>
 
         <div class="bsh-main-title">

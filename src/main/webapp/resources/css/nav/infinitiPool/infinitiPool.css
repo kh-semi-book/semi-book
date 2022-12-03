@@ -22,7 +22,7 @@
     
 }
 .rsc-head-area,.rsc-foot-area{
-    height: 150px;
+ 
     background-color: #FFFFFF
 }
 .rsc-body-area{
@@ -39,10 +39,9 @@
 }
 .rsc-body-TopArea{
     width: 1000px;
-    height: 1200px;
     background-color:#FFFFFF ;
     margin: 0 auto 0 auto;
-    display: flex;
+
     flex-direction: column;
     justify-content: space-around;
 }
@@ -202,3 +201,39 @@ td[id*="blank"]{
     letter-spacing: -1px;
     color: #FFFFFF;
 }
+
+
+/* 상단 페이지 리스트 */
+.bsh-path {
+    width: 1000px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.bsh-path ol {
+    padding: 0;
+}
+
+.bsh-path li {
+    display: inline-block;
+}
+
+.bsh-path a {
+    font-size: 13px;
+    text-decoration: none;
+    color: #767676;
+    font-family: 'Noto Sans KR', sans-serif;
+    padding-right: 0 8px 0 8px;
+}
+
+/* 메인 제목 */
+.bsh-main-title h1 {
+    width: 1000px;
+    height: 58px;
+    margin: 0 auto;
+    font-size: 33px;
+    font-family: 'Nanum Myeongjo';
+    letter-spacing: -1px;
+    font-weight: 300;
+}
+	

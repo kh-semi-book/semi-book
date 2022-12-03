@@ -1,39 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Sans+KR&display=swap');
-
 
 /* 상단 배경 */
 /* 키즈플레이룸 상단 배경 */
 #head-img1 {
+     /* width: 100%; */
+     background-image: url(/resources/image/nav/facilities/kiz/visual_kids.jpg);
     width: 100%;
     height: 185px;
     background-attachment: fixed;
-    background-image: url(/resources/image/nav/facilities/kiz/visual_kids.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
-    margin: 0px;
+    background-position: 50% 65px;
+    background-size: 100% 400px;
+    margin: 0 auto;
 }
 
 /* 피트니스 상단 배경 */
 #head-img2 {
+      /* width: 100%; */
+    background-image: url(/resources/image/nav/facilities/fitness/visual_fitness.jpg);
     width: 100%;
     height: 185px;
     background-attachment: fixed;
-    background-image: url(/resources/image/nav/facilities/fitness/visual_fitness.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
-    margin: 0px;
+    background-position: 50% 65px;
+    background-size: 100% 400px;
+    margin: 0 auto;
 }
 
 /* 트레일 상단 배경 */
 #head-img3 {
+          /* width: 100%; */
+    background-image: url(/resources/image/nav/facilities/trail/visual_trail.jpg);
     width: 100%;
     height: 185px;
     background-attachment: fixed;
-    background-image: url(/resources/image/nav/facilities/trail/visual_trail.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
-    margin: 0px;
+    background-position: 50% 65px;
+    background-size: 100% 400px;
+    margin: 0 auto;
 }
 
 .bsh-main{

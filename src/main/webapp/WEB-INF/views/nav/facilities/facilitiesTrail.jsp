@@ -26,10 +26,10 @@
                         <a href="/">HOME</a>
                     </li>
                     <li class="bsh-path2">
-                        <a href="#">> &nbsp;FACILITIES</a>
+                        <a href="/nav/facilities/kids">> &nbsp;FACILITIES</a>
                     </li>
                     <li class="bsh-path3">
-                        <a href="#">> &nbsp;히든 트레일</a>
+                        <a href="/nav/facilities/trail">> &nbsp;히든 트레일</a>
                     </li>
                 </ol>
             </div>

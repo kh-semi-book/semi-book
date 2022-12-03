@@ -28,10 +28,28 @@
 
         <div class="rsc-body-area">
             
-                 <nav class="kjh-page-list">
+                <!--  <nav class="kjh-page-list">
                     <a href="/">HOME</a> > <a href="/nav/dining/panorama"> DINING</a> > <a href=""> 비욘드</a>
                 </nav>
                 <h1 class="kjh-h1">비욘드 루프탑 바</h1>
+                 -->
+                <div class="bsh-path">
+                <ol>
+                    <li class="bsh-path1">
+                        <a href="/">HOME</a>
+                    </li>
+                    <li class="bsh-path2">
+                        <a href="/nav/dining/panorama">> &nbsp;DINING</a>
+                    </li>
+                    <li class="bsh-path3">
+                        <a href="/nav/dining/beyond">> &nbsp;비욘드</a>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="bsh-main-title">
+                <h1>비욘드</h1>
+            </div>
                 <div id = "slide-photo">
 
                     <span class="move prev">&#x3C;</span>

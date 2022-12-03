@@ -27,11 +27,29 @@
 
         <div class="rsc-body-area">
             
-                <nav class="kjh-page-list">
+               <!--  <nav class="kjh-page-list">
                     <a href="/">HOME</a> > <a href="/nav/dining/panorama"> DINING</a> > <a href=""> 치치</a>
                 </nav>
 
-                <h1 class="kjh-h1">치치 (라운드 카페)</h1>
+                <h1 class="kjh-h1">치치 (라운드 카페)</h1> -->
+                
+                <div class="bsh-path">
+                <ol>
+                    <li class="bsh-path1">
+                        <a href="/">HOME</a>
+                    </li>
+                    <li class="bsh-path2">
+                        <a href="/nav/dining/panorama">> &nbsp;DINING</a>
+                    </li>
+                    <li class="bsh-path3">
+                        <a href="/nav/dining/chichi">> &nbsp;치치</a>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="bsh-main-title">
+                <h1>치치</h1>
+            </div>
                 <div id = "slide-photo">
                     <span class="move prev">&#x3C;</span>
                         <span class="move next">&#x3E;</span>

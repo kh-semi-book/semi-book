@@ -20,13 +20,31 @@
    
     <div id="top-photo3"></div>
     <div id="cmm-main">
-        <div id="top-menu">
+        <!-- <div id="top-menu">
             <a href="/">HOME</a>><a href="/nav/about">HIDDEN CLIFF</a>><a href="/nav/about/cmm">공지사항</a>
         </div>
         <div id="info-title">
             공지사항
         </div>
-        
+         -->
+         
+         <div class="bsh-path">
+                <ol>
+                    <li class="bsh-path1">
+                        <a href="/">HOME</a>
+                    </li>
+                    <li class="bsh-path2">
+                        <a href="/nav/about">> &nbsp;HIDDEN CILFF</a>
+                    </li>
+                    <li class="bsh-path3">
+                        <a href="/nav/about/cmm">> &nbsp;공지사항</a>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="bsh-main-title">
+                <h1>공지사항</h1>
+            </div>
         <div id="cmm-contant-area">
             <a href="/nav/about/cmmContent" name="left">
                 <div id="right-area" name="left">

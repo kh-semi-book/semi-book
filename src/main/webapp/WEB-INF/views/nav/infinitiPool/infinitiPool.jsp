@@ -25,14 +25,31 @@
 		<div class="rsc-head-area">
 			<section></section>
 			<section class="rsc-body-TopArea">
-				<!-- 페이지 조회  -->
+				<!-- <!-- 페이지 조회 
 				<nav class="rsc-page-list">
 					<a href="/">HOME</a> > <a href="#">THE INFINITI POOL</a> > <a href="#">인피티니풀</a>
 				</nav>
-				<!-- 페이지 제목 -->
+				페이지 제목
 				<div class="rsc-page-title">
 					<h1>인피니티풀</h1>
-				</div>
+				</div> --> 
+				 <div class="bsh-path">
+                <ol>
+                    <li class="bsh-path1">
+                        <a href="/">HOME</a>
+                    </li>
+                    <li class="bsh-path2">
+                        <a href="/nav/infinitiPool">> &nbsp;DINING</a>
+                    </li>
+                    <li class="bsh-path3">
+                        <a href="/nav/infinitiPool">> &nbsp;인피니티풀</a>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="bsh-main-title">
+                <h1>인피니티풀</h1>
+            </div>
 			</section>
 			<section></section>
 		</div>

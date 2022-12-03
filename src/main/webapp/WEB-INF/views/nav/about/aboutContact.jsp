@@ -19,12 +19,29 @@
     <div id="top-photo2">
     </div>
     <div id="contact-main">
-        <div id="top-menu">
+        <!-- <div id="top-menu">
             <a href="/">HOME</a>><a href="/nav/about">HIDDEN CLIFF</a>><a href="/nav/about/contact">오시는 길</a>
         </div>
         <div id="info-title">
             오시는 길
-        </div>
+        </div> -->
+        <div class="bsh-path">
+                <ol>
+                    <li class="bsh-path1">
+                        <a href="/">HOME</a>
+                    </li>
+                    <li class="bsh-path2">
+                        <a href="/nav/about">> &nbsp;HIDDEN CILFF</a>
+                    </li>
+                    <li class="bsh-path3">
+                        <a href="/nav/about/contact">> &nbsp;오시는 길</a>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="bsh-main-title">
+                <h1>오시는 길</h1>
+            </div>
         <div id="info-address">제주도 서귀포시 예래해안로 542 (중문) 히든 클리프 호텔<span >|</span>064-752-7777</div>
         <div id="info-map-area">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3336.449254883372!2d126.40029171527755!3d33.254729080830494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x350c44d3604f3dff%3A0x1e8e3d64eb168ad5!2z7Z6I65OgIO2BtOumrO2UhCDtmLjthZQm64Sk7J207LKY!5e0!3m2!1sko!2skr!4v1666915883528!5m2!1sko!2skr" 

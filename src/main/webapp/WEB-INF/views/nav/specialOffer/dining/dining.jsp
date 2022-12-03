@@ -14,14 +14,31 @@
 
 		<div id="dining_head_area">
 			<section></section>
-			<section id="dining_title">
+			<!-- <section id="dining_title">
 				<div>
 					<a href="/">HOME</a> > 
 					<a href="/nav/specialOffer/dining">SPECIAL OFFER</a> > 
 					<a href="/nav/specialOffer/dining">다이닝</a> 
 				</div>
 				<div>다이닝</div>
-			</section>
+			</section> -->
+			<div class="bsh-path">
+                <ol>
+                    <li class="bsh-path1">
+                        <a href="/">HOME</a>
+                    </li>
+                    <li class="bsh-path2">
+                        <a href="/nav/specialOffer/dining">> &nbsp;SPECIAL OFFER</a>
+                    </li>
+                    <li class="bsh-path3">
+                        <a href="/nav/specialOffer/dining">> &nbsp;다이닝</a>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="bsh-main-title">
+                <h1>다이닝</h1>
+            </div>
 			<section></section>
 		</div>
 
