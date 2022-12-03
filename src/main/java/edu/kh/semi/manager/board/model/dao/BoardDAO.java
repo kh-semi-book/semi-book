@@ -12,11 +12,6 @@ import edu.kh.semi.manager.board.model.vo.Dining;
 import edu.kh.semi.manager.board.model.vo.Event;
 import edu.kh.semi.manager.board.model.vo.Promotion;
 
-
-/**
- * @author user
- *
- */
 @Repository
 public class BoardDAO {
 
@@ -82,8 +77,7 @@ public class BoardDAO {
 	 * @return
 	 */
 	public int cmmDelete(int cmmNo) {
-		// TODO Auto-generated method stub
-		return sqlSession.delete("boardMapper.cmmDelete", cmmNo);
+		return sqlSession.update("boardMapper.cmmDelete", cmmNo);
 	}
 	
 	
