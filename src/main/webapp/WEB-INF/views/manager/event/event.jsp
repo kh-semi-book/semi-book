@@ -64,9 +64,6 @@ body {
 
 
 			</table>
-			<div id="board_return">
-				<a href="/manager/event">목록</a>
-			</div>
 			<c:if test="${event.memberNo==loginMember.memberNo}">
 				<div id="board-post">
 					<button class="save" id="updateBtn">수정</button>
@@ -77,5 +74,6 @@ body {
 		<div class="board-foot-area"></div>
 	</div>
 
+<script src="/resources/js/manager/board/boardPost.js"></script>
 </body>
 </html>

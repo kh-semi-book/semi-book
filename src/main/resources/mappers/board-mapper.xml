@@ -270,7 +270,7 @@
 	<!-- 다이닝 등록 -->
 	<insert id="saveDiningPost" parameterType="Dining" useGeneratedKeys="true">
 		<selectKey keyProperty="diningNo" resultType="_int" order="BEFORE">
-			SELECT SEQ_DINIG_NO.NEXTVAL FROM DUAL
+			SELECT SEQ_DINING_NO.NEXTVAL FROM DUAL
 		</selectKey>
 		INSERT INTO "DINING" VALUES(
 		 #{diningNo}, #{diningTitle}, #{diningSub}, #{diningTitleImg}, #{diningConImg},

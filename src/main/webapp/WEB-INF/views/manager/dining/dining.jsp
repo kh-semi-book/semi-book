@@ -77,5 +77,6 @@ body {
 		<script src="/resources/js/manager/board/boardPost.js"></script>
 	</div>
 
+<script src="/resources/js/manager/board/boardPost.js"></script>
 </body>
 </html>

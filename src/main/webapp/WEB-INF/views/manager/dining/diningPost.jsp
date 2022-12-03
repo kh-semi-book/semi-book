@@ -77,5 +77,7 @@ body {
 		</form>
 		<div class="board-foot-area"></div>
 	</div>
+
+	<script src="/resources/js/manager/board/boardPost.js"></script>
 </body>
 </html>
