@@ -306,7 +306,7 @@ memberPw.addEventListener("input", function(){
     })
 
     document.getElementById("memberGender").addEventListener("change", function(){
-        if(document.getElementById("memberGender").value =""){
+        if(document.getElementById("memberGender").value ==""){
         checkObj.memberGender = false;
         return;
         } else{
@@ -317,7 +317,7 @@ memberPw.addEventListener("input", function(){
     // 생년월일 checkobj
     const memberBirth1 = document.getElementById("memberBirth1");
     memberBirth1.addEventListener("change", function(){
-        if(memberBirth1.value = ""){
+        if(memberBirth1.value == ""){
             checkObj.memberBirth1 = false;
             return
         }else {
@@ -327,7 +327,7 @@ memberPw.addEventListener("input", function(){
     })
     const memberBirth2 = document.getElementById("memberBirth2");
     memberBirth2.addEventListener("change", function(){
-        if(memberBirth2.value = ""){
+        if(memberBirth2.value == ""){
             checkObj.memberBirth2 = false;
             return
         }else {
@@ -337,7 +337,7 @@ memberPw.addEventListener("input", function(){
     })
     const memberBirth3 = document.getElementById("memberBirth3");
     memberBirth3.addEventListener("change", function(){
-        if(memberBirth3.value = ""){
+        if(memberBirth3.value == ""){
             checkObj.memberBirth3 = false;
             return
         }else {
