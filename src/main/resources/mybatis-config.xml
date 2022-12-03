@@ -32,6 +32,7 @@
 <!-- mapper 파일(SQL 작성되는파일) 위치 등록 부분 -->
 <mappers>
 	<mapper resource="/mappers/member-mapper.xml"/>
+	<mapper resource="/mappers/member-mapper2.xml"/>
 	<mapper resource="/mappers/mypage-mapper.xml"/>
 	<mapper resource="/mappers/book-mapper.xml"/>
 	<mapper resource="/mappers/meetingRoom-mapper.xml"/>

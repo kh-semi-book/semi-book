@@ -179,5 +179,25 @@
 
 #login-others>div>a:hover div,
 #login-others>div>a:hover span{
-    color:rgb(136, 210, 210);
+    color:rgb(114, 137, 162);
+}
+
+/*  */
+
+#find-pw-btn{
+    background-color: rgb(97, 96, 96);
+    color:white;
+    font-weight: bold;
+    font-size:18px;
+}
+
+#find-id-btn{
+    background-color: black;
+    color:white;
+    font-weight: bold;
+    font-size:18px;
+}
+
+.find-id-pw-main{
+    border-bottom:1px solid #e7e7e7;
 }
