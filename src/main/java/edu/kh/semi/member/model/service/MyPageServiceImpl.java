@@ -43,23 +43,30 @@ public class MyPageServiceImpl implements MyPageService {
 			return result;
 		}
 
-//	    // 회원 탈퇴 서비스 
-//		@Override
-//		public int memberDelete(int memberNo, Member inputMember) {
-//			
-//			// 회원 정보를 조회 
-//			Member member = dao.selectMemberInfo(memberNo); 
-//			
-//			// 조회된 정보와 입력값이 일치할 경우 삭제 
-//			if(bcrypt.matches(inputMember.memberPw, member.getMemberPw())) {
-//				
-//				int result = dao.memberDelete(memberNo);
-//				
-//				return result;
-//			} 
-//			
-//			
-//		}
+	    // 회원 탈퇴 서비스 
+		@Override
+		public int memberDelete(int memberNo, Member inputMember) {
+			
+			// 회원 정보를 조회 
+			Member member = dao.selectMemberInfo(memberNo); 
+			
+			// 조회된 정보와 입력값이 일치할 경우 삭제 
+			if(bcrypt.matches(inputMember.getMemberPw(), member.getMemberPw())) {
+				
+				if((inputMember.getMemberName().equals(member.getMemberName())) && 
+				   (inputMember.getMemberEmail().equals(member.getMemberEmail())) &&
+				   (inputMember.getMemberId().equals(member.getMemberId()))) {
+					
+					int result = dao.memberDelete(memberNo);
+					
+					return result;
+				}
+				
+			}
+			return 0; 
+			
+			
+		}
 
 	 
 	    

@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import edu.kh.semi.manager.book.model.vo.Pagination;
 import edu.kh.semi.manager.meetingRoom.model.dao.MeetingRoomDAO;
 import edu.kh.semi.manager.meetingRoom.model.vo.MeetingRoom;
+import edu.kh.semi.member.model.vo.Member;
 
 @Service
 public class MeetingRoomServiceImpl implements MeetingRoomService{
@@ -81,6 +82,13 @@ public class MeetingRoomServiceImpl implements MeetingRoomService{
 		int result = dao.meetingBookAdd(inputMeetingRoom);
 		
 		return result;
+	}
+
+	// 미팅룸 예약 상세보기 서비스
+	@Override
+	public MeetingRoom meetingRoomDetail(int meetingBookNo) {
+		
+		return dao.meetingRoomDetail(meetingBookNo);
 	}
 
 	

@@ -51,7 +51,7 @@
 							</th>
 
 							<td class="kjh-input" colspan="3" name="memberName">
-								<span>${loginMember.memberName}</span>${loginMember.memberNo}
+								<span>${loginMember.memberName}</span>
 							</td>
 						</tr>
 
@@ -110,11 +110,10 @@
 						</tr>
 
 						<%-- 회원정보 수정 : 이메일 --%>
-						<c:set var="email" value="${loginMember.memberEmail}"/> 
 							<th>이메일<span class="star">*</span></th>
 							<td class="kjh-input" colspan="3">
-							<input type="text" size="20" name="memberEmail" id="memberEmail1" value="${fn:split(loginMember.memberEmail,'@')[0]}">@
-							<input type="text" size="13"name="memberEmail" id= "memberEmail2" value="${fn:split(loginMember.memberEmail,'@')[1]}">
+                <input type="text" size="20" name="memberEmail" id="memberEmail1" value="${fn:split(loginMember.memberEmail,'@')[0]}">@
+                <input type="text" size="13"name="memberEmail" id= "memberEmail2" value="${fn:split(loginMember.memberEmail,'@')[1]}">
 							<select class="kjh-address" name="memberEmail" id="memberEmail3">
 								<option value="naver.com">naver.com</option>
 								<option value="gmail.com">gmail.com</option>
@@ -148,27 +147,41 @@
 						</tr>
 
 						<%-- 이메일 수신 동의 --%>
+            <c:choose>
+								<c:when test="${loginMember.emailFlag =='Y'}">
+									<c:set var="Y" value="checked"/>
+								</c:when>
+								<c:when test="${loginMember.emailFlag=='N'}">
+									<c:set var="N" value="checked"/>
+								</c:when>
+            </c:choose>
 						<tr>
 							<th>이메일<br> 수신 동의<span class="star">*</span></th>
 							<td>
-							<input type="radio" name="emailFlag" id="m_email_yn1"
-							value="Y">
-							<label for="m_email_yn1">수신</label>
+                <input type="radio" name="emailFlag" id="m_email_yn1" value="Y" ${Y}>
+                <label for="m_email_yn1">수신</label>
 
-							<input type="radio" name="emailFlag" id="m_email_yn2"
-							value="N">
-							<label for="m_email_yn2">수신거부</label>
+                <input type="radio" name="emailFlag" id="m_email_yn2"value="N" ${N}>
+                <label for="m_email_yn2">수신거부</label>
 							</td>
 						</tr>
 
 						<%-- SNS 수신 동의 --%>
+            <c:choose>
+								<c:when test="${loginMember.smsFlag =='Y'}">
+									<c:set var="Y" value="checked"/>
+								</c:when>
+								<c:when test="${loginMember.smsFlag=='N'}">
+									<c:set var="N" value="checked"/>
+								</c:when>
+            </c:choose>
 						<tr>
 							<th>SMS<br> 수신 동의<span class="star">*</span></th>
 							<td>
-								<input type="radio" name="smsFlag" id="m_sms_yn1" value="Y">
+								<input type="radio" name="smsFlag" id="m_sms_yn1" value="Y"  ${Y}>
 								<label for="m_sms_yn1">수신</label>
 
-								<input type="radio" name="smsFlag" id="m_sms_yn2" value="N">
+								<input type="radio" name="smsFlag" id="m_sms_yn2" value="N"  ${N}>
 								<label for="m_sms_yn2">수신거부</label>
 							</td>
 						</tr>

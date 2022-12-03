@@ -34,4 +34,21 @@ public class MyPageDAO {
 		return sqlSession.update("myPageMapper.updateMemberPw",inputMember);
 	}
 
+	
+	/** 회원 탈퇴 회원 정보 조회 DAO 
+	 * @param memberNo
+	 * @return
+	 */
+	public Member selectMemberInfo(int memberNo) {
+		return sqlSession.selectOne("myPageMapper.selectMemberInfo", memberNo);
+	}
+
+	/** 회원 탈퇴 DAO 
+	 * @param memberNo
+	 * @return
+	 */
+	public int memberDelete(int memberNo) {
+		return sqlSession.update("myPageMapper.memberDelete", memberNo);
+	}
+
 }

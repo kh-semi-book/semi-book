@@ -6,16 +6,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
+import edu.kh.semi.manager.book.model.vo.Book;
+import edu.kh.semi.manager.meetingRoom.model.vo.MeetingRoom;
+import edu.kh.semi.member.model.vo.Member;
 import edu.kh.semi.reservation.model.service.ReservationService;
 
 @Controller
 public class ReservationController {
 	
 	@GetMapping("/reservation/reservationViewDetail")
-	public String reservationViewDetail() {
+	public String reservationViewDetail(@PathVariable(value="memberNo") int memberNo, Model model,
+			                            @SessionAttribute(value = "loginMember", required = false) Member loginMember ) {
+		
+		Book book = service.reservationViewDetail(memberNo);
+		
+		model.addAttribute("book",book);
+		
 		return "reservation/reservationViewDetail";
 	}
 	

@@ -11,12 +11,12 @@ public interface MyPageService {
 	 */
 	public abstract int updateMember(Member inputMember);
 
-//	/** 회원 탈퇴 서비스 
-//	 * @param memberNo
-//	 * @param inputMember
-//	 * @return
-//	 */
-//	public abstract int memberDelete(int memberNo, Member inputMember);
+	/** 회원 탈퇴 서비스 
+	 * @param memberNo
+	 * @param inputMember
+	 * @return
+	 */
+	public abstract int memberDelete(int memberNo, Member inputMember);
 
 
 	

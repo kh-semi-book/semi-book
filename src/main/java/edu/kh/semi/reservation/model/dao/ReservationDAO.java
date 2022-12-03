@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import edu.kh.semi.manager.book.model.vo.Book;
 import edu.kh.semi.manager.book.model.vo.Pagination;
 import edu.kh.semi.reservation.model.vo.ReservationViewDetail;
 
@@ -28,6 +29,14 @@ public class ReservationDAO {
 	 */
 	public List<ReservationViewDetail> selectBookList(Pagination pagination) {
 		return sqlSession.selectList("reservationMapper.selectBookList");
+	}
+
+	/** 예약 조회 상세보기 서비스
+	 * @param memberNo
+	 * @return
+	 */
+	public Book reservationViewDetail(int memberNo) {
+		return sqlSession.selectOne("reservationMapper.reservationViewDetail",memberNo);
 	}
 
 }

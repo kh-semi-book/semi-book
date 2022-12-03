@@ -1,8 +1,3 @@
-
-
-
-
-
 const checkList ={
 
     "meetingMenName": false,      

@@ -7,6 +7,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import edu.kh.semi.manager.book.model.vo.Book;
 import edu.kh.semi.manager.book.model.vo.Pagination;
 import edu.kh.semi.reservation.model.dao.ReservationDAO;
 import edu.kh.semi.reservation.model.vo.ReservationViewDetail;
@@ -32,6 +33,12 @@ public class ReservationServiceImpl implements ReservationService{
 		map.put("bookList",bookList);
 		
 		return map;
+	}
+	
+	// 예약 조회 상세보기 서비스 
+	@Override
+	public Book reservationViewDetail(int memberNo) {
+		return dao.reservationViewDetail(memberNo);
 	}
 
 }

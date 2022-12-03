@@ -71,36 +71,36 @@ public class MyPageController {
 	@GetMapping("/memeberDelete")
 	public String memberDeletePage() {
 		
-		return "/member/memberSecession";
+		return "member/memberSecession";
 	}
 	
 	
-//	// 회원 탈퇴 서비스 
-//	@PostMapping("/memeberDelete")
-//	public String memberDelete(@SessionAttribute("loginMember") Member loginMember, Member inputMember,
-//								SessionStatus status, RedirectAttributes ra) {
-//		
-//		
-//		
-//		int result = service.memberDelete(loginMember.getMemberNo() ,inputMember);
-//		
-//		String path = null;
-//		String message = null;
-//		
-//			
-//		if(result>0) {
-//			
-//			message = "회원 탈퇴되었습니다.";
-//			path = "/";
-//			 
-//		} else {
-//			
-//			message = "회원 탈퇴 실패했습니다.";
-//			path ="referer";
-//		}
-//			
-//		return "/";
-//	}
+	// 회원 탈퇴 서비스 
+	@PostMapping("/memberSecession")
+	public String memberDelete(@SessionAttribute("loginMember") Member loginMember, Member inputMember,
+								SessionStatus status, RedirectAttributes ra) {
+		
+		
+		
+		int result = service.memberDelete(loginMember.getMemberNo() ,inputMember);
+		
+		String path = null;
+		String message = null;
+		
+			
+		if(result>0) {
+			
+			message = "회원 탈퇴되었습니다.";
+			path = "/";
+			 
+		} else {
+			
+			message = "회원 탈퇴 실패했습니다.";
+			path ="referer";
+		}
+			
+		return path;
+	}
 	
 	
 }
