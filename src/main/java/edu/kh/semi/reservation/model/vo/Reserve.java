@@ -11,8 +11,8 @@ import lombok.ToString;
 @ToString
 public class Reserve {
 
-	private String checkInText; 	//체크인 날짜 2022-12-15 (목)
-	private String checkOutText;	//체크아웃 날짜 2022-12-15 (목)
+	private String checkInInput; 	//체크인 날짜 2022-12-15 (목)
+	private String checkOutInput;	//체크아웃 날짜 2022-12-15 (목)
 	private int roomCount; 			// 객실 수
 	private int adultCount; 		// 어른 수
 	private int childCount;			// 아이 수
