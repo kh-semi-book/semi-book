@@ -11,18 +11,6 @@ import edu.kh.semi.manager.board.model.vo.Event;
 import edu.kh.semi.manager.board.model.vo.Promotion;
 
 
-/**
- * @author user
- *
- */
-/**
- * @author user
- *
- */
-/**
- * @author user
- *
- */
 public interface BoardService {
 	
 	/** 공지사항 조회
