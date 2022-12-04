@@ -25,7 +25,7 @@
 
         <div id="login-main" class="find-id-pw-main">
             <div id="member-login">
-                <form action="/member/findId" method="POST">
+                <div>
                     <p>아이디 찾기</p>
                     <div class="input-section">
                         <input type="text" name="inputName-id" placeholder="이름">
@@ -34,10 +34,10 @@
                     ><div class="button-section">
                         <button id="find-id-btn">확인</button>
                    </div>
-                </form>
+                </div>
             </div
             ><div id="guest-login">
-                <form action="/member/findPw" method="POST">
+                <div>
                     <p>비밀번호 찾기</p>
                     <div class="input-section">
                         <input type="text" name="inputId" placeholder="아이디">
@@ -47,7 +47,7 @@
                     ><div class="button-section">
                         <button id="find-pw-btn">확인</button>
                     </div>
-                </form>
+                </div>
             </div> 
         </div>
     </div>

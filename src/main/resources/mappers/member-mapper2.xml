@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="memberMapper">
+<mapper namespace="memberMapper2">
 
 
 	
@@ -8,6 +8,13 @@
   	<select id="findId" parameterType="Member" resultType="string">
   		SELECT MEMBER_ID FROM "MEMBER"
   		WHERE MEMBER_NAME=#{memberName}
+  		AND MEMBER_EMAIL=#{memberEmail}
+  	</select>
+  	
+  	<select id="findPw" parameterType="Member" resultType="_int">
+  		SELECT COUNT(*) FROM "MEMBER"
+  		WHERE MEMBER_ID=#{memberId}
+  		AND MEMBER_NAME=#{memberName}
   		AND MEMBER_EMAIL=#{memberEmail}
   	</select>
 

@@ -1,9 +1,12 @@
 package edu.kh.semi.member.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import edu.kh.semi.member.model.service.FindIdPwService;
@@ -22,11 +25,23 @@ public class FindIdPwController {
 		return "/member/find";
 	}
 	
-	@PostMapping("/memeber/findId")
+	@PostMapping("/member/findId")
 	@ResponseBody
-	public String FindId(Member inputMember) {
+	public String FindId(Member input) {
 		
-		String result=service.findId(inputMember);
+	
+		String result=service.findId(input);
+		
+		return result;
+		
+	}
+	
+	@PostMapping("/member/findPw")
+	@ResponseBody
+	public int FindPw(Member input) {
+		
+		
+		int result=service.findPw(input);
 		
 		return result;
 		
