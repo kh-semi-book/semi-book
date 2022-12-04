@@ -73,6 +73,16 @@
     margin-bottom: 10px;
 }
 
+#checkInInput{
+    border:none;
+    text-align: right;
+}
+#checkOutInput{
+    border:none;
+    text-align: right;
+}
+
+
 .side-room-select tr>td:first-child{
     padding: 0 10px;
     color:rgb(136, 136, 136);
@@ -445,12 +455,12 @@ background: #fff;
 text-align: center;
 }
 
-a.btn.gray {
+button {
 background: #333333;
 color: #fff;
 }
 
-a.btn {
+a.btn,button {
 display: inline-block;
 margin-left: 4px;
 width: 210px;

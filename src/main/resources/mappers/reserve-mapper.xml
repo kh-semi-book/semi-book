@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="reserveMapper">
+
+	<resultMap type="Reserve" id="reserve_rm">
+	
+		<id property="bookNo" column="BOOK_NO"/>
+		
+		<result property="checkInInput" column="CHECK_IN"/> 
+		<result property="checkOutInput" column="CHECK_OUT"/> 
+		
+		
+		<result property="roomCount" column="ROOM_COUNT"/> 
+		<result property="adultCount" column="ADULT_COUNT"/> 
+		<result property="childCount" column="CHILD_COUNT"/> 
+		
+		<result property="promotionNo" column="PROMOTION_NO"/> 
+		<result property="roomViewNo" column="ROOM_VIEW_NO"/> 
+		<result property="roomTypeNo" column="ROOM_TYPE_NO"/> 
+		<result property="bedTypeNo" column="BED_TYPE_NO"/> 
+	</resultMap> 
+	
+	<resultMap type="Promotion" id="promotion_rm">
+	
+		<id property="promotionNo" column="PROMOTION_NO" />
+		<result property="promotionTitle" column="PROMOTION_TITLE" />
+		<result property="promotionSub" column="PROMOTION_SUB" />
+		<result property="promotionTitleImg" column="PROMOTION_TITLE_IMG" />
+		<result property="promotionConImg" column="PROMOTION_CON_IMG" />
+		<result property="promotionPrice" column="PROMOTION_PRICE" />
+		<result property="promotionDeleteFlag" column="PROMOTION_DEL_FL" />
+		<result property="pStayStartDate" column="P_STAY_START_DATE" />
+		<result property="pStayEndDate" column="P_STAY_END_DATE" />
+		<result property="pSaleStartDate" column="P_SALE_START_DATE" />
+		<result property="pSaleEndDate" column="P_SALE_END_DATE" />
+		<result property="promotionCreateDate" column="PROMOTION_CREATE_DATE" />
+		<result property="memberNo" column="MEMBER_NO" />
+		<result property="memberName" column="MEMBER_NAME" />
+		<result property="roomViewNo" column="ROOM_VIEW_NO" />
+		<result property="roomTypeNo" column="ROOM_TYPE_NO" />
+	
+	</resultMap>
+
+	<select id="selectPromotion" parameterType="Reserve" resultMap="promotion_rm">
+		<![CDATA[
+		SELECT * FROM PROMOTION 
+		WHERE P_SALE_START_DATE < #{checkInInput}
+		AND P_SALE_END_DATE > #{checkOutInput}
+		]]>
+	</select>
+</mapper>

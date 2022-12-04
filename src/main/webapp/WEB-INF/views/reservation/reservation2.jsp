@@ -65,45 +65,6 @@
 									<div class="package-view-type">가든 디럭스</div>
 									<div class="package-room-type">
 										<div>
-											<span>더블 (1박)</span> <span>270,000원</span> <a href="/reservation/reservation3" class="selectBtn">예약</a>
-										</div>
-										<div>
-											<span>트윈 (1박)</span> <span>270,000원</span> <a href="" class="selectBtn">예약</a>
-										</div>
-									</div>
-								</div>
-								<div class="package-type-option">
-									<div class="package-view-type">클리프 디럭스</div>
-									<div class="package-room-type">
-										<div>
-											<span>더블 (1박)</span> <span>270,000원</span> <a href="" class="selectBtn">예약</a>
-										</div>
-										<div>
-											<span>트윈 (1박)</span> <span>270,000원</span> <a href="" class="selectBtn">예약</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="package-list">
-							<div class="package-item">
-								<div class="package-item-image">
-									<img class="package-image" src="promotion1.jpg">
-								</div>
-								<div class="package-detail">
-									<div class="package-detail-title">My Wish List</div>
-									<div class="package-detail-date">기간 : 2022-11-22 ~ 2023-01-31</div>
-									<div class="package-detail-sub">구성 : 디럭스 1박+조식 2인+풀문나이트+달바 스페셜 패키지</div>
-									<div class="package-detail-view">
-										<a href="#">패키지 상세보기 ></a>
-									</div>
-								</div>
-							</div>
-							<div class="package-type">
-								<div class="package-type-option">
-									<div class="package-view-type">가든 디럭스</div>
-									<div class="package-room-type">
-										<div>
 											<span>더블 (1박)</span> <span>270,000원</span> <a href="" class="selectBtn">예약</a>
 										</div>
 										<div>

@@ -53,12 +53,12 @@ function nextCalendarInit() {
     // 여기가 오른쪽에 표시되는 텍스트 대입용
     let checkInText=currentYear+"-"+(currentMonth+1)+"-"+(currentDate);
     const saveToday=checkInText;
-    checkInInput.innerText=checkInText+" ("+getDayOfWeek(checkInText)+")";
+    checkInInput.value=checkInText+" ("+getDayOfWeek(checkInText)+")";
 
     // 날짜 출력
     let checkOutText=currentYear+"-"+(currentMonth+1)+"-"+(checkOutDate1);
-    checkOutInput.innerText=checkOutText+" ("+getDayOfWeek(checkOutText)+")";
-  
+    checkOutInput.value=checkOutText+" ("+getDayOfWeek(checkOutText)+")";
+
     const nights=document.getElementById("nights");
     
 
@@ -163,7 +163,7 @@ function nextCalendarInit() {
         // }
         // renderCalender2(thisMonth, selectday.innerHTML);
 
-        checkInInput.innerText=checkInText+" ("+getDayOfWeek(checkInText)+")";
+        checkInInput.value=checkInText+" ("+getDayOfWeek(checkInText)+")";
         
 
         })
