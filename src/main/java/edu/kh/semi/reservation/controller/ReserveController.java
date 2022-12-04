@@ -73,8 +73,8 @@ public class ReserveController {
 		String originCheckIn=reserve.getCheckInInput();
 		String originCheckOut=reserve.getCheckOutInput();
 		
-		String checkIn=reserve.getCheckInInput().substring(0,10);
-		String checkOut=reserve.getCheckOutInput().substring(0,10);
+		String checkIn=originCheckIn.substring(0,10);
+		String checkOut=originCheckOut.substring(0,10);
 				
 		reserve.setCheckInInput(checkIn);
 		reserve.setCheckOutInput(checkOut);
@@ -101,6 +101,8 @@ public class ReserveController {
         	.mapToObj(i -> startDate.plusDays(i))
 		.collect(Collectors.toList());
 	}
+	
+	
 	
 	
 }

@@ -56,7 +56,7 @@
 
             <div id="reservation3_content_area">
 
-            
+            ${reserve}
             
             <div id="reservation3_option_area">
                 
@@ -69,30 +69,30 @@
                         <div class="option-count">개수</div>
                     </div>
 
-                    	<c:forEach var="date" items="${dateList}">
-                    <div class="reservation3_option_content">
-                        <div class="option-date" style="border-bottom:1px solid #bbb">
-                            ${date}
-                        </div>
-
-                        <div class="reservation3_option_date_content_list">
-                        	<c:forEach var="option" items="${optionList}">
-                            <div class="reservation3_option_date_content">
-                                <div class="option-content">${option.optionName}</div>
-                                <div class="option-amount"><fmt:formatNumber value="${option.optionPrice}"/>원</div>
-                                <div class="option-count">
-                                    <select name="optionCount" id="">
-                                    	<c:forEach var="i" begin="0" end="${reserve.adultCount}">
-                                        <option>${i}</option>
-                                        </c:forEach>
-                                    </select>
-                                </div>
+                    <c:forEach var="date" items="${dateList}">
+                        <div class="reservation3_option_content">
+                            <div class="option-date" style="border-bottom:1px solid #bbb">
+                                ${date}
                             </div>
-                            </c:forEach>
+
+                            <div class="reservation3_option_date_content_list">
+                        	    <c:forEach var="option" items="${optionList}">
+                                    <div class="reservation3_option_date_content">
+                                        <div class="option-content">${option.optionName}</div>
+                                        <div class="option-amount"><fmt:formatNumber value="${option.optionPrice}"/>원</div>
+                                        <div class="option-count">
+                                            <select name="optionCount" id="">
+                                    	        <c:forEach var="i" begin="0" end="${reserve.adultCount}">
+                                                    <option>${i}</option>
+                                                </c:forEach>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </c:forEach>
                             
-                        </div>
-                    </div> 
-                        </c:forEach>
+                            </div>
+                        </div> 
+                    </c:forEach>
                 </div>
                
                 <button id="reservation3-btn">예약하기</button>
