@@ -58,7 +58,7 @@ function nextCalendarInit() {
     // 날짜 출력
     let checkOutText=currentYear+"-"+(currentMonth+1)+"-"+(checkOutDate1);
     checkOutInput.innerText=checkOutText+" ("+getDayOfWeek(checkOutText)+")";
-  
+
     const nights=document.getElementById("nights");
     
 
