@@ -27,6 +27,7 @@
 <typeAlias type="edu.kh.semi.nav.model.vo.CMM" alias="NavCMM"/>
 <typeAlias type="edu.kh.semi.nav.model.vo.RoomPromotion" alias="NavRoomPromotion"/>
 <typeAlias type="edu.kh.semi.reservation.model.vo.ReservationViewDetail" alias="Reservation2"/>
+<typeAlias type="edu.kh.semi.reservation.model.vo.Reserve" alias="Reserve"/>
 
 </typeAliases>
 
@@ -40,6 +41,7 @@
 	<mapper resource="/mappers/book-mapper.xml"/>
 	<mapper resource="/mappers/meetingRoom-mapper.xml"/>
 	<mapper resource="/mappers/reservation-mapper.xml"/>
+	<mapper resource="/mappers/reserve-mapper.xml"/>
 	<mapper resource="/mappers/board-mapper.xml"/>
 	<mapper resource="/mappers/nav-mapper.xml"/>
 </mappers>

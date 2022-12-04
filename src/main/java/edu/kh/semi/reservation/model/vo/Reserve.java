@@ -17,9 +17,9 @@ public class Reserve {
 	private int adultCount; 		// 어른 수
 	private int childCount;			// 아이 수
 	private int promotionNo;		// 프로모션 넘버
-	private int roomView;			// 객실 뷰
-	private int roomType;			// 룸 타입
-	private int bedType;			// 침대 타입
+	private int roomViewNo;			// 객실 뷰
+	private int roomTypeNo;			// 룸 타입
+	private int bedTypeNo;			// 침대 타입
 	private int bookDate[];			// 날짜들
 	private int optionNo;			// 옵션
 	private int optionCnt;			// 옵션 수
