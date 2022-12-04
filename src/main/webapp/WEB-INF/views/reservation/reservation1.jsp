@@ -128,7 +128,7 @@
                     
                     
                         <ul class="mention">
-                        <!--	<li class="m1">선택가능날짜</li>-->
+                
                         <li class="m2">선택날짜</li>
                     </ul>
                 </div>
@@ -154,21 +154,19 @@
                         <tr>
                             <td>박수</td>
                             <td>
-                                <input type="text" readonly size="2" value="1" id="nights">
-                                박</td>
+                                <input type="text" readonly size="2" value="" id="nights" name="nights">박</td>
                         </tr>
                         <tr>
                             <td>객실수</td>
                             <td>
-                                
                                 <select name="roomCount" id="roomCount">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     <option value="4">4</option>
                                     <option value="5">5</option>
-                                    
                                 </select>
+                              
 
                             </td>
                         </tr>
@@ -179,11 +177,11 @@
                             <div>
                                 어른
                                 <select name="adultCount" id="stayAdult">
-                                    <option value="1">0</option>
-                                    <option value="2">1</option>
-                                    <option value="3">2</option>
-                                    <option value="4">3</option>
-                                    <option value="5">4</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
                                     <%-- 인원수 = 객실 수*3 --%>
                                 </select> 
                             </div>

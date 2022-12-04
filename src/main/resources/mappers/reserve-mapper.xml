@@ -40,6 +40,13 @@
 		<result property="roomTypeNo" column="ROOM_TYPE_NO" />
 	
 	</resultMap>
+	
+	<resultMap type="Option" id="option_rm">
+		<id property="optionNo" column="OPTION_NO" />
+		<result property="optionName" column="OPTION_NAME" />
+		<result property="optionPrice" column="OPTION_PRICE" />
+	
+	</resultMap>
 
 	<select id="selectPromotion" parameterType="Reserve" resultMap="promotion_rm">
 		<![CDATA[
@@ -47,5 +54,27 @@
 		WHERE P_SALE_START_DATE < #{checkInInput}
 		AND P_SALE_END_DATE > #{checkOutInput}
 		]]>
+	</select>
+	
+	<select id="selectRoomType" parameterType="_int" resultType="string">
+	SELECT DISTINCT ROOM_VIEW_NAME||ROOM_NAME FROM PROMOTION  
+	JOIN PROMOTION_ROOM USING(PROMOTION_NO)
+	JOIN ROOM_VIEW USING(ROOM_VIEW_NO)
+	JOIN ROOM_TYPE USING(ROOM_TYPE_NO)
+	WHERE PROMOTION_NO =#{promotionNo}
+	</select>
+	
+	<select id="selectBedType" parameterType="_int" resultType="String">
+	SELECT DISTINCT ROOM_TYPE.BED_TYPE_NO 
+	FROM PROMOTION
+	JOIN PROMOTION_ROOM USING(PROMOTION_NO)
+	JOIN ROOM_VIEW USING(ROOM_VIEW_NO)
+	JOIN ROOM_TYPE USING(ROOM_TYPE_NO)
+	WHERE PROMOTION_NO=#{promotionNo}
+	</select>
+	
+	<select id="selectOption" resultMap="option_rm">
+		SELECT * FROM "OPTION"
+	
 	</select>
 </mapper>

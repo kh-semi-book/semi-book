@@ -28,6 +28,7 @@
 <typeAlias type="edu.kh.semi.nav.model.vo.RoomPromotion" alias="NavRoomPromotion"/>
 <typeAlias type="edu.kh.semi.reservation.model.vo.ReservationViewDetail" alias="Reservation2"/>
 <typeAlias type="edu.kh.semi.reservation.model.vo.Reserve" alias="Reserve"/>
+<typeAlias type="edu.kh.semi.reservation.model.vo.Option" alias="Option"/>
 
 </typeAliases>
 

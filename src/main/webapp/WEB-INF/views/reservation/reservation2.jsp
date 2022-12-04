@@ -1,4 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,47 +48,56 @@
 			</div>
 			<div id="reservation2_content_area">
 				<div></div>
+				
 				<div id="reservation2_book_area">
 					<div id="reservation_select_area">
+						<c:forEach var="promotion" items="${promotionList}">
 						<div class="package-list">
 							<div class="package-item">
 								<div class="package-item-image">
-									<img class="package-image" src="promotion1.jpg">
+									<img class="package-image" src=" ${promotion.promotionTitleImg}">
 								</div>
 								<div class="package-detail">
-									<div class="package-detail-title">My Wish List</div>
-									<div class="package-detail-date">기간 : 2022-11-22 ~ 2023-01-31</div>
-									<div class="package-detail-sub">구성 : 디럭스 1박+조식 2인+풀문나이트+달바 스페셜 패키지</div>
+									<div class="package-detail-title">${promotion.promotionTitle}</div>
+									<div class="package-detail-date">기간 : ${fn:substring(promotion.pStayStartDate,0,10)} ~ ${fn:substring(promotion.pStayEndDate,0,10)}</div>
+									<div class="package-detail-sub">구성 : ${promotion.promotionSub}</div>
 									<div class="package-detail-view">
-										<a href="#">패키지 상세보기 ></a>
+										<a href="/nav/specialOffer/roomPromotion/detail/${promotion.promotionNo}">패키지 상세보기 ></a>
 									</div>
 								</div>
 							</div>
 							<div class="package-type">
+								<c:forEach var="room" items="${promotion.roomType}">
+									<form action="/reservation/reservation3" method="GET">
 								<div class="package-type-option">
-									<div class="package-view-type">가든 디럭스</div>
+									<div class="package-view-type"><c:set var="myValue">${room}</c:set>${room}</div>
+									
+									<input type="hidden" value="${myValue}" name="roomTypeName"/>
+									<input type="hidden" value="${reserve.checkInInput}" name="checkInInput"/>
+									<input type="hidden" value="${reserve.checkOutInput}" name="checkOutInput"/>
+									<input type="hidden" value="${reserve.nights}" name="nights"/>
+									<input type="hidden" value="${reserve.roomCount}" name="roomCount"/>
+									<input type="hidden" value="${reserve.adultCount}" name="adultCount"/>
+									<input type="hidden" value="${reserve.childCount}" name="childCount"/>
+									<input type="hidden" value="${promotion.promotionNo}" name="promotionNo"/>
 									<div class="package-room-type">
 										<div>
-											<span>더블 (1박)</span> <span>270,000원</span> <a href="" class="selectBtn">예약</a>
+											<span>더블 (${reserve.nights}박)</span> <span> <fmt:formatNumber value="${promotion.promotionPrice}"/>원</span> <button class="selectBtn" >예약</button>
+											<input type="hidden" value="1" name="bedTypeNo"/>
 										</div>
 										<div>
-											<span>트윈 (1박)</span> <span>270,000원</span> <a href="" class="selectBtn">예약</a>
+										
+											<span>트윈 (${reserve.nights}박)</span> <span><fmt:formatNumber value="${promotion.promotionPrice}"/>원</span> <button class="selectBtn">예약</button>
+											<input type="hidden" value="2" name="bedTypeNo"/>
 										</div>
 									</div>
 								</div>
-								<div class="package-type-option">
-									<div class="package-view-type">클리프 디럭스</div>
-									<div class="package-room-type">
-										<div>
-											<span>더블 (1박)</span> <span>270,000원</span> <a href="" class="selectBtn">예약</a>
-										</div>
-										<div>
-											<span>트윈 (1박)</span> <span>270,000원</span> <a href="" class="selectBtn">예약</a>
-										</div>
-									</div>
-								</div>
+								</form>
+								</c:forEach>
 							</div>
 						</div>
+						
+						</c:forEach>
 					</div>
 					<div id="reservation_side_area">
 						<div class="side-table" id="side-table">
@@ -93,23 +106,23 @@
 								<table id="schedule">
 									<tr>
 										<th>체크인</th>
-										<td><input type="text" value="2022-11-04 (금)" readonly></td>
+										<td><input type="text" value="${reserve.checkInInput}" name="checkInInput" readonly></td>
 									</tr>
 									<tr>
 										<th>체크아웃</th>
-										<td><input type="text" value="2022-11-04 (금)" readonly></td>
+										<td><input type="text" value="${reserve.checkOutInput}" name="checkOutInput" readonly></td>
 									</tr>
 									<tr>
 										<th>박수</th>
-										<td><input type="text" value="1" class="schedule-num" readonly> 박</td>
+										<td><input type="text" value="${reserve.nights}" name="nights" class="schedule-num" readonly> 박</td>
 									</tr>
 									<tr>
 										<th><label for="roomCnt">객실수</label></th>
-										<td><input type="text" value="1" class="schedule-num" id="roomCnt" readonly> 실</td>
+										<td><input type="text" value="${reserve.roomCount}" name="roomCount" class="schedule-num" id="roomCnt" readonly> 실</td>
 									</tr>
 									<tr>
 										<th>인원수</th>
-										<td>어른 <input type="text" value="1" class="schedule-num" readonly> 어린이 <input type="text" value="1" class="schedule-num" readonly> 
+										<td>어른 <input type="text" value="${reserve.adultCount}" name="adultCount" class="schedule-num" readonly> 어린이 <input type="text" value="${reserve.childCount}" name="childCount" class="schedule-num" readonly> 
 											<span  class="tooltip">
 												<img src="/resources/image/button/info.gif" id="schedule-info">
 												<span class="tooltip-text">
@@ -121,17 +134,16 @@
 									</tr>
 								</table>
 							</div>
-
 							<div id="side-table-btn-area">
 								<a href="#" class="side-table-btn">일정 재선택하기</a>
 							</div>
-
-
-
 						</div>
 					</div>
 				</div>
-
+				
+				
+				${reserve}
+				${myValue}
 			</div>
 			<div id="reservation2_foot_area"></div>
 		</div>

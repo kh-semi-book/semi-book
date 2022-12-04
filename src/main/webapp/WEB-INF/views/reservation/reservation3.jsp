@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -18,7 +20,7 @@
     <div id="reservation4_body_area">
 
         <div id="top-menu">
-            <a href="#">HOME</a>><a href="#">예약하기</a>
+            <a href="/">HOME</a>><a href="#">예약하기</a>
         </div>
         <div id="info-title">
             예약하기
@@ -67,73 +69,38 @@
                         <div class="option-count">개수</div>
                     </div>
 
+                    	<c:forEach var="date" items="${dateList}">
                     <div class="reservation3_option_content">
                         <div class="option-date" style="border-bottom:1px solid #bbb">
-                            2022-11-02
+                            ${date}
                         </div>
 
                         <div class="reservation3_option_date_content_list">
+                        	<c:forEach var="option" items="${optionList}">
                             <div class="reservation3_option_date_content">
-                                <div class="option-content">1인 인원추가(48개월 이상)*기준인원(2인)외 투숙시 선택필수</div>
-                                <div class="option-amount">22,000원</div>
+                                <div class="option-content">${option.optionName}</div>
+                                <div class="option-amount"><fmt:formatNumber value="${option.optionPrice}"/>원</div>
                                 <div class="option-count">
-                                    <select name="" id="">
-                                        <option>0</option>
-                                        <option>1</option>
+                                    <select name="optionCount" id="">
+                                    	<c:forEach var="i" begin="0" end="${reserve.adultCount}">
+                                        <option>${i}</option>
+                                        </c:forEach>
                                     </select>
                                 </div>
                             </div>
-                            <div class="reservation3_option_date_content">
-                                <div class="option-content">1인 인원추가(48개월 이상)*기준인원(2인)외 투숙시 선택필수</div>
-                                <div class="option-amount">22,000원</div>
-                                <div class="option-count">
-                                    <select name="" id="">
-                                        <option>0</option>
-                                        <option>1</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="reservation3_option_date_content">
-                                <div class="option-content">1인 인원추가(48개월 이상)*기준인원(2인)외 투숙시 선택필수</div>
-                                <div class="option-amount">22,000원</div>
-                                <div class="option-count">
-                                    <select name="" id="">
-                                        <option>0</option>
-                                        <option>1</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="reservation3_option_date_content">
-                                <div class="option-content">1인 인원추가(48개월 이상)*기준인원(2인)외 투숙시 선택필수</div>
-                                <div class="option-amount">22,000원</div>
-                                <div class="option-count">
-                                    <select name="" id="">
-                                        <option>0</option>
-                                        <option>1</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="reservation3_option_date_content">
-                                <div class="option-content">1인 인원추가(48개월 이상)*기준인원(2인)외 투숙시 선택필수</div>
-                                <div class="option-amount">22,000원</div>
-                                <div class="option-count">
-                                    <select name="" id="">
-                                        <option>0</option>
-                                        <option>1</option>
-                                    </select>
-                                </div>
-                            </div>
+                            </c:forEach>
+                            
                         </div>
-                        
                     </div> 
+                        </c:forEach>
                 </div>
                
                 <button id="reservation3-btn">예약하기</button>
 
             </div>
 
-            <div id="reservation3_side_area">
-                    <div class="side-table">
+            <div class="reservation3_side_area" id="reservation3_side_area">
+                    <div class="side-table" id="side-table">
                         <div class="side-date-title">
                             일정
                         </div>
@@ -142,23 +109,23 @@
                         <table id="side-date-content">
                             <tr>
                                 <td>체크인</td>
-                                <td>2022-11-02 (수)</td>
+                                <td><input type="text" readonly name="checkInInput" id="checkInInput" value="${reserve.checkInInput}"></td>
                             </tr>
                             <tr>
                                 <td>체크아웃</td>
-                                <td>2022-11-03 (목)</td>
+                                <td><input type="text" readonly name="checkOutInput" id="checkOutInput" value="${reserve.checkOutInput}"></td>
                             </tr>
                             <tr>
                                 <td>박수</td>
-                                <td><input type="text" readonly size="1"> 박</td>
+                                <td><input type="text" readonly size="1" name="nights" value="${reserve.nights}" > 박</td>
                             </tr>
                             <tr>
                                 <td>객실수</td>
-                                <td><input type="text" readonly size="1">실</td>
+                                <td><input type="text" readonly size="1" name="roomCount" value="${reserve.roomCount}">실</td>
                             </tr>
                             <tr>
                                 <td>인원수</td>
-                                <td>어른<input type="text" readonly size="1"> 어린이<input type="text" readonly size="1"></td>
+                                <td>어른<input type="text" readonly size="1" name="adultCount" value="${reserve.adultCount}"> 어린이<input type="text" readonly size="1" name="childCount" value="${reserve.childCount}"></td>
                             </tr>
                         </table>
                 
@@ -167,14 +134,15 @@
                                 객실&패키지
                             </div>
                             <div class="side-room-name">
-                                디럭스 더블 가든
+                                ${reserve.roomTypeName}
                             </div>
                             <table class="side-room-select">
+                            	<c:forEach var="date" items="${dateList}">
                                 <tr>
-                                    <td>2022-11-02</td>
-                                    <td> <span>230,000원</span><span>(VAT별도)</span></td>
+                                    <td>${date }</td>
+                                    <td> <span><fmt:formatNumber value="${optionPrice}"/>원</span><span>(VAT별도)</span></td>
                                 </tr>
-                                <!-- <span>2022-11-02</span><span>230,000원(VAT별도)</span> -->
+                                </c:forEach>
                             </table>
                             <div class="side-room-cost-total">
                                 253,000원 (VAT포함)
@@ -221,5 +189,7 @@
     </div>
 
 	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+	<script src="/resources/js/reservation/reservation3.js"></script>
+
 </body>
 </html>

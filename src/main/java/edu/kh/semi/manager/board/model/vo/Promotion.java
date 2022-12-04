@@ -27,7 +27,7 @@ public class Promotion {
 	
 	private String roomViewNo;
 	private String roomTypeNo;
-	
+	private List<String> roomType;
 	
 	
 	public String getpStayStartDate() {
