@@ -30,6 +30,7 @@
    <jsp:include page="/WEB-INF/views/reservation/reservation-header.jsp"/>
 
         <div id="top-photo"></div>
+    <form action="/reservation/reservation2" method="POST">
     <div class="reservation1-main">
 
 
@@ -134,6 +135,7 @@
             </div>
         
             <div id="reservation3_side_area">
+               
                 <div class="side-table">
                     <div class="side-date-title">
                         일정
@@ -143,11 +145,11 @@
                     <table id="side-date-content">
                         <tr>
                             <td>체크인</td>
-                            <td id="checkInInput"></td>
+                            <td ><input type="text" readonly id="checkInInput"  name="checkInInput"></td>
                         </tr>
                         <tr>
                             <td>체크아웃</td>
-                            <td id="checkOutInput"></td>
+                            <td><input type="text" readonly id="checkOutInput" name="checkOutInput"></td>
                         </tr>
                         <tr>
                             <td>박수</td>
@@ -160,11 +162,11 @@
                             <td>
                                 
                                 <select name="roomCount" id="roomCount">
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                    <option value="">4</option>
-                                    <option value="">5</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
                                     
                                 </select>
 
@@ -177,21 +179,21 @@
                             <div>
                                 어른
                                 <select name="adultCount" id="stayAdult">
-                                    <option value="">0</option>
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
-                                    <option value="">4</option>
+                                    <option value="1">0</option>
+                                    <option value="2">1</option>
+                                    <option value="3">2</option>
+                                    <option value="4">3</option>
+                                    <option value="5">4</option>
                                     <%-- 인원수 = 객실 수*3 --%>
                                 </select> 
                             </div>
                             <div>
                                 어린이
                                 <select name="childCount" id="stayChild">
-                                    <option value="">0</option>
-                                    <option value="">1</option>
-                                    <option value="">2</option>
-                                    <option value="">3</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
                                     <%-- 어린이 선택하면 나이 적는 부분 있어야 함 --%>
                                 </select>
                             </div>
@@ -211,7 +213,7 @@
                     
             
                 </div>
-            
+               
             
 
             </div>
@@ -247,11 +249,13 @@
          </div>
          
          <div class="btnCenterGroup">
-             <a href="/reservation/reservation2" id="btn_next" class="btn gray">계속</a>
+             <button id="btn_next" class="btn gray">계속</button>
              <a href="../main/main.html" class="btn white">취소</a>
          </div>
         
     </div>
+    
+    </form>
 
 
 
