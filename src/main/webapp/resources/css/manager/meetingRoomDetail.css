@@ -185,21 +185,8 @@ label {
     text-align: center;
 }
 
-/* 수정하기 버튼 */
-input[type="submit"] {
-    display: inline-block;
-    width: 220px;
-    height: 59px;
-    background: #231f20;
-    font-weight: 300;
-    font-size: 17px;
-    color: #fff;
-    box-sizing: border-box;
-    cursor: pointer;
-}
-
 /* 돌아가기 버튼 */
-a.bsh-btn-white {
+.bsh-btn-gray {
     border: 2px solid #b3b3b3;
     background: #fff;
     text-decoration: none;
@@ -209,6 +196,7 @@ a.bsh-btn-white {
     width: 220px;
     height: 58px;
     font-size: 17px;
+    cursor: pointer;
 }
 
 
