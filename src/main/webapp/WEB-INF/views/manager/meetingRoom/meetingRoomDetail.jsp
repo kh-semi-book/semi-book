@@ -29,13 +29,12 @@
 		</div>
 
         <div class="bsh-main-title">
-            <h1>예약문의</h1>
+            <h1>미팅룸 예약 상세보기</h1>
         </div>
 
         <div class="bsh-section">
             <div class="bsh-warning">※ 모든 항목은 필수 입력 사항입니다.</div>
             
-            <form name="bsh-frm" id="bsh-frm" method="#" action="#">
                 <table class="bsh-tb1">
                     <tr>
                         <th class="inf-name">성명</th>
@@ -68,15 +67,13 @@
                 </table>
                 
                 <div class="bsh-btn">
-                    <button type="submit" name="sub" class="bsh-btn-gray" value="수정하기">
-                    <a href="/manager/meetingRoom/meetingRoom" class="bsh-btn-white">돌아가기</a>
+                    <button type="submit" class="bsh-btn-gray">수정하기</button>
+                    <button type="submit" class="bsh-btn-gray" id="return">돌아가기</button>
                 </div>
-            </form>
         </div>
-        
-     
 
     </div>
 
+<script src="/resources/js/manager/meetingRoom/meetingRoom.js"></script>
 </body>
 </html>
