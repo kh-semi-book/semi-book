@@ -81,6 +81,7 @@
 		FROM "CMM"
 		JOIN MEMBER USING (MEMBER_NO)
 		WHERE CMM_NO != 0
+		AND CMM_DEL_FL='N'
 		ORDER BY 1 DESC
 	</select>
 	
@@ -123,9 +124,10 @@
 	</update>
 	
 	<!-- 공지사항 삭제 -->
-	<delete id="cmmDelete" parameterType="_int">
-		DELETE FROM "CMM" WHERE CMM_NO=#{cmmNo}
-	</delete>
+	<update id="cmmDelete" parameterType="_int">
+		UPDATE "CMM" SET CMM_DEL_FL='Y'
+		WHERE CMM_NO=#{cmmNo}
+	</update>
 	
 	
 	
@@ -191,8 +193,11 @@
 		<selectKey keyProperty="promotionNo" resultType="_int" order="BEFORE">
 			SELECT SEQ_PROMOTION_NO.CURRVAL FROM DUAL
 		</selectKey>
-		INSERT INTO PROMOTION_ROOM VALUES(
-		#{promotionNo},#{roomViewNo},#{roomTypeNo})
+		INSERT INTO 
+		PROMOTION_ROOM(PROMOTION_NO, ROOM_VIEW_NO, ROOM_TYPE_NO, BED_TYPE_NO)
+		SELECT #{promotionNo},#{roomViewNo},#{roomTypeNo},1 FROM DUAL
+		UNION ALL
+		SELECT #{promotionNo},#{roomViewNo},#{roomTypeNo},2 FROM DUAL
 	</insert>
 	
 	<!-- 프로모션 내용 수정 -->
@@ -220,10 +225,15 @@
 		WHERE PROMOTION_NO=#{promotionNo}
 	</update>
 	
+	
+	
 	<!-- 프로모션 객실 수정 -->
 	<insert id="updatePromotionRoom" parameterType="map">
-		INSERT INTO PROMOTION_ROOM VALUES(
-		#{promotionNo},#{roomViewNo},#{roomTypeNo})
+		INSERT INTO 
+		PROMOTION_ROOM(PROMOTION_NO, ROOM_VIEW_NO, ROOM_TYPE_NO, BED_TYPE_NO)
+		SELECT #{promotionNo},#{roomViewNo},#{roomTypeNo},1 FROM DUAL
+		UNION ALL
+		SELECT #{promotionNo},#{roomViewNo},#{roomTypeNo},2 FROM DUAL
 	</insert>
 	
 	
@@ -236,7 +246,8 @@
 	
 	<!-- 프로모션 삭제 -->
 	<delete id="promotionDelete">
-		DELETE FROM PROMOTION WHERE PROMOTION_NO=#{promotionNo}
+		UPDATE PROMOTION SET PROMOTION_DEL_FL='Y' 
+		WHERE PROMOTION_NO=#{promotionNo}
 	</delete>
 	
 	

@@ -33,7 +33,7 @@ public class BoardController {
 	@Autowired
 	private BoardService service;
 
-	// =================[공지사항]======================
+	// =================[공지사항]===완===================
 
 	@GetMapping("/cmm")
 	public String selectCmmList(Model model) {
@@ -178,7 +178,7 @@ public class BoardController {
 		return "redirect:/manager/cmm";
 	}
 
-	// =================[프로모션]======================
+	//==================[프로모션]======================
 
 	// 프로모션 조회
 	@GetMapping("/promotion")
@@ -278,7 +278,7 @@ public class BoardController {
 
 	}
 
-	// 프로모션 수정
+	// 프로모션 수정 (수정해야 함)
 	@PostMapping("promotionDetail/{promotionNo}/promotionUpdate")
 	public String savePromotionUpdate(Promotion promotion, @PathVariable("promotionNo") int promotionNo,
 			String[] viewType, String[] roomType,
