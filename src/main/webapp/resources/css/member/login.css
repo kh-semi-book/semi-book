@@ -64,8 +64,17 @@
     margin:auto;
     margin-top:50px;
 } 
+#login-main>div>div{
+    width: 400px;
+    margin:auto;
+    margin-top:50px;
+} 
 
 #login-main>div>form>div{
+    display: inline-block;
+    vertical-align: top;
+}
+#login-main>div>div>div{
     display: inline-block;
     vertical-align: top;
 }

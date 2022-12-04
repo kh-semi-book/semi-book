@@ -1,5 +1,7 @@
 package edu.kh.semi.member.model.dao;
 
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -12,9 +14,12 @@ public class FindIdPwDAO {
 	@Autowired
 	private SqlSession sqlSession;
 
-	public String findId(Member inputMember) {
-		
-		return sqlSession.selectOne("memberMapper.findId",inputMember);
+	public String findId(Member input) {
+		return sqlSession.selectOne("memberMapper2.findId",input);
+	}
+
+	public int findPw(Member input) {
+		return sqlSession.selectOne("memberMapper2.findPw",input);
 	}
 
 }
