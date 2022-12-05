@@ -50,6 +50,10 @@ public class MyPageServiceImpl implements MyPageService {
 			// 회원 정보를 조회 
 			Member member = dao.selectMemberInfo(memberNo); 
 			
+			System.out.println(member);
+			System.out.println(inputMember);
+			
+			
 			// 조회된 정보와 입력값이 일치할 경우 삭제 
 			if(bcrypt.matches(inputMember.getMemberPw(), member.getMemberPw())) {
 				

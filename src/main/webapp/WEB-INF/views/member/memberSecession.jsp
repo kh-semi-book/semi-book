@@ -59,14 +59,14 @@
                     <div id="rsc-del">
                         <div>
                             <ul>
-                                <li><input type="text" neme="memberName"   placeholder="이름"     value="이름"></li>
-                                <li><input type="text" neme="memberId"     placeholder="아이디"   value="아이디"></li>
-                                <li><input type="password" neme="memberPw" placeholder="비밀번호" value="비밀번호"></li>
-                                <li><input type="email" neme="memberEmail" placeholder="이메일"   value="이메일"></li>
+                                <li><input type="text" name="memberName"   placeholder="이름"    id="memberName"></li>
+                                <li><input type="text" name="memberId"     placeholder="아이디"  id="memberId" ></li>
+                                <li><input type="password" name="memberPw" placeholder="비밀번호"  id="memberPw"></li>
+                                <li><input type="email" name="memberEmail" placeholder="이메일"  id="memberEmail" ></li>
                             </ul>
                         </div>
                         <div>
-                            <button id="rsc-memeber-del-btn" type="submit" action="memberSecession">회원탈퇴</button>
+                            <button id="rsc-memeber-del-btn" action="memberSecession">회원탈퇴</button>
                         </div>
                     </div>
                 </form>
@@ -83,7 +83,8 @@
             <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
             <!-- ========================= [ /footer ] ========================= -->
         </div>
-        
+
+<script src="/resources/js/member/memberSecession.js"></script>   
 </body>
 
 </html>

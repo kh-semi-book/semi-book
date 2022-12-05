@@ -12,7 +12,32 @@
 		<script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="/resources/css/common/main.css">
 		<link rel="stylesheet" href="/resources/css/member/memberEdit.css">
-
+		<%-- //////////////////////// --%>
+		<%-- 날짜 API --%>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<%-- <script>
+			$( function() {
+				$("#datepicker").datepicker({
+				numberOfMonths: 3
+				, showWeek: true
+				, firstDay: 1
+				, dateFormat:"yymmdd"
+				, prevText: '이전 달'
+				, nextText: '다음 달'
+				, monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']
+				, monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']
+				, dayNames: ['일', '월', '화', '수', '목', '금', '토']
+				, dayNamesShort: ['일', '월', '화', '수', '목', '금', '토']
+				, dayNamesMin: ['일', '월', '화', '수', '목', '금', '토']
+				, showMonthAfterYear: true
+				, yearSuffix: '년'
+  
+   				 });
+			} );
+		</script> --%>
+		<%-- //////////////////////// --%>
 		<style>body{margin: auto;}</style>
 	</head>
 
@@ -39,7 +64,7 @@
 					<span class="kjh-txt"><strong class="star">*</strong>표시는 필수항목입니다.</span>
 				</h4>
 
-					<form name="joinform" id ="joinform" method="POST" action="memberEdit">
+				<form name="joinform" id ="joinform" method="POST" action="memberEdit">
 					<div class="form1">
 						<table class="kjh-form1-table">
 						<tr>
@@ -72,7 +97,7 @@
 						<tr>
 							<th>기존 비밀번호<span class="star">*</span></th>
 							<td class="kjh-input" colspan="3">
-								<input type="password" size="20" name="memberPw" id="memberPw">
+								<input type="password" size="20" name="currentMemberPw" id="currentMemberPw">
 								<span class="changePwBox">
 									<input type="checkbox" name="chpwboxcheck" id="chpwboxcheck" value= "Y">
 									<label for="chpwboxcheck">비밀번호 변경</label>
@@ -85,7 +110,7 @@
 							<th>새 비밀번호<span class="star">*</span></th>
 							</label>
 							<td class="kjh-input " colspan="3">
-							<input type="password" size="20" name="newMemberPw1" id="newMemberPw1" >
+							<input type="password" size="20" name="memberPw" id="memberPw" >
 							</td>
 						</tr>
 
@@ -94,7 +119,7 @@
 							<th>새 비밀번호 확인<span class="star">*</span></th>
 							</label>
 							<td class="kjh-input " colspan="3">
-							<input type="password" size="20" name="newMemberPw2" id="newMemberPw2" >
+							<input type="password" size="20" name="memberPwConfirm" id="memberPwConfirm" >
 							</td>
 						</tr>
 
@@ -103,9 +128,9 @@
 						<tr>
 							<th>휴대폰<span class="star">*</span></th>
 							<td class="kjh-input" colspan="3">
-							<input type="text" size="1" name="memberPhone" id="m_phone" value="${fn:substring(phone,0,3)}" maxlength="3"> -
-							<input type="text" size="1" name="memberPhone" id="m_phone" value="${fn:substring(phone,3,7)}" maxlength="4"> -
-							<input type="text" size="1" name="memberPhone" id="m_phone" value="${fn:substring(phone,7,12)}" maxlength="4">
+							<input type="text" size="1" name="memberPhone" id="memberPhone1" value="${fn:substring(phone,0,3)}" maxlength="3"> -
+							<input type="text" size="1" name="memberPhone" id="memberPhone2" value="${fn:substring(phone,3,7)}" maxlength="4"> -
+							<input type="text" size="1" name="memberPhone" id="memberPhone3" value="${fn:substring(phone,7,12)}" maxlength="4">
 							</td>
 						</tr>
 
@@ -122,7 +147,8 @@
 								<option value="dreamwiz.com">dreamwiz.com</option>
 								<option value="freechal.com">freechal.com</option>
 								<option value="">직접 입력</option>
-							</select>
+							</select><br>
+							<span id="info">(다음/한메일은 수신이 안될 수 있습니다.)</span>
 							</td>
 						</tr>
 
@@ -147,41 +173,40 @@
 						</tr>
 
 						<%-- 이메일 수신 동의 --%>
-            <c:choose>
-								<c:when test="${loginMember.emailFlag =='Y'}">
-									<c:set var="Y" value="checked"/>
-								</c:when>
-								<c:when test="${loginMember.emailFlag=='N'}">
-									<c:set var="N" value="checked"/>
-								</c:when>
-            </c:choose>
+						<c:choose>
+							<c:when test="${loginMember.emailFlag =='Y'}">
+								<c:set var="Y" value="checked"/>
+							</c:when>
+							<c:when test="${loginMember.emailFlag=='N'}">
+								<c:set var="N" value="checked"/>
+							</c:when>
+						</c:choose>
 						<tr>
 							<th>이메일<br> 수신 동의<span class="star">*</span></th>
 							<td>
-                <input type="radio" name="emailFlag" id="m_email_yn1" value="Y" ${Y}>
-                <label for="m_email_yn1">수신</label>
-
-                <input type="radio" name="emailFlag" id="m_email_yn2"value="N" ${N}>
-                <label for="m_email_yn2">수신거부</label>
+							<input type="radio" name="emailFlag" id="emailFlag" value="Y" ${Y}>
+							<label for="m_email_yn1">수신</label>
+							<input type="radio" name="emailFlag" id="emailFlag"value="N" ${N}>
+							<label for="m_email_yn2">수신거부</label>
 							</td>
 						</tr>
 
 						<%-- SNS 수신 동의 --%>
-            <c:choose>
-								<c:when test="${loginMember.smsFlag =='Y'}">
-									<c:set var="Y" value="checked"/>
-								</c:when>
-								<c:when test="${loginMember.smsFlag=='N'}">
-									<c:set var="N" value="checked"/>
-								</c:when>
-            </c:choose>
+						<c:choose>
+							<c:when test="${loginMember.smsFlag =='Y'}">
+								<c:set var="Y" value="checked"/>
+							</c:when>
+							<c:when test="${loginMember.smsFlag=='N'}">
+								<c:set var="N" value="checked"/>
+							</c:when>
+           				 </c:choose>
 						<tr>
 							<th>SMS<br> 수신 동의<span class="star">*</span></th>
 							<td>
-								<input type="radio" name="smsFlag" id="m_sms_yn1" value="Y"  ${Y}>
+								<input type="radio" name="smsFlag" id="smsFlag" value="Y"  ${Y}>
 								<label for="m_sms_yn1">수신</label>
 
-								<input type="radio" name="smsFlag" id="m_sms_yn2" value="N"  ${N}>
+								<input type="radio" name="smsFlag" id="smsFlag" value="N"  ${N}>
 								<label for="m_sms_yn2">수신거부</label>
 							</td>
 						</tr>
@@ -229,7 +254,6 @@
 
 							<%-- 주소 --%>
 							<tr>
-							     <%-- <c:set var="addr" value="${fn:split(loginMember.memberAddress,',,')}" /> --%>
 								<th>주소</th>
 								<td class="kjh-input" colspan="3">
 									<input type="text"   name = "memberAddress" class="kjh-address" size="5px" readonly>
@@ -247,15 +271,24 @@
 						</table>
 					</div> 
 					<div class="kjh-btn-yn">
-						<button>확인</button>
-					<%-- <a href="" class="yes">확인</a>
-					<a href="" class="no">취소</a> --%>
-
+						<button class="submit-btn">확인</button>
+						<button class="cancle-btn">취소</button>
 					</div>
-					</form>
+				</form>
 				</div> 
 			</div>  
 		</div> 
+
+
+
+
+
+
+
+
+
+
+
 
 		<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 		<script src="/resources/js/member/memberEdit.js"></script> 

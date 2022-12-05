@@ -1,10 +1,13 @@
 package edu.kh.semi.member.controller;
 
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -83,11 +86,15 @@ public class MyPageController {
 	// 회원 탈퇴 서비스 
 	@PostMapping("/memberSecession")
 	public String memberDelete(@SessionAttribute("loginMember") Member loginMember, Member inputMember,
-								SessionStatus status, RedirectAttributes ra) {
+								SessionStatus status, RedirectAttributes ra, @RequestHeader("referer") String referer) {
 		
 		
+		int memberNo = loginMember.getMemberNo();
 		
-		int result = service.memberDelete(loginMember.getMemberNo() ,inputMember);
+		System.out.println(inputMember);
+		System.out.println(memberNo);
+		
+		int result = service.memberDelete(memberNo ,inputMember);
 		
 		String path = null;
 		String message = null;
@@ -101,10 +108,10 @@ public class MyPageController {
 		} else {
 			
 			message = "회원 탈퇴 실패했습니다.";
-			path ="referer";
+			path ="MemberSecession";
 		}
 			
-		return path;
+		return "redirect:"+path;
 	}
 	
 	

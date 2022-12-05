@@ -50,14 +50,14 @@
 		</update>
 		
 		<!-- 회원탈퇴 정보 조회 -->
-		<update id="selectMemberInfo" parameterType="_int">
+		<select id="selectMemberInfo" parameterType="_int" resultMap="member_rm">
 			SELECT MEMBER_NAME, MEMBER_ID, MEMBER_PW, MEMBER_EMAIL 
 			FROM "MEMBER"
 			WHERE MEMBER_NO = #{memberNo}
-		</update>
+		</select>
 		
 		<!-- 회원탈퇴 -->
-		<update id="memberDelete" parameterType="Member">
+		<update id="memberDelete" parameterType="_int">
 			UPDATE "MEMBER" SET
 			DELETE_FL = 'Y'	  
 			WHERE MEMBER_NO = #{memberNo}
