@@ -12,8 +12,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import edu.kh.semi.manager.board.model.vo.Promotion;
+import edu.kh.semi.member.model.vo.Member;
 import edu.kh.semi.reservation.model.service.ReserveService;
 import edu.kh.semi.reservation.model.vo.Option;
 import edu.kh.semi.reservation.model.vo.Reserve;
@@ -64,7 +67,8 @@ public class ReserveController {
 	}
 	
 	@GetMapping("/reservation/reservation3")
-	public String gotoReserve3(Reserve reserve,Model model) {
+	public String gotoReserve3(Reserve reserve,Model model
+			) {
 		
 		
 		System.out.println(reserve);
@@ -73,11 +77,11 @@ public class ReserveController {
 		String originCheckIn=reserve.getCheckInInput();
 		String originCheckOut=reserve.getCheckOutInput();
 		
-		String checkIn=originCheckIn.substring(0,10);
-		String checkOut=originCheckOut.substring(0,10);
+		String checkIn=reserve.getCheckInInput().substring(0,10);
+		String checkOut=reserve.getCheckOutInput().substring(0,10);
 				
-		reserve.setCheckInInput(checkIn);
-		reserve.setCheckOutInput(checkOut);
+		reserve.setCheckInInput(originCheckIn);
+		reserve.setCheckOutInput(originCheckOut);
 		
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-d");
 
@@ -93,6 +97,38 @@ public class ReserveController {
 		
 		return "/reservation/reservation3";
 	}
+	
+	@PostMapping("/reservation/reservation4")
+	public String reservation4(@SessionAttribute(value="loginMember",required = false) Member loginMember, Reserve reserve,Model model) {
+		
+		
+		String checkIn=reserve.getCheckInInput().substring(0,10);
+		String checkOut=reserve.getCheckOutInput().substring(0,10);
+		
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-d");
+
+		LocalDate startDate = LocalDate.parse(checkIn, formatter);
+		LocalDate endDate = LocalDate.parse(checkOut, formatter);
+		
+		List<LocalDate> dateList=getDatesBetweenTwoDates(startDate, endDate);
+		List<Option> optionList=service.selectOption();
+		
+		
+		model.addAttribute("optionList",optionList);
+		model.addAttribute("dateList",dateList);
+		
+		return "reservation/reservation4";
+	}
+	
+	@PostMapping("/reservation/reservationLogin")
+	public String reservationLogin(Reserve reserve) {
+		
+		
+		
+		return "reservation/reservationLogin";
+	}
+	
+	
 	
 	public static List<LocalDate> getDatesBetweenTwoDates(LocalDate startDate, LocalDate endDate) {
 		int numOfDaysBetween = (int) ChronoUnit.DAYS.between(startDate, endDate);

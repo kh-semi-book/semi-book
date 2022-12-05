@@ -13,3 +13,88 @@ function submenu_bar_fixed(){
 }
 // 스크롤이 되면 실행될 함수 지정
 document.addEventListener('scroll',submenu_bar_fixed);
+
+
+
+
+
+// select시 추가 
+const selectList=document.querySelectorAll("select");
+const sideOptionTitle=document.getElementsByClassName("side-option-cost")[0];
+
+for(let select of selectList){
+    select.addEventListener("change",function(){
+
+        const div=document.createElement("div");
+        div.classList.add("option-select");
+
+        const div1=document.createElement("div");
+        div1.classList.add("side-option-name");
+
+        const table=document.createElement("table");
+        table.classList.add("side-room-select");
+
+        div.append(div1,table);
+
+        const tr=document.createElement("tr");
+        table.append(tr);
+
+        const td=document.createElement("td");
+        const td1=document.createElement("td");
+        tr.append(td,td1);
+
+        const span=document.createElement("span");
+        const span1=document.createElement("span");
+        td1.append(span,span1);
+
+        const sideOptionName=document.getElementsByClassName("side-option-name");
+
+        //옵션 이름 
+        const optionName=select.parentElement.parentElement.children[0].innerHTML;
+        const optionSelectDate=select.parentElement.parentElement.parentElement.parentElement.children[0].innerText;
+        const optionCost=select.parentElement.parentElement.children[1].innerHTML;
+        const optionCount='('+select.parentElement.parentElement.children[2].children[0].value+'개)';
+        
+        div1.innerText=optionName;
+        td.innerText=optionSelectDate;
+        span.innerText=optionCost;
+        span1.innerText=optionCount;
+
+        
+
+        for(let name of sideOptionName){
+            if(optionName==name.innerText){
+                console.log("object");
+                name.nextSibling.append(tr);
+                return;
+            }
+        }
+        
+        sideOptionTitle.before(div); 
+    })
+}
+// 2022-12-23/15/1
+
+const optionCount=document.getElementsByName("optionCount");
+const submitbtn=document.querySelector("button");
+const hiddenInput=document.getElementsByName("optionSet")[0];
+
+const optionSet=new Set();
+let i=0;
+submitbtn.addEventListener("click",()=>{
+
+    for(let count of optionCount){
+        if(count.value>0){
+            
+            let inputtext= count.parentElement.parentElement.parentElement.parentElement.children[0].innerText
+                        +"/"+count.id+"/"+count.value;
+                        // 옵션 날짜/옵션번호/옵션개수
+
+            optionSet.add(inputtext);
+
+        }
+    }
+
+    hiddenInput.value=Array.from(optionSet);
+
+})

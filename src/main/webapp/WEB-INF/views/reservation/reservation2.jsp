@@ -7,12 +7,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>예약하기4</title>
+<title>예약하기2</title>
 <link rel="stylesheet" href="/resources/css/reservation/reservation2.css">
 <link rel="stylesheet" href="/resources/css/common/main.css">
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/common/header.jsp" />
+   <jsp:include page="/WEB-INF/views/reservation/reservation-header.jsp"/>
 	<div id="reservation2_page">
 		<div id="reservation2_image"></div>
 		<div id="reservation2_head_area">
@@ -24,6 +24,7 @@
 			<section></section>
 		</div>
 		<div id="reservation2_body_area">
+		<form method="get" action="/reservation/reservation3">
 			<div id="reservation2_step_area">
 				<div class="reservation2_step" id="step1">
 					<p class="step">STEP 01</p>
@@ -68,31 +69,24 @@
 							</div>
 							<div class="package-type">
 								<c:forEach var="room" items="${promotion.roomType}">
-									<form action="/reservation/reservation3" method="GET">
-								<div class="package-type-option">
-									<div class="package-view-type"><c:set var="myValue">${room}</c:set>${room}</div>
 									
-									<input type="hidden" value="${myValue}" name="roomTypeName"/>
-									<input type="hidden" value="${reserve.checkInInput}" name="checkInInput"/>
-									<input type="hidden" value="${reserve.checkOutInput}" name="checkOutInput"/>
-									<input type="hidden" value="${reserve.nights}" name="nights"/>
-									<input type="hidden" value="${reserve.roomCount}" name="roomCount"/>
-									<input type="hidden" value="${reserve.adultCount}" name="adultCount"/>
-									<input type="hidden" value="${reserve.childCount}" name="childCount"/>
-									<input type="hidden" value="${promotion.promotionNo}" name="promotionNo"/>
+								<div class="package-type-option">
+									<div class="package-view-type">${room}</div>
+									
+									
 									<div class="package-room-type">
 										<div>
-											<span>더블 (${reserve.nights}박)</span> <span> <fmt:formatNumber value="${promotion.promotionPrice}"/>원</span> <button class="selectBtn" >예약</button>
+											<span><span>더블</span>(${reserve.nights}박)</span> <span> <fmt:formatNumber value="${promotion.promotionPrice}"/>원</span> <button class="selectBtn" >예약</button>
 											<input type="hidden" value="1" name="bedTypeNo"/>
 										</div>
 										<div>
 										
-											<span>트윈 (${reserve.nights}박)</span> <span><fmt:formatNumber value="${promotion.promotionPrice}"/>원</span> <button class="selectBtn">예약</button>
+											<span><span>트윈</span> (${reserve.nights}박)</span> <span><fmt:formatNumber value="${promotion.promotionPrice}"/>원</span> <button class="selectBtn" >예약</button>
 											<input type="hidden" value="2" name="bedTypeNo"/>
 										</div>
 									</div>
 								</div>
-								</form>
+								
 								</c:forEach>
 							</div>
 						</div>
@@ -141,14 +135,18 @@
 					</div>
 				</div>
 				
+					<input type="hidden" name="optionSet">
+					<input type="hidden" name="roomTypeName"/>
+					<input type="hidden" name="bedType"/>
 				
-				${reserve}
-				${myValue}
-			</div>
-			<div id="reservation2_foot_area"></div>
+				</div>
+				<div id="reservation2_foot_area"></div>
+			</form>
 		</div>
 	</div>
 	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
+	
 	<script src="/resources/js/reservation/reservation.js"></script>
+	<script src="/resources/js/reservation/reservation2.js"></script>
 </body>
 </html>
