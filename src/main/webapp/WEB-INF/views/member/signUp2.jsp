@@ -312,7 +312,7 @@
                                   value="Y">
                                   <label for="marriageYN2">기혼</label>
                                   <span class="kjh-married">
-                                    (결혼기념일 : 
+                                    결혼기념일 : 
                                     <input type="text" name="memberWedding" size="4" maxlength="4" >년
                                   
                                     <input type="text" name="memberWedding" size="4" maxlength="4" >월

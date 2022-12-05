@@ -19,13 +19,13 @@ public class ReservationServiceImpl implements ReservationService{
 	private ReservationDAO dao;
 	
 	@Override
-	public Map<String, Object> selectBook(int cp) {
+	public Map<String, Object> selectBook(int cp , int memberNo) {
 		
-		int bookCount = dao.selectBookCount();
+		int bookCount = dao.selectBookCount(memberNo);
 		
 		Pagination pagination = new Pagination(bookCount, cp);
 		
-		List<ReservationViewDetail> bookList = dao.selectBookList(pagination);
+		List<ReservationViewDetail> bookList = dao.selectBookList(pagination, memberNo);
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		

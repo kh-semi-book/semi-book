@@ -64,14 +64,6 @@ public class MeetingRoomServiceImpl implements MeetingRoomService{
 				return map;
 	}
 
-	// 진행상태 변경 
-	@Override
-	public int changeProcess(int input) {
-		
-		int result = dao.changeProcess(input);
-		
-		return result;
-	}
 	
 	
 	// 미팅룸 예약 문의 추가
@@ -89,6 +81,21 @@ public class MeetingRoomServiceImpl implements MeetingRoomService{
 	public MeetingRoom meetingRoomDetail(int meetingBookNo) {
 		
 		return dao.meetingRoomDetail(meetingBookNo);
+	}
+
+	// 미팅룸 예약 상세보기 수정 서비스 
+	@Transactional
+	@Override
+	public int meetingRoomDetailUpdate(MeetingRoom inputMeetingRoom) {
+		return dao.meetingRoomDetailUpdate(inputMeetingRoom);
+	}
+
+
+	// 저장클릭시 업데이트
+	@Override
+	public int processUpdate(MeetingRoom meetingRoom) {
+		
+		return dao.processUpdate(meetingRoom);
 	}
 
 	

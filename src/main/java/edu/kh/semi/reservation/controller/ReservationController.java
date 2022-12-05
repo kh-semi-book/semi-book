@@ -59,12 +59,15 @@ public class ReservationController {
 	private ReservationService service;
 	
 	// 예약 조회 
-	@GetMapping("/reservation/reservationView")
+	@GetMapping("/reservation/reservationView/{sessionScope.loginMember.memberNo}")
 	public String reservationCheckPage(Model model,
 			@RequestParam(value="cp",required=false, defaultValue="1") int cp,
+			@SessionAttribute(value = "loginMember", required = false) Member loginMember,
 			@RequestParam Map<String,Object> pm) {
 		
-		Map<String, Object> map = service.selectBook(cp);
+		int memberNo = loginMember.getMemberNo();
+		
+		Map<String, Object> map = service.selectBook(cp, memberNo);
 		model.addAttribute("map",map);
 		
 		System.out.println(map);

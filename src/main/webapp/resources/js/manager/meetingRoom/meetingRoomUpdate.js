@@ -64,19 +64,7 @@ document.getElementById("meetingUpdate").addEventListener("submit", function(eve
         }
     }
     
-    
-    // 체크박스
-    const checkBox = document.getElementById("checkBox");
 
-    if(!checkBox.checked){
-    
-        if(confirm("개인정보 수집 및 이용에 대한 동의가 필요합니다. 동의하시겠습니까?")){
-            checkBox.checked=true;
-            event.preventDefault();
-        } else{
-            event.preventDefault();
-        }
-    }
 
 });
 

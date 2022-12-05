@@ -180,7 +180,18 @@ label {
     text-align: center;
 }
 
-input[type="submit"] {
+/* input[type="submit"] {
+    display: inline-block;
+    width: 220px;
+    height: 59px;
+    background: #231f20;
+    font-weight: 300;
+    font-size: 17px;
+    color: #fff;
+    box-sizing: border-box;
+    cursor: pointer;
+} */
+.enrollBtn{
     display: inline-block;
     width: 220px;
     height: 59px;
@@ -192,7 +203,8 @@ input[type="submit"] {
     cursor: pointer;
 }
 
-a.bsh-btn-white {
+
+.bsh-btn-white {
     border: 2px solid #b3b3b3;
     background: #fff;
     text-decoration: none;

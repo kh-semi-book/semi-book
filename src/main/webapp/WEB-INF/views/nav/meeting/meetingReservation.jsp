@@ -33,7 +33,8 @@
         <div class="bsh-section">
             <div class="bsh-warning">※ 모든 항목은 필수 입력 사항입니다.</div>
             
-            <form action="reservationInquiry" name="bsh-frm" id="bsh-frm" method="POST">
+            <form action="/reservationInquiry" name="frm" id="bsh-frm" method="POST">
+                <input type="hidden" name="meetingRoomNo" value="${param.RETY}">
                 <table class="bsh-tb1">
                     <tr>
                         <th class="info-name"><label for="meetingMenName">성명</label></th>
@@ -44,24 +45,24 @@
                     <tr>
                         <th><label for="info-phone">휴대폰</label></th>
                         <td>
-                            <input type="text" id="meetingMenPhone" style="width:80px;" name="meetingMenPhone" maxlength="4"> -
-                            <input type="text" id="meetingMenPhone" style="width:80px;" name="meetingMenPhone" maxlength="4"> -
-                            <input type="text" id="meetingMenPhone"  style="width:80px;" name="meetingMenPhone" maxlength="4">
+                            <input type="text" id="meetingMenPhone1" style="width:80px;" name="meetingMenPhone" maxlength="3"> -
+                            <input type="text" id="meetingMenPhone2" style="width:80px;" name="meetingMenPhone" maxlength="4"> -
+                            <input type="text" id="meetingMenPhone3"  style="width:80px;" name="meetingMenPhone" maxlength="4">
                         </td>
                     </tr>
                     <tr>
                         <th><label for="info-email">이메일</label></th>
                         <td>
-                            <input type="text" id="meetingMenEmail" style="width:160px;" name="meetingMenEmail" maxlength="25"> @
-                            <input type="text" id="meetingMenEmail" style="width:160px;" name="meetingMenEmail" maxlength="25">&nbsp;
-                            <select name="email" id="meetingMenEmail">
-                                <option value="">직접입력</option>
+                            <input type="text" id="meetingMenEmail1" style="width:160px;" name="meetingMenEmail" maxlength="25"> @
+                            <input type="text" id="meetingMenEmail2" style="width:160px;" name="meetingMenEmail" maxlength="25">
+                            <select name="meetingMenEmail" id="meetingMenEmail3">
                                 <option value="naver.com">naver.com</option>
                                 <option value="gmail.com">gmail.com</option>
                                 <option value="nate.com">nate.com</option>
                                 <option value="hotmail.com">hotmail.com</option>
                                 <option value="dreamwiz.com">dreamwiz.com</option>
                                 <option value="freechal.com">freechal.com</option>
+                                <option value="">직접입력</option>
                             </select>
                         </td>
                     </tr>
@@ -132,7 +133,7 @@
                     </div>
                 </div>
                 <div class="bsh-btn">
-                    <input type="submit" name="sub" class="bsh-btn-gray" value="등록하기">
+                    <button class="enrollBtn" onclick="frm_check();">등록하기</button>
                     <a href="/" class="bsh-btn-white">취소</a>
                 </div>
             </form>

@@ -1,5 +1,6 @@
 package edu.kh.semi.manager.meetingRoom.controller;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import edu.kh.semi.manager.book.model.vo.Book;
 import edu.kh.semi.manager.meetingRoom.model.service.MeetingRoomService;
 import edu.kh.semi.manager.meetingRoom.model.vo.MeetingRoom;
 import oracle.jdbc.proxy.annotation.Post;
@@ -31,8 +33,6 @@ public class MeetingRoomController {
 			@RequestParam(value="cp",required=false, defaultValue="1") int cp,
 			@RequestParam Map<String,Object> pm) {
 		
-		System.out.println(pm.get("searchOption"));
-		System.out.println(pm);
 		
 		
 		if(pm.get("searchOption")==null) {
@@ -47,15 +47,6 @@ public class MeetingRoomController {
 		return "manager/meetingRoom/meetingRoom";
 	}
 
-	
-	// 진행상태 변경 
-	@PostMapping("/manager/meetingRoom")
-	public String changeProcess(int input) {
-
-		int result = service.changeProcess(input);
-		
-		return "redirect:manager/meetingRoom/meetingRoom";
-	}
 
 	// 예약 상세 페이지 보기
 	@GetMapping("/manager/meetingRoom/meetingRoomDetail/{meetingBookNo}")
@@ -68,26 +59,73 @@ public class MeetingRoomController {
 		return "/manager/meetingRoom/meetingRoomDetail";
 	}
 	
-	// 이전 페이지로 돌아가기
-	@GetMapping("/manager/meetingRoom/meetingRoom") 
-	public String retrunMeetingRoom(@RequestHeader("referer") String referer) {
+	
+	// 예약 상세보기 페이지 수정하기 페이지 이동 
+	@GetMapping("/manager/meetingRoom/meetingRoomDetail/{meetingBookNo}/update")
+		public String meetingRoomDetailUpdate(@PathVariable(value="meetingBookNo") int meetingBookNo, Model model) {
+	
+		model.addAttribute("meetingBookNo",meetingBookNo);
 		
-		return "redirect:/manager/meetingRoom/meetingRoom"; 
+		return "/manager/meetingRoom/meetingRoomDetailUpdate";
+	}
+	
+	
+	
+	// 예약 상세보기 페이지 수정하기 
+	@PostMapping("/manager/meetingRoom/meetingRoomDetail/{meetingBookNo}/meetingRoomUpdate")
+	public String meetingRoomDetailUpdate(MeetingRoom inputMeetingRoom, String[] meetingMenPhone, String[] meetingMenEmail,
+										  @PathVariable(value="meetingBookNo") int meetingBookNo,
+										  @RequestHeader("referer") String referer,
+										  RedirectAttributes ra) {
+
+		String phone = meetingMenPhone[0] + "-" + meetingMenPhone[1] + "-" + meetingMenPhone[2];
+		inputMeetingRoom.setMeetingMenPhone(phone);
+
+		String email = meetingMenEmail[0] + "@" + meetingMenEmail[1];
+		inputMeetingRoom.setMeetingMenEmail(email);
+		
+		inputMeetingRoom.setMeetingBookNo(meetingBookNo);
+		
+		int result = service.meetingRoomDetailUpdate(inputMeetingRoom);
+		
+		String message = null; 
+		
+		if(result > 0) {
+			message = "게시글이 수정되었습니다.";
+		} else {
+			message = "게시글이 수정 실패";
+		}
+		
+		ra.addFlashAttribute("message",message);
+		
+		return "redirect:/manager/meetingRoom/meetingRoomDetail/"+ meetingBookNo;
 		
 	}
 	
+	
 	// 미팅룸 예약 문의하기 페이지 이동
 		@GetMapping("/nav/meeting/meetingReservation")
-		public String meetingReservation() {
+		public String meetingReservation(@RequestParam int RETY) {
 
 			return "/nav/meeting/meetingReservation";
 		}
+		
 		
 	// 미팅룸 예약 문의하기 (Insert)
 
 		@PostMapping("reservationInquiry")
 		public String meetingBookAdd(MeetingRoom inputMeetingRoom, RedirectAttributes ra, 
-									@RequestHeader("referer") String referer) {
+									@RequestHeader("referer") String referer, String[] meetingMenPhone, 
+									String[] meetingMenEmail, int meetingRoomNo) {
+			
+			String phone = meetingMenPhone[0] + "-" + meetingMenPhone[1] + "-" + meetingMenPhone[2];
+			inputMeetingRoom.setMeetingMenPhone(phone);
+			String email = meetingMenEmail[0] + "@" + meetingMenEmail[1];
+			inputMeetingRoom.setMeetingMenEmail(email);
+			
+			inputMeetingRoom.setMeetingBookNo(meetingRoomNo);
+			
+			
 			
 			int result = service.meetingBookAdd(inputMeetingRoom);
 
@@ -95,11 +133,11 @@ public class MeetingRoomController {
 			String message = null;
 			
 			if(result > 0) { // 성공 시
-				path="/";
+				path = "/";
 				message = "예약문의가 등록되었습니다.";
 				
 			} else {  // 실패 시
-				path=referer;
+				path = referer;
 				message = "예약문의가 실패했습니다. 다시 시도해주세요.";
 				
 				// 이전 페이지로 돌아갔을 때 입력했던 값을 같이 전달
@@ -112,5 +150,16 @@ public class MeetingRoomController {
 			return "redirect:"+path;
 			
 		}
+		
+	// 저장 클릭시 업데이트 
+	@PostMapping("/processUpdate")
+	public String processUpdate(MeetingRoom meetingRoom) {
+		
+		int result = service.processUpdate(meetingRoom);
+
+		return "redirect:/manager/meetingRoom";
+			
+		
+	}
 
 }

@@ -55,10 +55,6 @@ public class MeetingRoomDAO {
 		return sqlSession.selectList("meetingRoomMapper.selectBookList_search", pm ,rowBounds);
 	}
 
-	// 진행상태 변경
-	public int changeProcess(int input) {
-		return sqlSession.update("meetingRoomMapper.changeProcess",input);
-	}
 	
 	// 미팅룸 예약 문의 추가
 	public int meetingBookAdd(MeetingRoom inputMeetingRoom) {
@@ -69,6 +65,16 @@ public class MeetingRoomDAO {
 	// 미팅룸 예약 상세 페이지 조회 DAO
 	public MeetingRoom meetingRoomDetail(int meetingBookNo) {
 		return sqlSession.selectOne("meetingRoomMapper.meetingRoomDetail",meetingBookNo);
+	}
+
+	// 미팅룸 예약 상세보기 수정 DAO
+	public int meetingRoomDetailUpdate(MeetingRoom inputMeetingRoom) {
+		System.out.println(inputMeetingRoom);
+		return sqlSession.update("meetingRoomMapper.meetingRoomDetailUpdate",inputMeetingRoom);
+	}
+
+	public int processUpdate(MeetingRoom meetingRoom) {
+		return sqlSession.update("meetingRoomMapper.processUpdate", meetingRoom);
 	}
 	
 	

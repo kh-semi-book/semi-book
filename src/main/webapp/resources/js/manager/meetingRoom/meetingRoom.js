@@ -11,3 +11,17 @@ goToMeetingRoom.addEventListener("click", () => {
     location.href = url;
 
 });
+
+// 수정하기 버튼 
+const updateBtn = document.getElementById("updateBtn");
+
+
+if(updateBtn != null){
+
+    updateBtn.addEventListener("click", () => {
+    
+        location.href = location.pathname + "/update";
+    
+    });
+}
+

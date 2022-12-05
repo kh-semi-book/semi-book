@@ -37,6 +37,7 @@
 
             <div class="bsh-main-title">
                 <h1>인피니티풀</h1>
+                <input type="hidden" value="1">
             </div>
 
                 <div class="bsh-main-img">
@@ -54,7 +55,7 @@
                 </div>
 
                 <div class="bsh-btngroup">
-                    <a href="/nav/meeting/meetingReservation" class="bsh-btngray" target="_blank">예약 문의하기</a>
+                    <a href="/nav/meeting/meetingReservation?RETY=2" class="bsh-btngray" target="_blank">예약 문의하기</a>
                     <a href="/resources/image/nav/meeting/harmony/harmony.jpg" class="bsh-btngray" target="_blank">도면보기</a>
                 </div>
 

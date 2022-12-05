@@ -26,6 +26,7 @@ public class MyPageController {
 	// 내 정보 페이지 수정
 	@PostMapping("/memberEdit")
 	public String updateMember(Member inputMember, String[] memberAddress, String[] memberPhone,
+								String[] memberEmail,
 							   @SessionAttribute("loginMember") Member loginMember,
 							   RedirectAttributes ra) {
 	
@@ -33,7 +34,11 @@ public class MyPageController {
 		
 			String phone = memberPhone[0]+memberPhone[1]+memberPhone[2];
 			inputMember.setMemberPhone(phone);
-		
+			
+			String email = memberEmail[0]+ "@" +memberEmail[1];
+			inputMember.setMemberEmail(email);
+			
+			
 		int result = service.updateMember(inputMember);
 		
 		

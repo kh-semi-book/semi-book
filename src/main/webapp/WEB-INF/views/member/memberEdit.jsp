@@ -103,17 +103,17 @@
 						<tr>
 							<th>휴대폰<span class="star">*</span></th>
 							<td class="kjh-input" colspan="3">
-							<input type="text" size="1" name="memberPhone" id="m_phone" value="${fn:substring(phone,0,3)}"> -
-							<input type="text" size="1" name="memberPhone" id="m_phone" value="${fn:substring(phone,3,7)}"> -
-							<input type="text" size="1" name="memberPhone" id="m_phone" value="${fn:substring(phone,7,12)}">
+							<input type="text" size="1" name="memberPhone" id="m_phone" value="${fn:substring(phone,0,3)}" maxlength="3"> -
+							<input type="text" size="1" name="memberPhone" id="m_phone" value="${fn:substring(phone,3,7)}" maxlength="4"> -
+							<input type="text" size="1" name="memberPhone" id="m_phone" value="${fn:substring(phone,7,12)}" maxlength="4">
 							</td>
 						</tr>
 
 						<%-- 회원정보 수정 : 이메일 --%>
 							<th>이메일<span class="star">*</span></th>
 							<td class="kjh-input" colspan="3">
-                <input type="text" size="20" name="memberEmail" id="memberEmail1" value="${fn:split(loginMember.memberEmail,'@')[0]}">@
-                <input type="text" size="13"name="memberEmail" id= "memberEmail2" value="${fn:split(loginMember.memberEmail,'@')[1]}">
+							<input type="text" size="20" name="memberEmail" id="memberEmail1" value="${fn:split(loginMember.memberEmail,'@')[0]}">@
+							<input type="text" size="13" name="memberEmail" id="memberEmail2" value="${fn:split(loginMember.memberEmail,'@')[1]}">
 							<select class="kjh-address" name="memberEmail" id="memberEmail3">
 								<option value="naver.com">naver.com</option>
 								<option value="gmail.com">gmail.com</option>

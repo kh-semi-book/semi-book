@@ -67,7 +67,8 @@
                 </table>
                 
                 <div class="bsh-btn">
-                    <button type="submit" class="bsh-btn-gray">수정하기</button>
+                    <%-- <button class="bsh-btn-gray"><a href="/manager/meetingRoom/meetingRoomDetail/${meeting.meetingBookNo}/meetingRoomDetailUpdate">수정하기</a></button> --%>
+                    <button class="bsh-btn-gray" id="updateBtn">수정하기</button>
                     <button type="submit" class="bsh-btn-gray" id="return">돌아가기</button>
                 </div>
         </div>
