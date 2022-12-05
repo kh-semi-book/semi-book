@@ -10,4 +10,8 @@ public interface FindIdPwService {
 
 	int findPw(Member input);
 
+	int changeRanPw(Map<String, Object> map);
+
+	void sendEmail(String memberEmail);
+
 }

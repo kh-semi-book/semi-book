@@ -22,4 +22,8 @@ public class FindIdPwDAO {
 		return sqlSession.selectOne("memberMapper2.findPw",input);
 	}
 
+	public int changeRanPw(Map<String, Object> map) {
+		return sqlSession.update("memberMapper2.changeRanPw",map);
+	}
+
 }
