@@ -24,7 +24,7 @@ public class Reserve {
 	private int roomViewName;			// 객실 뷰
 	private int roomTypeNo;			// 룸 타입
 	private String roomTypeName;			// 룸 타입
-	private int bedTypeNo;			// 침대 타입
+	private String bedType;			// 침대 타입
 	private int bookDate[];			// 날짜들
 	private int optionNo;			// 옵션
 	private int optionCnt;			// 옵션 수

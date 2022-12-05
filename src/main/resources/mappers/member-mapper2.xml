@@ -12,11 +12,19 @@
   	</select>
   	
   	<select id="findPw" parameterType="Member" resultType="_int">
-  		SELECT COUNT(*) FROM "MEMBER"
+  		SELECT MEMBER_NO FROM "MEMBER"
   		WHERE MEMBER_ID=#{memberId}
   		AND MEMBER_NAME=#{memberName}
   		AND MEMBER_EMAIL=#{memberEmail}
   	</select>
+  	
+  	<update id="changeRanPw">
+  		
+  		UPDATE "MEMBER" 
+  		SET MEMBER_PW=#{memberPw}
+  		WHERE MEMBER_NO=#{memberNo}
+  		
+  	</update>
 
 
 </mapper>

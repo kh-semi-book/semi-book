@@ -212,3 +212,48 @@ agree.addEventListener("change", ()=>{
     }
 });
 
+
+
+
+console.log(optionSet);
+
+const option=optionSet.split(",");
+
+
+// 옵션에 따라 sideTable 값 출력하기
+// 투숙자값은 필수입니다 넘기기
+//
+
+for(let item of strObj){
+	console.log(item);
+
+}
+
+
+
+
+(function(){
+    const div=document.createElement("div");
+    div.id="optionName";
+
+    const strong=document.createElement("strong");
+    strong.innerText=strobj.optionName;
+    
+
+
+})();
+
+
+
+{/* <div id="optionName">
+    <strong>성인2인조식(사전예약 20%할인가) + 소아1인 조식 무료/환불불가</strong>
+</div>
+<div id="optionCount">
+    <div>
+        <strong>2022-11-04</strong>
+    </div>
+    <div>
+        <strong>65,600원</strong> <span class="optionCount">1개</span>
+    </div>
+</div> */}
+

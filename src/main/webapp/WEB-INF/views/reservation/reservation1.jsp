@@ -159,6 +159,7 @@
                         <tr>
                             <td>객실수</td>
                             <td>
+                            
                                 <select name="roomCount" id="roomCount">
                                     <option value="1">1</option>
                                     <option value="2">2</option>

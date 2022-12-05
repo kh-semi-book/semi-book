@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +10,7 @@
 <link rel="stylesheet" href="/resources/css/common/main.css">
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/common/header.jsp" />
+   <jsp:include page="/WEB-INF/views/reservation/reservation-header.jsp"/>
 	<div id="reservation4_page">
 		<div id="reservation4_image"></div>
 		<div id="reservation4_head_area">
@@ -17,6 +19,9 @@
 				<div>HOME > 예약하기</div>
 				<div>예약하기</div>
 			</section>
+			
+			${param}
+			${optionList[0].optionNo}
 			<section></section>
 		</div>
 		<div id="reservation4_body_area">
@@ -48,20 +53,21 @@
 					<div id="reservation_input_area">
 						<form action="/reservation/reservation5" method="post" name="reservation4_form" id="reservation4_form">
 							<div id="booker-info">
-								<p class="table-title">고객정보</p>
+							
+								<p class="table-title">고객 정보 입력</p>
 								<table class="reservation-table">
 									<tr>
 										<th class="row-title"><label for="booker1">예약자</label></th>
-										<td class="book-input"><input type="text" class="input name" name="booker1" id="booker1"></td>
+										<td class="book-input"><input type="text" class="input name" name="booker1" id="booker1" value="${loginMember.memberName}"></td>
 									</tr>
 									<tr>
 										<th class="row-title"><label for="booker2">투숙자</label></th>
-										<td class="book-input"><input type="text" class="input name" name="booker2" id="booker2"> <input type="checkbox" name="equal" id="equal"> <label for="equal">예약자와
+										<td class="book-input"><input type="text" class="input name" name="booker2" id="booker2"  value="${loginMember.memberName}"> <input type="checkbox" name="equal" id="equal"> <label for="equal">예약자와
 												동일</label></td>
 									</tr>
 									<tr>
 										<th class="row-title">생년월일</th>
-										<td class="book-input"><select name="birthyear" id="book-input-birth1">
+										<td class="book-input"><select name="birthyear" id="book-input-birth1" >
 												<option value="1934">1934</option>
 												<option value="1935">1935</option>
 												<option value="1936">1936</option>
@@ -171,7 +177,8 @@
 												<option value="10">10</option>
 												<option value="11">11</option>
 												<option value="12">12</option>
-										</select> 월 <select name="birthmonth" id="book-input-birth3">
+										</select> 월 
+										<select name="birthmonth" id="book-input-birth3">
 												<option value="1">1</option>
 												<option value="2">2</option>
 												<option value="3">3</option>
@@ -207,7 +214,7 @@
 									</tr>
 									<tr>
 										<th class="row-title">이메일</th>
-										<td class="book-input"><input type="text" class="input" name="booker-email1" id="book-input-email1">@ <select name="booker-email2" id="book-input-email2">
+										<td class="book-input"><input type="text" class="input" name="booker-email1" id="book-input-email1">@ <input type="text" class="input" id="book-input-email3"> <select name="booker-email2" id="book-input-email2">
 												<option value="naver.com">naver.com</option>
 												<option value="gmail.com">gmail.com</option>
 												<option value="nate.com">nate.com</option>
@@ -215,13 +222,13 @@
 												<option value="dreamwiz.com">dreamwiz.com</option>
 												<option value="freechal.com">freechal.com</option>
 												<option value="">직접입력</option>
-										</select> <input type="text" class="input" id="book-input-email3"> <br>
+										</select>  <br>
 											<p name="email-info">(다음/한메일은 수신이 안될 수 있습니다.)</p></td>
 									</tr>
 									<tr>
 										<th class="row-title">휴대폰</th>
-										<td class="book-input"><input type="text" class="input bookerphone" name="bookertel1" id="book-input-phone1">- <input type="text" class="input bookerphone" name="bookertel2"
-											id="book-input-phone2">- <input type="text" class="input bookerphone" name="bookertel3" id="book-input-phone3"></td>
+										<td class="book-input"><input type="text" class="input bookerphone" name="bookertel1" id="book-input-phone1" value="${fn:substring(loginMember.memberPhone,0,3)}">- <input type="text" class="input bookerphone" name="bookertel2" value="${fn:substring(loginMember.memberPhone,3,7)}"
+											id="book-input-phone2">- <input type="text" class="input bookerphone" name="bookertel3" id="book-input-phone3" value="${fn:substring(loginMember.memberPhone,7,11)}"></td>
 									</tr>
 									<tr>
 										<th class="row-title">요청사항</th>
@@ -325,23 +332,23 @@
 								<table id="schedule">
 									<tr>
 										<th>체크인</th>
-										<td><input type="text" value="2022-11-04 (금)" readonly></td>
+										<td><input type="text" value="${reserve.checkInInput}" readonly></td>
 									</tr>
 									<tr>
 										<th>체크아웃</th>
-										<td><input type="text" value="2022-11-04 (금)" readonly></td>
+										<td><input type="text" value="${reserve.checkOutInput}" readonly></td>
 									</tr>
 									<tr>
 										<th>박수</th>
-										<td><input type="text" value="1" class="schedule-num" readonly> 박</td>
+										<td><input type="text" class="schedule-num" readonly value="${reserve.nights}"> 박</td>
 									</tr>
 									<tr>
 										<th><label for="roomCnt">객실수</label></th>
-										<td><input type="text" value="1" class="schedule-num" id="roomCnt" readonly> 실</td>
+										<td><input type="text" value="1" class="schedule-num" id="roomCnt" value="${reserve.roomCount}" readonly> 실</td>
 									</tr>
 									<tr>
 										<th>인원수</th>
-										<td>어른 <input type="text" value="1" class="schedule-num" readonly> 어린이 <input type="text" value="1" class="schedule-num" readonly> 
+										<td>어른 <input type="text" value="1" class="schedule-num" value="${reserve.adultCount}" readonly> 어린이 <input type="text" value="1" value="${reserve.childCount}" class="schedule-num" readonly> 
 										<span  class="tooltip">
 												<img src="/resources/image/button/info.gif" id="schedule-info">
 												<span class="tooltip-text">
@@ -357,18 +364,22 @@
 								<div class="side-table-head ">객실 & 패키지</div>
 								<div id="roomAndPackage">
 									<div id="selectRoomName">
-										<strong class="select_roomName">디럭스 더블 가든</strong>
+										<strong class="select_roomName">${reserve.roomTypeName}</strong>
 									</div>
+									<c:forEach var="date" items="${dateList}">
+								
 									<div id="dateAndPrice">
+							
 										<div>
-											<strong>2022-11-04</strong>
+											<strong>${date}</strong>
 										</div>
 										<div>
 											<strong>260,000원</strong> <span class="vat1">(VAT)별도</span>
 										</div>
 									</div>
+									</c:forEach>
 									<div id="totalPrice_roomPackage">
-										<strong>374,000</strong>원 <span class="vat2">(VAT)포함</span>
+										<strong>${reserve.nights}</strong>원 <span class="vat2">(VAT)포함</span>
 									</div>
 								</div>
 								<div class="side-table-head">옵션</div>
@@ -388,6 +399,7 @@
 										<strong>65,600</strong>원 <span class="vat2">(VAT)포함</span>
 									</div>
 								</div>
+								
 								<div id="totalPrice_All">
 									<span>요금합계</span> <strong>340,600원 (VAT 포함)</strong> 
 								</div>
@@ -404,9 +416,46 @@
 			</div>
 			<div id="reservation4_foot_area"></div>
 		</div>
+		</div>
 		<jsp:include page="/WEB-INF/views/common/footer.jsp" />
+		<script>
+			const optionList="${optionList[0].optionNo}";
+			const optionSet="${param.optionSet}";
+			let i=0;
+			
+			let strObj=[];
+			strObj[0] = {
+					  optionNo : '${optionList[0].optionNo}',
+					  optionName : '${optionList[0].optionName}',
+					  optionPrice : '${optionList[0].optionPrice}'
+			};
+			strObj[1] = {
+					  optionNo : '${optionList[1].optionNo}',
+					  optionName : '${optionList[1].optionName}',
+					  optionPrice : '${optionList[1].optionPrice}'
+			};
+			strObj[2] = {
+					  optionNo : '${optionList[2].optionNo}',
+					  optionName : '${optionList[2].optionName}',
+					  optionPrice : '${optionList[2].optionPrice}'
+			};
+			strObj[3] = {
+					  optionNo : '${optionList[3].optionNo}',
+					  optionName : '${optionList[3].optionName}',
+					  optionPrice : '${optionList[3].optionPrice}'
+			};
+			strObj[4] = {
+					  optionNo : '${optionList[4].optionNo}',
+					  optionName : '${optionList[4].optionName}',
+					  optionPrice : '${optionList[4].optionPrice}'
+			};
+
+			
+		</script>
 		<script src="/resources/js/reservation/reservation.js"></script>
 		<script src="/resources/js/reservation/reservation4.js"></script>
+		
+		
 		
 </body>
 </html>
