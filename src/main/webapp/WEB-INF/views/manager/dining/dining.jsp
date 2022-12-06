@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>다이닝</title>
+<title>다이닝 세부 사항</title>
 <link rel="stylesheet" href="/resources/css/manager/board_detail.css">
 <link rel="stylesheet" href="/resources/css/manager/admin.css">
 <style>
@@ -19,7 +19,7 @@ body {
 		<div class="board-head-area">
 			<div></div>
 			<div id="board_title">
-				<div>HOME > 다이닝 관리 > 다이닝 세부 사항</div>
+				<div><a href="/manager/selectBook">HOME</a> > <a href="/manager/dining">다이닝 관리</a> > 다이닝 세부 사항</div>
 				<div>다이닝 세부 사항</div>
 			</div>
 			<div></div>

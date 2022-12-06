@@ -19,7 +19,7 @@ body {
 		<div class="board-head-area">
 			<div></div>
 			<div id="board_title">
-				<div>HOME > 프로모션 관리 > 프로모션 등록</div>
+				<div><a href="/manager/selectBook">HOME</a> > <a href="/manager/promotion">프로모션 관리</a> > 프로모션 등록</div>
 				<div>프로모션 등록</div>
 			</div>
 			<div></div>
@@ -91,6 +91,6 @@ body {
 	</div>
 
 	<script src="/resources/js/manager/board/boardPost.js"></script>
-	<jsp:include page="/WEB-INF/views/common/admin-footer.jsp" />
+	<jsp:include page="/WEB-INF/views/manager/common/admin-footer.jsp" />
 </body>
 </html>

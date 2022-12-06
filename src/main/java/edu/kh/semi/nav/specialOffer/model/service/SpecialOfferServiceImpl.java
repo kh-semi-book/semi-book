@@ -5,10 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import edu.kh.semi.manager.board.model.vo.Dining;
+import edu.kh.semi.manager.board.model.vo.Event;
 import edu.kh.semi.manager.board.model.vo.Promotion;
 import edu.kh.semi.nav.specialOffer.model.dao.SpecialOfferDAO;
-import edu.kh.semi.nav.specialOffer.model.vo.Dining;
-import edu.kh.semi.nav.specialOffer.model.vo.Event;
 
 @Service
 public class SpecialOfferServiceImpl implements SpecialOfferService{

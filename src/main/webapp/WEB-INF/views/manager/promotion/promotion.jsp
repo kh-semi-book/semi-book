@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>프로모션 등록</title>
+<title>프로모션 세부 사항</title>
 <link rel="stylesheet" href="/resources/css/manager/board_detail.css">
 <link rel="stylesheet" href="/resources/css/manager/admin.css">
 <style>
@@ -20,7 +20,7 @@ body {
 		<div class="board-head-area">
 			<div></div>
 			<div id="board_title">
-				<div>HOME > 프로모션 관리 > 프로모션 세부 사항</div>
+				<div><a href="/manager/selectBook">HOME</a> > <a href="/manager/promotion">프로모션 관리</a> > 프로모션 세부 사항</div>
 				<div>프로모션 세부 사항</div>
 			</div>
 			<div></div>

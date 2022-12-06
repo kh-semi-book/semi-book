@@ -8,7 +8,10 @@ import org.springframework.web.bind.support.SessionStatus;
 @Controller
 public class ManagerController {
 
-	
+	@GetMapping("/manager/main")
+	public String managerMain() {
+		return "redirect:/manager/selectBook";
+	}
 	
 	
 }

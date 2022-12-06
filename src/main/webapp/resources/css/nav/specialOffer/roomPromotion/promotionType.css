@@ -79,27 +79,6 @@
     font-weight: bold;
     margin: 0;
 }
-#promotion_detail_title>div:last-child{
-    margin: 0;
-    border: 2px solid #b3b3b3;
-    padding-top: 2px;
-    cursor: pointer;
-    width: 150px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#promotion_detail_title>div:last-child>a{
-    font-size: 15px;
-    text-decoration: none;
-    color: #333333;
-    line-height: 36px;
-    text-align: center;
-    font-weight: bold;
-    width: 150px;
-    height: 40px;
-}
 #promotion_detail_date{
     display: flex;
     flex-direction: row;

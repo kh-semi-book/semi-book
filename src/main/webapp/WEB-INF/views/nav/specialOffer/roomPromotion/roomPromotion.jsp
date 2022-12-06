@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,9 +46,7 @@
 		<div id="promotion_body_area">
 			<section id="promotion_detail_title">
 				<div>${promotion.promotionTitle}</div>
-				<div>
-					<a href="#">예약</a>
-				</div>
+				<div></div>
 			</section>
 			<section id="promotion_detail_date">
 				<div class="detail date">
