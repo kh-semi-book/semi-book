@@ -78,7 +78,7 @@
                                 
                                 <td class="kjh-input"colspan="3">
                                   <input type="text" size="20" name="memberId" id="memberId" >
-                                  <input type="button" class="btn" value="중복확인">
+                                  <input type="button" id ="dup_check"class="btn" value="중복확인" >
                                   <span class="kjh-subtxt">(영소문자, 숫자로 6~20자까지 가능합니다.)</span>
 
                                 </td>
@@ -285,11 +285,11 @@
                                 <td>
                                   <input type="radio" name="smsFlag" id="smsFlag1"
                                   value="Y">
-                                  <label for="m_sms_yn1">수신</label>
+                                  <label for="smsFlag1">수신</label>
 
                                   <input type="radio" name="smsFlag" id="smsFlag2"
                                   value="N">
-                                  <label for="m_sms_yn2">수신거부</label>
+                                  <label for="smsFlag2">수신거부</label>
                                 </td>
                               </tr>
                             </table>
@@ -312,12 +312,12 @@
                                   value="Y">
                                   <label for="marriageYN2">기혼</label>
                                   <span class="kjh-married">
-                                    결혼기념일 : 
-                                    <input type="text" name="memberWedding" size="4" maxlength="4" >년
+                                    (결혼기념일) : 
+                                    <input type="text" name="memberWedding" id="memberWedding1"size="4" maxlength="4" >년
                                   
-                                    <input type="text" name="memberWedding" size="4" maxlength="4" >월
+                                    <input type="text" name="memberWedding" id="memberWedding2"size="4" maxlength="2" >월
                                   
-                                    <input type="text" name="memberWedding" size="4" maxlength="4" >일
+                                    <input type="text" name="memberWedding" id="memberWedding3"size="4" maxlength="2" >일
                                   </span>
                               </tr>                              
                               <tr>

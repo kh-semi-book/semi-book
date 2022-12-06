@@ -46,29 +46,22 @@
                 <h1>공지사항</h1>
             </div>
         <div id="cmm-contant-area">
-            <a href="/nav/about/cmmContent" name="left">
-                <div id="right-area" name="left">
-                    <label for="left">
-                        <img src="/resources/image/nav/about/aboutCmmTitle1.jpeg" width="485px" height="335px">
-                        <div class="text-area">
-                            <div class="cmm-main-title">히든 클리프 이용 안내</div>
-                            <div class="cmm-sub-title">히든 클리프의 모든 것</div>
-                        </div>
-                    </label>
-                </div>
-            </a>
-
-            <a href="/nav/about/cmmContent" name="right">
+            <c:forEach var="cmm" items="${cmmList}">
+                <a href="/nav/about/cmmContent/${cmm.cmmNo}" name="right">
                 <div id="right-area" name="right">
                     <label for="right">
-                        <img src="/resources/image/nav/about/aboutCmmTitle2.jpeg" width="485px" height="335px">
+                        <img src="${cmm.cmmTitleImg}" width="485px" height="335px">
                         <div class="text-area">
-                            <div class="cmm-main-title">코로나19 관련 이용 안내</div>
-                            <div class="cmm-sub-title">영업장 별 이용 안내</div>
+                            <div class="cmm-main-title">${cmm.cmmTitle}</div>
+                            <div class="cmm-sub-title">${cmm.cmmSub}</div>
                         </div>
                     </label>
                 </div>
             </a>
+            </c:forEach>
+            
+
+            
         </div>
 
         <div id="other-page"><a href="#"><<</a><a href="#"><</a><a href="#">1</a><a href="#">></a><a href="#">>></a></div>

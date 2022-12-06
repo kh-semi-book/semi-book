@@ -42,7 +42,7 @@
                     <div class="input-section">
                         <input type="text" name="inputId" placeholder="아이디">
                         <input type="text" name="inputName-pw" placeholder="이름">
-                        <input type="password" name="inputEmail-pw" placeholder="이메일">
+                        <input type="text" name="inputEmail-pw" placeholder="이메일">
                     </div
                     ><div class="button-section">
                         <button id="find-pw-btn">확인</button>

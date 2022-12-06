@@ -187,7 +187,7 @@
 /* --------------------------------------------- */
 
 
-#reservation3_side_area{
+.reservation3_side_area{
     width: 250px;
     display: inline-block;
     /* position:absolute;
@@ -199,7 +199,7 @@
     */
 }
 
-#reservation3_side_area *{
+.reservation3_side_area *{
     /* border:1px solid black; */
 }
 
@@ -332,4 +332,18 @@ select{
 
 input{
     border:none;
+}
+
+.side-sticky {
+	position: sticky; /* 고정하는 부분 */
+	top: 80px; /* 고정할 위치 */
+	z-index: 99; /* 고정하고나서 스크롤하면 다른이미지와 겹치는데 이때 다른이미지 위에 오게하는 부분 */
+}
+
+#checkInInput, #checkOutInput{
+	text-align: right;
+}
+
+.side-room-select td:first-child{
+	width:100px;
 }

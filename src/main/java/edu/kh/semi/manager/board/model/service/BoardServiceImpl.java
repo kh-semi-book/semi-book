@@ -214,33 +214,33 @@ public class BoardServiceImpl implements BoardService {
 				}
 			}
 
-			result = dao.promotionRoomDelete(promotion.getPromotionNo());
-
-			Map<String, Object> pMap = new HashMap<String, Object>();
-			pMap.put("promotionNo", promotion.getPromotionNo());
-			for (String view : viewType) {
-				pMap.put("roomViewNo", view);
-				for (String room : roomType) {
-					pMap.put("roomTypeNo", room);
-					result = dao.updatePromotionRoom(pMap);
-					if (result > 0) {
-						pMap.remove("roomTypeNo");
-					} else {
-						throw new Exception("업로드 실패");
-					}
-				}
-				if (result > 0) {
-					pMap.remove("roomViewNo");
-				} else {
-					throw new Exception("업로드 실패");
-				}
-			}
+//			result = dao.promotionRoomDelete(promotion.getPromotionNo());
+//
+//			Map<String, Object> pMap = new HashMap<String, Object>();
+//			pMap.put("promotionNo", promotion.getPromotionNo());
+//			for (String view : viewType) {
+//				pMap.put("roomViewNo", view);
+//				for (String room : roomType) {
+//					pMap.put("roomTypeNo", room);
+//					result = dao.updatePromotionRoom(pMap);
+//					if (result > 0) {
+//						pMap.remove("roomTypeNo");
+//					} else {
+//						throw new Exception("업로드 실패");
+//					}
+//				}
+//				if (result > 0) {
+//					pMap.remove("roomViewNo");
+//				} else {
+//					throw new Exception("업로드 실패");
+//				}
+//			}
 
 		} else {
 			throw new Exception("수정 실패");
 		}
 
-		return 0;
+		return result;
 	}
 
 	// 프로모션 삭제
@@ -248,11 +248,10 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public int promotionDelete(int promotionNo) {
 
-		int result = dao.promotionRoomDelete(promotionNo);
+//		int result = dao.promotionRoomDelete(promotionNo);
 
-		if (result > 0) {
-			result = dao.promotionDelete(promotionNo);
-		}
+		int result = dao.promotionDelete(promotionNo);
+		
 
 		return result;
 	}

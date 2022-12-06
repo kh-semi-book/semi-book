@@ -77,9 +77,9 @@ body {
 								</c:when>
 							</c:choose>
 						</c:forEach>
-						<span><input type="checkbox" name="viewType" id="gardenView" value="1" ${view1}><label for="gardenView">가든 뷰</label></span>
-						<span><input type="checkbox" name="viewType" id="cliffView" value="2" ${view2}><label for="cliffView">클리프 뷰</label></span>
-						<span><input type="checkbox" name="viewType" id="panoramaView" value="3" ${view3}><label for="panoramaView">파노라마 뷰</label></span>
+						<span><input type="checkbox" name="viewType" id="gardenView" value="1" ${view1} disabled><label for="gardenView">가든 뷰</label></span>
+						<span><input type="checkbox" name="viewType" id="cliffView" value="2" ${view2} disabled><label for="cliffView">클리프 뷰</label></span>
+						<span><input type="checkbox" name="viewType" id="panoramaView" value="3" ${view3} disabled><label for="panoramaView">파노라마 뷰</label></span>
 					</td>
 				</tr>
 				<tr>
@@ -101,10 +101,10 @@ body {
 								</c:when>
 							</c:choose>
 						</c:forEach>
-						<span><input type="checkbox" name="roomType" id="deluxe" value="4" ${type4}><label for="deluxe">디럭스</label></span> 
-						<span><input type="checkbox" name="roomType" id="cornerDeluxe" value="3" ${type3}><label for="cornerDeluxe">코너 디럭스</label></span> 
-						<span><input type="checkbox" name="roomType" id="familySuite" value="2" ${type2}><label for="familySuite">패밀리 스위트</label></span> 
-						<span><input type="checkbox" name="roomType" id="yeraeSuite" value="1" ${type1}><label for="yeraeSuite">예래 스위트</label></span></td>
+						<span><input type="checkbox" name="roomType" id="deluxe" value="4" ${type4} disabled><label for="deluxe">디럭스</label></span> 
+						<span><input type="checkbox" name="roomType" id="cornerDeluxe" value="3" ${type3} disabled><label for="cornerDeluxe">코너 디럭스</label></span> 
+						<span><input type="checkbox" name="roomType" id="familySuite" value="2" ${type2} disabled><label for="familySuite">패밀리 스위트</label></span> 
+						<span><input type="checkbox" name="roomType" id="yeraeSuite" value="1" ${type1} disabled><label for="yeraeSuite">예래 스위트</label></span></td>
 				</tr>
 
 
@@ -120,5 +120,6 @@ body {
     </div>
 
 	<script src="/resources/js/manager/board/boardPost.js"></script>
+	<jsp:include page="/WEB-INF/views/common/admin-footer.jsp" />
 </body>
 </html>

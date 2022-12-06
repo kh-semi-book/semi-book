@@ -40,21 +40,21 @@ public class ReservationController {
 		return "reservation/reservation2";
 	}
 	
-	@GetMapping("/reservation/reservation3")
-	public String reservation3() {
-		return "reservation/reservation3";
-	}
+//	@GetMapping("/reservation/reservation3")
+//	public String reservation3() {
+//		return "reservation/reservation3";
+//	}
 	
-	@GetMapping("/reservation/reservation4")
-	public String reservation4() {
-		return "reservation/reservation4";
-	}
+//	@GetMapping("/reservation/reservation4")
+//	public String reservation4() {
+//		return "reservation/reservation4";
+//	}
 	
-	@PostMapping("/reservation/reservation5")
-	public String reservation5() {
-		return "reservation/reservation5";
-	}
-	
+//	@PostMapping("/reservation/reservation5")
+//	public String reservation5() {
+//		return "reservation/reservation5";
+//	}
+//	
 	@Autowired
 	private ReservationService service;
 	

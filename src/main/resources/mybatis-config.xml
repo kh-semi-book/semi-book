@@ -28,12 +28,14 @@
 <typeAlias type="edu.kh.semi.nav.model.vo.RoomPromotion" alias="NavRoomPromotion"/>
 <typeAlias type="edu.kh.semi.reservation.model.vo.ReservationViewDetail" alias="Reservation2"/>
 <typeAlias type="edu.kh.semi.reservation.model.vo.Reserve" alias="Reserve"/>
+<typeAlias type="edu.kh.semi.reservation.model.vo.Option" alias="Option"/>
 
 </typeAliases>
 
 <!-- mapper 파일(SQL 작성되는파일) 위치 등록 부분 -->
 <mappers>
 	<mapper resource="/mappers/member-mapper.xml"/>
+	<mapper resource="/mappers/ajax-mapper.xml"/>
 
 	<mapper resource="/mappers/member-mapper2.xml"/>
 	<mapper resource="/mappers/myPage-mapper.xml"/>

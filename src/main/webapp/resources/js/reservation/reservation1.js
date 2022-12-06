@@ -60,6 +60,7 @@ function nextCalendarInit() {
     checkOutInput.value=checkOutText+" ("+getDayOfWeek(checkOutText)+")";
 
     const nights=document.getElementById("nights");
+    nights.value=1;
     
 
 
@@ -263,7 +264,7 @@ function nextCalendarInit() {
 
             checkOutText1=new Date(currentYear,currentMonth,selectday.innerHTML);
 
-            checkOutInput.innerText=checkOutText+" ("+getDayOfWeek(checkOutText)+")";
+            checkOutInput.value=checkOutText+" ("+getDayOfWeek(checkOutText)+")";
 
             nights.value=(checkOutText1.getTime()-checkInText1.getTime())/(1000*60*60*24);
         })
@@ -429,36 +430,24 @@ function renderCalender2(thisMonth, nextDatee){
             
         }
         console.log(checkOutText1);
-        checkOutInput.innerText=checkOutText+" ("+getDayOfWeek(checkOutText)+")";
+        checkOutInput.value=checkOutText+" ("+getDayOfWeek(checkOutText)+")";
 
         nights.value=Number(checkOutText1)-Number(checkInText1);
 
-        // const checkOutSelect=document.getElementsByClassName("day1 current1");
-        // // 체크아웃 날짜 받아오기
-        // // let checkOutText1="";
-        // for(let selectday of checkOutSelect){
-           
-        //     selectday.addEventListener("click",function(){
-    
-        //     if(checkoutbefore!=null){
-
-        //         checkoutbefore.classList.remove("today");
-        //     }
-        //     selectday.classList.add("today");
-        //     checkoutbefore=selectday;
-    
-        //     if(selectday.innerHTML<10){
-        //         checkOutText=currentYear+"-"+(currentMonth+1)+"-0"+selectday.innerHTML;
-        //         checkOutText1=currentYear+""+(currentMonth+1)+"0"+selectday.innerHTML;
-        //     }else{
-        //         checkOutText=currentYear+"-"+(currentMonth+1)+"-"+selectday.innerHTML;
-        //         checkOutText1=currentYear+""+(currentMonth+1)+""+selectday.innerHTML;
-                
-        //     }
-        //     console.log(checkOutText1);
-        //     checkOutInput.innerText=checkOutText+" ("+getDayOfWeek(checkOutText)+")";
-
-        //     nights.value=Number(checkOutText1)-Number(checkInText1);
-        //     })
-        // }
+      
     }
+    
+    const adultCount=document.getElementsByName("adultCount")[0];
+   document.getElementById("btn_next").addEventListener("click",(event)=>{
+   
+    if(adultCount.value==0){
+        alert("어른 인원은 필수입니다. ");
+        event.preventDefault();
+
+    }
+
+   })
+
+   const roomCount=document.getElementById("roomCount");
+
+   

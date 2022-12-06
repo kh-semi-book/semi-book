@@ -1,14 +1,43 @@
 
+
+const phone1=document.getElementById("book-input-phone1");
+const phone2=document.getElementById("book-input-phone2");
+const phone3=document.getElementById("book-input-phone3");
+
+const card1=document.getElementById("book-input-cardNum1");
+const card2=document.getElementById("book-input-cardNum2");
+const card3=document.getElementById("book-input-cardNum3");
+const card4=document.getElementById("book-input-cardNum4");
+
+ const birth1=document.getElementById("book-input-birth1");
+ const birth2=document.getElementById("book-input-birth2");
+ const birth3=document.getElementById("book-input-birth3");
+ 
+ const cardExpireDate1=document.getElementById("book-input-cardValidity1").value;
+ const cardExpireDate2=document.getElementById("book-input-cardValidity2").value;
+ 
+
+const guestEmail1=document.getElementById("book-input-email1").value;
+const guestEmail2=document.getElementById("book-input-email2").value
+
+
+
+
+
+
+
+
+
 // 양식 제출
 
 
 const checkObj = {
-    "booker2" : false, /* 투숙자 */
-    "book-input-email1" : false, /* 이메일 */
-    "book-input-email3" : false, /* @ */
-    "book-input-phone1" : false, /* 휴대폰1 */
-    "book-input-phone2" : false, /* 휴대폰2 */
-    "book-input-phone3" : false, /* 휴대폰3 */
+    "booker2" : true, /* 투숙자 */
+    "book-input-email1" : true, /* 이메일 */
+    "book-input-email3" : true, /* @ */
+    "book-input-phone1" : true, /* 휴대폰1 */
+    "book-input-phone2" : true, /* 휴대폰2 */
+    "book-input-phone3" : true, /* 휴대폰3 */
     "book-input-cardType" : false, /* 카드종류 */
     "book-input-cardNum1" : false, /* 카드번호1 */
     "book-input-cardNum2" : false, /* 카드번호2 */
@@ -58,7 +87,24 @@ document.getElementById("reservation4_form").addEventListener("submit",e=>{
 });
 
 //투숙자
+const booker1 = document.getElementById("booker1");
 const booker2 = document.getElementById("booker2");
+if(booker2 !=null){
+    booker2.value= booker1.value;
+    document.getElementById("equal").addEventListener("change",()=>{
+
+        if(equal.checked==true){
+            booker2.value = booker1.value;
+            checkObj.booker2=true;
+        } else {
+            booker2.value='';
+            checkObj.booker2=false;
+        }
+
+    });
+    
+}
+
 booker2.addEventListener("input",()=>{
     if(booker2.value.trim().length==0){
         checkObj.booker2=false;
@@ -68,6 +114,8 @@ booker2.addEventListener("input",()=>{
 });
 
 //이메일
+
+
 const book_input_email1 = document.getElementById("book-input-email1");
 const book_input_email2 = document.getElementById("book-input-email2");
 const book_input_email3 = document.getElementById("book-input-email3");
@@ -76,6 +124,21 @@ book_input_email1.addEventListener("input",()=>{
         checkObj["book-input-email1"]=false;
     } else{
         checkObj["book-input-email1"]=true;
+    }
+});
+
+book_input_email3.addEventListener("change", function(){
+    console.log(book_input_email3.value);
+    book_input_email2.value = book_input_email3.value
+    let guestPhone=phone1.value+phone2.value+phone3.value;
+	
+	console.log(guestPhone);
+    if(book_input_email3.value == '직접입력'){
+        book_input_email2.readonly = false;
+        book_input_email2.value = "";
+
+    } else{
+        book_input_email2.readonly = true;
     }
 });
 
@@ -212,3 +275,27 @@ agree.addEventListener("change", ()=>{
     }
 });
 
+
+
+
+
+document.getElementById("reservation4_form").addEventListener("submit",function(e){
+   
+    const cardNo=card1.value+card2.value+card3.value+card4.value;
+	const guestBirth=birth1.value+"-"+birth2.value+"-"+birth3.value;
+	const guestEmail=guestEmail1.value+"@"+guestEmail2.value;
+	const cardExpireDate=cardExpireDate1.value+cardExpireDate2.value;
+	const guestPhone=phone1.value+phone2.value+phone3.value;
+    
+
+    alert(guestPhone);
+   
+    
+    document.getElementsByName("cardExpireDate")[0].value=cardExpireDate;
+    document.getElementsByName("cardNo")[0].value=cardNo;
+    document.getElementsByName("guestPhone")[0].value=guestPhone;
+    document.getElementsByName("guestEmail")[0].value=guestEmail;
+    document.getElementsByName("guestBirth")[0].value=guestBirth;
+
+    
+})

@@ -6,14 +6,17 @@
 	
 		<id property="bookNo" column="BOOK_NO"/>
 		
+		<result property="memberNo" column="MEMBER_NO"/> 
+		<result property="nonMemberNo" column="NONMEMBER_NO"/> 
+		<result property="guestNo" column="GUEST_NO"/> 
+
+
+
 		<result property="checkInInput" column="CHECK_IN"/> 
 		<result property="checkOutInput" column="CHECK_OUT"/> 
-		
-		
 		<result property="roomCount" column="ROOM_COUNT"/> 
 		<result property="adultCount" column="ADULT_COUNT"/> 
 		<result property="childCount" column="CHILD_COUNT"/> 
-		
 		<result property="promotionNo" column="PROMOTION_NO"/> 
 		<result property="roomViewNo" column="ROOM_VIEW_NO"/> 
 		<result property="roomTypeNo" column="ROOM_TYPE_NO"/> 
@@ -40,6 +43,13 @@
 		<result property="roomTypeNo" column="ROOM_TYPE_NO" />
 	
 	</resultMap>
+	
+	<resultMap type="Option" id="option_rm">
+		<id property="optionNo" column="OPTION_NO" />
+		<result property="optionName" column="OPTION_NAME" />
+		<result property="optionPrice" column="OPTION_PRICE" />
+	
+	</resultMap>
 
 	<select id="selectPromotion" parameterType="Reserve" resultMap="promotion_rm">
 		<![CDATA[
@@ -48,4 +58,78 @@
 		AND P_SALE_END_DATE > #{checkOutInput}
 		]]>
 	</select>
+	
+	<select id="selectRoomType" parameterType="_int" resultType="string">
+	 SELECT DISTINCT ROOM_VIEW_NO||','||ROOM_TYPE_NO  FROM PROMOTION  
+	JOIN PROMOTION_ROOM USING(PROMOTION_NO)
+	JOIN ROOM_VIEW USING(ROOM_VIEW_NO)
+	JOIN ROOM_TYPE USING(ROOM_TYPE_NO)
+	WHERE PROMOTION_NO =#{promotionNo}
+	</select>
+	
+	<select id="selectBedType" parameterType="_int" resultType="String">
+	SELECT DISTINCT ROOM_TYPE.BED_TYPE_NO 
+	FROM PROMOTION
+	JOIN PROMOTION_ROOM USING(PROMOTION_NO)
+	JOIN ROOM_VIEW USING(ROOM_VIEW_NO)
+	JOIN ROOM_TYPE USING(ROOM_TYPE_NO)
+	WHERE PROMOTION_NO=#{promotionNo}
+	</select>
+	
+	<select id="selectOption" resultMap="option_rm">
+		SELECT * FROM "OPTION"
+	
+	</select>
+	
+	
+	<insert id="insertPayment">
+		INSERT INTO "PAYMENT"
+		VALUES(#{cardNo},#{cardType},#{cardExpireDate})
+	</insert>
+	
+	
+	
+	
+	<insert id="insertGuest">
+
+		INSERT INTO GUEST
+		VALUES(SEQ_GUEST_NO.NEXTVAL, #{guestName},#{guestEmail},#{guestPhone},#{guestRequest},#{guestBirth})
+	</insert>
+	
+	
+	
+	
+	
+	<insert id="insertBook" useGeneratedKeys="true">
+	
+		<selectKey keyProperty="guestNo" resultType="_int" order="BEFORE">
+			SELECT SEQ_GUEST_NO.CURRVAL FROM DUAL
+		</selectKey>
+		
+		
+		INSERT INTO "BOOK"
+		VALUES(SEQ_BOOK_NO.NEXTVAL, DEFAULT, #{checkInInput}, #{checkOutInput}, 
+		#{adultCount}, 0, DEFAULT,DEFAULT, #{cardNo}, #{memberNo}, #{nonMemberNo}, #{promotionNo}, #{roomViewNo}, #{roomTypeNo}, #{childCount}, #{roomCount}, #{guestNo}, 1)
+	</insert>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </mapper>

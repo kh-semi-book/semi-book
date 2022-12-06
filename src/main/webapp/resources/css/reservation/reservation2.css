@@ -193,23 +193,30 @@
 
 .package-room-type span:first-child {
 	font-size: 13px;
-	color: #474747
+	color: #474747;
+}
+.package-room-type span.bedName{
+	padding-right: 0px;
+	display: inline-block;
+	width: 45px;
 }
 
 .package-room-type span:nth-child(2) {
 	font-weight: 700;
+	padding-right: 20px;
 }
 
-.package-room-type a {
-	text-decoration: none;
+.package-room-type button.selectBtn {
 	padding: 5px 30px;
 	background-color: #8c8c8c;
+	border: none;
 	color: white;
 	font-size: 13px;
 }
 
-.package-room-type a:hover {
+.package-room-type button.selectBtn:hover {
 	background-color: #4d4d4d;
+	border: none;
 	transition: all 0.2s;
 }
 
