@@ -21,12 +21,6 @@ public interface MeetingRoomService {
 	 */
 	Map<String, Object> selectBookList(Map<String, Object> pm, int cp);
 
-	/** 진행상태 변경 
-	 * @param input
-	 * @return
-	 */
-	int changeProcess(int input);
-
 	/** 미팅룸 예약 상세보기 
 	 * @param meetingBookNo
 	 * @return
@@ -38,6 +32,20 @@ public interface MeetingRoomService {
 	 * @return
 	 */
 	int meetingBookAdd(MeetingRoom inputMeetingRoom);
+
+	
+	/** 미팅룸 예약 상세보기 수정 
+	 * @param inputMeetingRoom
+	 * @return
+	 */ 
+	int meetingRoomDetailUpdate(MeetingRoom inputMeetingRoom);
+
+	/** 저장 클릭시 업데이트
+	 * @param meetingBookNo
+	 * @return
+	 */
+	int processUpdate(MeetingRoom meetingRoom);
+
 
 	
 

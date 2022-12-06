@@ -19,16 +19,16 @@ public class ReservationDAO {
 	/** 예약 수 조회 
 	 * @return 
 	 */
-	public int selectBookCount() {
-		return sqlSession.selectOne("reservationMapper.selectBookCount");
+	public int selectBookCount(int memberNo) {
+		return sqlSession.selectOne("reservationMapper.selectBookCount",memberNo);
 	}
 
 	/** 예약 리스트 조회 
 	 * @param pagination
 	 * @return
 	 */
-	public List<ReservationViewDetail> selectBookList(Pagination pagination) {
-		return sqlSession.selectList("reservationMapper.selectBookList");
+	public List<ReservationViewDetail> selectBookList(Pagination pagination, int memberNo) {
+		return sqlSession.selectList("reservationMapper.selectBookList",memberNo);
 	}
 
 	/** 예약 조회 상세보기 서비스

@@ -12,7 +12,6 @@
 		<script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="/resources/css/common/main.css">
 		<link rel="stylesheet" href="/resources/css/member/memberEdit.css">
-
 		<style>body{margin: auto;}</style>
 	</head>
 
@@ -39,7 +38,7 @@
 					<span class="kjh-txt"><strong class="star">*</strong>표시는 필수항목입니다.</span>
 				</h4>
 
-					<form name="joinform" id ="joinform" method="POST" action="memberEdit">
+				<form name="joinform" id ="joinform" method="POST" action="memberEdit">
 					<div class="form1">
 						<table class="kjh-form1-table">
 						<tr>
@@ -85,7 +84,7 @@
 							<th>새 비밀번호<span class="star">*</span></th>
 							</label>
 							<td class="kjh-input " colspan="3">
-							<input type="password" size="20" name="newMemberPw1" id="newMemberPw1" >
+							<input type="password" size="20" name="newPw" id="newPw" >
 							</td>
 						</tr>
 
@@ -94,7 +93,7 @@
 							<th>새 비밀번호 확인<span class="star">*</span></th>
 							</label>
 							<td class="kjh-input " colspan="3">
-							<input type="password" size="20" name="newMemberPw2" id="newMemberPw2" >
+							<input type="password" size="20" name="newPwConfirm" id="newPwConfirm" >
 							</td>
 						</tr>
 
@@ -103,17 +102,17 @@
 						<tr>
 							<th>휴대폰<span class="star">*</span></th>
 							<td class="kjh-input" colspan="3">
-							<input type="text" size="1" name="memberPhone" id="m_phone" value="${fn:substring(phone,0,3)}"> -
-							<input type="text" size="1" name="memberPhone" id="m_phone" value="${fn:substring(phone,3,7)}"> -
-							<input type="text" size="1" name="memberPhone" id="m_phone" value="${fn:substring(phone,7,12)}">
+							<input type="text" size="1" name="memberPhone" id="memberPhone1" value="${fn:substring(phone,0,3)}" maxlength="3"> -
+							<input type="text" size="1" name="memberPhone" id="memberPhone2" value="${fn:substring(phone,3,7)}" maxlength="4"> -
+							<input type="text" size="1" name="memberPhone" id="memberPhone3" value="${fn:substring(phone,7,12)}" maxlength="4">
 							</td>
 						</tr>
 
 						<%-- 회원정보 수정 : 이메일 --%>
 							<th>이메일<span class="star">*</span></th>
 							<td class="kjh-input" colspan="3">
-                <input type="text" size="20" name="memberEmail" id="memberEmail1" value="${fn:split(loginMember.memberEmail,'@')[0]}">@
-                <input type="text" size="13"name="memberEmail" id= "memberEmail2" value="${fn:split(loginMember.memberEmail,'@')[1]}">
+							<input type="text" size="20" name="memberEmail" id="memberEmail1" value="${fn:split(loginMember.memberEmail,'@')[0]}">@
+							<input type="text" size="13" name="memberEmail" id="memberEmail2" value="${fn:split(loginMember.memberEmail,'@')[1]}">
 							<select class="kjh-address" name="memberEmail" id="memberEmail3">
 								<option value="naver.com">naver.com</option>
 								<option value="gmail.com">gmail.com</option>
@@ -122,22 +121,23 @@
 								<option value="dreamwiz.com">dreamwiz.com</option>
 								<option value="freechal.com">freechal.com</option>
 								<option value="">직접 입력</option>
-							</select>
+							</select><br>
+							<span id="info">(다음/한메일은 수신이 안될 수 있습니다.)</span>
 							</td>
 						</tr>
 
 						<%-- 회원정보 수정 : 성별 --%>	
+						<c:choose>
+							<c:when test="${fn:contains(loginMember.memberGender,'F')}">
+								<c:set var="CF" value="selected"/>
+							</c:when>
+							<c:when test="${fn:contains(loginMember.memberGender,'M')}">
+								<c:set var="CM" value="selected"/>
+							</c:when>
+						</c:choose>
 						<tr>
 							<th>성별<span class="star">*</span></th>
 							<td class="kjh-input"colspan="3">
-							<c:choose>
-								<c:when test="${fn:contains(loginMember.memberGender,'F')}">
-									<c:set var="CF" value="selected"/>
-								</c:when>
-								<c:when test="${fn:contains(loginMember.memberGender,'M')}">
-									<c:set var="CM" value="selected"/>
-								</c:when>
-							</c:choose>
 							<select class="kjh-select"name="memberGender" id="memberGender">
 								<option value="" ${C0}>성별</option>
 								<option value="F" ${CF}>여</option>
@@ -147,41 +147,40 @@
 						</tr>
 
 						<%-- 이메일 수신 동의 --%>
-            <c:choose>
-								<c:when test="${loginMember.emailFlag =='Y'}">
-									<c:set var="Y" value="checked"/>
-								</c:when>
-								<c:when test="${loginMember.emailFlag=='N'}">
-									<c:set var="N" value="checked"/>
-								</c:when>
-            </c:choose>
+						<c:choose>
+							<c:when test="${loginMember.emailFlag =='Y'}">
+								<c:set var="Y" value="checked"/>
+							</c:when>
+							<c:when test="${loginMember.emailFlag=='N'}">
+								<c:set var="N" value="checked"/>
+							</c:when>
+						</c:choose>
 						<tr>
 							<th>이메일<br> 수신 동의<span class="star">*</span></th>
 							<td>
-                <input type="radio" name="emailFlag" id="m_email_yn1" value="Y" ${Y}>
-                <label for="m_email_yn1">수신</label>
-
-                <input type="radio" name="emailFlag" id="m_email_yn2"value="N" ${N}>
-                <label for="m_email_yn2">수신거부</label>
+							<input type="radio" name="emailFlag" id="emailFlag" value="Y" ${Y}>
+							<label for="m_email_yn1">수신</label>
+							<input type="radio" name="emailFlag" id="emailFlag"value="N" ${N}>
+							<label for="m_email_yn2">수신거부</label>
 							</td>
 						</tr>
 
 						<%-- SNS 수신 동의 --%>
-            <c:choose>
+						<tr>
+							<th>SMS<br> 수신 동의<span class="star">*</span></th>
+							<td>
+							<c:choose>
 								<c:when test="${loginMember.smsFlag =='Y'}">
 									<c:set var="Y" value="checked"/>
 								</c:when>
 								<c:when test="${loginMember.smsFlag=='N'}">
 									<c:set var="N" value="checked"/>
 								</c:when>
-            </c:choose>
-						<tr>
-							<th>SMS<br> 수신 동의<span class="star">*</span></th>
-							<td>
-								<input type="radio" name="smsFlag" id="m_sms_yn1" value="Y"  ${Y}>
+							</c:choose>
+								<input type="radio" name="smsFlag" id="smsFlag" value="Y" ${Y}>
 								<label for="m_sms_yn1">수신</label>
 
-								<input type="radio" name="smsFlag" id="m_sms_yn2" value="N"  ${N}>
+								<input type="radio" name="smsFlag" id="smsFlag" value="N" ${N}>
 								<label for="m_sms_yn2">수신거부</label>
 							</td>
 						</tr>
@@ -195,47 +194,52 @@
 							<%-- 생년월일 --%>
 							<tr>
 								<th>생년월일</th>
-								<td class="kjh-input"><input type="text"value="${fn:substring(loginMember.memberBirth,0,10)}"></td>
+								<td class="kjh-input"><input type="text" value="${fn:substring(loginMember.memberBirth,0,10)}"></td>
 							</tr>
 
 							<%-- 결혼 유무 --%>
 							<tr>
 								<th>결혼유무</th>
 								<td colspan="3">
-									<input type="radio" name="marriageFlag" id="marriage_yn1" value="N">
-									<label for="marriage_yn1">미혼</label>
-
-									<input type="radio" name="marriageFlag" id="marriage_yn2" value="Y">
-									<label for="marriage_yn2">기혼</label>
+								<%-- <c:choose>
+									<c:when test="${fn:contains(loginMember.marriageFlag,'N')}">
+										<c:set var="N" value="selected"/>
+									</c:when>
+									<c:when test="${fn:contains(loginMember.marriageFlag,'Y')}">
+										<c:set var="Y" value="selected"/>
+									</c:when>
+								</c:choose> --%>
+									<input type="radio" name="marriageFlag" id="marriageFlag" value="N" ${N}>
+									<label for="marriageFlag">미혼</label>
+									<input type="radio" name="marriageFlag" id="marriageFlag" value="Y" ${Y}>
+									<label for="marriageFlag">기혼</label>
 									<span class="kjh-married"> 결혼기념일 : 
 										<input type="text" name="memberWedding" size="4" maxlength="4" >년
-										
 										<input type="text" name="memberWedding" size="4" maxlength="4" >월
-										
 										<input type="text" name="memberWedding" size="4" maxlength="4" >일
 									</span>
 								</td>	
 							</tr>         
 
 							<%-- 유선 전화 --%>	
+							<%-- <c:set var="tel" value="${loginMember.memberTel}"/>  --%>
 							<tr>
 								<th>유선전화</th>
 								<td class="kjh-input" colspan="3">
-									<input type="text"  name="memberTel" size="1" name="m_col" id="m_col"> -
-									<input type="text"  name="memberTel" size="1" name="m_col" id="m_col"> -
-									<input type="text"  name="memberTel" size="1" name="m_col" id="m_col"> 
+									<input type="text"  name="memberTel" size="1" name="m_col" id="m_col" value="${fn:substring(tel,0,3)}" > -
+									<input type="text"  name="memberTel" size="1" name="m_col" id="m_col" value="${fn:substring(tel,0,3)}" > -
+									<input type="text"  name="memberTel" size="1" name="m_col" id="m_col" value="${fn:substring(tel,0,3)}" > 
 								</td>
 							</tr>  
 
 							<%-- 주소 --%>
 							<tr>
-							     <%-- <c:set var="addr" value="${fn:split(loginMember.memberAddress,',,')}" /> --%>
 								<th>주소</th>
 								<td class="kjh-input" colspan="3">
-									<input type="text"   name = "memberAddress" class="kjh-address" size="5px" readonly>
-									<input type="button" name = "memberAddress" class="kjh-btn"     value="우편번호검색"><br>
-									<input type="text"   name = "memberAddress" class="kjh-address" size="35px"readonly> 
-									<input type="text"   name = "memberAddress" class="kjh-address" size="35px">
+									<input type="text"   name = "memberAddress" class="kjh-address" size="5px" id="sample6_postcode" readonly>
+									<input type="button" name = "memberAddress" class="kjh-btn"     value="우편번호검색" onclick="sample6_execDaumPostcode()"><br>
+									<input type="text"   name = "memberAddress" class="kjh-address" size="35px" id="sample6_address" readonly> 
+									<input type="text"   name = "memberAddress" class="kjh-address" size="35px" id="sample6_detailAddress">
 								</td>
 							</tr>      
 
@@ -247,18 +251,29 @@
 						</table>
 					</div> 
 					<div class="kjh-btn-yn">
-						<button>확인</button>
-					<%-- <a href="" class="yes">확인</a>
-					<a href="" class="no">취소</a> --%>
-
+						<button class="submit-btn">확인</button>
+						<button class="cancle-btn">취소</button>
 					</div>
-					</form>
+				</form>
 				</div> 
 			</div>  
 		</div> 
 
+
+
+
+
+
+
+
+
+
+
+
 		<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 		<script src="/resources/js/member/memberEdit.js"></script> 
+		<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
 		<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 	</body>
 </html>

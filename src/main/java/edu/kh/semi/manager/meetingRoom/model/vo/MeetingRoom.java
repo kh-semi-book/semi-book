@@ -3,10 +3,12 @@ package edu.kh.semi.manager.meetingRoom.model.vo;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString
 public class MeetingRoom {
 	
 	private int meetingBookNo;         // 미팅룸 예약 번호 

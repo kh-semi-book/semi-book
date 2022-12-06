@@ -81,19 +81,30 @@
 				<div class="manage-booker-name manage-border-right">${book.meetingMenName}</div>
 				<div class="manage-book-del manage-border-right">${book.meetingCancelFL}</div>
 				<div class="manage-book-status manage-border-right">
-				<c:if test="${book.meetingProcess==0}">예약대기</c:if> 
-				<c:if test="${book.meetingProcess==1}">예약완료</c:if> 
-				<c:if test="${book.meetingProcess==2}">취소완료</c:if> 
-					&nbsp;&nbsp;
-					<select name="book-status" id="book-status">
-						<option value="0">예약대기</option>
-						<option value="1">예약완료</option>
-						<option value="2">취소완료</option>
-					</select>
-				</div>
-				<div class="manage-book-status-change"> 
-					<button id="save-btn">저장</button>
-				</div>
+				<form action="/processUpdate" method="POST">
+					<input type="hidden" name="meetingBookNo" value="${book.meetingBookNo}">
+					<c:choose>
+						<c:when test="${book.meetingProcess==0}">예약대기
+							<c:set var="sel0" value="selected"/>
+						</c:when>
+						<c:when test="${book.meetingProcess==1}">예약완료
+							<c:set var="sel1" value="selected"/>
+						</c:when>
+						<c:when test="${book.meetingProcess==2}">예약취소
+							<c:set var="sel2" value="selected"/>
+						</c:when>
+					</c:choose>
+						&nbsp;&nbsp;
+						<select name="meetingProcess" id="book-status">
+							<option value="0" ${sel0}>예약대기</option>
+							<option value="1" ${sel1}>예약완료</option>
+							<option value="2" ${sel2}>예약취소</option>
+						</select>
+					</div>
+					<div class="manage-book-status-change"> 
+						<button id="save-btn">저장</button>
+					</div>
+				</form>
 			</div>
 			</c:forEach>
 			

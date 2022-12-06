@@ -99,21 +99,39 @@
 	 	
 	 	<!-- 미팅룸 예약 상세보기 페이지 조회 -->
 	 	<select id="meetingRoomDetail" resultMap="meetingRoom_rm" resultType="MeetingRoom">
-	 		SELECT MEETING_MEM_NAME, MEETING_MEN_PHONE, MEETING_MEN_EMAIL, 
+	 		SELECT MEETING_BOOK_NO, MEETING_MEM_NAME, MEETING_MEN_PHONE, MEETING_MEN_EMAIL, 
 	 					 MEETING_BOOK_COMPANY, MEETING_HEADCOUNT, 
 	 					 TO_CHAR(MEETING_BOOK_DATE,'YYYY-MM-DD')MEETING_BOOK_DATE, MEETING_BOOK_CONTENT 
 			FROM MEETING_BOOK
 			WHERE MEETING_BOOK_NO = #{meetingBookNo}
 	 	</select>
 	 	
+	 	<!-- 미팅룸 예약 상세보기 수정 -->
+	 	<update id="meetingRoomDetailUpdate" parameterType="MeetingRoom">
+	 	UPDATE "MEETING_BOOK" SET
+			MEETING_MEM_NAME=#{meetingMenName},       
+			MEETING_MEN_PHONE=#{meetingMenPhone},     
+			MEETING_MEN_EMAIL=#{meetingMenEmail},   
+			MEETING_BOOK_COMPANY=#{meetingBookCompany},
+			MEETING_HEADCOUNT=#{meetingHeadCount},    
+			MEETING_BOOK_DATE=#{meetingBookDate},     
+			MEETING_BOOK_CONTENT=#{meetingBookContent}  
+		WHERE MEETING_BOOK_NO=#{meetingBookNo}
+	 	</update>
+	 	
+	 	<!-- 미팅룸 저장 클릭시 업데이트 -->
+	 	<update id="processUpdate">
+	 	UPDATE "MEETING_BOOK" SET
+	 		MEETING_PROCESS = #{meetingProcess}
+	 		WHERE MEETING_BOOK_NO = #{meetingBookNo}
+	 	</update>
 	 	
 	 	<!-- 미팅룸 예약 문의 추가 -->
 	 	<insert id="meetingBookAdd" parameterType="MeetingRoom">
 	 			INSERT INTO "MEETING_BOOK" 
-				VALUES(SEQ_MEETING_BOOK_NO.NEXTVAL, SYSDATE, #{meetingMenName},0 , 'N',
+				VALUES(SEQ_MEETING_BOOK_NO.NEXTVAL, SYSDATE, #{meetingMenName}, 0 , 'N',
 				#{meetingHeadCount}, #{meetingBookDate}, #{meetingMenEmail},
-	      #{meetingMenPhone},#{meetingBookCompany},{meetingBookContent}, 3)
+	      #{meetingMenPhone}, #{meetingBookCompany}, #{meetingBookContent}, #{meetingRoomNo})
 	 	</insert>
-
 
 </mapper>

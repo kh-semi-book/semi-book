@@ -27,7 +27,7 @@
 	<!-- 예약 수 조회 -->
 	<select id="selectBookCount" resultType="_int">
 	SELECT COUNT(*) FROM BOOK
-	WHERE MEMBER_NO = 31
+	WHERE MEMBER_NO = #{memberNo}
 	
 	</select>
 
@@ -42,7 +42,7 @@
 	JOIN "PROMOTION" USING(PROMOTION_NO)
 	JOIN "ROOM_TYPE" USING(ROOM_TYPE_NO)
 	JOIN "ROOM_VIEW" USING(ROOM_VIEW_NO)
-	WHERE BOOK.MEMBER_NO = 2
+	WHERE BOOK.MEMBER_NO = #{memberNo}
 	</select>
 	
 	<!-- 예약 조회 상세보기  -->
@@ -50,6 +50,6 @@
 	SELECT MEMBER_NAME 
 	FROM BOOK
 	JOIN "MEMBER" USING(MEMBER_NO)
-	WHERE MEMBER_NO = 2
+	WHERE MEMBER_NO = {memberNo}
 	</select>
 </mapper>

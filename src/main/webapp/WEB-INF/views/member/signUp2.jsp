@@ -336,7 +336,6 @@
                                   <input type="button" onclick="sample6_execDaumPostcode()" class="btn2"  value="우편번호검색"><br>
                                   <input type="text" id="sample6_address" name = "memberAddress" class="kjh-address" size="50px"readonly> <br>
                                   <input type="text" id="sample6_detailAddress" name = "memberAddress"  class="kjh-address" size="50px">
-
                                 </td>
                               </tr>                              
                             </table>

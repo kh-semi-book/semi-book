@@ -12,6 +12,12 @@ public class MyPageDAO {
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 
+	// 회원 정보 변경 
+	// 1. 로그인 회원 번호를 이용한 비밀번호 조회  
+	public String selectPw(int memberNo) {
+		return sqlSession.selectOne("myPageMapper.selectPw",memberNo);
+	}
+	
 	/** 회원 정보 수정 서비스 DAO (비밀번호가 없을 때) 
 	 * @param inputMember
 	 * @return result
@@ -23,7 +29,6 @@ public class MyPageDAO {
 		
 		return result;
 	}
-
 	
 	/** 회원 정보 수정 서비스 DAO (비밀번호가 있을 때)
 	 * @param inputMember
@@ -50,5 +55,7 @@ public class MyPageDAO {
 	public int memberDelete(int memberNo) {
 		return sqlSession.update("myPageMapper.memberDelete", memberNo);
 	}
+
+
 
 }
