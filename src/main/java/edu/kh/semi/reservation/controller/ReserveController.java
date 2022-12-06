@@ -48,7 +48,7 @@ public class ReserveController {
 		List<Promotion> promotionList=service.selectPromotion(reserve);
 		// 프로모션 조회할 때 프로모션에 해당하는방도 같이 세팅해서 넘어가야함
 		
-	
+		
 		
 		System.out.println(promotionList);
 		

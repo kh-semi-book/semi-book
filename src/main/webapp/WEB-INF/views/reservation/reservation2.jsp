@@ -50,11 +50,7 @@
 			<div id="reservation2_content_area">
 				<div></div>
 				
-				
-				
 				<div id="reservation2_book_area">
-				
-				
 					<div id="reservation_select_area">
 						<c:forEach var="promotion" items="${promotionList}">
 						<div class="package-list">
@@ -72,16 +68,44 @@
 								</div>
 							</div>
 							<div class="package-type">
-							${promotion.roomType}
-							
 								<c:forEach var="room" items="${promotion.roomType}">
 									
 								<div class="package-type-option">
-									<div class="package-view-type">${room}</div>
+									<c:set var="roomViewNo" value="${fn:split(room,',')[0]}" />
+									<c:set var="roomTypeNo" value="${fn:split(room,',')[1]}" />
+									 <c:choose>
+										<c:when test="${roomViewNo==1}">
+											<c:set var="roomViewName" value="가든" />
+										</c:when>
+										<c:when test="${roomViewNo==2}">
+											<c:set var="roomViewName" value="클리프" />
+										</c:when>
+										<c:when test="${roomViewNo==3}">
+											<c:set var="roomViewName" value="파노라마" />
+										</c:when>
+										</c:choose> 
+										<c:choose> 
+										<c:when test="${roomTypeNo==1}">
+											<c:set var="roomTypeName" value="예래 스위트" />
+										</c:when>
+										<c:when test="${roomTypeNo==2}">
+											<c:set var="roomTypeName" value="패밀리 스위트" />
+										</c:when>
+										<c:when test="${roomTypeNo==3}">
+											<c:set var="roomTypeName" value="코너 디럭스" />
+										</c:when>
+										<c:when test="${roomTypeNo==4}">
+											<c:set var="roomTypeName" value="디럭스" />
+										</c:when>
+
+									</c:choose> 
+
+									<div class="package-view-type">${roomViewName} ${roomTypeName}</div>
+									
 									
 									
 									<div class="package-room-type">
-									<c:forEach var="bed" items="${promotion.bedType}">
+									<c:forEach var="bed" items="${promotion.bedType}" >
 										<c:choose>
 											<c:when test="${bed == 1}">
 												<c:set var="bed1" value="트윈" />
@@ -107,9 +131,6 @@
 						
 						</c:forEach>
 					</div>
-					
-						
-					
 					<div id="reservation_side_area">
 						<div class="side-table" id="side-table">
 							<div>
