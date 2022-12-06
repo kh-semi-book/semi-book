@@ -120,5 +120,6 @@ body {
     </div>
 
 	<script src="/resources/js/manager/board/boardPost.js"></script>
+	<jsp:include page="/WEB-INF/views/common/admin-footer.jsp" />
 </body>
 </html>
