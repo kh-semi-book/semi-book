@@ -111,10 +111,10 @@ public class MemberController {
 		String weddingDate = memberWedding[0] + memberWedding[1] + memberWedding[2];
 		inputAdd.setMemberWedding(weddingDate);
 		
-		String tel = memberTel[0] + memberTel[1] + memberTel[2];
+		String tel = memberTel[0]+ "-"  + memberTel[1]+ "-"  + memberTel[2];
 		inputAdd.setMemberTel(tel);
 		
-		String address = memberAddress[0] + memberAddress[1] + memberAddress[2];
+		String address = memberAddress[0]+" " + memberAddress[1] +" "+ memberAddress[2];
 		inputAdd.setMemberAddress(address);
 		
 
