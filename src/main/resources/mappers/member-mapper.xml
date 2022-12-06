@@ -54,13 +54,13 @@
 		</selectKey>
 		INSERT INTO "MEMBER"
 		VALUES(#{memberNo}, #{memberName}, #{memberId}, #{memberPw}, #{memberPhone},
-		DEFAULT, DEFAULT, #{memberEmail}, #{memberGender}, #{memberBirth}, #{emailFlag}, #{smsFlag}, DEFAULT    )
+		DEFAULT, DEFAULT, #{memberEmail}, #{memberGender}, #{memberBirth}, #{emailFlag}, #{smsFlag}, DEFAULT)
 	</insert> 
 	
 	<!-- 회원 가입 / add테이블에 넣어보자 -->
 	<insert id="signUp2" parameterType = "Add">
 		INSERT INTO "ADD"
-		VALUES(#{memberTel}, #{memberAddress}, #{memberNo}, #{marriageFlag}  )
+		VALUES(#{memberTel}, #{memberAddress}, #{memberNo}, #{marriageFlag} , #{memberWedding} )
 	</insert>
 
 

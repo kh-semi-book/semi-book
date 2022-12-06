@@ -4,17 +4,17 @@ const memberPhone2 = document.getElementById("memberPhone2");
 const memberPhone3 = document.getElementById("memberPhone3");
 
 memberPhone1.addEventListener("keyup", function(){
-    if(this.value.length == 3){
+    if(this.value.length === 3){
         memberPhone2.focus();
     }
 });
 memberPhone2.addEventListener("keyup", function(){
-    if(this.value.length == 4){
+    if(this.value.length === 4){
         memberPhone3.focus();
     }
 });
 memberPhone3.addEventListener("keyup", function(){
-    if(this.value.length == 4){
+    if(this.value.length === 4){
         memberEmail1.focus();
     }
 });
@@ -23,6 +23,7 @@ memberPhone3.addEventListener("keyup", function(){
 
 const memberEmail3 = document.getElementById("memberEmail3");
 const memberEmail2 = document.getElementById("memberEmail2");
+const memberEmail1 = document.getElementById("memberEmail1");
 
 memberEmail3.addEventListener("change", function(){
     memberEmail2.value = memberEmail3.value
@@ -37,10 +38,27 @@ memberEmail3.addEventListener("change", function(){
 });
 
 // ================== 추가 정보 항목 ============================
-const marriageYN1 = document.getElementById("marriageYN1");
-const marriageYN2 = document.getElementById("marriageYN2");
+const weddingInput1 = document.getElementById("memberWedding1");
+const weddingInput2 = document.getElementById("memberWedding2");
+const weddingInput3 = document.getElementById("memberWedding3");
+const weddingYN1 = document.getElementById("marriageYN1");
+const weddingYN2 = document.getElementById("marriageYN2");
 
-// if(marriageYN1.)
+weddingYN1.addEventListener("click", () =>{
+    if(weddingYN1.checked === true) {
+        weddingInput1.disabled = true;
+        weddingInput2.disabled = true;
+        weddingInput3.disabled = true;
+        }
+    })
+weddingYN2.addEventListener("click", () =>{
+    if(weddingYN2.checked === true) {
+        weddingInput1.disabled = false;
+        weddingInput2.disabled = false;
+        weddingInput3.disabled = false;
+        }
+    })
+    
 
 
 // ==============================================================
@@ -79,285 +97,229 @@ function sample6_execDaumPostcode() {
 
 const checkObj = {
 
-    "memberName"       : false,
-    "memberId"         : false,
-    "reqmemberId"      :false,
-    "memberPw"         : false,
-    "memberPwConfirm"  : false,
-    "reqmemberPw"      : false,
-    "memberPhone1"      : false,
-    "memberPhone2"      : false,
-    "memberPhone3"      : false,
-    "memberEmail1"      : false,
-    "memberEmail2"      : false,
-    "memberEmail3"      : false,
-    "memberGender"     : false,
-    "memberBirth1"      : false,
-    "memberBirth2"      : false,
-    "memberBirth3"      : false,
-    "emailFlag"        : false,
-    "smsFlag"          : false
+    "memberName"       : true,
+    "memberId"         : true,
+    "reqmemberId"      : true,
+    "memberPw"         : true,
+    "memberPwConfirm"  : true,
+    "reqmemberPw"      : true,
+    "memberPhone1"      :true,
+    "memberPhone2"      :true,
+    "memberPhone3"      :true,
+    "memberEmail1"      :true,
+    "memberEmail2"      :true,
+    "memberEmail3"      :true,
+    "memberGender"     : true,
+    "memberBirth1"      :true,
+    "memberBirth2"      :true,
+    "memberBirth3"      :true,
+    "emailFlag"        : true,
+    "smsFlag"          : true
 
 };  
+
+// 아이디 중복 검사
+document.getElementById("dup_check").addEventListener("click", function(){
+    const memberId = document.getElementById("memberId");
+    const regEx = /^[a-z0-9]{6,20}$/;
+
+    if(memberId.value === ""){
+        alert("아이디를 입력해주세요.");
+        memberId.focus();
+    } else if(
+        !regEx.test(memberId.value)
+    ){
+        alert("아이디 항목의 아이디 형식이 올바르지 않습니다.\n\n영소문자, 숫자로 6~20자까지 가능합니다.");
+
+    
+    }else{
+
+    const param = {"memberId" : memberId.value};
+    $.ajax({
+        url : '/idDupCheck',
+        data : param,
+        type : "GET",
+        success : (result) => {
+            //result: 서버로부터 받은 응답 데이터
+            console.log(result);
+
+            if(result == 0){ // 중복 X
+                alert("'"+memberId.value + "'은(는) 중복된 아이디가 없습니다.\n\n 사용하셔도 좋습니다.")
+
+            } else{
+                alert("사용 불가능한 아이디 입니다.")
+
+
+            }
+        },
+        error : () => {
+            console.log("아이디 중복검사 실패");
+        },
+        complete : () => {
+            console.log("중복검사 수행 완료");
+        }
+    });
+    }
+
+})
 
 document.getElementById("joinform").addEventListener("submit", function(event){
 //    checkObj속성  중 한개라도 false라면 제출 X
 
-        for(let key in checkObj){
+            // switch(!key){
+            //     case "memberName"       : str = "성명 항목은 필수입니다.";  break;
+            //     case "memberId"         : str = "아이디 항목은 필수입니다."; break;
+            //     case "reqmemberId"      : str = "아이디 항목의 아이디 형식이 올바르지 않습니다.\n\n영소문자, 숫자로 6~20자까지 가능합니다."     ;               break;
+            //     case "memberPw"         : str = "비밀번호 항목은 필수입니다.";                      break;
+            //     case "memberPwConfirm"  : str = "비밀번호 항목의 입력된 내용이 일치하지 않습니다."; break;
+            //     case "reqmemberPw"     : str =  "비밀번호 항목의 비밀번호 형식이 올바르지 않습니다.\n\n비밀번호는 특수문자를 포함해 8~20자로 입력해주세요."; break;
+            //     case "memberPhone1"      : str = "휴대폰 항목은 필수입니다.";                        break;
+            //     case "memberPhone2"      : str = "휴대폰 항목은 필수입니다.";                        break;
+            //     case "memberPhone3"      : str = "휴대폰 항목은 필수입니다.";                        break;
+            //     case "memberEmail1"      : str = "이메일 항목의 이메일 형식이 올바르지 않습니다.";   break;
+            //     case "memberEmail2"      : str = "이메일 항목의 이메일 형식이 올바르지 않습니다.";   break;
+            //     case "memberEmail3"      : str = "이메일 항목의 이메일 형식이 올바르지 않습니다.";   break;
+            //     case "memberGender"     : str  = "성별 항목은 필수입니다,";                         break;
+            //     case "memberBirth1"      : str  = "생년 항목은 필수입니다.";                         break;
+            //     case "memberBirth2"      : str  = "생년 항목은 필수입니다.";                         break;
+            //     case "memberBirth3"      : str  = "생년 항목은 필수입니다.";                         break;
+            //     case "emailFlag"        : str  = "이메일 수신 항목은 필수입니다.";                  break;
+            //     case "smsFlag"          : str  = "SMS 수신동의 항목은 필수입니다.";                 break;
+            // }
 
-            let str;
-
-            if(!checkObj[key]){
-
-            switch(key){
-                case "memberName"       : str = "성명 항목은 필수입니다.";  break;
-                case "memberId"         : str = "아이디 항목은 필수입니다."; break;
-                case "reqmemberId"      : str = "아이디 항목의 아이디 형식이 올바르지 않습니다.\n\n영소문자, 숫자로 6~20자까지 가능합니다."     ;               break;
-                case "memberPw"         : str = "비밀번호 항목은 필수입니다.";                      break;
-                case "memberPwConfirm"  : str = "비밀번호 항목의 입력된 내용이 일치하지 않습니다."; break;
-                case "reqmemberPw"     : str =  "비밀번호 항목의 비밀번호 형식이 올바르지 않습니다.\n\n비밀번호는 특수문자를 포함해 8~20자로 입력해주세요."
-                case "memberPhone1"      : str = "휴대폰 항목은 필수입니다.";                        break;
-                case "memberPhone2"      : str = "휴대폰 항목은 필수입니다.";                        break;
-                case "memberPhone3"      : str = "휴대폰 항목은 필수입니다.";                        break;
-                case "memberEmail1"      : str = "이메일 항목의 이메일 형식이 올바르지 않습니다.";   break;
-                case "memberEmail2"      : str = "이메일 항목의 이메일 형식이 올바르지 않습니다.";   break;
-                case "memberEmail3"      : str = "이메일 항목의 이메일 형식이 올바르지 않습니다.";   break;
-                case "memberGender"     : str  = "성별 항목은 필수입니다,";                         break;
-                case "memberBirth1"      : str  = "생년 항목은 필수입니다.";                         break;
-                case "memberBirth2"      : str  = "생년 항목은 필수입니다.";                         break;
-                case "memberBirth3"      : str  = "생년 항목은 필수입니다.";                         break;
-                case "emailFlag"        : str  = "이메일 수신 항목은 필수입니다.";                  break;
-                case "smsFlag"          : str  = "SMS 수신동의 항목은 필수입니다.";                 break;
+            const memberName = document.getElementById("memberName");
+                if(memberName.value.trim().length == 0 ){
+                    memberName.focus();
+                    alert("성명 항목은 필수입니다.");
+                    event.preventDefault();//제출 이벤트제거
+                    return;
+                } 
+            
                 
+                if(memberId.value.trim().length == 0){
+                    memberId.focus();
+                    alert("아이디 항목은 필수입니다.");
+                    event.preventDefault();//제출 이벤트제거
+                    return;
+                }
+
+            // const regEx = /^[a-z0-9]{6,20}$/;
+            // if(!regEx.test(memberId.value)){
+            //     memberId.focus();
+            //     alert("아이디 항목의 아이디 형식이 올바르지 않습니다.\n\n영소문자, 숫자로 6~20자까지 가능합니다.");
+            //     event.preventDefault();//제출 이벤트제거
+            //     return;
+            // }
+
+            const memberPw = document.getElementById("memberPw");
+                if(memberPw.value.trim().length == 0){
+                    memberPw.focus();
+                    alert("비밀번호 항목은 필수입니다.");
+                    event.preventDefault();//제출 이벤트제거
+                    return;
+                }
+
+            const memberPwConfirm = document.getElementById("memberPwConfirm");
+            if((memberPw.value.trim().length != 0 && memberPwConfirm.value.trim().length == 0)
+            || (memberPw.value != memberPwConfirm.value)){
+                memberPwConfirm.focus();
+                alert("비밀번호 항목의 입력된 내용이 일치하지 않습니다.");
+                event.preventDefault();//제출 이벤트제거
+                return;
             }
-            alert(str); // 대화상자 출력
+            const regEx2 = /^(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
 
-            if(checkObj.reqmemberId == false){
-            document.getElementById("memberId").focus();
-
-            } else{
-            //유효하지 않은 입력창으로 포커스 이동
-            document.getElementById(key).focus();
+            if((!regEx2.test(memberPw.value) && !regEx2.test(memberPwConfirm.value))){
+                memberPw.focus();
+                alert("비밀번호 항목의 비밀번호 형식이 올바르지 않습니다.\n\n비밀번호는 특수문자를 포함해 8~20자로 입력해주세요.");
+                event.preventDefault();//제출 이벤트제거
+                return;
             }
 
-            event.preventDefault();//제출 이벤트제거
-            return;
-        
-        }
-    }
+            if(memberPhone1.value.trim().length === 0) {
+                memberPhone1.focus();
+                alert("휴대폰 항목은 필수입니다.");
+                event.preventDefault();//제출 이벤트제거
+                return;
+            }
+            if(memberPhone2.value.trim().length === 0) {
+                memberPhone2.focus();
+                alert("휴대폰 항목은 필수입니다.");
+                event.preventDefault();//제출 이벤트제거
+                return;
+            }
+            if(memberPhone3.value.trim().length === 0) {
+                memberPhone3.focus();
+                alert("휴대폰 항목은 필수입니다.");
+                event.preventDefault();//제출 이벤트제거
+                return;
+            }
+
+            if(memberEmail1.value.trim().length === 0) {
+                memberEmail1.focus();
+                alert("이메일 항목의 이메일 형식이 올바르지 않습니다.");
+                event.preventDefault();//제출 이벤트제거
+                return;
+            }
+            if(memberEmail2.value.trim().length === 0) {
+                memberEmail2.focus();
+                alert("이메일 항목의 이메일 형식이 올바르지 않습니다.");
+                event.preventDefault();//제출 이벤트제거
+                return;
+            }
+            if(memberEmail3.value.trim().length === 0) {
+                memberEmail3.focus();
+                alert("이메일 항목의 이메일 형식이 올바르지 않습니다.");
+                event.preventDefault();//제출 이벤트제거
+                return;
+            }
+    
+            const memberGender = document.getElementById("memberGender");
+            if(document.getElementById("memberGender").value ===""){
+                memberGender.focus();
+                alert("성별 항목은 필수입니다.");
+                event.preventDefault();//제출 이벤트제거
+                return;
+            }
+
+            if(memberBirth1.value ===""){
+                memberBirth1.focus();
+                alert("생년 항목은 필수입니다.");
+                event.preventDefault();//제출 이벤트제거
+                return;
+            }
+            if(memberBirth2.value ===""){
+                memberBirth2.focus();
+                alert("생년 항목은 필수입니다.");
+                event.preventDefault();//제출 이벤트제거
+                return;
+            }
+            if(memberBirth3.value ===""){
+                memberBirth3.focus();
+                alert("생년 항목은 필수입니다.");
+                event.preventDefault();//제출 이벤트제거
+                return;
+            }
+
+            const emailFlag1 = document.getElementById("emailFlag1")
+            const emailFlag2 = document.getElementById("emailFlag2")
+            if((emailFlag1.checked === false) && (emailFlag2.checked === false)){
+                alert("이메일 수신 항목은 필수입니다.");
+                event.preventDefault();//제출 이벤트제거
+                return;
+            }
+            
+            const smsFlag1 = document.getElementById("smsFlag1")
+            const smsFlag2 = document.getElementById("smsFlag2")
+
+            if((smsFlag1.checked === false) && (smsFlag2.checked === false)){
+                alert("SMS 수신동의 항목은 필수입니다");
+                event.preventDefault();//제출 이벤트제거
+                return;
+            }
+            
 });
-// 이름 checkObj
-const memberName = document.getElementById("memberName");
-memberName.addEventListener("input" , function(){
-    if(memberName.value.trim().length == 0 ){
-        memberName.value = "";
-        checkObj.memberName = false;
-        return;
-    } else{
-        checkObj.memberName = true;
-    }
-})
     
 
-// 아이디 유효성 검사
-const memberId = document.getElementById("memberId");
-
-memberId.addEventListener("input", function(){
-
-    if(memberId.value.trim().length == 0){
-        memberId.value = "";
-
-        //유효성 검사 확인객체에 현재 상태 저장
-        checkObj.memberId =false;
-        return;
-    } else{
-        checkObj.memberId =true;
-
-        const regEx = /^[a-z0-9]{6,20}$/;
-        if(!regEx.test(memberId.value)){
-            checkObj.reqmemberId = false;
-            return;
-        } else{
-            // alert("아이디 항목의 아이디 형식이 올바르지 않습니다.\n\n영소문자, 숫자로 6~20자까지 가능합니다.");
-            checkObj.reqmemberId = true;
-        
-        }
-        
-    }
 
 
-
-});
-//=======================================================================
-// 비밀번호 유효성 검사
-const memberPw = document.getElementById("memberPw");
-const memberPwConfirm = document.getElementById("memberPwConfirm");
-
-memberPw.addEventListener("input", function(){
-
-    // 1) '비밀번호'가 입력되지 않은 경우
-    if(memberPw.value.trim().length == 0){
-        memberPw.value = "";
-        checkObj.memberPw = false;
-        return;
-    }
-
-    // 비밀번호 정규표현식 검사 (특수문자를 포함해 8~20자로 입력해주세요.)
-    const regEx = /^(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
-
-    if(regEx.test(memberPw.value)){ // 유효한 비밀번호
-        checkObj.memberPw = true;
-        
-        // 유효한 비밀번호 이면서 +비밀번호 확인에 작성X
-        if(memberPwConfirm.value.trim().length == 0 ) {
-        
-        // 유효한 비밀번호 이면서 +비밀번호 확인에 작성O -> 같은지 비교
-        } else{
-            // 비밀번호 입력시 비밀번호 확인에 작성된 값과 일치하는 경우
-            if(memberPw.value == memberPwConfirm.value){
-                checkObj.memberPwConfirm = true;
-            } else {
-                checkObj.memberPwConfirm = false;
-            }
-        }
-
-    }else{ // 유효하지 않음
-        checkObj.memberPw = false;
-    }
-
-    // 비밀번호 입력시 비밀번호 확인에 작성된 값과 일치하는 경우
-    if(memberPw.value == memberPwConfirm.value){
-        checkObj.memberPwConfirm = true;
-    } else {
-        checkObj.memberPwConfirm = false;
-    }
-
-});
-    // 비밀번호 확인 유효성 검사 (비밀번호 == 비밀번호 확인인지 검사)
-    memberPwConfirm.addEventListener("input", function(){
-
-    // 비밀번호가 유효할 경우일때만! 비밀번호== 비밀번호확인 같은지 비교
-    if(checkObj.memberPw){ // 비밀번호가 유효한 경우
-        // 비밀번호가 유효할 경우에만 비밀번호 == 비밀번호 확인 같은지 검사
-        if(memberPw.value == memberPwConfirm.value){
-            checkObj.memberPwConfirm = true;
-        }else{
-            checkObj.memberPwConfirm = false;
-        }   
-    }else{ // 비밀번호가 유효하지않은경우
-        checkObj.memberPwConfirm = false;
-    }
-
-    
-    });
-
-    // 휴대폰번호 obj
-    // memberPhone1.addEventListener("input" , function(){
-        if(memberPhone1.value.trim().length == 0 ){
-            memberPhone1.value = "";
-            checkObj.memberPhone1 = false;
-        } else{
-            checkObj.memberPhone1 = true;
-        }
-    // })
-
-    memberPhone2.addEventListener("input" , function(){
-        if(memberPhone2.value.trim().length == 0 ){
-            memberPhone2.value = "";
-            checkObj.memberPhone2 = false;
-            return;
-        } else{
-            checkObj.memberPhone2 = true;
-        }
-    })
-
-    memberPhone3.addEventListener("input" , function(){
-        if(memberPhone3.value.trim().length == 0 ){
-            memberPhone3.value = "";
-            checkObj.memberPhone3 = false;
-            return;
-        } else{
-            checkObj.memberPhone3 = true;
-        }
-    })
-
-    // 이메일 obj
-
-    const memberEmail1 = document.getElementById("memberEmail1");
-    memberEmail1.addEventListener("input", function(){
-        if(memberEmail1.value.trim().length == 0){
-            memberEmail1.value = "";
-            checkObj.memberEmail1 = false;
-            return 
-        } else{
-            checkObj.memberEmail1 = true;
-
-        }
-    })
-    memberEmail2.addEventListener("input", function(){
-        if(memberEmail2.value.trim().length == 0){
-            memberEmail2.value = "";
-            checkObj.memberEmail2 = false;
-            return;
-        } else{
-            checkObj.memberEmail2 = true;
-
-        }
-    })
-
-    document.getElementById("memberGender").addEventListener("change", function(){
-        if(document.getElementById("memberGender").value ==""){
-        checkObj.memberGender = false;
-        return;
-        } else{
-            checkObj.memberGender = true;
-
-        }
-    }) 
-    // 생년월일 checkobj
-    const memberBirth1 = document.getElementById("memberBirth1");
-    memberBirth1.addEventListener("change", function(){
-        if(memberBirth1.value == ""){
-            checkObj.memberBirth1 = false;
-            return
-        }else {
-            checkObj.memberBirth1 = true;
-
-        }
-    })
-    const memberBirth2 = document.getElementById("memberBirth2");
-    memberBirth2.addEventListener("change", function(){
-        if(memberBirth2.value == ""){
-            checkObj.memberBirth2 = false;
-            return
-        }else {
-            checkObj.memberBirth2 = true;
-
-        }
-    })
-    const memberBirth3 = document.getElementById("memberBirth3");
-    memberBirth3.addEventListener("change", function(){
-        if(memberBirth3.value == ""){
-            checkObj.memberBirth3 = false;
-            return
-        }else {
-            checkObj.memberBirth3 = true;
-
-        }
-    })
-
-    if(
-        document.querySelector('input[name="emailFlag"]:checked') == null){
-        checkObj.emailFlag = false;
-    } else{
-        checkObj.emailFlag = true;
-
-    }
-    if(
-        document.querySelector('input[name="smsFlag"]:checked') == null){
-        checkObj.smsFlag = false;
-        
-    } else{
-        checkObj.smsFlag = true;
-
-    }
