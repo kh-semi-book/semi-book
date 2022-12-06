@@ -343,3 +343,7 @@ input{
 #checkInInput, #checkOutInput{
 	text-align: right;
 }
+
+.side-room-select td:first-child{
+	width:100px;
+}

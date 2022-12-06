@@ -43,31 +43,46 @@ for(let select of selectList){
         const td1=document.createElement("td");
         tr.append(td,td1);
 
-        const span=document.createElement("span");
-        const span1=document.createElement("span");
-        td1.append(span,span1);
+        // const span=document.createElement("span");
+        // const span1=document.createElement("span");
+        // td1.append(span);
 
         const sideOptionName=document.getElementsByClassName("side-option-name");
 
         //옵션 이름 
         const optionName=select.parentElement.parentElement.children[0].innerHTML;
         const optionSelectDate=select.parentElement.parentElement.parentElement.parentElement.children[0].innerText;
-        const optionCost=select.parentElement.parentElement.children[1].innerHTML;
-        const optionCount='('+select.parentElement.parentElement.children[2].children[0].value+'개)';
+        const optionCost=select.parentElement.parentElement.children[1].innerText+'('+select.parentElement.parentElement.children[2].children[0].value+'개)';
         
         div1.innerText=optionName;
         td.innerText=optionSelectDate;
-        span.innerText=optionCost;
-        span1.innerText=optionCount;
+        td1.innerText=optionCost;
+  
+        
+       
 
         
-
+        
         for(let name of sideOptionName){
             if(optionName==name.innerText){
+
+                const innerDate=name.parentElement.children[1].children;
+
+                for(let dates of innerDate){
+                   	console.log(dates.children[0].innerText);
+                   if(dates.children[0].innerText==optionSelectDate){
+                        dates.remove();
+                       
+                   }
+                }
+                
                 name.nextSibling.append(tr);
+                
+               
                 return;
             }
         }
+    
         
         sideOptionTitle.before(div); 
     })

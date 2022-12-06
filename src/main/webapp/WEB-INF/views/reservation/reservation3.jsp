@@ -172,7 +172,7 @@
 							<c:forEach var="date" items="${dateList}">
 								<tr>
 									<td>${date}</td>
-									<td><span><fmt:formatNumber value="${optionPrice}" />원</span><span>(VAT별도)</span></td>
+									<td><span><fmt:formatNumber value="${optionPrice}" />원(VAT별도)</span></td>
 								</tr>
 							</c:forEach>
 						</table>
