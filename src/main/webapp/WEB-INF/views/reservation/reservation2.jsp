@@ -50,7 +50,11 @@
 			<div id="reservation2_content_area">
 				<div></div>
 				
+				
+				
 				<div id="reservation2_book_area">
+				
+				
 					<div id="reservation_select_area">
 						<c:forEach var="promotion" items="${promotionList}">
 						<div class="package-list">
@@ -68,6 +72,8 @@
 								</div>
 							</div>
 							<div class="package-type">
+							${promotion.roomType}
+							
 								<c:forEach var="room" items="${promotion.roomType}">
 									
 								<div class="package-type-option">
@@ -101,6 +107,9 @@
 						
 						</c:forEach>
 					</div>
+					
+						
+					
 					<div id="reservation_side_area">
 						<div class="side-table" id="side-table">
 							<div>
