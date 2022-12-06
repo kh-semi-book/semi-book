@@ -29,6 +29,7 @@
 <typeAlias type="edu.kh.semi.reservation.model.vo.ReservationViewDetail" alias="Reservation2"/>
 <typeAlias type="edu.kh.semi.reservation.model.vo.Reserve" alias="Reserve"/>
 <typeAlias type="edu.kh.semi.reservation.model.vo.Option" alias="Option"/>
+<typeAlias type="edu.kh.semi.member.model.vo.Add" alias="Add"/>
 
 </typeAliases>
 
@@ -46,6 +47,7 @@
 	<mapper resource="/mappers/reserve-mapper.xml"/>
 	<mapper resource="/mappers/board-mapper.xml"/>
 	<mapper resource="/mappers/nav-mapper.xml"/>
+	<mapper resource="/mappers/add-mapper.xml"/>
 </mappers>
 
 </configuration>

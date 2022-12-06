@@ -41,7 +41,7 @@ public class MyPageServiceImpl implements MyPageService {
 	    		if(newPw.equals("")) {
 	    			
 	    			// 4-1 빈칸인 경우 정보 수정 -> dao.updateMember(inputMember)
-	    			result = dao.updateMember(inputMember);
+	    			result = dao.updateMember(inputMember) + dao.updateAdd(inputAdd);
 	    			
 	    			return result;
 	    			
@@ -50,9 +50,9 @@ public class MyPageServiceImpl implements MyPageService {
 	    			
 	    			// 4-2 빈칸이 아닌경우 newPw암호화 inputMemeber에 세팅 -> dao.updateMemberPw(inputMember)
 	    			
-	    			result = dao.updateMemberPw(inputMember);
 	    			String encPw = bcrypt.encode(inputMember.getMemberPw());
 	    			inputMember.setMemberPw(encPw);	
+	    			result = dao.updateMemberPw(inputMember) + dao.updateAdd(inputAdd);
 	    			
 	    			return result;
 	    		}
@@ -89,6 +89,20 @@ public class MyPageServiceImpl implements MyPageService {
 			return 0; 
 			
 			
+		}
+
+
+		// 로그인 정보 조회 서비스
+		@Override
+		public Member selectMember(int memberNo) {
+			return dao.selectMember(memberNo);
+		}
+
+
+		// 로그인 추가 정보 조회 서비스
+		@Override
+		public Add selectAdd(int memberNo) {
+			return dao.selectAdd(memberNo);
 		}
 
 	

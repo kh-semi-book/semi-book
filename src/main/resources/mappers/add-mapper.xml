@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="addMapper">
+
+
+	<resultMap type="Add" id="add_rm">
+  		<!-- edu.kh.semi.member.model.vo.Member -->
+
+  		
+  		<!-- DB에서 PK에 해당되는 필드, 컬럼명을 작성하는 태그 -->
+  		<id property="memberNo" column="MEMBER_NO" />
+  		
+  		<!-- 나머지 일반 컬럼 -->
+  		<result property="memberTel" column="ADD_TEL"/>
+  		<result property="memberAddress" column="ADD_ADDRESS"/>
+  		<result property="marriageFlag" column="ADD_MARRIAGE_FL"/>
+  		<result property="memberWedding" column="ADD_MARRIAGE"/>
+  		
+  	</resultMap>
+
+		<!-- 회원 정보 수정 (추가사항) -->
+		<update id="updateMemberAdd" parameterType="Add">
+			UPDATE "ADD" SET 
+				ADD_TEL = #{memberTel, jdbcType=VARCHAR},
+				ADD_ADDRESS = #{memberAddress, jdbcType=VARCHAR},
+				ADD_MARRIAGE_FL= #{marriageFlag, jdbcType=CHAR},
+				ADD_MARRIAGE = #{memberWedding, jdbcType=DATE}
+			WHERE MEMBER_NO =#{memberNo}
+		</update>
+		
+		<!-- 로그인한 회원 추가 정보 조회 -->
+		<select id="selectAdd" parameterType="_int" resultMap="add_rm">
+			SELECT ADD_TEL, ADD_ADDRESS, ADD_MARRIAGE_FL, ADD_MARRIAGE
+			FROM "ADD"
+			WHERE MEMBER_NO = #{memberNo}
+		</select>
+</mapper>

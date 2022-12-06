@@ -27,6 +27,18 @@ public interface MyPageService {
 	 */
 	public abstract int memberDelete(int memberNo, Member inputMember);
 
+	/** 로그인 정보 조회 서비스 
+	 * @param memberNo
+	 * @return
+	 */
+	public abstract Member selectMember(int memberNo);
+
+	/** 로그인 추가 정보 조회 서비스 
+	 * @param memberNo
+	 * @return
+	 */
+	public abstract Add selectAdd(int memberNo);
+
 
 
 	

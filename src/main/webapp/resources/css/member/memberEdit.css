@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Sans+KR&display=swap');
+
 /*=========[ 기본 뼈대 ]========= */
 .reservation-lookUp-page{
     margin: 0 auto 0 auto;
@@ -51,7 +54,7 @@
 .kjh-h1{
     
     margin: 10px auto;
-    
+    font-family: 'Nanum Myeongjo';
     padding: 30px 0 0 0;
 }
 
@@ -222,8 +225,8 @@
     text-decoration: none;
     border : 1px solid #a4a4a4;
     width: 130px;
-    height: 40px;
-    padding: 12px 37px;
+    height: 35px;
+    padding: 10px 30px;
 }
 .kjh-member-delete:hover{
     background-color: black;
@@ -246,18 +249,34 @@
 
 }
 
+/* 확인 버튼 */
 .submit-btn{
     background-color: #8c8c8c;
     color: white;
     text-decoration: none;
     border : 1px solid #aaa ;
+    font-size: 17px;
     cursor: pointer;
 }
-
+.submit-btn:hover{
+    background-color: #231f20;
+    transition: 0.2s;
+    color: white;
+    text-decoration: none;
+    border : 1px solid #aaa ;
+    cursor: pointer;
+}
+/* 확인 버튼 */
 .cancle-btn{
     border: 2px solid #b3b3b3;
     text-decoration: none;
     background-color: white;
+    cursor: pointer;
+}
+.cancle-btn:hover{
+    border: 2px solid #8c8c8c;
+    transition: 0.2s;
+    text-decoration: none;
     cursor: pointer;
 }
 
@@ -282,3 +301,4 @@
     color: #8c8c8c;
     margin-top: 1px;
  }
+
