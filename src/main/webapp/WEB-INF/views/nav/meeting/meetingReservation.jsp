@@ -33,7 +33,7 @@
         <div class="bsh-section">
             <div class="bsh-warning">※ 모든 항목은 필수 입력 사항입니다.</div>
             
-            <form action="/reservationInquiry" name="frm" id="bsh-frm" method="POST">
+            <form action="" name="frm" id="bsh-frm" method="POST">
                 <input type="hidden" name="meetingRoomNo" value="${param.RETY}">
                 <table class="bsh-tb1">
                     <tr>
@@ -133,7 +133,7 @@
                     </div>
                 </div>
                 <div class="bsh-btn">
-                    <button class="enrollBtn" onclick="frm_check();">등록하기</button>
+                    <button class="enrollBtn" onclick="return:frm_check();">등록하기</button>
                     <a href="/" class="bsh-btn-white">취소</a>
                 </div>
             </form>

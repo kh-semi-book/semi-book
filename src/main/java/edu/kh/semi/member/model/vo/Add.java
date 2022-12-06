@@ -12,7 +12,6 @@ import lombok.ToString;
 public class Add {
 
 	public Add(Add inputAdd) {
-		// TODO Auto-generated constructor stub
 	}
 	private String memberTel;
 	private String memberAddress;

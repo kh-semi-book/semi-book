@@ -4,6 +4,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import edu.kh.semi.member.model.vo.Add;
 import edu.kh.semi.member.model.vo.Member;
 
 @Repository
@@ -39,6 +40,13 @@ public class MyPageDAO {
 		return sqlSession.update("myPageMapper.updateMemberPw",inputMember);
 	}
 
+	/** 회원 정보 수정 서비스 DAO
+	 * @param inputAdd
+	 * @return
+	 */
+	public int updateAdd(Add inputAdd) {
+		return sqlSession.update("addMapper.updateMemberAdd", inputAdd);
+	}
 	
 	/** 회원 탈퇴 회원 정보 조회 DAO 
 	 * @param memberNo
@@ -55,6 +63,23 @@ public class MyPageDAO {
 	public int memberDelete(int memberNo) {
 		return sqlSession.update("myPageMapper.memberDelete", memberNo);
 	}
+
+	/** 로그인 정보 조회 DAO
+	 * @param memberNo
+	 * @return
+	 */
+	public Member selectMember(int memberNo) {
+		return sqlSession.selectOne("myPageMapper.selectMember",memberNo);
+	}
+
+	/** 로그인 추가 정보 조회 DAO
+	 * @param memberNo
+	 * @return
+	 */
+	public Add selectAdd(int memberNo) {
+		return sqlSession.selectOne("addMapper.selectAdd",memberNo);
+	}
+
 
 
 

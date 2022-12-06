@@ -40,7 +40,8 @@
 				MEMBER_EMAIL = #{memberEmail},
 				MEMBER_GENDER = #{memberGender},
 				EMAIL_FL = #{emailFlag},
-				SMS_FL = #{smsFlag}
+				SMS_FL = #{smsFlag},
+				MEMBER_BIRTH = #{memberBirth,jdbcType=DATE}
 				WHERE MEMBER_NO =#{memberNo}
 		</update>
 		
@@ -52,7 +53,8 @@
 				MEMBER_EMAIL = #{memberEmail},
 				MEMBER_GENDER = #{memberGender},
 				EMAIL_FL = #{emailFlag},
-				SMS_FL = #{smsFlag}
+				SMS_FL = #{smsFlag},
+				MEMBER_BIRTH = #{memberBirth,jdbcType=DATE}
 				WHERE MEMBER_NO =#{memberNo}
 		</update>
 		
@@ -69,4 +71,12 @@
 			DELETE_FL = 'Y'	  
 			WHERE MEMBER_NO = #{memberNo}
 		</update>
+		
+			<!-- 로그인한 회원 정보 조회 -->
+		<select id="selectMember" parameterType="_int" resultMap="member_rm">
+			SELECT MEMBER_NAME, MEMBER_ID, MEMBER_PHONE, MEMBER_EMAIL , DELETE_FL,
+			       ENROLL_DATE, MEMBER_GENDER, MEMBER_BIRTH, EMAIL_FL, SMS_FL
+			FROM "MEMBER"
+			WHERE MEMBER_NO = #{memberNo}
+		</select>
 </mapper>

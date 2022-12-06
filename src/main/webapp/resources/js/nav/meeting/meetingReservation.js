@@ -30,7 +30,7 @@ const checkList ={
     "meetingBookContent": false,   
 }
 
-document.getElementById("meetingUpdate").addEventListener("submit", function(event){
+document.getElementById("bsh-frm").addEventListener("submit", function(event){
     
     
     
@@ -205,3 +205,10 @@ meetingBookContent.addEventListener("input",()=>{
 });
 
 
+function frm_check(){
+
+
+
+
+
+}

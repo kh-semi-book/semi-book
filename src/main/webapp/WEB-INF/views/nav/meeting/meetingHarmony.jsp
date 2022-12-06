@@ -36,7 +36,7 @@
             </div>
 
             <div class="bsh-main-title">
-                <h1>인피니티풀</h1>
+                <h1>하모니</h1>
                 <input type="hidden" value="1">
             </div>
 

@@ -4,6 +4,7 @@ package edu.kh.semi.member.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -25,22 +26,47 @@ public class MyPageController {
 	@Autowired
 	private MyPageService service;         
 	
+	@GetMapping("/memberEdit")
+	public String myPage(@SessionAttribute("loginMember") Member loginMember, Model model){
+		
+		Member member = service.selectMember(loginMember.getMemberNo());
+		Add add = service.selectAdd(loginMember.getMemberNo());
+		
+		model.addAttribute("member", member);
+		model.addAttribute("add", add);
+		
+		return "member/memberEdit";
+	}
 	
 	// 내 정보 페이지 수정
 	@PostMapping("/memberEdit")
 	public String updateMember(Member inputMember, String[] memberAddress, String[] memberPhone, String[] memberEmail,
-							   @SessionAttribute("loginMember") Member loginMember, Add add, Add inputAdd,
+							   String[] memberWedding, String[] memberTel, 
+							   @SessionAttribute("loginMember") Member loginMember, Add add, Add inputAdd, 
 							   RedirectAttributes ra, String newPw) {
 		
 		// 로그인된 회원번호를 inputMember에 넣기 
 		inputMember.setMemberNo(loginMember.getMemberNo());
+		inputAdd.setMemberNo(loginMember.getMemberNo());
 		
 		String phone = memberPhone[0]+memberPhone[1]+memberPhone[2];
 		inputMember.setMemberPhone(phone);
 		
 		String email = memberEmail[0]+ "@" +memberEmail[1];
 		inputMember.setMemberEmail(email);
-			
+		
+		String wedding = memberWedding[0]+memberWedding[1]+memberWedding[2];
+		inputAdd.setMemberWedding(wedding);
+		
+		String tel = memberTel[0]+memberTel[1]+memberTel[2];
+		inputAdd.setMemberTel(tel);
+		
+		String address = memberAddress[0]+",,"+memberAddress[1]+",,"+memberAddress[2];
+		inputAdd.setMemberAddress(address);
+		
+		
+		
+		
 			
 		int result = service.updateMember(inputMember, loginMember, newPw, add, inputAdd);
 		
@@ -56,6 +82,7 @@ public class MyPageController {
 			loginMember.setMemberGender(inputMember.getMemberGender());
 			loginMember.setEmailFlag(inputMember.getEmailFlag());
 			loginMember.setSmsFlag(inputMember.getSmsFlag());
+			loginMember.setMemberBirth(inputMember.getMemberBirth());
 		
 		}
 		else { 
