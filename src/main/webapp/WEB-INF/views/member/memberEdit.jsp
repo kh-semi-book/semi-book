@@ -12,32 +12,6 @@
 		<script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="/resources/css/common/main.css">
 		<link rel="stylesheet" href="/resources/css/member/memberEdit.css">
-		<%-- //////////////////////// --%>
-		<%-- 날짜 API --%>
-		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-		<%-- <script>
-			$( function() {
-				$("#datepicker").datepicker({
-				numberOfMonths: 3
-				, showWeek: true
-				, firstDay: 1
-				, dateFormat:"yymmdd"
-				, prevText: '이전 달'
-				, nextText: '다음 달'
-				, monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']
-				, monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']
-				, dayNames: ['일', '월', '화', '수', '목', '금', '토']
-				, dayNamesShort: ['일', '월', '화', '수', '목', '금', '토']
-				, dayNamesMin: ['일', '월', '화', '수', '목', '금', '토']
-				, showMonthAfterYear: true
-				, yearSuffix: '년'
-  
-   				 });
-			} );
-		</script> --%>
-		<%-- //////////////////////// --%>
 		<style>body{margin: auto;}</style>
 	</head>
 
@@ -97,7 +71,7 @@
 						<tr>
 							<th>기존 비밀번호<span class="star">*</span></th>
 							<td class="kjh-input" colspan="3">
-								<input type="password" size="20" name="currentMemberPw" id="currentMemberPw">
+								<input type="password" size="20" name="memberPw" id="memberPw">
 								<span class="changePwBox">
 									<input type="checkbox" name="chpwboxcheck" id="chpwboxcheck" value= "Y">
 									<label for="chpwboxcheck">비밀번호 변경</label>
@@ -110,7 +84,7 @@
 							<th>새 비밀번호<span class="star">*</span></th>
 							</label>
 							<td class="kjh-input " colspan="3">
-							<input type="password" size="20" name="memberPw" id="memberPw" >
+							<input type="password" size="20" name="newPw" id="newPw" >
 							</td>
 						</tr>
 
@@ -119,7 +93,7 @@
 							<th>새 비밀번호 확인<span class="star">*</span></th>
 							</label>
 							<td class="kjh-input " colspan="3">
-							<input type="password" size="20" name="memberPwConfirm" id="memberPwConfirm" >
+							<input type="password" size="20" name="newPwConfirm" id="newPwConfirm" >
 							</td>
 						</tr>
 
@@ -153,17 +127,17 @@
 						</tr>
 
 						<%-- 회원정보 수정 : 성별 --%>	
+						<c:choose>
+							<c:when test="${fn:contains(loginMember.memberGender,'F')}">
+								<c:set var="CF" value="selected"/>
+							</c:when>
+							<c:when test="${fn:contains(loginMember.memberGender,'M')}">
+								<c:set var="CM" value="selected"/>
+							</c:when>
+						</c:choose>
 						<tr>
 							<th>성별<span class="star">*</span></th>
 							<td class="kjh-input"colspan="3">
-							<c:choose>
-								<c:when test="${fn:contains(loginMember.memberGender,'F')}">
-									<c:set var="CF" value="selected"/>
-								</c:when>
-								<c:when test="${fn:contains(loginMember.memberGender,'M')}">
-									<c:set var="CM" value="selected"/>
-								</c:when>
-							</c:choose>
 							<select class="kjh-select"name="memberGender" id="memberGender">
 								<option value="" ${C0}>성별</option>
 								<option value="F" ${CF}>여</option>
@@ -192,21 +166,21 @@
 						</tr>
 
 						<%-- SNS 수신 동의 --%>
-						<c:choose>
-							<c:when test="${loginMember.smsFlag =='Y'}">
-								<c:set var="Y" value="checked"/>
-							</c:when>
-							<c:when test="${loginMember.smsFlag=='N'}">
-								<c:set var="N" value="checked"/>
-							</c:when>
-           				 </c:choose>
 						<tr>
 							<th>SMS<br> 수신 동의<span class="star">*</span></th>
 							<td>
-								<input type="radio" name="smsFlag" id="smsFlag" value="Y"  ${Y}>
+							<c:choose>
+								<c:when test="${loginMember.smsFlag =='Y'}">
+									<c:set var="Y" value="checked"/>
+								</c:when>
+								<c:when test="${loginMember.smsFlag=='N'}">
+									<c:set var="N" value="checked"/>
+								</c:when>
+							</c:choose>
+								<input type="radio" name="smsFlag" id="smsFlag" value="Y" ${Y}>
 								<label for="m_sms_yn1">수신</label>
 
-								<input type="radio" name="smsFlag" id="smsFlag" value="N"  ${N}>
+								<input type="radio" name="smsFlag" id="smsFlag" value="N" ${N}>
 								<label for="m_sms_yn2">수신거부</label>
 							</td>
 						</tr>
@@ -220,35 +194,41 @@
 							<%-- 생년월일 --%>
 							<tr>
 								<th>생년월일</th>
-								<td class="kjh-input"><input type="text"value="${fn:substring(loginMember.memberBirth,0,10)}"></td>
+								<td class="kjh-input"><input type="text" value="${fn:substring(loginMember.memberBirth,0,10)}"></td>
 							</tr>
 
 							<%-- 결혼 유무 --%>
 							<tr>
 								<th>결혼유무</th>
 								<td colspan="3">
-									<input type="radio" name="marriageFlag" id="marriage_yn1" value="N">
-									<label for="marriage_yn1">미혼</label>
-
-									<input type="radio" name="marriageFlag" id="marriage_yn2" value="Y">
-									<label for="marriage_yn2">기혼</label>
+								<%-- <c:choose>
+									<c:when test="${fn:contains(loginMember.marriageFlag,'N')}">
+										<c:set var="N" value="selected"/>
+									</c:when>
+									<c:when test="${fn:contains(loginMember.marriageFlag,'Y')}">
+										<c:set var="Y" value="selected"/>
+									</c:when>
+								</c:choose> --%>
+									<input type="radio" name="marriageFlag" id="marriageFlag" value="N" ${N}>
+									<label for="marriageFlag">미혼</label>
+									<input type="radio" name="marriageFlag" id="marriageFlag" value="Y" ${Y}>
+									<label for="marriageFlag">기혼</label>
 									<span class="kjh-married"> 결혼기념일 : 
 										<input type="text" name="memberWedding" size="4" maxlength="4" >년
-										
 										<input type="text" name="memberWedding" size="4" maxlength="4" >월
-										
 										<input type="text" name="memberWedding" size="4" maxlength="4" >일
 									</span>
 								</td>	
 							</tr>         
 
 							<%-- 유선 전화 --%>	
+							<%-- <c:set var="tel" value="${loginMember.memberTel}"/>  --%>
 							<tr>
 								<th>유선전화</th>
 								<td class="kjh-input" colspan="3">
-									<input type="text"  name="memberTel" size="1" name="m_col" id="m_col"> -
-									<input type="text"  name="memberTel" size="1" name="m_col" id="m_col"> -
-									<input type="text"  name="memberTel" size="1" name="m_col" id="m_col"> 
+									<input type="text"  name="memberTel" size="1" name="m_col" id="m_col" value="${fn:substring(tel,0,3)}" > -
+									<input type="text"  name="memberTel" size="1" name="m_col" id="m_col" value="${fn:substring(tel,0,3)}" > -
+									<input type="text"  name="memberTel" size="1" name="m_col" id="m_col" value="${fn:substring(tel,0,3)}" > 
 								</td>
 							</tr>  
 
@@ -256,10 +236,10 @@
 							<tr>
 								<th>주소</th>
 								<td class="kjh-input" colspan="3">
-									<input type="text"   name = "memberAddress" class="kjh-address" size="5px" readonly>
-									<input type="button" name = "memberAddress" class="kjh-btn"     value="우편번호검색"><br>
-									<input type="text"   name = "memberAddress" class="kjh-address" size="35px"readonly> 
-									<input type="text"   name = "memberAddress" class="kjh-address" size="35px">
+									<input type="text"   name = "memberAddress" class="kjh-address" size="5px" id="sample6_postcode" readonly>
+									<input type="button" name = "memberAddress" class="kjh-btn"     value="우편번호검색" onclick="sample6_execDaumPostcode()"><br>
+									<input type="text"   name = "memberAddress" class="kjh-address" size="35px" id="sample6_address" readonly> 
+									<input type="text"   name = "memberAddress" class="kjh-address" size="35px" id="sample6_detailAddress">
 								</td>
 							</tr>      
 
@@ -292,6 +272,8 @@
 
 		<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 		<script src="/resources/js/member/memberEdit.js"></script> 
+		<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
 		<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 	</body>
 </html>

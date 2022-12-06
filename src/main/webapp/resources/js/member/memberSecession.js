@@ -1,90 +1,53 @@
 
-const checkList ={
-    "memberName": false,
-    "memberId": false,     
-    "memberPw": false,     
-    "memberEmail": false,     
+function memberDeleteValidate() {
+
+    // 1) 이름 입력
+    const memberName = document.getElementById("memberName");
+
+    if (memberName.value.trim().length == 0) {
+        alert("이름을 입력해주세요");
+        memberName.focus();
+        memberName.value = "";
+        return false;
+    } 
+        
+    // 2) 아이디 입력
+    const memberId = document.getElementById("memberId");
+
+    if (memberId.value.trim().length == 0) {
+
+        alert("아이디를 입력해주세요");
+        memberId.focus();
+        memberId.value = "";
+        return false;
+    } 
+
+    // 3) 비밀번호 입력 검사
+    const memberPw = document.getElementById("memberPw");
+   
+    if (memberPw.value.trim().length == 0) {
+
+        alert("비밀번호를 입력해주세요");
+        memberPw.focus();
+        memberPw.value = "";
+        return false;
+    }
+
+    // 4) 이메일 입력
+    const memberEmail = document.getElementById("memberEmail");
+
+    if (memberEmail.value.trim().length == 0) {
+
+        alert("이메일을 입력해주세요");
+        memberEmail.focus();
+        memberEmail.value = "";
+        return false;
+    } 
+
+    // 탈퇴 여부 확인
+    if (!confirm("정말로 탈퇴하시겠습니까?")) {
+        alert("탈퇴가 취소되었습니다.")
+        return false;
+    }
+    return true;
 }
-
-document.getElementById("rsc-memeber-del").addEventListener("submit", function(event){
-    
-    for (let key in checkList) {
-
-        let str;
-
-        if (!checkList[key]) {
-
-            switch (key) {
-                case "memberName": str = "이름을 입력해주세요."; break;
-                case "memberId": str = "아이디를 입력해주세요."; break;
-                case "memberPw": str = "비밀번호를 입력해주세요."; break;
-                case "memberEmail": str = "이메일을 입력해주세요."; break;
-            }
-            alert(str); // 대화상자 출력
-
-            // 유효하지 않은 입력으로 포커스 이동 
-            document.getElementById(key).focus();
-            // 제출 이벤트 제거
-            event.preventDefault();
-            // 함수 종료 
-            return;
-        }
-    }
-    
-
-});
-
-
-// 이름 입력
-const memberName = document.getElementById("memberName");
-
-memberName.addEventListener("input",()=>{
-
-    if (!memberName.value.trim().length == 0) {
-
-        checkList.memberName = true;
-    } else{
-        checkList.memberName = false;
-    }
-    
-});
-
-// 아이디 입력
-const memberId = document.getElementById("memberId");
-
-memberId.addEventListener("input",()=>{
-
-    if (!memberId.value.trim().length == 0) {
-
-        checkList.memberId = true;
-    } else{
-        checkList.memberId = false;
-    }
-    
-});
-
-// 비밀번호 입력
-const memberPw = document.getElementById("memberPw");
-
-memberPw.addEventListener("input",()=>{
-
-    if (!memberPw.value.trim().length == 0) {
-
-        checkList.memberPw = true;
-    } else{
-        checkList.memberPw = false;
-    }
-});
-
-// 이메일 입력
-const memberEmail = document.getElementById("memberEmail");
-
-memberEmail.addEventListener("input",()=>{
-
-    if (!memberEmail.value.trim().length == 0) {
-
-        checkList.memberEmail = true;
-    } else{
-        checkList.memberEmail = false;
-    }
-});

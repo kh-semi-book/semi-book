@@ -25,6 +25,13 @@
   		<result property="authority" column="AUTHORITY"/>
   		
   	</resultMap>
+  	
+  	<!-- 회원 정보 수정을 위한 로그인 회원의 비밀번호 조회 -->
+  	<select id="selectPw" parameterType="_int" resultType="string">
+			SELECT MEMBER_PW  
+			FROM MEMBER	
+      WHERE MEMBER_NO = #{memberNo}
+  	</select>
 
 		<!-- 회원 정보 수정 (비밀번호 없을 때) -->
 		<update id="updateMember" parameterType="Member">

@@ -1,7 +1,6 @@
 package edu.kh.semi.member.controller;
 
 
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +14,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.kh.semi.member.model.service.MyPageService;
+import edu.kh.semi.member.model.vo.Add;
 import edu.kh.semi.member.model.vo.Member;
 
 @RequestMapping("/member")
@@ -23,29 +23,27 @@ import edu.kh.semi.member.model.vo.Member;
 public class MyPageController {
 	
 	@Autowired
-	private MyPageService service;
+	private MyPageService service;         
 	
 	
 	// 내 정보 페이지 수정
 	@PostMapping("/memberEdit")
-	public String updateMember(Member inputMember, String[] memberAddress, String[] memberPhone,
-								String[] memberEmail,
-							   @SessionAttribute("loginMember") Member loginMember,
-							   RedirectAttributes ra) {
-	
+	public String updateMember(Member inputMember, String[] memberAddress, String[] memberPhone, String[] memberEmail,
+							   @SessionAttribute("loginMember") Member loginMember, Add add, Add inputAdd,
+							   RedirectAttributes ra, String newPw) {
+		
+		// 로그인된 회원번호를 inputMember에 넣기 
 		inputMember.setMemberNo(loginMember.getMemberNo());
 		
-			String phone = memberPhone[0]+memberPhone[1]+memberPhone[2];
-			inputMember.setMemberPhone(phone);
-			
-			String email = memberEmail[0]+ "@" +memberEmail[1];
-			inputMember.setMemberEmail(email);
-			
-			
-		int result = service.updateMember(inputMember);
+		String phone = memberPhone[0]+memberPhone[1]+memberPhone[2];
+		inputMember.setMemberPhone(phone);
 		
+		String email = memberEmail[0]+ "@" +memberEmail[1];
+		inputMember.setMemberEmail(email);
+			
+			
+		int result = service.updateMember(inputMember, loginMember, newPw, add, inputAdd);
 		
-		String path =null;
 		String message = null;
 		
 		if(result>0) {
@@ -64,10 +62,7 @@ public class MyPageController {
 			message = "회원 정보 수정이 실패했습니다.";
 		}
 		
-		ra.addAttribute("message",message);
-		
-		System.out.println(loginMember);
-		System.out.println(inputMember);
+		ra.addFlashAttribute("message",message);
 		
 		return "redirect:memberEdit";
 		
@@ -84,15 +79,12 @@ public class MyPageController {
 	
 	
 	// 회원 탈퇴 서비스 
-	@PostMapping("/memberSecession")
+	@PostMapping("/memeberDelete")
 	public String memberDelete(@SessionAttribute("loginMember") Member loginMember, Member inputMember,
 								SessionStatus status, RedirectAttributes ra, @RequestHeader("referer") String referer) {
 		
 		
 		int memberNo = loginMember.getMemberNo();
-		
-		System.out.println(inputMember);
-		System.out.println(memberNo);
 		
 		int result = service.memberDelete(memberNo ,inputMember);
 		
@@ -104,12 +96,15 @@ public class MyPageController {
 			
 			message = "회원 탈퇴되었습니다.";
 			path = "/";
-			 
+			status.setComplete(); 
+			
 		} else {
 			
 			message = "회원 탈퇴 실패했습니다.";
-			path ="MemberSecession";
+			path ="memeberDelete";
 		}
+		
+		ra.addFlashAttribute("message",message);
 			
 		return "redirect:"+path;
 	}
