@@ -27,12 +27,12 @@ public class ReservationDAO {
 	}
 
 	
-	/** 예약 조회 상세보기 서비스
-	 * @param memberNo
+	/** 예약 조회 상세보기 
+	 * @param bookNo
 	 * @return
 	 */
-	public Book reservationViewDetail(int memberNo) {
-		return sqlSession.selectOne("reservationMapper.reservationViewDetail",memberNo);
+	public Book reservationViewDetail(int bookNo) {
+		return sqlSession.selectOne("reservationMapper.reservationViewDetail",bookNo);
 	}
 
 }
