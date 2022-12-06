@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import edu.kh.semi.manager.board.model.vo.Dining;
+import edu.kh.semi.manager.board.model.vo.Event;
 import edu.kh.semi.manager.board.model.vo.Promotion;
 import edu.kh.semi.nav.specialOffer.model.service.SpecialOfferService;
-import edu.kh.semi.nav.specialOffer.model.vo.Dining;
-import edu.kh.semi.nav.specialOffer.model.vo.Event;
 
 @Controller
 @RequestMapping("/nav/specialOffer")

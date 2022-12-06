@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import edu.kh.semi.manager.book.model.vo.Book;
 import edu.kh.semi.manager.book.model.vo.Pagination;
+import edu.kh.semi.member.model.vo.Member;
 import edu.kh.semi.reservation.model.vo.ReservationViewDetail;
 
 @Repository
@@ -16,27 +17,22 @@ public class ReservationDAO {
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 	
-	/** 예약 수 조회 
-	 * @return 
-	 */
-	public int selectBookCount(int memberNo) {
-		return sqlSession.selectOne("reservationMapper.selectBookCount",memberNo);
-	}
 
-	/** 예약 리스트 조회 
-	 * @param pagination
+	/** 예약 조회
+	 * @param loginMember
 	 * @return
 	 */
-	public List<ReservationViewDetail> selectBookList(Pagination pagination, int memberNo) {
-		return sqlSession.selectList("reservationMapper.selectBookList",memberNo);
+	public List<Book> reservationView(Member loginMember) {
+		return sqlSession.selectList("reservationMapper.selectBookList", loginMember);
 	}
 
-	/** 예약 조회 상세보기 서비스
-	 * @param memberNo
+	
+	/** 예약 조회 상세보기 
+	 * @param bookNo
 	 * @return
 	 */
-	public Book reservationViewDetail(int memberNo) {
-		return sqlSession.selectOne("reservationMapper.reservationViewDetail",memberNo);
+	public Book reservationViewDetail(int bookNo) {
+		return sqlSession.selectOne("reservationMapper.reservationViewDetail",bookNo);
 	}
 
 }

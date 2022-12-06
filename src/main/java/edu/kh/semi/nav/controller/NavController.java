@@ -1,10 +1,14 @@
 package edu.kh.semi.nav.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import edu.kh.semi.manager.board.model.vo.CMM;
 import edu.kh.semi.nav.model.service.NavService;
 
 @Controller
@@ -25,13 +29,13 @@ public class NavController {
 	}
 	
 	@GetMapping("/about/cmm")
-	public String aboutCmm() {
+	public String aboutCmm(Model model) {
+		
+		List<CMM> cmmList = service.selectCmmList();
+
+		model.addAttribute("cmmList", cmmList);
+
 		return "/nav/about/aboutCmm";
-	}
-	
-	@GetMapping("/about/cmmContent")
-	public String aboutCmmContent() {
-		return "/nav/about/aboutCmmContent";
 	}
 	
 	//------------------------------------------

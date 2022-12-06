@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>이벤트</title>
+<title>이벤트 세부 사항</title>
 <link rel="stylesheet" href="/resources/css/manager/board_detail.css">
 <link rel="stylesheet" href="/resources/css/manager/admin.css">
 <style>
@@ -19,7 +19,7 @@ body {
 		<div class="board-head-area">
 			<div></div>
 			<div id="board_title">
-				<div>HOME > 이벤트 관리 > 이벤트 세부 사항</div>
+				<div><a href="/manager/selectBook">HOME</a> > <a href="/manager/event">이벤트 관리</a> > 이벤트 세부 사항</div>
 				<div>이벤트 세부 사항</div>
 			</div>
 			<div></div>

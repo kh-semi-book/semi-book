@@ -6,9 +6,10 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import edu.kh.semi.manager.board.model.vo.Dining;
+import edu.kh.semi.manager.board.model.vo.Event;
 import edu.kh.semi.manager.board.model.vo.Promotion;
-import edu.kh.semi.nav.specialOffer.model.vo.Dining;
-import edu.kh.semi.nav.specialOffer.model.vo.Event;
+
 
 @Repository
 public class SpecialOfferDAO {
@@ -31,7 +32,7 @@ public class SpecialOfferDAO {
 		return sqlSession.selectOne("boardMapper.promotionDetail",promotionNo);
 	}
 
-	/** 다이님 메인
+	/** 다이닝 메인
 	 * @return
 	 */
 	public List<Dining> selectDiningList() {
@@ -43,13 +44,13 @@ public class SpecialOfferDAO {
 	 * @return
 	 */
 	public Dining dininigDetail(int diningNo) {
-		return sqlSession.selectOne("boardMapper.dininigDetail",diningNo);
+		return sqlSession.selectOne("boardMapper.diningDetail",diningNo);
 	}
 
 	/** 이벤트 메인
 	 * @return
 	 */
-	public List<Event> selectEventList() {
+	public List<Event> selectEventList(){
 		return sqlSession.selectList("boardMapper.selectEventList");
 	}
 

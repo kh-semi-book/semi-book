@@ -19,7 +19,7 @@ body {
         <div class="board-head-area">
             <div></div>
             <div id="board_title">
-                <div>HOME > 이벤트 관리 > 이벤트 수정</div>
+                <div><a href="/manager/selectBook">HOME</a> > <a href="/manager/event">이벤트 관리</a> > 이벤트 수정</div>
                 <div>이벤트 수정</div>
             </div>
             <div></div>
@@ -72,6 +72,6 @@ body {
     </div>
 
 	<script src="/resources/js/manager/board/boardPost.js"></script>
-	<jsp:include page="/WEB-INF/views/common/admin-footer.jsp" />
+	<jsp:include page="/WEB-INF/views/manager/common/admin-footer.jsp" />
 </body>
 </html>

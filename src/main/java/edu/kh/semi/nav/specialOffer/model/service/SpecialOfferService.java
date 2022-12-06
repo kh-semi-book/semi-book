@@ -2,11 +2,11 @@ package edu.kh.semi.nav.specialOffer.model.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
+import edu.kh.semi.manager.board.model.vo.Dining;
+import edu.kh.semi.manager.board.model.vo.Event;
 import edu.kh.semi.manager.board.model.vo.Promotion;
-import edu.kh.semi.nav.specialOffer.model.vo.Dining;
-import edu.kh.semi.nav.specialOffer.model.vo.Event;
+
+
 
 public interface SpecialOfferService {
 	
