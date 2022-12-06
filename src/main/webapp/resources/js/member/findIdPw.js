@@ -61,17 +61,17 @@ document.getElementById("find-pw-btn").addEventListener("click",function(event){
         return;
     }
    
-    if(inputNameId.value.trim().length == 0){
+    if(inputNamePw.value.trim().length == 0){
 
         alert("이름 항목은 필수입니다.");
-        inputNameId.focus();
+        inputNamePw.focus();
         event.preventDefault();
         return;
     }
-    if(inputEmailId.value.trim().length == 0){
+    if(inputEmailPw.value.trim().length == 0){
 
         alert("이메일 항목은 필수입니다.");
-        inputEmailId.focus();
+        inputEmailPw.focus();
         event.preventDefault();
         return;
     }

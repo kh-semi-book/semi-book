@@ -472,6 +472,8 @@ line-height: 60px;
 color: #fff;
 text-align: center;
 transition: all 0.3s ease;
+box-sizing: border-box;
+cursor: pointer;
 }
 
 a.btn:hover{
