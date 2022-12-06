@@ -28,9 +28,13 @@ public class Reserve {
 	private int roomTypeNo;			// 룸 타입
 	private String roomTypeName;			// 룸 타입
 	private String bedType;			// 침대 타입
+	private String cardNo;			// 침대 타입
+	
+	
 	private int bookDate[];			// 날짜들
 	private int optionNo;			// 옵션
 	private int optionCnt;			// 옵션 수
+	private int price;			// 가격
 	
 	
 	

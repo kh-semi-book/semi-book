@@ -86,9 +86,9 @@
 	
 	
 	
-	네임 이메일 폰 리퀘스트 생일
 	
 	<insert id="insertGuest">
+
 		INSERT INTO GUEST
 		VALUES(SEQ_GUEST_NO.NEXTVAL, #{guestName},#{guestEmail},#{guestPhone},#{guestRequest},#{guestBirth})
 	</insert>
@@ -97,8 +97,16 @@
 	
 	
 	
-	<insert id="insertBook">
+	<insert id="insertBook" useGeneratedKeys="true">
 	
+		<selectKey keyProperty="guestNo" resultType="_int" order="BEFORE">
+			SELECT SEQ_GUEST_NO.CURRVAL FROM DUAL
+		</selectKey>
+		
+		
+		INSERT INTO "BOOK"
+		VALUES(SEQ_BOOK_NO.NEXTVAL, DEFAULT, #{checkInInput}, #{checkOutInput}, 
+		#{adultCount}, 0, DEFAULT,DEFAULT, #{cardNo}, #{memberNo}, #{nonMemberNo}, #{promotionNo}, #{roomViewNo}, #{roomTypeNo}, #{childCount}, #{roomCount}, #{guestNo}, 1)
 	</insert>
 	
 	

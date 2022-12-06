@@ -242,7 +242,7 @@
 								<table class="reservation-table">
 									<tr>
 										<th class="row-title">카드 종류</th>
-										<td class="card-input"><select name="cardtype" id="book-input-cardType">
+										<td class="card-input"><select name="cardType" id="book-input-cardType">
 												<option value="선택">선택</option>
 												<option value="국민카드">국민카드</option>
 												<option value="우리카드">우리카드</option>
@@ -283,13 +283,13 @@
 												<option value="11">11</option>
 												<option value="12">12</option>
 										</select> 월 <select name="cardyear" id="book-input-cardValidity2">
-												<option value="2022">2022</option>
-												<option value="2023">2023</option>
-												<option value="2024">2024</option>
-												<option value="2025">2025</option>
-												<option value="2026">2026</option>
-												<option value="2027">2027</option>
-												<option value="2028">2028</option>
+												<option value="22">2022</option>
+												<option value="23">2023</option>
+												<option value="24">2024</option>
+												<option value="25">2025</option>
+												<option value="26">2026</option>
+												<option value="27">2027</option>
+												<option value="28">2028</option>
 										</select> 년</td>
 									</tr>
 								</table>
@@ -317,11 +317,19 @@
 								</div>
 							</div>
 							<div id="agree-check">
-								<input type="checkbox" name="agree" id="agree"><label for="agree">취소정책 및 개인정보 수집 동의하기</label>
+							<input type="hidden" name="guestBirth">
+							<input type="hidden" name="guestPhone">
+							<input type="hidden" name="guestEmail">
+							<input type="hidden" name="cardNo">
+							<input type="hidden" name="cardExpireDate">
+							
+							
+							<input type="checkbox" name="agree" id="agree"><label for="agree">취소정책 및 개인정보 수집 동의하기</label>
 							</div>
 							<div id="applyBtn">
 								<button id="reservationApply">예약신청</button>
 							</div>
+
 						</form>
 					</div>
 					<div id="reservation_side_area">
@@ -420,7 +428,8 @@
 		</div>
 		<jsp:include page="/WEB-INF/views/common/footer.jsp" />
 		<script>
-			const 
+		//카드번호, 폰, 생년월일, 이메일 하나로 
+			
 
 			
 		</script>

@@ -62,6 +62,7 @@ public class ReserveServiceImpl implements ReserveService{
 					reserve.setNonMemberNo(0);
 				}
 				
+				reserve.setCardNo(inputGuest.getCardNo());
 				result= dao.insertBook(reserve);
 			}
 		}

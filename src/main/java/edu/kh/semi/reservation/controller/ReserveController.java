@@ -102,9 +102,9 @@ public class ReserveController {
 	// 3->4
 	@PostMapping("/reservation/reservation4")
 	public String reservation4(@SessionAttribute(value="loginMember",required = false) Member loginMember
-			, Reserve reserve,Model model, Guest inputGuest) {
+			, Reserve reserve,Model model) {
 		
-		int result = service.reservation4(loginMember,reserve,inputGuest);
+		
 		
 		
 		String checkIn=reserve.getCheckInInput().substring(0,10);
@@ -124,6 +124,19 @@ public class ReserveController {
 		
 		return "reservation/reservation4";
 	}
+	
+	@PostMapping("/reservation/reservation5")
+	public String reservation5(@SessionAttribute(value="loginMember",required = false) Member loginMember
+			, Reserve reserve,Model model, Guest inputGuest) {
+		
+		int result = service.reservation4(loginMember,reserve,inputGuest);
+		
+		return "reservation/reservation5";
+		
+	}
+	
+	
+	
 	
 	@PostMapping("/reservation/reservationLogin")
 	public String reservationLogin(Reserve reserve) {
