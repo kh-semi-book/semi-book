@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 import edu.kh.semi.manager.board.model.vo.Promotion;
 import edu.kh.semi.member.model.vo.Member;
 import edu.kh.semi.reservation.model.service.ReserveService;
+import edu.kh.semi.reservation.model.vo.Guest;
 import edu.kh.semi.reservation.model.vo.Option;
 import edu.kh.semi.reservation.model.vo.Reserve;
 
@@ -68,8 +69,7 @@ public class ReserveController {
 	
 	// 2->3
 	@GetMapping("/reservation/reservation3")
-	public String gotoReserve3(Reserve reserve,Model model
-			) {
+	public String gotoReserve3(Reserve reserve,Model model) {
 		
 		
 		System.out.println(reserve);
@@ -99,8 +99,12 @@ public class ReserveController {
 		return "/reservation/reservation3";
 	}
 	
+	// 3->4
 	@PostMapping("/reservation/reservation4")
-	public String reservation4(@SessionAttribute(value="loginMember",required = false) Member loginMember, Reserve reserve,Model model) {
+	public String reservation4(@SessionAttribute(value="loginMember",required = false) Member loginMember
+			, Reserve reserve,Model model, Guest inputGuest) {
+		
+		int result = service.reservation4(loginMember,reserve,inputGuest);
 		
 		
 		String checkIn=reserve.getCheckInInput().substring(0,10);

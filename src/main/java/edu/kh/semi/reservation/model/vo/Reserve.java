@@ -10,6 +10,9 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Reserve {
+	
+	private int memberNo;
+	private int nonMemberNo;
 
 	private String checkInInput; 	//체크인 날짜 2022-12-15 (목)
 	private String checkOutInput;	//체크아웃 날짜 2022-12-15 (목)
@@ -28,5 +31,7 @@ public class Reserve {
 	private int bookDate[];			// 날짜들
 	private int optionNo;			// 옵션
 	private int optionCnt;			// 옵션 수
+	
+	
 	
 }

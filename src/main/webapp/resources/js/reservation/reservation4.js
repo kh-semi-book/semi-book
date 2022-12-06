@@ -1,14 +1,19 @@
 
+
+
+
+
+
 // 양식 제출
 
 
 const checkObj = {
-    "booker2" : false, /* 투숙자 */
-    "book-input-email1" : false, /* 이메일 */
-    "book-input-email3" : false, /* @ */
-    "book-input-phone1" : false, /* 휴대폰1 */
-    "book-input-phone2" : false, /* 휴대폰2 */
-    "book-input-phone3" : false, /* 휴대폰3 */
+    "booker2" : true, /* 투숙자 */
+    "book-input-email1" : true, /* 이메일 */
+    "book-input-email3" : true, /* @ */
+    "book-input-phone1" : true, /* 휴대폰1 */
+    "book-input-phone2" : true, /* 휴대폰2 */
+    "book-input-phone3" : true, /* 휴대폰3 */
     "book-input-cardType" : false, /* 카드종류 */
     "book-input-cardNum1" : false, /* 카드번호1 */
     "book-input-cardNum2" : false, /* 카드번호2 */
@@ -58,7 +63,24 @@ document.getElementById("reservation4_form").addEventListener("submit",e=>{
 });
 
 //투숙자
+const booker1 = document.getElementById("booker1");
 const booker2 = document.getElementById("booker2");
+if(booker2 !=null){
+    booker2.value= booker1.value;
+    document.getElementById("equal").addEventListener("change",()=>{
+
+        if(equal.checked==true){
+            booker2.value = booker1.value;
+            checkObj.booker2=true;
+        } else {
+            booker2.value='';
+            checkObj.booker2=false;
+        }
+
+    });
+    
+}
+
 booker2.addEventListener("input",()=>{
     if(booker2.value.trim().length==0){
         checkObj.booker2=false;
@@ -68,6 +90,8 @@ booker2.addEventListener("input",()=>{
 });
 
 //이메일
+
+
 const book_input_email1 = document.getElementById("book-input-email1");
 const book_input_email2 = document.getElementById("book-input-email2");
 const book_input_email3 = document.getElementById("book-input-email3");
@@ -76,6 +100,19 @@ book_input_email1.addEventListener("input",()=>{
         checkObj["book-input-email1"]=false;
     } else{
         checkObj["book-input-email1"]=true;
+    }
+});
+
+book_input_email3.addEventListener("change", function(){
+    console.log(book_input_email3.value);
+    book_input_email2.value = book_input_email3.value
+
+    if(book_input_email3.value == '직접입력'){
+        book_input_email2.readonly = false;
+        book_input_email2.value = "";
+
+    } else{
+        book_input_email2.readonly = true;
     }
 });
 
@@ -211,49 +248,3 @@ agree.addEventListener("change", ()=>{
         checkObj.agree=false;
     }
 });
-
-
-
-
-console.log(optionSet);
-
-const option=optionSet.split(",");
-
-
-// 옵션에 따라 sideTable 값 출력하기
-// 투숙자값은 필수입니다 넘기기
-//
-
-for(let item of strObj){
-	console.log(item);
-
-}
-
-
-
-
-(function(){
-    const div=document.createElement("div");
-    div.id="optionName";
-
-    const strong=document.createElement("strong");
-    strong.innerText=strobj.optionName;
-    
-
-
-})();
-
-
-
-{/* <div id="optionName">
-    <strong>성인2인조식(사전예약 20%할인가) + 소아1인 조식 무료/환불불가</strong>
-</div>
-<div id="optionCount">
-    <div>
-        <strong>2022-11-04</strong>
-    </div>
-    <div>
-        <strong>65,600원</strong> <span class="optionCount">1개</span>
-    </div>
-</div> */}
-

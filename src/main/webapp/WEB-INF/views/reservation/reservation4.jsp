@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>예약하기4</title>
 <link rel="stylesheet" href="/resources/css/reservation/reservation4.css">
+<link rel="stylesheet" href="/resources/css/reservation/reservation3.css">
 <link rel="stylesheet" href="/resources/css/common/main.css">
 </head>
 <body>
@@ -20,7 +21,6 @@
 				<div>예약하기</div>
 			</section>
 			
-			${param}
 			${optionList[0].optionNo}
 			<section></section>
 		</div>
@@ -62,7 +62,7 @@
 									</tr>
 									<tr>
 										<th class="row-title"><label for="booker2">투숙자</label></th>
-										<td class="book-input"><input type="text" class="input name" name="booker2" id="booker2"  value="${loginMember.memberName}"> <input type="checkbox" name="equal" id="equal"> <label for="equal">예약자와
+										<td class="book-input"><input type="text" class="input name" name="guestName" id="booker2"> <input type="checkbox" name="equal" id="equal" checked> <label for="equal">예약자와
 												동일</label></td>
 									</tr>
 									<tr>
@@ -214,14 +214,14 @@
 									</tr>
 									<tr>
 										<th class="row-title">이메일</th>
-										<td class="book-input"><input type="text" class="input" name="booker-email1" id="book-input-email1">@ <input type="text" class="input" id="book-input-email3"> <select name="booker-email2" id="book-input-email2">
+										<td class="book-input"><input type="text" class="input" name="booker-email1" id="book-input-email1" value="${fn:split(loginMember.memberEmail,'@')[0]}">@ <input type="text" class="input" id="book-input-email2" value="${fn:split(loginMember.memberEmail,'@')[1]}"> <select name="booker-email2" id="book-input-email3">
 												<option value="naver.com">naver.com</option>
 												<option value="gmail.com">gmail.com</option>
 												<option value="nate.com">nate.com</option>
 												<option value="hotmail.com">hotmail.com</option>
 												<option value="dreamwiz.com">dreamwiz.com</option>
 												<option value="freechal.com">freechal.com</option>
-												<option value="">직접입력</option>
+												<option value="직접입력">직접입력</option>
 										</select>  <br>
 											<p name="email-info">(다음/한메일은 수신이 안될 수 있습니다.)</p></td>
 									</tr>
@@ -325,7 +325,7 @@
 						</form>
 					</div>
 					<div id="reservation_side_area">
-						<div class="side-table" id="side-table">
+						<%-- <div class="side-table" id="side-table">
 							<div>
 								<div class="side-margin"></div>
 								<div class="side-table-head">일정</div>
@@ -409,7 +409,8 @@
 
 
 							</div>
-						</div>
+						</div> --%>
+						${param.side}
 					</div>
 				</div>
 
@@ -419,36 +420,7 @@
 		</div>
 		<jsp:include page="/WEB-INF/views/common/footer.jsp" />
 		<script>
-			const optionList="${optionList[0].optionNo}";
-			const optionSet="${param.optionSet}";
-			let i=0;
-			
-			let strObj=[];
-			strObj[0] = {
-					  optionNo : '${optionList[0].optionNo}',
-					  optionName : '${optionList[0].optionName}',
-					  optionPrice : '${optionList[0].optionPrice}'
-			};
-			strObj[1] = {
-					  optionNo : '${optionList[1].optionNo}',
-					  optionName : '${optionList[1].optionName}',
-					  optionPrice : '${optionList[1].optionPrice}'
-			};
-			strObj[2] = {
-					  optionNo : '${optionList[2].optionNo}',
-					  optionName : '${optionList[2].optionName}',
-					  optionPrice : '${optionList[2].optionPrice}'
-			};
-			strObj[3] = {
-					  optionNo : '${optionList[3].optionNo}',
-					  optionName : '${optionList[3].optionName}',
-					  optionPrice : '${optionList[3].optionPrice}'
-			};
-			strObj[4] = {
-					  optionNo : '${optionList[4].optionNo}',
-					  optionName : '${optionList[4].optionName}',
-					  optionPrice : '${optionList[4].optionPrice}'
-			};
+			const 
 
 			
 		</script>

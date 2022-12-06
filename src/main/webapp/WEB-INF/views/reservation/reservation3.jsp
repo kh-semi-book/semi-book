@@ -109,7 +109,7 @@
 
 					</c:otherwise>
 				</c:choose>
-				<form action="${path}" method="post">
+				<form action="${path}" method="post" name="resFrm3">
 
 
 
@@ -121,6 +121,7 @@
 					<input type="hidden" value="${reserve.adultCount}" name="adultCount" /> 
 					<input type="hidden" value="${reserve.childCount}" name="childCount" />
 					<input type="hidden" name="optionSet" />
+					<input type="hidden" name="side" id="side"/>
 
 					<button>예약하기</button>
 
@@ -181,7 +182,7 @@
 					</div>
 
 					<div class="side-option">
-						<div class="side-option-title">객실&패키지</div>
+						<div class="side-option-title">옵션</div>
 
 						<div class="side-option-cost">0원 (VAT포함)</div>
 					</div>

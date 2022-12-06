@@ -77,4 +77,48 @@
 		SELECT * FROM "OPTION"
 	
 	</select>
+	
+	
+	<insert id="insertPayment">
+		INSERT INTO "PAYMENT"
+		VALUES(#{cardNo},#{cardType},#{cardExpireDate})
+	</insert>
+	
+	
+	
+	네임 이메일 폰 리퀘스트 생일
+	
+	<insert id="insertGuest">
+		INSERT INTO GUEST
+		VALUES(SEQ_GUEST_NO.NEXTVAL, #{guestName},#{guestEmail},#{guestPhone},#{guestRequest},#{guestBirth})
+	</insert>
+	
+	
+	
+	
+	
+	<insert id="insertBook">
+	
+	</insert>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </mapper>

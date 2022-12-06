@@ -112,3 +112,9 @@ submitbtn.addEventListener("click",()=>{
     hiddenInput.value=Array.from(optionSet);
 
 })
+
+document.resFrm3.addEventListener("submit", e=>{
+    const side = document.getElementById("reservation3_side_area").innerHTML;
+    document.getElementById("side").value = side;
+    // e.preventDefault();
+});
