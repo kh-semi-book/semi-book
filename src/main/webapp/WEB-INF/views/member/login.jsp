@@ -26,13 +26,13 @@
                 onsubmit="return loginValidate();">
                     <p>회원 로그인</p>
                     <div class="input-section">
-                        <input type="text" name="memberId" placeholder="아이디">
+                        <input type="text" name="memberId" placeholder="아이디" value="${cookie.saveId.value}">
                         <input type="password" name="memberPw" placeholder="비밀번호">
                     </div
                     ><div class="button-section">
                         <button id="member-login-btn">로그인</button>
                     </div>
-                    <label for="saveId"><input type="checkbox" id="saveId" ${temp}>아이디 저장</label>
+                    <label for="saveId"><input type="checkbox" name="saveId" id="saveId" ${temp}>아이디 저장</label>
                 </form>
             </div>
             <c:if test="${!empty cookie.saveId.value}">

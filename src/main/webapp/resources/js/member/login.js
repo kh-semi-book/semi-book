@@ -30,3 +30,14 @@ function loginValidate(){
 
     return true;
 }
+
+// 아이디 저장
+const saveId = document.getElementById("saveId");
+
+saveId.addEventListener("change", function(){
+    
+    if(this.checked){
+    
+        const str = ""
+    }    
+})
