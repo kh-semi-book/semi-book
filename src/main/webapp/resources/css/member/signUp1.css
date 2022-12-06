@@ -97,6 +97,14 @@ h1.kjh-h1{
     color:#666;
     margin-bottom: 20px;
 }
+
+.kjh-dt{
+    font-size: 18px;
+    font-weight: 600;
+    padding : 0px 0px 10px 0;
+    margin-bottom: 10px;
+}
+
 textarea{
     width: 100%;
 }
