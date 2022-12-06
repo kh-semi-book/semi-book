@@ -1,5 +1,6 @@
 package edu.kh.semi.reservation.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,16 +20,7 @@ import edu.kh.semi.reservation.model.service.ReservationService;
 @Controller
 public class ReservationController {
 	
-	@GetMapping("/reservation/reservationViewDetail")
-	public String reservationViewDetail(@PathVariable(value="memberNo") int memberNo, Model model,
-			                            @SessionAttribute(value = "loginMember", required = false) Member loginMember ) {
-		
-		Book book = service.reservationViewDetail(memberNo);
-		
-		model.addAttribute("book",book);
-		
-		return "reservation/reservationViewDetail";
-	}
+	
 	
 	@GetMapping("/reservation/reservation1")
 	public String reservation1() {
@@ -59,20 +51,30 @@ public class ReservationController {
 	private ReservationService service;
 	
 	// 예약 조회 
-	@GetMapping("/reservation/reservationView/{sessionScope.loginMember.memberNo}")
-	public String reservationCheckPage(Model model,
-			@RequestParam(value="cp",required=false, defaultValue="1") int cp,
-			@SessionAttribute(value = "loginMember", required = false) Member loginMember,
-			@RequestParam Map<String,Object> pm) {
+	@GetMapping("/reservation/reservationView")
+	public String reservationCheckPage(@SessionAttribute(value = "loginMember", required = false) Member loginMember,
+			Model model) {
 		
-		int memberNo = loginMember.getMemberNo();
-		
-		Map<String, Object> map = service.selectBook(cp, memberNo);
-		model.addAttribute("map",map);
-		
-		System.out.println(map);
+		if(loginMember == null) {
+			// 로그인 화면 넘기기
+			return "";
+		} else {
+			List<Book> bookList = service.reservationView(loginMember);
+			model.addAttribute("bookList", bookList);
+		}
 		
 		return "reservation/reservationView";
+	}
+	
+	@GetMapping("/reservation/reservationViewDetail")
+	public String reservationViewDetail(@PathVariable(value="memberNo") int memberNo, Model model,
+			                            @SessionAttribute(value = "loginMember", required = false) Member loginMember ) {
+		
+		Book book = service.reservationViewDetail(memberNo);
+		
+		model.addAttribute("book",book);
+		
+		return "reservation/reservationViewDetail";
 	}
 
 }

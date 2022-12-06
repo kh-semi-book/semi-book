@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<c:set var="bookList" value="${map.bookList}"/>
+<c:set var="bookList" value="${bookList}"/>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -57,7 +57,44 @@
                     <tr>
                         <td height="100px">${book.bookDate}</td>
                         <td><a href="/reservation/reservationViewDetail">${book.promotionTitle}</a></td>
-                        <td>${book.roomName}${book.roomViewName}</td>
+                        <td>
+                        <c:choose>
+							<c:when test="${book.roomViewNo==1}">
+								<c:set var="roomViewName" value="가든" />
+							</c:when>
+							<c:when test="${book.roomViewNo==2}">
+								<c:set var="roomViewName" value="클리프" />
+							</c:when>
+							<c:when test="${book.roomViewNo==3}">
+								<c:set var="roomViewName" value="파노라마" />
+							</c:when>
+						</c:choose> 
+                        <c:choose> 
+                            <c:when test="${book.roomTypeNo==1}">
+                                <c:set var="roomTypeName" value="예래 스위트" />
+                            </c:when>
+                            <c:when test="${book.roomTypeNo==2}">
+                                <c:set var="roomTypeName" value="패밀리 스위트" />
+                            </c:when>
+                            <c:when test="${book.roomTypeNo==3}">
+                                <c:set var="roomTypeName" value="코너 디럭스" />
+                            </c:when>
+                            <c:when test="${book.roomTypeNo==4}">
+                                <c:set var="roomTypeName" value="디럭스" />
+                            </c:when>
+                        </c:choose>
+                        <c:choose> 
+                            <c:when test="${book.bedTypeNo==1}">
+                                <c:set var="bedTypeName" value="트윈" />
+                            </c:when>
+                            <c:when test="${book.bedTypeNo==2}">
+                                <c:set var="bedTypeName" value="더블" />
+                            </c:when>
+                            <c:when test="${book.bedTypeNo==3}">
+                                <c:set var="bedTypeName" value="트리플" />
+                            </c:when>
+                        </c:choose>  
+                        ${roomTypeName} ${bedTypeName} ${roomViewName}</td>
                         <td>${book.checkIn}</td>
                         <td>${book.checkOut}</td>
                         <td>${book.bookPrice}</td>
