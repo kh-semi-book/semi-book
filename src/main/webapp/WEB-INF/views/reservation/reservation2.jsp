@@ -75,15 +75,23 @@
 									
 									
 									<div class="package-room-type">
+									<c:forEach var="bed" items="${promotion.bedType}">
+										<c:choose>
+											<c:when test="${bed == 1}">
+												<c:set var="bed1" value="트윈" />
+											</c:when>
+											<c:when test="${bed == 2}">
+												<c:set var="bed1" value="더블" />
+											</c:when>
+											<c:when test="${bed == 3}">
+												<c:set var="bed1" value="트리플" />
+											</c:when>
+										</c:choose>
 										<div>
-											<span><span>더블</span>(${reserve.nights}박)</span> <span> <fmt:formatNumber value="${promotion.promotionPrice}"/>원</span> <button class="selectBtn" >예약</button>
-											<input type="hidden" value="1" name="bedTypeNo"/>
+											<span><span class="bedName">${bed1}</span> (${reserve.nights}박)</span> <span><fmt:formatNumber value="${promotion.promotionPrice}"/>원</span> <button class="selectBtn">예약</button>
+											<%-- <input type="hidden" value="${bed}" name="bedTypeNo"/> --%>
 										</div>
-										<div>
-										
-											<span><span>트윈</span> (${reserve.nights}박)</span> <span><fmt:formatNumber value="${promotion.promotionPrice}"/>원</span> <button class="selectBtn" >예약</button>
-											<input type="hidden" value="2" name="bedTypeNo"/>
-										</div>
+									</c:forEach>
 									</div>
 								</div>
 								

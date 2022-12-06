@@ -27,7 +27,7 @@ public class ReserveController {
 	@Autowired
 	private ReserveService service;
 
-	
+	// 1 -> 2
 	@PostMapping("/reservation/reservation2")
 	public String gotoReserve2(Reserve reserve, Model model) {
 		
@@ -66,6 +66,7 @@ public class ReserveController {
 		return "/reservation/reservation2";
 	}
 	
+	// 2->3
 	@GetMapping("/reservation/reservation3")
 	public String gotoReserve3(Reserve reserve,Model model
 			) {

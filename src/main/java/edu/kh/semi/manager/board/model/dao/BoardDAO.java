@@ -148,23 +148,23 @@ public class BoardDAO {
 	}
 	
 
-	/** 프로모션 객실 수정 (삭제 후 삽입)
-	 * @param pMap
-	 * @return
-	 */
-	public int updatePromotionRoom(Map<String, Object> pMap) {
-		return sqlSession.insert("boardMapper.updatePromotionRoom", pMap);
-	}
-
-
-
-	/** 프로모션 객실 삭제
-	 * @param promotionNo
-	 * @return
-	 */
-	public int promotionRoomDelete(int promotionNo) {
-		return sqlSession.delete("boardMapper.promotionRoomDelete", promotionNo);
-	}
+//	/** 프로모션 객실 수정 (삭제 후 삽입)
+//	 * @param pMap
+//	 * @return
+//	 */
+//	public int updatePromotionRoom(Map<String, Object> pMap) {
+//		return sqlSession.insert("boardMapper.updatePromotionRoom", pMap);
+//	}
+//
+//
+//
+//	/** 프로모션 객실 삭제
+//	 * @param promotionNo
+//	 * @return
+//	 */
+//	public int promotionRoomDelete(int promotionNo) {
+//		return sqlSession.delete("boardMapper.promotionRoomDelete", promotionNo);
+//	}
 	
 
 
@@ -173,7 +173,7 @@ public class BoardDAO {
 	 * @return 
 	 */
 	public int promotionDelete(int promotionNo) {
-		return sqlSession.delete("boardMapper.promotionDelete", promotionNo);
+		return sqlSession.update("boardMapper.promotionDelete", promotionNo);
 	}
 
 	//======================================================================================

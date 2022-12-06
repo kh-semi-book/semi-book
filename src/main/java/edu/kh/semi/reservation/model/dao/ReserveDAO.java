@@ -26,10 +26,15 @@ public class ReserveDAO {
 		return sqlSession.selectList("reserveMapper.selectRoomType", promotionNo);
 	}
 
+	public List<String> selectBedType(int promotionNo) {
+		return sqlSession.selectList("reserveMapper.selectBedType", promotionNo);
+	}
+
 	public List<Option> selectOption() {
 		
 		return sqlSession.selectList("reserveMapper.selectOption");
 	}
+
 	
 	
 	

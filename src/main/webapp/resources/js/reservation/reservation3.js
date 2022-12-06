@@ -64,7 +64,6 @@ for(let select of selectList){
 
         for(let name of sideOptionName){
             if(optionName==name.innerText){
-                console.log("object");
                 name.nextSibling.append(tr);
                 return;
             }

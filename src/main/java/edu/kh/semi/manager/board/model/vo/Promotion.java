@@ -28,6 +28,7 @@ public class Promotion {
 	private String roomViewNo;
 	private String roomTypeNo;
 	private List<String> roomType;
+	private List<String> bedType;
 	
 	
 	public String getpStayStartDate() {

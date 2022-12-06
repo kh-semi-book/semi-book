@@ -8,6 +8,11 @@ import edu.kh.semi.reservation.model.vo.Reserve;
 
 public interface ReserveService {
 
+	
+	/** 날짜에 해당하는 프로모션 조회
+	 * @param reserve
+	 * @return
+	 */
 	List<Promotion> selectPromotion(Reserve reserve);
 
 	List<Option> selectOption();

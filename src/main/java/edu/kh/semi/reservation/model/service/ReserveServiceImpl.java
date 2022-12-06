@@ -16,6 +16,7 @@ public class ReserveServiceImpl implements ReserveService{
 	@Autowired
 	private ReserveDAO dao;
 
+	// 날짜에 해당하는 프로모션 조회
 	@Override
 	public List<Promotion> selectPromotion(Reserve reserve) {
 		
@@ -24,7 +25,9 @@ public class ReserveServiceImpl implements ReserveService{
 		
 		for(int i=0;i<promotion.size();i++) {
 			List<String> roomType=dao.selectRoomType(promotion.get(i).getPromotionNo());
+			List<String> bedType=dao.selectBedType(promotion.get(i).getPromotionNo());
 			promotion.get(i).setRoomType(roomType);
+			promotion.get(i).setBedType(bedType);
 		}
 		
 		return promotion;

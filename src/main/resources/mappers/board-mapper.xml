@@ -150,6 +150,7 @@
 		FROM "PROMOTION"
 		JOIN MEMBER USING (MEMBER_NO)
 		WHERE PROMOTION_NO != 0
+		AND PROMOTION_DEL_FL='N'
 		ORDER BY 1 DESC
 	</select>
 	
@@ -197,7 +198,14 @@
 		PROMOTION_ROOM(PROMOTION_NO, ROOM_VIEW_NO, ROOM_TYPE_NO, BED_TYPE_NO)
 		SELECT #{promotionNo},#{roomViewNo},#{roomTypeNo},1 FROM DUAL
 		UNION ALL
-		SELECT #{promotionNo},#{roomViewNo},#{roomTypeNo},2 FROM DUAL
+		SELECT #{promotionNo},#{roomViewNo},#{roomTypeNo},
+		<if test='roomTypeNo==3 or roomTypeNo==4'>
+		2 
+		</if>
+		<if test='roomTypeNo==1 or roomTypeNo==2'>
+		3
+		</if>
+		FROM DUAL
 	</insert>
 	
 	<!-- 프로모션 내용 수정 -->
@@ -228,27 +236,27 @@
 	
 	
 	<!-- 프로모션 객실 수정 -->
-	<insert id="updatePromotionRoom" parameterType="map">
+	<!-- <insert id="updatePromotionRoom" parameterType="map">
 		INSERT INTO 
 		PROMOTION_ROOM(PROMOTION_NO, ROOM_VIEW_NO, ROOM_TYPE_NO, BED_TYPE_NO)
 		SELECT #{promotionNo},#{roomViewNo},#{roomTypeNo},1 FROM DUAL
 		UNION ALL
 		SELECT #{promotionNo},#{roomViewNo},#{roomTypeNo},2 FROM DUAL
-	</insert>
+	</insert> -->
 	
 	
 	
 	<!-- 프로모션 객실 삭제 -->
-	<delete id="promotionRoomDelete">
+	<!-- <delete id="promotionRoomDelete">
 		DELETE FROM PROMOTION_ROOM WHERE PROMOTION_NO=#{promotionNo}
-	</delete>
+	</delete> -->
 	
 	
 	<!-- 프로모션 삭제 -->
-	<delete id="promotionDelete">
+	<update id="promotionDelete">
 		UPDATE PROMOTION SET PROMOTION_DEL_FL='Y' 
 		WHERE PROMOTION_NO=#{promotionNo}
-	</delete>
+	</update>
 	
 	
 	
