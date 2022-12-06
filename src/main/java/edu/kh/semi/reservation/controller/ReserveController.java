@@ -93,6 +93,7 @@ public class ReserveController {
 		
 		model.addAttribute("optionList",optionList);
 		model.addAttribute("dateList",dateList);
+		model.addAttribute("reserve",reserve);
 		
 		
 		
@@ -121,6 +122,7 @@ public class ReserveController {
 		
 		model.addAttribute("optionList",optionList);
 		model.addAttribute("dateList",dateList);
+		model.addAttribute("reserve",reserve);
 		
 		return "reservation/reservation4";
 	}
@@ -128,6 +130,12 @@ public class ReserveController {
 	@PostMapping("/reservation/reservation5")
 	public String reservation5(@SessionAttribute(value="loginMember",required = false) Member loginMember
 			, Reserve reserve,Model model, Guest inputGuest) {
+		
+		System.out.println(reserve);
+		
+		reserve.setCheckInInput(reserve.getCheckInInput().substring(0,9));
+		reserve.setCheckOutInput(reserve.getCheckOutInput().substring(0,9));
+		
 		
 		int result = service.reservation4(loginMember,reserve,inputGuest);
 		

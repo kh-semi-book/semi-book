@@ -6,14 +6,17 @@
 	
 		<id property="bookNo" column="BOOK_NO"/>
 		
+		<result property="memberNo" column="MEMBER_NO"/> 
+		<result property="nonMemberNo" column="NONMEMBER_NO"/> 
+		<result property="guestNo" column="GUEST_NO"/> 
+
+
+
 		<result property="checkInInput" column="CHECK_IN"/> 
 		<result property="checkOutInput" column="CHECK_OUT"/> 
-		
-		
 		<result property="roomCount" column="ROOM_COUNT"/> 
 		<result property="adultCount" column="ADULT_COUNT"/> 
 		<result property="childCount" column="CHILD_COUNT"/> 
-		
 		<result property="promotionNo" column="PROMOTION_NO"/> 
 		<result property="roomViewNo" column="ROOM_VIEW_NO"/> 
 		<result property="roomTypeNo" column="ROOM_TYPE_NO"/> 

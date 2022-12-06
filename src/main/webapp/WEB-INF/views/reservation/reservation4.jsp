@@ -21,7 +21,7 @@
 				<div>예약하기</div>
 			</section>
 			
-			${optionList[0].optionNo}
+			${reserve}
 			<section></section>
 		</div>
 		<div id="reservation4_body_area">
@@ -322,6 +322,14 @@
 							<input type="hidden" name="guestEmail">
 							<input type="hidden" name="cardNo">
 							<input type="hidden" name="cardExpireDate">
+							<input type="hidden" value="${reserve.roomTypeName}" name="roomTypeName" /> 
+							<input type="hidden" value="${reserve.checkInInput}" name="checkInInput" />
+							<input type="hidden" value="${reserve.checkOutInput}" name="checkOutInput" /> 
+							<input type="hidden" value="${reserve.nights}" name="nights" /> 
+							<input type="hidden" value="${reserve.roomCount}" name="roomCount" /> 
+							<input type="hidden" value="${reserve.adultCount}" name="adultCount" /> 
+							<input type="hidden" value="${reserve.childCount}" name="childCount" />
+							
 							
 							
 							<input type="checkbox" name="agree" id="agree"><label for="agree">취소정책 및 개인정보 수집 동의하기</label>

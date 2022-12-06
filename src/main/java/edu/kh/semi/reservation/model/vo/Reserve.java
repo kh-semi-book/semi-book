@@ -13,6 +13,7 @@ public class Reserve {
 	
 	private int memberNo;
 	private int nonMemberNo;
+	private int guestNo;
 
 	private String checkInInput; 	//체크인 날짜 2022-12-15 (목)
 	private String checkOutInput;	//체크아웃 날짜 2022-12-15 (목)
