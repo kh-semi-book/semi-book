@@ -11,6 +11,7 @@ import edu.kh.semi.manager.board.model.vo.Promotion;
 import edu.kh.semi.member.model.vo.Member;
 import edu.kh.semi.reservation.model.dao.ReserveDAO;
 import edu.kh.semi.reservation.model.vo.Guest;
+import edu.kh.semi.reservation.model.vo.NonMember;
 import edu.kh.semi.reservation.model.vo.Option;
 import edu.kh.semi.reservation.model.vo.Reserve;
 
@@ -53,27 +54,33 @@ public class ReserveServiceImpl implements ReserveService{
 	 */
 	@Transactional(rollbackFor = Exception.class)
 	@Override
-	public int reservation4(Member loginMember, Reserve reserve, Guest inputGuest,String[] optionSet, Guest nonMember) {
+	public int reservation4(Member loginMember, Reserve reserve, Guest inputGuest,String[] optionSet, NonMember nonMember) {
 		Option tempOption = new Option();
 		int result = dao.insertPayment(inputGuest);
 		
 		if(result>0) {
 			result = dao.insertGuest(inputGuest);
 			
+			
 			if(result >0) {
 				if(loginMember!=null) { // 회원이면
 					reserve.setMemberNo(loginMember.getMemberNo());
-					
 					reserve.setNonMemberNo(0);
+					reserve.setGuestNo(inputGuest.getGuestNo());
 					reserve.setCardNo(inputGuest.getCardNo());
+					
+					
 					result= dao.insertBook(reserve);
 				} else { // 비회원이면 
 					
-					result=dao.insertNonMember(nonMember);
-					reserve.setCardNo(inputGuest.getCardNo());
-					reserve.setMemberNo(0);
+					 result=dao.insertNonMember(nonMember);
 					
-					result= dao.insertBook_nonMember(reserve);
+					reserve.setGuestNo(inputGuest.getGuestNo());
+					reserve.setNonMemberNo(nonMember.getNonMemberNo());
+					reserve.setMemberNo(0);
+					reserve.setCardNo(inputGuest.getCardNo());
+					
+					dao.insertBook_nonMember(reserve);
 				}
 				
 				

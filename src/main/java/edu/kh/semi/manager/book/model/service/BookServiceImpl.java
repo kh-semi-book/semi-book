@@ -84,7 +84,7 @@ public class BookServiceImpl implements BookService {
 		
 		int result=dao.updateBook(bookPerson);
 		
-		if(bookPerson.getRoomCancelFlag()==1) {
+		if(bookPerson.getRoomCancelFlag().equals(1)) {
 	
 			int checkBook=dao.checkBookRoom(bookPerson);
 			

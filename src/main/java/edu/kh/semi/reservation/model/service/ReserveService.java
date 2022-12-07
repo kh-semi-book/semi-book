@@ -5,6 +5,7 @@ import java.util.List;
 import edu.kh.semi.manager.board.model.vo.Promotion;
 import edu.kh.semi.member.model.vo.Member;
 import edu.kh.semi.reservation.model.vo.Guest;
+import edu.kh.semi.reservation.model.vo.NonMember;
 import edu.kh.semi.reservation.model.vo.Option;
 import edu.kh.semi.reservation.model.vo.Reserve;
 
@@ -27,7 +28,7 @@ public interface ReserveService {
 	 * @param nonMember 
 	 * @return
 	 */
-	int reservation4(Member loginMember, Reserve reserve, Guest inputGuest, String[] optionList, Guest nonMember);
+	int reservation4(Member loginMember, Reserve reserve, Guest inputGuest, String[] optionList, NonMember nonMember);
 
 	Member login(Member inputMember);
 

@@ -24,6 +24,7 @@ import edu.kh.semi.manager.board.model.vo.Promotion;
 import edu.kh.semi.member.model.vo.Member;
 import edu.kh.semi.reservation.model.service.ReserveService;
 import edu.kh.semi.reservation.model.vo.Guest;
+import edu.kh.semi.reservation.model.vo.NonMember;
 import edu.kh.semi.reservation.model.vo.Option;
 import edu.kh.semi.reservation.model.vo.Reserve;
 
@@ -112,11 +113,11 @@ public class ReserveController {
 			, Reserve reserve,Model model, String inputEmail, String inputTel, String inputName) {
 
 		
-		Guest nonMember=new Guest();
+		NonMember nonMember=new NonMember();
 		
-		nonMember.setGuestName(inputName);
-		nonMember.setGuestPhone(inputTel);
-		nonMember.setGuestEmail(inputEmail);
+		nonMember.setNonMemberName(inputName);
+		nonMember.setNonMemberPhone(inputTel);
+		nonMember.setNonMemberEmail(inputEmail);
 		
 		System.out.println(nonMember);
 		
@@ -144,11 +145,11 @@ public class ReserveController {
 	
 	@PostMapping("/reservation/reservation5")
 	public String reservation5(@SessionAttribute(value="loginMember",required = false) Member loginMember
-			,  Reserve reserve,Model model, Guest inputGuest, String optionSet
+			,  Reserve reserve,Model model, Guest inputGuest, String optionSet,NonMember nonMember
 			) { 
 		
 		
-		
+		System.out.println(nonMember);
 		
 		String optionList[]=optionSet.split(",");
 		
