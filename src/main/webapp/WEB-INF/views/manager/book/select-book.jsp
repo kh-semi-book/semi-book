@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 
 <c:set var="bookList" value="${map.bookList}"/>
+<c:set var="pagination" value="${map.pagination}"/>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -142,10 +143,10 @@
         
         <!— 페이지 이동 버튼 —>
         <div id="rsc-page-skip">
-            <a href="#"><<</a>&nbsp;&nbsp;
+            <a href="/manager/selectBook?cp=1"><<</a>&nbsp;&nbsp;
             <a href="#">< </a> &nbsp;&nbsp;
             <button><a href="#">1</a></button>&nbsp;&nbsp;
-            <a href="#">></a> &nbsp;&nbsp;
+            <a href="/manager/selectBook?cp=${pagination.nextPage}">></a> &nbsp;&nbsp;
             <a href="#">>></a>
         
         </div>
