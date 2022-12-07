@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -36,7 +36,7 @@
                 <section class="rsc-body-TopArea">
                     <!-- 페이지 조회  -->
                     <nav class="rsc-page-list">
-                        <a href="#">HOME</a> > <a href="#">마이페이지</a> > <a href="#">예약하기</a>
+                        <a href="/">HOME</a> > <a href="#">마이페이지</a> > <a href="#">예약하기</a>
                     </nav>
                     <!-- 페이지 제목 -->
                     <div class="rsc-page-title"><h1>예약조회</h1></div>

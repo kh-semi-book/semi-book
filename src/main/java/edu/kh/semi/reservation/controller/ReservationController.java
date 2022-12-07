@@ -69,8 +69,7 @@ public class ReservationController {
 	// 예약 상세조회
 	@GetMapping("/reservation/reservationViewDetail/{bookNo}")
 	public String reservationViewDetail(@PathVariable(value="bookNo") int bookNo, Model model,
-			                            @SessionAttribute(value = "loginMember", required = false) Member loginMember,
-			                            @SessionAttribute(value = "loginNonMember", required = false) Member loginNonMember) {
+			                            @SessionAttribute(value = "loginMember", required = false) Member loginMember) {
 		
 		Book book = service.reservationViewDetail(bookNo);
 		

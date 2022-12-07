@@ -65,7 +65,7 @@
 
 /*----[ 예약 조회 테이블 ]----*/
 .reservation-content-main{
-    padding: 20px;
+    /* padding: 20px; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -74,13 +74,16 @@
 #table-room-view{
     border-collapse: collapse;
     font-size: 15px;
-    width: 960px;
+    width:1000px;
     border-left: none;
     border-right: none;
 }
 #table-room-view th, #table-room-view td{
     border: 1px solid #767676;
     text-align: center;
+}
+#table-room-view td{
+    font-size: 13px;
 }
 #table-room-view th{
     font-size: 17px;

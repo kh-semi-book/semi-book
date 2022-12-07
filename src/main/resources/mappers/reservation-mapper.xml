@@ -27,6 +27,32 @@
 		<result property="roomViewName" column="ROOM_VIEW_NAME"/> 
 		<result property="bedTypeName" column="BED_TYPE_NAME"/> 
 	</resultMap>
+	
+	<!-- <resultMap type="Book" id="book_rm">
+	
+		<id property="bookNo" column="BOOK_NO"/>
+		<result property="bookDate" column="BOOK_DATE"/> 
+		<result property="checkIn" column="CHECK_IN"/> 
+		<result property="checkOut" column="CHECK_OUT"/> 
+		<result property="bookAdultCount" column="BOOK_ADULTCOUNT"/> 
+		<result property="bookPrice" column="PRICE"/> 
+		<result property="roomProcess" column="ROOM_PROCESS"/> 
+		<result property="roomCancleFlag" column="ROOM_CANCEL_FL"/> 
+		<result property="bookCardNo" column="BOOK_CARD_NO"/> 
+		<result property="memberNo" column="MEMBER_NO"/> 
+		<result property="nonMemberNo" column="NONMEMBER_NO"/> 
+		<result property="guestNo" column="GUEST_NO"/> 
+		<result property="promotionNo" column="PROMOTION_NO"/> 
+		<result property="roomViewNo" column="ROOM_VIEW_NO"/> 
+		<result property="roomTypeNo" column="ROOM_TYPE_NO"/> 
+		<result property="bedTypeNo" column="BED_TYPE_NO"/> 
+		<result property="bookChildCount" column="BOOK_CHILDCOUNT"/>
+		<result property="bookRoomCount" column="BOOK_ROOMCOUNT"/>
+		<result property="promotionTitle" column="PROMOTION_TITLE"/> 
+		<result property="roomTypeName" column="ROOM_NAME"/> 
+		<result property="roomViewName" column="ROOM_VIEW_NAME"/> 
+		<result property="bedTypeName" column="BED_TYPE_NAME"/> 
+	</resultMap> -->
 
 
 	<!-- 예약 리스트 조회 -->
@@ -50,7 +76,7 @@
 	</select>
 	
 	<!-- 예약 조회 상세보기  -->
-	<select id="reservationViewDetail">
+<!-- 	<select id="reservationViewDetail" resultMap="book_rm" resultType="Book">
 	SELECT BOOK_NO, TO_CHAR(BOOK_DATE,'YYYY-MM-DD') BOOK_DATE, TO_CHAR(CHECK_IN,'YYYY-MM-DD') CHECK_IN,
 		 TO_CHAR(CHECK_OUT,'YYYY-MM-DD') CHECK_OUT, BOOK_ADULTCOUNT, PRICE,
 		 CASE ROOM_PROCESS WHEN 0 THEN '예약대기'
@@ -63,5 +89,5 @@
 	FROM BOOK
 	WHERE BOOK_NO=#{bookNo}
 	
-	</select>
+	</select> -->
 </mapper>
