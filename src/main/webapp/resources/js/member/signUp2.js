@@ -119,6 +119,8 @@ const checkObj = {
 };  
 
 // 아이디 중복 검사
+let isIdChecked = false; // 중복확인
+
 document.getElementById("dup_check").addEventListener("click", function(){
     const memberId = document.getElementById("memberId");
     const regEx = /^[a-z0-9]{6,20}$/;
@@ -126,10 +128,12 @@ document.getElementById("dup_check").addEventListener("click", function(){
     if(memberId.value === ""){
         alert("아이디를 입력해주세요.");
         memberId.focus();
+        isIdChecked = false;
     } else if(
         !regEx.test(memberId.value)
     ){
         alert("아이디 항목의 아이디 형식이 올바르지 않습니다.\n\n영소문자, 숫자로 6~20자까지 가능합니다.");
+        isIdChecked = false;
 
     
     }else{
@@ -145,9 +149,11 @@ document.getElementById("dup_check").addEventListener("click", function(){
 
             if(result == 0){ // 중복 X
                 alert("'"+memberId.value + "'은(는) 중복된 아이디가 없습니다.\n\n 사용하셔도 좋습니다.")
+                isIdChecked = true;
 
             } else{
                 alert("사용 불가능한 아이디 입니다.")
+                isIdChecked = false;
 
 
             }
@@ -164,6 +170,7 @@ document.getElementById("dup_check").addEventListener("click", function(){
 })
 
 document.getElementById("joinform").addEventListener("submit", function(event){
+    console.log("폼 전송??");
 //    checkObj속성  중 한개라도 false라면 제출 X
 
             // switch(!key){
@@ -323,6 +330,15 @@ document.getElementById("joinform").addEventListener("submit", function(event){
                 event.preventDefault();//제출 이벤트제거
                 return;
             }
+
+            // 중복 확인 버튼이 안눌렸으면
+            if(isIdChecked === false){
+                console.log("중복버튼확인");
+                event.preventDefault();
+
+                return;
+            }
+
             
 });
     
