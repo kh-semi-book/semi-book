@@ -109,12 +109,16 @@ public class ReserveController {
 	// 3->4
 	@PostMapping("/reservation/reservation4")
 	public String reservation4(@SessionAttribute(value="loginMember",required = false) Member loginMember
-			, Reserve reserve,Model model) {
+			, Reserve reserve,Model model, String inputEmail, String inputTel, String inputName) {
+
 		
+		Guest nonMember=new Guest();
 		
-	
+		nonMember.setGuestName(inputName);
+		nonMember.setGuestPhone(inputTel);
+		nonMember.setGuestEmail(inputEmail);
 		
-		
+		System.out.println(nonMember);
 		
 		String checkIn=reserve.getCheckInInput().substring(0,10);
 		String checkOut=reserve.getCheckOutInput().substring(0,10);
@@ -131,31 +135,29 @@ public class ReserveController {
 		model.addAttribute("optionList",optionList);
 		model.addAttribute("dateList",dateList);
 		model.addAttribute("reserve",reserve);
+		model.addAttribute("nonMember",nonMember);
 		
 		return "reservation/reservation4";
 	}
 	
+	
+	
 	@PostMapping("/reservation/reservation5")
 	public String reservation5(@SessionAttribute(value="loginMember",required = false) Member loginMember
-			,@SessionAttribute(value="guest",required = false) Member guest,  Reserve reserve,Model model, Guest inputGuest
-			, String optionSet) {
+			,  Reserve reserve,Model model, Guest inputGuest, String optionSet
+			) { 
 		
-		System.out.println(reserve);
 		
-		System.out.println(optionSet);
+		
 		
 		String optionList[]=optionSet.split(",");
-		// 2022-12-06/3/2
-		// 2022-12-06/5/2
-		
-		
 		
 		reserve.setCheckInInput(reserve.getCheckInInput().substring(0,10));
 		reserve.setCheckOutInput(reserve.getCheckOutInput().substring(0,10));
 		
-		System.out.println(reserve);
-
-		int result = service.reservation4(loginMember,reserve,inputGuest,optionList);
+		int result = service.reservation4(loginMember,reserve,inputGuest,optionList,nonMember);
+//		int result = service.reservation4_nonMember(loginMember,reserve,inputGuest,optionList,nonMember);
+		
 		
 		return "reservation/reservation5";
 		

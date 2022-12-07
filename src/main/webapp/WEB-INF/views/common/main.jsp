@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,18 +26,22 @@
         <div class="main-content">
             <span class="main-sub-title">Special Package</span>
             <div>
-                <a href=""></a>
-                <a href=""></a>
-                <a href=""></a>
+           		<c:forEach var="promotion" items="${promotionList }" begin="0" end="2">
+               		 <a href="nav/specialOffer/roomPromotion/detail/${promotion.promotionNo }"> <img alt="" src="${promotion.promotionTitleImg}" class="main-content-img">
+               		 <span>${promotion.promotionTitle }</span>
+               		 </a>
+                </c:forEach>
+               
             </div>
         </div>
     
         <div class="main-content">
             <span class="main-sub-title">Events & Notice</span>
             <div>
-                <a href=""></a>
-                <a href=""></a>
-                <a href=""></a>
+               <c:forEach var="dining" items="${diningList }" begin="0" end="2">
+               		 <a href="nav/specialOffer/dining/detail/${dining.diningNo }"> <img alt="" src="${dining.diningTitleImg}" class="main-content-img">
+               		 <span>${dining.diningTitle }</span></a>
+                </c:forEach>
             </div>
         </div>
     

@@ -60,11 +60,13 @@
           <input name="inputDate1" type="date"  value="${beforeSearch.inputDate1}"> ~ <input name="inputDate2" type="date"value="${beforeSearch.inputDate2}">
         </span> 
 
-        <button>검색</button>
+        <button id="searchOptionBtn">검색</button>
 
     </form>
 
     </fieldset>
+    
+ 
     
     <div id="book-list-table">
 
@@ -73,7 +75,7 @@
             <div class="book-list-date">예약일</div>
             <div class="book-list-reservation-no">예약번호</div>
             <div class="book-list-room-no">호수</div>
-            <div class="book-list-party-num">인원</div>
+            <div class="book-list-party-num">총 인원</div>
             <div class="book-list-date">체크인</div>
             <div class="book-list-date">체크아웃</div>
             <div class="book-list-cost">금액</div>
@@ -82,7 +84,6 @@
             <div class="manage-book-status-change"></div>
         </div>
         
-        ${bookList }
 
     <c:forEach var="book" items="${bookList}" varStatus="index">
    
@@ -99,13 +100,13 @@
                 <input type="text" value="${book.bookRoomNum}" name="bookRoomNum" class="bookRoomNum"> 
             </div>
             <div class="book-list-party-num manage-border-right">
-                <input type="text" value="${book.bookHeadCount}" name="bookHeadCount">
+                <input type="text" value="${book.adultCount+book.childCount}" name="bookHeadCount" readonly>
             </div>
             <div class="book-list-date manage-border-right">
-                 <input name="checkIn" type="date" value="${book.checkIn}" name="checkIn">
+                 <input name="checkIn" type="text" value="${book.checkIn}" name="checkIn" readonly>
             </div>
             <div class="book-list-date manage-border-right">
-                <input name="checkOut" type="date" value="${book.checkOut}" name="checkOut">
+                <input name="checkOut" type="text" value="${book.checkOut}" name="checkOut" readonly>
             </div>
             <div class="book-list-cost money manage-border-right" id="money">${book.bookPrice}</div>
             <div class="book-list-booker-name manage-border-right">${book.bookMemberName}</div>
@@ -126,6 +127,10 @@
                     <option value="1" ${sel1}>예약완료</option>
                     <option value="2" ${sel2}>예약취소</option>
                 </select>
+                
+                 <c:set var="sel0" value=""/>
+                 <c:set var="sel1" value=""/>
+                 <c:set var="sel2" value=""/>
             </div>
             <div class="manage-book-status-change"><button id="updateBtn">저장</button></div>
             
@@ -144,6 +149,9 @@
             <a href="#">>></a>
         
         </div>
+        
+        </div>
+        
 
 
     <script>

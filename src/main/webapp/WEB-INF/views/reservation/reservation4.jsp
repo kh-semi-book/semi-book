@@ -21,7 +21,7 @@
 				<div>예약하기</div>
 			</section>
 			
-			${param}
+			
 			
 			<section></section>
 		</div>
@@ -49,6 +49,8 @@
 				</div>
 			</div>
 			<div id="reservation4_content_area">
+			
+			${nonMember }
 				<div></div>
 				<div id="reservation4_book_area">
 					<div id="reservation_input_area">
@@ -363,6 +365,9 @@
 							<input type="hidden" value="${reserve.promotionNo}" name="promotionNo"/>
 							<input type="hidden" value="${reserve.price}" name="price"/>
 							<input type="hidden" value="${param.optionSet}" name="optionSet"/>
+							<input type="hidden" value="${nonMember.guestName}" name="nonMemberName"/>
+							<input type="hidden" value="${nonMember.guestPhone}" name="nonMemberPhone"/>
+							<input type="hidden" value="${nonMember.guestEmail}" name="nonMemberEmail"/>
 							
 							
 							<input type="checkbox" name="agree" id="agree"><label for="agree">취소정책 및 개인정보 수집 동의하기</label>

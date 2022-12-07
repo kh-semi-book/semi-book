@@ -131,14 +131,6 @@
 	</update>
 	
 	
-	
-
-
-
-
-
-	
-	
 	<!-- 프로모션 조회 -->
 	<select id="selectPromotionList" resultMap="promotion_rm">
 		SELECT PROMOTION_NO, PROMOTION_TITLE, PROMOTION_SUB, TO_CHAR(PROMOTION_CREATE_DATE, 'YYYY-MM-DD') PROMOTION_CREATE_DATE, 

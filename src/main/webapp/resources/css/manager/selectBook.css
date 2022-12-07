@@ -106,6 +106,9 @@
     .book-list-date{
         width: 170px;
     }
+    .book-list-date>input{
+       text-align: center;
+    }
     .book-list-reservation-no{
         width: 150px;
     }

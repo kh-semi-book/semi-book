@@ -63,6 +63,15 @@ public class ReserveDAO {
 		return sqlSession.insert("reserveMapper.insertOption",tempOption);
 	}
 
+	public int insertNonMember(Guest inputGuest) {
+		
+		return sqlSession.insert("reserveMapper.insertNonMember",inputGuest);
+	}
+
+	public int insertBook_nonMember(Reserve reserve) {
+		return sqlSession.insert("reserveMapper.insertBook_nonMember",reserve);
+	}
+
 	
 	
 	
