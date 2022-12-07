@@ -8,7 +8,10 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Option {
-	private int optionNo;
-	private String optionName;
+	private int bookNo;
+	private String optionNo;
 	private int optionPrice;
+	private String optionDate;
+	private String optionName;
+	private String optionCount;
 }

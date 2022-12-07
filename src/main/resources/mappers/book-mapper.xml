@@ -21,6 +21,7 @@
   		<result property="bookPrice" column="PRICE" />
   		<result property="bookPromotion" column="BOOK_PROMOTION" />
   		<result property="bookHeadCount" column="BOOK_HEADCOUNT" />
+  		<result property="bedTypeNo" column="BED_TYPE_NO" />
   	</resultMap>
   	
   	<resultMap type="Room" id="room_rm">
@@ -42,7 +43,8 @@
   	<select id="selectBookList" resultMap="book_rm">
   		SELECT BOOK_NO, TO_CHAR(BOOK_DATE,'YYYY-MM-DD') BOOK_DATE, 
 		TO_CHAR(CHECK_IN,'YYYY-MM-DD') CHECK_IN, TO_CHAR(CHECK_OUT,'YYYY-MM-DD') CHECK_OUT, ROOM_PROCESS,
-		MEMBER_NAME, PRICE, BOOK_ADULTCOUNT , (SELECT ROOM_NUM FROM BOOK_ROOM WHERE BOOK_NO=BOOK.BOOK_NO)AS ROOM_NUM
+		MEMBER_NAME, PRICE, BOOK_ADULTCOUNT , 
+		(SELECT ROOM_NUM FROM BOOK_ROOM WHERE BOOK_NO=BOOK.BOOK_NO)AS ROOM_NUM, BED_TYPE_NO
 		FROM BOOK
 		JOIN "MEMBER" USING(MEMBER_NO)
 	
@@ -127,7 +129,7 @@
 	<select id="selectRoom_input" resultMap="room_rm">
 	
 	 <![CDATA[ 
-		SELECT CHECK_IN,CHECK_OUT,BOOK_NO,ROOM_NUM, ROOM_NAME, ROOM_VIEW_NAME 
+		SELECT DISTINCT CHECK_IN,CHECK_OUT,BOOK_NO,ROOM_NUM, ROOM_NAME, ROOM_VIEW_NAME 
 		FROM ROOM
 		JOIN ROOM_TYPE USING(ROOM_TYPE_NO)
 		JOIN ROOM_VIEW USING(ROOM_VIEW_NO)
@@ -140,7 +142,7 @@
 	</select>
 	
 	<select id="searchRoom" resultMap="room_rm" parameterType="_int">
-		SELECT ROOM_VIEW_NAME, ROOM_NAME 
+		SELECT DISTINCT ROOM_VIEW_NAME, ROOM_NAME 
 		FROM BOOK 
 		JOIN ROOM_VIEW USING(ROOM_VIEW_NO)
 		JOIN ROOM_TYPE USING(ROOM_TYPE_NO)
@@ -150,7 +152,6 @@
 	
 	<update id="updateBook" parameterType="Book">
 		UPDATE BOOK SET 
-		BOOK_HEADCOUNT=#{bookHeadCount},
 		CHECK_IN=#{checkIn},
 		CHECK_OUT=#{checkOut},
 		ROOM_PROCESS=#{roomProcess}
@@ -167,7 +168,7 @@
 	<insert id="insertBookRoom" parameterType="Book">
 		INSERT INTO BOOK_ROOM 
 		VALUES(SEQ_BOOK_ROOM_NO.NEXTVAL, DEFAULT
-		,#{bookRoomNum}, #{bookNo})
+		,#{bookRoomNum}, #{bookNo},#{bedTypeNo})
 		
 	</insert>
 	

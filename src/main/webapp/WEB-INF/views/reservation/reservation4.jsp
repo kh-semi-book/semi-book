@@ -21,7 +21,8 @@
 				<div>예약하기</div>
 			</section>
 			
-			${reserve}
+			${param}
+			
 			<section></section>
 		</div>
 		<div id="reservation4_body_area">
@@ -58,7 +59,14 @@
 								<table class="reservation-table">
 									<tr>
 										<th class="row-title"><label for="booker1">예약자</label></th>
-										<td class="book-input"><input type="text" class="input name" name="booker1" id="booker1" value="${loginMember.memberName}"></td>
+										<c:choose>
+											<c:when test="${not empty sessionScope.loginMember}">
+												<td class="book-input"><input type="text" class="input name" name="booker1" id="booker1" value="${loginMember.memberName}"></td>
+											</c:when>
+											<c:otherwise>
+												<td class="book-input"><input type="text" class="input name" name="booker1" id="booker1" value="${param.inputName}"></td>
+											</c:otherwise>
+										</c:choose>
 									</tr>
 									<tr>
 										<th class="row-title"><label for="booker2">투숙자</label></th>
@@ -214,7 +222,9 @@
 									</tr>
 									<tr>
 										<th class="row-title">이메일</th>
-										<td class="book-input"><input type="text" class="input" name="booker-email1" id="book-input-email1" value="${fn:split(loginMember.memberEmail,'@')[0]}">@ <input type="text" class="input" id="book-input-email2" value="${fn:split(loginMember.memberEmail,'@')[1]}"> <select name="booker-email2" id="book-input-email3">
+										<c:choose>
+											<c:when test="${not empty sessionScope.loginMember}">
+<td class="book-input"><input type="text" class="input" name="booker-email1" id="book-input-email1" value="${fn:split(loginMember.memberEmail,'@')[0]}">@ <input type="text" class="input" id="book-input-email2" value="${fn:split(loginMember.memberEmail,'@')[1]}"> <select name="booker-email2" id="book-input-email3">
 												<option value="naver.com">naver.com</option>
 												<option value="gmail.com">gmail.com</option>
 												<option value="nate.com">nate.com</option>
@@ -222,13 +232,32 @@
 												<option value="dreamwiz.com">dreamwiz.com</option>
 												<option value="freechal.com">freechal.com</option>
 												<option value="직접입력">직접입력</option>
-										</select>  <br>
+										</select>  <br>											</c:when>
+											<c:otherwise>
+<td class="book-input"><input type="text" class="input" name="booker-email1" id="book-input-email1" value="${fn:split(param.inputEmail,'@')[0]}">@ <input type="text" class="input" id="book-input-email2" value="${fn:split(param.inputEmail,'@')[1]}"> <select name="booker-email2" id="book-input-email3">
+												<option value="naver.com">naver.com</option>
+												<option value="gmail.com">gmail.com</option>
+												<option value="nate.com">nate.com</option>
+												<option value="hotmail.com">hotmail.com</option>
+												<option value="dreamwiz.com">dreamwiz.com</option>
+												<option value="freechal.com">freechal.com</option>
+												<option value="직접입력">직접입력</option>
+										</select>  <br>											</c:otherwise>
+										</c:choose>
+										
 											<p name="email-info">(다음/한메일은 수신이 안될 수 있습니다.)</p></td>
 									</tr>
 									<tr>
 										<th class="row-title">휴대폰</th>
-										<td class="book-input"><input type="text" class="input bookerphone" name="bookertel1" id="book-input-phone1" value="${fn:substring(loginMember.memberPhone,0,3)}">- <input type="text" class="input bookerphone" name="bookertel2" value="${fn:substring(loginMember.memberPhone,3,7)}"
-											id="book-input-phone2">- <input type="text" class="input bookerphone" name="bookertel3" id="book-input-phone3" value="${fn:substring(loginMember.memberPhone,7,11)}"></td>
+										<c:choose>
+											<c:when test="${not empty sessionScope.loginMember}">
+												<td class="book-input"><input type="text" class="input bookerphone" name="bookertel1" id="book-input-phone1" value="${fn:substring(loginMember.memberPhone,0,3)}">- <input type="text" class="input bookerphone" name="bookertel2" value="${fn:substring(loginMember.memberPhone,3,7)}"
+											id="book-input-phone2">- <input type="text" class="input bookerphone" name="bookertel3" id="book-input-phone3" value="${fn:substring(loginMember.memberPhone,7,11)}"></td>											</c:when>
+											<c:otherwise>
+												<td class="book-input"><input type="text" class="input bookerphone" name="bookertel1" id="book-input-phone1" value="${fn:substring(param.inputTel,0,3)}">- <input type="text" class="input bookerphone" name="bookertel2" value="${fn:substring(param.inputTel,3,7)}"
+											id="book-input-phone2">- <input type="text" class="input bookerphone" name="bookertel3" id="book-input-phone3" value="${fn:substring(param.inputTel,7,11)}"></td>											</c:otherwise>
+										</c:choose>
+										
 									</tr>
 									<tr>
 										<th class="row-title">요청사항</th>
@@ -322,14 +351,18 @@
 							<input type="hidden" name="guestEmail">
 							<input type="hidden" name="cardNo">
 							<input type="hidden" name="cardExpireDate">
-							<input type="hidden" value="${reserve.roomTypeName}" name="roomTypeName" /> 
 							<input type="hidden" value="${reserve.checkInInput}" name="checkInInput" />
 							<input type="hidden" value="${reserve.checkOutInput}" name="checkOutInput" /> 
 							<input type="hidden" value="${reserve.nights}" name="nights" /> 
 							<input type="hidden" value="${reserve.roomCount}" name="roomCount" /> 
 							<input type="hidden" value="${reserve.adultCount}" name="adultCount" /> 
 							<input type="hidden" value="${reserve.childCount}" name="childCount" />
-							
+							<input type="hidden"  value="${reserve.roomTypeNo}" name="roomTypeNo"/>
+							<input type="hidden" value="${reserve.roomViewNo}" name="roomViewNo"/>
+							<input type="hidden" value="${reserve.bedTypeNo}" name="bedTypeNo"/>
+							<input type="hidden" value="${reserve.promotionNo}" name="promotionNo"/>
+							<input type="hidden" value="${reserve.price}" name="price"/>
+							<input type="hidden" value="${param.optionSet}" name="optionSet"/>
 							
 							
 							<input type="checkbox" name="agree" id="agree"><label for="agree">취소정책 및 개인정보 수집 동의하기</label>

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import edu.kh.semi.manager.board.model.vo.Promotion;
+import edu.kh.semi.member.model.vo.Member;
 import edu.kh.semi.reservation.model.vo.Guest;
 import edu.kh.semi.reservation.model.vo.Option;
 import edu.kh.semi.reservation.model.vo.Reserve;
@@ -50,6 +51,16 @@ public class ReserveDAO {
 
 	public int insertBook(Reserve reserve) {
 		return sqlSession.insert("reserveMapper.insertBook",reserve);
+	}
+
+	public Member login(String memberId) {
+	
+		return sqlSession.selectOne("memberMapper.login", memberId  );
+	}
+
+	public int insertOption(Option tempOption) {
+		
+		return sqlSession.insert("reserveMapper.insertOption",tempOption);
 	}
 
 	

@@ -3,6 +3,7 @@ package edu.kh.semi.reservation.model.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,6 +19,10 @@ public class ReserveServiceImpl implements ReserveService{
 
 	@Autowired
 	private ReserveDAO dao;
+	
+	 // spring -security.xml에서 등록한 bean을 의존성 주입
+	 @Autowired
+	 private BCryptPasswordEncoder bcrypt;
 
 	// 날짜에 해당하는 프로모션 조회
 	@Override
@@ -45,8 +50,8 @@ public class ReserveServiceImpl implements ReserveService{
 	// 예약
 	@Transactional(rollbackFor = Exception.class)
 	@Override
-	public int reservation4(Member loginMember, Reserve reserve, Guest inputGuest) {
-		
+	public int reservation4(Member loginMember, Reserve reserve, Guest inputGuest,String[] optionSet) {
+		Option tempOption = new Option();
 		int result = dao.insertPayment(inputGuest);
 		
 		if(result>0) {
@@ -57,13 +62,26 @@ public class ReserveServiceImpl implements ReserveService{
 					reserve.setMemberNo(loginMember.getMemberNo());
 					reserve.setNonMemberNo(0);
 				} else {
-					
 					reserve.setMemberNo(0);
 					reserve.setNonMemberNo(0);
 				}
 				
 				reserve.setCardNo(inputGuest.getCardNo());
 				result= dao.insertBook(reserve);
+				
+				if(result>0) { // 옵션 추가 
+					
+					for(int i=0;i<optionSet.length;i++) {
+						String temp[]=optionSet[i].split("/");
+						tempOption.setOptionDate(temp[0]);
+						tempOption.setOptionNo(temp[1]);
+						tempOption.setOptionCount(temp[2]);
+						
+						result=dao.insertOption(tempOption);
+						
+					}
+					
+				}
 			}
 		}
 		
@@ -72,6 +90,28 @@ public class ReserveServiceImpl implements ReserveService{
 		
 		return 0;
 	}
+
+	
+	// 로그인 기능
+	@Override
+	public Member login(Member inputMember) {
+		
+		Member loginMember = dao.login(inputMember.getMemberId());
+		
+		if(loginMember != null) {
+			
+			if(bcrypt.matches(inputMember.getMemberPw(), loginMember.getMemberPw())) {
+				
+				loginMember.setMemberPw(null);
+				
+			} else {
+				loginMember = null;
+			}
+		}
+		
+		return loginMember;
+	}
+	
 	
 	
 	

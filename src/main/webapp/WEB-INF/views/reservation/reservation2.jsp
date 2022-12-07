@@ -52,6 +52,7 @@
 				
 				<div id="reservation2_book_area">
 					<div id="reservation_select_area">
+				
 						<c:forEach var="promotion" items="${promotionList}">
 						<div class="package-list">
 							<div class="package-item">
@@ -100,8 +101,10 @@
 
 									</c:choose> 
 
-									<div class="package-view-type">${roomViewName} ${roomTypeName}</div>
-									
+									<div class="package-view-type" id="${roomViewNo}">${roomViewName} ${roomTypeName}</div>
+									<div id="${roomTypeNo}"></div>
+									<div id="${promotion.promotionNo}"></div>
+							
 									
 									
 									<div class="package-room-type">
@@ -118,7 +121,7 @@
 											</c:when>
 										</c:choose>
 										<div>
-											<span><span class="bedName">${bed1}</span> (${reserve.nights}박)</span> <span><fmt:formatNumber value="${promotion.promotionPrice}"/>원</span> <button class="selectBtn">예약</button>
+											<span><span class="bedName">${bed1}</span> (${reserve.nights}박)</span> <span id="${promotion.promotionPrice}"><fmt:formatNumber value="${promotion.promotionPrice}"/>원</span> <button class="selectBtn" id="${bed}">예약</button>
 											<%-- <input type="hidden" value="${bed}" name="bedTypeNo"/> --%>
 										</div>
 									</c:forEach>
@@ -174,8 +177,11 @@
 				</div>
 				
 					<input type="hidden" name="optionSet">
-					<input type="hidden" name="roomTypeName"/>
-					<input type="hidden" name="bedType"/>
+					<input type="hidden" name="roomTypeNo"/>
+					<input type="hidden" name="roomViewNo"/>
+					<input type="hidden" name="bedTypeNo"/>
+					<input type="hidden" name="promotionNo"/>
+					<input type="hidden" name="price"/>
 				
 				</div>
 				<div id="reservation2_foot_area"></div>

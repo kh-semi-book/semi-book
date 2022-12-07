@@ -29,6 +29,7 @@ public class Reserve {
 	private int roomTypeNo;			// 룸 타입
 	private String roomTypeName;			// 룸 타입
 	private String bedType;			// 침대 타입
+	private int bedTypeNo;			// 침대 타입
 	private String cardNo;			// 침대 타입
 	
 	
