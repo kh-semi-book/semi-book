@@ -20,7 +20,8 @@
   		<result property="bookRoomNum" column="ROOM_NUM" />  		
   		<result property="bookPrice" column="PRICE" />
   		<result property="bookPromotion" column="BOOK_PROMOTION" />
-  		<result property="bookHeadCount" column="BOOK_HEADCOUNT" />
+  		<result property="adultCount" column="BOOK_ADULTCOUNT" />
+  		<result property="childCount" column="BOOK_CHILDCOUNT" />
   		<result property="bedTypeNo" column="BED_TYPE_NO" />
   	</resultMap>
   	
@@ -43,7 +44,7 @@
   	<select id="selectBookList" resultMap="book_rm">
   		SELECT BOOK_NO, TO_CHAR(BOOK_DATE,'YYYY-MM-DD') BOOK_DATE, 
 		TO_CHAR(CHECK_IN,'YYYY-MM-DD') CHECK_IN, TO_CHAR(CHECK_OUT,'YYYY-MM-DD') CHECK_OUT, ROOM_PROCESS,
-		MEMBER_NAME, PRICE, BOOK_ADULTCOUNT , 
+		MEMBER_NAME, PRICE, BOOK_ADULTCOUNT , BOOK_CHILDCOUNT,
 		(SELECT ROOM_NUM FROM BOOK_ROOM WHERE BOOK_NO=BOOK.BOOK_NO)AS ROOM_NUM, BED_TYPE_NO
 		FROM BOOK
 		JOIN "MEMBER" USING(MEMBER_NO)
@@ -151,6 +152,8 @@
 	
 	
 	<update id="updateBook" parameterType="Book">
+	
+		
 		UPDATE BOOK SET 
 		CHECK_IN=#{checkIn},
 		CHECK_OUT=#{checkOut},

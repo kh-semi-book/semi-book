@@ -24,10 +24,13 @@ public interface ReserveService {
 	 * @param reserve
 	 * @param inputGuest
 	 * @param optionList 
+	 * @param nonMember 
 	 * @return
 	 */
-	int reservation4(Member loginMember, Reserve reserve, Guest inputGuest, String[] optionList);
+	int reservation4(Member loginMember, Reserve reserve, Guest inputGuest, String[] optionList, Guest nonMember);
 
 	Member login(Member inputMember);
+
+
 
 }

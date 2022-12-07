@@ -82,23 +82,23 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public int updateBook(Book bookPerson) {
 		
-		int result1=dao.updateBook(bookPerson);
-		int result2;
+		int result=dao.updateBook(bookPerson);
 		
-		int checkBook=dao.checkBookRoom(bookPerson);
-		
-		if(checkBook==0) {
-			result2=dao.insertBookRoom(bookPerson);
-		}else {
-			result2=dao.updateBookRoom(bookPerson);
-		}
-		
-		if(result1==1&&result2==1) {
-			return 1;
+		if(bookPerson.getRoomCancelFlag()==1) {
+	
+			int checkBook=dao.checkBookRoom(bookPerson);
+			
+			if(checkBook==0) {
+				result=dao.insertBookRoom(bookPerson);
+			}else {
+				result=dao.updateBookRoom(bookPerson);
+			}
+			
+			return result;
 		}
 			
 		
-		return 0;
+		return result;
 		
 		
 		

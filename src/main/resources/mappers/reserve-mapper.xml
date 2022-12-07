@@ -97,6 +97,13 @@
 	</insert>
 	
 	
+	<insert id="insertNonMember">
+
+		INSERT INTO NONMEMBER
+		VALUES(SEQ_NONMEMBER_NO.NEXTVAL, #{guestName},#{guestEmail},#{guestPhone})
+	</insert>
+	
+	
 	
 	
 	
@@ -111,6 +118,19 @@
 		VALUES(SEQ_BOOK_NO.NEXTVAL, DEFAULT, #{checkInInput}, #{checkOutInput}, 
 		#{adultCount}, #{price}, DEFAULT,DEFAULT, #{cardNo}, #{memberNo}, #{nonMemberNo}, #{promotionNo}, #{roomViewNo}, #{roomTypeNo}, #{childCount}, #{roomCount}, #{guestNo}, #{bedTypeNo})
 	</insert>
+	
+	<insert id="insertBook_nonMember" useGeneratedKeys="true">
+	
+		<selectKey keyProperty="guestNo,nonMemberNo" resultType="_int" order="BEFORE">
+			SELECT SEQ_GUEST_NO.CURRVAL,SEQ_NONMEMBER_NO.CURRVAL FROM DUAL
+		</selectKey>	
+		
+		INSERT INTO "BOOK"
+		VALUES(SEQ_BOOK_NO.NEXTVAL, DEFAULT, #{checkInInput}, #{checkOutInput}, 
+		#{adultCount}, #{price}, DEFAULT,DEFAULT, #{cardNo}, #{memberNo}, #{nonMemberNo}, #{promotionNo}, #{roomViewNo}, #{roomTypeNo}, #{childCount}, #{roomCount}, #{guestNo}, #{bedTypeNo})
+	</insert>
+	
+	
 	
 	<insert id="insertOption" useGeneratedKeys="true">
 	

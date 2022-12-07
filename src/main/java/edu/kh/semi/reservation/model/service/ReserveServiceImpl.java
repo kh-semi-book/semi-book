@@ -47,10 +47,13 @@ public class ReserveServiceImpl implements ReserveService{
 		return dao.selectOption();
 	}
 	
-	// 예약
+	
+	/**
+	 *  회원 예약
+	 */
 	@Transactional(rollbackFor = Exception.class)
 	@Override
-	public int reservation4(Member loginMember, Reserve reserve, Guest inputGuest,String[] optionSet) {
+	public int reservation4(Member loginMember, Reserve reserve, Guest inputGuest,String[] optionSet, Guest nonMember) {
 		Option tempOption = new Option();
 		int result = dao.insertPayment(inputGuest);
 		
@@ -58,16 +61,22 @@ public class ReserveServiceImpl implements ReserveService{
 			result = dao.insertGuest(inputGuest);
 			
 			if(result >0) {
-				if(loginMember!=null) {
+				if(loginMember!=null) { // 회원이면
 					reserve.setMemberNo(loginMember.getMemberNo());
+					
 					reserve.setNonMemberNo(0);
-				} else {
+					reserve.setCardNo(inputGuest.getCardNo());
+					result= dao.insertBook(reserve);
+				} else { // 비회원이면 
+					
+					result=dao.insertNonMember(nonMember);
+					reserve.setCardNo(inputGuest.getCardNo());
 					reserve.setMemberNo(0);
-					reserve.setNonMemberNo(0);
+					
+					result= dao.insertBook_nonMember(reserve);
 				}
 				
-				reserve.setCardNo(inputGuest.getCardNo());
-				result= dao.insertBook(reserve);
+				
 				
 				if(result>0) { // 옵션 추가 
 					
@@ -88,9 +97,10 @@ public class ReserveServiceImpl implements ReserveService{
 		
 		
 		
-		return 0;
+		return result;
 	}
-
+	
+	
 	
 	// 로그인 기능
 	@Override
@@ -111,11 +121,7 @@ public class ReserveServiceImpl implements ReserveService{
 		
 		return loginMember;
 	}
-	
-	
-	
-	
-	
-	
+
+
 	
 }
