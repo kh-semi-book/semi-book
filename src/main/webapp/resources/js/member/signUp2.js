@@ -195,10 +195,16 @@ document.getElementById("joinform").addEventListener("submit", function(event){
                     return;
                 } 
             
-                
-                if(memberId.value.trim().length == 0){
+                const regEx3 = /^[a-z0-9]{6,20}$/;
+                if(memberId.value.trim().length == 0 ){
                     memberId.focus();
                     alert("아이디 항목은 필수입니다.");
+                    event.preventDefault();//제출 이벤트제거
+                    return;
+                }
+                if(!regEx3.test(memberId.value)){
+                    memberId.focus();
+                    alert("아이디 항목의 아이디 형식이 올바르지 않습니다.\n\n영소문자, 숫자로 6~20자까지 가능합니다.");
                     event.preventDefault();//제출 이벤트제거
                     return;
                 }

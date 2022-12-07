@@ -45,6 +45,7 @@ public class MemberController {
 			if(loginMember.getAuthority()==2) {
 				path="/manager/selectBook";
 			} else {
+				ra.addFlashAttribute("message", loginMember.getMemberName()+"("+loginMember.getMemberId()+")님 환영합니다!");
 				
 				path = "/";
 				
@@ -66,7 +67,7 @@ public class MemberController {
 		} else {
 			path = referer; // 이전페이지로 이동
 			// model.addAttribute("message","회원 아이디 또는 비밀번호가 일치하지 않습니다.");
-			ra.addFlashAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
+			ra.addFlashAttribute("message", "회원 아이디 또는 비밀번호가 일치하지 않습니다.\n\n 확인 후 다시 시도하시기 바랍니다.");
 		}
 
 		return "redirect:" + path;
@@ -110,10 +111,10 @@ public class MemberController {
 		String weddingDate = memberWedding[0] + memberWedding[1] + memberWedding[2];
 		inputAdd.setMemberWedding(weddingDate);
 		
-		String tel = memberTel[0] + memberTel[1] + memberTel[2];
+		String tel = memberTel[0]+ "-"  + memberTel[1]+ "-"  + memberTel[2];
 		inputAdd.setMemberTel(tel);
 		
-		String address = memberAddress[0] + memberAddress[1] + memberAddress[2];
+		String address = memberAddress[0]+ ",," + memberAddress[1] +",,"+ memberAddress[2];
 		inputAdd.setMemberAddress(address);
 		
 
