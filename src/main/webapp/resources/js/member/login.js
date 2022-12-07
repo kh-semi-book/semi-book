@@ -41,3 +41,13 @@ saveId.addEventListener("change", function(){
         const str = ""
     }    
 })
+
+const sideList= document.getElementsByName("side");
+
+document.getElementById("guest-login-btn").addEventListener("click", e=>{
+
+    for(let side of sideList){
+        side.value=sideInput;
+    }
+   
+});

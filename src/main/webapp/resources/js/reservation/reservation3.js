@@ -26,7 +26,13 @@ const optionCost=document.getElementsByClassName("optionCost");
 const roomsCost=document.getElementById("roomsCost");
 const totalCost=document.getElementById("totalCost");
 const price=document.getElementsByName("price")[0];
+
+
+
 for(let select of selectList){
+
+    totalCost.innerText=numberWithCommas(Number(roomsCost.value))+'원';
+    price.value=Number(roomsCost.value);
     select.addEventListener("change",function(){
  		let totalOptionCostinput=0;
 
@@ -101,8 +107,8 @@ for(let select of selectList){
         sideOptionTitle.before(div); 
         
         for(let cost of optionCost){
-            totalOptionCostinput+=Number(optionPrice*optionCount);
         }
+        totalOptionCostinput+=Number(optionPrice*optionCount);
 
 		totalOptionCost.innerText=numberWithCommas(totalOptionCostinput);
 

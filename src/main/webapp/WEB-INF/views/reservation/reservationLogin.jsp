@@ -35,6 +35,7 @@
 							<input type="hidden" value="${reserve.promotionNo}" name="promotionNo"/>
 							<input type="hidden" value="${param.optionSet}" name="optionSet"/>
 							<input type="hidden" value="${reserve.price}" name="price"/>
+							<input type="hidden" name="side" id="side"/>
                     
                     <p>회원 로그인</p>
                     <div class="input-section">
@@ -63,6 +64,7 @@
 							<input type="hidden" value="${reserve.promotionNo}" name="promotionNo"/>
 							<input type="hidden" value="${param.optionSet}" name="optionSet"/>
 							<input type="hidden" value="${reserve.price}" name="price"/>
+							<input type="hidden"name="side" id="side"/>
                     <p>비회원 로그인</p>
                     <div class="input-section">
                         <input type="text" name="inputName" placeholder="이름">
@@ -88,6 +90,11 @@
             </a></div>
         </div>
     </div>
+    
+    <script>
+	
+	const sideInput= '${param.side}';
+	</script>
 
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     <script src="/resources/js/member/login.js"></script>
