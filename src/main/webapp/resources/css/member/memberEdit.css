@@ -149,7 +149,7 @@
     border-left: 1px solid #c9c9c9;
  }
 
-
+search-date-input
  .kjh-form1-table,.kjh-form2-table{
     border-top: 1px solid black;
     border-collapse: collapse;
@@ -302,3 +302,21 @@
     margin-top: 1px;
  }
 
+ .search-date-input>input{
+    display: inline-block;
+    width:180px;
+    padding:5px;
+    margin-left: 10px;
+ }
+
+#memberBirthValue > span{
+    margin-right: 10px;
+}
+
+.kjh-married{
+    margin-left: 10px;
+}
+
+#memberBirth{
+    border: 1px solid #cdcdcd;
+}
