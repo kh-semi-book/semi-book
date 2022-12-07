@@ -61,16 +61,11 @@ public class MemberServiceImpl implements MemberService{
 
 		if(result > 0) {
 			// 추가항목들에 입력된 값이 있다면
-			if(inputAdd.getMarriageFlag() != 0 || inputAdd.getMemberWedding().length() != 0
-			|| inputAdd.getMemberTel().length() != 0 || inputAdd.getMemberAddress().length() !=0) {
+			if(inputAdd.getMemberWedding() != null || inputAdd.getMemberTel() != null || inputAdd.getMemberAddress() != null ) {
 				inputAdd.setMemberNo(result);
-				
 				result = dao.signUp2(inputAdd);
 			}
-		
 		}
-		
-			
 		
 		return result;
 	}
