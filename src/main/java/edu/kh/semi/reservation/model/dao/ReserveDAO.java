@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import edu.kh.semi.manager.board.model.vo.Promotion;
 import edu.kh.semi.member.model.vo.Member;
 import edu.kh.semi.reservation.model.vo.Guest;
+import edu.kh.semi.reservation.model.vo.NonMember;
 import edu.kh.semi.reservation.model.vo.Option;
 import edu.kh.semi.reservation.model.vo.Reserve;
 
@@ -63,13 +64,22 @@ public class ReserveDAO {
 		return sqlSession.insert("reserveMapper.insertOption",tempOption);
 	}
 
-	public int insertNonMember(Guest inputGuest) {
+	public int insertNonMember(NonMember nonMember) {
 		
-		return sqlSession.insert("reserveMapper.insertNonMember",inputGuest);
+		return sqlSession.insert("reserveMapper.insertNonMember",nonMember);
 	}
 
 	public int insertBook_nonMember(Reserve reserve) {
 		return sqlSession.insert("reserveMapper.insertBook_nonMember",reserve);
+	}
+
+	public int searchGuestNo(Guest inputGuest) {
+		
+		return sqlSession.insert("reserveMapper.searchGuestNo",inputGuest);
+	}
+
+	public int searchNonMemberNo(NonMember nonMember) {
+		return sqlSession.insert("reserveMapper.searchNonMemberNo",nonMember);
 	}
 
 	

@@ -91,16 +91,24 @@
 	
 	
 	<insert id="insertGuest">
+	
+		<selectKey keyProperty="guestNo" resultType="_int" order="BEFORE">
+			SELECT SEQ_GUEST_NO.NEXTVAL FROM DUAL
+		</selectKey>
 
 		INSERT INTO GUEST
-		VALUES(SEQ_GUEST_NO.NEXTVAL, #{guestName},#{guestEmail},#{guestPhone},#{guestRequest},#{guestBirth})
+		VALUES(#{guestNo}, #{guestName},#{guestEmail},#{guestPhone},#{guestRequest},#{guestBirth})
 	</insert>
 	
 	
 	<insert id="insertNonMember">
+	
+		<selectKey keyProperty="nonMemberNo" resultType="_int" order="BEFORE">
+			SELECT SEQ_NONMEMBER_NO.NEXTVAL FROM DUAL
+		</selectKey>	
 
 		INSERT INTO NONMEMBER
-		VALUES(SEQ_NONMEMBER_NO.NEXTVAL, #{guestName},#{guestEmail},#{guestPhone})
+		VALUES(#{nonMemberNo}, #{nonMemberName},#{nonMemberEmail},#{nonMemberPhone})
 	</insert>
 	
 	
@@ -109,10 +117,7 @@
 	
 	<insert id="insertBook" useGeneratedKeys="true">
 	
-		<selectKey keyProperty="guestNo" resultType="_int" order="BEFORE">
-			SELECT SEQ_GUEST_NO.CURRVAL FROM DUAL
-		</selectKey>
-		
+	
 		
 		INSERT INTO "BOOK"
 		VALUES(SEQ_BOOK_NO.NEXTVAL, DEFAULT, #{checkInInput}, #{checkOutInput}, 
@@ -121,9 +126,7 @@
 	
 	<insert id="insertBook_nonMember" useGeneratedKeys="true">
 	
-		<selectKey keyProperty="guestNo,nonMemberNo" resultType="_int" order="BEFORE">
-			SELECT SEQ_GUEST_NO.CURRVAL,SEQ_NONMEMBER_NO.CURRVAL FROM DUAL
-		</selectKey>	
+		
 		
 		INSERT INTO "BOOK"
 		VALUES(SEQ_BOOK_NO.NEXTVAL, DEFAULT, #{checkInInput}, #{checkOutInput}, 
@@ -143,7 +146,19 @@
 		VALUES(#{bookNo},#{optionNo},#{optionCount},#{optionDate})
 	</insert>
 	
+	<select id="searchGuestNo" resultType="_int">
+		SELECT GUEST_NO FROM GUEST
+		WHERE GUEST_NAME= #{guestName}
+		AND GUEST_EMAIL=#{guestEmail}
+		AND GUEST_PHONE=#{guestPhone}
+	</select>
 	
+	<select id="searchNonMemberNo" resultType="_int">
+		SELECT NONMEMBER_NO FROM NONMEMBER
+		WHERE NONMEMBER_NAME= #{nonMemberName}
+		AND NONMEMBER_EMAIL=#{nonMemberEmail}
+		AND NONMEMBER_PHONE=#{nonMemberPhone}
+	</select>
 	
 	
 	
