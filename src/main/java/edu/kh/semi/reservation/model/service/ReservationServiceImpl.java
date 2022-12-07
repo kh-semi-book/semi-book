@@ -31,9 +31,9 @@ public class ReservationServiceImpl implements ReservationService{
 	
 	// 비회원 예약 조회
 	@Override
-	public List<Book> reservationView(int nonMemberNo) {
+	public List<Book> reservationView(int nonMemberBookNo) {
 		
-		return dao.reservationView(nonMemberNo);
+		return dao.reservationView(nonMemberBookNo);
 	}
 	
 	// 예약 조회 상세보기 서비스 

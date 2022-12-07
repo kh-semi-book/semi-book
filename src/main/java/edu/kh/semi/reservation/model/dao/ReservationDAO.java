@@ -28,8 +28,12 @@ public class ReservationDAO {
 		return sqlSession.selectList("reservationMapper.selectBookList", loginMember);
 	}
 
-	public List<Book> reservationView(int nonMemberNo) {
-		return sqlSession.selectList("reservationMapper.selectBookList2", nonMemberNo);
+	/** 비회원 예약 조회
+	 * @param nonMemberBookNo
+	 * @return
+	 */
+	public List<Book> reservationView(int nonMemberBookNo) {
+		return sqlSession.selectList("reservationMapper.selectBookList2", nonMemberBookNo);
 	}
 	
 	/** 예약 조회 상세보기 
