@@ -56,7 +56,7 @@
                     <c:forEach var="book" items="${bookList}">
                     <tr>
                         <td height="100px">${book.bookDate}</td>
-                        <td><a href="/reservation/reservationViewDetail/${bookNo}">${book.promotionTitle}</a></td>
+                        <td><a href="/reservation/reservationViewDetail/${book.bookNo}">${book.promotionTitle}</a></td>
                         <td>
                         <c:choose>
 							<c:when test="${book.roomViewNo==1}">
