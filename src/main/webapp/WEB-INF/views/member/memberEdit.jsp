@@ -111,7 +111,7 @@
 						<%-- 회원정보 수정 : 이메일 --%>
 							<th>이메일<span class="star">*</span></th>
 							<td class="kjh-input" colspan="3">
-							<input type="text" size="20" name="memberEmail" id="memberEmail1" value="${fn:split(member.memberEmail,'@')[0]}">@
+							<input type="text" size="20" name="memberEmail" id="memberEmail1" value="${fn:split(member.memberEmail,'@')[0]}">@ 
 							<input type="text" size="13" name="memberEmail" id="memberEmail2" value="${fn:split(member.memberEmail,'@')[1]}">
 							<select class="kjh-address" name="memberEmail" id="memberEmail3">
 								<option value="naver.com">naver.com</option>
@@ -195,9 +195,9 @@
 							<tr>
 								<th>생년월일</th>
 								<td class="kjh-input">
-									<span>${fn:substring(member.memberBirth,0,10)}</span>
+									<span id="memberBirthValue">${fn:substring(member.memberBirth,0,10)}</span>
 									<span class="search-date-input">
-										<input name="memberBirth" type="date">
+										<input name="memberBirth" type="date" id="memberBirth">
 									</span> 
 								</td>
 							</tr>
