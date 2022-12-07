@@ -44,6 +44,9 @@
 		<result property="bookMemberName" column="MEMBER_NAME"/> 
 		<result property="bookMemberPhone" column="MEMBER_PHONE"/> 
 		<result property="bookMemberEmail" column="MEMBER_EMAIL"/> 
+		<result property="bookNonMemberName" column="NONMEMBER_NAME"/> 
+		<result property="bookNonMemberPhone" column="NONMEMBER_PHONE"/> 
+		<result property="bookNonMemberEmail" column="NONMEMBER_EMAIL"/> 
 		<result property="bookGuestRequest" column="GUEST_REQUEST"/> 
 		<result property="nonMemberNo" column="NONMEMBER_NO"/> 
 		<result property="guestNo" column="GUEST_NO"/> 
@@ -120,11 +123,12 @@
 		 BOOK_CARD_NO, MEMBER_NO, NONMEMBER_NO, PROMOTION_NO, ROOM_VIEW_NO, ROOM_TYPE_NO, BOOK_CHILDCOUNT,
 	   BOOK_ROOMCOUNT, GUEST_NO, BED_TYPE_NO, 
 	   (SELECT PROMOTION_TITLE FROM PROMOTION P WHERE P.PROMOTION_NO=BOOK.PROMOTION_NO) PROMOTION_TITLE,
-	    MEMBER_NAME, MEMBER_PHONE, MEMBER_EMAIL,
+	    MEMBER_NAME, MEMBER_PHONE, MEMBER_EMAIL, NONMEMBER_NAME, NONMEMBER_PHONE, NONMEMBER_EMAIL,
 	    (SELECT CHECK_OUT-CHECK_IN FROM BOOK WHERE BOOK_NO=#{bookNo}) NIGHTS
 	    
 	FROM BOOK
 	JOIN MEMBER USING (MEMBER_NO)
+	JOIN NONMEMBER USING (NONMEMBER_NO)
 	JOIN GUEST USING (GUEST_NO)
 	WHERE BOOK_NO=#{bookNo}
 	
@@ -141,20 +145,10 @@
 	
 	<!-- 비회원 번호 얻어 오기 -->
 	<select id="selectNonMemberNo" resultType="_int">
-		SELECT NONMEMBER_NO
+		SELECT NVL(SUM(NONMEMBER_NO), 0) NONMEMBER_NO
 		FROM "NONMEMBER"
-		WHERE NONMEMBER_NAME=#{nonMemberName}
-		AND NONMEMBER_PHONE =#{nonMemberPhone}
-		
-		UNION ALL
-		
-		SELECT 0 AS NONMEMBER_NO
-		FROM "NONMEMBER"
-		WHERE NOT EXISTS (SELECT NONMEMBER_NO
-											FROM "NONMEMBER"
-											WHERE NONMEMBER_NAME=#{nonMemberName}
-											AND NONMEMBER_PHONE =#{nonMemberPhone})	
-		AND ROWNUM=1
+		WHERE NONMEMBER_NAME = #{nonMemberName}
+		AND NONMEMBER_PHONE  = #{nonMemberPhone}
 	</select>
 	
 	

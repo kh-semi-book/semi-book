@@ -61,6 +61,7 @@
                                     <th width="133px">예약일</th>
                                     <td width="420px" id="rsc-last-td">${book.bookDate}</td>
                                 </tr>
+                                <c:if test="${not empty loginMember}">
                                 <tr>
                                     <th height="64.5px" id="rsc-first-th">예약자명</th>
                                     <td>${book.bookMemberName}</td>
@@ -71,6 +72,19 @@
                                     <th height="64.5px" id="rsc-first-th">이메일</th>
                                     <td colspan="5" id="rsc-last-td">${book.bookMemberEmail}</td>
                                 </tr>
+                                </c:if>
+                                <c:if test="${empty loginMember}">
+                                <tr>
+                                    <th height="64.5px" id="rsc-first-th">예약자명</th>
+                                    <td>${book.bookNonMemberName}</td>
+                                    <th>휴대폰</th>
+                                    <td style="border-right:none">${book.bookNonMemberPhone}</td>
+                                </tr>
+                                <tr>
+                                    <th height="64.5px" id="rsc-first-th">이메일</th>
+                                    <td colspan="5" id="rsc-last-td">${book.bookNonMemberEmail}</td>
+                                </tr>
+                                </c:if>
                                 <tr>
                                     <th height="64.5px" id="rsc-first-th">고객요청</th>
                                     <td colspan="5" id="rsc-last-td">${book.bookGuestRequest}</td>
@@ -178,9 +192,16 @@
                     <br><br>
                         <!-- 버튼 -->
                     <div class="rsc-btn">
+                    <c:if test="${not empty loginMember}">
                         <form action="/reservation/reservationView">
                             <button id="rsc-btn-list">목록</button>
                         </form> 
+                    </c:if>
+                    <c:if test="${empty loginMember}">
+                        <form action="/">
+                            <button id="rsc-btn-list">메인으로</button>
+                        </form> 
+                    </c:if>
                         &nbsp;
                         
                             <button id="rsc-btn-change" type="button">예약변경/취소</button>

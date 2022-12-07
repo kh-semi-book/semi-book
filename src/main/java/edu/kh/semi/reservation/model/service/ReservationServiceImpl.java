@@ -24,7 +24,7 @@ public class ReservationServiceImpl implements ReservationService{
 	
 	// 비회원 조회
 	@Override
-	public int selectNonMemberNo(Map<String, Object> nonMemberMap) {
+	public int selectNonMemberNo(Map<String, String> nonMemberMap) {
 		return dao.selectNonMemberNo(nonMemberMap);
 	}
 	
