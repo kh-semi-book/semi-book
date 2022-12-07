@@ -1,5 +1,7 @@
 package edu.kh.semi.member.controller;
 
+import java.util.List;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import edu.kh.semi.manager.book.model.vo.Book;
 import edu.kh.semi.member.model.service.MemberService;
 import edu.kh.semi.member.model.vo.Add;
 import edu.kh.semi.member.model.vo.Member;
@@ -71,6 +74,53 @@ public class MemberController {
 		}
 
 		return "redirect:" + path;
+	}
+	
+	@PostMapping("/member/reservationLogin")
+	public String reservationLogin(Member inputMember, Model model, RedirectAttributes ra,
+			@RequestParam(value = "saveId", required = false) String saveId, HttpServletResponse resp,
+			@RequestHeader(value = "referer") String referer) {
+		
+		Member loginMember = service.login(inputMember);
+		
+		String path = null;
+		
+		if (loginMember != null) {
+			model.addAttribute("loginMember", loginMember);
+			
+			if(loginMember.getAuthority()==2) {
+				path="/manager/selectBook";
+			} else {
+				ra.addFlashAttribute("message", loginMember.getMemberName()+"("+loginMember.getMemberId()+")님 환영합니다!");
+				
+				List<Book> bookList = service.reservationView(loginMember);
+				
+				model.addAttribute("bookList", bookList);
+				
+				path = "/reservation/reservationView";
+				
+				Cookie cookie = new Cookie("saveId", loginMember.getMemberId());
+				
+				if (saveId != null) {
+					
+					cookie.setMaxAge(60 * 60 * 24 * 365);
+					
+				} else {
+					cookie.setMaxAge(0);
+				}
+				cookie.setPath("/");
+				
+				resp.addCookie(cookie);
+			}
+			
+			
+		} else {
+			path = "redirect:/"+referer; // 이전페이지로 이동
+			// model.addAttribute("message","회원 아이디 또는 비밀번호가 일치하지 않습니다.");
+			ra.addFlashAttribute("message", "회원 아이디 또는 비밀번호가 일치하지 않습니다.\n\n 확인 후 다시 시도하시기 바랍니다.");
+		}
+		
+		return path;
 	}
 
 	// 로그아웃

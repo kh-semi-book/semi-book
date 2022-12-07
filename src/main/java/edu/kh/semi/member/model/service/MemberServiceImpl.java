@@ -1,10 +1,13 @@
 package edu.kh.semi.member.model.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import edu.kh.semi.manager.book.model.vo.Book;
 import edu.kh.semi.member.model.dao.MemberDAO;
 import edu.kh.semi.member.model.vo.Add;
 import edu.kh.semi.member.model.vo.Member;
@@ -70,6 +73,11 @@ public class MemberServiceImpl implements MemberService{
 			
 		
 		return result;
+	}
+	
+	@Override
+	public List<Book> reservationView(Member loginMember) {
+		return dao.reservationView(loginMember);
 	}
 	
 

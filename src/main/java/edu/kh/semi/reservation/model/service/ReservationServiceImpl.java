@@ -1,6 +1,7 @@
 package edu.kh.semi.reservation.model.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,16 +16,32 @@ public class ReservationServiceImpl implements ReservationService{
 	@Autowired
 	private ReservationDAO dao;
 	
-	// 예약조회
+	// 로그인 예약조회
 	@Override
 	public List<Book> reservationView(Member loginMember) {
 		return dao.reservationView(loginMember);
 	}
 	
+	// 비회원 예약 조회
+	@Override
+	public List<Book> reservationView(Map<String, Object> nonMemberMap) {
+		
+		
+		
+		return dao.reservationView(nonMemberMap);
+	}
+	
 	// 예약 조회 상세보기 서비스 
 	@Override
 	public Book reservationViewDetail(int bookNo) {
-		return dao.reservationViewDetail(bookNo);
+		
+		Book book = dao.reservationViewDetail(bookNo);
+		
+		if(book!=null) {
+			book.setOptionList(dao.selectOptionList(bookNo));
+		}
+		
+		return book;
 	}
 
 }

@@ -1,9 +1,12 @@
 package edu.kh.semi.member.model.dao;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import edu.kh.semi.manager.book.model.vo.Book;
 import edu.kh.semi.member.model.vo.Add;
 import edu.kh.semi.member.model.vo.Member;
 
@@ -56,6 +59,16 @@ public class MemberDAO {
 	public int signUp2(Add inputAdd) {
 
 		return sqlSession.insert("memberMapper.signUp2", inputAdd);
+	}
+
+
+
+
+
+
+
+	public List<Book> reservationView(Member loginMember) {
+		return sqlSession.selectList("reservationMapper.selectBookList", loginMember);
 	}
 
 

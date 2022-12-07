@@ -18,6 +18,14 @@ public class MainController {
 		return "member/login";
 	}
 	
+	
+	@GetMapping("/member/reservationLogin")
+	public String reservaionLoginPage() {
+		return "reservation/login";
+	}
+	
+	
+	
 //	@GetMapping("/reservation/reservationView")
 //	public String reservationCheckPage() {
 //		return "/reservation/reservationView";

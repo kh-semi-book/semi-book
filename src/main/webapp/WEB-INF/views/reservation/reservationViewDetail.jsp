@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -56,27 +57,23 @@
                             <table class="rsc-basic-info">
                                 <tr>
                                     <th width="133px" height="65px" id="rsc-first-th">예약번호</th>
-                                    <td width="200px"></td>
-                                    <th width="133px">접수번호</th>
-                                    <td width="200px"></td>
+                                    <td width="400px">${book.bookNo}</td>
                                     <th width="133px">예약일</th>
-                                    <td width="201px" id="rsc-last-td"></td>
+                                    <td width="420px" id="rsc-last-td">${book.bookDate}</td>
                                 </tr>
                                 <tr>
                                     <th height="64.5px" id="rsc-first-th">예약자명</th>
-                                    <td>${book.memberName}</td>
+                                    <td>${book.bookMemberName}</td>
                                     <th>휴대폰</th>
-                                    <td>010-7130-5756(시험)</td>
-                                    <th>전화번호</th>
-                                    <td id="rsc-last-td"></td>
+                                    <td style="border-right:none">${book.bookMemberPhone}</td>
                                 </tr>
                                 <tr>
                                     <th height="64.5px" id="rsc-first-th">이메일</th>
-                                    <td colspan="5" id="rsc-last-td"></td>
+                                    <td colspan="5" id="rsc-last-td">${book.bookMemberEmail}</td>
                                 </tr>
                                 <tr>
                                     <th height="64.5px" id="rsc-first-th">고객요청</th>
-                                    <td colspan="5" id="rsc-last-td"></td>
+                                    <td colspan="5" id="rsc-last-td">${book.bookGuestRequest}</td>
                                 </tr>
                             </table>
                         </div> 
@@ -89,49 +86,90 @@
                             <table class="rsc-room-info">
                                 <tr>
                                     <th width="133px" height="65px" id="rsc-first-th">상품명</th>
-                                    <td width="367px"></td>
+                                    <td width="367px">${book.promotionTitle}</td>
                                     <th width="133px" id="rsc-first-th">룸타입</th>
-                                    <td width="367px"id="rsc-last-td"></td>
+                                    <td width="367px"id="rsc-last-td">
+                                        <c:choose>
+							                <c:when test="${book.roomViewNo==1}">
+                                                <c:set var="roomViewName" value="가든" />
+                                            </c:when>
+                                            <c:when test="${book.roomViewNo==2}">
+                                                <c:set var="roomViewName" value="클리프" />
+                                            </c:when>
+                                            <c:when test="${book.roomViewNo==3}">
+                                                <c:set var="roomViewName" value="파노라마" />
+                                            </c:when>
+                                        </c:choose> 
+                                        <c:choose> 
+                                            <c:when test="${book.roomTypeNo==1}">
+                                                <c:set var="roomTypeName" value="예래 스위트" />
+                                            </c:when>
+                                            <c:when test="${book.roomTypeNo==2}">
+                                                <c:set var="roomTypeName" value="패밀리 스위트" />
+                                            </c:when>
+                                            <c:when test="${book.roomTypeNo==3}">
+                                                <c:set var="roomTypeName" value="코너 디럭스" />
+                                            </c:when>
+                                            <c:when test="${book.roomTypeNo==4}">
+                                                <c:set var="roomTypeName" value="디럭스" />
+                                            </c:when>
+                                        </c:choose>
+                                        <c:choose> 
+                                            <c:when test="${book.bedTypeNo==1}">
+                                                <c:set var="bedTypeName" value="트윈" />
+                                            </c:when>
+                                            <c:when test="${book.bedTypeNo==2}">
+                                                <c:set var="bedTypeName" value="더블" />
+                                            </c:when>
+                                            <c:when test="${book.bedTypeNo==3}">
+                                                <c:set var="bedTypeName" value="트리플" />
+                                            </c:when>
+                                        </c:choose>  
+                                        ${roomTypeName} ${bedTypeName} ${roomViewName}
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th height="64.5px" id="rsc-first-th">체크인</th>
-                                    <td></td>
+                                    <td>${book.checkIn}</td>
                                     <th id="rsc-first-th">체크아웃</th>
-                                    <td id="rsc-last-td"></td>
+                                    <td id="rsc-last-td">${book.checkOut}</td>
                                 </tr>
                                 <tr>
                                     <th height="64.5px" id="rsc-first-th">박수</th>
-                                    <td></td>
+                                    <td>${book.nights}</td>
                                     <th id="rsc-first-th">룸수</th>
-                                    <td id="rsc-last-td"></td>
+                                    <td id="rsc-last-td">${book.roomCount}</td>
                                 </tr>
                                 <tr>
                                     <th height="64.5px" id="rsc-first-th">어른 인원</th>
-                                    <td></td>
+                                    <td>${book.adultCount}</td>
                                     <th id="rsc-first-th">어린이 인원</th>
-                                    <td id="rsc-last-td"></td>
+                                    <td id="rsc-last-td">${book.childCount}</td>
                                 </tr>
                                 <tr>
                                     <th height="64.5px" id="rsc-first-th">진행상태</th>
-                                    <td colspan="3" id="rsc-last-td"></td>
+                                    <td colspan="3" id="rsc-last-td">${book.roomProcess}</td>
                                 </tr>
                                 <tr>
                                     <th height="64.5px" id="rsc-first-th">옵션</th>
-                                    <td colspan="3" id="rsc-last-td"></td>
+                                    <td colspan="3" id="rsc-last-td">
+                                    <ul>
+                                    <c:forEach var="option" items="${book.optionList}">
+                                    <li>${option.optionDate} : ${option.optionName} ${option.optionCount}개</li>
+                                    </c:forEach>
+                                    </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th height="64.5px" id="rsc-first-th">옵션합계</th>
-                                    <td colspan="3" id="rsc-last-td"></td>
+                                    <td colspan="3" id="rsc-last-td">
+                                    <fmt:formatNumber value="${optionTotalPrice}" />
+                                    </td>
                                 </tr>
-                                <tr>
-                                    <th height="64.5px" id="rsc-first-th">객실가</th>
-                                    <td></td>
-                                    <th id="rsc-first-th">객실가 부가세</th>
-                                    <td id="rsc-last-td"></td>
-                                </tr>
+                                
                                 <tr>
                                     <th height="64.5px" id="rsc-first-th">요금합계</th>
-                                    <td colspan="3" id="rsc-last-td"></td>
+                                    <td colspan="3" id="rsc-last-td"><fmt:formatNumber value="${book.bookPrice}" /></td>
                                 </tr>
                             </table>
                         </div>
@@ -144,9 +182,9 @@
                             <button id="rsc-btn-list">목록</button>
                         </form> 
                         &nbsp;
-                        <form action="#">
-                            <button id="rsc-btn-change">예약변경/취소</button>
-                        </form>
+                        
+                            <button id="rsc-btn-change" type="button">예약변경/취소</button>
+                        
                     </div>
                 </div>
             </div>
@@ -155,7 +193,7 @@
         <!-- ========================= footer ========================= -->
 
 
-
+<script src="/resources/js/reservation/reservationView.js"></script>
     </body>
 
 </html>
