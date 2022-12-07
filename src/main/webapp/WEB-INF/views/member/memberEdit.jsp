@@ -194,7 +194,12 @@
 							<%-- 생년월일 --%>
 							<tr>
 								<th>생년월일</th>
-								<td class="kjh-input"><input type="text" name="memberBirth" value="${fn:substring(member.memberBirth,0,10)}"></td>
+								<td class="kjh-input">
+									<span>${fn:substring(member.memberBirth,0,10)}</span>
+									<span class="search-date-input">
+										<input name="memberBirth" type="date">
+									</span> 
+								</td>
 							</tr>
 
 							<%-- 결혼 유무 --%>
