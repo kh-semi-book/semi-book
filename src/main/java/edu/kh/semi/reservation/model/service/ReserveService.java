@@ -1,6 +1,7 @@
 package edu.kh.semi.reservation.model.service;
 
 import java.util.List;
+import java.util.Map;
 
 import edu.kh.semi.manager.board.model.vo.Promotion;
 import edu.kh.semi.member.model.vo.Member;
@@ -9,6 +10,10 @@ import edu.kh.semi.reservation.model.vo.NonMember;
 import edu.kh.semi.reservation.model.vo.Option;
 import edu.kh.semi.reservation.model.vo.Reserve;
 
+/**
+ * @author user
+ *
+ */
 public interface ReserveService {
 
 	
@@ -32,6 +37,12 @@ public interface ReserveService {
 
 	Member login(Member inputMember);
 
+
+	/** 예약 완료 이메일 보내기
+	 * @param map
+	 * @return
+	 */
+	int sendBookNo(Map<String, Object> map); 
 
 
 }

@@ -68,6 +68,12 @@
                         <div class="rsc-btn">
                             <form action="/reservation/reservationView">
                                 <button id="rsc-btn-login">예약조회</button>
+                                <c:if test="${empty loginMember}">
+                                <input type="hidden" value="${nonMember.nonMemberName}" name="nonMemberName"/>
+                                <input type="hidden" value="${nonMember.nonMemberPhone}" name="nonMemberPhone"/>
+                                <input type="hidden" value="${nonMember.nonMemberEmail}" name="nonMemberEmail"/>
+                                <input type="hidden" value="${bookNo}" name="nonMemberBookNo"/>
+                                </c:if>
                             </form> 
                             &nbsp;
                             <form action="/">

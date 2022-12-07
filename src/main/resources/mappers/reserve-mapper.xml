@@ -56,6 +56,8 @@
 		SELECT * FROM PROMOTION 
 		WHERE P_SALE_START_DATE < #{checkInInput}
 		AND P_SALE_END_DATE > #{checkOutInput}
+		AND PROMOTION_DEL_FL='N'
+		ORDER BY PROMOTION_NO
 		]]>
 	</select>
 	
@@ -90,7 +92,7 @@
 	
 	
 	
-	<insert id="insertGuest">
+	<insert id="insertGuest" useGeneratedKeys="true">
 	
 		<selectKey keyProperty="guestNo" resultType="_int" order="BEFORE">
 			SELECT SEQ_GUEST_NO.NEXTVAL FROM DUAL
@@ -101,7 +103,7 @@
 	</insert>
 	
 	
-	<insert id="insertNonMember">
+	<insert id="insertNonMember" useGeneratedKeys="true">
 	
 		<selectKey keyProperty="nonMemberNo" resultType="_int" order="BEFORE">
 			SELECT SEQ_NONMEMBER_NO.NEXTVAL FROM DUAL
@@ -117,19 +119,22 @@
 	
 	<insert id="insertBook" useGeneratedKeys="true">
 	
-	
+		<selectKey keyProperty="bookNo" resultType="_int" order="BEFORE">
+			SELECT SEQ_BOOK_NO.NEXTVAL FROM DUAL
+		</selectKey>	
 		
 		INSERT INTO "BOOK"
-		VALUES(SEQ_BOOK_NO.NEXTVAL, DEFAULT, #{checkInInput}, #{checkOutInput}, 
+		VALUES(#{bookNo}, DEFAULT, #{checkInInput}, #{checkOutInput}, 
 		#{adultCount}, #{price}, DEFAULT,DEFAULT, #{cardNo}, #{memberNo}, #{nonMemberNo}, #{promotionNo}, #{roomViewNo}, #{roomTypeNo}, #{childCount}, #{roomCount}, #{guestNo}, #{bedTypeNo})
 	</insert>
 	
 	<insert id="insertBook_nonMember" useGeneratedKeys="true">
-	
-		
+		<selectKey keyProperty="bookNo" resultType="_int" order="BEFORE">
+			SELECT SEQ_BOOK_NO.NEXTVAL FROM DUAL
+		</selectKey>	
 		
 		INSERT INTO "BOOK"
-		VALUES(SEQ_BOOK_NO.NEXTVAL, DEFAULT, #{checkInInput}, #{checkOutInput}, 
+		VALUES(#{bookNo}, DEFAULT, #{checkInInput}, #{checkOutInput}, 
 		#{adultCount}, #{price}, DEFAULT,DEFAULT, #{cardNo}, #{memberNo}, #{nonMemberNo}, #{promotionNo}, #{roomViewNo}, #{roomTypeNo}, #{childCount}, #{roomCount}, #{guestNo}, #{bedTypeNo})
 	</insert>
 	
