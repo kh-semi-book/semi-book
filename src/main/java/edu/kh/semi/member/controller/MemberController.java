@@ -156,39 +156,40 @@ public class MemberController {
 		String birth = memberBirth[0] + "-" + memberBirth[1] + "-" + memberBirth[2];
 		inputMember.setMemberBirth(birth);
 
-		// 회원가입 추가항목
-		// 결횬유무 기혼 선택시 가져올 데이터
-		String weddingDate = memberWedding[0] + memberWedding[1] + memberWedding[2];
+		
+		String weddingDate = memberWedding[0] + "-" +  memberWedding[1] + "-" +  memberWedding[2];
+		if(weddingDate.equals("--")) weddingDate = null;
 		inputAdd.setMemberWedding(weddingDate);
 		
-		String tel = memberTel[0]+ "-"  + memberTel[1]+ "-"  + memberTel[2];
+		String tel = memberTel[0] + "-" + memberTel[1]+ "-" +memberTel[2];
+		if(tel.equals("--")) tel = null;
 		inputAdd.setMemberTel(tel);
 		
-		String address = memberAddress[0]+ ",," + memberAddress[1] +",,"+ memberAddress[2];
+		String address = memberAddress[0]+",,"+ memberAddress[1] +",,"+memberAddress[2];
+		if(address.equals(",,,,")) address = null;
 		inputAdd.setMemberAddress(address);
 		
-
 		
-		
-//		 기본항목 회원가입시
+	    // 기본항목 회원가입시
 		int result = service.signUp(inputMember, inputAdd);
-
+		
 		String path = null;
 		String message = null;
-
+		
 		if (result > 0) {
 			path = "/";
 			message = "회원가입 성공";
 		} else {
 			path = referer;
 			message = "회원 가입 실패";
-
+			
 			inputMember.setMemberPw(null);
 			ra.addFlashAttribute("tempMember", inputMember);
 		}
 		ra.addFlashAttribute("message", message);
-
+		
 		return "redirect:" + path;
+		
 	}
 
 }
