@@ -50,7 +50,6 @@
 			</div>
 		</div>
 		
-		
 
 		<div id="reservation3_option_title_area">
 			<span>추가 옵션</span> <span>패키지 구성 외 추가로 필요한 옵션을 선택해 주세요.</span>
@@ -114,6 +113,7 @@
 							<input type="hidden" value="${reserve.bedTypeNo}" name="bedTypeNo"/>
 							<input type="hidden" value="${reserve.promotionNo}" name="promotionNo"/>
 							<input type="hidden" value="${reserve.checkInInput}" name="side" id="side"/>
+							<input type="hidden" name="price"/>
 							<input type="hidden" name="optionSet"/>
 
 					<button id="reservation3-btn">예약하기</button>
@@ -133,6 +133,7 @@
 							<input type="hidden" value="${reserve.roomViewNo}" name="roomViewNo"/>
 							<input type="hidden" value="${reserve.bedTypeNo}" name="bedTypeNo"/>
 							<input type="hidden" value="${reserve.promotionNo}" name="promotionNo"/>
+							<input type="hidden" name="side" id="side"/>
 							<input type="hidden" name="price"/>
 							<input type="hidden" name="optionSet"/>
 		
@@ -187,7 +188,43 @@
 					<div class="side-rooms-pack">
 						<div class="side-rooms-pack-title">객실&패키지</div>
 
-						<div class="side-room-name"></div>
+						<div class="side-room-name"><c:choose>
+							<c:when test="${reserve.roomViewNo==1}">
+								<c:set var="roomViewName" value="가든" />
+							</c:when>
+							<c:when test="${reserve.roomViewNo==2}">
+								<c:set var="roomViewName" value="클리프" />
+							</c:when>
+							<c:when test="${reserve.roomViewNo==3}">
+								<c:set var="roomViewName" value="파노라마" />
+							</c:when>
+						</c:choose> 
+                        <c:choose> 
+                            <c:when test="${reserve.roomTypeNo==1}">
+                                <c:set var="roomTypeName" value="예래 스위트" />
+                            </c:when>
+                            <c:when test="${reserve.roomTypeNo==2}">
+                                <c:set var="roomTypeName" value="패밀리 스위트" />
+                            </c:when>
+                            <c:when test="${reserve.roomTypeNo==3}">
+                                <c:set var="roomTypeName" value="코너 디럭스" />
+                            </c:when>
+                            <c:when test="${reserve.roomTypeNo==4}">
+                                <c:set var="roomTypeName" value="디럭스" />
+                            </c:when>
+                        </c:choose>
+                        <c:choose> 
+                            <c:when test="${reserve.bedTypeNo==1}">
+                                <c:set var="bedTypeName" value="트윈" />
+                            </c:when>
+                            <c:when test="${reserve.bedTypeNo==2}">
+                                <c:set var="bedTypeName" value="더블" />
+                            </c:when>
+                            <c:when test="${reserve.bedTypeNo==3}">
+                                <c:set var="bedTypeName" value="트리플" />
+                            </c:when>
+                        </c:choose>  
+                        ${roomTypeName} ${bedTypeName} ${roomViewName}</div>
 						<table class="side-room-select">
 							<c:forEach var="date" items="${dateList}">
 								<tr>
@@ -226,6 +263,8 @@
 		</div>
 
 	</div>
+	
+	
 
 	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
 	<script src="/resources/js/reservation/reservation3.js"></script>
