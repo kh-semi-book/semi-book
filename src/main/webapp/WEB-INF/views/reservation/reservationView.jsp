@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <c:set var="bookList" value="${bookList}"/>
 
@@ -97,7 +98,7 @@
                         ${roomTypeName} ${bedTypeName} ${roomViewName}</td>
                         <td>${book.checkIn}</td>
                         <td>${book.checkOut}</td>
-                        <td>${book.bookPrice}</td>
+                        <td><fmt:formatNumber value="${book.bookPrice}" /></td>
                         <td>${book.roomProcess}</td>
                     </tr>
                     </c:forEach>
@@ -120,6 +121,7 @@
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     </div>
 
+<script src="/resources/js/reservation/reservationView.js"></script>
 </body>
 
 </html>

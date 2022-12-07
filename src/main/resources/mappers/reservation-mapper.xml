@@ -28,31 +28,51 @@
 		<result property="bedTypeName" column="BED_TYPE_NAME"/> 
 	</resultMap>
 	
-	<!-- <resultMap type="Book" id="book_rm">
+	 <resultMap type="Book" id="book_rm">
 	
 		<id property="bookNo" column="BOOK_NO"/>
 		<result property="bookDate" column="BOOK_DATE"/> 
+		<result property="bookRoomNo" column="BOOK_ROOM_NO"/> 
 		<result property="checkIn" column="CHECK_IN"/> 
 		<result property="checkOut" column="CHECK_OUT"/> 
-		<result property="bookAdultCount" column="BOOK_ADULTCOUNT"/> 
+		<result property="adultCount" column="BOOK_ADULTCOUNT"/> 
 		<result property="bookPrice" column="PRICE"/> 
 		<result property="roomProcess" column="ROOM_PROCESS"/> 
-		<result property="roomCancleFlag" column="ROOM_CANCEL_FL"/> 
-		<result property="bookCardNo" column="BOOK_CARD_NO"/> 
+		<!-- <result property="roomCancleFlag" column="ROOM_CANCEL_FL"/>  -->
+		<result property="cardNo" column="BOOK_CARD_NO"/> 
 		<result property="memberNo" column="MEMBER_NO"/> 
+		<result property="bookMemberName" column="MEMBER_NAME"/> 
+		<result property="bookMemberPhone" column="MEMBER_PHONE"/> 
+		<result property="bookMemberEmail" column="MEMBER_EMAIL"/> 
+		<result property="bookGuestRequest" column="GUEST_REQUEST"/> 
 		<result property="nonMemberNo" column="NONMEMBER_NO"/> 
 		<result property="guestNo" column="GUEST_NO"/> 
 		<result property="promotionNo" column="PROMOTION_NO"/> 
 		<result property="roomViewNo" column="ROOM_VIEW_NO"/> 
 		<result property="roomTypeNo" column="ROOM_TYPE_NO"/> 
 		<result property="bedTypeNo" column="BED_TYPE_NO"/> 
-		<result property="bookChildCount" column="BOOK_CHILDCOUNT"/>
-		<result property="bookRoomCount" column="BOOK_ROOMCOUNT"/>
-		<result property="promotionTitle" column="PROMOTION_TITLE"/> 
-		<result property="roomTypeName" column="ROOM_NAME"/> 
-		<result property="roomViewName" column="ROOM_VIEW_NAME"/> 
-		<result property="bedTypeName" column="BED_TYPE_NAME"/> 
-	</resultMap> -->
+		<result property="childCount" column="BOOK_CHILDCOUNT"/>
+		<result property="roomCount" column="BOOK_ROOMCOUNT"/>
+		<result property="promotionTitle" column="PROMOTION_TITLE"/>
+		<result property="nights" column="NIGHTS"/>
+	</resultMap> 
+	
+	<resultMap type="Option" id="option_rm">
+	
+		<id property="bookNo" column="BOOK_NO"/>
+		<result property="optionNo" column="OPTION_NO"/> 
+		<result property="optionPrice" column="OPTION_PRICE"/> 
+		<result property="optionDate" column="BOOK_DATE"/> 
+		<result property="optionName" column="OPTION_NAME"/> 
+		<result property="optionCount" column="OPTION_CNT"/> 
+	</resultMap>
+	
+	<resultMap type="NonMember" id="nonMember_rm">
+		<id property="nonMemberNo" column="NONMEMBER_NO"/>
+		<result property="nonMemberName" column="NONMEMBER_NAME"/> 
+		<result property="nonMemberEmail" column="NONMEMBER_EMAIL"/> 
+		<result property="nonMemberPhone" column="NONMEMBER_PHONE"/> 
+	</resultMap>
 
 
 	<!-- 예약 리스트 조회 -->
@@ -62,32 +82,80 @@
 		 CASE ROOM_PROCESS WHEN 0 THEN '예약대기'
 						WHEN -1 THEN '예약취소'
 						ELSE '예약확정'
-						END AS ROOM_PROCESS , ROOM_CANCEL_FL, 
+						END AS ROOM_PROCESS , 
 		 BOOK_CARD_NO, MEMBER_NO, NONMEMBER_NO, PROMOTION_NO, ROOM_VIEW_NO, ROOM_TYPE_NO, BOOK_CHILDCOUNT,
 	   BOOK_ROOMCOUNT, GUEST_NO, BED_TYPE_NO, 
 	   (SELECT PROMOTION_TITLE FROM PROMOTION P WHERE P.PROMOTION_NO=BOOK.PROMOTION_NO) PROMOTION_TITLE
 	FROM BOOK
-	<if test="memberNo!=0">
 	WHERE BOOK.MEMBER_NO = #{memberNo}
-	</if>
-	<if test="memberNo==0">
-	WHERE BOOK.NONMEMBER_NO=#{nonMemberNo}
-	</if>
+	
 	</select>
 	
-	<!-- 예약 조회 상세보기  -->
-<!-- 	<select id="reservationViewDetail" resultMap="book_rm" resultType="Book">
+	
+	<!-- 비회원 예약 조회 -->
+	<select id="selectBookList2" resultType="list" resultMap="Reservation2_rm">
 	SELECT BOOK_NO, TO_CHAR(BOOK_DATE,'YYYY-MM-DD') BOOK_DATE, TO_CHAR(CHECK_IN,'YYYY-MM-DD') CHECK_IN,
 		 TO_CHAR(CHECK_OUT,'YYYY-MM-DD') CHECK_OUT, BOOK_ADULTCOUNT, PRICE,
 		 CASE ROOM_PROCESS WHEN 0 THEN '예약대기'
 						WHEN -1 THEN '예약취소'
 						ELSE '예약확정'
-						END AS ROOM_PROCESS , ROOM_CANCEL_FL, 
+						END AS ROOM_PROCESS , 
 		 BOOK_CARD_NO, MEMBER_NO, NONMEMBER_NO, PROMOTION_NO, ROOM_VIEW_NO, ROOM_TYPE_NO, BOOK_CHILDCOUNT,
 	   BOOK_ROOMCOUNT, GUEST_NO, BED_TYPE_NO, 
 	   (SELECT PROMOTION_TITLE FROM PROMOTION P WHERE P.PROMOTION_NO=BOOK.PROMOTION_NO) PROMOTION_TITLE
 	FROM BOOK
+	WHERE BOOK.BOOK_NO=#{nonMemberBookNo}
+	</select>
+	
+	
+	
+	<!-- 예약 조회 상세보기  -->
+ 	<select id="reservationViewDetail" resultMap="book_rm" resultType="Book">
+	 SELECT BOOK_NO, TO_CHAR(BOOK_DATE,'YYYY-MM-DD') BOOK_DATE, TO_CHAR(CHECK_IN,'YYYY-MM-DD') CHECK_IN,
+		 TO_CHAR(CHECK_OUT,'YYYY-MM-DD') CHECK_OUT, BOOK_ADULTCOUNT, PRICE,
+		 CASE ROOM_PROCESS WHEN 0 THEN '예약대기'
+						WHEN -1 THEN '예약취소'
+						ELSE '예약확정'
+						END AS ROOM_PROCESS , 
+		 BOOK_CARD_NO, MEMBER_NO, NONMEMBER_NO, PROMOTION_NO, ROOM_VIEW_NO, ROOM_TYPE_NO, BOOK_CHILDCOUNT,
+	   BOOK_ROOMCOUNT, GUEST_NO, BED_TYPE_NO, 
+	   (SELECT PROMOTION_TITLE FROM PROMOTION P WHERE P.PROMOTION_NO=BOOK.PROMOTION_NO) PROMOTION_TITLE,
+	    MEMBER_NAME, MEMBER_PHONE, MEMBER_EMAIL,
+	    (SELECT CHECK_OUT-CHECK_IN FROM BOOK WHERE BOOK_NO=#{bookNo}) NIGHTS
+	    
+	FROM BOOK
+	JOIN MEMBER USING (MEMBER_NO)
+	JOIN GUEST USING (GUEST_NO)
 	WHERE BOOK_NO=#{bookNo}
 	
-	</select> -->
+	</select> 
+	
+	<!-- 예약 옵션 리스트 -->
+	<select id="selectOptionList" resultMap="option_rm" resultType="Option">
+		SELECT BOOK_NO, OPTION_NO, OPTION_PRICE, BOOK_DATE, OPTION_NAME,
+		OPTION_CNT
+		FROM BOOK_OPTION
+		JOIN "OPTION" USING (OPTION_NO)
+		WHERE BOOK_NO=#{book_no}
+	</select>
+	
+	<!-- 비회원 번호 얻어 오기 -->
+	<select id="selectNonMemberNo" resultType="_int">
+		SELECT NONMEMBER_NO
+		FROM "NONMEMBER"
+		WHERE NONMEMBER_NAME=#{nonMemberName}
+		AND NONMEMBER_PHONE =#{nonMemberPhone}
+		
+		UNION ALL
+		
+		SELECT 0 AS NONMEMBER_NO
+		FROM "NONMEMBER"
+		WHERE NOT EXISTS (SELECT NONMEMBER_NO
+											FROM "NONMEMBER"
+											WHERE NONMEMBER_NAME=#{nonMemberName}
+											AND NONMEMBER_PHONE =#{nonMemberPhone})	
+		AND ROWNUM=1
+	</select>
+	
+	
 </mapper>

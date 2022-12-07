@@ -12,7 +12,14 @@ public interface ReservationService {
 	// 예약 조회 상세보기 서비스
 	Book reservationViewDetail(int memberNo);
 
+	// 로그인 예약 조회
 	List<Book> reservationView(Member loginMember);
+
+	// 비회원 예약 조회
+	List<Book> reservationView(int nonMemberBookNo);
+
+	// 비회원 조회
+	int selectNonMemberNo(Map<String, Object> nonMemberMap);
 	
 
 }

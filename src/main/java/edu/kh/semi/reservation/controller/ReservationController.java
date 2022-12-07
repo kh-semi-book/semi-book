@@ -1,5 +1,7 @@
 package edu.kh.semi.reservation.controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -8,14 +10,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 import edu.kh.semi.manager.book.model.vo.Book;
-import edu.kh.semi.manager.meetingRoom.model.vo.MeetingRoom;
 import edu.kh.semi.member.model.vo.Member;
 import edu.kh.semi.reservation.model.service.ReservationService;
+import edu.kh.semi.reservation.model.vo.Option;
 
 @Controller
 public class ReservationController {
@@ -53,16 +54,31 @@ public class ReservationController {
 	// 예약 조회 
 	@GetMapping("/reservation/reservationView")
 	public String reservationCheckPage(@SessionAttribute(value = "loginMember", required = false) Member loginMember,
-			Model model) {
+			Model model, @RequestParam(value="nonMemberName", required = false) String nonMemberName,
+			@RequestParam(value="nonMemberBookNo", required = false) String nonMemberBookNo,
+			@RequestParam(value="nonMemberPhone", required = false) String nonMemberPhone) {
+		
+		List<Book> bookList = new ArrayList<Book>();
 		
 		if(loginMember == null) {
-			// 로그인 화면 넘기기
-			return "";
+			
+			Map<String, Object> nonMemberMap = new HashMap<String, Object>();
+			
+			nonMemberMap.put("nonMemberName", nonMemberName);
+			nonMemberMap.put("nonMemberPhone", nonMemberPhone);
+			
+			// 비회원 예약 조회
+			int nonMemberNo = service.selectNonMemberNo(nonMemberMap);
+			if(nonMemberNo!=0) {
+				bookList = service.reservationView(Integer.parseInt(nonMemberBookNo));
+			}
+			
+			return "reservation/reservationView";
 		} else {
-			List<Book> bookList = service.reservationView(loginMember);
-			model.addAttribute("bookList", bookList);
+			bookList = service.reservationView(loginMember);
 		}
 		
+		model.addAttribute("bookList", bookList);
 		return "reservation/reservationView";
 	}
 	
@@ -73,7 +89,13 @@ public class ReservationController {
 		
 		Book book = service.reservationViewDetail(bookNo);
 		
+		int optionTotalPrice=0;
+		for(Option o : book.getOptionList()) {
+			optionTotalPrice+= Integer.parseInt(o.getOptionCount())*o.getOptionPrice();
+		}
+		
 		model.addAttribute("book",book);
+		model.addAttribute("optionTotalPrice", optionTotalPrice);
 		
 		return "reservation/reservationViewDetail";
 	}

@@ -22,7 +22,7 @@
 
         <div id="login-main">
             <div id="member-login">
-                <form action="/member/login" method="post" 
+                <form action="/member/reservationLogin" method="post" 
                 onsubmit="return loginValidate();">
                     <p>회원 로그인</p>
                     <div class="input-section">

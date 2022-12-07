@@ -1,5 +1,8 @@
 package edu.kh.semi.manager.book.model.vo;
 
+import java.util.List;
+
+import edu.kh.semi.reservation.model.vo.Option;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -10,13 +13,15 @@ import lombok.ToString;
 public class Book {
 
 	private int bookNo;
+	private int bookRoomNo;
 	private String bookDate;
 	private String checkIn;
 	private String checkOut;
+	private int nights;
 	private int adultCount;
 	private int bookPrice;
-	private int roomProcess;
-	private char roomCancelFlag;
+	private String roomProcess;
+	private String roomCancelFlag;
 	private String cardNo;
 	private String memberNo;
 	private String nonMemberNo;
@@ -27,9 +32,16 @@ public class Book {
 	private int roomCount;
 	private String guestNo;
 	private int bedTypeNo;
-	
+	private String promotionTitle;
 	
 	private String bookMemberName;
+	private String bookMemberPhone;
+	private String bookMemberEmail;
 	private String bookGuestName;
+	private String bookGuestRequest;
 	private int bookRoomNum;
+	
+	private List<Option> optionList;
+	
+	
 }

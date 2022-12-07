@@ -25,6 +25,7 @@
 <typeAlias type="edu.kh.semi.reservation.model.vo.ReservationViewDetail" alias="Reservation2"/>
 <typeAlias type="edu.kh.semi.reservation.model.vo.Reserve" alias="Reserve"/>
 <typeAlias type="edu.kh.semi.reservation.model.vo.Option" alias="Option"/>
+<typeAlias type="edu.kh.semi.reservation.model.vo.NonMember" alias="NonMember"/>
 <typeAlias type="edu.kh.semi.member.model.vo.Add" alias="Add"/>
 
 </typeAliases>
