@@ -37,6 +37,9 @@ public class Book {
 	private String bookMemberName;
 	private String bookMemberPhone;
 	private String bookMemberEmail;
+	private String bookNonMemberName;
+	private String bookNonMemberPhone;
+	private String bookNonMemberEmail;
 	private String bookGuestName;
 	private String bookGuestRequest;
 	private int bookRoomNum;

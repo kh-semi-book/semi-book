@@ -42,7 +42,7 @@
                     <i class="fa-brands fa-youtube"></i>
                 </a>
 
-                <a href="/manager/selectBook">
+                <a href="https://instagram.com/hidden_cliff?igshid=Zjc2ZTc4Nzk=" target="_blank">
                     INSTAGRAM
                     <i class="fa-brands fa-instagram"></i>
                 </a>

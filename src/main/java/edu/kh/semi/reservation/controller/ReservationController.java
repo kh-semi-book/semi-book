@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
@@ -62,16 +64,19 @@ public class ReservationController {
 		
 		if(loginMember == null) {
 			
-			Map<String, Object> nonMemberMap = new HashMap<String, Object>();
+			Map<String, String> nonMemberMap = new HashMap<String, String>();
 			
 			nonMemberMap.put("nonMemberName", nonMemberName);
 			nonMemberMap.put("nonMemberPhone", nonMemberPhone);
+			
+			model.addAttribute("nonMemberMap", nonMemberMap);
 			
 			// 비회원 예약 조회
 			int nonMemberNo = service.selectNonMemberNo(nonMemberMap);
 			if(nonMemberNo!=0) {
 				bookList = service.reservationView(Integer.parseInt(nonMemberBookNo));
 			}
+			model.addAttribute("bookList", bookList);
 			
 			return "reservation/reservationView";
 		} else {
@@ -81,6 +86,7 @@ public class ReservationController {
 		model.addAttribute("bookList", bookList);
 		return "reservation/reservationView";
 	}
+	
 	
 	// 예약 상세조회
 	@GetMapping("/reservation/reservationViewDetail/{bookNo}")

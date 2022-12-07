@@ -58,7 +58,7 @@ public class ReservationDAO {
 	 * @param nonMemberMap
 	 * @return
 	 */
-	public int selectNonMemberNo(Map<String, Object> nonMemberMap) {
+	public int selectNonMemberNo(Map<String, String> nonMemberMap) {
 		return sqlSession.selectOne("reservationMapper.selectNonMemberNo",nonMemberMap);
 	}
 

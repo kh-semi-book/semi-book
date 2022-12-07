@@ -40,7 +40,7 @@
             
             </c:if>
             <div id="guest-login">
-                <form action="/reservation/reservationView">
+                <form action="/reservation/reservationView" mehtod="POST">
                     <p>비회원 로그인</p>
                     <div class="input-section">
                         <input type="text" name="nonMemberName" placeholder="이름">
@@ -51,6 +51,7 @@
                         <button id="guest-login-btn">로그인</button>
                     </div>
                     <span>* 예약번호는 고객님께 발송되는 예약 확정 문자를 통해 안내됩니다.</span>
+                    
                 </form>
             </div> 
         </div>

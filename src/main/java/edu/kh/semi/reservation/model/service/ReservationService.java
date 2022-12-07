@@ -19,7 +19,7 @@ public interface ReservationService {
 	List<Book> reservationView(int nonMemberBookNo);
 
 	// 비회원 조회
-	int selectNonMemberNo(Map<String, Object> nonMemberMap);
+	int selectNonMemberNo(Map<String, String> nonMemberMap);
 	
 
 }
