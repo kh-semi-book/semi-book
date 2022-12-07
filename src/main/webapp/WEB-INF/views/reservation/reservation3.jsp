@@ -2,6 +2,9 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
+
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -112,7 +115,7 @@
 							<input type="hidden" value="${reserve.roomViewNo}" name="roomViewNo"/>
 							<input type="hidden" value="${reserve.bedTypeNo}" name="bedTypeNo"/>
 							<input type="hidden" value="${reserve.promotionNo}" name="promotionNo"/>
-							<input type="hidden" value="${reserve.checkInInput}" name="side" id="side"/>
+							<input type="hidden" name="side" id="side"/>
 							<input type="hidden" name="price"/>
 							<input type="hidden" name="optionSet"/>
 
@@ -265,9 +268,10 @@
 	</div>
 	
 	
-
 	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
 	<script src="/resources/js/reservation/reservation3.js"></script>
 
 </body>
 </html>
+
+	
