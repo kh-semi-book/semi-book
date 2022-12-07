@@ -18,7 +18,7 @@ public class Book {
 	private int roomProcess;
 	private char roomCancelFlag;
 	private String cardNo;
-	private String emberNo;
+	private String memberNo;
 	private String nonMemberNo;
 	private String promotionNo;
 	private int roomViewNo;
