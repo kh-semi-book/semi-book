@@ -31,6 +31,7 @@ public class Reserve {
 	private String bedType;			// 침대 타입
 	private int bedTypeNo;			// 침대 타입
 	private String cardNo;			// 침대 타입
+	private int bookNo;			// 예약번호
 	
 	
 	private int optionNo;			// 옵션

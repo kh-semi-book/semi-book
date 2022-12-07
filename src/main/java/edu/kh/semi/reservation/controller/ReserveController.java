@@ -3,7 +3,9 @@ package edu.kh.semi.reservation.controller;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -156,9 +158,20 @@ public class ReserveController {
 		reserve.setCheckInInput(reserve.getCheckInInput().substring(0,10));
 		reserve.setCheckOutInput(reserve.getCheckOutInput().substring(0,10));
 		
-		int result = service.reservation4(loginMember,reserve,inputGuest,optionList,nonMember);
+		int bookNo = service.reservation4(loginMember,reserve,inputGuest,optionList,nonMember);
 //		int result = service.reservation4_nonMember(loginMember,reserve,inputGuest,optionList,nonMember);
 		
+		Map<String, Object> map = new HashMap<String, Object>();
+		if(bookNo>0 ) {
+			map.put("bookNo", bookNo);
+			if(loginMember!=null) {
+				map.put("memberEmail", loginMember.getMemberEmail());
+			} else {
+				map.put("memberEmail", nonMember.getNonMemberEmail());
+				model.addAttribute("bookNo", bookNo);
+			}
+			bookNo = service.sendBookNo(map);
+		}
 		
 		return "reservation/reservation5";
 		
@@ -188,7 +201,7 @@ public class ReserveController {
 			model.addAttribute("loginMember", loginMember);
 			path="reservation/reservation4";
 		} else {
-			path = referer; // 이전페이지로 이동이 안됨
+			path = "redirect:/"+referer; // 이전페이지로 이동이 안됨
 			ra.addFlashAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
 		}
 		return path;
