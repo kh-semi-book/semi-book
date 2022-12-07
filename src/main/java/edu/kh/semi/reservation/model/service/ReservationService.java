@@ -16,7 +16,10 @@ public interface ReservationService {
 	List<Book> reservationView(Member loginMember);
 
 	// 비회원 예약 조회
-	List<Book> reservationView(Map<String, Object> nonMemberMap);
+	List<Book> reservationView(int nonMemberNo);
+
+	// 비회원 조회
+	int selectNonMemberNo(Map<String, Object> nonMemberMap);
 	
 
 }

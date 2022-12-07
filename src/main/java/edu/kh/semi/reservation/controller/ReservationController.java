@@ -62,13 +62,18 @@ public class ReservationController {
 		
 		if(loginMember == null) {
 			
+			
 			Map<String, Object> nonMemberMap = new HashMap<String, Object>();
 			
-			nonMemberMap.put("nonMemberName", nonMemberMap);
+			nonMemberMap.put("nonMemberName", nonMemberName);
 			nonMemberMap.put("nonMemberBookNo", nonMemberBookNo);
 			nonMemberMap.put("nonMemberPhone", nonMemberPhone);
 			
-			bookList = service.reservationView(nonMemberMap);
+			// 비회원 예약 조회
+			int nonMemberNo = service.selectNonMemberNo(nonMemberMap);
+			if(nonMemberNo!=0) {
+				bookList = service.reservationView(nonMemberNo);
+			}
 			
 			return "reservation/reservationView";
 		} else {

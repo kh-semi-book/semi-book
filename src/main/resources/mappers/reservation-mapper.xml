@@ -66,6 +66,13 @@
 		<result property="optionName" column="OPTION_NAME"/> 
 		<result property="optionCount" column="OPTION_CNT"/> 
 	</resultMap>
+	
+	<resultMap type="NonMember" id="nonMember_rm">
+		<id property="nonMemberNo" column="NONMEMBER_NO"/>
+		<result property="nonMemberName" column="NONMEMBER_NAME"/> 
+		<result property="nonMemberEmail" column="NONMEMBER_EMAIL"/> 
+		<result property="nonMemberPhone" column="NONMEMBER_PHONE"/> 
+	</resultMap>
 
 
 	<!-- 예약 리스트 조회 -->
@@ -97,7 +104,7 @@
 	   BOOK_ROOMCOUNT, GUEST_NO, BED_TYPE_NO, 
 	   (SELECT PROMOTION_TITLE FROM PROMOTION P WHERE P.PROMOTION_NO=BOOK.PROMOTION_NO) PROMOTION_TITLE
 	FROM BOOK
-	WHERE BOOK.NONMEMBER_NO=#{nonMemberBookNo}
+	WHERE BOOK.NONMEMBER_NO=#{nonMemberNo}
 	</select>
 	
 	
@@ -132,8 +139,23 @@
 		WHERE BOOK_NO=#{book_no}
 	</select>
 	
-
-	
+	<!-- 비회원 번호 얻어 오기 -->
+	<select id="selectNonMemberNo" resultType="_int">
+		SELECT NONMEMBER_NO
+		FROM "NONMEMBER"
+		WHERE NONMEMBER_NAME=#{nonMemberName}
+		AND NONMEMBER_PHONE =#{nonMemberPhone}
+		
+		UNION ALL
+		
+		SELECT 0 AS NONMEMBER_NO
+		FROM "NONMEMBER"
+		WHERE NOT EXISTS (SELECT NONMEMBER_NO
+											FROM "NONMEMBER"
+											WHERE NONMEMBER_NAME=#{nonMemberName}
+											AND NONMEMBER_PHONE =#{nonMemberPhone})	
+		AND ROWNUM=1
+	</select>
 	
 	
 </mapper>

@@ -22,13 +22,18 @@ public class ReservationServiceImpl implements ReservationService{
 		return dao.reservationView(loginMember);
 	}
 	
+	// 비회원 조회
+	@Override
+	public int selectNonMemberNo(Map<String, Object> nonMemberMap) {
+		return dao.selectNonMemberNo(nonMemberMap);
+	}
+	
+	
 	// 비회원 예약 조회
 	@Override
-	public List<Book> reservationView(Map<String, Object> nonMemberMap) {
+	public List<Book> reservationView(int nonMemberNo) {
 		
-		
-		
-		return dao.reservationView(nonMemberMap);
+		return dao.reservationView(nonMemberNo);
 	}
 	
 	// 예약 조회 상세보기 서비스 
