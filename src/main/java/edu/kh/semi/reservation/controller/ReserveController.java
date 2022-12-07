@@ -116,8 +116,9 @@ public class ReserveController {
 	public String reservation4(@SessionAttribute(value="loginMember",required = false) Member loginMember
 			, Reserve reserve,Model model, String inputEmail, String inputTel, String inputName, HttpSession session,String side) {
 
+		if(session.getAttribute("side") == null)
+			session.setAttribute("side", side);
 		
-		session.setAttribute("side", side);
 		System.out.println(side);
 	
 		NonMember nonMember=new NonMember();
