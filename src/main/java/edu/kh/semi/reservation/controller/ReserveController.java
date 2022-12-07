@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -76,9 +77,10 @@ public class ReserveController {
 	
 	// 2->3
 	@GetMapping("/reservation/reservation3")
-	public String gotoReserve3(Reserve reserve,Model model) {
+	public String gotoReserve3(Reserve reserve,Model model, HttpSession session,String side) {
 		
 		
+		System.out.println(side);
 		System.out.println(reserve);
 		List<Option> optionList=service.selectOption();
 		
@@ -110,9 +112,12 @@ public class ReserveController {
 	// 3->4
 	@PostMapping("/reservation/reservation4")
 	public String reservation4(@SessionAttribute(value="loginMember",required = false) Member loginMember
-			, Reserve reserve,Model model, String inputEmail, String inputTel, String inputName) {
+			, Reserve reserve,Model model, String inputEmail, String inputTel, String inputName, HttpSession session,String side) {
 
 		
+		session.setAttribute("side", side);
+		System.out.println(side);
+	
 		NonMember nonMember=new NonMember();
 		
 		nonMember.setNonMemberName(inputName);
@@ -166,8 +171,9 @@ public class ReserveController {
 	
 	
 	@GetMapping("/reservation/reservationLogin")
-	public String reservationLogin(Reserve reserve) {
+	public String reservationLogin(Reserve reserve,HttpSession session,String side) {
 		
+		session.setAttribute("side", side);
 		return "/reservation/reservationLogin";
 	}	
 
@@ -177,7 +183,7 @@ public class ReserveController {
 	public String reservationLogin(Reserve reserve, Member inputMember, Model model
 			,@RequestHeader(value = "referer") String referer,RedirectAttributes ra) {
 		
-		
+	
 		
 		System.out.println(reserve);
 		

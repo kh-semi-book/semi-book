@@ -264,8 +264,8 @@
 									</tr>
 									<tr>
 										<th class="row-title">요청사항</th>
-										<td class="book-input"><textarea name="guestRequest" class="input" id="text-area" cols="60" rows=10">
-                                            </textarea></td>
+										<td class="book-input">
+										<textarea name="guestRequest" class="input" id="text-area" cols="60" rows=10"></textarea></td>
 									</tr>
 								</table>
 							</div>
@@ -380,6 +380,8 @@
 						</form>
 					</div>
 					<div id="reservation_side_area">
+					
+					
 						<%-- <div class="side-table" id="side-table">
 							<div>
 								<div class="side-margin"></div>
@@ -465,7 +467,7 @@
 
 							</div>
 						</div> --%>
-						${param.side}
+						${sessionScope.side }
 					</div>
 				</div>
 
