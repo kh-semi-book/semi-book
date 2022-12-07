@@ -38,7 +38,7 @@
 					<span class="kjh-txt"><strong class="star">*</strong>표시는 필수항목입니다.</span>
 				</h4>
 
-				<form name="joinform" id ="joinform" method="post" action="memberEdit">
+				<form name="joinform" id ="joinform" method="POST" action="memberEdit">
 					<div class="form1">
 						<table class="kjh-form1-table">
 						<tr>

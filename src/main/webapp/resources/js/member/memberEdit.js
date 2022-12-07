@@ -83,6 +83,42 @@ if(joinform != null){
             }
 
         }    
+
+        // 휴대폰 공백 검사 
+        const memberPhone1 =document.getElementById("memberPhone1");
+        if (memberPhone1.value.trim().length == 0) {
+            alertAndFocus(memberPhone1, "휴대번호를 입력해주세요.");
+            event.preventDefault();  
+            return;
+        }
+        const memberPhone2 =document.getElementById("memberPhone2");
+        if (memberPhone2.value.trim().length == 0) {
+            alertAndFocus(memberPhone2, "휴대번호를 입력해주세요.");
+            event.preventDefault();  
+            return;
+        }
+        const memberPhone3 =document.getElementById("memberPhone3");
+        if (memberPhone1.value.trim().length == 0) {
+            alertAndFocus(memberPhone3, "휴대번호를 입력해주세요.");
+            event.preventDefault();  
+            return;
+        }
+
+        // 이메일 공백 검사 
+        const memberEmail1 =document.getElementById("memberEmail1");
+        if (memberEmail1.value.trim().length == 0) {
+            alertAndFocus(memberEmail1, "이메일을 입력해주세요.");
+            event.preventDefault();  
+            return;
+        }
+        const memberEmail2 =document.getElementById("memberEmail2");
+        if (memberEmail2.value.trim().length == 0) {
+            alertAndFocus(memberEmail2, "이메일을 입력해주세요.");
+            event.preventDefault();  
+            return;
+        }
+
+        
     })
 
         // 경고창 출력 + 포커스 이동 + 값 삭제 
