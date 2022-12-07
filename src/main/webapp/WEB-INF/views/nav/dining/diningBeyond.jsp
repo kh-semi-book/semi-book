@@ -4,7 +4,7 @@
 <%-- 문자열 관련 메서드를 제공하는 JSTL(EL형식) --%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
- <title>[다이닝 - 비욘드] Page</title>
+ <title>비욘드 - Hidden Cliff Hotel and Nature</title>
 
         <link rel="stylesheet" href="/resources/css/nav/dining/diningBeyond.css">
        	<link rel="stylesheet" href="/resources/css/common/main.css">

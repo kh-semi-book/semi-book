@@ -67,7 +67,7 @@ if(joinform != null){
 
             if (newPw.value != newPwConfirm.value) {
                 alert("새 비밀번호가 일치하지 않습니다.");
-                memberPw.focus();
+                newPw.focus();
                 event.preventDefault();
                 return;
             }
@@ -76,7 +76,7 @@ if(joinform != null){
             const regEx2 = /^(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
 
             if((!regEx2.test(newPw.value) && !regEx2.test(newPwConfirm.value))){
-                memberPw.focus();
+                newPw.focus();
                 alert("비밀번호 항목의 비밀번호 형식이 올바르지 않습니다.\n\n비밀번호는 특수문자를 포함해 8~20자로 입력해주세요.");
                 event.preventDefault();//제출 이벤트제거
                 return;
@@ -98,7 +98,7 @@ if(joinform != null){
             return;
         }
         const memberPhone3 =document.getElementById("memberPhone3");
-        if (memberPhone1.value.trim().length == 0) {
+        if (memberPhone3.value.trim().length == 0) {
             alertAndFocus(memberPhone3, "휴대번호를 입력해주세요.");
             event.preventDefault();  
             return;
@@ -130,6 +130,35 @@ if(joinform != null){
 
 
 }
+
+
+const weddingInput1 = document.getElementById("memberWedding1");
+const weddingInput2 = document.getElementById("memberWedding2");
+const weddingInput3 = document.getElementById("memberWedding3");
+const weddingYN1 = document.getElementById("marriageYN1");
+const weddingYN2 = document.getElementById("marriageYN2");
+
+
+weddingYN1.addEventListener("click", () =>{
+    if(weddingYN1.checked === true) {
+        weddingInput1.disabled = true;
+        memberWedding1.value="";
+        weddingInput2.disabled = true;
+        memberWedding2.value="";
+        weddingInput3.disabled = true;
+        memberWedding3.value="";
+        }
+    })
+weddingYN2.addEventListener("click", () =>{
+    if(weddingYN2.checked === true) {
+        weddingInput1.disabled = false;
+        memberWedding1.value="";
+        weddingInput2.disabled = false;
+        memberWedding2.value="";
+        weddingInput3.disabled = false;
+        memberWedding3.value="";
+        }
+    })
 
 /* 주소 API */
 function sample6_execDaumPostcode() {

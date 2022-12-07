@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>다이닝</title>
+<title>다이닝 - Hidden Cliff Hotel and Nature</title>
 <link rel="stylesheet" href="/resources/css/nav/specialOffer/dining/diningMain.css">
 <link rel="stylesheet" href="/resources/css/common/main.css">
 </head>

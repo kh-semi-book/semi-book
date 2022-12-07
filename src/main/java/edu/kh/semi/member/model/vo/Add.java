@@ -16,6 +16,6 @@ public class Add {
 	private String memberTel;
 	private String memberAddress;
 	private int memberNo;
-	private char marriageFlag;
+	private String marriageFlag;
 	private String memberWedding;
 }

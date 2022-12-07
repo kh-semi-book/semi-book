@@ -39,20 +39,20 @@
                     <tr>
                         <th class="inf-name">성명</th>
                         <td><input name="meetingMenName" id="meetingMenName" type="text" placeholder="이름"
-                            style="width:300px;"></td>
+                            style="width:350px;" value="${meetingMenName}"></td>
                     
                     <tr>
                         <th>휴대폰</th>
                         <td class="kjh-input" colspan="3">
-                            <input type="text" size="3" name="meetingMenPhone" id="meetingMenPhone1" maxlength="3"> -
+                            <input type="text" size="2" name="meetingMenPhone" id="meetingMenPhone1" maxlength="3"> -
                             <input type="text" size="4" name="meetingMenPhone" id="meetingMenPhone2" maxlength="4"> -
                             <input type="text" size="4" name="meetingMenPhone" id="meetingMenPhone3" maxlength="4">
                         </td>
                     </tr>
                     <tr>
                         <th>이메일</th>
-                        <td><input type="text" size="20" name="meetingMenEmail" id="meetingMenEmail1"> @
-                            <input type="text" size="13" name="meetingMenEmail" id="meetingMenEmail2">
+                        <td><input type="text" size="10" name="meetingMenEmail" id="meetingMenEmail1"> @
+                            <input type="text" size="10" name="meetingMenEmail" id="meetingMenEmail2">
                             <select name="meetingMenEmail" id="meetingMenEmail3">
                                 <option value="naver.com">naver.com</option>
                                 <option value="gmail.com">gmail.com</option>
@@ -66,16 +66,16 @@
                     </tr>
                     <tr>
                         <th>업체명</th>
-                        <td><input name="meetingBookCompany" id="meetingBookCompany" type="text" style="width:400px;"></td>
+                        <td><input name="meetingBookCompany" id="meetingBookCompany" type="text" style="width:350px;"></td>
                     </tr>
                     <tr>
                         <th>인원수</th>
-                        <td><input name="meetingHeadCount" id="meetingHeadCount" type="text" style="width:400px;"
+                        <td><input name="meetingHeadCount" id="meetingHeadCount" type="text" style="width:350px;"
                             placeholder='숫자만 입력해주세요'></td>
                     </tr>
                     <tr>
                         <th>행사일시</th>
-                        <td><input name="meetingBookDate" id="meetingBookDate" type="date" style="width:400px; height 50px;"></td>
+                        <td><input name="meetingBookDate" id="meetingBookDate" type="date" style="width:350px;"></td>
                     </tr>
                     <tr>
                         <th id="lastbox">내용</th>

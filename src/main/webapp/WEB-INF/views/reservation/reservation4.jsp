@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>예약하기4</title>
+<title>예약하기 - Hidden Cliff Hotel and Nature</title>
 <link rel="stylesheet" href="/resources/css/reservation/reservation4.css">
 <link rel="stylesheet" href="/resources/css/reservation/reservation3.css">
 <link rel="stylesheet" href="/resources/css/common/main.css">

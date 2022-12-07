@@ -4,7 +4,7 @@
 <%-- 문자열 관련 메서드를 제공하는 JSTL(EL형식) --%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
-  <title>회원가입 약관 Page</title>
+  <title>회원가입 - Hidden Cliff Hotel and Nature</title>
 
    	<link rel="stylesheet" href="/resources/css/member/signUp1.css">
    	<link rel="stylesheet" href="/resources/css/common/main.css">
