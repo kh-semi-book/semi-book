@@ -109,7 +109,18 @@
 		
 		INSERT INTO "BOOK"
 		VALUES(SEQ_BOOK_NO.NEXTVAL, DEFAULT, #{checkInInput}, #{checkOutInput}, 
-		#{adultCount}, 0, DEFAULT,DEFAULT, #{cardNo}, #{memberNo}, #{nonMemberNo}, #{promotionNo}, #{roomViewNo}, #{roomTypeNo}, #{childCount}, #{roomCount}, #{guestNo}, 1)
+		#{adultCount}, #{price}, DEFAULT,DEFAULT, #{cardNo}, #{memberNo}, #{nonMemberNo}, #{promotionNo}, #{roomViewNo}, #{roomTypeNo}, #{childCount}, #{roomCount}, #{guestNo}, #{bedTypeNo})
+	</insert>
+	
+	<insert id="insertOption" useGeneratedKeys="true">
+	
+		<selectKey keyProperty="bookNo" resultType="_int" order="BEFORE">
+			SELECT SEQ_BOOK_NO.CURRVAL FROM DUAL
+		</selectKey>
+		
+		
+		INSERT INTO "BOOK_OPTION"
+		VALUES(#{bookNo},#{optionNo},#{optionCount},#{optionDate})
 	</insert>
 	
 	

@@ -45,43 +45,7 @@
                     <!-- ====================================================== -->
                     <br><br>
 
-                    <section id="reservation5_body_area">
-                        <div id="reservation5_step_area">
-                            <div class="reservation5_step" id="step1">
-                                <p class="step">STEP 01</p>
-                                <p>일정선택</p>
-                            </div>
-                            <div id="rsc-arrow-var">
-                                <img src="/webapp/resources/image/화살표.png">
-                            </div>
-                            <div class="reservation5_step" id="step2">
-                                <p class="step">STEP 02</p>
-                                <p>객실&패키지 선택</p>
-                            </div>
-                            <div id="rsc-arrow-var">
-                                <img src="/webapp/resources/image/화살표.png">
-                            </div>
-                            <div class="reservation5_step" id="step3">
-                                <p class="step">STEP 03</p>
-                                <p>옵션 선택</p>
-                            </div>
-                            <div id="rsc-arrow-var">
-                                <img src="/webapp/resources/image/화살표.png">
-                            </div>
-                            <div class="reservation5_step" id="step4">
-                                <p class="step">STEP 04</p>
-                                <p>고객 정보 입력</p>
-                            </div>
-                            <div id="rsc-arrow-var">
-                                <img src="/webapp/resources/image/화살표.png">
-                            </div>
-                            <div class="reservation5_step" id="step5">
-                                <p class="step">STEP 05</p>
-                                <p>예약 완료</p>
-                            </div>
-                        </div>
-                
-                    </section>
+                   
                     <!-- ====================================================== -->
                     <br><br>
 
@@ -102,11 +66,11 @@
             
                         <!-- 버튼 -->
                         <div class="rsc-btn">
-                            <form action="#">
+                            <form action="/reservation/reservationView">
                                 <button id="rsc-btn-login">예약조회</button>
                             </form> 
                             &nbsp;
-                            <form action="#">
+                            <form action="/">
                                 <button id="rsc-btn-goMain">메인으로</button>
                             </form>
                         </div>

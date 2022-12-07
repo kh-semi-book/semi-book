@@ -7,13 +7,18 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import javax.servlet.http.Cookie;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.kh.semi.manager.board.model.vo.Promotion;
 import edu.kh.semi.member.model.vo.Member;
@@ -23,6 +28,7 @@ import edu.kh.semi.reservation.model.vo.Option;
 import edu.kh.semi.reservation.model.vo.Reserve;
 
 @Controller
+@SessionAttributes({ "loginMember", "message" })
 public class ReserveController {
 	
 	@Autowired
@@ -106,6 +112,8 @@ public class ReserveController {
 			, Reserve reserve,Model model) {
 		
 		
+	
+		
 		
 		
 		String checkIn=reserve.getCheckInInput().substring(0,10);
@@ -129,29 +137,58 @@ public class ReserveController {
 	
 	@PostMapping("/reservation/reservation5")
 	public String reservation5(@SessionAttribute(value="loginMember",required = false) Member loginMember
-			, Reserve reserve,Model model, Guest inputGuest) {
+			,@SessionAttribute(value="guest",required = false) Member guest,  Reserve reserve,Model model, Guest inputGuest
+			, String optionSet) {
 		
 		System.out.println(reserve);
 		
-		reserve.setCheckInInput(reserve.getCheckInInput().substring(0,9));
-		reserve.setCheckOutInput(reserve.getCheckOutInput().substring(0,9));
+		System.out.println(optionSet);
+		
+		String optionList[]=optionSet.split(",");
+		// 2022-12-06/3/2
+		// 2022-12-06/5/2
 		
 		
-		int result = service.reservation4(loginMember,reserve,inputGuest);
+		
+		reserve.setCheckInInput(reserve.getCheckInInput().substring(0,10));
+		reserve.setCheckOutInput(reserve.getCheckOutInput().substring(0,10));
+		
+		System.out.println(reserve);
+
+		int result = service.reservation4(loginMember,reserve,inputGuest,optionList);
 		
 		return "reservation/reservation5";
 		
 	}
 	
 	
+	@GetMapping("/reservation/reservationLogin")
+	public String reservationLogin(Reserve reserve) {
+		
+		return "/reservation/reservationLogin";
+	}	
+
 	
 	
 	@PostMapping("/reservation/reservationLogin")
-	public String reservationLogin(Reserve reserve) {
+	public String reservationLogin(Reserve reserve, Member inputMember, Model model
+			,@RequestHeader(value = "referer") String referer,RedirectAttributes ra) {
 		
 		
 		
-		return "reservation/reservationLogin";
+		System.out.println(reserve);
+		
+		Member loginMember = service.login(inputMember);
+		String path=null;
+
+		if (loginMember != null) {
+			model.addAttribute("loginMember", loginMember);
+			path="reservation/reservation4";
+		} else {
+			path = referer; // 이전페이지로 이동이 안됨
+			ra.addFlashAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
+		}
+		return path;
 	}
 	
 	

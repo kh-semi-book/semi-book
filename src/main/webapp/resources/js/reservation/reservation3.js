@@ -21,9 +21,14 @@ document.addEventListener('scroll',submenu_bar_fixed);
 // select시 추가 
 const selectList=document.querySelectorAll("select");
 const sideOptionTitle=document.getElementsByClassName("side-option-cost")[0];
-
+const totalOptionCost=document.getElementById("totalOptionCost");
+const optionCost=document.getElementsByClassName("optionCost");
+const roomsCost=document.getElementById("roomsCost");
+const totalCost=document.getElementById("totalCost");
+const price=document.getElementsByName("price")[0];
 for(let select of selectList){
     select.addEventListener("change",function(){
+ 		let totalOptionCostinput=0;
 
         const div=document.createElement("div");
         div.classList.add("option-select");
@@ -43,24 +48,33 @@ for(let select of selectList){
         const td1=document.createElement("td");
         tr.append(td,td1);
 
-        // const span=document.createElement("span");
-        // const span1=document.createElement("span");
-        // td1.append(span);
+        const span=document.createElement("span");
+        span.classList.add("optionCost");
+        const span1=document.createElement("span");
+        td1.append(span,span1);
 
         const sideOptionName=document.getElementsByClassName("side-option-name");
 
+        const optionPrice=Number(select.parentElement.parentElement.children[1].id);
+        const optionCount=Number(select.parentElement.parentElement.children[2].children[0].value);
+
+		console.log(optionPrice);
+		console.log(optionCount);
+	
+
+       
         //옵션 이름 
         const optionName=select.parentElement.parentElement.children[0].innerHTML;
         const optionSelectDate=select.parentElement.parentElement.parentElement.parentElement.children[0].innerText;
-        const optionCost=select.parentElement.parentElement.children[1].innerText+'('+select.parentElement.parentElement.children[2].children[0].value+'개)';
+        
         
         div1.innerText=optionName;
         td.innerText=optionSelectDate;
-        td1.innerText=optionCost;
+        span.innerText=numberWithCommas(optionPrice*optionCount);
+        span1.innerText='('+optionCount+'개)';
   
         
-       
-
+      
         
         
         for(let name of sideOptionName){
@@ -85,6 +99,16 @@ for(let select of selectList){
     
         
         sideOptionTitle.before(div); 
+        
+        for(let cost of optionCost){
+            totalOptionCostinput+=Number(optionPrice*optionCount);
+        }
+
+		totalOptionCost.innerText=numberWithCommas(totalOptionCostinput);
+
+       	price.value=Number(roomsCost.value)+Number(totalOptionCostinput);
+        totalCost.innerText=numberWithCommas(price.value)+"원";
+        
     })
 }
 // 2022-12-23/15/1
@@ -95,10 +119,11 @@ const hiddenInput=document.getElementsByName("optionSet")[0];
 
 const optionSet=new Set();
 let i=0;
-submitbtn.addEventListener("click",()=>{
-
+submitbtn.addEventListener("click",()=>{	
     for(let count of optionCount){
         if(count.value>0){
+
+            
             
             let inputtext= count.parentElement.parentElement.parentElement.parentElement.children[0].innerText
                         +"/"+count.id+"/"+count.value;
@@ -116,5 +141,8 @@ submitbtn.addEventListener("click",()=>{
 document.resFrm3.addEventListener("submit", e=>{
     const side = document.getElementById("reservation3_side_area").innerHTML;
     document.getElementById("side").value = side;
-    // e.preventDefault();
 });
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}

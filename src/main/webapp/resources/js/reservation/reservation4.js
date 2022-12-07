@@ -288,7 +288,6 @@ document.getElementById("reservation4_form").addEventListener("submit",function(
 	const guestPhone=phone1.value+phone2.value+phone3.value;
     
 
-    alert(guestPhone);
    
     
     document.getElementsByName("cardExpireDate")[0].value=cardExpireDate;

@@ -81,6 +81,8 @@
             <div class="manage-book-status">진행상태</div>
             <div class="manage-book-status-change"></div>
         </div>
+        
+        ${bookList }
 
     <c:forEach var="book" items="${bookList}" varStatus="index">
    

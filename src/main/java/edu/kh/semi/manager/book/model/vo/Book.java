@@ -13,13 +13,23 @@ public class Book {
 	private String bookDate;
 	private String checkIn;
 	private String checkOut;
+	private int adultCount;
+	private int bookPrice;
 	private int roomProcess;
-	private String bookMemberNo;
+	private char roomCancelFlag;
+	private String cardNo;
+	private String emberNo;
+	private String nonMemberNo;
+	private String promotionNo;
+	private int roomViewNo;
+	private int roomTypeNo;
+	private int childCount;
+	private int roomCount;
+	private String guestNo;
+	private int bedTypeNo;
+	
+	
 	private String bookMemberName;
-	private String bookGuestNo;
 	private String bookGuestName;
 	private int bookRoomNum;
-	private int bookPrice;
-	private String bookPromotion;
-	private int bookHeadCount;
 }

@@ -62,8 +62,7 @@ public class FindIdPwServiceImpl implements FindIdPwService{
 	            
 	            // 메일 내용
 	            String mailContent 
-	                = "<p>김연수님께서 요청하신 정보입니다.</p>"
-	                + "<h3 style='color:blue'>아이디 : " + map.get("memberId") + "</h3>"
+	                = "<h3 style='color:blue'>아이디 : " + map.get("memberId") + "</h3>"
 	            	+ "<h3 style='color:blue'>비밀번호 : " +map.get("randomString") + "</h3>";
 	            
 	            

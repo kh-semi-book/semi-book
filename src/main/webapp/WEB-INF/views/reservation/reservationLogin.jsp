@@ -19,11 +19,23 @@
         <div id="login-head">
             로그인
         </div>
-
+        
         <div id="login-main">
             <div id="member-login">
-                <form action="/member/login" method="post" 
-                onsubmit="return loginValidate();">
+                <form action="/reservation/reservationLogin" method="post" onsubmit="return loginValidate();">
+							<input type="hidden" value="${reserve.checkInInput}" name="checkInInput" />
+							<input type="hidden" value="${reserve.checkOutInput}" name="checkOutInput" /> 
+							<input type="hidden" value="${reserve.nights}" name="nights" /> 
+							<input type="hidden" value="${reserve.roomCount}" name="roomCount" /> 
+							<input type="hidden" value="${reserve.adultCount}" name="adultCount" /> 
+							<input type="hidden" value="${reserve.childCount}" name="childCount" />
+							<input type="hidden"  value="${reserve.roomTypeNo}" name="roomTypeNo"/>
+							<input type="hidden" value="${reserve.roomViewNo}" name="roomViewNo"/>
+							<input type="hidden" value="${reserve.bedTypeNo}" name="bedTypeNo"/>
+							<input type="hidden" value="${reserve.promotionNo}" name="promotionNo"/>
+							<input type="hidden" value="${param.optionSet}" name="optionSet"/>
+							<input type="hidden" value="${reserve.price}" name="price"/>
+                    
                     <p>회원 로그인</p>
                     <div class="input-section">
                         <input type="text" name="memberId" placeholder="아이디">
@@ -37,12 +49,25 @@
             </div>
            
             <div id="guest-login">
-                <form action="/reservation/reservation4">
+                <form action="/reservation/reservation4" method="post">
+                
+                		<input type="hidden" value="${reserve.checkInInput}" name="checkInInput" />
+							<input type="hidden" value="${reserve.checkOutInput}" name="checkOutInput" /> 
+							<input type="hidden" value="${reserve.nights}" name="nights" /> 
+							<input type="hidden" value="${reserve.roomCount}" name="roomCount" /> 
+							<input type="hidden" value="${reserve.adultCount}" name="adultCount" /> 
+							<input type="hidden" value="${reserve.childCount}" name="childCount" />
+							<input type="hidden"  value="${reserve.roomTypeNo}" name="roomTypeNo"/>
+							<input type="hidden" value="${reserve.roomViewNo}" name="roomViewNo"/>
+							<input type="hidden" value="${reserve.bedTypeNo}" name="bedTypeNo"/>
+							<input type="hidden" value="${reserve.promotionNo}" name="promotionNo"/>
+							<input type="hidden" value="${param.optionSet}" name="optionSet"/>
+							<input type="hidden" value="${reserve.price}" name="price"/>
                     <p>비회원 로그인</p>
                     <div class="input-section">
                         <input type="text" name="inputName" placeholder="이름">
                         <input type="text" name="inputEmail" placeholder="이메일">
-                        <input type="password" name="inputTel" placeholder="휴대폰(- 빼고 숫자만 입력)">
+                        <input type="text" name="inputTel" placeholder="휴대폰(- 빼고 숫자만 입력)">
                     </div
                     ><div class="button-section">
                         <button id="guest-login-btn">로그인</button>
