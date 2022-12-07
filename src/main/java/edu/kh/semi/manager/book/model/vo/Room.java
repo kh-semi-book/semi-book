@@ -12,6 +12,10 @@ public class Room {
 	private int roomNum;
 	private int roomViewNo;
 	private int roomTypeNo;
+	private int bedTypeNo;
 	private String roomViewName;
+	private String bedTypeName;
 	private String roomName;
+	private String checkIn;
+	private String checkOut;
 }

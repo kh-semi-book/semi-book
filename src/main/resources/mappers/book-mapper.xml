@@ -33,6 +33,8 @@
   		<result property="roomTypeNo" column="ROOM_TYPE_NO"/>
   		<result property="roomViewName" column="ROOM_VIEW_NAME"/>
   		<result property="roomName" column="ROOM_NAME"/>
+  		<result property="checkIn" column="CHECK_IN"/>
+  		<result property="bedTypeNo" column="BED_TYPE_NO"/>
   	
   	</resultMap>
   	
@@ -125,30 +127,33 @@
 		</if>
   	</select>
 	
-
-	
-	<select id="selectRoom_input" resultMap="room_rm">
-	
-	 <![CDATA[ 
-		SELECT DISTINCT CHECK_IN,CHECK_OUT,BOOK_NO,ROOM_NUM, ROOM_NAME, ROOM_VIEW_NAME 
-		FROM ROOM
-		JOIN ROOM_TYPE USING(ROOM_TYPE_NO)
-		JOIN ROOM_VIEW USING(ROOM_VIEW_NO)
-		LEFT JOIN BOOK_ROOM USING(ROOM_NUM)
-		LEFT JOIN BOOK USING(BOOK_NO)
-		WHERE (CHECK_IN <'2022-12-10' OR CHECK_IN IS NULL)
-		AND ROOM_NAME=#{roomName}
-		AND ROOM_VIEW_NAME=#{roomViewName}]]>
-
-	</select>
 	
 	<select id="searchRoom" resultMap="room_rm" parameterType="_int">
-		SELECT DISTINCT ROOM_VIEW_NAME, ROOM_NAME 
+		SELECT DISTINCT ROOM_VIEW_NAME, ROOM_NAME, BOOK.BED_TYPE_NO BED_TYPE_NO,CHECK_IN, CHECK_OUT 
 		FROM BOOK 
 		JOIN ROOM_VIEW USING(ROOM_VIEW_NO)
 		JOIN ROOM_TYPE USING(ROOM_TYPE_NO)
 		WHERE BOOK_NO=#{bookNo}
 	</select>
+
+	
+	<select id="selectRoom_input" resultMap="room_rm">
+	
+	 <![CDATA[ 
+		SELECT DISTINCT CHECK_IN, CHECK_OUT,BOOK_NO,ROOM_NUM, ROOM_NAME, ROOM_VIEW_NAME,ROOM.BED_TYPE_NO  
+		FROM ROOM
+		JOIN ROOM_TYPE USING(ROOM_TYPE_NO)
+		JOIN ROOM_VIEW USING(ROOM_VIEW_NO)
+		LEFT JOIN BOOK_ROOM USING(ROOM_NUM)
+		LEFT JOIN BOOK USING(BOOK_NO)
+		WHERE (CHECK_OUT <= #{checkIn} OR CHECK_OUT IS NULL)
+		AND ROOM_NAME=#{roomName}
+		AND ROOM_VIEW_NAME=#{roomViewName}
+		AND ROOM.BED_TYPE_NO =#{bedTypeNo}]]>
+
+	</select>
+	
+	
 	
 	
 	<update id="updateBook" parameterType="Book">

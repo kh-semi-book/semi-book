@@ -68,6 +68,10 @@ public class BookController {
 		
 		Room inputRoom=service.searchRoom(bookNum); // 해당 예약번호의 룸타입, 전망타입 조회
 		
+		inputRoom.setCheckIn(inputRoom.getCheckIn().substring(0,10));
+		
+		System.out.println(inputRoom);
+		
 		List<Room> roomList=service.selectRoom(inputRoom);
 		
 		model.addAttribute("roomList",roomList);
@@ -85,6 +89,8 @@ public class BookController {
 	 */
 	@PostMapping("/manager/updateBook")
 	public String updateBook(Book bookPerson) {
+		
+		System.out.println(bookPerson);
 		
 		int result=service.updateBook(bookPerson);
 
