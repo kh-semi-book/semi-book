@@ -90,6 +90,7 @@ function nextCalendarInit() {
         let checkinbefore;
 
 
+
         // 현재 월 표기
         $('.year-month').text(currentYear + '.' + (currentMonth + 1));
         // $('.year-month1').text(currentYear + '.' + (currentMonth + 1));
@@ -155,14 +156,6 @@ function nextCalendarInit() {
 
 
         checkInText1=new Date(currentYear,currentMonth,selectday.innerHTML);
-
-        
-
-        // if(Number(selectday.innerHTML)<10){
-        //     thisMonth = new Date(currentYear, currentMonth + 1, 1);
-        //     renderCalender2(thisMonth,1); 
-        // }
-        // renderCalender2(thisMonth, selectday.innerHTML);
 
         checkInInput.value=checkInText+" ("+getDayOfWeek(checkInText)+")";
         
@@ -300,53 +293,7 @@ function nextCalendarInit() {
         renderCalender1(thisMonth); 
     });
 
-    
-    // const checkInSelect=document.getElementsByClassName("day current");
-    // // 체크인 날짜 받아오기 
-    // let checkInText="";
-    // let checkInText1="";
-    // for(let selectday of checkInSelect){
-       
-    //     selectday.addEventListener("click",function(){
-
-    //     selectday.classList.add("today");
-        
-    //     if(selectday.innerHTML<10){
-    //         checkInText=currentYear+"-"+(currentMonth+1)+"-0"+selectday.innerHTML;
-    //         checkInText1=currentYear+""+(currentMonth+1)+"0"+selectday.innerHTML;
-    //     }else{
-    //         checkInText=currentYear+"-"+(currentMonth+1)+"-"+selectday.innerHTML;
-    //         checkInText1=currentYear+""+(currentMonth+1)+""+selectday.innerHTML;
-    //     }
-
-    //     console.log(checkInText1);
-
-    //     checkInInput.innerText=checkInText+" ("+getDayOfWeek(checkInText)+")";
-    //     })
-    // }
-
-
-    // const checkOutSelect=document.getElementsByClassName("day1 current1");
-    // // 체크아웃 날짜 받아오기
-    // let checkOutText="";
-    // let checkOutText1="";
-    // for(let selectday of checkOutSelect){
-       
-    //     selectday.addEventListener("click",function(){
-
-    //     selectday.classList.add("today");
-
-    //     if(selectday.innerHTML<10){
-    //         checkOutText=currentYear+"-"+(currentMonth+1)+"-0"+selectday.innerHTML;
-    //         checkOutText1=currentYear+""+(currentMonth+1)+"0"+selectday.innerHTML;
-    //     }else{
-    //         checkOutText=currentYear+"-"+(currentMonth+1)+"-"+selectday.innerHTML;
-            
-    //     }
-
-    //     checkOutInput.innerText=checkOutText+" ("+getDayOfWeek(checkOutText)+")";
-    //     })
-    // }
+  
 
 }
 
@@ -432,7 +379,7 @@ function renderCalender2(thisMonth, nextDatee){
         console.log(checkOutText1);
         checkOutInput.value=checkOutText+" ("+getDayOfWeek(checkOutText)+")";
 
-        nights.value=Number(checkOutText1)-Number(checkInText1);
+        nights.value=(checkOutText1.getTime()-checkInText1.getTime())/(1000*60*60*24);
 
       
     }
