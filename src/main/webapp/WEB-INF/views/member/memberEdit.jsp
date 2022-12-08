@@ -158,9 +158,9 @@
 						<tr>
 							<th>이메일<br> 수신 동의<span class="star">*</span></th>
 							<td>
-							<input type="radio" name="emailFlag" id="emailFlag" value="Y" ${Y}>
+							<input type="radio" name="emailFlag" id="m_email_yn1" value="Y" ${Y}>
 							<label for="m_email_yn1">수신</label>
-							<input type="radio" name="emailFlag" id="emailFlag"value="N" ${N}>
+							<input type="radio" name="emailFlag" id="m_email_yn2"value="N" ${N}>
 							<label for="m_email_yn2">수신거부</label>
 							</td>
 						</tr>
@@ -177,10 +177,10 @@
 									<c:set var="N" value="checked"/>
 								</c:when>
 							</c:choose>
-								<input type="radio" name="smsFlag" id="smsFlag" value="Y" ${Y}>
+								<input type="radio" name="smsFlag" id="m_sms_yn1" value="Y" ${Y}>
 								<label for="m_sms_yn1">수신</label>
 
-								<input type="radio" name="smsFlag" id="smsFlag" value="N" ${N}>
+								<input type="radio" name="smsFlag" id="m_sms_yn2" value="N" ${N}>
 								<label for="m_sms_yn2">수신거부</label>
 							</td>
 						</tr>
@@ -197,7 +197,7 @@
 								<td class="kjh-input">
 									<span id="memberBirthValue">${fn:substring(member.memberBirth,0,10)}</span>
 									<span class="search-date-input">
-										<input name="memberBirth" type="date" id="memberBirth">
+										<input name="memberBirth" type="date" id="memberBirth" value="${fn:substring(member.memberBirth,0,10)}">
 									</span> 
 								</td>
 							</tr>
@@ -206,23 +206,34 @@
 							<tr>
 								<th>결혼유무</th>
 								<td colspan="3">
-								<c:choose>
-									<c:when test="${fn:contains(add.marriageFlag,'N')}">
-										<c:set var="N" value="selected"/>
-									</c:when>
-									<c:when test="${fn:contains(add.marriageFlag,'Y')}">
-										<c:set var="Y" value="selected"/>
-									</c:when>
-								</c:choose>
-									<input type="radio" name="marriageFlag" id="marriageFlag" value="N" ${N}>
-									<label for="marriageFlag">미혼</label>
-									<input type="radio" name="marriageFlag" id="marriageFlag" value="Y" ${Y}>
-									<label for="marriageFlag">기혼</label>
-									<span class="kjh-married"> 결혼기념일 : 
-										<input type="text" name="memberWedding" size="4" maxlength="4" value="${fn:substring(add.memberWedding,0,4)}">년
-										<input type="text" name="memberWedding" size="4" maxlength="4" value="${fn:substring(add.memberWedding,5,7)}">월
-										<input type="text" name="memberWedding" size="4" maxlength="4" value="${fn:substring(add.memberWedding,8,10)}">일
-									</span>
+									<input type="radio" name="marriageFlag" id="marriageYN1" value="N" <c:if test="${fn:contains(add.marriageFlag,'N')}">checked</c:if>>
+									<label for="marriageYN1">미혼</label>
+									<input type="radio" name="marriageFlag" id="marriageYN2" value="Y" <c:if test="${fn:contains(add.marriageFlag,'Y')}">checked</c:if>>
+									<label for="marriageYN2">기혼</label>
+
+									<c:choose>
+										<c:when test="${fn:contains(add.marriageFlag,'N')}">
+											<span class="kjh-married"> 결혼기념일 : 
+												<input type="text" name="memberWedding" id="memberWedding1" size="4" maxlength="4" disabled>년
+												<input type="text" name="memberWedding" id="memberWedding2" size="4" maxlength="2" disabled>월
+												<input type="text" name="memberWedding" id="memberWedding3" size="4" maxlength="2" disabled>일
+											</span>
+										</c:when>
+										<c:when test="${fn:contains(add.marriageFlag,'Y')}">
+											<span class="kjh-married"> 결혼기념일 : 
+												<input type="text" name="memberWedding" id="memberWedding1" size="4" maxlength="4" value="${fn:substring(add.memberWedding,0,4)}" >년
+												<input type="text" name="memberWedding" id="memberWedding2" size="4" maxlength="2" value="${fn:substring(add.memberWedding,5,7)}" >월
+												<input type="text" name="memberWedding" id="memberWedding3" size="4" maxlength="2" value="${fn:substring(add.memberWedding,8,10)}">일
+											</span>
+										</c:when>
+										<c:when test="${fn:contains(add.marriageFlag,'')}">
+											<span class="kjh-married"> 결혼기념일 : 
+												<input type="text" name="memberWedding" id="memberWedding1" size="4" maxlength="4">년
+												<input type="text" name="memberWedding" id="memberWedding2" size="4" maxlength="2">월
+												<input type="text" name="memberWedding" id="memberWedding3" size="4" maxlength="2">일
+											</span>
+										</c:when>
+									</c:choose>
 								</td>	
 							</tr>         
 
@@ -230,10 +241,10 @@
 							<c:set var="tel" value="${add.memberTel}"/> 
 							<tr>
 								<th>유선전화</th>
-								<td class="kjh-input" colspan="3">
-									<input type="text"  name="memberTel" size="1" name="m_col" id="m_col" value="${fn:substring(tel,0,3)}" > -
-									<input type="text"  name="memberTel" size="1" name="m_col" id="m_col" value="${fn:substring(tel,3,6)}" > -
-									<input type="text"  name="memberTel" size="1" name="m_col" id="m_col" value="${fn:substring(tel,6,11)}" > 
+								<td class="kjh-input" colspan="3">                                         
+									<input type="text"  name="memberTel" size="1" name="m_col" id="m_col" value="${fn:split(tel,'-')[0]}" maxlength="3"> -
+									<input type="text"  name="memberTel" size="1" name="m_col" id="m_col" value="${fn:split(tel,'-')[1]}" maxlength="4"> -
+									<input type="text"  name="memberTel" size="1" name="m_col" id="m_col" value="${fn:split(tel,'-')[2]}" maxlength="4"> 
 								</td>
 							</tr>  
 

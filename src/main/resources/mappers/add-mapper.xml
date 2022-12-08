@@ -18,15 +18,22 @@
   		
   	</resultMap>
 
-		<!-- 회원 정보 수정 (추가사항) -->
+		<!-- 회원 정보 수정 (회원가입시 추가항목을 작성한 경우 추가사항 변경) -->
 		<update id="updateMemberAdd" parameterType="Add">
 			UPDATE "ADD" SET 
-				ADD_TEL = #{memberTel, jdbcType=VARCHAR},
-				ADD_ADDRESS = #{memberAddress, jdbcType=VARCHAR},
-				ADD_MARRIAGE_FL= #{marriageFlag, jdbcType=CHAR},
-				ADD_MARRIAGE = #{memberWedding, jdbcType=DATE}
+				ADD_TEL = #{memberTel},
+				ADD_ADDRESS = #{memberAddress},
+				ADD_MARRIAGE_FL= #{marriageFlag},
+				ADD_MARRIAGE = #{memberWedding}
 			WHERE MEMBER_NO =#{memberNo}
 		</update>
+		
+		<!-- 회원 정보 수정 (회원가입시 추가항목을 작성하지 않은 경우 추가사항 삽입) -->
+		<insert id="insertMemberAdd" parameterType="Add">
+		INSERT INTO "ADD" 
+		VALUES(#{memberTel}, #{memberAddress}, 
+					 #{memberNo}, #{marriageFlag}, #{memberWedding})
+		</insert>
 		
 		<!-- 로그인한 회원 추가 정보 조회 -->
 		<select id="selectAdd" parameterType="_int" resultMap="add_rm">

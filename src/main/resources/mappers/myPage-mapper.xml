@@ -41,7 +41,7 @@
 				MEMBER_GENDER = #{memberGender},
 				EMAIL_FL = #{emailFlag},
 				SMS_FL = #{smsFlag},
-				MEMBER_BIRTH = #{memberBirth,jdbcType=DATE}
+				MEMBER_BIRTH = #{memberBirth}
 				WHERE MEMBER_NO =#{memberNo}
 		</update>
 		
@@ -54,7 +54,7 @@
 				MEMBER_GENDER = #{memberGender},
 				EMAIL_FL = #{emailFlag},
 				SMS_FL = #{smsFlag},
-				MEMBER_BIRTH = #{memberBirth,jdbcType=DATE}
+				MEMBER_BIRTH = #{memberBirth}
 				WHERE MEMBER_NO =#{memberNo}
 		</update>
 		

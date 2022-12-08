@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>객실 프로모션</title>
+<title>객실 프로모션 - Hidden Cliff Hotel and Nature</title>
 <link rel="stylesheet" href="/resources/css/nav/specialOffer/roomPromotion/promotionType.css">
 <link rel="stylesheet" href="/resources/css/common/main.css">
 </head>

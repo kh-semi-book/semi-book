@@ -55,19 +55,29 @@ public class MyPageController {
 		String email = memberEmail[0]+ "@" +memberEmail[1];
 		inputMember.setMemberEmail(email);
 		
-		String wedding = memberWedding[0]+memberWedding[1]+memberWedding[2];
-		inputAdd.setMemberWedding(wedding);
+		String  weddingDate = null;
+		if(memberWedding != null) {
+			
+			weddingDate = memberWedding[0] + "-" +  memberWedding[1] + "-" +  memberWedding[2];
+			if(weddingDate.equals("--")) weddingDate = null;
+		}
+		inputAdd.setMemberWedding(weddingDate);
 		
-		String tel = memberTel[0]+memberTel[1]+memberTel[2];
+		String tel = memberTel[0]+"-"+memberTel[1]+"-"+memberTel[2];
+		if(tel.equals("--")) tel = null;
 		inputAdd.setMemberTel(tel);
 		
-		String address = memberAddress[0]+",,"+memberAddress[1]+",,"+memberAddress[2];
+		String address = memberAddress[0]+",,"+ memberAddress[1]+",,"+memberAddress[2];
+		if(address.equals(",,,,")) address = null;
 		inputAdd.setMemberAddress(address);
 		
 		
 		
-		
 			
+		System.out.println(inputAdd.getMemberWedding());
+		System.out.println(inputAdd);
+		System.out.println(inputAdd.getMarriageFlag());
+		
 		int result = service.updateMember(inputMember, loginMember, newPw, add, inputAdd);
 		
 		String message = null;

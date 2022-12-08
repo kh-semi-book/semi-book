@@ -9,7 +9,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>[rooms-예래 스위트] Page</title>
+        <title>예래 스위트 - Hidden Cliff Hotel and Nature</title>
 
         <link rel="stylesheet" href="/resources/css/nav/rooms/roomYeraeSuite.css">
      	<link rel="stylesheet" href="/resources/css/common/main.css">

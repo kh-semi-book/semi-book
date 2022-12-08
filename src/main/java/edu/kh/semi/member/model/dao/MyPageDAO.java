@@ -40,12 +40,20 @@ public class MyPageDAO {
 		return sqlSession.update("myPageMapper.updateMemberPw",inputMember);
 	}
 
-	/** 회원 정보 수정 서비스 DAO
+	/** 회원 정보 수정 서비스 DAO (회원 가입시 추가 정보를 입력한 경우)
 	 * @param inputAdd
 	 * @return
 	 */
 	public int updateAdd(Add inputAdd) {
 		return sqlSession.update("addMapper.updateMemberAdd", inputAdd);
+	}
+	
+	/** 회원 정보 수정 서비스 DAO (회원 가입시 추가 정보를 입력하지 않은 경우)
+	 * @param inputAdd
+	 * @return
+	 */
+	public int insertAdd(Add inputAdd) {
+		return sqlSession.insert("addMapper.insertMemberAdd", inputAdd);
 	}
 	
 	/** 회원 탈퇴 회원 정보 조회 DAO 
@@ -79,6 +87,9 @@ public class MyPageDAO {
 	public Add selectAdd(int memberNo) {
 		return sqlSession.selectOne("addMapper.selectAdd",memberNo);
 	}
+
+	
+	
 
 
 

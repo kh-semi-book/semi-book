@@ -153,19 +153,23 @@ public class MemberController {
 		String email = memberEmail[0] + "@" + memberEmail[1] /* + memberEmail[2] */;
 		inputMember.setMemberEmail(email);
 
-		String birth = memberBirth[0] + "-" + memberBirth[1] + "-" + memberBirth[2];
+		String birth = memberBirth[0]+"-"+memberBirth[1]+"-"+memberBirth[2];
 		inputMember.setMemberBirth(birth);
 
 		
-		String weddingDate = memberWedding[0] + "-" +  memberWedding[1] + "-" +  memberWedding[2];
-		if(weddingDate.equals("--")) weddingDate = null;
+		String  weddingDate = null;
+		if(memberWedding != null) {
+			
+			weddingDate = memberWedding[0] + "-" +  memberWedding[1] + "-" +  memberWedding[2];
+			if(weddingDate.equals("--")) weddingDate = null;
+		}
 		inputAdd.setMemberWedding(weddingDate);
 		
-		String tel = memberTel[0] + "-" + memberTel[1]+ "-" +memberTel[2];
+		String tel = memberTel[0]+"-"+memberTel[1]+"-"+memberTel[2];
 		if(tel.equals("--")) tel = null;
 		inputAdd.setMemberTel(tel);
 		
-		String address = memberAddress[0]+",,"+ memberAddress[1] +",,"+memberAddress[2];
+		String address = memberAddress[0]+",,"+memberAddress[1]+",,"+memberAddress[2];
 		if(address.equals(",,,,")) address = null;
 		inputAdd.setMemberAddress(address);
 		

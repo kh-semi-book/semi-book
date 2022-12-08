@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>오시는 길</title>
+    <title>오시는 길 - Hidden Cliff Hotel and Nature</title>
 
     <script src="https://kit.fontawesome.com/23979eaf06.js" crossorigin="anonymous"></script>
 
