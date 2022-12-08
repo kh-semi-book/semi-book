@@ -45,7 +45,7 @@
                     <div class="input-section">
                         <input type="text" name="nonMemberName" placeholder="이름">
                         <input type="text" name="nonMemberBookNo" placeholder="예약번호">
-                        <input type="password" name="nonMemberPhone" placeholder="휴대폰(- 빼고 숫자만 입력)">
+                        <input type="text" name="nonMemberPhone" placeholder="휴대폰(- 빼고 숫자만 입력)">
                     </div
                     ><div class="button-section">
                         <button id="guest-login-btn">로그인</button>

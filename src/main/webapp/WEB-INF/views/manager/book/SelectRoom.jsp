@@ -47,15 +47,15 @@
     <div id="popup">
         <table id="inputType">
             <tr>
-                <th>전망타입</th>
                 <th>룸타입</th>
+                <th>전망타입</th>
                 <%-- <th>체크인</th>
                 <th>체크아웃</th> --%>
 
             </tr>
             <tr>
-                <td>${inputRoom.roomViewName}</td>
                 <td>${inputRoom.roomName}</td>
+                <td>${inputRoom.roomViewName}</td>
                 <%-- <td>2022-12-25</td>
                 <td>2022-12-31</td> --%>
             </tr>
@@ -70,6 +70,7 @@
                 <th>선택</th>
             </tr>
 
+			<c:if test="${not empty roomList}">
             <c:forEach var="Room" items="${roomList}"  varStatus="index">
             <tr>
                 <td>${index.count}</td>
@@ -89,6 +90,14 @@
             </tr>
                                    
             </c:forEach>
+            </c:if>
+            <c:if test="${empty roomList}">
+            <tr>
+            	<td colspan="5" style="width:1000px">
+           			 조회된 방이 없습니다. 
+            	</td>
+            </tr>
+            </c:if>
 
         </table>
 

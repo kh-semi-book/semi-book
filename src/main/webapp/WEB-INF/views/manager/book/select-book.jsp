@@ -87,10 +87,9 @@
         
 
     <c:forEach var="book" items="${bookList}" varStatus="index">
-   
       <form action="/manager/updateBook" method="POST">
         <div class="book-list-content">
-      
+     
             <div class="book-list-no manage-border-right">${index.count}</div>
             <div class="book-list-date manage-border-right">${book.bookDate}</div>
             <div class="book-list-reservation-no manage-border-right bookNo">
@@ -110,7 +109,16 @@
                 <input name="checkOut" type="text" value="${book.checkOut}" name="checkOut" readonly>
             </div>
             <div class="book-list-cost money manage-border-right" id="money">${book.bookPrice}</div>
-            <div class="book-list-booker-name manage-border-right">${book.bookMemberName}</div>
+            <c:choose>
+            	<c:when test="${book.bookMemberName=='무명'}">
+	            <div class="book-list-booker-name manage-border-right">${book.bookNonMemberName}</div>
+            	</c:when>
+            	<c:otherwise>
+	            <div class="book-list-booker-name manage-border-right">${book.bookMemberName}</div>
+            	</c:otherwise>
+            
+            </c:choose>
+	            
             <div class="manage-book-status">
                 <c:choose>
                     <c:when test="${book.roomProcess == 0}">
