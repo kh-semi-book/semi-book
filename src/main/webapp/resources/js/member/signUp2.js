@@ -334,6 +334,7 @@ document.getElementById("joinform").addEventListener("submit", function(event){
             // 중복 확인 버튼이 안눌렸으면
             if(isIdChecked === false){
                 console.log("중복버튼확인");
+                alert("아이디 중복확인을 해주세요");
                 event.preventDefault();
 
                 return;
