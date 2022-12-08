@@ -72,13 +72,9 @@ public class MyPageController {
 		inputAdd.setMemberAddress(address);
 		
 		
-		
-			
-		System.out.println(inputAdd.getMemberWedding());
-		System.out.println(inputAdd);
-		System.out.println(inputAdd.getMarriageFlag());
-		
 		int result = service.updateMember(inputMember, loginMember, newPw, add, inputAdd);
+		
+		System.out.println("컨트롤러 넘어온 PW:"+inputMember.getMemberPw());
 		
 		String message = null;
 		
@@ -93,7 +89,7 @@ public class MyPageController {
 			loginMember.setEmailFlag(inputMember.getEmailFlag());
 			loginMember.setSmsFlag(inputMember.getSmsFlag());
 			loginMember.setMemberBirth(inputMember.getMemberBirth());
-		
+			System.out.println(loginMember.getMemberPw());
 		}
 		else { 
 			message = "회원 정보 수정이 실패했습니다.";
