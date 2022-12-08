@@ -25,63 +25,57 @@ public class MyPageServiceImpl implements MyPageService {
 		public int updateMember(Member inputMember, Member loginMember, String newPw, Add add, Add inputAdd) {
 			
 	    	int result = 0;
-	    	int result1 = 0;
-	    	int addUpdateResult = 0;
-	    	int addInsertResult = 0;
 	    
 	    	// 1. 현재 로그인한 회원의 회원번호를 이용해 비밀번호 조회  
 	    	String loginPw = dao.selectPw(loginMember.getMemberNo());
 	    	
-//	    	int addResult= dao.selectAdd(loginMember.getMemberNo());
 	    	
-	    	
-	    	System.out.println("inputMember.getMemberPw : " + inputMember.getMemberPw());
 	    	// 2. inputMember의 비밀번호랑  로그인한 회원의 비밀번호 비교 
 	    	if(bcrypt.matches(inputMember.getMemberPw(), loginPw)) {
 	    		
-	    		
-	    		inputMember.setMemberPw(newPw);
-	    		
+	 
 	    		
 	    		// 3. 2번이 일치할 때 새비밀번호 입력 여부 newPw 빈칸인가를 따진다. 
 	    		if(newPw.equals("")) {
 	    			
 	    			// 4-1 빈칸인 경우 정보 수정 -> dao.updateMember(inputMember)
 	    			
-	    			result1 = dao.updateMember(inputMember);
-	    			System.out.println("result1: "+result1);
-	    			if(inputAdd.getMemberWedding() != null || inputAdd.getMemberTel() != null 
-	    					|| inputAdd.getMemberAddress() != null || inputAdd.getMarriageFlag() != null) {
-	    				addUpdateResult = dao.updateAdd(inputAdd);
-	    				System.out.println("addUpdateResult:"+addUpdateResult);
-	    				if(addUpdateResult<1) {
-	    					addInsertResult = dao.insertAdd(inputAdd);
-	    					System.out.println("addInsertResult:"+addInsertResult);
-	    				}
-	    			} 
+
+	    			result = dao.updateMember(inputMember);
+	    			if(result>0) {
+		    			if(inputAdd.getMemberWedding() != null || inputAdd.getMemberTel() != null 
+		    					|| inputAdd.getMemberAddress() != null || inputAdd.getMarriageFlag() != null) {
+		    				result = dao.updateAdd(inputAdd);
+		    				if(result<1) {
+		    					result = dao.insertAdd(inputAdd);
+		    				}
+		    			} 
+	    			}
+
 	    			
-	    			result = result1 + addUpdateResult + addInsertResult;
-	    			System.out.println("result:"+result);
 	    			return result;
 	    			
 	    			
 	    		} else {
 	    			
+	    			
+	    			newPw=bcrypt.encode(newPw);
+	    			
+	    			inputMember.setMemberPw(newPw);
+	    			
 	    			// 4-2 빈칸이 아닌경우 newPw암호화 inputMemeber에 세팅 -> dao.updateMemberPw(inputMember)
+	    			result = dao.updateMemberPw(inputMember);
+	    			if(result>0) {
+		    			if(inputAdd.getMemberWedding() != null || inputAdd.getMemberTel() != null || inputAdd.getMemberAddress() != null ) {
+		    				result = dao.updateAdd(inputAdd);
+		    				if(result<1) {
+		    					result = dao.insertAdd(inputAdd);
+		    				}
+		    			} 
+		    			loginMember.setMemberPw(newPw);
+	    			}
 	    			
-	    			result1 = dao.updateMember(inputMember);
-	    			System.out.println("result1: "+result1);
-	    			if(inputAdd.getMemberWedding() != null || inputAdd.getMemberTel() != null || inputAdd.getMemberAddress() != null ) {
-	    				addUpdateResult = dao.updateAdd(inputAdd);
-	    				System.out.println("addUpdateResult:"+addUpdateResult);
-	    				if(addUpdateResult<1) {
-	    					addInsertResult = dao.insertAdd(inputAdd);
-	    					System.out.println("addInsertResult:"+addInsertResult);
-	    				}
-	    			} 
-	    			
-	    			result = result1 + addUpdateResult + addInsertResult;
-	    			System.out.println("result:"+result);
+
 	    			return result;
 	    		}
 	    		
