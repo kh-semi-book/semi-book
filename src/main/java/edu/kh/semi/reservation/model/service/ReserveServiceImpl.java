@@ -94,15 +94,18 @@ public class ReserveServiceImpl implements ReserveService {
 				}
 
 				if (result > 0) { // 옵션 추가
-
-					for (int i = 0; i < optionSet.length; i++) {
-						String temp[] = optionSet[i].split("/");
-						tempOption.setOptionDate(temp[0]);
-						tempOption.setOptionNo(temp[1]);
-						tempOption.setOptionCount(temp[2]);
-
-						result = dao.insertOption(tempOption);
-
+					
+					System.out.println(optionSet.length);
+					if(optionSet.length!=1) {
+						for (int i = 0; i < optionSet.length; i++) {
+							String temp[] = optionSet[i].split("/");
+							tempOption.setOptionDate(temp[0]);
+							tempOption.setOptionNo(temp[1]);
+							tempOption.setOptionCount(temp[2]);
+	
+							result = dao.insertOption(tempOption);
+	
+						}
 					}
 					if(result>0) result =reserve.getBookNo();
 

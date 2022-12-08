@@ -19,13 +19,17 @@ document.addEventListener('scroll',submenu_bar_fixed);
 
 
 // select시 추가 
-const selectList=document.querySelectorAll("select");
+
 const sideOptionTitle=document.getElementsByClassName("side-option-cost")[0];
 const totalOptionCost=document.getElementById("totalOptionCost");
 const optionCost=document.getElementsByClassName("optionCost");
 const roomsCost=document.getElementById("roomsCost");
 const totalCost=document.getElementById("totalCost");
 const price=document.getElementsByName("price")[0];
+
+const optionAmount=document.getElementsByClassName("option-amount");
+const selectList=document.querySelectorAll("select");
+
 
 
 
@@ -34,6 +38,7 @@ for(let select of selectList){
     totalCost.innerText=numberWithCommas(Number(roomsCost.value))+'원';
     price.value=Number(roomsCost.value);
     select.addEventListener("change",function(){
+		let cost=0;
  		let totalOptionCostinput=0;
 
         const div=document.createElement("div");
@@ -80,8 +85,18 @@ for(let select of selectList){
         span1.innerText='('+optionCount+'개)';
   
         
-      
         
+        for(let i=0;i<selectList.length;i++){
+        	  console.log("selectList[i].value : "+selectList.length);
+            cost+=selectList[i].value*selectList[i].parentElement.parentElement.children[1].id;
+        }
+
+        console.log("cost"+cost);
+
+        totalOptionCost.innerText=numberWithCommas(cost);
+
+       	price.value=Number(roomsCost.value)+Number(cost);
+        totalCost.innerText=numberWithCommas(price.value)+"원";
         
         for(let name of sideOptionName){
             if(optionName==name.innerText){
@@ -102,19 +117,9 @@ for(let select of selectList){
                 return;
             }
         }
-    
-        
+  
         sideOptionTitle.before(div); 
-        
-        for(let cost of optionCost){
-        }
-        totalOptionCostinput+=Number(optionPrice*optionCount);
 
-		totalOptionCost.innerText=numberWithCommas(totalOptionCostinput);
-
-       	price.value=Number(roomsCost.value)+Number(totalOptionCostinput);
-        totalCost.innerText=numberWithCommas(price.value)+"원";
-        
     })
 }
 // 2022-12-23/15/1

@@ -22,7 +22,7 @@
         
         <div id="login-main">
             <div id="member-login">
-                <form action="/reservation/reservationLogin" method="post" onsubmit="return loginValidate();">
+                <form action="/reservation/reservationLoginCheck" method="post" onsubmit="return loginValidate();">
 							<input type="hidden" value="${reserve.checkInInput}" name="checkInInput" />
 							<input type="hidden" value="${reserve.checkOutInput}" name="checkOutInput" /> 
 							<input type="hidden" value="${reserve.nights}" name="nights" /> 
