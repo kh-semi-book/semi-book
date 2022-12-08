@@ -95,6 +95,8 @@ public class BookServiceImpl implements BookService {
 			}
 			
 			return result;
+		}else if(bookPerson.getRoomProcess().contains("2")) {
+			result=dao.deleteBookRoom(bookPerson);
 		}
 			
 		

@@ -134,6 +134,7 @@
     .book-list-status-change{
         width:100px;
     }
+    
     .book-list-status{
         width:100px;
     }
@@ -151,7 +152,8 @@
     .manage-book-status{
         width: 150px;
     }
-    .manage-book-status>select{
+    .manage-book-status>select,
+    .manage-book-status>input{
         display: block;
         width: 130px;
     }

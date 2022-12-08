@@ -112,6 +112,13 @@ public class BookDAO {
 		
 		return sqlSession.update("bookMapper.updateBook", bookPerson);
 	}
+
+
+
+	public int deleteBookRoom(Book bookPerson) {
+		
+		return sqlSession.delete("bookMapper.deleteBookRoom", bookPerson);
+	}
 		
 
 

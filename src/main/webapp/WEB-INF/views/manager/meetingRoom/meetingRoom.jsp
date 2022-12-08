@@ -108,14 +108,7 @@
 			</div>
 			</c:forEach>
 			
-			<!-- 페이지 이동 버튼 -->
-			<div id="rsc-page-skip">
-				<a href="#">&lt;&lt;</a>&nbsp;&nbsp; <a href="#">&lt;</a> &nbsp;&nbsp;
-				<button>
-					<a href="#">1</a>
-				</button>
-				&nbsp;&nbsp; <a href="#">&gt;</a> &nbsp;&nbsp; <a href="#">&gt;&gt;</a>
-			</div>
+			
 			
 		</div>
 	</div>

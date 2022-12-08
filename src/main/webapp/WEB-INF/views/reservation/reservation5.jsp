@@ -25,9 +25,7 @@
     <!-- =================================[ header ]=================================== -->
 
         <div class="reservation-lookUp-page">
-            <!-- 최상단 이미지 -->
-            <div class="rsc-top-image"></div>
-        
+           
             <!-- 상단영역 -->
             <div class="rsc-head-area">
                 <section></section>
