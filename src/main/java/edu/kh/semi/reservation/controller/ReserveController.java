@@ -153,7 +153,7 @@ public class ReserveController {
 	
 	@PostMapping("/reservation/reservation5")
 	public String reservation5(@SessionAttribute(value="loginMember",required = false) Member loginMember
-			,  Reserve reserve,Model model, Guest inputGuest, String optionSet,NonMember nonMember
+			,  Reserve reserve,Model model, Guest inputGuest, String optionSet,NonMember nonMember, HttpSession session
 			) { 
 		
 		
@@ -165,7 +165,6 @@ public class ReserveController {
 		reserve.setCheckOutInput(reserve.getCheckOutInput().substring(0,10));
 		
 		int bookNo = service.reservation4(loginMember,reserve,inputGuest,optionList,nonMember);
-//		int result = service.reservation4_nonMember(loginMember,reserve,inputGuest,optionList,nonMember);
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		if(bookNo>0 ) {
@@ -179,12 +178,14 @@ public class ReserveController {
 			bookNo = service.sendBookNo(map);
 		}
 		
+		session.removeAttribute("side");
+		
 		return "reservation/reservation5";
 		
 	}
 	
 	
-	@GetMapping("/reservation/reservationLogin")
+	@PostMapping("/reservation/reservationLogin")
 	public String reservationLogin(Reserve reserve,HttpSession session,String side) {
 		
 		session.setAttribute("side", side);
@@ -193,7 +194,7 @@ public class ReserveController {
 
 	
 	
-	@PostMapping("/reservation/reservationLogin")
+	@PostMapping("/reservation/reservationLoginCheck")
 	public String reservationLogin(Reserve reserve, Member inputMember, Model model
 			,@RequestHeader(value = "referer") String referer,RedirectAttributes ra) {
 		

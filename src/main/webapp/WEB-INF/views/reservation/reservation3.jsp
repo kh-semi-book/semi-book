@@ -125,7 +125,7 @@
 
 					</c:when>
 					<c:otherwise>
-						<form action="/reservation/reservationLogin" method="get" name="resFrm3">
+						<form action="/reservation/reservationLogin" method="post" name="resFrm3">
 							<input type="hidden" value="${reserve.checkInInput}" name="checkInInput" />
 							<input type="hidden" value="${reserve.checkOutInput}" name="checkOutInput" /> 
 							<input type="hidden" value="${reserve.nights}" name="nights" /> 
