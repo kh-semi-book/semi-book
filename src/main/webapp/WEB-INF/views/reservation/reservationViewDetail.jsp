@@ -169,7 +169,7 @@
                                     <td colspan="3" id="rsc-last-td">
                                     <ul>
                                     <c:forEach var="option" items="${book.optionList}">
-                                    <li>${option.optionDate} : ${option.optionName} ${option.optionCount}개</li>
+                                    <li>${option.optionDate} : ${option.optionName} &nbsp&nbsp ${option.optionCount}개</li>
                                     </c:forEach>
                                     </ul>
                                     </td>
