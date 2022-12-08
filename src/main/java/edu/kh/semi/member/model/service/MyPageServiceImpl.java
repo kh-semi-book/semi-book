@@ -29,8 +29,6 @@ public class MyPageServiceImpl implements MyPageService {
 	    	// 1. 현재 로그인한 회원의 회원번호를 이용해 비밀번호 조회  
 	    	String loginPw = dao.selectPw(loginMember.getMemberNo());
 	    	
-//	    	int addResult= dao.selectAdd(loginMember.getMemberNo());
-	    	
 	    	
 	    	// 2. inputMember의 비밀번호랑  로그인한 회원의 비밀번호 비교 
 	    	if(bcrypt.matches(inputMember.getMemberPw(), loginPw)) {
@@ -42,6 +40,7 @@ public class MyPageServiceImpl implements MyPageService {
 	    			
 	    			// 4-1 빈칸인 경우 정보 수정 -> dao.updateMember(inputMember)
 	    			
+
 	    			result = dao.updateMember(inputMember);
 	    			if(result>0) {
 		    			if(inputAdd.getMemberWedding() != null || inputAdd.getMemberTel() != null 
@@ -52,6 +51,7 @@ public class MyPageServiceImpl implements MyPageService {
 		    				}
 		    			} 
 	    			}
+
 	    			
 	    			return result;
 	    			
@@ -64,7 +64,6 @@ public class MyPageServiceImpl implements MyPageService {
 	    			inputMember.setMemberPw(newPw);
 	    			
 	    			// 4-2 빈칸이 아닌경우 newPw암호화 inputMemeber에 세팅 -> dao.updateMemberPw(inputMember)
-	    			
 	    			result = dao.updateMemberPw(inputMember);
 	    			if(result>0) {
 		    			if(inputAdd.getMemberWedding() != null || inputAdd.getMemberTel() != null || inputAdd.getMemberAddress() != null ) {
@@ -76,6 +75,7 @@ public class MyPageServiceImpl implements MyPageService {
 		    			loginMember.setMemberPw(newPw);
 	    			}
 	    			
+
 	    			return result;
 	    		}
 	    		
