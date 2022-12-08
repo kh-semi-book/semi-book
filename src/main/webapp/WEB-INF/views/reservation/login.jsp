@@ -22,8 +22,7 @@
 
         <div id="login-main">
             <div id="member-login">
-                <form action="/member/reservationLogin" method="post" 
-                onsubmit="return loginValidate();">
+                <form action="/member/reservationLogin" method="POST" onsubmit="return loginValidate();">
                     <p>회원 로그인</p>
                     <div class="input-section">
                         <input type="text" name="memberId" placeholder="아이디" value="${cookie.saveId.value}">
@@ -45,7 +44,7 @@
                     <div class="input-section">
                         <input type="text" name="nonMemberName" placeholder="이름">
                         <input type="text" name="nonMemberBookNo" placeholder="예약번호">
-                        <input type="password" name="nonMemberPhone" placeholder="휴대폰(- 빼고 숫자만 입력)">
+                        <input type="text" name="nonMemberPhone" placeholder="휴대폰(- 빼고 숫자만 입력)">
                     </div
                     ><div class="button-section">
                         <button id="guest-login-btn">로그인</button>

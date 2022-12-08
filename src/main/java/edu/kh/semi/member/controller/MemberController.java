@@ -76,6 +76,7 @@ public class MemberController {
 		return "redirect:" + path;
 	}
 	
+	
 	@PostMapping("/member/reservationLogin")
 	public String reservationLogin(Member inputMember, Model model, RedirectAttributes ra,
 			@RequestParam(value = "saveId", required = false) String saveId, HttpServletResponse resp,
@@ -115,9 +116,9 @@ public class MemberController {
 			
 			
 		} else {
-			path = "redirect:/"+referer; // 이전페이지로 이동
-			// model.addAttribute("message","회원 아이디 또는 비밀번호가 일치하지 않습니다.");
 			ra.addFlashAttribute("message", "회원 아이디 또는 비밀번호가 일치하지 않습니다. 확인 후 다시 시도하시기 바랍니다.");
+			path = "reservation/login"; // 이전페이지로 이동
+			// model.addAttribute("message","회원 아이디 또는 비밀번호가 일치하지 않습니다.");
 		}
 		
 		return path;
