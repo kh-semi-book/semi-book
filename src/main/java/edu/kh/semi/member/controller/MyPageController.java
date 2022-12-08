@@ -72,12 +72,6 @@ public class MyPageController {
 		inputAdd.setMemberAddress(address);
 		
 		
-		
-			
-		System.out.println(inputAdd.getMemberWedding());
-		System.out.println(inputAdd);
-		System.out.println(inputAdd.getMarriageFlag());
-		
 		int result = service.updateMember(inputMember, loginMember, newPw, add, inputAdd);
 		
 		String message = null;
