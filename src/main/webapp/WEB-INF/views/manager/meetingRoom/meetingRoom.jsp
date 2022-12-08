@@ -87,7 +87,7 @@
 						<c:when test="${book.meetingProcess==0}">예약대기
 							<c:set var="sel0" value="selected"/>
 						</c:when>
-						<c:when test="${book.meetingProcess==1}">예약완료
+						<c:when test="${book.meetingProcess==1}">예약확정
 							<c:set var="sel1" value="selected"/>
 						</c:when>
 						<c:when test="${book.meetingProcess==2}">예약취소
@@ -97,7 +97,7 @@
 						&nbsp;&nbsp;
 						<select name="meetingProcess" id="book-status">
 							<option value="0" ${sel0}>예약대기</option>
-							<option value="1" ${sel1}>예약완료</option>
+							<option value="1" ${sel1}>예약확정</option>
 							<option value="2" ${sel2}>예약취소</option>
 						</select>
 					</div>
