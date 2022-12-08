@@ -221,9 +221,9 @@
 										</c:when>
 										<c:when test="${fn:contains(add.marriageFlag,'Y')}">
 											<span class="kjh-married"> 결혼기념일 : 
-												<input type="text" name="memberWedding" id="memberWedding1" size="4" maxlength="4" value="${fn:substring(add.memberWedding,0,4)}" >년
-												<input type="text" name="memberWedding" id="memberWedding2" size="4" maxlength="2" value="${fn:substring(add.memberWedding,5,7)}" >월
-												<input type="text" name="memberWedding" id="memberWedding3" size="4" maxlength="2" value="${fn:substring(add.memberWedding,8,10)}">일
+												<input type="text" name="memberWedding" id="memberWedding1" size="4" maxlength="4" value="${fn:split(add.memberWedding,'-')[0]}">년
+												<input type="text" name="memberWedding" id="memberWedding2" size="4" maxlength="2" value="${fn:split(add.memberWedding,'-')[1]}">월
+												<input type="text" name="memberWedding" id="memberWedding3" size="4" maxlength="2" value="${fn:split(add.memberWedding,'-')[2]}">일
 											</span>
 										</c:when>
 										<c:when test="${fn:contains(add.marriageFlag,'')}">
