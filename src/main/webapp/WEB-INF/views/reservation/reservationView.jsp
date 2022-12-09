@@ -54,10 +54,13 @@
                         <th width="100px">금액<br>(VAT포함)</th>
                         <th width="100px">진행상태</th>
                     </tr>
-                    <tr>
-                        <td id="emptyList" colspan="7"><div>:: 숙박 예약내역이 없습니다. ::</div></td>
-                    </tr>
-                    <c:forEach var="book" items="${bookList}">
+                    <c:if test="${empty bookList}">
+                        <tr>
+                            <td id="emptyList" colspan="7"><div>:: 숙박 예약내역이 없습니다. ::</div></td>
+                        </tr>
+                    </c:if>
+                    <c:if test="${not empty bookList}">
+                        <c:forEach var="book" items="${bookList}">
                     <tr>
                         <td height="100px">${book.bookDate}</td>
                         <td><a href="/reservation/reservationViewDetail/${book.bookNo}">${book.promotionTitle}</a></td>
@@ -105,6 +108,8 @@
                         <td>${book.roomProcess}</td>
                     </tr>
                     </c:forEach>
+                    </c:if>
+                    
                 </table>
 
                 <br><br><br>

@@ -49,7 +49,7 @@
                     ><div class="button-section">
                         <button id="guest-login-btn">로그인</button>
                     </div>
-                    <span>* 예약번호는 고객님께 발송되는 예약 확정 문자를 통해 안내됩니다.</span>
+                    <span>* 예약번호는 고객님께 발송되는 이메일을 통해 안내됩니다.</span>
                     
                 </form>
             </div> 
