@@ -15,6 +15,7 @@
   		<result property="roomProcess" column="ROOM_PROCESS" />
   		<result property="bookMemberNo" column="MEMBER_NO" />
   		<result property="bookMemberName" column="MEMBER_NAME" />
+  		<result property="bookNonMemberName" column="NONMEMBER_NAME" />
   		<result property="bookGuestNo" column="GUEST_NO" />
   		<result property="bookGuestName" column="GUEST_NAME" />
   		<result property="bookRoomNum" column="ROOM_NUM" />  		
@@ -47,9 +48,10 @@
   		SELECT BOOK_NO, TO_CHAR(BOOK_DATE,'YYYY-MM-DD') BOOK_DATE, 
 		TO_CHAR(CHECK_IN,'YYYY-MM-DD') CHECK_IN, TO_CHAR(CHECK_OUT,'YYYY-MM-DD') CHECK_OUT, ROOM_PROCESS,
 		MEMBER_NAME, PRICE, BOOK_ADULTCOUNT , BOOK_CHILDCOUNT,
-		(SELECT ROOM_NUM FROM BOOK_ROOM WHERE BOOK_NO=BOOK.BOOK_NO)AS ROOM_NUM, BED_TYPE_NO
+		(SELECT DISTINCT ROOM_NUM FROM BOOK_ROOM WHERE BOOK_NO=BOOK.BOOK_NO)AS ROOM_NUM, BED_TYPE_NO,NONMEMBER_NAME
 		FROM BOOK
 		JOIN "MEMBER" USING(MEMBER_NO)
+		JOIN NONMEMBER USING(NONMEMBER_NO)
 		ORDER BY 1 DESC
 	
   	</select>
@@ -94,21 +96,16 @@
 	<select id="selectBookList_search" resultMap="book_rm">
   		SELECT BOOK_NO, TO_CHAR(BOOK_DATE,'YYYY-MM-DD') BOOK_DATE, 
 		TO_CHAR(CHECK_IN,'YYYY-MM-DD') CHECK_IN, TO_CHAR(CHECK_OUT,'YYYY-MM-DD') CHECK_OUT, ROOM_PROCESS,
-		MEMBER_NAME, PRICE, BOOK_ADULTCOUNT , (SELECT ROOM_NUM FROM BOOK_ROOM WHERE BOOK_NO=BOOK.BOOK_NO)AS ROOM_NUM
+		MEMBER_NAME, PRICE, BOOK_ADULTCOUNT ,NONMEMBER_NO, (SELECT DISTINCT ROOM_NUM FROM BOOK_ROOM WHERE BOOK_NO=BOOK.BOOK_NO)AS ROOM_NUM
 		FROM BOOK
 		JOIN "MEMBER" USING(MEMBER_NO)
+		JOIN NONMEMBER USING(NONMEMBER_NO)
 		
 		<if test='searchOptionInput!=null and searchOptionInput!=""'>
 		 WHERE
 			<choose>
 				<when test='searchOption=="bookerName"'>
-					MEMBER_NAME=#{searchOptionInput}
-				</when>
-				<when test='searchOption=="roomNum"'>
-					ROOM_NUM=#{searchOptionInput}
-				</when>
-				<when test='searchOption=="bookProcess"'>
-					BOOK_PROCESS=#{searchOptionInput}
+					MEMBER_NAME=#{searchOptionInput} OR NONMEMBER_NAME=#{searchOptionInput}
 				</when>
 			</choose>
 			
@@ -117,12 +114,7 @@
 					<when test='searchDateOption=="bookDate"'>
 						AND BOOK_DATE BETWEEN #{searchDateOptionInput1} AND #{searchDateOptionInput2}
 					</when>
-					<when test='searchDateOption=="checkIn"'>
-						AND BOOK_DATE BETWEEN #{searchDateOptionInput1} AND #{searchDateOptionInput2}
-					</when>
-					<when test='searchDateOption=="checkOut"'>
-						AND BOOK_DATE BETWEEN #{searchDateOptionInput1} AND #{searchDateOptionInput2}
-					</when>
+					
 				</choose>
 			</if>
 		</if>
@@ -147,7 +139,7 @@
 		JOIN ROOM_VIEW USING(ROOM_VIEW_NO)
 		LEFT JOIN BOOK_ROOM USING(ROOM_NUM)
 		LEFT JOIN BOOK USING(BOOK_NO)
-		WHERE (CHECK_OUT <= #{checkIn} OR CHECK_OUT IS NULL)
+		WHERE ((BOOK_ROOM_DATE NOT BETWEEN #{checkIn} AND #{checkOut})OR(BOOK_ROOM_DATE IS NULL))
 		AND ROOM_NAME=#{roomName}
 		AND ROOM_VIEW_NAME=#{roomViewName}
 		AND ROOM.BED_TYPE_NO =#{bedTypeNo}]]>
@@ -176,8 +168,8 @@
 	
 	<insert id="insertBookRoom" parameterType="Book">
 		INSERT INTO BOOK_ROOM 
-		VALUES(SEQ_BOOK_ROOM_NO.NEXTVAL, DEFAULT
-		,#{bookRoomNum}, #{bookNo},#{bedTypeNo})
+		VALUES(DEFAULT
+		,#{bookRoomNum}, #{bookNo},#{bedTypeNo}, #{bookRoomDate})
 		
 	</insert>
 	

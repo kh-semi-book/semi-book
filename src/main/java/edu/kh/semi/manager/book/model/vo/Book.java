@@ -14,6 +14,7 @@ public class Book {
 
 	private int bookNo;
 	private int bookRoomNo;
+	private String bookRoomDate;
 	private String bookDate;
 	private String checkIn;
 	private String checkOut;

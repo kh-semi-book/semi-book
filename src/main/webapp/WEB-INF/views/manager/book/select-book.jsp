@@ -35,13 +35,8 @@
         <legend>검색 상세</legend>
         
     <form action="" id="book-search-option">
-        <span class="search-option">
-            <select name="searchOption">
-                <option value="bookerName">예약자명</option>
-                <option value="roomType">룸타입</option>
-                <option value="roomNum">호수</option>
-                <option value="bookStatus">예약 상태</option>
-            </select>
+        <span class="search-date">
+            예약자명
         </span>   
         
         <input type="text" class="search-option-input" name="searchOptionInput" value="${beforeSearch.searchOptionInput}">
