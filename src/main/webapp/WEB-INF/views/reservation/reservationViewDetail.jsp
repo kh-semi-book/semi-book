@@ -87,7 +87,14 @@
                                 </c:if>
                                 <tr>
                                     <th height="64.5px" id="rsc-first-th">고객요청</th>
-                                    <td colspan="5" id="rsc-last-td">${book.bookGuestRequest}</td>
+                                    <td colspan="5" id="rsc-last-td">
+                                        <c:if test="${not empty book.bookGuestRequest}">
+                                            ${book.bookGuestRequest}
+                                        </c:if>
+                                        <c:if test="${empty book.bookGuestRequest}">
+                                            없음
+                                        </c:if>
+                                    </td>
                                 </tr>
                             </table>
                         </div> 
@@ -150,15 +157,15 @@
                                 </tr>
                                 <tr>
                                     <th height="64.5px" id="rsc-first-th">박수</th>
-                                    <td>${book.nights}</td>
+                                    <td>${book.nights} 박</td>
                                     <th id="rsc-first-th">룸수</th>
-                                    <td id="rsc-last-td">${book.roomCount}</td>
+                                    <td id="rsc-last-td">${book.roomCount} 개</td>
                                 </tr>
                                 <tr>
                                     <th height="64.5px" id="rsc-first-th">어른 인원</th>
-                                    <td>${book.adultCount}</td>
+                                    <td>${book.adultCount} 명</td>
                                     <th id="rsc-first-th">어린이 인원</th>
-                                    <td id="rsc-last-td">${book.childCount}</td>
+                                    <td id="rsc-last-td">${book.childCount} 명</td>
                                 </tr>
                                 <tr>
                                     <th height="64.5px" id="rsc-first-th">진행상태</th>
@@ -168,22 +175,27 @@
                                     <th height="64.5px" id="rsc-first-th">옵션</th>
                                     <td colspan="3" id="rsc-last-td">
                                     <ul>
-                                    <c:forEach var="option" items="${book.optionList}">
-                                    <li>${option.optionDate} : ${option.optionName} &nbsp&nbsp ${option.optionCount}개</li>
-                                    </c:forEach>
+                                    <c:if test="${not empty book.optionList}">
+                                        <c:forEach var="option" items="${book.optionList}">
+                                        <li>${option.optionDate} : ${option.optionName} &nbsp&nbsp ${option.optionCount}개</li>
+                                        </c:forEach>
+                                    </c:if>
+                                    <c:if test="${empty book.optionList}">
+                                        없음
+                                    </c:if>
                                     </ul>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th height="64.5px" id="rsc-first-th">옵션합계</th>
                                     <td colspan="3" id="rsc-last-td">
-                                    <fmt:formatNumber value="${optionTotalPrice}" />
+                                    <fmt:formatNumber value="${optionTotalPrice}" /> 원
                                     </td>
                                 </tr>
                                 
                                 <tr>
                                     <th height="64.5px" id="rsc-first-th">요금합계</th>
-                                    <td colspan="3" id="rsc-last-td"><fmt:formatNumber value="${book.bookPrice}" /></td>
+                                    <td colspan="3" id="rsc-last-td"><fmt:formatNumber value="${book.bookPrice}" /> 원</td>
                                 </tr>
                             </table>
                         </div>

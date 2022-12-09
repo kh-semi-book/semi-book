@@ -50,7 +50,7 @@
             </div>
            
             <div id="guest-login">
-                <form action="/reservation/reservation4" method="post">
+                <form action="/reservation/reservation4" method="post" id="nonMemberLoginfrm">
                 
                 		<input type="hidden" value="${reserve.checkInInput}" name="checkInInput" />
 							<input type="hidden" value="${reserve.checkOutInput}" name="checkOutInput" /> 
@@ -68,7 +68,7 @@
                     <p>비회원 로그인</p>
                     <div class="input-section">
                         <input type="text" name="inputName" placeholder="이름">
-                        <input type="text" name="inputEmail" placeholder="이메일">
+                        <input type="text" name="inputEmail" id="inputEmail" placeholder="이메일">
                         <input type="text" name="inputTel" placeholder="휴대폰(- 빼고 숫자만 입력)">
                     </div
                     ><div class="button-section">
