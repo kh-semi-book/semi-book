@@ -212,12 +212,14 @@
 	border: none;
 	color: white;
 	font-size: 13px;
+	cursor: pointer;
 }
 
 .package-room-type button.selectBtn:hover {
 	background-color: #4d4d4d;
 	border: none;
 	transition: all 0.2s;
+	cursor: pointer;
 }
 
 /* ======================================== */

@@ -20,10 +20,59 @@ const card4=document.getElementById("book-input-cardNum4");
 const guestEmail1=document.getElementById("book-input-email1").value;
 const guestEmail2=document.getElementById("book-input-email2").value
 
+const booker1 = document.getElementById("booker1");
+const booker2 = document.getElementById("booker2");
+
+const book_input_email1 = document.getElementById("book-input-email1");
+const book_input_email2 = document.getElementById("book-input-email2");
+const book_input_email3 = document.getElementById("book-input-email3");
+
+const book_input_phone1 = document.getElementById("book-input-phone1");
+const book_input_phone2 = document.getElementById("book-input-phone2");
+const book_input_phone3 = document.getElementById("book-input-phone3");
 
 
 
+const questRequest = document.getElementById("text-area");
+// 휴대폰 길이
+phone1.addEventListener("keyup", function(){
+    if(this.value.length === 3){
+        phone2.focus();
+    }
+});
+phone2.addEventListener("keyup", function(){
+    if(this.value.length === 4){
+        phone3.focus();
+    }
+});
+phone3.addEventListener("keyup", function(){
+    if(this.value.length === 4){
+        questRequest.focus();
+    }
+});
 
+
+// 카드번호 길이
+card1.addEventListener("keyup", function(){
+    if(this.value.length === 4){
+        card2.focus();
+    }
+});
+card2.addEventListener("keyup", function(){
+    if(this.value.length === 4){
+        card3.focus();
+    }
+});
+card3.addEventListener("keyup", function(){
+    if(this.value.length === 4){
+        card4.focus();
+    }
+});
+card4.addEventListener("keyup", function(){
+    if(this.value.length === 4){
+        document.getElementById("book-input-cardValidity1").focus();
+    }
+});
 
 
 
@@ -87,8 +136,7 @@ document.getElementById("reservation4_form").addEventListener("submit",e=>{
 });
 
 //투숙자
-const booker1 = document.getElementById("booker1");
-const booker2 = document.getElementById("booker2");
+
 if(booker2 !=null){
     booker2.value= booker1.value;
     document.getElementById("equal").addEventListener("change",()=>{
@@ -114,11 +162,6 @@ booker2.addEventListener("input",()=>{
 });
 
 //이메일
-
-
-const book_input_email1 = document.getElementById("book-input-email1");
-const book_input_email2 = document.getElementById("book-input-email2");
-const book_input_email3 = document.getElementById("book-input-email3");
 book_input_email1.addEventListener("input",()=>{
     if(book_input_email1.value.trim().length==0){
         checkObj["book-input-email1"]=false;
@@ -160,9 +203,7 @@ book_input_email3.addEventListener("input",()=>{
 
 
 //휴대폰
-const book_input_phone1 = document.getElementById("book-input-phone1");
-const book_input_phone2 = document.getElementById("book-input-phone2");
-const book_input_phone3 = document.getElementById("book-input-phone3");
+
 book_input_phone1.addEventListener("input",()=>{
     if(book_input_phone1.value.trim().length==0){
         checkObj["book-input-phone1"]=false;
@@ -199,6 +240,7 @@ book_input_phone3.addEventListener("input",()=>{
         checkObj["book-input-phone3"]=true;
     }
 });
+
 
 // 카드종류
 const book_input_cardType = document.getElementById("book-input-cardType");
@@ -264,6 +306,8 @@ book_input_cardNum4.addEventListener("input",()=>{
         checkObj["book-input-cardNum4"]=true;
     }
 });
+
+
 
 // 동의
 const agree = document.getElementById("agree");

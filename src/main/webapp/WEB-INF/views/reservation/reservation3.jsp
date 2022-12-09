@@ -182,9 +182,9 @@
 						<tr>
 							<td>인원수</td>
 							<td>어른<input type="text" readonly size="1" name="adultCount"
-								value="${reserve.adultCount}"> 어린이<input type="text"
+								value="${reserve.adultCount}" class="cnt"> 어린이<input type="text"
 								readonly size="1" name="childCount"
-								value="${reserve.childCount}"></td>
+								value="${reserve.childCount}" class="cnt"></td>
 						</tr>
 					</table>
 

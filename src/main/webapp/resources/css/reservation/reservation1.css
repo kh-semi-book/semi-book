@@ -46,6 +46,10 @@
     /* border-bottom: 1px solid black; */
 }
 
+.cnt{
+    font-size: 12px;
+}
+
 #side-date-content tr>td:first-child{
    padding: 10px 5px;
 }
@@ -54,9 +58,6 @@
    padding: 10px;
    text-align: right;
 }
-
-
-
 
 .side-room-name,.side-option-name{
     font-size: 15px;
@@ -561,3 +562,14 @@ transition: all 0.3s ease;
 #schedule-info {
 	vertical-align: middle;
 }
+
+
+/* 추추추가 수정 */
+#nights {
+    text-align: right;
+    margin-right: 8px;
+}
+
+
+
+

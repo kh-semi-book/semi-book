@@ -175,7 +175,7 @@
                             <td>인원수</td>
 
                             <td>
-                            <div>
+                            <div class="cnt">
                                 어른
                                 <select name="adultCount" id="stayAdult">
                                     <option value="0">0</option>
@@ -186,7 +186,7 @@
                                     <%-- 인원수 = 객실 수*3 --%>
                                 </select> 
                             </div>
-                            <div>
+                            <div class="cnt">
                                 어린이
                                 <select name="childCount" id="stayChild">
                                     <option value="0">0</option>
