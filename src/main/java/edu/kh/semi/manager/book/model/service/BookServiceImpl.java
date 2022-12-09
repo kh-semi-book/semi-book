@@ -1,8 +1,13 @@
 package edu.kh.semi.manager.book.model.service;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +17,7 @@ import edu.kh.semi.manager.book.model.vo.Book;
 import edu.kh.semi.manager.book.model.vo.Pagination;
 import edu.kh.semi.manager.book.model.vo.Room;
 import edu.kh.semi.manager.book.model.vo.SearchOption;
+import edu.kh.semi.reservation.model.vo.Option;
 
 @Service
 public class BookServiceImpl implements BookService {
@@ -84,12 +90,28 @@ public class BookServiceImpl implements BookService {
 		
 		int result=dao.updateBook(bookPerson);
 		
-		if(bookPerson.getRoomProcess().contains("1")) {
+		if(bookPerson.getRoomProcess().contains("1")) { // 저장일 경우 업데이트 인데 
 	
+			// 날짜별로 다 넣어줘야하는데 
 			int checkBook=dao.checkBookRoom(bookPerson);
 			
 			if(checkBook==0) {
-				result=dao.insertBookRoom(bookPerson);
+				String checkIn=bookPerson.getCheckIn();
+				String checkOut=bookPerson.getCheckOut();
+				
+				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+				LocalDate startDate = LocalDate.parse(checkIn, formatter);
+				LocalDate endDate = LocalDate.parse(checkOut, formatter);
+				
+				List<LocalDate> dateList=getDatesBetweenTwoDates(startDate, endDate);
+				
+				for(int i=0;i<dateList.size();i++) {
+					bookPerson.setBookRoomDate(dateList.get(i).format(formatter));
+					result=dao.insertBookRoom(bookPerson);
+				}
+				
+				
 			}else {
 				result=dao.updateBookRoom(bookPerson);
 			}
@@ -105,4 +127,16 @@ public class BookServiceImpl implements BookService {
 		
 		
 	}
+	
+	
+	
+	public static List<LocalDate> getDatesBetweenTwoDates(LocalDate startDate, LocalDate endDate) {
+		int numOfDaysBetween = (int) ChronoUnit.DAYS.between(startDate, endDate);
+		return IntStream.iterate(0, i -> i + 1)
+        	.limit(numOfDaysBetween)
+        	.mapToObj(i -> startDate.plusDays(i))
+		.collect(Collectors.toList());
+	}
+	
+	
 }

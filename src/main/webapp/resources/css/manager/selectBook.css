@@ -23,6 +23,10 @@
 
     /* ------------------------------ */
 
+	.search-date{
+	padding:0 40px;
+	}
+
     #book-search-option>span{
         display: inline-block;
         }
@@ -70,6 +74,7 @@
 
     #book-list-table{
         margin-top: 20px;
+        margin-bottom:100px;
     }
     #book-list-table div{
         box-sizing: border-box;

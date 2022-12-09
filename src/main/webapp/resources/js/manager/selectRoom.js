@@ -19,6 +19,7 @@ for(let chooseBtn of chooseRoomBtn){
         const openerBookNo=opener.document.getElementsByClassName("bookNo");
         for(let i=0;i<openerBookNo.length;i++){
             if(openerBookNo[i].innerText==bookNum){
+            	console.log(bookNum);
                 result=i;
             }
         }
