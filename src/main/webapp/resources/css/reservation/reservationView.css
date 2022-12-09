@@ -71,6 +71,17 @@
     align-items: center;
 
 }
+#emptyList{
+    border-left:  1px solid #8a8a8a !important;
+    border-right:  1px solid #8a8a8a !important;
+}
+#emptyList>div{
+    height: 80px;
+    line-height: 75px;
+    font-size: 16px !important;
+    font-weight: bold;
+    color: #4e4e4e;
+}
 #table-room-view{
     border-collapse: collapse;
     font-size: 15px;
@@ -79,11 +90,11 @@
     border-right: none;
 }
 #table-room-view th, #table-room-view td{
-    border: 1px solid #767676;
+    border: 1px solid #8a8a8a;
     text-align: center;
 }
 #table-room-view td{
-    font-size: 13px;
+    font-size: 12px;
 }
 #table-room-view th{
     font-size: 17px;
@@ -150,5 +161,7 @@
 
 #table-room-view a:hover{
     text-decoration: underline;
-    color: blue;
+    color: #8a8a8a;
 }
+
+

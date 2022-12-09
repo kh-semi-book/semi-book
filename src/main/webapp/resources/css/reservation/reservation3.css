@@ -226,13 +226,13 @@
 
 #side-date-content tr>td:first-child{
    padding: 10px 5px;
+   width: 65px;
 }
 
 #side-date-content tr>td:last-child{
    padding: 10px;
    text-align: right;
 }
-
 
 
 
@@ -303,8 +303,14 @@
     text-align: center;
 
     padding:10px;
-    font-size:14px;
+    font-size:12px;
     
+}
+#option-btn-area>a:hover{
+    background-color: #474747;
+    border: 1px solid #474747;
+    color: white;
+    transition: 0.4s;
 }
 
 #reservation3-btn{
@@ -320,6 +326,16 @@
     background-color: #777;
     color:white;
     border:none;
+    cursor: pointer;
+}
+#reservation3-btn:hover{
+    transition: all 0.2s;
+    background-color: rgb(80, 79, 79);
+}
+.cnt{
+    text-align: right;
+    padding-right: 8px;
+    width: 20px;
 }
 
 

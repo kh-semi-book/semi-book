@@ -138,7 +138,8 @@
     cursor: pointer;
 }
 #rsc-btn-list:hover, #rsc-btn-change:hover{
-    border: 2px solid darkblue;
+    background-color: #b3b3b3;
+    color: white;
     transition: all 0.3s;
 }
 

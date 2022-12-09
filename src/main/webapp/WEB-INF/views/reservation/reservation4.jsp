@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="/resources/css/reservation/reservation4.css">
 <link rel="stylesheet" href="/resources/css/reservation/reservation3.css">
 <link rel="stylesheet" href="/resources/css/common/main.css">
+<style>
+	body{margin: auto;}
+</style>
 </head>
 <body>
    <jsp:include page="/WEB-INF/views/reservation/reservation-header.jsp"/>
@@ -187,10 +190,10 @@
 									<tr>
 										<th class="row-title">카드 번호</th>
 										<td class="card-input">
-											<input type="number" class="input cardnumber" name="cardnumber1" id="book-input-cardNum1"> - 
-											<input type="number" class="input cardnumber" name="cardnumber2" id="book-input-cardNum2"> - 
-											<input type="number" class="input cardnumber" name="cardnumber3" id="book-input-cardNum3"> - 
-											<input type="number" class="input cardnumber" name="cardnumber4" id="book-input-cardNum4">
+											<input type="text" class="input cardnumber" name="cardnumber1" id="book-input-cardNum1"> - 
+											<input type="text" class="input cardnumber" name="cardnumber2" id="book-input-cardNum2"> - 
+											<input type="text" class="input cardnumber" name="cardnumber3" id="book-input-cardNum3"> - 
+											<input type="text" class="input cardnumber" name="cardnumber4" id="book-input-cardNum4">
 										</td>
 									</tr>
 									<tr>
