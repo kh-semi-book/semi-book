@@ -54,6 +54,7 @@ public class FindIdPwController {
 		if(memberNo>0) {
 			// 0보다크면 == 해당하는 회원정보가 있으면 비밀번호 변경
 			map.put("memberNo", memberNo);
+			map.put("memberName", input.getMemberName());
 			map.put("memberEmail", input.getMemberEmail());
 			map.put("memberId", input.getMemberId());
 			map.put("randomString", randomString);

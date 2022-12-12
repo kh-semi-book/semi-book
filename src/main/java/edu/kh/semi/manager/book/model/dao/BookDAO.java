@@ -12,6 +12,7 @@ import edu.kh.semi.manager.book.model.vo.Book;
 import edu.kh.semi.manager.book.model.vo.Pagination;
 import edu.kh.semi.manager.book.model.vo.Room;
 import edu.kh.semi.manager.book.model.vo.SearchOption;
+import edu.kh.semi.reservation.model.vo.Option;
 
 @Repository
 public class BookDAO {
@@ -118,6 +119,18 @@ public class BookDAO {
 	public int deleteBookRoom(Book bookPerson) {
 		
 		return sqlSession.delete("bookMapper.deleteBookRoom", bookPerson);
+	}
+
+
+
+	public Book bookViewDetail(int bookNo) {
+		return sqlSession.selectOne("reservationMapper.reservationViewDetail",bookNo);
+	}
+
+
+
+	public List<Option> selectOptionList(int bookNo) {
+		return sqlSession.selectList("reservationMapper.selectOptionList",bookNo);
 	}
 		
 

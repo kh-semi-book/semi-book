@@ -137,6 +137,19 @@ public class BookServiceImpl implements BookService {
         	.mapToObj(i -> startDate.plusDays(i))
 		.collect(Collectors.toList());
 	}
+
+
+	@Override
+	public Book bookViewDetail(int bookNo) {
+		Book book = dao.bookViewDetail(bookNo);
+		
+		if(book!=null) {
+			book.setOptionList(dao.selectOptionList(bookNo));
+		}
+		
+		return book;
+	}
 	
+
 	
 }
