@@ -14,11 +14,6 @@ public interface MyPageService {
 	 */
 	public abstract int updateMember(Member inputMember, Member loginMember,String newPw, Add add, Add inputAdd);
 
-//	/** 회원 정보 수정 서비스 (add)
-//	 * @param add
-//	 * @return
-//	 */
-//	public abstract int updateAdd(Add add);
 	
 	/** 회원 탈퇴 서비스 
 	 * @param memberNo
