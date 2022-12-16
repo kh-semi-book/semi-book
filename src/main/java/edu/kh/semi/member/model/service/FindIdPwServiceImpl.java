@@ -61,10 +61,29 @@ public class FindIdPwServiceImpl implements FindIdPwService{
 	            String charset = "UTF-8";
 	            
 	            // 메일 내용
-	            String mailContent 
-	                = "<h3 style='color:blue'>아이디 : " + map.get("memberId") + "</h3>"
-	            	+ "<h3 style='color:blue'>비밀번호 : " +map.get("randomString") + "</h3>";
+//	            String mailContent 
+//	                = "<h3 style='color:blue'>아이디 : " + map.get("memberId") + "</h3>"
+//	            	+ "<h3 style='color:blue'>비밀번호 : " +map.get("randomString") + "</h3>";
+//	            
 	            
+	            String mailContent ="<div id=\"emailMain\" style=\" width: 800px; position: relative; margin: auto;\">\n"
+	            		+ "        <div id=\"emailMiddle\" style=\" border-top:2px solid black;\"><strong style=\"display: inline-block; font-size:20px; padding:20px;\">요청하신 아이디/비밀번호 정보입니다.</strong></div>"
+	            		+ "        <div id=\"emailInput\" style=\" display: flex; flex-direction: column; min-height: 200px;border-top: 1px solid black; border-bottom: 2px solid black; padding:20px 0;\">\n"
+	            		+ "            <span style=\"font-weight: bold; display: block; margin: auto; font-size: 20px;\">"+map.get("memberName")+"님께서 요청하신 정보입니다.</span>\n"
+	            		+ "            <div style=\" display: block;\n"
+	            		+ "            margin: auto;padding:10px 20px;\n"
+	            		+ "            background-color: rgb(229, 229, 229);\n"
+	            		+ "            color:red;\n"
+	            		+ "            font-weight: 900;\">\n"
+	            		+ "                아이디 : "+ map.get("memberId")+"<br>\n"
+	            		+ "                비밀번호 : "+map.get("randomString")+"\n"
+	            		+ "            </div>\n"
+	            		+ "\n"
+	            		+ "            <span style=\"  background-color: lightgray;\n"
+	            		+ "            font-size:12px; display: block;\n"
+	            		+ "            margin: auto;\">Hidden Cliff Hotel & Nature 사이트를 이용해 주셔서 감사합니다.</span>\n"
+	            		+ "        </div>\n"
+	            		+ "    </div>";
 	            
 	            System.out.println(map.get("memberId"));
 	            

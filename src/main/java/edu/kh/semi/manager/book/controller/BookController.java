@@ -7,17 +7,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.kh.semi.manager.book.model.service.BookService;
 import edu.kh.semi.manager.book.model.vo.Book;
 import edu.kh.semi.manager.book.model.vo.Room;
 import edu.kh.semi.manager.book.model.vo.SearchOption;
+import edu.kh.semi.member.model.vo.Member;
+import edu.kh.semi.reservation.model.vo.Option;
 
 @Controller
 public class BookController {
@@ -97,6 +101,26 @@ public class BookController {
 		return "redirect:selectBook";
 			
 		
+	}
+	
+	
+
+	// 예약 상세조회
+	@GetMapping("/manager/bookViewDetail/{bookNo}")
+	public String reservationViewDetail(@PathVariable(value="bookNo") int bookNo, Model model,
+			                            @SessionAttribute(value = "loginMember", required = false) Member loginMember) {
+		
+		Book book = service.bookViewDetail(bookNo);
+		
+		int optionTotalPrice=0;
+		for(Option o : book.getOptionList()) {
+			optionTotalPrice+= Integer.parseInt(o.getOptionCount())*o.getOptionPrice();
+		}
+		
+		model.addAttribute("book",book);
+		model.addAttribute("optionTotalPrice", optionTotalPrice);
+		
+		return "manager/book/reservationViewDetail";
 	}
 
 }
