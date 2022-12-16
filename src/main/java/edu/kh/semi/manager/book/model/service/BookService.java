@@ -25,5 +25,7 @@ public interface BookService {
 	// 저장 클릭시 업데이트
 	int updateBook(Book bookPerson);
 
+	Book bookViewDetail(int bookNo);
+
 
 }

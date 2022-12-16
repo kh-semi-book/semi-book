@@ -91,7 +91,8 @@
             <div class="book-list-reservation-no manage-border-right bookNo">
             <%-- 수정 완료 후 리다이렉트 시 사용 예정 --%>
             <input type="hidden" name="bookNo" value="${book.bookNo}">
-            ${book.bookNo}</div>
+            <a href="/manager/bookViewDetail/${book.bookNo}">${book.bookNo} </a>
+            </div>
             <div class="book-list-room-no manage-border-right">
             <c:choose>
                     <c:when test="${book.roomProcess == 2}">
